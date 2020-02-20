@@ -29,6 +29,7 @@ namespace TruckerApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            PublicVar.Accsept = false;
             string _User, _Pass;
             _User = txtUsername.Text.Trim();
             _Pass = txtPassword.Text.Trim();
@@ -39,9 +40,11 @@ namespace TruckerApp
                 {
                     if (qry.password == _Pass)
                     {
-                        _Accsept = true;
-                        _UserID = qry.userID;
-                        _OpName = $"{qry.FirstName} {qry.FirstName}";
+                        PublicVar.Accsept = true;
+                        PublicVar.UserID = qry.userID;
+                        PublicVar.OpName = $"{qry.FirstName} {qry.FirstName}";
+                        Close();
+
                     }
                     else
                     {
