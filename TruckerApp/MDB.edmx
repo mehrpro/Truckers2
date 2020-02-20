@@ -1,0 +1,559 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TruckersModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cash">
+          <Key>
+            <PropertyRef Name="CashID" />
+          </Key>
+          <Property Name="CashID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QueueID_FK" Type="int" />
+          <Property Name="Pos" Type="tinyint" />
+          <Property Name="CashDesk" Type="tinyint" />
+          <Property Name="userID" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="Commission">
+          <Key>
+            <PropertyRef Name="CommissionID" />
+          </Key>
+          <Property Name="CommissionID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Groups" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Commission" Type="smallint" Nullable="false" />
+          <Property Name="DataRegister" Type="date" Nullable="false" />
+          <Property Name="enabled" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Drivers">
+          <Key>
+            <PropertyRef Name="DriverID" />
+          </Key>
+          <Property Name="DriverID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nchar" MaxLength="10" />
+          <Property Name="SmartCart" Type="int" Nullable="false" />
+          <Property Name="TagNumber" Type="nvarchar" MaxLength="10" />
+          <Property Name="Tag" Type="tinyint" />
+          <Property Name="Membership" Type="bit" />
+          <Property Name="Native" Type="bit" />
+          <Property Name="Commission_FK" Type="smallint" />
+          <Property Name="userID_FK" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="LoadType">
+          <Key>
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Name="TypeID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Logs">
+          <Key>
+            <PropertyRef Name="LogID" />
+          </Key>
+          <Property Name="LogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LogDateTime" Type="datetime" />
+          <Property Name="ActionLog" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="LogType">
+          <Key>
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Name="TypeID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeLog" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Queue">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Number" Type="smallint" Nullable="false" />
+          <Property Name="Days" Type="tinyint" Nullable="false" />
+          <Property Name="Moon" Type="tinyint" Nullable="false" />
+          <Property Name="Years" Type="tinyint" Nullable="false" />
+          <Property Name="Type_FK" Type="tinyint" Nullable="false" />
+          <Property Name="DateTimeRegister" Type="datetime" Nullable="false" />
+          <Property Name="DriverID_FK" Type="int" Nullable="false" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="userID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nchar" MaxLength="10" />
+          <Property Name="Roul" Type="nchar" MaxLength="10" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Cash_Queue">
+          <End Role="Queue" Type="Self.Queue" Multiplicity="0..1" />
+          <End Role="Cash" Type="Self.Cash" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Queue">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cash">
+              <PropertyRef Name="QueueID_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cash_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Cash" Type="Self.Cash" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="userID" />
+            </Principal>
+            <Dependent Role="Cash">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Drivers_Commission">
+          <End Role="Commission" Type="Self.Commission" Multiplicity="0..1" />
+          <End Role="Drivers" Type="Self.Drivers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Commission">
+              <PropertyRef Name="CommissionID" />
+            </Principal>
+            <Dependent Role="Drivers">
+              <PropertyRef Name="Commission_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Drivers_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Drivers" Type="Self.Drivers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="userID" />
+            </Principal>
+            <Dependent Role="Drivers">
+              <PropertyRef Name="userID_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Logs_LogType">
+          <End Role="LogType" Type="Self.LogType" Multiplicity="0..1" />
+          <End Role="Logs" Type="Self.Logs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LogType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="Logs">
+              <PropertyRef Name="ActionLog" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Queue_Drivers">
+          <End Role="Drivers" Type="Self.Drivers" Multiplicity="1" />
+          <End Role="Queue" Type="Self.Queue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drivers">
+              <PropertyRef Name="DriverID" />
+            </Principal>
+            <Dependent Role="Queue">
+              <PropertyRef Name="DriverID_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Queue_LoadType">
+          <End Role="LoadType" Type="Self.LoadType" Multiplicity="1" />
+          <End Role="Queue" Type="Self.Queue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoadType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="Queue">
+              <PropertyRef Name="Type_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TruckersModelStoreContainer">
+          <EntitySet Name="Cash" EntityType="Self.Cash" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Commission" EntityType="Self.Commission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Drivers" EntityType="Self.Drivers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoadType" EntityType="Self.LoadType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogType" EntityType="Self.LogType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Queue" EntityType="Self.Queue" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Cash_Queue" Association="Self.FK_Cash_Queue">
+            <End Role="Queue" EntitySet="Queue" />
+            <End Role="Cash" EntitySet="Cash" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cash_Users" Association="Self.FK_Cash_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Cash" EntitySet="Cash" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Drivers_Commission" Association="Self.FK_Drivers_Commission">
+            <End Role="Commission" EntitySet="Commission" />
+            <End Role="Drivers" EntitySet="Drivers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Drivers_Users" Association="Self.FK_Drivers_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Drivers" EntitySet="Drivers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Logs_LogType" Association="Self.FK_Logs_LogType">
+            <End Role="LogType" EntitySet="LogType" />
+            <End Role="Logs" EntitySet="Logs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Queue_Drivers" Association="Self.FK_Queue_Drivers">
+            <End Role="Drivers" EntitySet="Drivers" />
+            <End Role="Queue" EntitySet="Queue" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Queue_LoadType" Association="Self.FK_Queue_LoadType">
+            <End Role="LoadType" EntitySet="LoadType" />
+            <End Role="Queue" EntitySet="Queue" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TruckersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cash">
+          <Key>
+            <PropertyRef Name="CashID" />
+          </Key>
+          <Property Name="CashID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QueueID_FK" Type="Int32" />
+          <Property Name="Pos" Type="Byte" />
+          <Property Name="CashDesk" Type="Byte" />
+          <Property Name="userID" Type="Byte" />
+          <NavigationProperty Name="Queue" Relationship="Self.FK_Cash_Queue" FromRole="Cash" ToRole="Queue" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Cash_Users" FromRole="Cash" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Commission">
+          <Key>
+            <PropertyRef Name="CommissionID" />
+          </Key>
+          <Property Name="CommissionID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Groups" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Commission1" Type="Int16" Nullable="false" />
+          <Property Name="DataRegister" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="enabled" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Drivers" Relationship="Self.FK_Drivers_Commission" FromRole="Commission" ToRole="Drivers" />
+        </EntityType>
+        <EntityType Name="Driver">
+          <Key>
+            <PropertyRef Name="DriverID" />
+          </Key>
+          <Property Name="DriverID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="SmartCart" Type="Int32" Nullable="false" />
+          <Property Name="TagNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Tag" Type="Byte" />
+          <Property Name="Membership" Type="Boolean" />
+          <Property Name="Native" Type="Boolean" />
+          <Property Name="Commission_FK" Type="Int16" />
+          <Property Name="userID_FK" Type="Byte" />
+          <NavigationProperty Name="Commission" Relationship="Self.FK_Drivers_Commission" FromRole="Drivers" ToRole="Commission" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Drivers_Users" FromRole="Drivers" ToRole="Users" />
+          <NavigationProperty Name="Queues" Relationship="Self.FK_Queue_Drivers" FromRole="Drivers" ToRole="Queue" />
+        </EntityType>
+        <EntityType Name="LoadType">
+          <Key>
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Name="TypeID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Queues" Relationship="Self.FK_Queue_LoadType" FromRole="LoadType" ToRole="Queue" />
+        </EntityType>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="LogID" />
+          </Key>
+          <Property Name="LogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LogDateTime" Type="DateTime" Precision="3" />
+          <Property Name="ActionLog" Type="Byte" />
+          <NavigationProperty Name="LogType" Relationship="Self.FK_Logs_LogType" FromRole="Logs" ToRole="LogType" />
+        </EntityType>
+        <EntityType Name="LogType">
+          <Key>
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Name="TypeID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeLog" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Logs" Relationship="Self.FK_Logs_LogType" FromRole="LogType" ToRole="Logs" />
+        </EntityType>
+        <EntityType Name="Queue">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="Int16" Nullable="false" />
+          <Property Name="Days" Type="Byte" Nullable="false" />
+          <Property Name="Moon" Type="Byte" Nullable="false" />
+          <Property Name="Years" Type="Byte" Nullable="false" />
+          <Property Name="Type_FK" Type="Byte" Nullable="false" />
+          <Property Name="DateTimeRegister" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DriverID_FK" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Boolean" />
+          <NavigationProperty Name="Cashes" Relationship="Self.FK_Cash_Queue" FromRole="Queue" ToRole="Cash" />
+          <NavigationProperty Name="Driver" Relationship="Self.FK_Queue_Drivers" FromRole="Queue" ToRole="Drivers" />
+          <NavigationProperty Name="LoadType" Relationship="Self.FK_Queue_LoadType" FromRole="Queue" ToRole="LoadType" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="userID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Roul" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Cashes" Relationship="Self.FK_Cash_Users" FromRole="Users" ToRole="Cash" />
+          <NavigationProperty Name="Drivers" Relationship="Self.FK_Drivers_Users" FromRole="Users" ToRole="Drivers" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_Cash_Queue">
+          <End Role="Queue" Type="Self.Queue" Multiplicity="0..1" />
+          <End Role="Cash" Type="Self.Cash" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Queue">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cash">
+              <PropertyRef Name="QueueID_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cash_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Cash" Type="Self.Cash" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="userID" />
+            </Principal>
+            <Dependent Role="Cash">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Drivers_Commission">
+          <End Role="Commission" Type="Self.Commission" Multiplicity="0..1" />
+          <End Role="Drivers" Type="Self.Driver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Commission">
+              <PropertyRef Name="CommissionID" />
+            </Principal>
+            <Dependent Role="Drivers">
+              <PropertyRef Name="Commission_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Drivers_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Drivers" Type="Self.Driver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="userID" />
+            </Principal>
+            <Dependent Role="Drivers">
+              <PropertyRef Name="userID_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Queue_Drivers">
+          <End Role="Drivers" Type="Self.Driver" Multiplicity="1" />
+          <End Role="Queue" Type="Self.Queue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drivers">
+              <PropertyRef Name="DriverID" />
+            </Principal>
+            <Dependent Role="Queue">
+              <PropertyRef Name="DriverID_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Queue_LoadType">
+          <End Role="LoadType" Type="Self.LoadType" Multiplicity="1" />
+          <End Role="Queue" Type="Self.Queue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoadType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="Queue">
+              <PropertyRef Name="Type_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Logs_LogType">
+          <End Role="LogType" Type="Self.LogType" Multiplicity="0..1" />
+          <End Role="Logs" Type="Self.Log" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LogType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="Logs">
+              <PropertyRef Name="ActionLog" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TruckersEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cashes" EntityType="Self.Cash" />
+          <EntitySet Name="Commissions" EntityType="Self.Commission" />
+          <EntitySet Name="Drivers" EntityType="Self.Driver" />
+          <EntitySet Name="LoadTypes" EntityType="Self.LoadType" />
+          <EntitySet Name="Logs" EntityType="Self.Log" />
+          <EntitySet Name="LogTypes" EntityType="Self.LogType" />
+          <EntitySet Name="Queues" EntityType="Self.Queue" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_Cash_Queue" Association="Self.FK_Cash_Queue">
+            <End Role="Queue" EntitySet="Queues" />
+            <End Role="Cash" EntitySet="Cashes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cash_Users" Association="Self.FK_Cash_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Cash" EntitySet="Cashes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Drivers_Commission" Association="Self.FK_Drivers_Commission">
+            <End Role="Commission" EntitySet="Commissions" />
+            <End Role="Drivers" EntitySet="Drivers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Drivers_Users" Association="Self.FK_Drivers_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Drivers" EntitySet="Drivers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Queue_Drivers" Association="Self.FK_Queue_Drivers">
+            <End Role="Drivers" EntitySet="Drivers" />
+            <End Role="Queue" EntitySet="Queues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Queue_LoadType" Association="Self.FK_Queue_LoadType">
+            <End Role="LoadType" EntitySet="LoadTypes" />
+            <End Role="Queue" EntitySet="Queues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Logs_LogType" Association="Self.FK_Logs_LogType">
+            <End Role="LogType" EntitySet="LogTypes" />
+            <End Role="Logs" EntitySet="Logs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TruckersModelStoreContainer" CdmEntityContainer="TruckersEntities">
+          <EntitySetMapping Name="Cashes">
+            <EntityTypeMapping TypeName="TruckersModel.Cash">
+              <MappingFragment StoreEntitySet="Cash">
+                <ScalarProperty Name="CashID" ColumnName="CashID" />
+                <ScalarProperty Name="QueueID_FK" ColumnName="QueueID_FK" />
+                <ScalarProperty Name="Pos" ColumnName="Pos" />
+                <ScalarProperty Name="CashDesk" ColumnName="CashDesk" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Commissions">
+            <EntityTypeMapping TypeName="TruckersModel.Commission">
+              <MappingFragment StoreEntitySet="Commission">
+                <ScalarProperty Name="CommissionID" ColumnName="CommissionID" />
+                <ScalarProperty Name="Groups" ColumnName="Groups" />
+                <ScalarProperty Name="Commission1" ColumnName="Commission" />
+                <ScalarProperty Name="DataRegister" ColumnName="DataRegister" />
+                <ScalarProperty Name="enabled" ColumnName="enabled" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Drivers">
+            <EntityTypeMapping TypeName="TruckersModel.Driver">
+              <MappingFragment StoreEntitySet="Drivers">
+                <ScalarProperty Name="DriverID" ColumnName="DriverID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SmartCart" ColumnName="SmartCart" />
+                <ScalarProperty Name="TagNumber" ColumnName="TagNumber" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="Membership" ColumnName="Membership" />
+                <ScalarProperty Name="Native" ColumnName="Native" />
+                <ScalarProperty Name="Commission_FK" ColumnName="Commission_FK" />
+                <ScalarProperty Name="userID_FK" ColumnName="userID_FK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoadTypes">
+            <EntityTypeMapping TypeName="TruckersModel.LoadType">
+              <MappingFragment StoreEntitySet="LoadType">
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logs">
+            <EntityTypeMapping TypeName="TruckersModel.Log">
+              <MappingFragment StoreEntitySet="Logs">
+                <ScalarProperty Name="LogID" ColumnName="LogID" />
+                <ScalarProperty Name="LogDateTime" ColumnName="LogDateTime" />
+                <ScalarProperty Name="ActionLog" ColumnName="ActionLog" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogTypes">
+            <EntityTypeMapping TypeName="TruckersModel.LogType">
+              <MappingFragment StoreEntitySet="LogType">
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="TypeLog" ColumnName="TypeLog" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Queues">
+            <EntityTypeMapping TypeName="TruckersModel.Queue">
+              <MappingFragment StoreEntitySet="Queue">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Days" ColumnName="Days" />
+                <ScalarProperty Name="Moon" ColumnName="Moon" />
+                <ScalarProperty Name="Years" ColumnName="Years" />
+                <ScalarProperty Name="Type_FK" ColumnName="Type_FK" />
+                <ScalarProperty Name="DateTimeRegister" ColumnName="DateTimeRegister" />
+                <ScalarProperty Name="DriverID_FK" ColumnName="DriverID_FK" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="TruckersModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Roul" ColumnName="Roul" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
