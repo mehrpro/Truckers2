@@ -5,21 +5,18 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="b6dc06e4128744fb9c5d129eb164ef9d" Name="Diagram1">
-        <EntityTypeShape EntityType="TruckersModel.Cash" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TruckersModel.Commission" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TruckersModel.Driver" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="TruckersModel.LoadType" Width="1.5" PointX="6" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TruckersModel.Log" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="TruckersModel.LogType" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TruckersModel.Queue" Width="1.5" PointX="8.25" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="TruckersModel.User" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
-        <AssociationConnector Association="TruckersModel.FK_Cash_Queue" ManuallyRouted="false" />
-        <AssociationConnector Association="TruckersModel.FK_Cash_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="TruckersModel.FK_Drivers_Commission" ManuallyRouted="false" />
-        <AssociationConnector Association="TruckersModel.FK_Drivers_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="TruckersModel.FK_Queue_Drivers" ManuallyRouted="false" />
-        <AssociationConnector Association="TruckersModel.FK_Queue_LoadType" ManuallyRouted="false" />
-        <AssociationConnector Association="TruckersModel.FK_Logs_LogType" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TruckersModel.Cash" Width="1.5" PointX="7.5" PointY="3.875" />
+        <EntityTypeShape EntityType="TruckersModel.Commission" Width="1.5" PointX="3" PointY="8.125" />
+        <EntityTypeShape EntityType="TruckersModel.Driver" Width="1.5" PointX="3" PointY="3.25" />
+        <EntityTypeShape EntityType="TruckersModel.LoadType" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="TruckersModel.Queue" Width="1.5" PointX="5.25" PointY="3.125" />
+        <EntityTypeShape EntityType="TruckersModel.User" Width="1.5" PointX="0.75" PointY="3.625" />
+        <AssociationConnector Association="TruckersModel.FK_Cash_Queue" />
+        <AssociationConnector Association="TruckersModel.FK_Cash_Users" />
+        <AssociationConnector Association="TruckersModel.FK_Queue_Commission" />
+        <AssociationConnector Association="TruckersModel.FK_Drivers_Users" />
+        <AssociationConnector Association="TruckersModel.FK_Queue_Drivers" />
+        <AssociationConnector Association="TruckersModel.FK_Queue_LoadType" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

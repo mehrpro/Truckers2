@@ -29,10 +29,9 @@ namespace TruckerApp
         public Nullable<byte> Tag { get; set; }
         public Nullable<bool> Membership { get; set; }
         public Nullable<bool> Native { get; set; }
-        public Nullable<short> Commission_FK { get; set; }
+        public Nullable<byte> Commission_Group { get; set; }
         public Nullable<byte> userID_FK { get; set; }
     
-        public virtual Commission Commission { get; set; }
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Queue> Queues { get; set; }

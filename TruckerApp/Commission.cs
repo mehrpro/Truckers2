@@ -17,16 +17,16 @@ namespace TruckerApp
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Commission()
         {
-            this.Drivers = new HashSet<Driver>();
+            this.Queues = new HashSet<Queue>();
         }
     
-        public short CommissionID { get; set; }
-        public string Groups { get; set; }
+        public byte CommissionID { get; set; }
+        public byte Groups { get; set; }
         public short Commission1 { get; set; }
         public System.DateTime DataRegister { get; set; }
         public bool enabled { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Driver> Drivers { get; set; }
+        public virtual ICollection<Queue> Queues { get; set; }
     }
 }

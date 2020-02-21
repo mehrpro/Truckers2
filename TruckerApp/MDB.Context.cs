@@ -29,8 +29,6 @@ namespace TruckerApp
         public virtual DbSet<Commission> Commissions { get; set; }
         public virtual DbSet<Driver> Drivers { get; set; }
         public virtual DbSet<LoadType> LoadTypes { get; set; }
-        public virtual DbSet<Log> Logs { get; set; }
-        public virtual DbSet<LogType> LogTypes { get; set; }
         public virtual DbSet<Queue> Queues { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }

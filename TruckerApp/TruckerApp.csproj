@@ -93,12 +93,6 @@
     <Compile Include="LoadType.cs">
       <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Log.cs">
-      <DependentUpon>MDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="LogType.cs">
-      <DependentUpon>MDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="MDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -123,6 +117,12 @@
     <Compile Include="User.cs">
       <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserForm\FrmNewDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\FrmNewDriver.Designer.cs">
+      <DependentUpon>FrmNewDriver.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +139,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserForm\FrmNewDriver.resx">
+      <DependentUpon>FrmNewDriver.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="MDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>MDB.Designer.cs</LastGenOutput>
@@ -174,13 +177,12 @@
       <DependentUpon>MDB.edmx</DependentUpon>
       <LastGenOutput>MDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-driver-48.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="User\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -35,7 +35,7 @@ namespace TruckerApp
             _Pass = txtPassword.Text.Trim();
             using (var db = new TruckersEntities())
             {
-                var qry = db.Users.SingleOrDefault(x => x.username == _User);
+                var qry = db.Users.SingleOrDefault(x => x.username.Trim() == _User);
                 if (qry != null)
                 {
                     if (qry.password.Trim() == _Pass)
