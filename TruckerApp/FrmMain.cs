@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace TruckerApp
 {
-    public partial class FrmMain : Form
+    public partial class FrmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public FrmMain()
         {

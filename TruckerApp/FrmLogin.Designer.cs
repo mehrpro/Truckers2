@@ -65,11 +65,12 @@
             this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.simpleButton2.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.Image")));
             this.simpleButton2.Location = new System.Drawing.Point(65, 177);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(100, 49);
-            this.simpleButton2.TabIndex = 2;
+            this.simpleButton2.TabIndex = 3;
             this.simpleButton2.Text = "خروج";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
@@ -109,30 +110,38 @@
             // txtPassword
             // 
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPassword.EditValue = "708801";
             this.txtPassword.Location = new System.Drawing.Point(32, 123);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Parmida_ActivePlusMultiKeys = false;
             this.txtPassword.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtPassword.Properties.Appearance.Options.UseFont = true;
-            this.txtPassword.Properties.PasswordChar = '*';
+            this.txtPassword.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtPassword.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtPassword.Properties.PasswordChar = '#';
             this.txtPassword.Size = new System.Drawing.Size(205, 30);
-            this.txtPassword.TabIndex = 0;
+            this.txtPassword.TabIndex = 1;
             // 
             // txtUsername
             // 
             this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUsername.EditValue = "admin";
             this.txtUsername.Location = new System.Drawing.Point(32, 83);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Parmida_ActivePlusMultiKeys = false;
             this.txtUsername.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtUsername.Properties.Appearance.Options.UseFont = true;
+            this.txtUsername.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtUsername.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtUsername.Size = new System.Drawing.Size(205, 30);
             this.txtUsername.TabIndex = 0;
             // 
             // FrmLogin
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.simpleButton2;
             this.ClientSize = new System.Drawing.Size(336, 254);
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

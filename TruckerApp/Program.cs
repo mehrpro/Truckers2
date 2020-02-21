@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.LookAndFeel;
+using DevExpress.Skins;
+using DevExpress.UserSkins;
+using System.Globalization;
+using System.Threading;
 
 namespace TruckerApp
 {
@@ -14,12 +19,26 @@ namespace TruckerApp
         [STAThread]
         static void Main()
         {
+            BonusSkins.Register();
+            SkinManager.EnableFormSkins();
+            UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");   // Whiteprint Blueprint Darkroom Metropolis  Visual Studio 2013 Light DevExpress Style
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            SkinManager.EnableFormSkins();
+            BonusSkins.Register();
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("fa-IR");
+            Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmLogin());
             if (PublicVar.Accsept)
             {
-
+                FrmMain frm = new FrmMain();
+                frm.ShowDialog();
+            }
+            else
+            {
+                Environment.Exit(1);
             }
         }
     }

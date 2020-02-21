@@ -38,7 +38,7 @@ namespace TruckerApp
                 var qry = db.Users.SingleOrDefault(x => x.username == _User);
                 if (qry != null)
                 {
-                    if (qry.password == _Pass)
+                    if (qry.password.Trim() == _Pass)
                     {
                         PublicVar.Accsept = true;
                         PublicVar.UserID = qry.userID;
