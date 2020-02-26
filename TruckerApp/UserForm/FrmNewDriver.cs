@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
@@ -22,13 +16,7 @@ namespace TruckerApp.UserForm
         {
             Close();
         }
-
-        private void btnNew_Click(object sender, EventArgs e)
-        {
-
-            
-        }
-
+        
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (dxValidationProvider1.Validate())
@@ -69,7 +57,6 @@ namespace TruckerApp.UserForm
                         }
                         XtraMessageBox.Show(PublicVar.ErrorMessageForNotSave, 
                             Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                     }
 
                 }
@@ -80,6 +67,13 @@ namespace TruckerApp.UserForm
                 XtraMessageBox.Show(PublicVar.NotComplateForm, this.Text, MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        private void Clear()
+        {
+            txtSmartCart.Text = txtFirstName.Text =
+                txtLastNAme.Text = txtPhoneNumber.Text = txtTag.Text = txtTagNumber.Text = "";
+
         }
 
         private void chkMembership_EditValueChanged(object sender, EventArgs e)
@@ -95,19 +89,18 @@ namespace TruckerApp.UserForm
             if (Mem && Nat)
             {
                 radComosiun.SelectedIndex = 0;
-            }else if (!Mem && Nat)
+            }
+            else if (!Mem && Nat)
             {
                 radComosiun.SelectedIndex = 1;
             }
             else if(!Mem && !Nat)
-
             {
                 radComosiun.SelectedIndex = 2;
             }
             else if (Mem && !Nat)
             {
                 radComosiun.SelectedIndex =0 ;
-
             }
         }
 

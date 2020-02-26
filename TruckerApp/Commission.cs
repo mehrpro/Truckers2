@@ -20,9 +20,9 @@ namespace TruckerApp
             this.Queues = new HashSet<Queue>();
         }
     
-        public byte CommissionID { get; set; }
+        public short CommissionID { get; set; }
         public byte Groups { get; set; }
-        public short Commission1 { get; set; }
+        public int Commission1 { get; set; }
         public System.DateTime DataRegister { get; set; }
         public bool enabled { get; set; }
     

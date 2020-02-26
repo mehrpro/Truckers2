@@ -29,7 +29,7 @@ namespace TruckerApp
         public System.DateTime DateTimeRegister { get; set; }
         public int DriverID_FK { get; set; }
         public Nullable<bool> Status { get; set; }
-        public Nullable<byte> ComosiunID_FK { get; set; }
+        public Nullable<short> ComosiunID_FK { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cash> Cashes { get; set; }

@@ -19,9 +19,9 @@
           <Key>
             <PropertyRef Name="CommissionID" />
           </Key>
-          <Property Name="CommissionID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CommissionID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Groups" Type="tinyint" Nullable="false" />
-          <Property Name="Commission" Type="smallint" Nullable="false" />
+          <Property Name="Commission" Type="int" Nullable="false" />
           <Property Name="DataRegister" Type="date" Nullable="false" />
           <Property Name="enabled" Type="bit" Nullable="false" />
         </EntityType>
@@ -61,7 +61,7 @@
           <Property Name="DateTimeRegister" Type="datetime" Nullable="false" />
           <Property Name="DriverID_FK" Type="int" Nullable="false" />
           <Property Name="Status" Type="bit" />
-          <Property Name="ComosiunID_FK" Type="tinyint" />
+          <Property Name="ComosiunID_FK" Type="smallint" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -231,9 +231,9 @@
           <Key>
             <PropertyRef Name="CommissionID" />
           </Key>
-          <Property Name="CommissionID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CommissionID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Groups" Type="Byte" Nullable="false" />
-          <Property Name="Commission1" Type="Int16" Nullable="false" />
+          <Property Name="Commission1" Type="Int32" Nullable="false" />
           <Property Name="DataRegister" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="enabled" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Queues" Relationship="TruckersModel.FK_Queue_Commission" FromRole="Commission" ToRole="Queue" />
@@ -277,7 +277,7 @@
           <Property Name="DateTimeRegister" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="DriverID_FK" Type="Int32" Nullable="false" />
           <Property Name="Status" Type="Boolean" />
-          <Property Name="ComosiunID_FK" Type="Byte" />
+          <Property Name="ComosiunID_FK" Type="Int16" />
           <NavigationProperty Name="Cashes" Relationship="TruckersModel.FK_Cash_Queue" FromRole="Queue" ToRole="Cash" />
           <NavigationProperty Name="Commission" Relationship="TruckersModel.FK_Queue_Commission" FromRole="Queue" ToRole="Commission" />
           <NavigationProperty Name="Driver" Relationship="TruckersModel.FK_Queue_Drivers" FromRole="Queue" ToRole="Driver" />

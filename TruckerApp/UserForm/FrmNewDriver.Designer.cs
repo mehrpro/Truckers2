@@ -232,6 +232,8 @@
             this.txtPhoneNumber.Parmida_ActivePlusMultiKeys = false;
             this.txtPhoneNumber.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtPhoneNumber.Properties.Appearance.Options.UseFont = true;
+            this.txtPhoneNumber.Properties.Mask.EditMask = "d";
+            this.txtPhoneNumber.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtPhoneNumber.Properties.MaxLength = 10;
             this.txtPhoneNumber.Size = new System.Drawing.Size(221, 30);
             this.txtPhoneNumber.TabIndex = 2;
@@ -262,6 +264,8 @@
             this.txtTag.Parmida_ActivePlusMultiKeys = false;
             this.txtTag.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtTag.Properties.Appearance.Options.UseFont = true;
+            this.txtTag.Properties.Mask.EditMask = "d2";
+            this.txtTag.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtTag.Size = new System.Drawing.Size(43, 30);
             this.txtTag.TabIndex = 5;
             conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -314,6 +318,7 @@
             this.chkMembership.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.chkMembership.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.chkMembership.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
+            this.chkMembership.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
             this.chkMembership.Properties.OffText = "غیرعضو";
             this.chkMembership.Properties.OnText = "عضو اتحادیه";
             this.chkMembership.Size = new System.Drawing.Size(221, 35);

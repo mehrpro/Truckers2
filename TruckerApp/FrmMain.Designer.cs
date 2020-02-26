@@ -34,8 +34,8 @@
             this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.btnAddDriver = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMemberShipList = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCommission = new DevExpress.XtraBars.BarButtonItem();
             this.btnNewQue = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
@@ -60,8 +60,8 @@
             this.ribbonControl1.ExpandCollapseItem,
             this.btnAddDriver,
             this.barButtonItem2,
-            this.barButtonItem3,
-            this.barButtonItem4,
+            this.btnMemberShipList,
+            this.btnCommission,
             this.btnNewQue,
             this.barButtonItem6,
             this.barButtonItem7,
@@ -94,26 +94,29 @@
             // barButtonItem2
             // 
             this.barButtonItem2.Caption = "ویرایش";
+            this.barButtonItem2.Enabled = false;
             this.barButtonItem2.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.Glyph")));
             this.barButtonItem2.Id = 2;
             this.barButtonItem2.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.LargeGlyph")));
             this.barButtonItem2.Name = "barButtonItem2";
             // 
-            // barButtonItem3
+            // btnMemberShipList
             // 
-            this.barButtonItem3.Caption = "اعضاء اتحادیه";
-            this.barButtonItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.Glyph")));
-            this.barButtonItem3.Id = 3;
-            this.barButtonItem3.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.LargeGlyph")));
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.btnMemberShipList.Caption = "اعضاء اتحادیه";
+            this.btnMemberShipList.Glyph = ((System.Drawing.Image)(resources.GetObject("btnMemberShipList.Glyph")));
+            this.btnMemberShipList.Id = 3;
+            this.btnMemberShipList.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnMemberShipList.LargeGlyph")));
+            this.btnMemberShipList.Name = "btnMemberShipList";
+            this.btnMemberShipList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMemberShipList_ItemClick);
             // 
-            // barButtonItem4
+            // btnCommission
             // 
-            this.barButtonItem4.Caption = "مصوبات مالی";
-            this.barButtonItem4.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.Glyph")));
-            this.barButtonItem4.Id = 4;
-            this.barButtonItem4.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.LargeGlyph")));
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.btnCommission.Caption = "مصوبات مالی";
+            this.btnCommission.Glyph = ((System.Drawing.Image)(resources.GetObject("btnCommission.Glyph")));
+            this.btnCommission.Id = 4;
+            this.btnCommission.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnCommission.LargeGlyph")));
+            this.btnCommission.Name = "btnCommission";
+            this.btnCommission.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCommission_ItemClick);
             // 
             // btnNewQue
             // 
@@ -122,6 +125,7 @@
             this.btnNewQue.Id = 5;
             this.btnNewQue.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnNewQue.LargeGlyph")));
             this.btnNewQue.Name = "btnNewQue";
+            this.btnNewQue.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewQue_ItemClick);
             // 
             // barButtonItem6
             // 
@@ -151,7 +155,7 @@
             this.ribbonPageGroup1,
             this.ribbonPageGroup2});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "اطلاعات پایه";
+            this.ribbonPage1.Text = "مشتریان";
             // 
             // ribbonPageGroup1
             // 
@@ -163,8 +167,8 @@
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnMemberShipList);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnCommission);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.ShowCaptionButton = false;
             this.ribbonPageGroup2.Text = "اتحادیه";
@@ -237,8 +241,8 @@
         private DevExpress.XtraBars.BarButtonItem btnAddDriver;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem btnMemberShipList;
+        private DevExpress.XtraBars.BarButtonItem btnCommission;
         private DevExpress.XtraBars.BarButtonItem btnNewQue;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
