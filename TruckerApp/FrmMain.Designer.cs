@@ -40,6 +40,7 @@
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.btnSeries = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -65,9 +66,10 @@
             this.btnNewQue,
             this.barButtonItem6,
             this.barButtonItem7,
-            this.skinRibbonGalleryBarItem1});
+            this.skinRibbonGalleryBarItem1,
+            this.btnSeries});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 5;
+            this.ribbonControl1.MaxItemId = 6;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -149,6 +151,15 @@
             this.skinRibbonGalleryBarItem1.Id = 9;
             this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
             // 
+            // btnSeries
+            // 
+            this.btnSeries.Caption = "سریال فروش";
+            this.btnSeries.Glyph = ((System.Drawing.Image)(resources.GetObject("btnSeries.Glyph")));
+            this.btnSeries.Id = 5;
+            this.btnSeries.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnSeries.LargeGlyph")));
+            this.btnSeries.Name = "btnSeries";
+            this.btnSeries.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeries_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -182,6 +193,7 @@
             // 
             // ribbonPageGroup3
             // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnSeries);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnNewQue);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem7);
@@ -252,5 +264,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
         private DevExpress.XtraBars.Ribbon.ApplicationMenu applicationMenu1;
+        private DevExpress.XtraBars.BarButtonItem btnSeries;
     }
 }

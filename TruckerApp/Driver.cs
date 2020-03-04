@@ -26,11 +26,11 @@ namespace TruckerApp
         public string PhoneNumber { get; set; }
         public int SmartCart { get; set; }
         public string TagNumber { get; set; }
-        public Nullable<byte> Tag { get; set; }
+        public byte Tag { get; set; }
         public Nullable<bool> Membership { get; set; }
         public Nullable<bool> Native { get; set; }
-        public Nullable<byte> Commission_Group { get; set; }
-        public Nullable<byte> userID_FK { get; set; }
+        public byte Commission_Group { get; set; }
+        public byte userID_FK { get; set; }
     
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
