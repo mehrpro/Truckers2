@@ -65,7 +65,7 @@ namespace TruckerApp.UserForm
         {
 
             db = new TruckersEntities();
-            var qryType = db.Queues.Where(x => x.SeriesID_FK == lastID).ToList();
+            var qryType = db.Queues.Where(x => x.SeriesID_FK == serialNumber).ToList();
             try
             {
                 var last = db.Series.Single(x => x.SereisID == lastID);
@@ -77,13 +77,14 @@ namespace TruckerApp.UserForm
                 last.Native = Convert.ToInt16(qryType.Where(x => x.GroupCommission == 2).ToList().Count);
                 last.Other = Convert.ToInt16(qryType.Where(x => x.GroupCommission == 3).ToList().Count);
                 last.SeriesCount = qryType.Count;
-                last.enabeled = false;
+                last.enabeled = last.closing= false;
                 db.SaveChanges();
                 var series = new Series();
                 series.Series1 = serialNumber + 1;
                 series.SeriesDateStart = DateTime.Now;
                 series.userCreator = PublicVar.UserID;
                 series.enabeled = true;
+               
 
                 db.Series.Add(series);
                 db.SaveChanges();

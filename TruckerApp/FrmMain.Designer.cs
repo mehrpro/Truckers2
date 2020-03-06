@@ -41,6 +41,7 @@
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.btnSeries = new DevExpress.XtraBars.BarButtonItem();
+            this.btnReportDis = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -48,6 +49,7 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
@@ -67,9 +69,10 @@
             this.barButtonItem6,
             this.barButtonItem7,
             this.skinRibbonGalleryBarItem1,
-            this.btnSeries});
+            this.btnSeries,
+            this.btnReportDis});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 6;
+            this.ribbonControl1.MaxItemId = 7;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -136,6 +139,7 @@
             this.barButtonItem6.Id = 6;
             this.barButtonItem6.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.LargeGlyph")));
             this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
             // barButtonItem7
             // 
@@ -159,6 +163,15 @@
             this.btnSeries.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnSeries.LargeGlyph")));
             this.btnSeries.Name = "btnSeries";
             this.btnSeries.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeries_ItemClick);
+            // 
+            // btnReportDis
+            // 
+            this.btnReportDis.Caption = "گزارش ساز";
+            this.btnReportDis.Glyph = ((System.Drawing.Image)(resources.GetObject("btnReportDis.Glyph")));
+            this.btnReportDis.Id = 6;
+            this.btnReportDis.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnReportDis.LargeGlyph")));
+            this.btnReportDis.Name = "btnReportDis";
+            this.btnReportDis.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReportDis_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -203,7 +216,8 @@
             // ribbonPage3
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup4});
+            this.ribbonPageGroup4,
+            this.ribbonPageGroup5});
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "تنظیمات نرم افزاری";
             // 
@@ -212,6 +226,13 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "تنظیمات کاربر";
+            // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnReportDis);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.ShowCaptionButton = false;
+            this.ribbonPageGroup5.Text = "گزارش ساز";
             // 
             // ribbonStatusBar1
             // 
@@ -265,5 +286,7 @@
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
         private DevExpress.XtraBars.Ribbon.ApplicationMenu applicationMenu1;
         private DevExpress.XtraBars.BarButtonItem btnSeries;
+        private DevExpress.XtraBars.BarButtonItem btnReportDis;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
     }
 }

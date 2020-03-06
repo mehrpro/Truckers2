@@ -60,5 +60,10 @@ namespace TruckerApp
                 }
             }
         }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

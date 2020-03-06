@@ -62,7 +62,7 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("B Yekan", 16F);
+            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImage")));
             this.groupControl1.Controls.Add(this.gridControl1);
@@ -78,7 +78,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(976, 482);
+            this.groupControl1.Size = new System.Drawing.Size(874, 482);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "سریال فروش";
             // 
@@ -91,7 +91,7 @@
             this.gridControl1.Location = new System.Drawing.Point(21, 54);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(638, 416);
+            this.gridControl1.Size = new System.Drawing.Size(536, 416);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -102,111 +102,111 @@
             // 
             // gridView1
             // 
-            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.ColumnFilterButton.Options.UseFont = true;
             this.gridView1.Appearance.ColumnFilterButton.Options.UseTextOptions = true;
             this.gridView1.Appearance.ColumnFilterButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.ColumnFilterButtonActive.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.ColumnFilterButtonActive.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.ColumnFilterButtonActive.Options.UseFont = true;
             this.gridView1.Appearance.ColumnFilterButtonActive.Options.UseTextOptions = true;
             this.gridView1.Appearance.ColumnFilterButtonActive.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.CustomizationFormHint.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.CustomizationFormHint.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.CustomizationFormHint.Options.UseFont = true;
             this.gridView1.Appearance.CustomizationFormHint.Options.UseTextOptions = true;
             this.gridView1.Appearance.CustomizationFormHint.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.DetailTip.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.DetailTip.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.DetailTip.Options.UseFont = true;
             this.gridView1.Appearance.DetailTip.Options.UseTextOptions = true;
             this.gridView1.Appearance.DetailTip.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.Empty.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.Empty.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.Empty.Options.UseFont = true;
             this.gridView1.Appearance.Empty.Options.UseTextOptions = true;
             this.gridView1.Appearance.Empty.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.EvenRow.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.EvenRow.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.EvenRow.Options.UseFont = true;
             this.gridView1.Appearance.EvenRow.Options.UseTextOptions = true;
             this.gridView1.Appearance.EvenRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.FilterCloseButton.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.FilterCloseButton.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.FilterCloseButton.Options.UseFont = true;
             this.gridView1.Appearance.FilterCloseButton.Options.UseTextOptions = true;
             this.gridView1.Appearance.FilterCloseButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.FilterPanel.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.FilterPanel.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.FilterPanel.Options.UseFont = true;
             this.gridView1.Appearance.FilterPanel.Options.UseTextOptions = true;
             this.gridView1.Appearance.FilterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.FixedLine.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.FixedLine.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.FixedLine.Options.UseFont = true;
             this.gridView1.Appearance.FixedLine.Options.UseTextOptions = true;
             this.gridView1.Appearance.FixedLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.FocusedCell.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.FocusedCell.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.FocusedCell.Options.UseFont = true;
             this.gridView1.Appearance.FocusedCell.Options.UseTextOptions = true;
             this.gridView1.Appearance.FocusedCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.FocusedRow.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.FocusedRow.Options.UseFont = true;
             this.gridView1.Appearance.FocusedRow.Options.UseTextOptions = true;
             this.gridView1.Appearance.FocusedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.FooterPanel.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.FooterPanel.Options.UseFont = true;
             this.gridView1.Appearance.FooterPanel.Options.UseTextOptions = true;
             this.gridView1.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.GroupButton.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.GroupButton.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.GroupButton.Options.UseFont = true;
             this.gridView1.Appearance.GroupButton.Options.UseTextOptions = true;
             this.gridView1.Appearance.GroupButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.GroupFooter.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.GroupFooter.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.GroupFooter.Options.UseFont = true;
             this.gridView1.Appearance.GroupFooter.Options.UseTextOptions = true;
             this.gridView1.Appearance.GroupFooter.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.GroupPanel.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.GroupPanel.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.GroupPanel.Options.UseFont = true;
             this.gridView1.Appearance.GroupPanel.Options.UseTextOptions = true;
             this.gridView1.Appearance.GroupPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.GroupRow.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.GroupRow.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.GroupRow.Options.UseFont = true;
             this.gridView1.Appearance.GroupRow.Options.UseTextOptions = true;
             this.gridView1.Appearance.GroupRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.HideSelectionRow.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.HideSelectionRow.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.HideSelectionRow.Options.UseFont = true;
             this.gridView1.Appearance.HideSelectionRow.Options.UseTextOptions = true;
             this.gridView1.Appearance.HideSelectionRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.HorzLine.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.HorzLine.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.HorzLine.Options.UseFont = true;
             this.gridView1.Appearance.HorzLine.Options.UseTextOptions = true;
             this.gridView1.Appearance.HorzLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.OddRow.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.OddRow.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.OddRow.Options.UseFont = true;
             this.gridView1.Appearance.OddRow.Options.UseTextOptions = true;
             this.gridView1.Appearance.OddRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.Preview.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.Preview.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.Preview.Options.UseFont = true;
             this.gridView1.Appearance.Preview.Options.UseTextOptions = true;
             this.gridView1.Appearance.Preview.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.Appearance.Row.Options.UseTextOptions = true;
             this.gridView1.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.RowSeparator.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.RowSeparator.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.RowSeparator.Options.UseFont = true;
             this.gridView1.Appearance.RowSeparator.Options.UseTextOptions = true;
             this.gridView1.Appearance.RowSeparator.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.SelectedRow.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.SelectedRow.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.SelectedRow.Options.UseFont = true;
             this.gridView1.Appearance.SelectedRow.Options.UseTextOptions = true;
             this.gridView1.Appearance.SelectedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.TopNewRow.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.TopNewRow.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.TopNewRow.Options.UseFont = true;
             this.gridView1.Appearance.TopNewRow.Options.UseTextOptions = true;
             this.gridView1.Appearance.TopNewRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.VertLine.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.VertLine.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.VertLine.Options.UseFont = true;
             this.gridView1.Appearance.VertLine.Options.UseTextOptions = true;
             this.gridView1.Appearance.VertLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.ViewCaption.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.Appearance.ViewCaption.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.ViewCaption.Options.UseFont = true;
             this.gridView1.Appearance.ViewCaption.Options.UseTextOptions = true;
             this.gridView1.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -284,12 +284,12 @@
             // btnNewSerial
             // 
             this.btnNewSerial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewSerial.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.btnNewSerial.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewSerial.Appearance.Options.UseFont = true;
             this.btnNewSerial.Image = ((System.Drawing.Image)(resources.GetObject("btnNewSerial.Image")));
-            this.btnNewSerial.Location = new System.Drawing.Point(694, 211);
+            this.btnNewSerial.Location = new System.Drawing.Point(592, 179);
             this.btnNewSerial.Name = "btnNewSerial";
-            this.btnNewSerial.Size = new System.Drawing.Size(181, 43);
+            this.btnNewSerial.Size = new System.Drawing.Size(126, 43);
             this.btnNewSerial.TabIndex = 2;
             this.btnNewSerial.Text = "سریال جدید";
             this.btnNewSerial.Click += new System.EventHandler(this.btnNewSerial_Click);
@@ -297,92 +297,104 @@
             // labelControl4
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl4.Location = new System.Drawing.Point(881, 178);
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Location = new System.Drawing.Point(779, 154);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(67, 24);
+            this.labelControl4.Size = new System.Drawing.Size(58, 16);
             this.labelControl4.TabIndex = 1;
             this.labelControl4.Text = "صادر کننده";
             // 
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl3.Location = new System.Drawing.Point(881, 142);
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Location = new System.Drawing.Point(779, 126);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(69, 24);
+            this.labelControl3.Size = new System.Drawing.Size(66, 16);
             this.labelControl3.TabIndex = 1;
             this.labelControl3.Text = "سریال قبلی";
             // 
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl2.Location = new System.Drawing.Point(881, 106);
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Location = new System.Drawing.Point(779, 98);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(35, 24);
+            this.labelControl2.Size = new System.Drawing.Size(37, 16);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "ساعت";
             // 
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl1.Location = new System.Drawing.Point(881, 70);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Location = new System.Drawing.Point(779, 70);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(30, 24);
+            this.labelControl1.Size = new System.Drawing.Size(26, 16);
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "تاریخ";
             // 
             // txtUsers
             // 
             this.txtUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUsers.Location = new System.Drawing.Point(694, 175);
+            this.txtUsers.Enabled = false;
+            this.txtUsers.Location = new System.Drawing.Point(592, 151);
             this.txtUsers.Name = "txtUsers";
             this.txtUsers.Parmida_ActivePlusMultiKeys = false;
-            this.txtUsers.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtUsers.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsers.Properties.Appearance.Options.UseFont = true;
-            this.txtUsers.Size = new System.Drawing.Size(181, 30);
+            this.txtUsers.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtUsers.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.txtUsers.Size = new System.Drawing.Size(181, 22);
             this.txtUsers.TabIndex = 0;
             // 
             // txtLastSerial
             // 
             this.txtLastSerial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLastSerial.Location = new System.Drawing.Point(694, 139);
+            this.txtLastSerial.Enabled = false;
+            this.txtLastSerial.Location = new System.Drawing.Point(592, 123);
             this.txtLastSerial.Name = "txtLastSerial";
             this.txtLastSerial.Parmida_ActivePlusMultiKeys = false;
-            this.txtLastSerial.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtLastSerial.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastSerial.Properties.Appearance.Options.UseFont = true;
-            this.txtLastSerial.Size = new System.Drawing.Size(181, 30);
+            this.txtLastSerial.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtLastSerial.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.txtLastSerial.Size = new System.Drawing.Size(181, 22);
             this.txtLastSerial.TabIndex = 0;
             // 
             // txtTime
             // 
             this.txtTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTime.Location = new System.Drawing.Point(694, 103);
+            this.txtTime.Enabled = false;
+            this.txtTime.Location = new System.Drawing.Point(592, 95);
             this.txtTime.Name = "txtTime";
             this.txtTime.Parmida_ActivePlusMultiKeys = false;
-            this.txtTime.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtTime.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTime.Properties.Appearance.Options.UseFont = true;
-            this.txtTime.Size = new System.Drawing.Size(181, 30);
+            this.txtTime.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtTime.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.txtTime.Size = new System.Drawing.Size(181, 22);
             this.txtTime.TabIndex = 0;
             // 
             // txtDate
             // 
             this.txtDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDate.Location = new System.Drawing.Point(694, 67);
+            this.txtDate.Enabled = false;
+            this.txtDate.Location = new System.Drawing.Point(592, 67);
             this.txtDate.Name = "txtDate";
             this.txtDate.Parmida_ActivePlusMultiKeys = false;
-            this.txtDate.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDate.Properties.Appearance.Options.UseFont = true;
-            this.txtDate.Size = new System.Drawing.Size(181, 30);
+            this.txtDate.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtDate.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.txtDate.Size = new System.Drawing.Size(181, 22);
             this.txtDate.TabIndex = 0;
             // 
             // FrmSerial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(976, 482);
+            this.ClientSize = new System.Drawing.Size(874, 482);
             this.Controls.Add(this.groupControl1);
             this.Name = "FrmSerial";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;

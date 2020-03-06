@@ -73,7 +73,7 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("B Yekan", 16F);
+            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.CaptionImage = global::TruckerApp.Properties.Resources.icons8_driver_48;
             this.groupControl1.Controls.Add(this.btnSave);
@@ -105,12 +105,12 @@
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(517, 403);
+            this.btnSave.Location = new System.Drawing.Point(540, 377);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(123, 50);
+            this.btnSave.Size = new System.Drawing.Size(100, 30);
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "ذخیره";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -118,12 +118,12 @@
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.btnClose.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.btnClose.Appearance.Options.UseFont = true;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(388, 403);
+            this.btnClose.Location = new System.Drawing.Point(434, 377);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(123, 50);
+            this.btnClose.Size = new System.Drawing.Size(100, 30);
             this.btnClose.TabIndex = 11;
             this.btnClose.Text = "بستن";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -131,94 +131,94 @@
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl1.Location = new System.Drawing.Point(646, 344);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.labelControl1.Location = new System.Drawing.Point(646, 286);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(80, 24);
+            this.labelControl1.Size = new System.Drawing.Size(74, 16);
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "نرخ کمیسیون";
             // 
             // labelControl9
             // 
             this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl9.Location = new System.Drawing.Point(646, 186);
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.labelControl9.Location = new System.Drawing.Point(646, 162);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(83, 24);
+            this.labelControl9.Size = new System.Drawing.Size(78, 16);
             this.labelControl9.TabIndex = 1;
             this.labelControl9.Text = "کارت هوشمند";
             // 
             // labelControl5
             // 
             this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl5.Location = new System.Drawing.Point(646, 301);
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.labelControl5.Location = new System.Drawing.Point(646, 252);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(29, 24);
+            this.labelControl5.Size = new System.Drawing.Size(30, 16);
             this.labelControl5.TabIndex = 1;
             this.labelControl5.Text = "بومی";
             // 
             // labelControl8
             // 
             this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl8.Location = new System.Drawing.Point(646, 114);
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.labelControl8.Location = new System.Drawing.Point(646, 106);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(75, 24);
+            this.labelControl8.Size = new System.Drawing.Size(71, 16);
             this.labelControl8.TabIndex = 1;
             this.labelControl8.Text = "نام خانوادگی";
             // 
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl3.Location = new System.Drawing.Point(646, 222);
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.labelControl3.Location = new System.Drawing.Point(646, 190);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(34, 24);
+            this.labelControl3.Size = new System.Drawing.Size(28, 16);
             this.labelControl3.TabIndex = 1;
             this.labelControl3.Text = "ایران ";
             // 
             // labelControl7
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl7.Location = new System.Drawing.Point(646, 150);
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.labelControl7.Location = new System.Drawing.Point(646, 134);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(65, 24);
+            this.labelControl7.Size = new System.Drawing.Size(61, 16);
             this.labelControl7.TabIndex = 1;
             this.labelControl7.Text = "تلفن همراه";
             // 
             // labelControl4
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl4.Location = new System.Drawing.Point(646, 260);
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.labelControl4.Location = new System.Drawing.Point(646, 220);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(72, 24);
+            this.labelControl4.Size = new System.Drawing.Size(65, 16);
             this.labelControl4.TabIndex = 1;
             this.labelControl4.Text = "عضو اتحادیه";
             // 
             // labelControl6
             // 
             this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.labelControl6.Location = new System.Drawing.Point(646, 78);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(18, 24);
+            this.labelControl6.Size = new System.Drawing.Size(16, 16);
             this.labelControl6.TabIndex = 1;
             this.labelControl6.Text = "نام";
             // 
             // txtSmartCart
             // 
             this.txtSmartCart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSmartCart.Location = new System.Drawing.Point(419, 183);
+            this.txtSmartCart.Location = new System.Drawing.Point(419, 159);
             this.txtSmartCart.Name = "txtSmartCart";
             this.txtSmartCart.Parmida_ActivePlusMultiKeys = false;
-            this.txtSmartCart.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtSmartCart.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txtSmartCart.Properties.Appearance.Options.UseFont = true;
             this.txtSmartCart.Properties.Mask.EditMask = "d";
             this.txtSmartCart.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtSmartCart.Size = new System.Drawing.Size(221, 30);
+            this.txtSmartCart.Size = new System.Drawing.Size(221, 22);
             this.txtSmartCart.TabIndex = 3;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "This value is not valid";
@@ -227,15 +227,15 @@
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(419, 147);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(419, 131);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Parmida_ActivePlusMultiKeys = false;
-            this.txtPhoneNumber.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtPhoneNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txtPhoneNumber.Properties.Appearance.Options.UseFont = true;
             this.txtPhoneNumber.Properties.Mask.EditMask = "d";
             this.txtPhoneNumber.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtPhoneNumber.Properties.MaxLength = 10;
-            this.txtPhoneNumber.Size = new System.Drawing.Size(221, 30);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(221, 22);
             this.txtPhoneNumber.TabIndex = 2;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule2.ErrorText = "This value is not valid";
@@ -244,13 +244,13 @@
             // txtLastNAme
             // 
             this.txtLastNAme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLastNAme.Location = new System.Drawing.Point(419, 111);
+            this.txtLastNAme.Location = new System.Drawing.Point(419, 103);
             this.txtLastNAme.Name = "txtLastNAme";
             this.txtLastNAme.Parmida_ActivePlusMultiKeys = false;
-            this.txtLastNAme.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtLastNAme.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txtLastNAme.Properties.Appearance.Options.UseFont = true;
             this.txtLastNAme.Properties.MaxLength = 49;
-            this.txtLastNAme.Size = new System.Drawing.Size(221, 30);
+            this.txtLastNAme.Size = new System.Drawing.Size(221, 22);
             this.txtLastNAme.TabIndex = 1;
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule3.ErrorText = "This value is not valid";
@@ -259,14 +259,14 @@
             // txtTag
             // 
             this.txtTag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTag.Location = new System.Drawing.Point(597, 219);
+            this.txtTag.Location = new System.Drawing.Point(597, 187);
             this.txtTag.Name = "txtTag";
             this.txtTag.Parmida_ActivePlusMultiKeys = false;
-            this.txtTag.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtTag.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txtTag.Properties.Appearance.Options.UseFont = true;
             this.txtTag.Properties.Mask.EditMask = "d2";
             this.txtTag.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtTag.Size = new System.Drawing.Size(43, 30);
+            this.txtTag.Size = new System.Drawing.Size(43, 22);
             this.txtTag.TabIndex = 5;
             conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule4.ErrorText = "This value is not valid";
@@ -278,10 +278,10 @@
             this.txtFirstName.Location = new System.Drawing.Point(419, 75);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Parmida_ActivePlusMultiKeys = false;
-            this.txtFirstName.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtFirstName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txtFirstName.Properties.Appearance.Options.UseFont = true;
             this.txtFirstName.Properties.MaxLength = 49;
-            this.txtFirstName.Size = new System.Drawing.Size(221, 30);
+            this.txtFirstName.Size = new System.Drawing.Size(221, 22);
             this.txtFirstName.TabIndex = 0;
             conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule5.ErrorText = "This value is not valid";
@@ -291,14 +291,14 @@
             // 
             this.txtTagNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTagNumber.EditValue = "";
-            this.txtTagNumber.Location = new System.Drawing.Point(419, 219);
+            this.txtTagNumber.Location = new System.Drawing.Point(419, 187);
             this.txtTagNumber.Name = "txtTagNumber";
             this.txtTagNumber.Parmida_ActivePlusMultiKeys = false;
-            this.txtTagNumber.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtTagNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txtTagNumber.Properties.Appearance.Options.UseFont = true;
             this.txtTagNumber.Properties.Mask.EditMask = "\\d{0,5}";
             this.txtTagNumber.Properties.MaxLength = 6;
-            this.txtTagNumber.Size = new System.Drawing.Size(172, 30);
+            this.txtTagNumber.Size = new System.Drawing.Size(172, 22);
             this.txtTagNumber.TabIndex = 4;
             conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule6.ErrorText = "This value is not valid";
@@ -308,10 +308,10 @@
             // 
             this.chkMembership.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkMembership.EditValue = true;
-            this.chkMembership.Location = new System.Drawing.Point(419, 255);
+            this.chkMembership.Location = new System.Drawing.Point(419, 215);
             this.chkMembership.Name = "chkMembership";
             this.chkMembership.Parmida_ActivePlusMultiKeys = false;
-            this.chkMembership.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.chkMembership.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.chkMembership.Properties.Appearance.Options.UseFont = true;
             this.chkMembership.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.chkMembership.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -321,7 +321,7 @@
             this.chkMembership.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
             this.chkMembership.Properties.OffText = "غیرعضو";
             this.chkMembership.Properties.OnText = "عضو اتحادیه";
-            this.chkMembership.Size = new System.Drawing.Size(221, 35);
+            this.chkMembership.Size = new System.Drawing.Size(221, 26);
             this.chkMembership.TabIndex = 6;
             this.chkMembership.EditValueChanged += new System.EventHandler(this.chkMembership_EditValueChanged);
             // 
@@ -329,10 +329,10 @@
             // 
             this.chkNative.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkNative.EditValue = true;
-            this.chkNative.Location = new System.Drawing.Point(419, 296);
+            this.chkNative.Location = new System.Drawing.Point(419, 247);
             this.chkNative.Name = "chkNative";
             this.chkNative.Parmida_ActivePlusMultiKeys = false;
-            this.chkNative.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.chkNative.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.chkNative.Properties.Appearance.Options.UseFont = true;
             this.chkNative.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.chkNative.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -341,7 +341,7 @@
             this.chkNative.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
             this.chkNative.Properties.OffText = "غیربومی";
             this.chkNative.Properties.OnText = "بومی";
-            this.chkNative.Size = new System.Drawing.Size(221, 35);
+            this.chkNative.Size = new System.Drawing.Size(221, 26);
             this.chkNative.TabIndex = 7;
             this.chkNative.EditValueChanged += new System.EventHandler(this.chkNative_EditValueChanged);
             // 
@@ -349,11 +349,11 @@
             // 
             this.radComosiun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radComosiun.EditValue = ((byte)(1));
-            this.radComosiun.Location = new System.Drawing.Point(339, 337);
+            this.radComosiun.Location = new System.Drawing.Point(517, 279);
             this.radComosiun.Name = "radComosiun";
             this.radComosiun.Parmida_ActivePlusMultiKeys = false;
             this.radComosiun.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.radComosiun.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.radComosiun.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.radComosiun.Properties.Appearance.Options.UseBackColor = true;
             this.radComosiun.Properties.Appearance.Options.UseFont = true;
             this.radComosiun.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -365,7 +365,7 @@
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(1)), "عضو"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(2)), "غیرعضو"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(3)), "غیربومی")});
-            this.radComosiun.Size = new System.Drawing.Size(301, 46);
+            this.radComosiun.Size = new System.Drawing.Size(123, 92);
             this.radComosiun.TabIndex = 8;
             // 
             // FrmNewDriver

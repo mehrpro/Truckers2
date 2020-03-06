@@ -7,13 +7,13 @@ namespace TruckerApp.UserForm
     public partial class FrmCash : Form
     {
         public int QueueID { get; set; }
-        public string  CashTemp { get; set; }
+        public string CashTemp { get; set; }
         TruckersEntities db = new TruckersEntities();
         public byte _userid { get; set; }
         public FrmCash()
         {
             InitializeComponent();
-           
+
         }
         private void btnPrint_Click(object sender, EventArgs e)
         {

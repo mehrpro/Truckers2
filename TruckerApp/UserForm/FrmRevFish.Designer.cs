@@ -1,6 +1,6 @@
 ﻿namespace TruckerApp.UserForm
 {
-    partial class FrmFishPrint
+    partial class FrmRevFish
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFishPrint));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRevFish));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.radioGroupType = new DevExpress.XtraEditors.RadioGroup();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
+            this.btnRevSave = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -43,12 +41,12 @@
             this.txtserial = new DevExpress.XtraEditors.TextEdit();
             this.txtNumber = new DevExpress.XtraEditors.TextEdit();
             this.txtDateRegister = new DevExpress.XtraEditors.TextEdit();
-            this.txtPhoneNumber = new DevExpress.XtraEditors.TextEdit();
+            this.txtDateReg = new DevExpress.XtraEditors.TextEdit();
             this.txtTag = new DevExpress.XtraEditors.TextEdit();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.cbxSmart = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.txtComossin = new DevExpress.XtraEditors.TextEdit();
             this.colDriverID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFirstName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLastName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,31 +54,34 @@
             this.colSmartCart = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTag = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTagNumber = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.txtComossin = new DevExpress.XtraEditors.TextEdit();
+            this.txtType = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.radioGroupType = new DevExpress.XtraEditors.RadioGroup();
+            this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroupType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtserial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDateRegister.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPhoneNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDateReg.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTag.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxSmart.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComossin.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroupType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
-            this.groupControl1.AutoSize = true;
             this.groupControl1.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImage")));
             this.groupControl1.Controls.Add(this.radioGroupType);
-            this.groupControl1.Controls.Add(this.simpleButton1);
-            this.groupControl1.Controls.Add(this.btnPrint);
+            this.groupControl1.Controls.Add(this.btnRevSave);
+            this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.labelControl2);
@@ -90,7 +91,8 @@
             this.groupControl1.Controls.Add(this.txtserial);
             this.groupControl1.Controls.Add(this.txtNumber);
             this.groupControl1.Controls.Add(this.txtDateRegister);
-            this.groupControl1.Controls.Add(this.txtPhoneNumber);
+            this.groupControl1.Controls.Add(this.txtType);
+            this.groupControl1.Controls.Add(this.txtDateReg);
             this.groupControl1.Controls.Add(this.txtTag);
             this.groupControl1.Controls.Add(this.txtName);
             this.groupControl1.Controls.Add(this.cbxSmart);
@@ -98,120 +100,87 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(682, 631);
-            this.groupControl1.TabIndex = 1;
-            this.groupControl1.Text = " صدور حواله ";
+            this.groupControl1.Size = new System.Drawing.Size(424, 497);
+            this.groupControl1.TabIndex = 0;
+            this.groupControl1.Text = "برگشت حواله";
             // 
-            // radioGroupType
+            // btnRevSave
             // 
-            this.radioGroupType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioGroupType.EditValue = ((byte)(1));
-            this.radioGroupType.Location = new System.Drawing.Point(295, 278);
-            this.radioGroupType.Name = "radioGroupType";
-            this.radioGroupType.Parmida_ActivePlusMultiKeys = false;
-            this.radioGroupType.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.radioGroupType.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.radioGroupType.Properties.Appearance.Options.UseBackColor = true;
-            this.radioGroupType.Properties.Appearance.Options.UseFont = true;
-            this.radioGroupType.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.radioGroupType.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(1)), "فله"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(2)), "پاکت"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(3)), "غلات")});
-            this.radioGroupType.Size = new System.Drawing.Size(239, 38);
-            this.radioGroupType.TabIndex = 1;
-            this.radioGroupType.SelectedIndexChanged += new System.EventHandler(this.radioGroupType_SelectedIndexChanged);
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(328, 322);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(100, 30);
-            this.simpleButton1.TabIndex = 2;
-            this.simpleButton1.Text = "ثبت ";
-            this.simpleButton1.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.btnPrint.Appearance.Options.UseFont = true;
-            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(434, 322);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(100, 30);
-            this.btnPrint.TabIndex = 2;
-            this.btnPrint.Text = "ثبت و چاپ";
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            this.btnRevSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRevSave.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.btnRevSave.Appearance.Options.UseFont = true;
+            this.btnRevSave.Image = ((System.Drawing.Image)(resources.GetObject("btnRevSave.Image")));
+            this.btnRevSave.Location = new System.Drawing.Point(210, 396);
+            this.btnRevSave.Name = "btnRevSave";
+            this.btnRevSave.Size = new System.Drawing.Size(100, 30);
+            this.btnRevSave.TabIndex = 16;
+            this.btnRevSave.Text = "ثبت ";
+            this.btnRevSave.Click += new System.EventHandler(this.btnRevSave_Click);
             // 
             // labelControl4
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl4.Location = new System.Drawing.Point(541, 253);
+            this.labelControl4.Location = new System.Drawing.Point(316, 224);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(66, 16);
-            this.labelControl4.TabIndex = 2;
-            this.labelControl4.Text = "شماره تلفن";
+            this.labelControl4.Size = new System.Drawing.Size(26, 16);
+            this.labelControl4.TabIndex = 15;
+            this.labelControl4.Text = "تاریخ";
             // 
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl3.Location = new System.Drawing.Point(541, 225);
+            this.labelControl3.Location = new System.Drawing.Point(316, 196);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(48, 16);
-            this.labelControl3.TabIndex = 2;
-            this.labelControl3.Text = "کمسیون";
+            this.labelControl3.Size = new System.Drawing.Size(76, 16);
+            this.labelControl3.TabIndex = 14;
+            this.labelControl3.Text = "هزینه دریافتی";
             // 
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl2.Location = new System.Drawing.Point(543, 197);
+            this.labelControl2.Location = new System.Drawing.Point(318, 168);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(25, 16);
-            this.labelControl2.TabIndex = 2;
+            this.labelControl2.TabIndex = 13;
             this.labelControl2.Text = "پلاک";
             // 
             // labelControl6
             // 
             this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl6.Location = new System.Drawing.Point(543, 113);
+            this.labelControl6.Location = new System.Drawing.Point(318, 112);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(69, 16);
-            this.labelControl6.TabIndex = 2;
+            this.labelControl6.TabIndex = 12;
             this.labelControl6.Text = "سریال فروش";
             // 
             // labelControl5
             // 
             this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl5.Location = new System.Drawing.Point(542, 141);
+            this.labelControl5.Location = new System.Drawing.Point(317, 84);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(78, 16);
-            this.labelControl5.TabIndex = 2;
+            this.labelControl5.TabIndex = 18;
             this.labelControl5.Text = "کارت هوشمند";
             // 
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl1.Location = new System.Drawing.Point(543, 169);
+            this.labelControl1.Location = new System.Drawing.Point(318, 140);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(50, 16);
-            this.labelControl1.TabIndex = 2;
+            this.labelControl1.TabIndex = 19;
             this.labelControl1.Text = "نام راننده";
             // 
             // txtserial
             // 
             this.txtserial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtserial.Location = new System.Drawing.Point(472, 110);
+            this.txtserial.Location = new System.Drawing.Point(247, 109);
             this.txtserial.Name = "txtserial";
             this.txtserial.Parmida_ActivePlusMultiKeys = false;
             this.txtserial.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
@@ -228,12 +197,12 @@
             this.txtserial.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtserial.Properties.ReadOnly = true;
             this.txtserial.Size = new System.Drawing.Size(63, 22);
-            this.txtserial.TabIndex = 1;
+            this.txtserial.TabIndex = 10;
             // 
             // txtNumber
             // 
             this.txtNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNumber.Location = new System.Drawing.Point(295, 110);
+            this.txtNumber.Location = new System.Drawing.Point(71, 109);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Parmida_ActivePlusMultiKeys = false;
             this.txtNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
@@ -250,12 +219,12 @@
             this.txtNumber.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtNumber.Properties.ReadOnly = true;
             this.txtNumber.Size = new System.Drawing.Size(169, 22);
-            this.txtNumber.TabIndex = 1;
+            this.txtNumber.TabIndex = 9;
             // 
             // txtDateRegister
             // 
             this.txtDateRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDateRegister.Location = new System.Drawing.Point(295, 82);
+            this.txtDateRegister.Location = new System.Drawing.Point(71, 53);
             this.txtDateRegister.Name = "txtDateRegister";
             this.txtDateRegister.Parmida_ActivePlusMultiKeys = false;
             this.txtDateRegister.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
@@ -271,35 +240,35 @@
             this.txtDateRegister.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtDateRegister.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtDateRegister.Properties.ReadOnly = true;
-            this.txtDateRegister.Size = new System.Drawing.Size(240, 22);
-            this.txtDateRegister.TabIndex = 1;
+            this.txtDateRegister.Size = new System.Drawing.Size(239, 22);
+            this.txtDateRegister.TabIndex = 8;
             // 
-            // txtPhoneNumber
+            // txtDateReg
             // 
-            this.txtPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(296, 250);
-            this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Parmida_ActivePlusMultiKeys = false;
-            this.txtPhoneNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtPhoneNumber.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtPhoneNumber.Properties.Appearance.Options.UseFont = true;
-            this.txtPhoneNumber.Properties.Appearance.Options.UseForeColor = true;
-            this.txtPhoneNumber.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtPhoneNumber.Properties.AppearanceDisabled.Options.UseFont = true;
-            this.txtPhoneNumber.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtPhoneNumber.Properties.AppearanceFocused.Options.UseFont = true;
-            this.txtPhoneNumber.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtPhoneNumber.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtPhoneNumber.Properties.AppearanceReadOnly.Options.UseFont = true;
-            this.txtPhoneNumber.Properties.AppearanceReadOnly.Options.UseForeColor = true;
-            this.txtPhoneNumber.Properties.ReadOnly = true;
-            this.txtPhoneNumber.Size = new System.Drawing.Size(239, 22);
-            this.txtPhoneNumber.TabIndex = 1;
+            this.txtDateReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDateReg.Location = new System.Drawing.Point(71, 221);
+            this.txtDateReg.Name = "txtDateReg";
+            this.txtDateReg.Parmida_ActivePlusMultiKeys = false;
+            this.txtDateReg.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtDateReg.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtDateReg.Properties.Appearance.Options.UseFont = true;
+            this.txtDateReg.Properties.Appearance.Options.UseForeColor = true;
+            this.txtDateReg.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtDateReg.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.txtDateReg.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtDateReg.Properties.AppearanceFocused.Options.UseFont = true;
+            this.txtDateReg.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtDateReg.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtDateReg.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.txtDateReg.Properties.AppearanceReadOnly.Options.UseForeColor = true;
+            this.txtDateReg.Properties.ReadOnly = true;
+            this.txtDateReg.Size = new System.Drawing.Size(239, 22);
+            this.txtDateReg.TabIndex = 7;
             // 
             // txtTag
             // 
             this.txtTag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTag.Location = new System.Drawing.Point(296, 194);
+            this.txtTag.Location = new System.Drawing.Point(71, 165);
             this.txtTag.Name = "txtTag";
             this.txtTag.Parmida_ActivePlusMultiKeys = false;
             this.txtTag.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
@@ -315,13 +284,13 @@
             this.txtTag.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtTag.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtTag.Properties.ReadOnly = true;
-            this.txtTag.Size = new System.Drawing.Size(241, 22);
-            this.txtTag.TabIndex = 1;
+            this.txtTag.Size = new System.Drawing.Size(239, 22);
+            this.txtTag.TabIndex = 6;
             // 
             // txtName
             // 
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName.Location = new System.Drawing.Point(296, 166);
+            this.txtName.Location = new System.Drawing.Point(71, 137);
             this.txtName.Name = "txtName";
             this.txtName.Parmida_ActivePlusMultiKeys = false;
             this.txtName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
@@ -337,13 +306,13 @@
             this.txtName.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtName.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtName.Properties.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(241, 22);
-            this.txtName.TabIndex = 1;
+            this.txtName.Size = new System.Drawing.Size(239, 22);
+            this.txtName.TabIndex = 5;
             // 
             // cbxSmart
             // 
             this.cbxSmart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxSmart.Location = new System.Drawing.Point(296, 138);
+            this.cbxSmart.Location = new System.Drawing.Point(71, 81);
             this.cbxSmart.Name = "cbxSmart";
             this.cbxSmart.Parmida_ActivePlusMultiKeys = false;
             this.cbxSmart.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
@@ -363,12 +332,8 @@
             this.cbxSmart.Properties.ValueMember = "DriverID";
             this.cbxSmart.Properties.View = this.searchLookUpEdit1View;
             this.cbxSmart.Size = new System.Drawing.Size(239, 22);
-            this.cbxSmart.TabIndex = 0;
+            this.cbxSmart.TabIndex = 3;
             this.cbxSmart.EditValueChanged += new System.EventHandler(this.cbxSmart_EditValueChanged);
-            // 
-            // driversBindingSource
-            // 
-            this.driversBindingSource.DataSource = typeof(TruckerApp.Driver);
             // 
             // searchLookUpEdit1View
             // 
@@ -490,70 +455,17 @@
             this.colTagNumber});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsEditForm.PopupEditFormWidth = 1200;
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // colDriverID
-            // 
-            this.colDriverID.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colDriverID.FieldName = "DriverID";
-            this.colDriverID.Name = "colDriverID";
-            this.colDriverID.Visible = true;
-            this.colDriverID.VisibleIndex = 0;
-            // 
-            // colFirstName
-            // 
-            this.colFirstName.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colFirstName.FieldName = "FirstName";
-            this.colFirstName.Name = "colFirstName";
-            this.colFirstName.Visible = true;
-            this.colFirstName.VisibleIndex = 1;
-            // 
-            // colLastName
-            // 
-            this.colLastName.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colLastName.FieldName = "LastName";
-            this.colLastName.Name = "colLastName";
-            this.colLastName.Visible = true;
-            this.colLastName.VisibleIndex = 2;
-            // 
-            // colMembership
-            // 
-            this.colMembership.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colMembership.FieldName = "Membership";
-            this.colMembership.Name = "colMembership";
-            this.colMembership.Visible = true;
-            this.colMembership.VisibleIndex = 3;
-            // 
-            // colSmartCart
-            // 
-            this.colSmartCart.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colSmartCart.FieldName = "SmartCart";
-            this.colSmartCart.Name = "colSmartCart";
-            this.colSmartCart.Visible = true;
-            this.colSmartCart.VisibleIndex = 4;
-            // 
-            // colTag
-            // 
-            this.colTag.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colTag.FieldName = "Tag";
-            this.colTag.Name = "colTag";
-            this.colTag.Visible = true;
-            this.colTag.VisibleIndex = 5;
-            // 
-            // colTagNumber
-            // 
-            this.colTagNumber.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colTagNumber.FieldName = "TagNumber";
-            this.colTagNumber.Name = "colTagNumber";
-            this.colTagNumber.Visible = true;
-            this.colTagNumber.VisibleIndex = 6;
+            this.searchLookUpEdit1View.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colSmartCart, DevExpress.Data.ColumnSortOrder.Descending)});
             // 
             // txtComossin
             // 
             this.txtComossin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtComossin.EditValue = "0";
-            this.txtComossin.Location = new System.Drawing.Point(296, 222);
+            this.txtComossin.Location = new System.Drawing.Point(71, 193);
             this.txtComossin.Name = "txtComossin";
             this.txtComossin.Parmida_ActivePlusMultiKeys = false;
             this.txtComossin.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
@@ -574,42 +486,179 @@
             this.txtComossin.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtComossin.Properties.ReadOnly = true;
             this.txtComossin.Size = new System.Drawing.Size(239, 22);
-            this.txtComossin.TabIndex = 1;
+            this.txtComossin.TabIndex = 11;
             // 
-            // FrmFishPrint
+            // colDriverID
+            // 
+            this.colDriverID.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.colDriverID.Caption = "کد";
+            this.colDriverID.FieldName = "DriverID";
+            this.colDriverID.Name = "colDriverID";
+            this.colDriverID.Visible = true;
+            this.colDriverID.VisibleIndex = 0;
+            this.colDriverID.Width = 86;
+            // 
+            // colFirstName
+            // 
+            this.colFirstName.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.colFirstName.Caption = "نام";
+            this.colFirstName.FieldName = "FirstName";
+            this.colFirstName.Name = "colFirstName";
+            this.colFirstName.Visible = true;
+            this.colFirstName.VisibleIndex = 1;
+            this.colFirstName.Width = 158;
+            // 
+            // colLastName
+            // 
+            this.colLastName.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.colLastName.Caption = "فامیلی";
+            this.colLastName.FieldName = "LastName";
+            this.colLastName.Name = "colLastName";
+            this.colLastName.Visible = true;
+            this.colLastName.VisibleIndex = 2;
+            this.colLastName.Width = 153;
+            // 
+            // colMembership
+            // 
+            this.colMembership.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.colMembership.Caption = "عضو";
+            this.colMembership.FieldName = "Membership";
+            this.colMembership.Name = "colMembership";
+            this.colMembership.Visible = true;
+            this.colMembership.VisibleIndex = 3;
+            this.colMembership.Width = 146;
+            // 
+            // colSmartCart
+            // 
+            this.colSmartCart.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.colSmartCart.Caption = "شماره هوشمند";
+            this.colSmartCart.FieldName = "SmartCart";
+            this.colSmartCart.Name = "colSmartCart";
+            this.colSmartCart.Visible = true;
+            this.colSmartCart.VisibleIndex = 4;
+            this.colSmartCart.Width = 170;
+            // 
+            // colTag
+            // 
+            this.colTag.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.colTag.Caption = "ایران پلاک";
+            this.colTag.FieldName = "Tag";
+            this.colTag.Name = "colTag";
+            this.colTag.Visible = true;
+            this.colTag.VisibleIndex = 5;
+            this.colTag.Width = 91;
+            // 
+            // colTagNumber
+            // 
+            this.colTagNumber.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.colTagNumber.Caption = "شماره پلاک";
+            this.colTagNumber.FieldName = "TagNumber";
+            this.colTagNumber.Name = "colTagNumber";
+            this.colTagNumber.Visible = true;
+            this.colTagNumber.VisibleIndex = 6;
+            this.colTagNumber.Width = 188;
+            // 
+            // txtType
+            // 
+            this.txtType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtType.Location = new System.Drawing.Point(71, 249);
+            this.txtType.Name = "txtType";
+            this.txtType.Parmida_ActivePlusMultiKeys = false;
+            this.txtType.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtType.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtType.Properties.Appearance.Options.UseFont = true;
+            this.txtType.Properties.Appearance.Options.UseForeColor = true;
+            this.txtType.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtType.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.txtType.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtType.Properties.AppearanceFocused.Options.UseFont = true;
+            this.txtType.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtType.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtType.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.txtType.Properties.AppearanceReadOnly.Options.UseForeColor = true;
+            this.txtType.Properties.ReadOnly = true;
+            this.txtType.Size = new System.Drawing.Size(239, 22);
+            this.txtType.TabIndex = 7;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.labelControl7.Location = new System.Drawing.Point(316, 252);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(41, 16);
+            this.labelControl7.TabIndex = 15;
+            this.labelControl7.Text = "محموله";
+            // 
+            // radioGroupType
+            // 
+            this.radioGroupType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioGroupType.EditValue = ((byte)(10));
+            this.radioGroupType.Location = new System.Drawing.Point(71, 277);
+            this.radioGroupType.Name = "radioGroupType";
+            this.radioGroupType.Parmida_ActivePlusMultiKeys = false;
+            this.radioGroupType.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.radioGroupType.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.radioGroupType.Properties.Appearance.Options.UseBackColor = true;
+            this.radioGroupType.Properties.Appearance.Options.UseFont = true;
+            this.radioGroupType.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.radioGroupType.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(10)), "خطا در صدور"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(11)), "ابطال و تعویض محموله"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(12)), "ابطال و بازگشت وجه")});
+            this.radioGroupType.Size = new System.Drawing.Size(239, 113);
+            this.radioGroupType.TabIndex = 20;
+            // 
+            // driversBindingSource
+            // 
+            this.driversBindingSource.DataSource = typeof(TruckerApp.Driver);
+            // 
+            // FrmRevFish
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 631);
+            this.ClientSize = new System.Drawing.Size(424, 497);
             this.Controls.Add(this.groupControl1);
-            this.Name = "FrmFishPrint";
+            this.Name = "FrmRevFish";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Text = "صدور حواله";
-            this.Load += new System.EventHandler(this.FrmFishPrint_Load);
+            this.Text = "برگشت حواله";
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroupType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtserial.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDateRegister.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPhoneNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDateReg.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTag.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxSmart.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComossin.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroupType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.SimpleButton btnRevSave;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.TextEdit txtserial;
+        private DevExpress.XtraEditors.TextEdit txtNumber;
+        private DevExpress.XtraEditors.TextEdit txtDateRegister;
+        private DevExpress.XtraEditors.TextEdit txtDateReg;
+        private DevExpress.XtraEditors.TextEdit txtTag;
+        private DevExpress.XtraEditors.TextEdit txtName;
         private DevExpress.XtraEditors.SearchLookUpEdit cbxSmart;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
-        private System.Windows.Forms.BindingSource driversBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colDriverID;
         private DevExpress.XtraGrid.Columns.GridColumn colFirstName;
         private DevExpress.XtraGrid.Columns.GridColumn colLastName;
@@ -617,22 +666,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSmartCart;
         private DevExpress.XtraGrid.Columns.GridColumn colTag;
         private DevExpress.XtraGrid.Columns.GridColumn colTagNumber;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit txtPhoneNumber;
-        private DevExpress.XtraEditors.TextEdit txtTag;
-        private DevExpress.XtraEditors.TextEdit txtName;
         private DevExpress.XtraEditors.TextEdit txtComossin;
-        private DevExpress.XtraEditors.SimpleButton btnPrint;
+        private System.Windows.Forms.BindingSource driversBindingSource;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.TextEdit txtType;
         private DevExpress.XtraEditors.RadioGroup radioGroupType;
-        private DevExpress.XtraEditors.TextEdit txtDateRegister;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.TextEdit txtserial;
-        private DevExpress.XtraEditors.TextEdit txtNumber;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

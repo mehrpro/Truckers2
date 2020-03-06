@@ -13,14 +13,14 @@ namespace TruckerApp.UserForm
         private Int16 _commission;
         private byte _groupCommission;
         private string _name, _number, _smartcart, _tagnumber, _type="فله";
-        private int _queue, cashtemp;
+        private int _queue;
         public FrmFishPrint()
         {
             InitializeComponent();
-            DriverList();
+            driverList();
         }
 
-        private void DriverList()
+        private void driverList()
         {
             db = new TruckersEntities();
             db.Drivers.LoadAsync()
@@ -28,11 +28,11 @@ namespace TruckerApp.UserForm
                     System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext());
         }
 
-        private void SetupPage()
+        private void setupPage()
         {
             using (var db = new TruckersEntities())
             {
-                _series = db.Series.Single(x => x.enabeled == true && x.closing == false).Series1.Value;
+                _series = db.Series.Single(x => x.enabeled == true && x.closing == null).Series1.Value;
                 PublicVar.SeriesID = _series;
                 txtserial.Text = _series.ToString();
             }
@@ -53,6 +53,9 @@ namespace TruckerApp.UserForm
                     break;
             }
         }
+
+
+
         private void PrintFish()
         {
             db = new TruckersEntities();
@@ -90,7 +93,7 @@ namespace TruckerApp.UserForm
 
         private void FrmFishPrint_Load(object sender, EventArgs e)
         {
-            SetupPage();
+            setupPage();
             txtDateRegister.Text = DateTime.Today.ToLongDateString();
             LastNumber();
         }
