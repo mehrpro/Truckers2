@@ -86,9 +86,9 @@ namespace TruckerApp.UserForm
             txtPhoneNumber.Text = driver.PhoneNumber;
             _smartcart = driver.SmartCart.ToString();
             _groupCommission = driver.Commission_Group;
-            var qryCommission1 = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups == _groupCommission);
+            var qryCommission1 = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == _groupCommission);
             _commission = qryCommission1.CommissionID;
-            txtComossin.Text = qryCommission1.Commission1.ToString();
+            txtComossin.Text = qryCommission1.CommissionPrice.ToString();
         }
 
         private void FrmFishPrint_Load(object sender, EventArgs e)

@@ -50,7 +50,7 @@ namespace TruckerApp
             {
                 c.Close();
             }
-            var frmSpring = new FrmComosionPrice()
+            var frmSpring = new FrmComosionMember()
             {
                 FormBorderStyle = FormBorderStyle.None,
                 MdiParent = this,
@@ -141,6 +141,38 @@ namespace TruckerApp
                 c.Close();
             }
             var frmSpring = new FrmCasheList()
+            {
+                FormBorderStyle = FormBorderStyle.None,
+                MdiParent = this,
+                StartPosition = FormStartPosition.CenterParent,
+                Dock = DockStyle.Fill
+            };
+            frmSpring.Show();
+        }
+
+        private void btnCommissionNative_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form c in this.MdiChildren)
+            {
+                c.Close();
+            }
+            var frmSpring = new UserForm.Commission.FrmCommissionNative()
+            {
+                FormBorderStyle = FormBorderStyle.None,
+                MdiParent = this,
+                StartPosition = FormStartPosition.CenterParent,
+                Dock = DockStyle.Fill
+            };
+            frmSpring.Show();
+        }
+
+        private void btnCommissionOther_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form c in this.MdiChildren)
+            {
+                c.Close();
+            }
+            var frmSpring = new UserForm.Commission.FrmCommissionOther()
             {
                 FormBorderStyle = FormBorderStyle.None,
                 MdiParent = this,

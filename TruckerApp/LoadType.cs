@@ -19,6 +19,7 @@ namespace TruckerApp
         {
             this.Queues = new HashSet<Queue>();
             this.Queues1 = new HashSet<Queue>();
+            this.Commissions = new HashSet<Commission>();
         }
     
         public byte TypeID { get; set; }
@@ -28,5 +29,7 @@ namespace TruckerApp
         public virtual ICollection<Queue> Queues { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Queue> Queues1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Commission> Commissions { get; set; }
     }
 }

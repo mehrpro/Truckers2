@@ -30,12 +30,12 @@ namespace TruckerApp
         public short ComosiunID_FK { get; set; }
         public int SeriesID_FK { get; set; }
     
-        public virtual Commission Commission { get; set; }
         public virtual Driver Driver { get; set; }
         public virtual LoadType LoadType { get; set; }
         public virtual LoadType LoadType1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cash> Cashes { get; set; }
         public virtual SeriesPrice SeriesPrice { get; set; }
+        public virtual Commission Commission { get; set; }
     }
 }

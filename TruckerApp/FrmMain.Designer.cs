@@ -44,6 +44,8 @@
             this.btnReportDis = new DevExpress.XtraBars.BarButtonItem();
             this.btnCasheStatus = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCommissionNative = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCommissionOther = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -77,9 +79,11 @@
             this.btnSeries,
             this.btnReportDis,
             this.btnCasheStatus,
-            this.barButtonItem3});
+            this.barButtonItem3,
+            this.btnCommissionNative,
+            this.btnCommissionOther});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 9;
+            this.ribbonControl1.MaxItemId = 11;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -125,7 +129,7 @@
             // 
             // btnCommission
             // 
-            this.btnCommission.Caption = "مصوبات مالی";
+            this.btnCommission.Caption = "رانندگان اعضاء صنف";
             this.btnCommission.Glyph = ((System.Drawing.Image)(resources.GetObject("btnCommission.Glyph")));
             this.btnCommission.Id = 4;
             this.btnCommission.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnCommission.LargeGlyph")));
@@ -200,6 +204,24 @@
             this.barButtonItem3.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.LargeGlyph")));
             this.barButtonItem3.Name = "barButtonItem3";
             // 
+            // btnCommissionNative
+            // 
+            this.btnCommissionNative.Caption = "رانندگان بومی";
+            this.btnCommissionNative.Glyph = ((System.Drawing.Image)(resources.GetObject("btnCommissionNative.Glyph")));
+            this.btnCommissionNative.Id = 9;
+            this.btnCommissionNative.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnCommissionNative.LargeGlyph")));
+            this.btnCommissionNative.Name = "btnCommissionNative";
+            this.btnCommissionNative.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCommissionNative_ItemClick);
+            // 
+            // btnCommissionOther
+            // 
+            this.btnCommissionOther.Caption = "رانندگان غیر بومی";
+            this.btnCommissionOther.Glyph = ((System.Drawing.Image)(resources.GetObject("btnCommissionOther.Glyph")));
+            this.btnCommissionOther.Id = 10;
+            this.btnCommissionOther.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnCommissionOther.LargeGlyph")));
+            this.btnCommissionOther.Name = "btnCommissionOther";
+            this.btnCommissionOther.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCommissionOther_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -220,9 +242,11 @@
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.btnMemberShipList);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnCommission);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnCommissionNative);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnCommissionOther);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.ShowCaptionButton = false;
-            this.ribbonPageGroup2.Text = "اتحادیه";
+            this.ribbonPageGroup2.Text = "مصوبات مالی";
             // 
             // ribbonPage2
             // 
@@ -339,5 +363,7 @@
         private DevExpress.XtraBars.BarButtonItem btnCasheStatus;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.BarButtonItem btnCommissionNative;
+        private DevExpress.XtraBars.BarButtonItem btnCommissionOther;
     }
 }

@@ -19,8 +19,10 @@ namespace TruckerApp
         public Nullable<int> Pos { get; set; }
         public Nullable<int> CashDesk { get; set; }
         public Nullable<byte> userID { get; set; }
+        public Nullable<int> seriesID_FK { get; set; }
     
         public virtual Queue Queue { get; set; }
         public virtual User User { get; set; }
+        public virtual SeriesPrice SeriesPrice { get; set; }
     }
 }

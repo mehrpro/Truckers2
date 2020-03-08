@@ -41,7 +41,7 @@ namespace TruckerApp.UserForm
                  qryQuese[0].DateTimeRegister.ToLongDateString();
                 txtName.Text = $"{qry.FirstName}  {qry.LastName}";
                 txtTag.Text = $"ایران {qry.Tag}-{qry.TagNumber}";
-                txtComossin.Text = qryQuese[0].Commission.Commission1.ToString();
+                txtComossin.Text = qryQuese[0].Commission.CommissionPrice.ToString();
                 txtserial.Text = qryQuese[0].SeriesID_FK.ToString();
                 txtNumber.Text = qryQuese[0].Number.ToString();
                 txtType.Text = qryQuese[0].LoadType.Type;

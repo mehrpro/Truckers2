@@ -18,6 +18,7 @@ namespace TruckerApp
         public SeriesPrice()
         {
             this.Queues = new HashSet<Queue>();
+            this.Cashes = new HashSet<Cash>();
         }
     
         public int SereisID { get; set; }
@@ -38,5 +39,7 @@ namespace TruckerApp
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Queue> Queues { get; set; }
         public virtual User User { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cash> Cashes { get; set; }
     }
 }

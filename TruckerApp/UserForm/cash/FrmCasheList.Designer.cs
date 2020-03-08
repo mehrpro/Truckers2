@@ -31,9 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCasheList));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.cashesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFamily = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSmartCart = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCasher = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colQueue = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUser = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -50,22 +60,13 @@
             this.txtFalaeh = new DevExpress.XtraEditors.TextEdit();
             this.txtMember = new DevExpress.XtraEditors.TextEdit();
             this.txtPacket = new DevExpress.XtraEditors.TextEdit();
-            this.cashesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colFamily = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSmartCart = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCasher = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colQueue = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colUser = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cashesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOther.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGandom.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNoMember.Properties)).BeginInit();
@@ -74,7 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtFalaeh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMember.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPacket.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cashesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -91,43 +91,23 @@
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "صندوق";
             // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.labelControl9);
-            this.panelControl1.Controls.Add(this.labelControl3);
-            this.panelControl1.Controls.Add(this.labelControl8);
-            this.panelControl1.Controls.Add(this.labelControl5);
-            this.panelControl1.Controls.Add(this.labelControl7);
-            this.panelControl1.Controls.Add(this.labelControl4);
-            this.panelControl1.Controls.Add(this.labelControl12);
-            this.panelControl1.Controls.Add(this.labelControl11);
-            this.panelControl1.Controls.Add(this.txtOther);
-            this.panelControl1.Controls.Add(this.txtGandom);
-            this.panelControl1.Controls.Add(this.txtNoMember);
-            this.panelControl1.Controls.Add(this.txtSerial);
-            this.panelControl1.Controls.Add(this.txtDate);
-            this.panelControl1.Controls.Add(this.txtFalaeh);
-            this.panelControl1.Controls.Add(this.txtMember);
-            this.panelControl1.Controls.Add(this.txtPacket);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(2, 39);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1103, 130);
-            this.panelControl1.TabIndex = 2;
-            // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataSource = this.cashesBindingSource;
-            this.gridControl1.Location = new System.Drawing.Point(12, 175);
+            this.gridControl1.Location = new System.Drawing.Point(12, 156);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1083, 456);
+            this.gridControl1.Size = new System.Drawing.Size(1083, 475);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // cashesBindingSource
+            // 
+            this.cashesBindingSource.DataSource = typeof(TruckerApp.Cash);
             // 
             // gridView1
             // 
@@ -251,6 +231,112 @@
             this.gridColumn2});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsFind.AlwaysVisible = true;
+            // 
+            // colName
+            // 
+            this.colName.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.colName.Caption = "نام";
+            this.colName.FieldName = "Queue.Driver.LastName";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 0;
+            // 
+            // colFamily
+            // 
+            this.colFamily.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.colFamily.Caption = "فامیلی";
+            this.colFamily.FieldName = "Queue.Driver.FirstName";
+            this.colFamily.Name = "colFamily";
+            this.colFamily.Visible = true;
+            this.colFamily.VisibleIndex = 1;
+            // 
+            // colSmartCart
+            // 
+            this.colSmartCart.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.colSmartCart.Caption = "کارت هوشمند";
+            this.colSmartCart.FieldName = "Queue.Driver.SmartCart";
+            this.colSmartCart.Name = "colSmartCart";
+            this.colSmartCart.Visible = true;
+            this.colSmartCart.VisibleIndex = 2;
+            // 
+            // colType
+            // 
+            this.colType.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.colType.Caption = "محموله";
+            this.colType.FieldName = "Queue.LoadType.Type";
+            this.colType.Name = "colType";
+            this.colType.Visible = true;
+            this.colType.VisibleIndex = 3;
+            // 
+            // colCasher
+            // 
+            this.colCasher.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.colCasher.Caption = "صندوقدار";
+            this.colCasher.FieldName = "User.username";
+            this.colCasher.Name = "colCasher";
+            this.colCasher.Visible = true;
+            this.colCasher.VisibleIndex = 4;
+            // 
+            // colQueue
+            // 
+            this.colQueue.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.colQueue.Caption = "نوبت";
+            this.colQueue.FieldName = "Queue.Number";
+            this.colQueue.Name = "colQueue";
+            this.colQueue.Visible = true;
+            this.colQueue.VisibleIndex = 5;
+            // 
+            // colUser
+            // 
+            this.colUser.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.colUser.Caption = "کمیسیون";
+            this.colUser.FieldName = "Queue.Commission.Commission1";
+            this.colUser.Name = "colUser";
+            this.colUser.Visible = true;
+            this.colUser.VisibleIndex = 6;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.gridColumn1.Caption = "وجه نقد";
+            this.gridColumn1.FieldName = "CashDesk";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 7;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.gridColumn2.Caption = "کارت اعتباری";
+            this.gridColumn2.FieldName = "Pos";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 8;
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.labelControl9);
+            this.panelControl1.Controls.Add(this.labelControl3);
+            this.panelControl1.Controls.Add(this.labelControl8);
+            this.panelControl1.Controls.Add(this.labelControl5);
+            this.panelControl1.Controls.Add(this.labelControl7);
+            this.panelControl1.Controls.Add(this.labelControl4);
+            this.panelControl1.Controls.Add(this.labelControl12);
+            this.panelControl1.Controls.Add(this.labelControl11);
+            this.panelControl1.Controls.Add(this.txtOther);
+            this.panelControl1.Controls.Add(this.txtGandom);
+            this.panelControl1.Controls.Add(this.txtNoMember);
+            this.panelControl1.Controls.Add(this.txtSerial);
+            this.panelControl1.Controls.Add(this.txtDate);
+            this.panelControl1.Controls.Add(this.txtFalaeh);
+            this.panelControl1.Controls.Add(this.txtMember);
+            this.panelControl1.Controls.Add(this.txtPacket);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(2, 39);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1103, 111);
+            this.panelControl1.TabIndex = 2;
             // 
             // labelControl9
             // 
@@ -484,91 +570,6 @@
             this.txtPacket.Size = new System.Drawing.Size(100, 22);
             this.txtPacket.TabIndex = 2;
             // 
-            // cashesBindingSource
-            // 
-            this.cashesBindingSource.DataSource = typeof(TruckerApp.Cash);
-            // 
-            // colName
-            // 
-            this.colName.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colName.Caption = "نام";
-            this.colName.FieldName = "Queue.Driver.LastName";
-            this.colName.Name = "colName";
-            this.colName.Visible = true;
-            this.colName.VisibleIndex = 0;
-            // 
-            // colFamily
-            // 
-            this.colFamily.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colFamily.Caption = "فامیلی";
-            this.colFamily.FieldName = "Queue.Driver.FirstName";
-            this.colFamily.Name = "colFamily";
-            this.colFamily.Visible = true;
-            this.colFamily.VisibleIndex = 1;
-            // 
-            // colSmartCart
-            // 
-            this.colSmartCart.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colSmartCart.Caption = "کارت هوشمند";
-            this.colSmartCart.FieldName = "Queue.Driver.SmartCart";
-            this.colSmartCart.Name = "colSmartCart";
-            this.colSmartCart.Visible = true;
-            this.colSmartCart.VisibleIndex = 2;
-            // 
-            // colType
-            // 
-            this.colType.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colType.Caption = "محموله";
-            this.colType.FieldName = "Queue.LoadType.Type";
-            this.colType.Name = "colType";
-            this.colType.Visible = true;
-            this.colType.VisibleIndex = 3;
-            // 
-            // colCasher
-            // 
-            this.colCasher.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colCasher.Caption = "صندوقدار";
-            this.colCasher.FieldName = "User.username";
-            this.colCasher.Name = "colCasher";
-            this.colCasher.Visible = true;
-            this.colCasher.VisibleIndex = 4;
-            // 
-            // colQueue
-            // 
-            this.colQueue.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colQueue.Caption = "نوبت";
-            this.colQueue.FieldName = "Queue.Number";
-            this.colQueue.Name = "colQueue";
-            this.colQueue.Visible = true;
-            this.colQueue.VisibleIndex = 5;
-            // 
-            // colUser
-            // 
-            this.colUser.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colUser.Caption = "کمیسیون";
-            this.colUser.FieldName = "Queue.Commission.Commission1";
-            this.colUser.Name = "colUser";
-            this.colUser.Visible = true;
-            this.colUser.VisibleIndex = 6;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.gridColumn1.Caption = "وجه نقد";
-            this.gridColumn1.FieldName = "CashDesk";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 7;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.gridColumn2.Caption = "کارت اعتباری";
-            this.gridColumn2.FieldName = "Pos";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 8;
-            // 
             // FrmCasheList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -580,11 +581,12 @@
             this.Text = "FrmCasheList";
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cashesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOther.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGandom.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNoMember.Properties)).EndInit();
@@ -593,7 +595,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtFalaeh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMember.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPacket.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cashesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

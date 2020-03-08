@@ -49,7 +49,7 @@
             this.txtLastSerial = new DevExpress.XtraEditors.TextEdit();
             this.txtTime = new DevExpress.XtraEditors.TextEdit();
             this.txtDate = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -59,6 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLastSerial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -66,17 +68,8 @@
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImage")));
-            this.groupControl1.Controls.Add(this.simpleButton1);
+            this.groupControl1.Controls.Add(this.panelControl1);
             this.groupControl1.Controls.Add(this.gridControl1);
-            this.groupControl1.Controls.Add(this.btnNewSerial);
-            this.groupControl1.Controls.Add(this.labelControl4);
-            this.groupControl1.Controls.Add(this.labelControl3);
-            this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Controls.Add(this.txtUsers);
-            this.groupControl1.Controls.Add(this.txtLastSerial);
-            this.groupControl1.Controls.Add(this.txtTime);
-            this.groupControl1.Controls.Add(this.txtDate);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
@@ -90,10 +83,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataSource = this.seriesBindingSource;
-            this.gridControl1.Location = new System.Drawing.Point(21, 54);
+            this.gridControl1.Location = new System.Drawing.Point(12, 113);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(536, 416);
+            this.gridControl1.Size = new System.Drawing.Size(850, 357);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -289,9 +282,9 @@
             this.btnNewSerial.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewSerial.Appearance.Options.UseFont = true;
             this.btnNewSerial.Image = ((System.Drawing.Image)(resources.GetObject("btnNewSerial.Image")));
-            this.btnNewSerial.Location = new System.Drawing.Point(592, 179);
+            this.btnNewSerial.Location = new System.Drawing.Point(25, 20);
             this.btnNewSerial.Name = "btnNewSerial";
-            this.btnNewSerial.Size = new System.Drawing.Size(126, 43);
+            this.btnNewSerial.Size = new System.Drawing.Size(94, 33);
             this.btnNewSerial.TabIndex = 2;
             this.btnNewSerial.Text = "سریال جدید";
             this.btnNewSerial.Click += new System.EventHandler(this.btnNewSerial_Click);
@@ -300,7 +293,7 @@
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl4.Location = new System.Drawing.Point(779, 154);
+            this.labelControl4.Location = new System.Drawing.Point(237, 29);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(58, 16);
             this.labelControl4.TabIndex = 1;
@@ -310,7 +303,7 @@
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Location = new System.Drawing.Point(779, 126);
+            this.labelControl3.Location = new System.Drawing.Point(397, 29);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(66, 16);
             this.labelControl3.TabIndex = 1;
@@ -320,7 +313,7 @@
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Location = new System.Drawing.Point(779, 98);
+            this.labelControl2.Location = new System.Drawing.Point(587, 29);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(37, 16);
             this.labelControl2.TabIndex = 1;
@@ -330,7 +323,7 @@
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Location = new System.Drawing.Point(779, 70);
+            this.labelControl1.Location = new System.Drawing.Point(824, 29);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(26, 16);
             this.labelControl1.TabIndex = 1;
@@ -340,49 +333,49 @@
             // 
             this.txtUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUsers.Enabled = false;
-            this.txtUsers.Location = new System.Drawing.Point(592, 151);
+            this.txtUsers.Location = new System.Drawing.Point(141, 26);
             this.txtUsers.Name = "txtUsers";
             this.txtUsers.Parmida_ActivePlusMultiKeys = false;
             this.txtUsers.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsers.Properties.Appearance.Options.UseFont = true;
             this.txtUsers.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txtUsers.Properties.AppearanceDisabled.Options.UseFont = true;
-            this.txtUsers.Size = new System.Drawing.Size(181, 22);
+            this.txtUsers.Size = new System.Drawing.Size(90, 22);
             this.txtUsers.TabIndex = 0;
             // 
             // txtLastSerial
             // 
             this.txtLastSerial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLastSerial.Enabled = false;
-            this.txtLastSerial.Location = new System.Drawing.Point(592, 123);
+            this.txtLastSerial.Location = new System.Drawing.Point(306, 26);
             this.txtLastSerial.Name = "txtLastSerial";
             this.txtLastSerial.Parmida_ActivePlusMultiKeys = false;
             this.txtLastSerial.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastSerial.Properties.Appearance.Options.UseFont = true;
             this.txtLastSerial.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txtLastSerial.Properties.AppearanceDisabled.Options.UseFont = true;
-            this.txtLastSerial.Size = new System.Drawing.Size(181, 22);
+            this.txtLastSerial.Size = new System.Drawing.Size(85, 22);
             this.txtLastSerial.TabIndex = 0;
             // 
             // txtTime
             // 
             this.txtTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTime.Enabled = false;
-            this.txtTime.Location = new System.Drawing.Point(592, 95);
+            this.txtTime.Location = new System.Drawing.Point(476, 26);
             this.txtTime.Name = "txtTime";
             this.txtTime.Parmida_ActivePlusMultiKeys = false;
             this.txtTime.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTime.Properties.Appearance.Options.UseFont = true;
             this.txtTime.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txtTime.Properties.AppearanceDisabled.Options.UseFont = true;
-            this.txtTime.Size = new System.Drawing.Size(181, 22);
+            this.txtTime.Size = new System.Drawing.Size(105, 22);
             this.txtTime.TabIndex = 0;
             // 
             // txtDate
             // 
             this.txtDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDate.Enabled = false;
-            this.txtDate.Location = new System.Drawing.Point(592, 67);
+            this.txtDate.Location = new System.Drawing.Point(637, 26);
             this.txtDate.Name = "txtDate";
             this.txtDate.Parmida_ActivePlusMultiKeys = false;
             this.txtDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -392,14 +385,22 @@
             this.txtDate.Size = new System.Drawing.Size(181, 22);
             this.txtDate.TabIndex = 0;
             // 
-            // simpleButton1
+            // panelControl1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(685, 316);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 4;
-            this.simpleButton1.Text = "simpleButton1";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.panelControl1.Controls.Add(this.txtDate);
+            this.panelControl1.Controls.Add(this.txtTime);
+            this.panelControl1.Controls.Add(this.btnNewSerial);
+            this.panelControl1.Controls.Add(this.txtLastSerial);
+            this.panelControl1.Controls.Add(this.labelControl4);
+            this.panelControl1.Controls.Add(this.txtUsers);
+            this.panelControl1.Controls.Add(this.labelControl3);
+            this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Controls.Add(this.labelControl2);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(2, 39);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(870, 68);
+            this.panelControl1.TabIndex = 4;
             // 
             // FrmSerial
             // 
@@ -413,7 +414,6 @@
             this.Load += new System.EventHandler(this.FrmSerial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -421,6 +421,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLastSerial.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -446,6 +449,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSeriesDateStart;
         private DevExpress.XtraGrid.Columns.GridColumn colSeriesDateEnd;
         private DevExpress.XtraGrid.Columns.GridColumn coluserCreator;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
     }
 }

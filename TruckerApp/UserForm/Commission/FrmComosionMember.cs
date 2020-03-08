@@ -12,11 +12,11 @@ using DevExpress.XtraEditors;
 
 namespace TruckerApp.UserForm
 {
-    public partial class FrmComosionPrice : Form
+    public partial class FrmComosionMember : Form
     {
         TruckerApp.TruckersEntities dbContext = new TruckerApp.TruckersEntities();
 
-        public FrmComosionPrice()
+        public FrmComosionMember()
         {
             InitializeComponent();
 
@@ -25,26 +25,20 @@ namespace TruckerApp.UserForm
         private void GridList1(byte groupid)
         {
             dbContext = new TruckersEntities();
-            var qry = dbContext.Commissions.Where(x => x.Groups == groupid).ToList();
-            if (groupid == 1)
+            var qry = dbContext.Commissions.Where(x => x.Groups_FK == groupid).ToList();
+            if (groupid == 14)
             {
                 gridControl1.DataSource = qry;
             }
-            else if (groupid == 2)
+            else if (groupid == 13)
             {
                 gridControl2.DataSource = qry;
             }
-            else if (groupid == 3)
-            {
-                gridControl3.DataSource = qry;
-            }
+
 
         }
 
-        private void labelControl3_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void Add(byte group,int commission)
         {
@@ -52,21 +46,21 @@ namespace TruckerApp.UserForm
             {
                 try
                 {
-                    var qry = db.Commissions.Where(x => x.Groups == group).ToList();
+                    var qry = db.Commissions.Where(x => x.Groups_FK == group).ToList();
                     foreach (var item in qry)
                     {
                         item.enabled = false;
                     }
-                    Commission newCommission = new Commission()
+                    TruckerApp.Commission newCommission = new TruckerApp.Commission()
                     {
                         DataRegister = DateTime.Now,
-                        Groups = group,
+                        Groups_FK = group,
                         enabled = true,
-                        Commission1 = commission
+                        CommissionPrice = commission
                     };
                     db.Commissions.Add(newCommission);
                     db.SaveChanges();
-                    txtComosin1.Text = txtComosin2.Text = txtComosin3.Text = "";
+                    txtComosin1.Text = txtComosin2.Text ="";
                     GridList1(group);
                 }
                 catch 
@@ -81,7 +75,7 @@ namespace TruckerApp.UserForm
         {
             if (dxValidationProvider1.Validate())
             {
-                Add(1, Convert.ToInt32(txtComosin1.EditValue));
+                Add(14, Convert.ToInt32(txtComosin1.EditValue));
             }
             else
             {
@@ -92,28 +86,18 @@ namespace TruckerApp.UserForm
 
         private void FrmComosionPrice_Load(object sender, EventArgs e)
         {
-            GridList1(1);
-            GridList1(2);
-            GridList1(3);
+            GridList1(14);
+            GridList1(13);
+           
         }
 
-        private void btnAdd2_Click(object sender, EventArgs e)
+
+
+        private void btnAdd2_Click_1(object sender, EventArgs e)
         {
             if (dxValidationProvider2.Validate())
             {
-                Add(2, Convert.ToInt32(txtComosin2.EditValue));
-            }
-            else
-            {
-                XtraMessageBox.Show("مقادیر را درست وارد کنید", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnAdd3_Click(object sender, EventArgs e)
-        {
-            if (dxValidationProvider3.Validate())
-            {
-                Add(3, Convert.ToInt32(txtComosin3.EditValue));
+                Add(13, Convert.ToInt32(txtComosin2.EditValue));
             }
             else
             {

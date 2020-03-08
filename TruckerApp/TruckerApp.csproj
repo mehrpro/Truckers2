@@ -154,64 +154,76 @@
     <Compile Include="User.cs">
       <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserForm\FrmCash.cs">
+    <Compile Include="UserForm\Commission\FrmCommissionNative.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForm\FrmCash.Designer.cs">
+    <Compile Include="UserForm\Commission\FrmCommissionNative.Designer.cs">
+      <DependentUpon>FrmCommissionNative.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm\Commission\FrmCommissionOther.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\Commission\FrmCommissionOther.Designer.cs">
+      <DependentUpon>FrmCommissionOther.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm\cash\FrmCash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\cash\FrmCash.Designer.cs">
       <DependentUpon>FrmCash.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserForm\FrmCasheList.cs">
+    <Compile Include="UserForm\cash\FrmCasheList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForm\FrmCasheList.Designer.cs">
+    <Compile Include="UserForm\cash\FrmCasheList.Designer.cs">
       <DependentUpon>FrmCasheList.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserForm\FrmCashStatus.cs">
+    <Compile Include="UserForm\cash\FrmCashStatus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForm\FrmCashStatus.Designer.cs">
+    <Compile Include="UserForm\cash\FrmCashStatus.Designer.cs">
       <DependentUpon>FrmCashStatus.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserForm\FrmComosionPrice.cs">
+    <Compile Include="UserForm\Commission\FrmComosionMember.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForm\FrmComosionPrice.Designer.cs">
-      <DependentUpon>FrmComosionPrice.cs</DependentUpon>
+    <Compile Include="UserForm\Commission\FrmComosionMember.Designer.cs">
+      <DependentUpon>FrmComosionMember.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserForm\FrmFishPrint.cs">
+    <Compile Include="UserForm\Fish\FrmFishPrint.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForm\FrmFishPrint.Designer.cs">
+    <Compile Include="UserForm\Fish\FrmFishPrint.Designer.cs">
       <DependentUpon>FrmFishPrint.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserForm\FrmMembershipList.cs">
+    <Compile Include="UserForm\Customer\FrmMembershipList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForm\FrmMembershipList.Designer.cs">
+    <Compile Include="UserForm\Customer\FrmMembershipList.Designer.cs">
       <DependentUpon>FrmMembershipList.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserForm\FrmNewDriver.cs">
+    <Compile Include="UserForm\Customer\FrmNewDriver.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForm\FrmNewDriver.Designer.cs">
+    <Compile Include="UserForm\Customer\FrmNewDriver.Designer.cs">
       <DependentUpon>FrmNewDriver.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserForm\FrmQueueList.cs">
+    <Compile Include="UserForm\Fish\FrmQueueList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForm\FrmQueueList.Designer.cs">
+    <Compile Include="UserForm\Fish\FrmQueueList.Designer.cs">
       <DependentUpon>FrmQueueList.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserForm\FrmRevFish.cs">
+    <Compile Include="UserForm\Fish\FrmRevFish.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForm\FrmRevFish.Designer.cs">
+    <Compile Include="UserForm\Fish\FrmRevFish.Designer.cs">
       <DependentUpon>FrmRevFish.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserForm\FrmSerial.cs">
+    <Compile Include="UserForm\Fish\FrmSerial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForm\FrmSerial.Designer.cs">
+    <Compile Include="UserForm\Fish\FrmSerial.Designer.cs">
       <DependentUpon>FrmSerial.cs</DependentUpon>
     </Compile>
     <Compile Include="XRDesignRibbonControllerResources.Designer.cs">
@@ -239,34 +251,40 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserForm\FrmCash.resx">
+    <EmbeddedResource Include="UserForm\Commission\FrmCommissionNative.resx">
+      <DependentUpon>FrmCommissionNative.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Commission\FrmCommissionOther.resx">
+      <DependentUpon>FrmCommissionOther.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\cash\FrmCash.resx">
       <DependentUpon>FrmCash.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForm\FrmCasheList.resx">
+    <EmbeddedResource Include="UserForm\cash\FrmCasheList.resx">
       <DependentUpon>FrmCasheList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForm\FrmCashStatus.resx">
+    <EmbeddedResource Include="UserForm\cash\FrmCashStatus.resx">
       <DependentUpon>FrmCashStatus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForm\FrmComosionPrice.resx">
-      <DependentUpon>FrmComosionPrice.cs</DependentUpon>
+    <EmbeddedResource Include="UserForm\Commission\FrmComosionMember.resx">
+      <DependentUpon>FrmComosionMember.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForm\FrmFishPrint.resx">
+    <EmbeddedResource Include="UserForm\Fish\FrmFishPrint.resx">
       <DependentUpon>FrmFishPrint.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForm\FrmMembershipList.resx">
+    <EmbeddedResource Include="UserForm\Customer\FrmMembershipList.resx">
       <DependentUpon>FrmMembershipList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForm\FrmNewDriver.resx">
+    <EmbeddedResource Include="UserForm\Customer\FrmNewDriver.resx">
       <DependentUpon>FrmNewDriver.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForm\FrmQueueList.resx">
+    <EmbeddedResource Include="UserForm\Fish\FrmQueueList.resx">
       <DependentUpon>FrmQueueList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForm\FrmRevFish.resx">
+    <EmbeddedResource Include="UserForm\Fish\FrmRevFish.resx">
       <DependentUpon>FrmRevFish.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForm\FrmSerial.resx">
+    <EmbeddedResource Include="UserForm\Fish\FrmSerial.resx">
       <DependentUpon>FrmSerial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XRDesignRibbonControllerResources.resx">
@@ -277,6 +295,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>MDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="ClassDiagram1.cd" />
     <None Include="MDB.edmx.diagram">
       <DependentUpon>MDB.edmx</DependentUpon>
     </None>

@@ -21,11 +21,12 @@ namespace TruckerApp
         }
     
         public short CommissionID { get; set; }
-        public byte Groups { get; set; }
-        public int Commission1 { get; set; }
+        public byte Groups_FK { get; set; }
+        public int CommissionPrice { get; set; }
         public System.DateTime DataRegister { get; set; }
         public bool enabled { get; set; }
     
+        public virtual LoadType LoadType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Queue> Queues { get; set; }
     }
