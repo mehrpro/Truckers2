@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Linq;
+using System.Windows.Forms;
 using TruckerApp.UserForm;
 
 namespace TruckerApp
@@ -93,6 +95,11 @@ namespace TruckerApp
         private void btnReportDis_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+            
+
+
+
+
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -102,6 +109,38 @@ namespace TruckerApp
                 c.Close();
             }
             var frmSpring = new FrmRevFish()
+            {
+                FormBorderStyle = FormBorderStyle.None,
+                MdiParent = this,
+                StartPosition = FormStartPosition.CenterParent,
+                Dock = DockStyle.Fill
+            };
+            frmSpring.Show();
+        }
+
+        private void btnHavaleh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form c in this.MdiChildren)
+            {
+                c.Close();
+            }
+            var frmSpring = new FrmQueueList()
+            {
+                FormBorderStyle = FormBorderStyle.None,
+                MdiParent = this,
+                StartPosition = FormStartPosition.CenterParent,
+                Dock = DockStyle.Fill
+            };
+            frmSpring.Show();
+        }
+
+        private void btnCasheStatus_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form c in this.MdiChildren)
+            {
+                c.Close();
+            }
+            var frmSpring = new FrmCasheList()
             {
                 FormBorderStyle = FormBorderStyle.None,
                 MdiParent = this,

@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.CodeParser.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.Data.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.DataAccess.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
@@ -48,6 +49,7 @@
     <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraCharts.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraCharts.v15.2.Extensions, Version=15.2.9.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
+    <Reference Include="DevExpress.XtraCharts.v15.2.UI, Version=15.2.9.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraCharts.v15.2.Wizard, Version=15.2.9.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraGauges.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
@@ -146,7 +148,7 @@
     <Compile Include="Queue.cs">
       <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Series.cs">
+    <Compile Include="SeriesPrice.cs">
       <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
@@ -157,6 +159,18 @@
     </Compile>
     <Compile Include="UserForm\FrmCash.Designer.cs">
       <DependentUpon>FrmCash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm\FrmCasheList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\FrmCasheList.Designer.cs">
+      <DependentUpon>FrmCasheList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm\FrmCashStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\FrmCashStatus.Designer.cs">
+      <DependentUpon>FrmCashStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="UserForm\FrmComosionPrice.cs">
       <SubType>Form</SubType>
@@ -181,6 +195,12 @@
     </Compile>
     <Compile Include="UserForm\FrmNewDriver.Designer.cs">
       <DependentUpon>FrmNewDriver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm\FrmQueueList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\FrmQueueList.Designer.cs">
+      <DependentUpon>FrmQueueList.cs</DependentUpon>
     </Compile>
     <Compile Include="UserForm\FrmRevFish.cs">
       <SubType>Form</SubType>
@@ -222,6 +242,12 @@
     <EmbeddedResource Include="UserForm\FrmCash.resx">
       <DependentUpon>FrmCash.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\FrmCasheList.resx">
+      <DependentUpon>FrmCasheList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\FrmCashStatus.resx">
+      <DependentUpon>FrmCashStatus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserForm\FrmComosionPrice.resx">
       <DependentUpon>FrmComosionPrice.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\FrmNewDriver.resx">
       <DependentUpon>FrmNewDriver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\FrmQueueList.resx">
+      <DependentUpon>FrmQueueList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\FrmRevFish.resx">
       <DependentUpon>FrmRevFish.cs</DependentUpon>

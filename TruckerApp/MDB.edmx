@@ -62,12 +62,12 @@
           <Property Name="ComosiunID_FK" Type="smallint" Nullable="false" />
           <Property Name="SeriesID_FK" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="Series">
+        <EntityType Name="SeriesPrice">
           <Key>
             <PropertyRef Name="SereisID" />
           </Key>
           <Property Name="SereisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Series" Type="int" />
+          <Property Name="SeriesName" Type="int" />
           <Property Name="SeriesCount" Type="int" />
           <Property Name="SeriesDateStart" Type="datetime" />
           <Property Name="SeriesDateEnd" Type="datetime" />
@@ -178,10 +178,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Queue_Series">
-          <End Role="Series" Type="Self.Series" Multiplicity="1" />
+          <End Role="SeriesPrice" Type="Self.SeriesPrice" Multiplicity="1" />
           <End Role="Queue" Type="Self.Queue" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Series">
+            <Principal Role="SeriesPrice">
               <PropertyRef Name="SereisID" />
             </Principal>
             <Dependent Role="Queue">
@@ -191,12 +191,12 @@
         </Association>
         <Association Name="FK_Series_Users">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
-          <End Role="Series" Type="Self.Series" Multiplicity="*" />
+          <End Role="SeriesPrice" Type="Self.SeriesPrice" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="userID" />
             </Principal>
-            <Dependent Role="Series">
+            <Dependent Role="SeriesPrice">
               <PropertyRef Name="userCreator" />
             </Dependent>
           </ReferentialConstraint>
@@ -207,7 +207,7 @@
           <EntitySet Name="Drivers" EntityType="Self.Drivers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LoadType" EntityType="Self.LoadType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Queue" EntityType="Self.Queue" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Series" EntityType="Self.Series" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SeriesPrice" EntityType="Self.SeriesPrice" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Cash_Queue" Association="Self.FK_Cash_Queue">
             <End Role="Queue" EntitySet="Queue" />
@@ -238,12 +238,12 @@
             <End Role="Queue" EntitySet="Queue" />
           </AssociationSet>
           <AssociationSet Name="FK_Queue_Series" Association="Self.FK_Queue_Series">
-            <End Role="Series" EntitySet="Series" />
+            <End Role="SeriesPrice" EntitySet="SeriesPrice" />
             <End Role="Queue" EntitySet="Queue" />
           </AssociationSet>
           <AssociationSet Name="FK_Series_Users" Association="Self.FK_Series_Users">
             <End Role="Users" EntitySet="Users" />
-            <End Role="Series" EntitySet="Series" />
+            <End Role="SeriesPrice" EntitySet="SeriesPrice" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -255,7 +255,6 @@
           <EntitySet Name="Drivers" EntityType="TruckersModel.Driver" />
           <EntitySet Name="LoadTypes" EntityType="TruckersModel.LoadType" />
           <EntitySet Name="Queues" EntityType="TruckersModel.Queue" />
-          <EntitySet Name="Series" EntityType="TruckersModel.Series" />
           <EntitySet Name="Users" EntityType="TruckersModel.User" />
           <AssociationSet Name="FK_Queue_Commission" Association="TruckersModel.FK_Queue_Commission">
             <End Role="Commission" EntitySet="Commissions" />
@@ -277,14 +276,6 @@
             <End Role="LoadType" EntitySet="LoadTypes" />
             <End Role="Queue" EntitySet="Queues" />
           </AssociationSet>
-          <AssociationSet Name="FK_Queue_Series" Association="TruckersModel.FK_Queue_Series">
-            <End Role="Series" EntitySet="Series" />
-            <End Role="Queue" EntitySet="Queues" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Series_Users" Association="TruckersModel.FK_Series_Users">
-            <End Role="User" EntitySet="Users" />
-            <End Role="Series" EntitySet="Series" />
-          </AssociationSet>
           <EntitySet Name="Cashes" EntityType="TruckersModel.Cash" />
           <AssociationSet Name="FK_Cash_Queue" Association="TruckersModel.FK_Cash_Queue">
             <End Role="Queue" EntitySet="Queues" />
@@ -294,7 +285,16 @@
             <End Role="User" EntitySet="Users" />
             <End Role="Cash" EntitySet="Cashes" />
           </AssociationSet>
-        </EntityContainer>
+          <EntitySet Name="SeriesPrices" EntityType="TruckersModel.SeriesPrice" />
+          <AssociationSet Name="FK_Queue_Series" Association="TruckersModel.FK_Queue_Series">
+            <End Role="SeriesPrice" EntitySet="SeriesPrices" />
+            <End Role="Queue" EntitySet="Queues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Series_Users" Association="TruckersModel.FK_Series_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="SeriesPrice" EntitySet="SeriesPrices" />
+          </AssociationSet>
+          </EntityContainer>
         <EntityType Name="Commission">
           <Key>
             <PropertyRef Name="CommissionID" />
@@ -350,29 +350,8 @@
           <NavigationProperty Name="Driver" Relationship="TruckersModel.FK_Queue_Drivers" FromRole="Queue" ToRole="Driver" />
           <NavigationProperty Name="LoadType" Relationship="TruckersModel.FK_Queue_LoadType" FromRole="Queue" ToRole="LoadType" />
           <NavigationProperty Name="LoadType1" Relationship="TruckersModel.FK_Queue_LoadType1" FromRole="Queue" ToRole="LoadType" />
-          <NavigationProperty Name="Series" Relationship="TruckersModel.FK_Queue_Series" FromRole="Queue" ToRole="Series" />
           <NavigationProperty Name="Cashes" Relationship="TruckersModel.FK_Cash_Queue" FromRole="Queue" ToRole="Cash" />
-        </EntityType>
-        <EntityType Name="Series">
-          <Key>
-            <PropertyRef Name="SereisID" />
-          </Key>
-          <Property Name="SereisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Series1" Type="Int32" />
-          <Property Name="SeriesCount" Type="Int32" />
-          <Property Name="SeriesDateStart" Type="DateTime" Precision="3" />
-          <Property Name="SeriesDateEnd" Type="DateTime" Precision="3" />
-          <Property Name="Faleh" Type="Int32" />
-          <Property Name="Packet" Type="Int32" />
-          <Property Name="Gandom" Type="Int32" />
-          <Property Name="closing" Type="Boolean" />
-          <Property Name="userCreator" Type="Byte" />
-          <Property Name="Member" Type="Int16" />
-          <Property Name="Native" Type="Int16" />
-          <Property Name="Other" Type="Int16" />
-          <Property Name="enabeled" Type="Boolean" />
-          <NavigationProperty Name="Queues" Relationship="TruckersModel.FK_Queue_Series" FromRole="Series" ToRole="Queue" />
-          <NavigationProperty Name="User" Relationship="TruckersModel.FK_Series_Users" FromRole="Series" ToRole="User" />
+          <NavigationProperty Name="SeriesPrice" Relationship="TruckersModel.FK_Queue_Series" FromRole="Queue" ToRole="SeriesPrice" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -386,8 +365,8 @@
           <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="password" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Drivers" Relationship="TruckersModel.FK_Drivers_Users" FromRole="User" ToRole="Driver" />
-          <NavigationProperty Name="Series" Relationship="TruckersModel.FK_Series_Users" FromRole="User" ToRole="Series" />
           <NavigationProperty Name="Cashes" Relationship="TruckersModel.FK_Cash_Users" FromRole="User" ToRole="Cash" />
+          <NavigationProperty Name="SeriesPrices" Relationship="TruckersModel.FK_Series_Users" FromRole="User" ToRole="SeriesPrice" />
         </EntityType>
         <Association Name="FK_Queue_Commission">
           <End Type="TruckersModel.Commission" Role="Commission" Multiplicity="1" />
@@ -449,30 +428,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Queue_Series">
-          <End Type="TruckersModel.Series" Role="Series" Multiplicity="1" />
-          <End Type="TruckersModel.Queue" Role="Queue" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Series">
-              <PropertyRef Name="SereisID" />
-            </Principal>
-            <Dependent Role="Queue">
-              <PropertyRef Name="SeriesID_FK" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Series_Users">
-          <End Type="TruckersModel.User" Role="User" Multiplicity="0..1" />
-          <End Type="TruckersModel.Series" Role="Series" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="userID" />
-            </Principal>
-            <Dependent Role="Series">
-              <PropertyRef Name="userCreator" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Cash">
           <Key>
             <PropertyRef Name="CashID" />
@@ -506,6 +461,51 @@
             </Principal>
             <Dependent Role="Cash">
               <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SeriesPrice">
+          <Key>
+            <PropertyRef Name="SereisID" />
+          </Key>
+          <Property Name="SereisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SeriesName" Type="Int32" />
+          <Property Name="SeriesCount" Type="Int32" />
+          <Property Name="SeriesDateStart" Type="DateTime" Precision="3" />
+          <Property Name="SeriesDateEnd" Type="DateTime" Precision="3" />
+          <Property Name="Faleh" Type="Int32" />
+          <Property Name="Packet" Type="Int32" />
+          <Property Name="Gandom" Type="Int32" />
+          <Property Name="closing" Type="Boolean" />
+          <Property Name="userCreator" Type="Byte" />
+          <Property Name="Member" Type="Int16" />
+          <Property Name="Native" Type="Int16" />
+          <Property Name="Other" Type="Int16" />
+          <Property Name="enabeled" Type="Boolean" />
+          <NavigationProperty Name="Queues" Relationship="TruckersModel.FK_Queue_Series" FromRole="SeriesPrice" ToRole="Queue" />
+          <NavigationProperty Name="User" Relationship="TruckersModel.FK_Series_Users" FromRole="SeriesPrice" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Queue_Series">
+          <End Type="TruckersModel.SeriesPrice" Role="SeriesPrice" Multiplicity="1" />
+          <End Type="TruckersModel.Queue" Role="Queue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SeriesPrice">
+              <PropertyRef Name="SereisID" />
+            </Principal>
+            <Dependent Role="Queue">
+              <PropertyRef Name="SeriesID_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Series_Users">
+          <End Type="TruckersModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="TruckersModel.SeriesPrice" Role="SeriesPrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="userID" />
+            </Principal>
+            <Dependent Role="SeriesPrice">
+              <PropertyRef Name="userCreator" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -566,26 +566,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Series">
-            <EntityTypeMapping TypeName="TruckersModel.Series">
-              <MappingFragment StoreEntitySet="Series">
-                <ScalarProperty Name="enabeled" ColumnName="enabeled" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
-                <ScalarProperty Name="Native" ColumnName="Native" />
-                <ScalarProperty Name="Member" ColumnName="Member" />
-                <ScalarProperty Name="userCreator" ColumnName="userCreator" />
-                <ScalarProperty Name="closing" ColumnName="closing" />
-                <ScalarProperty Name="Gandom" ColumnName="Gandom" />
-                <ScalarProperty Name="Packet" ColumnName="Packet" />
-                <ScalarProperty Name="Faleh" ColumnName="Faleh" />
-                <ScalarProperty Name="SeriesDateEnd" ColumnName="SeriesDateEnd" />
-                <ScalarProperty Name="SeriesDateStart" ColumnName="SeriesDateStart" />
-                <ScalarProperty Name="SeriesCount" ColumnName="SeriesCount" />
-                <ScalarProperty Name="Series1" ColumnName="Series" />
-                <ScalarProperty Name="SereisID" ColumnName="SereisID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="TruckersModel.User">
               <MappingFragment StoreEntitySet="Users">
@@ -607,6 +587,26 @@
                 <ScalarProperty Name="Pos" ColumnName="Pos" />
                 <ScalarProperty Name="QueueID_FK" ColumnName="QueueID_FK" />
                 <ScalarProperty Name="CashID" ColumnName="CashID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SeriesPrices">
+            <EntityTypeMapping TypeName="TruckersModel.SeriesPrice">
+              <MappingFragment StoreEntitySet="SeriesPrice">
+                <ScalarProperty Name="enabeled" ColumnName="enabeled" />
+                <ScalarProperty Name="Other" ColumnName="Other" />
+                <ScalarProperty Name="Native" ColumnName="Native" />
+                <ScalarProperty Name="Member" ColumnName="Member" />
+                <ScalarProperty Name="userCreator" ColumnName="userCreator" />
+                <ScalarProperty Name="closing" ColumnName="closing" />
+                <ScalarProperty Name="Gandom" ColumnName="Gandom" />
+                <ScalarProperty Name="Packet" ColumnName="Packet" />
+                <ScalarProperty Name="Faleh" ColumnName="Faleh" />
+                <ScalarProperty Name="SeriesDateEnd" ColumnName="SeriesDateEnd" />
+                <ScalarProperty Name="SeriesDateStart" ColumnName="SeriesDateStart" />
+                <ScalarProperty Name="SeriesCount" ColumnName="SeriesCount" />
+                <ScalarProperty Name="SeriesName" ColumnName="SeriesName" />
+                <ScalarProperty Name="SereisID" ColumnName="SereisID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

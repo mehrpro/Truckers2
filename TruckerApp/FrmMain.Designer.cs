@@ -38,15 +38,20 @@
             this.btnCommission = new DevExpress.XtraBars.BarButtonItem();
             this.btnNewQue = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHavaleh = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.btnSeries = new DevExpress.XtraBars.BarButtonItem();
             this.btnReportDis = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCasheStatus = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -67,19 +72,23 @@
             this.btnCommission,
             this.btnNewQue,
             this.barButtonItem6,
-            this.barButtonItem7,
+            this.btnHavaleh,
             this.skinRibbonGalleryBarItem1,
             this.btnSeries,
-            this.btnReportDis});
+            this.btnReportDis,
+            this.btnCasheStatus,
+            this.barButtonItem3});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 7;
+            this.ribbonControl1.MaxItemId = 9;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2,
+            this.ribbonPage4,
+            this.ribbonPage5,
             this.ribbonPage3});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
-            this.ribbonControl1.Size = new System.Drawing.Size(604, 143);
+            this.ribbonControl1.Size = new System.Drawing.Size(803, 143);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // applicationMenu1
@@ -141,13 +150,14 @@
             this.barButtonItem6.Name = "barButtonItem6";
             this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
-            // barButtonItem7
+            // btnHavaleh
             // 
-            this.barButtonItem7.Caption = "حواله های روز";
-            this.barButtonItem7.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.Glyph")));
-            this.barButtonItem7.Id = 7;
-            this.barButtonItem7.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.LargeGlyph")));
-            this.barButtonItem7.Name = "barButtonItem7";
+            this.btnHavaleh.Caption = "حواله های روز";
+            this.btnHavaleh.Glyph = ((System.Drawing.Image)(resources.GetObject("btnHavaleh.Glyph")));
+            this.btnHavaleh.Id = 7;
+            this.btnHavaleh.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnHavaleh.LargeGlyph")));
+            this.btnHavaleh.Name = "btnHavaleh";
+            this.btnHavaleh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHavaleh_ItemClick);
             // 
             // skinRibbonGalleryBarItem1
             // 
@@ -172,6 +182,23 @@
             this.btnReportDis.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnReportDis.LargeGlyph")));
             this.btnReportDis.Name = "btnReportDis";
             this.btnReportDis.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReportDis_ItemClick);
+            // 
+            // btnCasheStatus
+            // 
+            this.btnCasheStatus.Caption = "موجودی صندوق";
+            this.btnCasheStatus.Glyph = ((System.Drawing.Image)(resources.GetObject("btnCasheStatus.Glyph")));
+            this.btnCasheStatus.Id = 7;
+            this.btnCasheStatus.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnCasheStatus.LargeGlyph")));
+            this.btnCasheStatus.Name = "btnCasheStatus";
+            this.btnCasheStatus.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCasheStatus_ItemClick);
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "تنخواه از صندوق";
+            this.barButtonItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.Glyph")));
+            this.barButtonItem3.Id = 8;
+            this.barButtonItem3.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.LargeGlyph")));
+            this.barButtonItem3.Name = "barButtonItem3";
             // 
             // ribbonPage1
             // 
@@ -209,9 +236,28 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.btnSeries);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnNewQue);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem6);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnHavaleh);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "صدور";
+            // 
+            // ribbonPage4
+            // 
+            this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup6});
+            this.ribbonPage4.Name = "ribbonPage4";
+            this.ribbonPage4.Text = "صندوق";
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnCasheStatus);
+            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "صندوق";
+            // 
+            // ribbonPage5
+            // 
+            this.ribbonPage5.Name = "ribbonPage5";
+            this.ribbonPage5.Text = "گزارشات";
             // 
             // ribbonPage3
             // 
@@ -237,17 +283,17 @@
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.btnNewQue);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 349);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 518);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(604, 31);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(803, 31);
             // 
             // FrmMain
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 380);
+            this.ClientSize = new System.Drawing.Size(803, 549);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
@@ -257,7 +303,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar1;
-            this.Text = "اتوماسیون پایانه (انجمن صنفی رانندگان گروس)";
+            this.Text = "اتوماسیون پایانه (انجمن صنفی رانندگان کامیون شهرستان بیجار)";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
@@ -278,7 +324,7 @@
         private DevExpress.XtraBars.BarButtonItem btnCommission;
         private DevExpress.XtraBars.BarButtonItem btnNewQue;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarButtonItem btnHavaleh;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
@@ -288,5 +334,10 @@
         private DevExpress.XtraBars.BarButtonItem btnSeries;
         private DevExpress.XtraBars.BarButtonItem btnReportDis;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
+        private DevExpress.XtraBars.BarButtonItem btnCasheStatus;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
     }
 }

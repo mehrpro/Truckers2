@@ -9,19 +9,19 @@
         <EntityTypeShape EntityType="TruckersModel.Driver" Width="1.5" PointX="3" PointY="11.125" />
         <EntityTypeShape EntityType="TruckersModel.LoadType" Width="1.5" PointX="3" PointY="8.5" />
         <EntityTypeShape EntityType="TruckersModel.Queue" Width="1.5" PointX="5.25" PointY="10" />
-        <EntityTypeShape EntityType="TruckersModel.Series" Width="1.5" PointX="3" PointY="3.125" />
         <EntityTypeShape EntityType="TruckersModel.User" Width="1.5" PointX="0.75" PointY="5.875" />
         <AssociationConnector Association="TruckersModel.FK_Queue_Commission" />
         <AssociationConnector Association="TruckersModel.FK_Drivers_Users" />
         <AssociationConnector Association="TruckersModel.FK_Queue_Drivers" />
         <AssociationConnector Association="TruckersModel.FK_Queue_LoadType" />
         <AssociationConnector Association="TruckersModel.FK_Queue_LoadType1" />
-        <AssociationConnector Association="TruckersModel.FK_Queue_Series" />
-        <AssociationConnector Association="TruckersModel.FK_Series_Users" />
         <EntityTypeShape EntityType="TruckersModel.Cash" Width="1.5" PointX="7.5" PointY="8.75" />
         <AssociationConnector Association="TruckersModel.FK_Cash_Queue" />
         <AssociationConnector Association="TruckersModel.FK_Cash_Users" />
-      </Diagram>
+        <EntityTypeShape EntityType="TruckersModel.SeriesPrice" Width="1.5" PointX="3" PointY="3.25" />
+        <AssociationConnector Association="TruckersModel.FK_Queue_Series" />
+        <AssociationConnector Association="TruckersModel.FK_Series_Users" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

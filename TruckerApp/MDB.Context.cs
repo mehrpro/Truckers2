@@ -29,8 +29,8 @@ namespace TruckerApp
         public virtual DbSet<Driver> Drivers { get; set; }
         public virtual DbSet<LoadType> LoadTypes { get; set; }
         public virtual DbSet<Queue> Queues { get; set; }
-        public virtual DbSet<Series> Series { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Cash> Cashes { get; set; }
+        public virtual DbSet<SeriesPrice> SeriesPrices { get; set; }
     }
 }

@@ -18,8 +18,8 @@ namespace TruckerApp
         public User()
         {
             this.Drivers = new HashSet<Driver>();
-            this.Series = new HashSet<Series>();
             this.Cashes = new HashSet<Cash>();
+            this.SeriesPrices = new HashSet<SeriesPrice>();
         }
     
         public byte userID { get; set; }
@@ -33,8 +33,8 @@ namespace TruckerApp
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Driver> Drivers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Series> Series { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cash> Cashes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SeriesPrice> SeriesPrices { get; set; }
     }
 }

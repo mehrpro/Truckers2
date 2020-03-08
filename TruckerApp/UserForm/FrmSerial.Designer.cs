@@ -49,6 +49,7 @@
             this.txtLastSerial = new DevExpress.XtraEditors.TextEdit();
             this.txtTime = new DevExpress.XtraEditors.TextEdit();
             this.txtDate = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -65,6 +66,7 @@
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImage")));
+            this.groupControl1.Controls.Add(this.simpleButton1);
             this.groupControl1.Controls.Add(this.gridControl1);
             this.groupControl1.Controls.Add(this.btnNewSerial);
             this.groupControl1.Controls.Add(this.labelControl4);
@@ -98,7 +100,7 @@
             // 
             // seriesBindingSource
             // 
-            this.seriesBindingSource.DataSource = typeof(TruckerApp.Series);
+            this.seriesBindingSource.DataSource = typeof(TruckerApp.SeriesPrice);
             // 
             // gridView1
             // 
@@ -390,6 +392,15 @@
             this.txtDate.Size = new System.Drawing.Size(181, 22);
             this.txtDate.TabIndex = 0;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(685, 316);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 4;
+            this.simpleButton1.Text = "simpleButton1";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // FrmSerial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -435,5 +446,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSeriesDateStart;
         private DevExpress.XtraGrid.Columns.GridColumn colSeriesDateEnd;
         private DevExpress.XtraGrid.Columns.GridColumn coluserCreator;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

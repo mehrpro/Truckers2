@@ -12,16 +12,16 @@ namespace TruckerApp
     using System;
     using System.Collections.Generic;
     
-    public partial class Series
+    public partial class SeriesPrice
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Series()
+        public SeriesPrice()
         {
             this.Queues = new HashSet<Queue>();
         }
     
         public int SereisID { get; set; }
-        public Nullable<int> Series1 { get; set; }
+        public Nullable<int> SeriesName { get; set; }
         public Nullable<int> SeriesCount { get; set; }
         public Nullable<System.DateTime> SeriesDateStart { get; set; }
         public Nullable<System.DateTime> SeriesDateEnd { get; set; }

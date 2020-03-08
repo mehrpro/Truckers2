@@ -34,8 +34,8 @@ namespace TruckerApp
         public virtual Driver Driver { get; set; }
         public virtual LoadType LoadType { get; set; }
         public virtual LoadType LoadType1 { get; set; }
-        public virtual Series Series { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cash> Cashes { get; set; }
+        public virtual SeriesPrice SeriesPrice { get; set; }
     }
 }
