@@ -64,7 +64,8 @@ namespace TruckerApp.UserForm.Commission
                         DataRegister = DateTime.Now,
                         Groups_FK = group,
                         enabled = true,
-                        CommissionPrice = commission
+                        CommissionPrice = commission,
+                        GroupID = 3,
                     };
                     db.Commissions.Add(newCommission);
                     db.SaveChanges();

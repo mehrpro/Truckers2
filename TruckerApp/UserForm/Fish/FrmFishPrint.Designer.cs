@@ -106,7 +106,7 @@
             // 
             this.radioGroupType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioGroupType.EditValue = ((byte)(1));
-            this.radioGroupType.Location = new System.Drawing.Point(295, 278);
+            this.radioGroupType.Location = new System.Drawing.Point(338, 264);
             this.radioGroupType.Name = "radioGroupType";
             this.radioGroupType.Parmida_ActivePlusMultiKeys = false;
             this.radioGroupType.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -128,7 +128,7 @@
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(328, 322);
+            this.simpleButton1.Location = new System.Drawing.Point(371, 308);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(100, 30);
             this.simpleButton1.TabIndex = 2;
@@ -141,7 +141,7 @@
             this.btnPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.btnPrint.Appearance.Options.UseFont = true;
             this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(434, 322);
+            this.btnPrint.Location = new System.Drawing.Point(477, 308);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(100, 30);
             this.btnPrint.TabIndex = 2;
@@ -152,7 +152,7 @@
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl4.Location = new System.Drawing.Point(541, 253);
+            this.labelControl4.Location = new System.Drawing.Point(584, 239);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(66, 16);
             this.labelControl4.TabIndex = 2;
@@ -162,7 +162,7 @@
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl3.Location = new System.Drawing.Point(541, 225);
+            this.labelControl3.Location = new System.Drawing.Point(584, 211);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(48, 16);
             this.labelControl3.TabIndex = 2;
@@ -172,7 +172,7 @@
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl2.Location = new System.Drawing.Point(543, 197);
+            this.labelControl2.Location = new System.Drawing.Point(586, 183);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(25, 16);
             this.labelControl2.TabIndex = 2;
@@ -182,7 +182,7 @@
             // 
             this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl6.Location = new System.Drawing.Point(543, 113);
+            this.labelControl6.Location = new System.Drawing.Point(586, 99);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(69, 16);
             this.labelControl6.TabIndex = 2;
@@ -192,7 +192,7 @@
             // 
             this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl5.Location = new System.Drawing.Point(542, 141);
+            this.labelControl5.Location = new System.Drawing.Point(585, 127);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(78, 16);
             this.labelControl5.TabIndex = 2;
@@ -202,7 +202,7 @@
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl1.Location = new System.Drawing.Point(543, 169);
+            this.labelControl1.Location = new System.Drawing.Point(586, 155);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(50, 16);
             this.labelControl1.TabIndex = 2;
@@ -211,7 +211,7 @@
             // txtserial
             // 
             this.txtserial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtserial.Location = new System.Drawing.Point(472, 110);
+            this.txtserial.Location = new System.Drawing.Point(515, 96);
             this.txtserial.Name = "txtserial";
             this.txtserial.Parmida_ActivePlusMultiKeys = false;
             this.txtserial.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
@@ -233,7 +233,7 @@
             // txtNumber
             // 
             this.txtNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNumber.Location = new System.Drawing.Point(295, 110);
+            this.txtNumber.Location = new System.Drawing.Point(338, 96);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Parmida_ActivePlusMultiKeys = false;
             this.txtNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
@@ -255,7 +255,7 @@
             // txtDateRegister
             // 
             this.txtDateRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDateRegister.Location = new System.Drawing.Point(295, 82);
+            this.txtDateRegister.Location = new System.Drawing.Point(338, 68);
             this.txtDateRegister.Name = "txtDateRegister";
             this.txtDateRegister.Parmida_ActivePlusMultiKeys = false;
             this.txtDateRegister.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
@@ -277,7 +277,7 @@
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(296, 250);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(339, 236);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Parmida_ActivePlusMultiKeys = false;
             this.txtPhoneNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
@@ -299,7 +299,7 @@
             // txtTag
             // 
             this.txtTag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTag.Location = new System.Drawing.Point(296, 194);
+            this.txtTag.Location = new System.Drawing.Point(339, 180);
             this.txtTag.Name = "txtTag";
             this.txtTag.Parmida_ActivePlusMultiKeys = false;
             this.txtTag.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
@@ -321,7 +321,7 @@
             // txtName
             // 
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName.Location = new System.Drawing.Point(296, 166);
+            this.txtName.Location = new System.Drawing.Point(339, 152);
             this.txtName.Name = "txtName";
             this.txtName.Parmida_ActivePlusMultiKeys = false;
             this.txtName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
@@ -343,7 +343,7 @@
             // cbxSmart
             // 
             this.cbxSmart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxSmart.Location = new System.Drawing.Point(296, 138);
+            this.cbxSmart.Location = new System.Drawing.Point(339, 124);
             this.cbxSmart.Name = "cbxSmart";
             this.cbxSmart.Parmida_ActivePlusMultiKeys = false;
             this.cbxSmart.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
@@ -553,7 +553,7 @@
             // 
             this.txtComossin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtComossin.EditValue = "0";
-            this.txtComossin.Location = new System.Drawing.Point(296, 222);
+            this.txtComossin.Location = new System.Drawing.Point(339, 208);
             this.txtComossin.Name = "txtComossin";
             this.txtComossin.Parmida_ActivePlusMultiKeys = false;
             this.txtComossin.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);

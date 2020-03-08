@@ -329,6 +329,7 @@
             this.StatusBar = this.ribbonStatusBar1;
             this.Text = "اتوماسیون پایانه (انجمن صنفی رانندگان کامیون شهرستان بیجار)";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
             this.ResumeLayout(false);

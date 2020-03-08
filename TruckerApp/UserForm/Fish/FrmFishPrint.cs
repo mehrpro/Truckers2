@@ -78,7 +78,7 @@ namespace TruckerApp.UserForm
 
         private void cbxSmart_EditValueChanged(object sender, EventArgs e)
         {
-            var db = new TruckersEntities();
+             db = new TruckersEntities();
             var driver = (Driver) cbxSmart.GetSelectedDataRow();
             _driver = driver.DriverID;
             txtName.Text =_name = $"{driver.FirstName}  {driver.LastName}";
@@ -86,7 +86,7 @@ namespace TruckerApp.UserForm
             txtPhoneNumber.Text = driver.PhoneNumber;
             _smartcart = driver.SmartCart.ToString();
             _groupCommission = driver.Commission_Group;
-            var qryCommission1 = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == _groupCommission);
+            var qryCommission1 = db.Commissions.SingleOrDefault(x => x.enabled == true && x.GroupID == _groupCommission);
             _commission = qryCommission1.CommissionID;
             txtComossin.Text = qryCommission1.CommissionPrice.ToString();
         }

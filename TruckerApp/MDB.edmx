@@ -25,6 +25,7 @@
           <Property Name="CommissionPrice" Type="int" Nullable="false" />
           <Property Name="DataRegister" Type="date" Nullable="false" />
           <Property Name="enabled" Type="bit" Nullable="false" />
+          <Property Name="GroupID" Type="tinyint" />
         </EntityType>
         <EntityType Name="Drivers">
           <Key>
@@ -554,6 +555,7 @@
           <Property Name="enabled" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="LoadType" Relationship="TruckersModel.FK_Commission_LoadType" FromRole="Commission" ToRole="LoadType" />
           <NavigationProperty Name="Queues" Relationship="TruckersModel.FK_Queue_Commission" FromRole="Commission" ToRole="Queue" />
+          <Property Name="GroupID" Type="Byte" />
         </EntityType>
         <Association Name="FK_Commission_LoadType">
           <End Type="TruckersModel.LoadType" Role="LoadType" Multiplicity="1" />
@@ -673,6 +675,7 @@
           <EntitySetMapping Name="Commissions">
             <EntityTypeMapping TypeName="TruckersModel.Commission">
               <MappingFragment StoreEntitySet="Commission">
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
                 <ScalarProperty Name="enabled" ColumnName="enabled" />
                 <ScalarProperty Name="DataRegister" ColumnName="DataRegister" />
                 <ScalarProperty Name="CommissionPrice" ColumnName="CommissionPrice" />

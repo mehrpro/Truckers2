@@ -53,6 +53,7 @@
     <Reference Include="DevExpress.XtraCharts.v15.2.Wizard, Version=15.2.9.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraGauges.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
+    <Reference Include="DevExpress.XtraGauges.v15.2.Win, Version=15.2.9.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraNavBar.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
@@ -190,6 +191,12 @@
     <Compile Include="UserForm\Commission\FrmComosionMember.Designer.cs">
       <DependentUpon>FrmComosionMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserForm\Fish\FrmFishPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\Fish\FrmFishPanel.Designer.cs">
+      <DependentUpon>FrmFishPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForm\Fish\FrmFishPrint.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,6 +276,9 @@
     <EmbeddedResource Include="UserForm\Commission\FrmComosionMember.resx">
       <DependentUpon>FrmComosionMember.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Fish\FrmFishPanel.resx">
+      <DependentUpon>FrmFishPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserForm\Fish\FrmFishPrint.resx">
       <DependentUpon>FrmFishPrint.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,6 +306,7 @@
       <LastGenOutput>MDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="ClassDiagram1.cd" />
+    <None Include="font\Yekan.ttf" />
     <None Include="MDB.edmx.diagram">
       <DependentUpon>MDB.edmx</DependentUpon>
     </None>
@@ -327,6 +338,21 @@
       <DependentUpon>MDB.edmx</DependentUpon>
       <LastGenOutput>MDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\truck2.jpg" />
+    <None Include="Resources\truck.jpg" />
+    <None Include="Resources\۱۴.jpg" />
+    <None Include="Resources\۱۳.jpg" />
+    <None Include="Resources\۱۲.png" />
+    <None Include="Resources\12.png" />
+    <None Include="Resources\۱۱.png" />
+    <None Include="Resources\10.png" />
+    <None Include="Resources\unnamed.jpg" />
+    <None Include="Resources\pact.jfif" />
+    <None Include="Resources\لشدیخپ.png" />
+    <None Include="Resources\oil-well-cement-500x5001.jpg" />
+    <None Include="Resources\oil-well-cement-500x500.jpg" />
+    <None Include="Resources\BunkerCement.png" />
+    <None Include="Resources\BunkerCement.jfif" />
     <None Include="Resources\icons8-list-48.png" />
     <None Include="Resources\icons8-driver-48.png" />
   </ItemGroup>
