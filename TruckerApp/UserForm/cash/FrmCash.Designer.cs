@@ -46,9 +46,9 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("B Yekan", 16F);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
-            this.groupControl1.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImage")));
+            this.groupControl1.CaptionImage = global::TruckerApp.Properties.Resources.icons8_expensive_price_48;
             this.groupControl1.Controls.Add(this.simpleButton1);
             this.groupControl1.Controls.Add(this.btnPrint);
             this.groupControl1.Controls.Add(this.labelControl8);
@@ -60,19 +60,19 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(291, 188);
+            this.groupControl1.Size = new System.Drawing.Size(319, 251);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "پرداخت";
             // 
             // simpleButton1
             // 
             this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(42, 127);
+            this.simpleButton1.Location = new System.Drawing.Point(69, 165);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(100, 30);
+            this.simpleButton1.Size = new System.Drawing.Size(93, 46);
             this.simpleButton1.TabIndex = 3;
             this.simpleButton1.Text = "انصراف";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -80,12 +80,12 @@
             // btnPrint
             // 
             this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.btnPrint.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.btnPrint.Appearance.Options.UseFont = true;
             this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(148, 127);
+            this.btnPrint.Location = new System.Drawing.Point(168, 165);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(100, 30);
+            this.btnPrint.Size = new System.Drawing.Size(93, 46);
             this.btnPrint.TabIndex = 2;
             this.btnPrint.Text = "ثبت";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
@@ -93,40 +93,40 @@
             // labelControl8
             // 
             this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl8.Location = new System.Drawing.Point(204, 90);
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.labelControl8.Location = new System.Drawing.Point(230, 124);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(29, 16);
+            this.labelControl8.Size = new System.Drawing.Size(31, 24);
             this.labelControl8.TabIndex = 5;
             this.labelControl8.Text = "نقدی";
             // 
             // labelControl10
             // 
             this.labelControl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl10.Location = new System.Drawing.Point(36, 89);
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.labelControl10.Location = new System.Drawing.Point(62, 123);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(21, 16);
+            this.labelControl10.Size = new System.Drawing.Size(27, 24);
             this.labelControl10.TabIndex = 6;
             this.labelControl10.Text = "ریال";
             // 
             // labelControl9
             // 
             this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl9.Location = new System.Drawing.Point(36, 61);
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.labelControl9.Location = new System.Drawing.Point(62, 80);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(21, 16);
+            this.labelControl9.Size = new System.Drawing.Size(27, 24);
             this.labelControl9.TabIndex = 7;
             this.labelControl9.Text = "ریال";
             // 
             // labelControl7
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl7.Location = new System.Drawing.Point(204, 62);
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.labelControl7.Location = new System.Drawing.Point(230, 81);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(50, 16);
+            this.labelControl7.Size = new System.Drawing.Size(55, 24);
             this.labelControl7.TabIndex = 8;
             this.labelControl7.Text = "عابر بانک";
             // 
@@ -134,10 +134,10 @@
             // 
             this.txtCash.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCash.EditValue = "0";
-            this.txtCash.Location = new System.Drawing.Point(69, 87);
+            this.txtCash.Location = new System.Drawing.Point(95, 121);
             this.txtCash.Name = "txtCash";
             this.txtCash.Parmida_ActivePlusMultiKeys = false;
-            this.txtCash.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtCash.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtCash.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtCash.Properties.Appearance.Options.UseFont = true;
             this.txtCash.Properties.Appearance.Options.UseForeColor = true;
@@ -151,17 +151,17 @@
             this.txtCash.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtCash.Properties.Mask.EditMask = "d";
             this.txtCash.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtCash.Size = new System.Drawing.Size(129, 22);
+            this.txtCash.Size = new System.Drawing.Size(129, 30);
             this.txtCash.TabIndex = 1;
             // 
             // txtPOS
             // 
             this.txtPOS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPOS.EditValue = "0";
-            this.txtPOS.Location = new System.Drawing.Point(69, 59);
+            this.txtPOS.Location = new System.Drawing.Point(95, 78);
             this.txtPOS.Name = "txtPOS";
             this.txtPOS.Parmida_ActivePlusMultiKeys = false;
-            this.txtPOS.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtPOS.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtPOS.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtPOS.Properties.Appearance.Options.UseFont = true;
             this.txtPOS.Properties.Appearance.Options.UseForeColor = true;
@@ -175,14 +175,14 @@
             this.txtPOS.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtPOS.Properties.Mask.EditMask = "d";
             this.txtPOS.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtPOS.Size = new System.Drawing.Size(129, 22);
+            this.txtPOS.Size = new System.Drawing.Size(129, 30);
             this.txtPOS.TabIndex = 0;
             // 
             // FrmCash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(291, 188);
+            this.ClientSize = new System.Drawing.Size(319, 251);
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCash";

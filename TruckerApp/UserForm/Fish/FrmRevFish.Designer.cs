@@ -31,7 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRevFish));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.radioGroupType = new DevExpress.XtraEditors.RadioGroup();
             this.btnRevSave = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -41,12 +43,13 @@
             this.txtserial = new DevExpress.XtraEditors.TextEdit();
             this.txtNumber = new DevExpress.XtraEditors.TextEdit();
             this.txtDateRegister = new DevExpress.XtraEditors.TextEdit();
+            this.txtType = new DevExpress.XtraEditors.TextEdit();
             this.txtDateReg = new DevExpress.XtraEditors.TextEdit();
             this.txtTag = new DevExpress.XtraEditors.TextEdit();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.cbxSmart = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.txtComossin = new DevExpress.XtraEditors.TextEdit();
             this.colDriverID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFirstName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLastName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -54,31 +57,28 @@
             this.colSmartCart = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTag = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTagNumber = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.txtType = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.radioGroupType = new DevExpress.XtraEditors.RadioGroup();
-            this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtComossin = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroupType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtserial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDateRegister.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDateReg.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTag.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxSmart.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComossin.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtType.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroupType.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
-            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("B Yekan", 16F);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
-            this.groupControl1.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImage")));
+            this.groupControl1.CaptionImage = global::TruckerApp.Properties.Resources.icons8_mail_statistics_48;
             this.groupControl1.Controls.Add(this.radioGroupType);
             this.groupControl1.Controls.Add(this.btnRevSave);
             this.groupControl1.Controls.Add(this.labelControl7);
@@ -100,90 +100,119 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(424, 497);
+            this.groupControl1.Size = new System.Drawing.Size(380, 569);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "برگشت حواله";
+            // 
+            // radioGroupType
+            // 
+            this.radioGroupType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioGroupType.EditValue = ((byte)(10));
+            this.radioGroupType.Location = new System.Drawing.Point(31, 367);
+            this.radioGroupType.Name = "radioGroupType";
+            this.radioGroupType.Parmida_ActivePlusMultiKeys = false;
+            this.radioGroupType.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.radioGroupType.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.radioGroupType.Properties.Appearance.Options.UseBackColor = true;
+            this.radioGroupType.Properties.Appearance.Options.UseFont = true;
+            this.radioGroupType.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.radioGroupType.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(10)), "خطا در صدور"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(11)), "ابطال و تعویض محموله"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(12)), "ابطال و بازگشت وجه")});
+            this.radioGroupType.Size = new System.Drawing.Size(239, 113);
+            this.radioGroupType.TabIndex = 20;
             // 
             // btnRevSave
             // 
             this.btnRevSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRevSave.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.btnRevSave.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnRevSave.Appearance.Options.UseFont = true;
             this.btnRevSave.Image = ((System.Drawing.Image)(resources.GetObject("btnRevSave.Image")));
-            this.btnRevSave.Location = new System.Drawing.Point(210, 396);
+            this.btnRevSave.Location = new System.Drawing.Point(31, 486);
             this.btnRevSave.Name = "btnRevSave";
-            this.btnRevSave.Size = new System.Drawing.Size(100, 30);
+            this.btnRevSave.Size = new System.Drawing.Size(239, 50);
             this.btnRevSave.TabIndex = 16;
             this.btnRevSave.Text = "ثبت ";
             this.btnRevSave.Click += new System.EventHandler(this.btnRevSave_Click);
             // 
+            // labelControl7
+            // 
+            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl7.Location = new System.Drawing.Point(276, 334);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(41, 24);
+            this.labelControl7.TabIndex = 15;
+            this.labelControl7.Text = "محموله";
+            // 
             // labelControl4
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl4.Location = new System.Drawing.Point(316, 224);
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl4.Location = new System.Drawing.Point(276, 298);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(26, 16);
+            this.labelControl4.Size = new System.Drawing.Size(30, 24);
             this.labelControl4.TabIndex = 15;
             this.labelControl4.Text = "تاریخ";
             // 
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl3.Location = new System.Drawing.Point(316, 196);
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl3.Location = new System.Drawing.Point(276, 262);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(76, 16);
+            this.labelControl3.Size = new System.Drawing.Size(85, 24);
             this.labelControl3.TabIndex = 14;
             this.labelControl3.Text = "هزینه دریافتی";
             // 
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl2.Location = new System.Drawing.Point(318, 168);
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl2.Location = new System.Drawing.Point(278, 226);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(25, 16);
+            this.labelControl2.Size = new System.Drawing.Size(26, 24);
             this.labelControl2.TabIndex = 13;
             this.labelControl2.Text = "پلاک";
             // 
             // labelControl6
             // 
             this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl6.Location = new System.Drawing.Point(318, 112);
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl6.Location = new System.Drawing.Point(278, 154);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(69, 16);
+            this.labelControl6.Size = new System.Drawing.Size(81, 24);
             this.labelControl6.TabIndex = 12;
             this.labelControl6.Text = "سریال فروش";
             // 
             // labelControl5
             // 
             this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl5.Location = new System.Drawing.Point(317, 84);
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl5.Location = new System.Drawing.Point(277, 118);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(78, 16);
+            this.labelControl5.Size = new System.Drawing.Size(83, 24);
             this.labelControl5.TabIndex = 18;
             this.labelControl5.Text = "کارت هوشمند";
             // 
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl1.Location = new System.Drawing.Point(318, 140);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl1.Location = new System.Drawing.Point(278, 190);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(50, 16);
+            this.labelControl1.Size = new System.Drawing.Size(58, 24);
             this.labelControl1.TabIndex = 19;
             this.labelControl1.Text = "نام راننده";
             // 
             // txtserial
             // 
             this.txtserial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtserial.Location = new System.Drawing.Point(247, 109);
+            this.txtserial.Location = new System.Drawing.Point(207, 151);
             this.txtserial.Name = "txtserial";
             this.txtserial.Parmida_ActivePlusMultiKeys = false;
-            this.txtserial.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtserial.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtserial.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtserial.Properties.Appearance.Options.UseFont = true;
             this.txtserial.Properties.Appearance.Options.UseForeColor = true;
@@ -191,21 +220,21 @@
             this.txtserial.Properties.AppearanceDisabled.Options.UseFont = true;
             this.txtserial.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txtserial.Properties.AppearanceFocused.Options.UseFont = true;
-            this.txtserial.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtserial.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtserial.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtserial.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtserial.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtserial.Properties.ReadOnly = true;
-            this.txtserial.Size = new System.Drawing.Size(63, 22);
+            this.txtserial.Size = new System.Drawing.Size(63, 30);
             this.txtserial.TabIndex = 10;
             // 
             // txtNumber
             // 
             this.txtNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNumber.Location = new System.Drawing.Point(71, 109);
+            this.txtNumber.Location = new System.Drawing.Point(31, 151);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Parmida_ActivePlusMultiKeys = false;
-            this.txtNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtNumber.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtNumber.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtNumber.Properties.Appearance.Options.UseFont = true;
             this.txtNumber.Properties.Appearance.Options.UseForeColor = true;
@@ -213,21 +242,21 @@
             this.txtNumber.Properties.AppearanceDisabled.Options.UseFont = true;
             this.txtNumber.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txtNumber.Properties.AppearanceFocused.Options.UseFont = true;
-            this.txtNumber.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtNumber.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtNumber.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtNumber.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtNumber.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtNumber.Properties.ReadOnly = true;
-            this.txtNumber.Size = new System.Drawing.Size(169, 22);
+            this.txtNumber.Size = new System.Drawing.Size(169, 30);
             this.txtNumber.TabIndex = 9;
             // 
             // txtDateRegister
             // 
             this.txtDateRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDateRegister.Location = new System.Drawing.Point(71, 53);
+            this.txtDateRegister.Location = new System.Drawing.Point(31, 79);
             this.txtDateRegister.Name = "txtDateRegister";
             this.txtDateRegister.Parmida_ActivePlusMultiKeys = false;
-            this.txtDateRegister.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtDateRegister.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtDateRegister.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtDateRegister.Properties.Appearance.Options.UseFont = true;
             this.txtDateRegister.Properties.Appearance.Options.UseForeColor = true;
@@ -235,21 +264,43 @@
             this.txtDateRegister.Properties.AppearanceDisabled.Options.UseFont = true;
             this.txtDateRegister.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txtDateRegister.Properties.AppearanceFocused.Options.UseFont = true;
-            this.txtDateRegister.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtDateRegister.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtDateRegister.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtDateRegister.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtDateRegister.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtDateRegister.Properties.ReadOnly = true;
-            this.txtDateRegister.Size = new System.Drawing.Size(239, 22);
+            this.txtDateRegister.Size = new System.Drawing.Size(239, 30);
             this.txtDateRegister.TabIndex = 8;
+            // 
+            // txtType
+            // 
+            this.txtType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtType.Location = new System.Drawing.Point(31, 331);
+            this.txtType.Name = "txtType";
+            this.txtType.Parmida_ActivePlusMultiKeys = false;
+            this.txtType.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtType.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtType.Properties.Appearance.Options.UseFont = true;
+            this.txtType.Properties.Appearance.Options.UseForeColor = true;
+            this.txtType.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtType.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.txtType.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtType.Properties.AppearanceFocused.Options.UseFont = true;
+            this.txtType.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtType.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtType.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.txtType.Properties.AppearanceReadOnly.Options.UseForeColor = true;
+            this.txtType.Properties.ReadOnly = true;
+            this.txtType.Size = new System.Drawing.Size(239, 30);
+            this.txtType.TabIndex = 7;
             // 
             // txtDateReg
             // 
             this.txtDateReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDateReg.Location = new System.Drawing.Point(71, 221);
+            this.txtDateReg.Location = new System.Drawing.Point(31, 295);
             this.txtDateReg.Name = "txtDateReg";
             this.txtDateReg.Parmida_ActivePlusMultiKeys = false;
-            this.txtDateReg.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtDateReg.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtDateReg.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtDateReg.Properties.Appearance.Options.UseFont = true;
             this.txtDateReg.Properties.Appearance.Options.UseForeColor = true;
@@ -257,21 +308,21 @@
             this.txtDateReg.Properties.AppearanceDisabled.Options.UseFont = true;
             this.txtDateReg.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txtDateReg.Properties.AppearanceFocused.Options.UseFont = true;
-            this.txtDateReg.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtDateReg.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtDateReg.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtDateReg.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtDateReg.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtDateReg.Properties.ReadOnly = true;
-            this.txtDateReg.Size = new System.Drawing.Size(239, 22);
+            this.txtDateReg.Size = new System.Drawing.Size(239, 30);
             this.txtDateReg.TabIndex = 7;
             // 
             // txtTag
             // 
             this.txtTag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTag.Location = new System.Drawing.Point(71, 165);
+            this.txtTag.Location = new System.Drawing.Point(31, 223);
             this.txtTag.Name = "txtTag";
             this.txtTag.Parmida_ActivePlusMultiKeys = false;
-            this.txtTag.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtTag.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtTag.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtTag.Properties.Appearance.Options.UseFont = true;
             this.txtTag.Properties.Appearance.Options.UseForeColor = true;
@@ -279,21 +330,21 @@
             this.txtTag.Properties.AppearanceDisabled.Options.UseFont = true;
             this.txtTag.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txtTag.Properties.AppearanceFocused.Options.UseFont = true;
-            this.txtTag.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtTag.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtTag.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtTag.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtTag.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtTag.Properties.ReadOnly = true;
-            this.txtTag.Size = new System.Drawing.Size(239, 22);
+            this.txtTag.Size = new System.Drawing.Size(239, 30);
             this.txtTag.TabIndex = 6;
             // 
             // txtName
             // 
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName.Location = new System.Drawing.Point(71, 137);
+            this.txtName.Location = new System.Drawing.Point(31, 187);
             this.txtName.Name = "txtName";
             this.txtName.Parmida_ActivePlusMultiKeys = false;
-            this.txtName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtName.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtName.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtName.Properties.Appearance.Options.UseFont = true;
             this.txtName.Properties.Appearance.Options.UseForeColor = true;
@@ -301,21 +352,21 @@
             this.txtName.Properties.AppearanceDisabled.Options.UseFont = true;
             this.txtName.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txtName.Properties.AppearanceFocused.Options.UseFont = true;
-            this.txtName.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtName.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtName.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtName.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtName.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtName.Properties.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(239, 22);
+            this.txtName.Size = new System.Drawing.Size(239, 30);
             this.txtName.TabIndex = 5;
             // 
             // cbxSmart
             // 
             this.cbxSmart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxSmart.Location = new System.Drawing.Point(71, 81);
+            this.cbxSmart.Location = new System.Drawing.Point(31, 115);
             this.cbxSmart.Name = "cbxSmart";
             this.cbxSmart.Parmida_ActivePlusMultiKeys = false;
-            this.cbxSmart.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxSmart.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.cbxSmart.Properties.Appearance.Options.UseFont = true;
             this.cbxSmart.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.cbxSmart.Properties.AppearanceDisabled.Options.UseFont = true;
@@ -331,9 +382,13 @@
             this.cbxSmart.Properties.DisplayMember = "SmartCart";
             this.cbxSmart.Properties.ValueMember = "DriverID";
             this.cbxSmart.Properties.View = this.searchLookUpEdit1View;
-            this.cbxSmart.Size = new System.Drawing.Size(239, 22);
+            this.cbxSmart.Size = new System.Drawing.Size(239, 30);
             this.cbxSmart.TabIndex = 3;
             this.cbxSmart.EditValueChanged += new System.EventHandler(this.cbxSmart_EditValueChanged);
+            // 
+            // driversBindingSource
+            // 
+            this.driversBindingSource.DataSource = typeof(TruckerApp.Driver);
             // 
             // searchLookUpEdit1View
             // 
@@ -461,33 +516,6 @@
             this.searchLookUpEdit1View.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colSmartCart, DevExpress.Data.ColumnSortOrder.Descending)});
             // 
-            // txtComossin
-            // 
-            this.txtComossin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtComossin.EditValue = "0";
-            this.txtComossin.Location = new System.Drawing.Point(71, 193);
-            this.txtComossin.Name = "txtComossin";
-            this.txtComossin.Parmida_ActivePlusMultiKeys = false;
-            this.txtComossin.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtComossin.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtComossin.Properties.Appearance.Options.UseFont = true;
-            this.txtComossin.Properties.Appearance.Options.UseForeColor = true;
-            this.txtComossin.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtComossin.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtComossin.Properties.AppearanceDisabled.Options.UseFont = true;
-            this.txtComossin.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtComossin.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtComossin.Properties.AppearanceFocused.Options.UseFont = true;
-            this.txtComossin.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtComossin.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtComossin.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtComossin.Properties.AppearanceReadOnly.Options.UseFont = true;
-            this.txtComossin.Properties.AppearanceReadOnly.Options.UseForeColor = true;
-            this.txtComossin.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtComossin.Properties.ReadOnly = true;
-            this.txtComossin.Size = new System.Drawing.Size(239, 22);
-            this.txtComossin.TabIndex = 11;
-            // 
             // colDriverID
             // 
             this.colDriverID.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -558,66 +586,38 @@
             this.colTagNumber.VisibleIndex = 6;
             this.colTagNumber.Width = 188;
             // 
-            // txtType
+            // txtComossin
             // 
-            this.txtType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtType.Location = new System.Drawing.Point(71, 249);
-            this.txtType.Name = "txtType";
-            this.txtType.Parmida_ActivePlusMultiKeys = false;
-            this.txtType.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtType.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtType.Properties.Appearance.Options.UseFont = true;
-            this.txtType.Properties.Appearance.Options.UseForeColor = true;
-            this.txtType.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtType.Properties.AppearanceDisabled.Options.UseFont = true;
-            this.txtType.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtType.Properties.AppearanceFocused.Options.UseFont = true;
-            this.txtType.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtType.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtType.Properties.AppearanceReadOnly.Options.UseFont = true;
-            this.txtType.Properties.AppearanceReadOnly.Options.UseForeColor = true;
-            this.txtType.Properties.ReadOnly = true;
-            this.txtType.Size = new System.Drawing.Size(239, 22);
-            this.txtType.TabIndex = 7;
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.labelControl7.Location = new System.Drawing.Point(316, 252);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(41, 16);
-            this.labelControl7.TabIndex = 15;
-            this.labelControl7.Text = "محموله";
-            // 
-            // radioGroupType
-            // 
-            this.radioGroupType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioGroupType.EditValue = ((byte)(10));
-            this.radioGroupType.Location = new System.Drawing.Point(71, 277);
-            this.radioGroupType.Name = "radioGroupType";
-            this.radioGroupType.Parmida_ActivePlusMultiKeys = false;
-            this.radioGroupType.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.radioGroupType.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.radioGroupType.Properties.Appearance.Options.UseBackColor = true;
-            this.radioGroupType.Properties.Appearance.Options.UseFont = true;
-            this.radioGroupType.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.radioGroupType.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(10)), "خطا در صدور"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(11)), "ابطال و تعویض محموله"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(12)), "ابطال و بازگشت وجه")});
-            this.radioGroupType.Size = new System.Drawing.Size(239, 113);
-            this.radioGroupType.TabIndex = 20;
-            // 
-            // driversBindingSource
-            // 
-            this.driversBindingSource.DataSource = typeof(TruckerApp.Driver);
+            this.txtComossin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtComossin.EditValue = "0";
+            this.txtComossin.Location = new System.Drawing.Point(31, 259);
+            this.txtComossin.Name = "txtComossin";
+            this.txtComossin.Parmida_ActivePlusMultiKeys = false;
+            this.txtComossin.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtComossin.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtComossin.Properties.Appearance.Options.UseFont = true;
+            this.txtComossin.Properties.Appearance.Options.UseForeColor = true;
+            this.txtComossin.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtComossin.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtComossin.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.txtComossin.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtComossin.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtComossin.Properties.AppearanceFocused.Options.UseFont = true;
+            this.txtComossin.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtComossin.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtComossin.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtComossin.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.txtComossin.Properties.AppearanceReadOnly.Options.UseForeColor = true;
+            this.txtComossin.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtComossin.Properties.ReadOnly = true;
+            this.txtComossin.Size = new System.Drawing.Size(239, 30);
+            this.txtComossin.TabIndex = 11;
             // 
             // FrmRevFish
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 497);
+            this.ClientSize = new System.Drawing.Size(380, 569);
             this.Controls.Add(this.groupControl1);
             this.Name = "FrmRevFish";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -625,18 +625,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroupType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtserial.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDateRegister.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDateReg.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTag.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxSmart.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComossin.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtType.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroupType.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

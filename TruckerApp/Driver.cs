@@ -27,9 +27,7 @@ namespace TruckerApp
         public int SmartCart { get; set; }
         public string TagNumber { get; set; }
         public byte Tag { get; set; }
-        public Nullable<bool> Membership { get; set; }
-        public Nullable<bool> Native { get; set; }
-        public byte Commission_Group { get; set; }
+        public byte GroupID { get; set; }
         public byte userID_FK { get; set; }
     
         public virtual User User { get; set; }

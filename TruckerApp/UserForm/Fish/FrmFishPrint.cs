@@ -9,15 +9,46 @@ namespace TruckerApp.UserForm
     public partial class FrmFishPrint : Form
     {
         private TruckersEntities db = new TruckersEntities();
-        private int _driver,_series;
-        private Int16 _commission;
-        private byte _groupCommission;
-        private string _name, _number, _smartcart, _tagnumber, _type="فله";
+
+        private int _driver, _series;
+        private int _commission;
+        private short _commissionID;//حق کمیسیون
+        private string _name, _number, _smartcart, _tagnumber, _type;
+        public byte _typeID { get; set; }
         private int _queue;
+        private byte _group;
+
+
         public FrmFishPrint()
         {
             InitializeComponent();
             driverList();
+        }
+
+        private void SelectType()
+        {
+            switch (_typeID)
+            {
+                case 1:
+                    _type = "فله";
+                    groupControl1.Text = "صدور حواله فله";
+                    break;
+                case 2:
+                    _type = "پاکت";
+                    groupControl1.Text = "صدور حواله پاکت";
+
+                    break;
+                case 3:
+                    _type = "گندم";
+                    groupControl1.Text = "صدور حواله غلات";
+
+                    break;
+                case 4:
+                    _type = "کلینکر";
+                    groupControl1.Text = "صدور حواله کلینکر";
+
+                    break;
+            }
         }
 
         private void driverList()
@@ -37,24 +68,10 @@ namespace TruckerApp.UserForm
                 txtserial.Text = _series.ToString();
             }
         }
-
-        private void radioGroupType_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            switch (radioGroupType.SelectedIndex)
-            {
-                case 0:
-                    _type = "فله";
-                    break;
-                case 1:
-                    _type = "پاکت";
-                    break;
-                case 2:
-                    _type = "'گندم";
-                    break;
-            }
+            Close();
         }
-
-
 
         private void PrintFish()
         {
@@ -67,8 +84,13 @@ namespace TruckerApp.UserForm
             report.Parameters["number"].Value = _number;
             report.Parameters["smartcart"].Value = _smartcart;
             report.Parameters["TagNumbers"].Value = _tagnumber;
-            report.Parameters["Type"].Value = _type ;
+            report.Parameters["Type"].Value = _type;
             tool.Print();
+
+        }
+
+        private void Pardakht()
+        {
             var frm = new FrmCash();
             frm._userid = PublicVar.UserID;
             frm.QueueID = _queue;
@@ -78,17 +100,67 @@ namespace TruckerApp.UserForm
 
         private void cbxSmart_EditValueChanged(object sender, EventArgs e)
         {
-             db = new TruckersEntities();
-            var driver = (Driver) cbxSmart.GetSelectedDataRow();
-            _driver = driver.DriverID;
-            txtName.Text =_name = $"{driver.FirstName}  {driver.LastName}";
+            Driver driver = (Driver)cbxSmart.GetSelectedDataRow();
+            txtName.Text = _name = $"{driver.FirstName}  {driver.LastName}";
             txtTag.Text = _tagnumber = $"ایران {driver.Tag}  {driver.TagNumber}";
             txtPhoneNumber.Text = driver.PhoneNumber;
+            _driver = driver.DriverID;
             _smartcart = driver.SmartCart.ToString();
-            _groupCommission = driver.Commission_Group;
-            var qryCommission1 = db.Commissions.SingleOrDefault(x => x.enabled == true && x.GroupID == _groupCommission);
-            _commission = qryCommission1.CommissionID;
-            txtComossin.Text = qryCommission1.CommissionPrice.ToString();
+            _group = driver.GroupID;
+
+            if (_group == 1) //عضو
+            {
+                if (_typeID == 4)
+                {
+                    var qry2x = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 13);
+                    _commissionID = qry2x.CommissionID;
+                    _commission = qry2x.CommissionPrice;
+                }
+
+                else
+                {
+                    var qry2x = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 14);
+                    _commissionID = qry2x.CommissionID;
+                    _commission = qry2x.CommissionPrice;
+                }
+
+            }
+            else if (_group == 2)
+            {
+                if (_typeID == 4)
+                {
+                    var qry2x = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 17);
+                    _commissionID = qry2x.CommissionID;
+                    _commission = qry2x.CommissionPrice;
+                }
+
+                else
+                {
+                    var qry2x = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 15);
+                    _commissionID = qry2x.CommissionID;
+                    _commission = qry2x.CommissionPrice;
+                }
+            }
+            else if (_group == 3)
+            {
+                if (_typeID == 4)
+                {
+                    var qry2x = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 18);
+                    _commissionID = qry2x.CommissionID;
+                    _commission = qry2x.CommissionPrice;
+                }
+
+                else
+                {
+                    var qry2x = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 16);
+                    _commissionID = qry2x.CommissionID;
+                    _commission = qry2x.CommissionPrice;
+                }
+            }
+
+            //var qryCommission1 = db.Commissions.SingleOrDefault(x => x.enabled == true && x.GroupID == _commissionID && x.Groups_FK ==_selectRadioButten);
+            //_commission = qryCommission1.CommissionID;
+            txtComossin.Text = _commission.ToString();
         }
 
         private void FrmFishPrint_Load(object sender, EventArgs e)
@@ -96,6 +168,8 @@ namespace TruckerApp.UserForm
             setupPage();
             txtDateRegister.Text = DateTime.Today.ToLongDateString();
             LastNumber();
+            SelectType();
+
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -103,23 +177,22 @@ namespace TruckerApp.UserForm
             var driverCheck = db.Queues.Where(x => x.Status_FK == 4 && x.DriverID_FK == _driver).ToList();
             if (driverCheck.Count == 0)
             {
-                Queue qu = new Queue
-                {
-                    DriverID_FK = _driver,
-                    ComosiunID_FK = _commission,
-                    Type_FK = Convert.ToByte(radioGroupType.EditValue),
-                    DateTimeRegister = DateTime.Now,
-                    SeriesID_FK = _series,
-                    Number = Convert.ToInt16(txtNumber.EditValue),
-                    GroupCommission = _groupCommission,
-                    Status_FK = 4,//ثبت حواله
-                };
+                var qu = new Queue();
+                qu.DriverID_FK = _driver;
+                qu.ComosiunID_FK = _commissionID;
+                qu.Type_FK = _typeID;
+                qu.DateTimeRegister = DateTime.Now;
+                qu.SeriesID_FK = _series;
+                qu.Number = Convert.ToInt16(txtNumber.EditValue);
+                qu.GroupCommission = _group;
+                qu.Status_FK = 4;
                 db.Queues.Add(qu);
                 db.SaveChanges();
                 _queue = qu.ID;
                 _number = $"س{qu.SeriesID_FK}  شماره {qu.Number}";
                 XtraMessageBox.Show(PublicVar.SuccessfulSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 PrintFish();
+                Pardakht();
                 LastNumber();
 
             }
@@ -143,7 +216,7 @@ namespace TruckerApp.UserForm
             }
             else
             {
-                txtNumber.Text = ((qryNumber.Number)+1).ToString("000");
+                txtNumber.Text = ((qryNumber.Number) + 1).ToString("000");
             }
         }
     }

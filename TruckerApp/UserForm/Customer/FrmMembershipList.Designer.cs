@@ -46,19 +46,15 @@
             this.SmartCartTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.TagNumberTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.TagTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.MembershipCheckEdit = new DevExpress.XtraEditors.CheckEdit();
-            this.NativeCheckEdit = new DevExpress.XtraEditors.CheckEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ItemForDriverID = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForPhoneNumber = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForTagNumber = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForMembership = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForFirstName = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForLastName = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForSmartCart = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForTag = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForNative = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -76,25 +72,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.SmartCartTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TagNumberTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TagTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MembershipCheckEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NativeCheckEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForDriverID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForPhoneNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForTagNumber)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForMembership)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForFirstName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForLastName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForSmartCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForTag)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForNative)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
-            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("B Yekan", 16F);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.CaptionImage = global::TruckerApp.Properties.Resources.icons8_list_48;
             this.groupControl1.Controls.Add(this.gridControl1);
@@ -124,109 +116,109 @@
             // 
             // gridView1
             // 
-            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.ColumnFilterButton.Options.UseFont = true;
-            this.gridView1.Appearance.ColumnFilterButtonActive.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.ColumnFilterButtonActive.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.ColumnFilterButtonActive.Options.UseFont = true;
             this.gridView1.Appearance.ColumnFilterButtonActive.Options.UseTextOptions = true;
             this.gridView1.Appearance.ColumnFilterButtonActive.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.CustomizationFormHint.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.CustomizationFormHint.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.CustomizationFormHint.Options.UseFont = true;
             this.gridView1.Appearance.CustomizationFormHint.Options.UseTextOptions = true;
             this.gridView1.Appearance.CustomizationFormHint.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.DetailTip.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.DetailTip.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.DetailTip.Options.UseFont = true;
             this.gridView1.Appearance.DetailTip.Options.UseTextOptions = true;
             this.gridView1.Appearance.DetailTip.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.Empty.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.Empty.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.Empty.Options.UseFont = true;
             this.gridView1.Appearance.Empty.Options.UseTextOptions = true;
             this.gridView1.Appearance.Empty.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.EvenRow.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.EvenRow.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.EvenRow.Options.UseFont = true;
             this.gridView1.Appearance.EvenRow.Options.UseTextOptions = true;
             this.gridView1.Appearance.EvenRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.FilterCloseButton.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.FilterCloseButton.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.FilterCloseButton.Options.UseFont = true;
             this.gridView1.Appearance.FilterCloseButton.Options.UseTextOptions = true;
             this.gridView1.Appearance.FilterCloseButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.FilterPanel.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.FilterPanel.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.FilterPanel.Options.UseFont = true;
             this.gridView1.Appearance.FilterPanel.Options.UseTextOptions = true;
             this.gridView1.Appearance.FilterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.FixedLine.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.FixedLine.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.FixedLine.Options.UseFont = true;
             this.gridView1.Appearance.FixedLine.Options.UseTextOptions = true;
             this.gridView1.Appearance.FixedLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.FocusedCell.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.FocusedCell.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.FocusedCell.Options.UseFont = true;
             this.gridView1.Appearance.FocusedCell.Options.UseTextOptions = true;
             this.gridView1.Appearance.FocusedCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.FocusedRow.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.FocusedRow.Options.UseFont = true;
             this.gridView1.Appearance.FocusedRow.Options.UseTextOptions = true;
             this.gridView1.Appearance.FocusedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.FooterPanel.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.FooterPanel.Options.UseFont = true;
             this.gridView1.Appearance.FooterPanel.Options.UseTextOptions = true;
             this.gridView1.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.GroupButton.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.GroupButton.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.GroupButton.Options.UseFont = true;
             this.gridView1.Appearance.GroupButton.Options.UseTextOptions = true;
             this.gridView1.Appearance.GroupButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.GroupFooter.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.GroupFooter.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.GroupFooter.Options.UseFont = true;
             this.gridView1.Appearance.GroupFooter.Options.UseTextOptions = true;
             this.gridView1.Appearance.GroupFooter.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.GroupPanel.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.GroupPanel.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.GroupPanel.Options.UseFont = true;
             this.gridView1.Appearance.GroupPanel.Options.UseTextOptions = true;
             this.gridView1.Appearance.GroupPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.GroupRow.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.GroupRow.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.GroupRow.Options.UseFont = true;
             this.gridView1.Appearance.GroupRow.Options.UseTextOptions = true;
             this.gridView1.Appearance.GroupRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.HideSelectionRow.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.HideSelectionRow.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.HideSelectionRow.Options.UseFont = true;
             this.gridView1.Appearance.HideSelectionRow.Options.UseTextOptions = true;
             this.gridView1.Appearance.HideSelectionRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.HorzLine.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.HorzLine.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.HorzLine.Options.UseFont = true;
             this.gridView1.Appearance.HorzLine.Options.UseTextOptions = true;
             this.gridView1.Appearance.HorzLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.OddRow.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.OddRow.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.OddRow.Options.UseFont = true;
             this.gridView1.Appearance.OddRow.Options.UseTextOptions = true;
             this.gridView1.Appearance.OddRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.Preview.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.Preview.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.Preview.Options.UseFont = true;
             this.gridView1.Appearance.Preview.Options.UseTextOptions = true;
             this.gridView1.Appearance.Preview.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.Appearance.Row.Options.UseTextOptions = true;
             this.gridView1.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.RowSeparator.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.RowSeparator.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.RowSeparator.Options.UseFont = true;
             this.gridView1.Appearance.RowSeparator.Options.UseTextOptions = true;
             this.gridView1.Appearance.RowSeparator.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.SelectedRow.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.SelectedRow.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.SelectedRow.Options.UseFont = true;
             this.gridView1.Appearance.SelectedRow.Options.UseTextOptions = true;
             this.gridView1.Appearance.SelectedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.TopNewRow.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.TopNewRow.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.TopNewRow.Options.UseFont = true;
             this.gridView1.Appearance.TopNewRow.Options.UseTextOptions = true;
             this.gridView1.Appearance.TopNewRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.VertLine.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.VertLine.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.VertLine.Options.UseFont = true;
             this.gridView1.Appearance.VertLine.Options.UseTextOptions = true;
             this.gridView1.Appearance.VertLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.ViewCaption.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridView1.Appearance.ViewCaption.Font = new System.Drawing.Font("B Yekan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.gridView1.Appearance.ViewCaption.Options.UseFont = true;
             this.gridView1.Appearance.ViewCaption.Options.UseTextOptions = true;
             this.gridView1.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -291,21 +283,21 @@
             // 
             // dataLayoutControl1
             // 
-            this.dataLayoutControl1.Appearance.Control.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dataLayoutControl1.Appearance.Control.Font = new System.Drawing.Font("B Yekan", 12F);
             this.dataLayoutControl1.Appearance.Control.Options.UseFont = true;
-            this.dataLayoutControl1.Appearance.ControlDisabled.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dataLayoutControl1.Appearance.ControlDisabled.Font = new System.Drawing.Font("B Yekan", 12F);
             this.dataLayoutControl1.Appearance.ControlDisabled.Options.UseFont = true;
-            this.dataLayoutControl1.Appearance.ControlDropDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dataLayoutControl1.Appearance.ControlDropDown.Font = new System.Drawing.Font("B Yekan", 12F);
             this.dataLayoutControl1.Appearance.ControlDropDown.Options.UseFont = true;
-            this.dataLayoutControl1.Appearance.ControlDropDownHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dataLayoutControl1.Appearance.ControlDropDownHeader.Font = new System.Drawing.Font("B Yekan", 12F);
             this.dataLayoutControl1.Appearance.ControlDropDownHeader.Options.UseFont = true;
-            this.dataLayoutControl1.Appearance.ControlFocused.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dataLayoutControl1.Appearance.ControlFocused.Font = new System.Drawing.Font("B Yekan", 12F);
             this.dataLayoutControl1.Appearance.ControlFocused.Options.UseFont = true;
-            this.dataLayoutControl1.Appearance.ControlReadOnly.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dataLayoutControl1.Appearance.ControlReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
             this.dataLayoutControl1.Appearance.ControlReadOnly.Options.UseFont = true;
-            this.dataLayoutControl1.Appearance.DisabledLayoutGroupCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dataLayoutControl1.Appearance.DisabledLayoutGroupCaption.Font = new System.Drawing.Font("B Yekan", 12F);
             this.dataLayoutControl1.Appearance.DisabledLayoutGroupCaption.Options.UseFont = true;
-            this.dataLayoutControl1.Appearance.DisabledLayoutItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dataLayoutControl1.Appearance.DisabledLayoutItem.Font = new System.Drawing.Font("B Yekan", 12F);
             this.dataLayoutControl1.Appearance.DisabledLayoutItem.Options.UseFont = true;
             this.dataLayoutControl1.Controls.Add(this.DriverIDTextEdit);
             this.dataLayoutControl1.Controls.Add(this.FirstNameTextEdit);
@@ -314,11 +306,9 @@
             this.dataLayoutControl1.Controls.Add(this.SmartCartTextEdit);
             this.dataLayoutControl1.Controls.Add(this.TagNumberTextEdit);
             this.dataLayoutControl1.Controls.Add(this.TagTextEdit);
-            this.dataLayoutControl1.Controls.Add(this.MembershipCheckEdit);
-            this.dataLayoutControl1.Controls.Add(this.NativeCheckEdit);
             this.dataLayoutControl1.DataSource = this.driversBindingSource;
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataLayoutControl1.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.dataLayoutControl1.Font = new System.Drawing.Font("B Yekan", 12F);
             this.dataLayoutControl1.Location = new System.Drawing.Point(2, 2);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
             this.dataLayoutControl1.OptionsFocus.MoveFocusRightToLeft = true;
@@ -345,7 +335,7 @@
             this.DriverIDTextEdit.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.DriverIDTextEdit.Properties.Mask.EditMask = "N0";
             this.DriverIDTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.DriverIDTextEdit.Size = new System.Drawing.Size(119, 26);
+            this.DriverIDTextEdit.Size = new System.Drawing.Size(114, 30);
             this.DriverIDTextEdit.StyleController = this.dataLayoutControl1;
             this.DriverIDTextEdit.TabIndex = 4;
             // 
@@ -355,7 +345,7 @@
             this.FirstNameTextEdit.Location = new System.Drawing.Point(358, 12);
             this.FirstNameTextEdit.Name = "FirstNameTextEdit";
             this.FirstNameTextEdit.Parmida_ActivePlusMultiKeys = false;
-            this.FirstNameTextEdit.Size = new System.Drawing.Size(175, 26);
+            this.FirstNameTextEdit.Size = new System.Drawing.Size(170, 30);
             this.FirstNameTextEdit.StyleController = this.dataLayoutControl1;
             this.FirstNameTextEdit.TabIndex = 5;
             // 
@@ -365,47 +355,47 @@
             this.LastNameTextEdit.Location = new System.Drawing.Point(12, 12);
             this.LastNameTextEdit.Name = "LastNameTextEdit";
             this.LastNameTextEdit.Parmida_ActivePlusMultiKeys = false;
-            this.LastNameTextEdit.Size = new System.Drawing.Size(261, 26);
+            this.LastNameTextEdit.Size = new System.Drawing.Size(256, 30);
             this.LastNameTextEdit.StyleController = this.dataLayoutControl1;
             this.LastNameTextEdit.TabIndex = 6;
             // 
             // PhoneNumberTextEdit
             // 
             this.PhoneNumberTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.driversBindingSource, "PhoneNumber", true));
-            this.PhoneNumberTextEdit.Location = new System.Drawing.Point(618, 42);
+            this.PhoneNumberTextEdit.Location = new System.Drawing.Point(618, 46);
             this.PhoneNumberTextEdit.Name = "PhoneNumberTextEdit";
             this.PhoneNumberTextEdit.Parmida_ActivePlusMultiKeys = false;
-            this.PhoneNumberTextEdit.Size = new System.Drawing.Size(119, 26);
+            this.PhoneNumberTextEdit.Size = new System.Drawing.Size(114, 30);
             this.PhoneNumberTextEdit.StyleController = this.dataLayoutControl1;
             this.PhoneNumberTextEdit.TabIndex = 7;
             // 
             // SmartCartTextEdit
             // 
             this.SmartCartTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.driversBindingSource, "SmartCart", true));
-            this.SmartCartTextEdit.Location = new System.Drawing.Point(12, 42);
+            this.SmartCartTextEdit.Location = new System.Drawing.Point(12, 46);
             this.SmartCartTextEdit.Name = "SmartCartTextEdit";
             this.SmartCartTextEdit.Parmida_ActivePlusMultiKeys = false;
             this.SmartCartTextEdit.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.SmartCartTextEdit.Properties.Mask.EditMask = "N0";
             this.SmartCartTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.SmartCartTextEdit.Size = new System.Drawing.Size(521, 26);
+            this.SmartCartTextEdit.Size = new System.Drawing.Size(516, 30);
             this.SmartCartTextEdit.StyleController = this.dataLayoutControl1;
             this.SmartCartTextEdit.TabIndex = 8;
             // 
             // TagNumberTextEdit
             // 
             this.TagNumberTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.driversBindingSource, "TagNumber", true));
-            this.TagNumberTextEdit.Location = new System.Drawing.Point(12, 72);
+            this.TagNumberTextEdit.Location = new System.Drawing.Point(12, 80);
             this.TagNumberTextEdit.Name = "TagNumberTextEdit";
             this.TagNumberTextEdit.Parmida_ActivePlusMultiKeys = false;
-            this.TagNumberTextEdit.Size = new System.Drawing.Size(521, 26);
+            this.TagNumberTextEdit.Size = new System.Drawing.Size(516, 30);
             this.TagNumberTextEdit.StyleController = this.dataLayoutControl1;
             this.TagNumberTextEdit.TabIndex = 9;
             // 
             // TagTextEdit
             // 
             this.TagTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.driversBindingSource, "Tag", true));
-            this.TagTextEdit.Location = new System.Drawing.Point(618, 72);
+            this.TagTextEdit.Location = new System.Drawing.Point(618, 80);
             this.TagTextEdit.Name = "TagTextEdit";
             this.TagTextEdit.Parmida_ActivePlusMultiKeys = false;
             this.TagTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -414,39 +404,15 @@
             this.TagTextEdit.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.TagTextEdit.Properties.Mask.EditMask = "N0";
             this.TagTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.TagTextEdit.Size = new System.Drawing.Size(119, 26);
+            this.TagTextEdit.Size = new System.Drawing.Size(114, 30);
             this.TagTextEdit.StyleController = this.dataLayoutControl1;
             this.TagTextEdit.TabIndex = 10;
             // 
-            // MembershipCheckEdit
-            // 
-            this.MembershipCheckEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.driversBindingSource, "Membership", true));
-            this.MembershipCheckEdit.Location = new System.Drawing.Point(711, 102);
-            this.MembershipCheckEdit.Name = "MembershipCheckEdit";
-            this.MembershipCheckEdit.Parmida_ActivePlusMultiKeys = false;
-            this.MembershipCheckEdit.Properties.Caption = "Membership";
-            this.MembershipCheckEdit.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.MembershipCheckEdit.Size = new System.Drawing.Size(26, 19);
-            this.MembershipCheckEdit.StyleController = this.dataLayoutControl1;
-            this.MembershipCheckEdit.TabIndex = 11;
-            // 
-            // NativeCheckEdit
-            // 
-            this.NativeCheckEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.driversBindingSource, "Native", true));
-            this.NativeCheckEdit.Location = new System.Drawing.Point(599, 102);
-            this.NativeCheckEdit.Name = "NativeCheckEdit";
-            this.NativeCheckEdit.Parmida_ActivePlusMultiKeys = false;
-            this.NativeCheckEdit.Properties.Caption = "Native";
-            this.NativeCheckEdit.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.NativeCheckEdit.Size = new System.Drawing.Size(27, 19);
-            this.NativeCheckEdit.StyleController = this.dataLayoutControl1;
-            this.NativeCheckEdit.TabIndex = 12;
-            // 
             // layoutControlGroup1
             // 
-            this.layoutControlGroup1.AppearanceGroup.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.layoutControlGroup1.AppearanceGroup.Font = new System.Drawing.Font("B Yekan", 12F);
             this.layoutControlGroup1.AppearanceGroup.Options.UseFont = true;
-            this.layoutControlGroup1.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.layoutControlGroup1.AppearanceItemCaption.Font = new System.Drawing.Font("B Yekan", 12F);
             this.layoutControlGroup1.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup1.GroupBordersVisible = false;
@@ -465,12 +431,10 @@
             this.ItemForDriverID,
             this.ItemForPhoneNumber,
             this.ItemForTagNumber,
-            this.ItemForMembership,
             this.ItemForFirstName,
             this.ItemForLastName,
             this.ItemForSmartCart,
             this.ItemForTag,
-            this.ItemForNative,
             this.emptySpaceItem1});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "autoGeneratedGroup0";
@@ -481,88 +445,70 @@
             this.ItemForDriverID.Control = this.DriverIDTextEdit;
             this.ItemForDriverID.Location = new System.Drawing.Point(606, 0);
             this.ItemForDriverID.Name = "ItemForDriverID";
-            this.ItemForDriverID.Size = new System.Drawing.Size(204, 30);
+            this.ItemForDriverID.Size = new System.Drawing.Size(204, 34);
             this.ItemForDriverID.Text = "کد";
-            this.ItemForDriverID.TextSize = new System.Drawing.Size(78, 16);
+            this.ItemForDriverID.TextSize = new System.Drawing.Size(83, 24);
             // 
             // ItemForPhoneNumber
             // 
             this.ItemForPhoneNumber.Control = this.PhoneNumberTextEdit;
-            this.ItemForPhoneNumber.Location = new System.Drawing.Point(606, 30);
+            this.ItemForPhoneNumber.Location = new System.Drawing.Point(606, 34);
             this.ItemForPhoneNumber.Name = "ItemForPhoneNumber";
-            this.ItemForPhoneNumber.Size = new System.Drawing.Size(204, 30);
+            this.ItemForPhoneNumber.Size = new System.Drawing.Size(204, 34);
             this.ItemForPhoneNumber.Text = "تلفن همراه";
-            this.ItemForPhoneNumber.TextSize = new System.Drawing.Size(78, 16);
+            this.ItemForPhoneNumber.TextSize = new System.Drawing.Size(83, 24);
             // 
             // ItemForTagNumber
             // 
             this.ItemForTagNumber.Control = this.TagNumberTextEdit;
-            this.ItemForTagNumber.Location = new System.Drawing.Point(0, 60);
+            this.ItemForTagNumber.Location = new System.Drawing.Point(0, 68);
             this.ItemForTagNumber.Name = "ItemForTagNumber";
-            this.ItemForTagNumber.Size = new System.Drawing.Size(606, 30);
+            this.ItemForTagNumber.Size = new System.Drawing.Size(606, 34);
             this.ItemForTagNumber.Text = "پلاک";
-            this.ItemForTagNumber.TextSize = new System.Drawing.Size(78, 16);
-            // 
-            // ItemForMembership
-            // 
-            this.ItemForMembership.Control = this.MembershipCheckEdit;
-            this.ItemForMembership.Location = new System.Drawing.Point(699, 90);
-            this.ItemForMembership.Name = "ItemForMembership";
-            this.ItemForMembership.Size = new System.Drawing.Size(111, 47);
-            this.ItemForMembership.Text = "عضو اتحادیه";
-            this.ItemForMembership.TextSize = new System.Drawing.Size(78, 16);
+            this.ItemForTagNumber.TextSize = new System.Drawing.Size(83, 24);
             // 
             // ItemForFirstName
             // 
             this.ItemForFirstName.Control = this.FirstNameTextEdit;
             this.ItemForFirstName.Location = new System.Drawing.Point(346, 0);
             this.ItemForFirstName.Name = "ItemForFirstName";
-            this.ItemForFirstName.Size = new System.Drawing.Size(260, 30);
+            this.ItemForFirstName.Size = new System.Drawing.Size(260, 34);
             this.ItemForFirstName.Text = "نام";
-            this.ItemForFirstName.TextSize = new System.Drawing.Size(78, 16);
+            this.ItemForFirstName.TextSize = new System.Drawing.Size(83, 24);
             // 
             // ItemForLastName
             // 
             this.ItemForLastName.Control = this.LastNameTextEdit;
             this.ItemForLastName.Location = new System.Drawing.Point(0, 0);
             this.ItemForLastName.Name = "ItemForLastName";
-            this.ItemForLastName.Size = new System.Drawing.Size(346, 30);
+            this.ItemForLastName.Size = new System.Drawing.Size(346, 34);
             this.ItemForLastName.Text = "نام خانوادگی";
-            this.ItemForLastName.TextSize = new System.Drawing.Size(78, 16);
+            this.ItemForLastName.TextSize = new System.Drawing.Size(83, 24);
             // 
             // ItemForSmartCart
             // 
             this.ItemForSmartCart.Control = this.SmartCartTextEdit;
-            this.ItemForSmartCart.Location = new System.Drawing.Point(0, 30);
+            this.ItemForSmartCart.Location = new System.Drawing.Point(0, 34);
             this.ItemForSmartCart.Name = "ItemForSmartCart";
-            this.ItemForSmartCart.Size = new System.Drawing.Size(606, 30);
+            this.ItemForSmartCart.Size = new System.Drawing.Size(606, 34);
             this.ItemForSmartCart.Text = "کارت هوشمند";
-            this.ItemForSmartCart.TextSize = new System.Drawing.Size(78, 16);
+            this.ItemForSmartCart.TextSize = new System.Drawing.Size(83, 24);
             // 
             // ItemForTag
             // 
             this.ItemForTag.Control = this.TagTextEdit;
-            this.ItemForTag.Location = new System.Drawing.Point(606, 60);
+            this.ItemForTag.Location = new System.Drawing.Point(606, 68);
             this.ItemForTag.Name = "ItemForTag";
-            this.ItemForTag.Size = new System.Drawing.Size(204, 30);
+            this.ItemForTag.Size = new System.Drawing.Size(204, 34);
             this.ItemForTag.Text = "ایران";
-            this.ItemForTag.TextSize = new System.Drawing.Size(78, 16);
-            // 
-            // ItemForNative
-            // 
-            this.ItemForNative.Control = this.NativeCheckEdit;
-            this.ItemForNative.Location = new System.Drawing.Point(587, 90);
-            this.ItemForNative.Name = "ItemForNative";
-            this.ItemForNative.Size = new System.Drawing.Size(112, 47);
-            this.ItemForNative.Text = "بومی";
-            this.ItemForNative.TextSize = new System.Drawing.Size(78, 16);
+            this.ItemForTag.TextSize = new System.Drawing.Size(83, 24);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 90);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 102);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(587, 47);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(810, 35);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // FrmMembershipList
@@ -575,6 +521,7 @@
             this.Name = "FrmMembershipList";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "لیست اعضاء اتحادیه";
+            this.Load += new System.EventHandler(this.FrmMembershipList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -591,19 +538,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.SmartCartTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TagNumberTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TagTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MembershipCheckEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NativeCheckEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForDriverID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForPhoneNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForTagNumber)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForMembership)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForFirstName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForLastName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForSmartCart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForTag)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForNative)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
 
@@ -628,8 +571,6 @@
         private DevExpress.XtraEditors.TextEdit SmartCartTextEdit;
         private DevExpress.XtraEditors.TextEdit TagNumberTextEdit;
         private DevExpress.XtraEditors.TextEdit TagTextEdit;
-        private DevExpress.XtraEditors.CheckEdit MembershipCheckEdit;
-        private DevExpress.XtraEditors.CheckEdit NativeCheckEdit;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem ItemForDriverID;
@@ -639,8 +580,6 @@
         private DevExpress.XtraLayout.LayoutControlItem ItemForSmartCart;
         private DevExpress.XtraLayout.LayoutControlItem ItemForTagNumber;
         private DevExpress.XtraLayout.LayoutControlItem ItemForTag;
-        private DevExpress.XtraLayout.LayoutControlItem ItemForMembership;
-        private DevExpress.XtraLayout.LayoutControlItem ItemForNative;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
     }
 }

@@ -18,7 +18,7 @@ namespace TruckerApp.UserForm
         public FrmMembershipList()
         {
             InitializeComponent();
-            List();
+            
         }
 
         private void List()
@@ -29,6 +29,11 @@ namespace TruckerApp.UserForm
             {
                 driversBindingSource.DataSource = dbContext.Drivers.Local.ToBindingList();
             }, TaskScheduler.FromCurrentSynchronizationContext());
+        }
+
+        private void FrmMembershipList_Load(object sender, EventArgs e)
+        {
+            List();
         }
     }
 }

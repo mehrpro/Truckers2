@@ -161,12 +161,6 @@
     <Compile Include="UserForm\Commission\FrmCommissionNative.Designer.cs">
       <DependentUpon>FrmCommissionNative.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserForm\Commission\FrmCommissionOther.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserForm\Commission\FrmCommissionOther.Designer.cs">
-      <DependentUpon>FrmCommissionOther.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserForm\cash\FrmCash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,12 +178,6 @@
     </Compile>
     <Compile Include="UserForm\cash\FrmCashStatus.Designer.cs">
       <DependentUpon>FrmCashStatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserForm\Commission\FrmComosionMember.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserForm\Commission\FrmComosionMember.Designer.cs">
-      <DependentUpon>FrmComosionMember.cs</DependentUpon>
     </Compile>
     <Compile Include="UserForm\Fish\FrmFishPanel.cs">
       <SubType>Form</SubType>
@@ -261,9 +249,6 @@
     <EmbeddedResource Include="UserForm\Commission\FrmCommissionNative.resx">
       <DependentUpon>FrmCommissionNative.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForm\Commission\FrmCommissionOther.resx">
-      <DependentUpon>FrmCommissionOther.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserForm\cash\FrmCash.resx">
       <DependentUpon>FrmCash.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,9 +257,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\cash\FrmCashStatus.resx">
       <DependentUpon>FrmCashStatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserForm\Commission\FrmComosionMember.resx">
-      <DependentUpon>FrmComosionMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\Fish\FrmFishPanel.resx">
       <DependentUpon>FrmFishPanel.cs</DependentUpon>
@@ -338,6 +320,13 @@
       <DependentUpon>MDB.edmx</DependentUpon>
       <LastGenOutput>MDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-mail-statistics-48.png" />
+    <None Include="Resources\icons8-cash-receipt-48.png" />
+    <None Include="Resources\icons8-bookmark-48.png" />
+    <None Include="Resources\automation %281%29.png" />
+    <None Include="Resources\automation.png" />
+    <None Include="Resources\icons8-expensive-price-48.png" />
+    <None Include="Resources\icons8-label-printer-48.png" />
     <None Include="Resources\truck2.jpg" />
     <None Include="Resources\truck.jpg" />
     <None Include="Resources\۱۴.jpg" />

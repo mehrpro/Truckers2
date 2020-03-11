@@ -38,9 +38,7 @@
           <Property Name="SmartCart" Type="int" Nullable="false" />
           <Property Name="TagNumber" Type="nvarchar" MaxLength="6" Nullable="false" />
           <Property Name="Tag" Type="tinyint" Nullable="false" />
-          <Property Name="Membership" Type="bit" />
-          <Property Name="Native" Type="bit" />
-          <Property Name="Commission_Group" Type="tinyint" Nullable="false" />
+          <Property Name="GroupID" Type="tinyint" Nullable="false" />
           <Property Name="userID_FK" Type="tinyint" Nullable="false" />
         </EntityType>
         <EntityType Name="LoadType">
@@ -285,10 +283,33 @@
     <edmx:ConceptualModels>
       <Schema Namespace="TruckersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="TruckersEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cashes" EntityType="TruckersModel.Cash" />
+          <EntitySet Name="Commissions" EntityType="TruckersModel.Commission" />
           <EntitySet Name="Drivers" EntityType="TruckersModel.Driver" />
           <EntitySet Name="LoadTypes" EntityType="TruckersModel.LoadType" />
           <EntitySet Name="Queues" EntityType="TruckersModel.Queue" />
+          <EntitySet Name="SeriesPrices" EntityType="TruckersModel.SeriesPrice" />
           <EntitySet Name="Users" EntityType="TruckersModel.User" />
+          <AssociationSet Name="FK_Cash_Queue" Association="TruckersModel.FK_Cash_Queue">
+            <End Role="Queue" EntitySet="Queues" />
+            <End Role="Cash" EntitySet="Cashes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cash_SeriesPrice" Association="TruckersModel.FK_Cash_SeriesPrice">
+            <End Role="SeriesPrice" EntitySet="SeriesPrices" />
+            <End Role="Cash" EntitySet="Cashes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cash_Users" Association="TruckersModel.FK_Cash_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Cash" EntitySet="Cashes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Commission_LoadType" Association="TruckersModel.FK_Commission_LoadType">
+            <End Role="LoadType" EntitySet="LoadTypes" />
+            <End Role="Commission" EntitySet="Commissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Queue_Commission" Association="TruckersModel.FK_Queue_Commission">
+            <End Role="Commission" EntitySet="Commissions" />
+            <End Role="Queue" EntitySet="Queues" />
+          </AssociationSet>
           <AssociationSet Name="FK_Drivers_Users" Association="TruckersModel.FK_Drivers_Users">
             <End Role="User" EntitySet="Users" />
             <End Role="Driver" EntitySet="Drivers" />
@@ -305,16 +326,6 @@
             <End Role="LoadType" EntitySet="LoadTypes" />
             <End Role="Queue" EntitySet="Queues" />
           </AssociationSet>
-          <EntitySet Name="Cashes" EntityType="TruckersModel.Cash" />
-          <AssociationSet Name="FK_Cash_Queue" Association="TruckersModel.FK_Cash_Queue">
-            <End Role="Queue" EntitySet="Queues" />
-            <End Role="Cash" EntitySet="Cashes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Cash_Users" Association="TruckersModel.FK_Cash_Users">
-            <End Role="User" EntitySet="Users" />
-            <End Role="Cash" EntitySet="Cashes" />
-          </AssociationSet>
-          <EntitySet Name="SeriesPrices" EntityType="TruckersModel.SeriesPrice" />
           <AssociationSet Name="FK_Queue_Series" Association="TruckersModel.FK_Queue_Series">
             <End Role="SeriesPrice" EntitySet="SeriesPrices" />
             <End Role="Queue" EntitySet="Queues" />
@@ -323,20 +334,34 @@
             <End Role="User" EntitySet="Users" />
             <End Role="SeriesPrice" EntitySet="SeriesPrices" />
           </AssociationSet>
-          <AssociationSet Name="FK_Cash_SeriesPrice" Association="TruckersModel.FK_Cash_SeriesPrice">
-            <End Role="SeriesPrice" EntitySet="SeriesPrices" />
-            <End Role="Cash" EntitySet="Cashes" />
-          </AssociationSet>
-          <EntitySet Name="Commissions" EntityType="TruckersModel.Commission" />
-          <AssociationSet Name="FK_Commission_LoadType" Association="TruckersModel.FK_Commission_LoadType">
-            <End Role="LoadType" EntitySet="LoadTypes" />
-            <End Role="Commission" EntitySet="Commissions" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Queue_Commission" Association="TruckersModel.FK_Queue_Commission">
-            <End Role="Commission" EntitySet="Commissions" />
-            <End Role="Queue" EntitySet="Queues" />
-          </AssociationSet>
-          </EntityContainer>
+        </EntityContainer>
+        <EntityType Name="Cash">
+          <Key>
+            <PropertyRef Name="CashID" />
+          </Key>
+          <Property Name="CashID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QueueID_FK" Type="Int32" />
+          <Property Name="Pos" Type="Int32" />
+          <Property Name="CashDesk" Type="Int32" />
+          <Property Name="userID" Type="Byte" />
+          <Property Name="seriesID_FK" Type="Int32" />
+          <NavigationProperty Name="Queue" Relationship="TruckersModel.FK_Cash_Queue" FromRole="Cash" ToRole="Queue" />
+          <NavigationProperty Name="SeriesPrice" Relationship="TruckersModel.FK_Cash_SeriesPrice" FromRole="Cash" ToRole="SeriesPrice" />
+          <NavigationProperty Name="User" Relationship="TruckersModel.FK_Cash_Users" FromRole="Cash" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Commission">
+          <Key>
+            <PropertyRef Name="CommissionID" />
+          </Key>
+          <Property Name="CommissionID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Groups_FK" Type="Byte" Nullable="false" />
+          <Property Name="CommissionPrice" Type="Int32" Nullable="false" />
+          <Property Name="DataRegister" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="enabled" Type="Boolean" Nullable="false" />
+          <Property Name="GroupID" Type="Byte" />
+          <NavigationProperty Name="LoadType" Relationship="TruckersModel.FK_Commission_LoadType" FromRole="Commission" ToRole="LoadType" />
+          <NavigationProperty Name="Queues" Relationship="TruckersModel.FK_Queue_Commission" FromRole="Commission" ToRole="Queue" />
+        </EntityType>
         <EntityType Name="Driver">
           <Key>
             <PropertyRef Name="DriverID" />
@@ -348,9 +373,7 @@
           <Property Name="SmartCart" Type="Int32" Nullable="false" />
           <Property Name="TagNumber" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
           <Property Name="Tag" Type="Byte" Nullable="false" />
-          <Property Name="Membership" Type="Boolean" />
-          <Property Name="Native" Type="Boolean" />
-          <Property Name="Commission_Group" Type="Byte" Nullable="false" />
+          <Property Name="GroupID" Type="Byte" Nullable="false" />
           <Property Name="userID_FK" Type="Byte" Nullable="false" />
           <NavigationProperty Name="User" Relationship="TruckersModel.FK_Drivers_Users" FromRole="Driver" ToRole="User" />
           <NavigationProperty Name="Queues" Relationship="TruckersModel.FK_Queue_Drivers" FromRole="Driver" ToRole="Queue" />
@@ -361,9 +384,9 @@
           </Key>
           <Property Name="TypeID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Commissions" Relationship="TruckersModel.FK_Commission_LoadType" FromRole="LoadType" ToRole="Commission" />
           <NavigationProperty Name="Queues" Relationship="TruckersModel.FK_Queue_LoadType" FromRole="LoadType" ToRole="Queue" />
           <NavigationProperty Name="Queues1" Relationship="TruckersModel.FK_Queue_LoadType1" FromRole="LoadType" ToRole="Queue" />
-          <NavigationProperty Name="Commissions" Relationship="TruckersModel.FK_Commission_LoadType" FromRole="LoadType" ToRole="Commission" />
         </EntityType>
         <EntityType Name="Queue">
           <Key>
@@ -378,12 +401,34 @@
           <Property Name="Status_FK" Type="Byte" Nullable="false" />
           <Property Name="ComosiunID_FK" Type="Int16" Nullable="false" />
           <Property Name="SeriesID_FK" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cashes" Relationship="TruckersModel.FK_Cash_Queue" FromRole="Queue" ToRole="Cash" />
+          <NavigationProperty Name="Commission" Relationship="TruckersModel.FK_Queue_Commission" FromRole="Queue" ToRole="Commission" />
           <NavigationProperty Name="Driver" Relationship="TruckersModel.FK_Queue_Drivers" FromRole="Queue" ToRole="Driver" />
           <NavigationProperty Name="LoadType" Relationship="TruckersModel.FK_Queue_LoadType" FromRole="Queue" ToRole="LoadType" />
           <NavigationProperty Name="LoadType1" Relationship="TruckersModel.FK_Queue_LoadType1" FromRole="Queue" ToRole="LoadType" />
-          <NavigationProperty Name="Cashes" Relationship="TruckersModel.FK_Cash_Queue" FromRole="Queue" ToRole="Cash" />
           <NavigationProperty Name="SeriesPrice" Relationship="TruckersModel.FK_Queue_Series" FromRole="Queue" ToRole="SeriesPrice" />
-          <NavigationProperty Name="Commission" Relationship="TruckersModel.FK_Queue_Commission" FromRole="Queue" ToRole="Commission" />
+        </EntityType>
+        <EntityType Name="SeriesPrice">
+          <Key>
+            <PropertyRef Name="SereisID" />
+          </Key>
+          <Property Name="SereisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SeriesName" Type="Int32" />
+          <Property Name="SeriesCount" Type="Int32" />
+          <Property Name="SeriesDateStart" Type="DateTime" Precision="3" />
+          <Property Name="SeriesDateEnd" Type="DateTime" Precision="3" />
+          <Property Name="Faleh" Type="Int32" />
+          <Property Name="Packet" Type="Int32" />
+          <Property Name="Gandom" Type="Int32" />
+          <Property Name="closing" Type="Boolean" />
+          <Property Name="userCreator" Type="Byte" />
+          <Property Name="Member" Type="Int16" />
+          <Property Name="Native" Type="Int16" />
+          <Property Name="Other" Type="Int16" />
+          <Property Name="enabeled" Type="Boolean" />
+          <NavigationProperty Name="Cashes" Relationship="TruckersModel.FK_Cash_SeriesPrice" FromRole="SeriesPrice" ToRole="Cash" />
+          <NavigationProperty Name="Queues" Relationship="TruckersModel.FK_Queue_Series" FromRole="SeriesPrice" ToRole="Queue" />
+          <NavigationProperty Name="User" Relationship="TruckersModel.FK_Series_Users" FromRole="SeriesPrice" ToRole="User" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -396,10 +441,70 @@
           <Property Name="Roul" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="password" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Drivers" Relationship="TruckersModel.FK_Drivers_Users" FromRole="User" ToRole="Driver" />
           <NavigationProperty Name="Cashes" Relationship="TruckersModel.FK_Cash_Users" FromRole="User" ToRole="Cash" />
+          <NavigationProperty Name="Drivers" Relationship="TruckersModel.FK_Drivers_Users" FromRole="User" ToRole="Driver" />
           <NavigationProperty Name="SeriesPrices" Relationship="TruckersModel.FK_Series_Users" FromRole="User" ToRole="SeriesPrice" />
         </EntityType>
+        <Association Name="FK_Cash_Queue">
+          <End Type="TruckersModel.Queue" Role="Queue" Multiplicity="0..1" />
+          <End Type="TruckersModel.Cash" Role="Cash" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Queue">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cash">
+              <PropertyRef Name="QueueID_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cash_SeriesPrice">
+          <End Type="TruckersModel.SeriesPrice" Role="SeriesPrice" Multiplicity="0..1" />
+          <End Type="TruckersModel.Cash" Role="Cash" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SeriesPrice">
+              <PropertyRef Name="SereisID" />
+            </Principal>
+            <Dependent Role="Cash">
+              <PropertyRef Name="seriesID_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cash_Users">
+          <End Type="TruckersModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="TruckersModel.Cash" Role="Cash" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="userID" />
+            </Principal>
+            <Dependent Role="Cash">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Commission_LoadType">
+          <End Type="TruckersModel.LoadType" Role="LoadType" Multiplicity="1" />
+          <End Type="TruckersModel.Commission" Role="Commission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoadType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="Commission">
+              <PropertyRef Name="Groups_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Queue_Commission">
+          <End Type="TruckersModel.Commission" Role="Commission" Multiplicity="1" />
+          <End Type="TruckersModel.Queue" Role="Queue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Commission">
+              <PropertyRef Name="CommissionID" />
+            </Principal>
+            <Dependent Role="Queue">
+              <PropertyRef Name="ComosiunID_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Drivers_Users">
           <End Type="TruckersModel.User" Role="User" Multiplicity="1" />
           <End Type="TruckersModel.Driver" Role="Driver" Multiplicity="*" />
@@ -448,66 +553,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="Cash">
-          <Key>
-            <PropertyRef Name="CashID" />
-          </Key>
-          <Property Name="CashID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="QueueID_FK" Type="Int32" />
-          <Property Name="Pos" Type="Int32" />
-          <Property Name="CashDesk" Type="Int32" />
-          <Property Name="userID" Type="Byte" />
-          <NavigationProperty Name="Queue" Relationship="TruckersModel.FK_Cash_Queue" FromRole="Cash" ToRole="Queue" />
-          <NavigationProperty Name="User" Relationship="TruckersModel.FK_Cash_Users" FromRole="Cash" ToRole="User" />
-          <Property Name="seriesID_FK" Type="Int32" />
-          <NavigationProperty Name="SeriesPrice" Relationship="TruckersModel.FK_Cash_SeriesPrice" FromRole="Cash" ToRole="SeriesPrice" />
-        </EntityType>
-        <Association Name="FK_Cash_Queue">
-          <End Type="TruckersModel.Queue" Role="Queue" Multiplicity="0..1" />
-          <End Type="TruckersModel.Cash" Role="Cash" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Queue">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Cash">
-              <PropertyRef Name="QueueID_FK" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Cash_Users">
-          <End Type="TruckersModel.User" Role="User" Multiplicity="0..1" />
-          <End Type="TruckersModel.Cash" Role="Cash" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="userID" />
-            </Principal>
-            <Dependent Role="Cash">
-              <PropertyRef Name="userID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="SeriesPrice">
-          <Key>
-            <PropertyRef Name="SereisID" />
-          </Key>
-          <Property Name="SereisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SeriesName" Type="Int32" />
-          <Property Name="SeriesCount" Type="Int32" />
-          <Property Name="SeriesDateStart" Type="DateTime" Precision="3" />
-          <Property Name="SeriesDateEnd" Type="DateTime" Precision="3" />
-          <Property Name="Faleh" Type="Int32" />
-          <Property Name="Packet" Type="Int32" />
-          <Property Name="Gandom" Type="Int32" />
-          <Property Name="closing" Type="Boolean" />
-          <Property Name="userCreator" Type="Byte" />
-          <Property Name="Member" Type="Int16" />
-          <Property Name="Native" Type="Int16" />
-          <Property Name="Other" Type="Int16" />
-          <Property Name="enabeled" Type="Boolean" />
-          <NavigationProperty Name="Queues" Relationship="TruckersModel.FK_Queue_Series" FromRole="SeriesPrice" ToRole="Queue" />
-          <NavigationProperty Name="User" Relationship="TruckersModel.FK_Series_Users" FromRole="SeriesPrice" ToRole="User" />
-          <NavigationProperty Name="Cashes" Relationship="TruckersModel.FK_Cash_SeriesPrice" FromRole="SeriesPrice" ToRole="Cash" />
-        </EntityType>
         <Association Name="FK_Queue_Series">
           <End Type="TruckersModel.SeriesPrice" Role="SeriesPrice" Multiplicity="1" />
           <End Type="TruckersModel.Queue" Role="Queue" Multiplicity="*" />
@@ -532,68 +577,41 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Cash_SeriesPrice">
-          <End Type="TruckersModel.SeriesPrice" Role="SeriesPrice" Multiplicity="0..1" />
-          <End Type="TruckersModel.Cash" Role="Cash" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SeriesPrice">
-              <PropertyRef Name="SereisID" />
-            </Principal>
-            <Dependent Role="Cash">
-              <PropertyRef Name="seriesID_FK" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="Commission">
-          <Key>
-            <PropertyRef Name="CommissionID" />
-          </Key>
-          <Property Name="CommissionID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Groups_FK" Type="Byte" Nullable="false" />
-          <Property Name="CommissionPrice" Type="Int32" Nullable="false" />
-          <Property Name="DataRegister" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="enabled" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="LoadType" Relationship="TruckersModel.FK_Commission_LoadType" FromRole="Commission" ToRole="LoadType" />
-          <NavigationProperty Name="Queues" Relationship="TruckersModel.FK_Queue_Commission" FromRole="Commission" ToRole="Queue" />
-          <Property Name="GroupID" Type="Byte" />
-        </EntityType>
-        <Association Name="FK_Commission_LoadType">
-          <End Type="TruckersModel.LoadType" Role="LoadType" Multiplicity="1" />
-          <End Type="TruckersModel.Commission" Role="Commission" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="LoadType">
-              <PropertyRef Name="TypeID" />
-            </Principal>
-            <Dependent Role="Commission">
-              <PropertyRef Name="Groups_FK" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Queue_Commission">
-          <End Type="TruckersModel.Commission" Role="Commission" Multiplicity="1" />
-          <End Type="TruckersModel.Queue" Role="Queue" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Commission">
-              <PropertyRef Name="CommissionID" />
-            </Principal>
-            <Dependent Role="Queue">
-              <PropertyRef Name="ComosiunID_FK" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="TruckersModelStoreContainer" CdmEntityContainer="TruckersEntities">
+          <EntitySetMapping Name="Cashes">
+            <EntityTypeMapping TypeName="TruckersModel.Cash">
+              <MappingFragment StoreEntitySet="Cash">
+                <ScalarProperty Name="seriesID_FK" ColumnName="seriesID_FK" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="CashDesk" ColumnName="CashDesk" />
+                <ScalarProperty Name="Pos" ColumnName="Pos" />
+                <ScalarProperty Name="QueueID_FK" ColumnName="QueueID_FK" />
+                <ScalarProperty Name="CashID" ColumnName="CashID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Commissions">
+            <EntityTypeMapping TypeName="TruckersModel.Commission">
+              <MappingFragment StoreEntitySet="Commission">
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="enabled" ColumnName="enabled" />
+                <ScalarProperty Name="DataRegister" ColumnName="DataRegister" />
+                <ScalarProperty Name="CommissionPrice" ColumnName="CommissionPrice" />
+                <ScalarProperty Name="Groups_FK" ColumnName="Groups_FK" />
+                <ScalarProperty Name="CommissionID" ColumnName="CommissionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Drivers">
             <EntityTypeMapping TypeName="TruckersModel.Driver">
               <MappingFragment StoreEntitySet="Drivers">
                 <ScalarProperty Name="userID_FK" ColumnName="userID_FK" />
-                <ScalarProperty Name="Commission_Group" ColumnName="Commission_Group" />
-                <ScalarProperty Name="Native" ColumnName="Native" />
-                <ScalarProperty Name="Membership" ColumnName="Membership" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
                 <ScalarProperty Name="Tag" ColumnName="Tag" />
                 <ScalarProperty Name="TagNumber" ColumnName="TagNumber" />
                 <ScalarProperty Name="SmartCart" ColumnName="SmartCart" />
@@ -627,31 +645,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="TruckersModel.User">
-              <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="username" ColumnName="username" />
-                <ScalarProperty Name="Roul" ColumnName="Roul" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="userID" ColumnName="userID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Cashes">
-            <EntityTypeMapping TypeName="TruckersModel.Cash">
-              <MappingFragment StoreEntitySet="Cash">
-                <ScalarProperty Name="seriesID_FK" ColumnName="seriesID_FK" />
-                <ScalarProperty Name="userID" ColumnName="userID" />
-                <ScalarProperty Name="CashDesk" ColumnName="CashDesk" />
-                <ScalarProperty Name="Pos" ColumnName="Pos" />
-                <ScalarProperty Name="QueueID_FK" ColumnName="QueueID_FK" />
-                <ScalarProperty Name="CashID" ColumnName="CashID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="SeriesPrices">
             <EntityTypeMapping TypeName="TruckersModel.SeriesPrice">
               <MappingFragment StoreEntitySet="SeriesPrice">
@@ -672,15 +665,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Commissions">
-            <EntityTypeMapping TypeName="TruckersModel.Commission">
-              <MappingFragment StoreEntitySet="Commission">
-                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
-                <ScalarProperty Name="enabled" ColumnName="enabled" />
-                <ScalarProperty Name="DataRegister" ColumnName="DataRegister" />
-                <ScalarProperty Name="CommissionPrice" ColumnName="CommissionPrice" />
-                <ScalarProperty Name="Groups_FK" ColumnName="Groups_FK" />
-                <ScalarProperty Name="CommissionID" ColumnName="CommissionID" />
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="TruckersModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="Roul" ColumnName="Roul" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

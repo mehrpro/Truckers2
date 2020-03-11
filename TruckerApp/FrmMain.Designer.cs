@@ -36,7 +36,7 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btnMemberShipList = new DevExpress.XtraBars.BarButtonItem();
             this.btnCommission = new DevExpress.XtraBars.BarButtonItem();
-            this.btnNewQue = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNewFaleh = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.btnHavaleh = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
@@ -46,6 +46,10 @@
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.btnCommissionNative = new DevExpress.XtraBars.BarButtonItem();
             this.btnCommissionOther = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -66,13 +70,14 @@
             // 
             this.ribbonControl1.ApplicationButtonDropDownControl = this.applicationMenu1;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            this.ribbonControl1.Font = new System.Drawing.Font("B Yekan", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.btnAddDriver,
             this.barButtonItem2,
             this.btnMemberShipList,
             this.btnCommission,
-            this.btnNewQue,
+            this.btnNewFaleh,
             this.barButtonItem6,
             this.btnHavaleh,
             this.skinRibbonGalleryBarItem1,
@@ -81,9 +86,13 @@
             this.btnCasheStatus,
             this.barButtonItem3,
             this.btnCommissionNative,
-            this.btnCommissionOther});
+            this.btnCommissionOther,
+            this.barButtonItem1,
+            this.barButtonItem4,
+            this.barButtonItem5,
+            this.barButtonItem7});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 11;
+            this.ribbonControl1.MaxItemId = 15;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -136,14 +145,14 @@
             this.btnCommission.Name = "btnCommission";
             this.btnCommission.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCommission_ItemClick);
             // 
-            // btnNewQue
+            // btnNewFaleh
             // 
-            this.btnNewQue.Caption = "حواله جدید";
-            this.btnNewQue.Glyph = ((System.Drawing.Image)(resources.GetObject("btnNewQue.Glyph")));
-            this.btnNewQue.Id = 5;
-            this.btnNewQue.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnNewQue.LargeGlyph")));
-            this.btnNewQue.Name = "btnNewQue";
-            this.btnNewQue.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewQue_ItemClick);
+            this.btnNewFaleh.Caption = "حواله فله";
+            this.btnNewFaleh.Glyph = ((System.Drawing.Image)(resources.GetObject("btnNewFaleh.Glyph")));
+            this.btnNewFaleh.Id = 5;
+            this.btnNewFaleh.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnNewFaleh.LargeGlyph")));
+            this.btnNewFaleh.Name = "btnNewFaleh";
+            this.btnNewFaleh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewQue_ItemClick);
             // 
             // barButtonItem6
             // 
@@ -222,6 +231,50 @@
             this.btnCommissionOther.Name = "btnCommissionOther";
             this.btnCommissionOther.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCommissionOther_ItemClick);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "حواله پاکت";
+            this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
+            this.barButtonItem1.Id = 11;
+            this.barButtonItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.LargeGlyph")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "حواله کلینکر";
+            this.barButtonItem4.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.Glyph")));
+            this.barButtonItem4.Id = 12;
+            this.barButtonItem4.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.LargeGlyph")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "حواله غلات";
+            this.barButtonItem5.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.Glyph")));
+            this.barButtonItem5.Id = 13;
+            this.barButtonItem5.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.LargeGlyph")));
+            this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "میزکار";
+            this.barButtonItem7.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.Glyph")));
+            this.barButtonItem7.Id = 14;
+            this.barButtonItem7.ItemAppearance.Disabled.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.barButtonItem7.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barButtonItem7.ItemAppearance.Hovered.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.barButtonItem7.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonItem7.ItemAppearance.Normal.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.barButtonItem7.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem7.ItemAppearance.Pressed.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.barButtonItem7.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonItem7.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.LargeGlyph")));
+            this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -258,9 +311,12 @@
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btnSeries);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnNewQue);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnHavaleh);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnNewFaleh);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem5);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "صدور";
             // 
@@ -306,7 +362,7 @@
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.ItemLinks.Add(this.btnNewQue);
+            this.ribbonStatusBar1.ItemLinks.Add(this.barButtonItem7);
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 518);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
@@ -347,7 +403,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.BarButtonItem btnMemberShipList;
         private DevExpress.XtraBars.BarButtonItem btnCommission;
-        private DevExpress.XtraBars.BarButtonItem btnNewQue;
+        private DevExpress.XtraBars.BarButtonItem btnNewFaleh;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem btnHavaleh;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
@@ -366,5 +422,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.BarButtonItem btnCommissionNative;
         private DevExpress.XtraBars.BarButtonItem btnCommissionOther;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
     }
 }

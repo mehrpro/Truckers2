@@ -35,14 +35,13 @@ namespace TruckerApp.UserForm
                         newDriver.Tag = Convert.ToByte(txtTag.Text);
                         newDriver.TagNumber = txtTagNumber.Text;
                         newDriver.SmartCart = smartcart;
-                        newDriver.Commission_Group = Convert.ToByte(radComosiun.EditValue);
-                        newDriver.Membership = Convert.ToBoolean(chkMembership.EditValue);
-                        newDriver.Native = Convert.ToBoolean(chkNative.EditValue);
+                        newDriver.GroupID = Convert.ToByte(radComosiun.EditValue);
                         db.Drivers.Add(newDriver);
-                        var result = db.SaveChanges();
+                        db.SaveChanges();
                         XtraMessageBox.Show(PublicVar.SuccessfulSave,
                             Text, MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
+                        Clear();
 
                     }
                     catch
@@ -76,37 +75,7 @@ namespace TruckerApp.UserForm
 
         }
 
-        private void chkMembership_EditValueChanged(object sender, EventArgs e)
-        {
-            ComosionLevel();
-        }
 
-        private void ComosionLevel()
-        {
-            bool Mem, Nat;
-            Mem = Convert.ToBoolean(chkMembership.EditValue);
-            Nat = Convert.ToBoolean(chkNative.EditValue);
-            if (Mem && Nat)
-            {
-                radComosiun.SelectedIndex = 0;
-            }
-            else if (!Mem && Nat)
-            {
-                radComosiun.SelectedIndex = 1;
-            }
-            else if(!Mem && !Nat)
-            {
-                radComosiun.SelectedIndex = 2;
-            }
-            else if (Mem && !Nat)
-            {
-                radComosiun.SelectedIndex =0 ;
-            }
-        }
 
-        private void chkNative_EditValueChanged(object sender, EventArgs e)
-        {
-            ComosionLevel();
-        }
     }
 }

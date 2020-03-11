@@ -21,22 +21,28 @@ namespace TruckerApp.UserForm
         }
 
         private TruckersEntities db = new TruckerApp.TruckersEntities();
+        private List<Cash> qryDB;
+
         private void setup()
         {
             db = new TruckersEntities();
-            db.Cashes.LoadAsync().ContinueWith(loadTask =>
-            {
-                cashesBindingSource.DataSource =
-                    db.Cashes.Where((x => x.seriesID_FK == PublicVar.SeriesID)).ToListAsync();
-            }, TaskScheduler.FromCurrentSynchronizationContext());
+            db.Cashes.Load();
+            cashesBindingSource.DataSource = qryDB = db.Cashes.Where((x => x.seriesID_FK == PublicVar.SeriesID)).ToList();
+            var PacketCount = qryDB.Where(x => x.seriesID_FK == PublicVar.SeriesID && x.Queue.Type_FK == 2).Sum(x => x.Queue.Commission.CommissionPrice);
+            txtFalaeh.Text = $"{qryDB.Where(x => x.seriesID_FK == PublicVar.SeriesID && x.Queue.Type_FK == 1).Sum(x => x.Queue.Commission.CommissionPrice)}";
+            txtPacket.Text = $"{qryDB.Where(x => x.seriesID_FK == PublicVar.SeriesID && x.Queue.Type_FK == 2).Sum(x => x.Queue.Commission.CommissionPrice)}";
+            txtGandom.Text = $"{qryDB.Where(x => x.seriesID_FK == PublicVar.SeriesID && x.Queue.Type_FK == 3).Sum(x => x.Queue.Commission.CommissionPrice)}";
+            txtMember.Text = $"{qryDB.Where(x => x.seriesID_FK == PublicVar.SeriesID && x.Queue.GroupCommission == 1).Sum(x => x.Queue.Commission.CommissionPrice)}";
+        }
 
-            db = new TruckersEntities();
-            var pacet = db.Cashes.Where(x => x.seriesID_FK == PublicVar.SeriesID && x.Queue.Type_FK == 2)
-                .Sum(x => x.Queue.Commission.CommissionPrice);
-            txtFalaeh.Text = $"{db.Cashes.Where(x => x.seriesID_FK == PublicVar.SeriesID && x.Queue.Type_FK == 1).Sum(x => x.Queue.Commission.CommissionPrice)}";
-            txtPacket.Text = $"{db.Cashes.Where(x => x.seriesID_FK == PublicVar.SeriesID && x.Queue.Type_FK == 2).Sum(x => x.Queue.Commission.CommissionPrice)}";
-            txtGandom.Text = $"{db.Cashes.Where(x => x.seriesID_FK == PublicVar.SeriesID && x.Queue.Type_FK == 3).Sum(x => x.Queue.Commission.CommissionPrice)}";
-            txtMember.Text = $"{db.Cashes.Where(x => x.seriesID_FK == PublicVar.SeriesID && x.Queue.GroupCommission == 1).Sum(x => x.Queue.Commission.CommissionPrice)}";
+        private void panelControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FrmCasheList_Load(object sender, EventArgs e)
+        {
+            setup();
         }
     }
 }

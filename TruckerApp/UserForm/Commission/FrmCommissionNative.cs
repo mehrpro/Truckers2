@@ -1,33 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
 namespace TruckerApp.UserForm.Commission
 {
-    public partial class FrmCommissionNative : Form
+    public partial class FrmCommissionNative : XtraForm
     {
         public FrmCommissionNative()
         {
             InitializeComponent();
         }
         TruckerApp.TruckersEntities dbContext = new TruckerApp.TruckersEntities();
+        public byte Group1 { get; set; }
+        public byte Group2 { get; set; }
 
         private void GridList1(byte groupid)
         {
             dbContext = new TruckersEntities();
-            var qry = dbContext.Commissions.Where(x => x.Groups_FK == groupid).ToList();
-            if (groupid == 15)
+            var qry = dbContext.Commissions.Where(x => x.Groups_FK == groupid).ToList().OrderByDescending(x=> x.CommissionID);
+            if (groupid == Group1)
             {
                 gridControl1.DataSource = qry;
             }
-            else if (groupid == 17)
+            else if (groupid == Group2)
             {
                 gridControl2.DataSource = qry;
             }
@@ -72,7 +68,7 @@ namespace TruckerApp.UserForm.Commission
         {
             if (dxValidationProvider1.Validate())
             {
-                Add(15, Convert.ToInt32(txtComosin1.EditValue));
+                Add(Group1, Convert.ToInt32(txtComosin1.EditValue));
             }
             else
             {
@@ -84,7 +80,7 @@ namespace TruckerApp.UserForm.Commission
         {
             if (dxValidationProvider2.Validate())
             {
-                Add(17, Convert.ToInt32(txtComosin2.EditValue));
+                Add(Group2, Convert.ToInt32(txtComosin2.EditValue));
             }
             else
             {
@@ -94,8 +90,23 @@ namespace TruckerApp.UserForm.Commission
 
         private void FrmCommissionNative_Load(object sender, EventArgs e)
         {
-            GridList1(15);
-            GridList1(17);
+            switch (Group1)
+            {
+                case 14:
+                    groupControl1.Text = "مصوبات حق کمیسیون اعضاء صنف";
+                    break;
+                case 15:
+                    groupControl1.Text = "مصوبات حق کمیسیون رانندگان بومی";
+                    break;
+                case 16:
+                    groupControl1.Text = "مصوبات حق کمیسیون رانندگان غیربومی";
+                    break;
+
+
+
+            }
+            GridList1(Group1);
+            GridList1(Group2);
         }
     }
 }

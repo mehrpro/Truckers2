@@ -135,6 +135,8 @@
             this.layoutControl3.Location = new System.Drawing.Point(2, 2);
             this.layoutControl3.Name = "layoutControl3";
             this.layoutControl3.OptionsFocus.MoveFocusRightToLeft = true;
+            this.layoutControl3.OptionsPrint.AppearanceGroupCaption.Options.UseTextOptions = true;
+            this.layoutControl3.OptionsPrint.AppearanceItemCaption.Options.UseTextOptions = true;
             this.layoutControl3.OptionsView.RightToLeftMirroringApplied = true;
             this.layoutControl3.Root = this.layoutControlGroup3;
             this.layoutControl3.Size = new System.Drawing.Size(1106, 97);
@@ -220,6 +222,7 @@
             this.simpleButton1.StyleController = this.layoutControl1;
             this.simpleButton1.TabIndex = 4;
             this.simpleButton1.Text = "پاکت";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // simpleButton2
             // 
@@ -234,6 +237,7 @@
             this.simpleButton2.StyleController = this.layoutControl1;
             this.simpleButton2.TabIndex = 0;
             this.simpleButton2.Text = "کلینکر";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton3
             // 
@@ -248,6 +252,7 @@
             this.simpleButton3.StyleController = this.layoutControl1;
             this.simpleButton3.TabIndex = 0;
             this.simpleButton3.Text = "غلات";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // btnSimanFaleh
             // 
@@ -262,6 +267,7 @@
             this.btnSimanFaleh.StyleController = this.layoutControl1;
             this.btnSimanFaleh.TabIndex = 0;
             this.btnSimanFaleh.Text = "سیمان فله";
+            this.btnSimanFaleh.Click += new System.EventHandler(this.btnSimanFaleh_Click);
             // 
             // layoutControlGroup1
             // 
@@ -346,9 +352,9 @@
             this.gaugeControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gaugeControl4.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
             this.digitalGauge4});
-            this.gaugeControl4.Location = new System.Drawing.Point(554, 28);
+            this.gaugeControl4.Location = new System.Drawing.Point(554, 12);
             this.gaugeControl4.Name = "gaugeControl4";
-            this.gaugeControl4.Size = new System.Drawing.Size(267, 108);
+            this.gaugeControl4.Size = new System.Drawing.Size(267, 124);
             this.gaugeControl4.TabIndex = 1;
             // 
             // digitalGauge4
@@ -357,7 +363,7 @@
             this.digitalGauge4.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#FF5000");
             this.digitalGauge4.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
             this.digitalBackgroundLayerComponent4});
-            this.digitalGauge4.Bounds = new System.Drawing.Rectangle(6, 6, 255, 96);
+            this.digitalGauge4.Bounds = new System.Drawing.Rectangle(6, 6, 255, 112);
             this.digitalGauge4.DigitCount = 5;
             this.digitalGauge4.Name = "digitalGauge4";
             this.digitalGauge4.RightToLeft = true;
@@ -376,9 +382,9 @@
             this.gaugeControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gaugeControl3.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
             this.digitalGauge3});
-            this.gaugeControl3.Location = new System.Drawing.Point(12, 28);
+            this.gaugeControl3.Location = new System.Drawing.Point(12, 12);
             this.gaugeControl3.Name = "gaugeControl3";
-            this.gaugeControl3.Size = new System.Drawing.Size(267, 108);
+            this.gaugeControl3.Size = new System.Drawing.Size(267, 124);
             this.gaugeControl3.TabIndex = 1;
             // 
             // digitalGauge3
@@ -387,7 +393,7 @@
             this.digitalGauge3.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#FF5000");
             this.digitalGauge3.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
             this.digitalBackgroundLayerComponent3});
-            this.digitalGauge3.Bounds = new System.Drawing.Rectangle(6, 6, 255, 96);
+            this.digitalGauge3.Bounds = new System.Drawing.Rectangle(6, 6, 255, 112);
             this.digitalGauge3.DigitCount = 5;
             this.digitalGauge3.Name = "digitalGauge3";
             this.digitalGauge3.RightToLeft = true;
@@ -406,9 +412,9 @@
             this.gaugeControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gaugeControl2.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
             this.digitalGauge2});
-            this.gaugeControl2.Location = new System.Drawing.Point(283, 28);
+            this.gaugeControl2.Location = new System.Drawing.Point(283, 12);
             this.gaugeControl2.Name = "gaugeControl2";
-            this.gaugeControl2.Size = new System.Drawing.Size(267, 108);
+            this.gaugeControl2.Size = new System.Drawing.Size(267, 124);
             this.gaugeControl2.TabIndex = 1;
             // 
             // digitalGauge2
@@ -417,7 +423,7 @@
             this.digitalGauge2.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#FF5000");
             this.digitalGauge2.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
             this.digitalBackgroundLayerComponent2});
-            this.digitalGauge2.Bounds = new System.Drawing.Rectangle(6, 6, 255, 96);
+            this.digitalGauge2.Bounds = new System.Drawing.Rectangle(6, 6, 255, 112);
             this.digitalGauge2.DigitCount = 5;
             this.digitalGauge2.Name = "digitalGauge2";
             this.digitalGauge2.RightToLeft = true;
@@ -437,9 +443,9 @@
             this.gaugeControl1.ColorScheme.Color = System.Drawing.Color.Transparent;
             this.gaugeControl1.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
             this.digitalGauge1});
-            this.gaugeControl1.Location = new System.Drawing.Point(825, 28);
+            this.gaugeControl1.Location = new System.Drawing.Point(825, 12);
             this.gaugeControl1.Name = "gaugeControl1";
-            this.gaugeControl1.Size = new System.Drawing.Size(269, 108);
+            this.gaugeControl1.Size = new System.Drawing.Size(269, 124);
             this.gaugeControl1.TabIndex = 1;
             // 
             // digitalGauge1
@@ -448,7 +454,7 @@
             this.digitalGauge1.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#FF5000");
             this.digitalGauge1.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
             this.digitalBackgroundLayerComponent1});
-            this.digitalGauge1.Bounds = new System.Drawing.Rectangle(6, 6, 257, 96);
+            this.digitalGauge1.Bounds = new System.Drawing.Rectangle(6, 6, 257, 112);
             this.digitalGauge1.DigitCount = 5;
             this.digitalGauge1.Name = "digitalGauge1";
             this.digitalGauge1.RightToLeft = true;
@@ -483,7 +489,8 @@
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(273, 128);
             this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(93, 13);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem6
             // 
@@ -492,7 +499,8 @@
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(271, 128);
             this.layoutControlItem6.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(93, 13);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem7
             // 
@@ -501,7 +509,8 @@
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(271, 128);
             this.layoutControlItem7.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(93, 13);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem7.TextVisible = false;
             // 
             // layoutControlItem8
             // 
@@ -510,7 +519,8 @@
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(271, 128);
             this.layoutControlItem8.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(93, 13);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem8.TextVisible = false;
             // 
             // FrmFishPanel
             // 

@@ -17,8 +17,8 @@ namespace TruckerApp
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SeriesPrice()
         {
-            this.Queues = new HashSet<Queue>();
             this.Cashes = new HashSet<Cash>();
+            this.Queues = new HashSet<Queue>();
         }
     
         public int SereisID { get; set; }
@@ -37,9 +37,9 @@ namespace TruckerApp
         public Nullable<bool> enabeled { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cash> Cashes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Queue> Queues { get; set; }
         public virtual User User { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cash> Cashes { get; set; }
     }
 }
