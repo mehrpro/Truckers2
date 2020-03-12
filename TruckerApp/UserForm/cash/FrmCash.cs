@@ -24,6 +24,7 @@ namespace TruckerApp.UserForm
                 c.Pos = Convert.ToInt32(txtPOS.EditValue);
                 c.CashDesk = Convert.ToInt32(txtCash.EditValue);
                 c.userID = _userid;
+                c.seriesID_FK = _serialID;
                 db.Cashes.Add(c);
                 db.SaveChanges();
                 Close();
@@ -35,6 +36,8 @@ namespace TruckerApp.UserForm
             }
 
         }
+
+        public int _serialID { get; set; }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {

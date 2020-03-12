@@ -94,6 +94,7 @@ namespace TruckerApp.UserForm
             var frm = new FrmCash();
             frm._userid = PublicVar.UserID;
             frm.QueueID = _queue;
+            frm._serialID = _series;
             frm.CashTemp = txtComossin.Text;
             frm.ShowDialog();
         }

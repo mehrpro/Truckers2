@@ -99,18 +99,18 @@ namespace TruckerApp
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (Form c in this.MdiChildren)
-            {
-                c.Close();
-            }
+            //foreach (Form c in this.MdiChildren)
+            //{
+            //    c.Close();
+            //}
             var frmSpring = new FrmRevFish()
             {
-                //FormBorderStyle = FormBorderStyle.None,
-                MdiParent = this,
+                FormBorderStyle = FormBorderStyle.None,
+                //MdiParent = this,
                 StartPosition = FormStartPosition.CenterScreen,
                 //Dock = DockStyle.Fill
             };
-            frmSpring.Show();
+            frmSpring.ShowDialog();
         }
 
         private void btnHavaleh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
