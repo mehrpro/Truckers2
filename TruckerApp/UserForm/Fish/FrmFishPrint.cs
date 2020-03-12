@@ -63,7 +63,7 @@ namespace TruckerApp.UserForm
         {
             using (var db = new TruckersEntities())
             {
-                _series = db.SeriesPrices.Single(x => x.enabeled == true && x.closing == null).SeriesName.Value;
+                _series = db.SeriesPrices.Single(x => x.enabeled == true && x.closing == null).SeriesName;
                 PublicVar.SeriesID = _series;
                 txtserial.Text = _series.ToString();
             }

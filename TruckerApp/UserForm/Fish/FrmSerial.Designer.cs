@@ -105,6 +105,8 @@
             this.txtDate.Properties.Appearance.Options.UseFont = true;
             this.txtDate.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txtDate.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.txtDate.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtDate.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtDate.Size = new System.Drawing.Size(162, 30);
             this.txtDate.TabIndex = 0;
             // 
@@ -119,6 +121,8 @@
             this.txtTime.Properties.Appearance.Options.UseFont = true;
             this.txtTime.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txtTime.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.txtTime.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtTime.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtTime.Size = new System.Drawing.Size(162, 30);
             this.txtTime.TabIndex = 0;
             // 
@@ -146,6 +150,8 @@
             this.txtLastSerial.Properties.Appearance.Options.UseFont = true;
             this.txtLastSerial.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txtLastSerial.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.txtLastSerial.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtLastSerial.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtLastSerial.Size = new System.Drawing.Size(207, 30);
             this.txtLastSerial.TabIndex = 0;
             // 
@@ -170,6 +176,8 @@
             this.txtUsers.Properties.Appearance.Options.UseFont = true;
             this.txtUsers.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txtUsers.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.txtUsers.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtUsers.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtUsers.Size = new System.Drawing.Size(207, 30);
             this.txtUsers.TabIndex = 0;
             // 

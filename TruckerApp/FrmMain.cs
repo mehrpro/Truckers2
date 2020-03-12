@@ -11,8 +11,10 @@ namespace TruckerApp
         public FrmMain()
         {
             InitializeComponent();
+            SersID sers = new SersID();
+            sers.serid();
         }
-
+        
         private void btnAddDriver_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 

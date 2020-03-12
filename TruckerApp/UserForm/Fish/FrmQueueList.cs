@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
 
@@ -16,43 +11,32 @@ namespace TruckerApp.UserForm
         public FrmQueueList()
         {
             InitializeComponent();
-            GridList();
-            CalcuterList();
+ 
+            calcuterList();
         }
 
-        private TruckersEntities Db { get; set; }
+        private TruckersEntities Db = new TruckersEntities();
 
-        private async void GridList()
+        private void calcuterList()
         {
-            Db = new TruckersEntities();
-            queuesBindingSource.DataSource = await Db.Queues.Where(x=> x.Status_FK == 4).ToListAsync();
-            
-        }
+            List<Queue> qryOLD;
+            queuesBindingSource.DataSource = qryOLD = Db.Queues.Where(x => x.Status_FK == 4).ToList();
+            txtTotal.Text = qryOLD.Count.ToString();
+            txtDate.Text = $"{PublicVar.DateSerial:yyyy/MM/dd}";
+            txtSerial.Text = PublicVar.SeriesID.ToString();
+            var qry = qryOLD.Where(x => x.SeriesID_FK == PublicVar.SeriesID).ToList();
+            txtNew.Text = qry.Count.ToString();
+            txtFalaeh.Text = qry.Count(x => x.Type_FK == 1).ToString();
+            txtPacket.Text = qry.Count(x => x.Type_FK == 2).ToString();
+            txtGandom.Text = qry.Count(x => x.Type_FK == 3).ToString();
+            txtClinker.Text = qry.Count(x => x.Type_FK == 4).ToString();
 
-        private async void Loading()
-        {
+            txtMember.Text = qry.Count(x => x.GroupCommission == 1).ToString();
+            txtNoMember.Text = qry.Count(x => x.GroupCommission == 2).ToString();
+            txtOther.Text = qry.Count(x => x.GroupCommission == 3).ToString();
 
-        }
-        private  void CalcuterList()
-        {
-            Db=new TruckersEntities();
-            var qryOLD = Db.Queues.Where(x => x.Status_FK == 4).ToList();
-            var serial = Db.SeriesPrices.SingleOrDefault(x => x.closing == null && x.enabeled == true && x.SeriesDateEnd == null);
-            if (serial != null)
-            {
-                txtTotal.Text = qryOLD.Count.ToString();
-                txtDate.Text = string.Format("{0:yyyy/MM/dd}", serial.SeriesDateStart);
-                txtSerial.Text = serial.SeriesName.ToString();
-                var qry = Db.Queues.Where(x => x.SeriesID_FK == serial.SeriesName).ToList();
-                txtNew.Text = qry.Count.ToString();
-                txtFalaeh.Text = qry.Where(x => x.Type_FK == 1).Count().ToString();
-                txtPacket.Text = qry.Where(x => x.Type_FK == 2).Count().ToString();
-                txtGandom.Text = qry.Where(x => x.Type_FK == 3).Count().ToString();
-                txtMember.Text = qry.Where(x => x.GroupCommission == 1).Count().ToString();
-                txtNoMember.Text = qry.Where(x => x.GroupCommission == 2).Count().ToString();
-                txtOther.Text = qry.Where(x => x.GroupCommission == 3).Count().ToString();
-                txtOld.Text = (Convert.ToInt32(txtTotal.Text) - Convert.ToInt32(txtNew.Text)).ToString();
-            }
+            txtOld.Text = (Convert.ToInt32(txtTotal.Text) - Convert.ToInt32(txtNew.Text)).ToString();
+
 
         }
     }

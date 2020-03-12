@@ -22,9 +22,9 @@ namespace TruckerApp
         }
     
         public int SereisID { get; set; }
-        public Nullable<int> SeriesName { get; set; }
+        public int SeriesName { get; set; }
         public Nullable<int> SeriesCount { get; set; }
-        public Nullable<System.DateTime> SeriesDateStart { get; set; }
+        public System.DateTime SeriesDateStart { get; set; }
         public Nullable<System.DateTime> SeriesDateEnd { get; set; }
         public Nullable<int> Faleh { get; set; }
         public Nullable<int> Packet { get; set; }

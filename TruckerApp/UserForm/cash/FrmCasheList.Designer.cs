@@ -59,6 +59,8 @@
             this.txtFalaeh = new DevExpress.XtraEditors.TextEdit();
             this.txtMember = new DevExpress.XtraEditors.TextEdit();
             this.txtPacket = new DevExpress.XtraEditors.TextEdit();
+            this.txtClinker = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -74,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtFalaeh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMember.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPacket.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtClinker.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -96,10 +99,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataSource = this.cashesBindingSource;
-            this.gridControl1.Location = new System.Drawing.Point(12, 194);
+            this.gridControl1.Location = new System.Drawing.Point(12, 229);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1083, 437);
+            this.gridControl1.Size = new System.Drawing.Size(1083, 402);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -318,12 +321,14 @@
             this.panelControl1.Controls.Add(this.labelControl9);
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.labelControl8);
+            this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.labelControl5);
             this.panelControl1.Controls.Add(this.labelControl7);
             this.panelControl1.Controls.Add(this.labelControl4);
             this.panelControl1.Controls.Add(this.labelControl12);
             this.panelControl1.Controls.Add(this.labelControl11);
             this.panelControl1.Controls.Add(this.txtOther);
+            this.panelControl1.Controls.Add(this.txtClinker);
             this.panelControl1.Controls.Add(this.txtGandom);
             this.panelControl1.Controls.Add(this.txtNoMember);
             this.panelControl1.Controls.Add(this.txtSerial);
@@ -334,7 +339,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(2, 55);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1103, 133);
+            this.panelControl1.Size = new System.Drawing.Size(1103, 168);
             this.panelControl1.TabIndex = 2;
             this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
@@ -570,6 +575,35 @@
             this.txtPacket.Size = new System.Drawing.Size(100, 22);
             this.txtPacket.TabIndex = 2;
             // 
+            // txtClinker
+            // 
+            this.txtClinker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtClinker.EditValue = "352";
+            this.txtClinker.Location = new System.Drawing.Point(614, 112);
+            this.txtClinker.Name = "txtClinker";
+            this.txtClinker.Parmida_ActivePlusMultiKeys = false;
+            this.txtClinker.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtClinker.Properties.Appearance.Options.UseFont = true;
+            this.txtClinker.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtClinker.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtClinker.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Blue;
+            this.txtClinker.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.txtClinker.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.txtClinker.Properties.AppearanceReadOnly.Options.UseForeColor = true;
+            this.txtClinker.Properties.ReadOnly = true;
+            this.txtClinker.Size = new System.Drawing.Size(100, 22);
+            this.txtClinker.TabIndex = 9;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl1.Location = new System.Drawing.Point(720, 110);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(38, 24);
+            this.labelControl1.TabIndex = 19;
+            this.labelControl1.Text = "کلینکر";
+            // 
             // FrmCasheList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -596,6 +630,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtFalaeh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMember.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPacket.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtClinker.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -632,5 +667,7 @@
         private DevExpress.XtraEditors.TextEdit txtPacket;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.TextEdit txtClinker;
     }
 }

@@ -221,6 +221,7 @@
     <Compile Include="UserForm\Fish\FrmSerial.Designer.cs">
       <DependentUpon>FrmSerial.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserForm\SersID.cs" />
     <Compile Include="XRDesignRibbonControllerResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
