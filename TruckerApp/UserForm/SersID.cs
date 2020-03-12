@@ -14,7 +14,8 @@ namespace TruckerApp.UserForm
             var qry = db.SeriesPrices.SingleOrDefault(x => x.enabeled == true && x.closing == null);
             if (qry != null)
             {
-                PublicVar.SeriesID = qry.SeriesName;
+                PublicVar.SeriesID = qry.SereisID;
+                PublicVar.SeriesName = qry.SeriesName;
                 PublicVar.DateSerial = qry.SeriesDateStart;
             }
             else

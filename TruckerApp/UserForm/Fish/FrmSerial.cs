@@ -19,8 +19,8 @@ namespace TruckerApp.UserForm
 
         }
 
-       
-       
+
+
         private void grid()
         {
             seriesBindingSource.DataSource = _serList = db.SeriesPrices.ToList();
@@ -36,7 +36,7 @@ namespace TruckerApp.UserForm
             txtTime.Text = DateTime.Now.ToLongTimeString();
             var userCreator = db.Users.SingleOrDefault(x => x.userID == PublicVar.UserID);
             txtUsers.Text = $"{userCreator.FirstName} {userCreator.LastName}";
-            //var lastid = _serList.Last().SeriesName;
+            lastID = _serList.Last().SereisID;
             //int qryMax = _serList.Max(x => x.SeriesName);
             //lastID = _serList[lastid - 1].SereisID;
             txtLastSerial.Text = _serList.Last().SeriesName.ToString();
@@ -53,11 +53,11 @@ namespace TruckerApp.UserForm
         private void btnNewSerial_Click(object sender, EventArgs e)
         {
 
-            db = new TruckersEntities();
+            //db = new TruckersEntities();
             var qryType = db.Queues.Where(x => x.SeriesID_FK == serialNumber).ToList();
             try
             {
-                var last = _serList.Last();
+                var last = _serList.Single(x => x.SereisID == lastID);
                 last.SeriesDateEnd = DateTime.Now;
                 last.Faleh = qryType.Count(x => x.Type_FK == 1);
                 last.Packet = qryType.Count(x => x.Type_FK == 2);
@@ -77,8 +77,9 @@ namespace TruckerApp.UserForm
                 db.SaveChanges();
                 var Msg = $"سریال فروش {series.SeriesName} در تاریخ {series.SeriesDateStart} ایجاد شد ";
                 XtraMessageBox.Show(Msg, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                SetupPage();
+               
                 grid();
+                SetupPage();
             }
             catch
             {

@@ -37,7 +37,7 @@ namespace TruckerApp.UserForm
             txtNoMember.Text = $"{qryDB.Count(x => x.Queue.GroupCommission == 2)}";
             txtOther.Text = $"{qryDB.Count(x => x.Queue.GroupCommission == 3)}";
 
-            txtSerial.Text = PublicVar.SeriesID.ToString();
+            txtSerial.Text = PublicVar.SeriesName.ToString();
             txtDate.Text = $"{PublicVar.DateSerial:yyyy/MM/dd}";
 
 

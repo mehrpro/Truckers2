@@ -50,6 +50,7 @@
             this.colSeriesDateStart = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeriesDateEnd = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coluserCreator = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemToggleSwitch1 = new DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -61,6 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -97,8 +99,7 @@
             // txtDate
             // 
             this.txtDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDate.Enabled = false;
-            this.txtDate.Location = new System.Drawing.Point(584, 33);
+            this.txtDate.Location = new System.Drawing.Point(580, 33);
             this.txtDate.Name = "txtDate";
             this.txtDate.Parmida_ActivePlusMultiKeys = false;
             this.txtDate.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -107,14 +108,14 @@
             this.txtDate.Properties.AppearanceDisabled.Options.UseFont = true;
             this.txtDate.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtDate.Properties.AppearanceReadOnly.Options.UseFont = true;
-            this.txtDate.Size = new System.Drawing.Size(162, 30);
+            this.txtDate.Properties.ReadOnly = true;
+            this.txtDate.Size = new System.Drawing.Size(200, 30);
             this.txtDate.TabIndex = 0;
             // 
             // txtTime
             // 
             this.txtTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTime.Enabled = false;
-            this.txtTime.Location = new System.Drawing.Point(584, 85);
+            this.txtTime.Location = new System.Drawing.Point(580, 85);
             this.txtTime.Name = "txtTime";
             this.txtTime.Parmida_ActivePlusMultiKeys = false;
             this.txtTime.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -123,7 +124,8 @@
             this.txtTime.Properties.AppearanceDisabled.Options.UseFont = true;
             this.txtTime.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtTime.Properties.AppearanceReadOnly.Options.UseFont = true;
-            this.txtTime.Size = new System.Drawing.Size(162, 30);
+            this.txtTime.Properties.ReadOnly = true;
+            this.txtTime.Size = new System.Drawing.Size(200, 30);
             this.txtTime.TabIndex = 0;
             // 
             // btnNewSerial
@@ -142,7 +144,6 @@
             // txtLastSerial
             // 
             this.txtLastSerial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLastSerial.Enabled = false;
             this.txtLastSerial.Location = new System.Drawing.Point(265, 33);
             this.txtLastSerial.Name = "txtLastSerial";
             this.txtLastSerial.Parmida_ActivePlusMultiKeys = false;
@@ -152,6 +153,7 @@
             this.txtLastSerial.Properties.AppearanceDisabled.Options.UseFont = true;
             this.txtLastSerial.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtLastSerial.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.txtLastSerial.Properties.ReadOnly = true;
             this.txtLastSerial.Size = new System.Drawing.Size(207, 30);
             this.txtLastSerial.TabIndex = 0;
             // 
@@ -168,7 +170,6 @@
             // txtUsers
             // 
             this.txtUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUsers.Enabled = false;
             this.txtUsers.Location = new System.Drawing.Point(265, 85);
             this.txtUsers.Name = "txtUsers";
             this.txtUsers.Parmida_ActivePlusMultiKeys = false;
@@ -178,6 +179,7 @@
             this.txtUsers.Properties.AppearanceDisabled.Options.UseFont = true;
             this.txtUsers.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtUsers.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.txtUsers.Properties.ReadOnly = true;
             this.txtUsers.Size = new System.Drawing.Size(207, 30);
             this.txtUsers.TabIndex = 0;
             // 
@@ -195,7 +197,7 @@
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl1.Location = new System.Drawing.Point(752, 36);
+            this.labelControl1.Location = new System.Drawing.Point(786, 36);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(30, 24);
             this.labelControl1.TabIndex = 1;
@@ -205,7 +207,7 @@
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl2.Location = new System.Drawing.Point(752, 88);
+            this.labelControl2.Location = new System.Drawing.Point(786, 88);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(35, 24);
             this.labelControl2.TabIndex = 1;
@@ -220,6 +222,8 @@
             this.gridControl1.Location = new System.Drawing.Point(12, 209);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemToggleSwitch1});
             this.gridControl1.Size = new System.Drawing.Size(850, 261);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -348,6 +352,8 @@
             this.coluserCreator});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colSeries1, DevExpress.Data.ColumnSortOrder.Descending)});
             // 
             // colSereisID
             // 
@@ -357,16 +363,17 @@
             this.colSereisID.Name = "colSereisID";
             this.colSereisID.Visible = true;
             this.colSereisID.VisibleIndex = 0;
+            this.colSereisID.Width = 74;
             // 
             // colSeries1
             // 
             this.colSeries1.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.colSeries1.Caption = "سریال فروش";
-            this.colSeries1.FieldName = "Series1";
+            this.colSeries1.FieldName = "SeriesName";
             this.colSeries1.Name = "colSeries1";
             this.colSeries1.Visible = true;
             this.colSeries1.VisibleIndex = 1;
-            this.colSeries1.Width = 95;
+            this.colSeries1.Width = 121;
             // 
             // colSeriesCount
             // 
@@ -376,7 +383,7 @@
             this.colSeriesCount.Name = "colSeriesCount";
             this.colSeriesCount.Visible = true;
             this.colSeriesCount.VisibleIndex = 2;
-            this.colSeriesCount.Width = 109;
+            this.colSeriesCount.Width = 138;
             // 
             // colSeriesDateStart
             // 
@@ -388,7 +395,7 @@
             this.colSeriesDateStart.Name = "colSeriesDateStart";
             this.colSeriesDateStart.Visible = true;
             this.colSeriesDateStart.VisibleIndex = 3;
-            this.colSeriesDateStart.Width = 136;
+            this.colSeriesDateStart.Width = 173;
             // 
             // colSeriesDateEnd
             // 
@@ -398,7 +405,7 @@
             this.colSeriesDateEnd.Name = "colSeriesDateEnd";
             this.colSeriesDateEnd.Visible = true;
             this.colSeriesDateEnd.VisibleIndex = 4;
-            this.colSeriesDateEnd.Width = 116;
+            this.colSeriesDateEnd.Width = 148;
             // 
             // coluserCreator
             // 
@@ -408,7 +415,14 @@
             this.coluserCreator.Name = "coluserCreator";
             this.coluserCreator.Visible = true;
             this.coluserCreator.VisibleIndex = 5;
-            this.coluserCreator.Width = 89;
+            this.coluserCreator.Width = 71;
+            // 
+            // repositoryItemToggleSwitch1
+            // 
+            this.repositoryItemToggleSwitch1.AutoHeight = false;
+            this.repositoryItemToggleSwitch1.Name = "repositoryItemToggleSwitch1";
+            this.repositoryItemToggleSwitch1.OffText = "بسته";
+            this.repositoryItemToggleSwitch1.OnText = "باز";
             // 
             // FrmSerial
             // 
@@ -432,6 +446,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -458,5 +473,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSeriesDateEnd;
         private DevExpress.XtraGrid.Columns.GridColumn coluserCreator;
         private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch repositoryItemToggleSwitch1;
     }
 }

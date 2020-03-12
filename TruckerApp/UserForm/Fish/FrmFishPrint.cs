@@ -61,12 +61,13 @@ namespace TruckerApp.UserForm
 
         private void setupPage()
         {
-            using (var db = new TruckersEntities())
-            {
-                _series = db.SeriesPrices.Single(x => x.enabeled == true && x.closing == null).SeriesName;
-                PublicVar.SeriesID = _series;
-                txtserial.Text = _series.ToString();
-            }
+            //using (var db = new TruckersEntities())
+            //{
+            //    _series = db.SeriesPrices.Single(x => x.enabeled == true && x.closing == null).SereisID;
+            //    PublicVar.SeriesID = _series;
+                txtserial.Text = PublicVar.SeriesName.ToString();
+                _series = PublicVar.SeriesID;
+                //}
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -75,7 +76,7 @@ namespace TruckerApp.UserForm
 
         private void PrintFish()
         {
-            db = new TruckersEntities();
+            //db = new TruckersEntities();
             //var qryUser = db.Users.Single(row => row.UserID == PublicVariable.LoginUserId);
             var report = XtraReport.FromFile("ReportFish.repx", true);
             var tool = new ReportPrintTool(report);
@@ -175,26 +176,37 @@ namespace TruckerApp.UserForm
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            db = new TruckersEntities();
             var driverCheck = db.Queues.Where(x => x.Status_FK == 4 && x.DriverID_FK == _driver).ToList();
             if (driverCheck.Count == 0)
             {
-                var qu = new Queue();
-                qu.DriverID_FK = _driver;
-                qu.ComosiunID_FK = _commissionID;
-                qu.Type_FK = _typeID;
-                qu.DateTimeRegister = DateTime.Now;
-                qu.SeriesID_FK = _series;
-                qu.Number = Convert.ToInt16(txtNumber.EditValue);
-                qu.GroupCommission = _group;
-                qu.Status_FK = 4;
-                db.Queues.Add(qu);
-                db.SaveChanges();
-                _queue = qu.ID;
-                _number = $"س{qu.SeriesID_FK}  شماره {qu.Number}";
-                XtraMessageBox.Show(PublicVar.SuccessfulSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                PrintFish();
-                Pardakht();
-                LastNumber();
+            
+                    try
+                    {
+                        var qu = new Queue();
+                        qu.DriverID_FK = _driver;
+                        qu.ComosiunID_FK = _commissionID;
+                        qu.Type_FK = _typeID;
+                        qu.DateTimeRegister = DateTime.Now;
+                        qu.SeriesID_FK = _series;
+                        qu.Number = Convert.ToInt16(txtNumber.EditValue);
+                        qu.GroupCommission = _group;
+                        qu.Status_FK = 4;
+                        db.Queues.Add(qu);
+                        db.SaveChanges();
+                        _queue = qu.ID;
+                        _number = $"س{qu.SeriesID_FK}  شماره {qu.Number}";
+                        XtraMessageBox.Show(PublicVar.SuccessfulSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        PrintFish();
+                        Pardakht();
+                        LastNumber();
+                    }
+                    catch 
+                    {
+                        XtraMessageBox.Show(PublicVar.ErrorMessageForNotSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                
+                
 
             }
             else

@@ -333,8 +333,11 @@
             this.DriverIDTextEdit.Properties.Appearance.Options.UseTextOptions = true;
             this.DriverIDTextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.DriverIDTextEdit.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.DriverIDTextEdit.Properties.AppearanceReadOnly.Options.UseTextOptions = true;
+            this.DriverIDTextEdit.Properties.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.DriverIDTextEdit.Properties.Mask.EditMask = "N0";
             this.DriverIDTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.DriverIDTextEdit.Properties.ReadOnly = true;
             this.DriverIDTextEdit.Size = new System.Drawing.Size(114, 30);
             this.DriverIDTextEdit.StyleController = this.dataLayoutControl1;
             this.DriverIDTextEdit.TabIndex = 4;
@@ -345,6 +348,7 @@
             this.FirstNameTextEdit.Location = new System.Drawing.Point(358, 12);
             this.FirstNameTextEdit.Name = "FirstNameTextEdit";
             this.FirstNameTextEdit.Parmida_ActivePlusMultiKeys = false;
+            this.FirstNameTextEdit.Properties.ReadOnly = true;
             this.FirstNameTextEdit.Size = new System.Drawing.Size(170, 30);
             this.FirstNameTextEdit.StyleController = this.dataLayoutControl1;
             this.FirstNameTextEdit.TabIndex = 5;
@@ -355,6 +359,7 @@
             this.LastNameTextEdit.Location = new System.Drawing.Point(12, 12);
             this.LastNameTextEdit.Name = "LastNameTextEdit";
             this.LastNameTextEdit.Parmida_ActivePlusMultiKeys = false;
+            this.LastNameTextEdit.Properties.ReadOnly = true;
             this.LastNameTextEdit.Size = new System.Drawing.Size(256, 30);
             this.LastNameTextEdit.StyleController = this.dataLayoutControl1;
             this.LastNameTextEdit.TabIndex = 6;
@@ -365,6 +370,9 @@
             this.PhoneNumberTextEdit.Location = new System.Drawing.Point(618, 46);
             this.PhoneNumberTextEdit.Name = "PhoneNumberTextEdit";
             this.PhoneNumberTextEdit.Parmida_ActivePlusMultiKeys = false;
+            this.PhoneNumberTextEdit.Properties.AppearanceReadOnly.Options.UseTextOptions = true;
+            this.PhoneNumberTextEdit.Properties.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.PhoneNumberTextEdit.Properties.ReadOnly = true;
             this.PhoneNumberTextEdit.Size = new System.Drawing.Size(114, 30);
             this.PhoneNumberTextEdit.StyleController = this.dataLayoutControl1;
             this.PhoneNumberTextEdit.TabIndex = 7;
@@ -378,6 +386,7 @@
             this.SmartCartTextEdit.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.SmartCartTextEdit.Properties.Mask.EditMask = "N0";
             this.SmartCartTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.SmartCartTextEdit.Properties.ReadOnly = true;
             this.SmartCartTextEdit.Size = new System.Drawing.Size(516, 30);
             this.SmartCartTextEdit.StyleController = this.dataLayoutControl1;
             this.SmartCartTextEdit.TabIndex = 8;
@@ -388,6 +397,7 @@
             this.TagNumberTextEdit.Location = new System.Drawing.Point(12, 80);
             this.TagNumberTextEdit.Name = "TagNumberTextEdit";
             this.TagNumberTextEdit.Parmida_ActivePlusMultiKeys = false;
+            this.TagNumberTextEdit.Properties.ReadOnly = true;
             this.TagNumberTextEdit.Size = new System.Drawing.Size(516, 30);
             this.TagNumberTextEdit.StyleController = this.dataLayoutControl1;
             this.TagNumberTextEdit.TabIndex = 9;
@@ -402,8 +412,11 @@
             this.TagTextEdit.Properties.Appearance.Options.UseTextOptions = true;
             this.TagTextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.TagTextEdit.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.TagTextEdit.Properties.AppearanceReadOnly.Options.UseTextOptions = true;
+            this.TagTextEdit.Properties.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TagTextEdit.Properties.Mask.EditMask = "N0";
             this.TagTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.TagTextEdit.Properties.ReadOnly = true;
             this.TagTextEdit.Size = new System.Drawing.Size(114, 30);
             this.TagTextEdit.StyleController = this.dataLayoutControl1;
             this.TagTextEdit.TabIndex = 10;

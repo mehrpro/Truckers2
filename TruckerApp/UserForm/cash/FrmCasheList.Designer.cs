@@ -46,12 +46,14 @@
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.txtOther = new DevExpress.XtraEditors.TextEdit();
+            this.txtClinker = new DevExpress.XtraEditors.TextEdit();
             this.txtGandom = new DevExpress.XtraEditors.TextEdit();
             this.txtNoMember = new DevExpress.XtraEditors.TextEdit();
             this.txtSerial = new DevExpress.XtraEditors.TextEdit();
@@ -59,8 +61,6 @@
             this.txtFalaeh = new DevExpress.XtraEditors.TextEdit();
             this.txtMember = new DevExpress.XtraEditors.TextEdit();
             this.txtPacket = new DevExpress.XtraEditors.TextEdit();
-            this.txtClinker = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -69,6 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtOther.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtClinker.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGandom.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNoMember.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSerial.Properties)).BeginInit();
@@ -76,7 +77,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtFalaeh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMember.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPacket.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtClinker.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -373,6 +373,16 @@
             this.labelControl8.TabIndex = 20;
             this.labelControl8.Text = "غیربومی";
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl1.Location = new System.Drawing.Point(720, 110);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(38, 24);
+            this.labelControl1.TabIndex = 19;
+            this.labelControl1.Text = "کلینکر";
+            // 
             // labelControl5
             // 
             this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -433,14 +443,33 @@
             this.txtOther.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtOther.Properties.Appearance.Options.UseFont = true;
             this.txtOther.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtOther.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtOther.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtOther.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Blue;
             this.txtOther.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.txtOther.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtOther.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtOther.Properties.ReadOnly = true;
-            this.txtOther.Size = new System.Drawing.Size(100, 22);
+            this.txtOther.Size = new System.Drawing.Size(100, 30);
             this.txtOther.TabIndex = 11;
+            // 
+            // txtClinker
+            // 
+            this.txtClinker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtClinker.EditValue = "352";
+            this.txtClinker.Location = new System.Drawing.Point(614, 112);
+            this.txtClinker.Name = "txtClinker";
+            this.txtClinker.Parmida_ActivePlusMultiKeys = false;
+            this.txtClinker.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtClinker.Properties.Appearance.Options.UseFont = true;
+            this.txtClinker.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtClinker.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtClinker.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Blue;
+            this.txtClinker.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.txtClinker.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.txtClinker.Properties.AppearanceReadOnly.Options.UseForeColor = true;
+            this.txtClinker.Properties.ReadOnly = true;
+            this.txtClinker.Size = new System.Drawing.Size(100, 30);
+            this.txtClinker.TabIndex = 9;
             // 
             // txtGandom
             // 
@@ -452,13 +481,13 @@
             this.txtGandom.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtGandom.Properties.Appearance.Options.UseFont = true;
             this.txtGandom.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtGandom.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtGandom.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtGandom.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Blue;
             this.txtGandom.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.txtGandom.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtGandom.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtGandom.Properties.ReadOnly = true;
-            this.txtGandom.Size = new System.Drawing.Size(100, 22);
+            this.txtGandom.Size = new System.Drawing.Size(100, 30);
             this.txtGandom.TabIndex = 9;
             // 
             // txtNoMember
@@ -471,13 +500,13 @@
             this.txtNoMember.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtNoMember.Properties.Appearance.Options.UseFont = true;
             this.txtNoMember.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtNoMember.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtNoMember.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtNoMember.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Blue;
             this.txtNoMember.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.txtNoMember.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtNoMember.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtNoMember.Properties.ReadOnly = true;
-            this.txtNoMember.Size = new System.Drawing.Size(100, 22);
+            this.txtNoMember.Size = new System.Drawing.Size(100, 30);
             this.txtNoMember.TabIndex = 8;
             // 
             // txtSerial
@@ -490,13 +519,13 @@
             this.txtSerial.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtSerial.Properties.Appearance.Options.UseFont = true;
             this.txtSerial.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtSerial.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtSerial.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtSerial.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Blue;
             this.txtSerial.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.txtSerial.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtSerial.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtSerial.Properties.ReadOnly = true;
-            this.txtSerial.Size = new System.Drawing.Size(100, 22);
+            this.txtSerial.Size = new System.Drawing.Size(100, 30);
             this.txtSerial.TabIndex = 7;
             // 
             // txtDate
@@ -509,13 +538,13 @@
             this.txtDate.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtDate.Properties.Appearance.Options.UseFont = true;
             this.txtDate.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtDate.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtDate.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtDate.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Blue;
             this.txtDate.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.txtDate.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtDate.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtDate.Properties.ReadOnly = true;
-            this.txtDate.Size = new System.Drawing.Size(100, 22);
+            this.txtDate.Size = new System.Drawing.Size(100, 30);
             this.txtDate.TabIndex = 5;
             // 
             // txtFalaeh
@@ -528,13 +557,13 @@
             this.txtFalaeh.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtFalaeh.Properties.Appearance.Options.UseFont = true;
             this.txtFalaeh.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtFalaeh.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtFalaeh.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtFalaeh.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Blue;
             this.txtFalaeh.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.txtFalaeh.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtFalaeh.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtFalaeh.Properties.ReadOnly = true;
-            this.txtFalaeh.Size = new System.Drawing.Size(100, 22);
+            this.txtFalaeh.Size = new System.Drawing.Size(100, 30);
             this.txtFalaeh.TabIndex = 4;
             // 
             // txtMember
@@ -547,13 +576,13 @@
             this.txtMember.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtMember.Properties.Appearance.Options.UseFont = true;
             this.txtMember.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtMember.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtMember.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtMember.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Blue;
             this.txtMember.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.txtMember.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtMember.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtMember.Properties.ReadOnly = true;
-            this.txtMember.Size = new System.Drawing.Size(100, 22);
+            this.txtMember.Size = new System.Drawing.Size(100, 30);
             this.txtMember.TabIndex = 12;
             // 
             // txtPacket
@@ -566,43 +595,14 @@
             this.txtPacket.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtPacket.Properties.Appearance.Options.UseFont = true;
             this.txtPacket.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtPacket.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtPacket.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
             this.txtPacket.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Blue;
             this.txtPacket.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.txtPacket.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtPacket.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtPacket.Properties.ReadOnly = true;
-            this.txtPacket.Size = new System.Drawing.Size(100, 22);
+            this.txtPacket.Size = new System.Drawing.Size(100, 30);
             this.txtPacket.TabIndex = 2;
-            // 
-            // txtClinker
-            // 
-            this.txtClinker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtClinker.EditValue = "352";
-            this.txtClinker.Location = new System.Drawing.Point(614, 112);
-            this.txtClinker.Name = "txtClinker";
-            this.txtClinker.Parmida_ActivePlusMultiKeys = false;
-            this.txtClinker.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.txtClinker.Properties.Appearance.Options.UseFont = true;
-            this.txtClinker.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtClinker.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtClinker.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Blue;
-            this.txtClinker.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtClinker.Properties.AppearanceReadOnly.Options.UseFont = true;
-            this.txtClinker.Properties.AppearanceReadOnly.Options.UseForeColor = true;
-            this.txtClinker.Properties.ReadOnly = true;
-            this.txtClinker.Size = new System.Drawing.Size(100, 22);
-            this.txtClinker.TabIndex = 9;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl1.Location = new System.Drawing.Point(720, 110);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(38, 24);
-            this.labelControl1.TabIndex = 19;
-            this.labelControl1.Text = "کلینکر";
             // 
             // FrmCasheList
             // 
@@ -623,6 +623,7 @@
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtOther.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtClinker.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGandom.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNoMember.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSerial.Properties)).EndInit();
@@ -630,7 +631,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtFalaeh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMember.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPacket.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtClinker.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

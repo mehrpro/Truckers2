@@ -20,14 +20,14 @@ namespace TruckerApp.UserForm
             InitializeComponent();
             
         }
+        TruckersEntities dbContext = new TruckersEntities();
 
         private void List()
         {
       
-            TruckersEntities dbContext = new TruckersEntities();
             dbContext.Drivers.LoadAsync().ContinueWith(loadTask =>
             {
-                driversBindingSource.DataSource = dbContext.Drivers.Local.ToBindingList();
+                driversBindingSource.DataSource = dbContext.Drivers.Where(x=> x.GroupID == 1).ToList();
             }, TaskScheduler.FromCurrentSynchronizationContext());
         }
 

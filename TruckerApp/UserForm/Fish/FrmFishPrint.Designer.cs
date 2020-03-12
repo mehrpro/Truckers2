@@ -335,13 +335,13 @@
             this.cbxSmart.Parmida_ActivePlusMultiKeys = false;
             this.cbxSmart.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.cbxSmart.Properties.Appearance.Options.UseFont = true;
-            this.cbxSmart.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxSmart.Properties.AppearanceDisabled.Font = new System.Drawing.Font("B Yekan", 12F);
             this.cbxSmart.Properties.AppearanceDisabled.Options.UseFont = true;
-            this.cbxSmart.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxSmart.Properties.AppearanceDropDown.Font = new System.Drawing.Font("B Yekan", 12F);
             this.cbxSmart.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.cbxSmart.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxSmart.Properties.AppearanceFocused.Font = new System.Drawing.Font("B Yekan", 12F);
             this.cbxSmart.Properties.AppearanceFocused.Options.UseFont = true;
-            this.cbxSmart.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxSmart.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
             this.cbxSmart.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.cbxSmart.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});

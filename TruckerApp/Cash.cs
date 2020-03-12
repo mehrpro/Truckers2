@@ -22,7 +22,7 @@ namespace TruckerApp
         public Nullable<int> seriesID_FK { get; set; }
     
         public virtual Queue Queue { get; set; }
-        public virtual User User { get; set; }
         public virtual SeriesPrice SeriesPrice { get; set; }
+        public virtual User User { get; set; }
     }
 }
