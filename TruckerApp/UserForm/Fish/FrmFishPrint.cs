@@ -191,7 +191,7 @@ namespace TruckerApp.UserForm
                         qu.SeriesID_FK = _series;
                         qu.Number = Convert.ToInt16(txtNumber.EditValue);
                         qu.GroupCommission = _group;
-                        qu.Status_FK = 4;
+                        qu.Status_FK = 20;
                         db.Queues.Add(qu);
                         db.SaveChanges();
                         _queue = qu.ID;

@@ -32,49 +32,41 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDriverID_FK = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colStatus_FK = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDriver = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.txtFaleh = new DevExpress.XtraEditors.TextEdit();
-            this.txtClinker = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.txtPacket = new DevExpress.XtraEditors.TextEdit();
+            this.btnAllPrint = new DevExpress.XtraEditors.SimpleButton();
             this.txtTotal = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.txtGandom = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.txtDate = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.txtNew = new DevExpress.XtraEditors.TextEdit();
+            this.txtLast = new DevExpress.XtraEditors.TextEdit();
             this.cbxSerial = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.chkLastFish = new DevExpress.XtraEditors.ToggleSwitch();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFaleh.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtClinker.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPacket.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGandom.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNew.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLast.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxSerial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkLastFish.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -94,10 +86,10 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 55);
+            this.gridControl1.Location = new System.Drawing.Point(2, 245);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(634, 596);
+            this.gridControl1.Size = new System.Drawing.Size(942, 406);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -212,24 +204,91 @@
             this.gridView1.Appearance.ViewCaption.Options.UseFont = true;
             this.gridView1.Appearance.ViewCaption.Options.UseTextOptions = true;
             this.gridView1.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.AppearancePrint.EvenRow.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.AppearancePrint.EvenRow.Options.UseFont = true;
+            this.gridView1.AppearancePrint.EvenRow.Options.UseTextOptions = true;
+            this.gridView1.AppearancePrint.EvenRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.AppearancePrint.EvenRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView1.AppearancePrint.FilterPanel.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.AppearancePrint.FilterPanel.Options.UseFont = true;
+            this.gridView1.AppearancePrint.FilterPanel.Options.UseTextOptions = true;
+            this.gridView1.AppearancePrint.FilterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.AppearancePrint.FilterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView1.AppearancePrint.FooterPanel.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.AppearancePrint.FooterPanel.Options.UseFont = true;
+            this.gridView1.AppearancePrint.FooterPanel.Options.UseTextOptions = true;
+            this.gridView1.AppearancePrint.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.AppearancePrint.FooterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView1.AppearancePrint.GroupFooter.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.AppearancePrint.GroupFooter.Options.UseFont = true;
+            this.gridView1.AppearancePrint.GroupFooter.Options.UseTextOptions = true;
+            this.gridView1.AppearancePrint.GroupFooter.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.AppearancePrint.GroupFooter.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView1.AppearancePrint.GroupRow.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.AppearancePrint.GroupRow.Options.UseFont = true;
+            this.gridView1.AppearancePrint.GroupRow.Options.UseTextOptions = true;
+            this.gridView1.AppearancePrint.GroupRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.AppearancePrint.GroupRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView1.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.AppearancePrint.HeaderPanel.Options.UseFont = true;
+            this.gridView1.AppearancePrint.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView1.AppearancePrint.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.AppearancePrint.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView1.AppearancePrint.Lines.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.AppearancePrint.Lines.Options.UseFont = true;
+            this.gridView1.AppearancePrint.Lines.Options.UseTextOptions = true;
+            this.gridView1.AppearancePrint.Lines.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.AppearancePrint.Lines.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView1.AppearancePrint.OddRow.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.AppearancePrint.OddRow.Options.UseFont = true;
+            this.gridView1.AppearancePrint.OddRow.Options.UseTextOptions = true;
+            this.gridView1.AppearancePrint.OddRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.AppearancePrint.OddRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView1.AppearancePrint.Preview.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.AppearancePrint.Preview.Options.UseFont = true;
+            this.gridView1.AppearancePrint.Preview.Options.UseTextOptions = true;
+            this.gridView1.AppearancePrint.Preview.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.AppearancePrint.Preview.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView1.AppearancePrint.Row.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.gridView1.AppearancePrint.Row.Options.UseFont = true;
+            this.gridView1.AppearancePrint.Row.Options.UseTextOptions = true;
+            this.gridView1.AppearancePrint.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.AppearancePrint.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colID,
+            this.gridColumn6,
+            this.gridColumn7,
             this.colNumber,
             this.colDriverID_FK,
-            this.colStatus_FK,
-            this.colDriver});
+            this.colDriver,
+            this.gridColumn4,
+            this.gridColumn5});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsPrint.EnableAppearanceEvenRow = true;
+            this.gridView1.OptionsPrint.PrintDetails = true;
+            this.gridView1.OptionsPrint.PrintFooter = false;
+            this.gridView1.OptionsPrint.PrintGroupFooter = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // colID
+            // gridColumn6
             // 
-            this.colID.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colID.Caption = "کد سیستمی";
-            this.colID.FieldName = "ID";
-            this.colID.Name = "colID";
-            this.colID.Visible = true;
-            this.colID.VisibleIndex = 0;
-            this.colID.Width = 76;
+            this.gridColumn6.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.gridColumn6.Caption = "ردیف";
+            this.gridColumn6.FieldName = "Counter";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 0;
+            this.gridColumn6.Width = 104;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.gridColumn7.Caption = "شماره هوشمند";
+            this.gridColumn7.FieldName = "Smart";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 1;
+            this.gridColumn7.Width = 146;
             // 
             // colNumber
             // 
@@ -238,166 +297,85 @@
             this.colNumber.FieldName = "Number";
             this.colNumber.Name = "colNumber";
             this.colNumber.Visible = true;
-            this.colNumber.VisibleIndex = 1;
-            this.colNumber.Width = 99;
+            this.colNumber.VisibleIndex = 2;
+            this.colNumber.Width = 140;
             // 
             // colDriverID_FK
             // 
             this.colDriverID_FK.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.colDriverID_FK.Caption = "نام";
-            this.colDriverID_FK.FieldName = "Driver.FirstName";
+            this.colDriverID_FK.FieldName = "Name";
             this.colDriverID_FK.Name = "colDriverID_FK";
             this.colDriverID_FK.Visible = true;
-            this.colDriverID_FK.VisibleIndex = 2;
-            this.colDriverID_FK.Width = 180;
-            // 
-            // colStatus_FK
-            // 
-            this.colStatus_FK.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colStatus_FK.Caption = "فامیلی";
-            this.colStatus_FK.FieldName = "Driver.LastName";
-            this.colStatus_FK.Name = "colStatus_FK";
-            this.colStatus_FK.Visible = true;
-            this.colStatus_FK.VisibleIndex = 3;
-            this.colStatus_FK.Width = 181;
+            this.colDriverID_FK.VisibleIndex = 3;
+            this.colDriverID_FK.Width = 219;
             // 
             // colDriver
             // 
             this.colDriver.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.colDriver.Caption = "پلاک";
-            this.colDriver.FieldName = "Driver.TagNumber";
+            this.colDriver.FieldName = "Tag";
             this.colDriver.Name = "colDriver";
             this.colDriver.Visible = true;
             this.colDriver.VisibleIndex = 4;
-            this.colDriver.Width = 80;
+            this.colDriver.Width = 125;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.gridColumn4.Caption = "نوع محموله";
+            this.gridColumn4.FieldName = "Typeid";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 5;
+            this.gridColumn4.Width = 115;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.gridColumn5.Caption = "تاریخ";
+            this.gridColumn5.FieldName = "DateTime";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 6;
+            this.gridColumn5.Width = 143;
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.simpleButton5);
-            this.panelControl1.Controls.Add(this.simpleButton4);
-            this.panelControl1.Controls.Add(this.txtFaleh);
-            this.panelControl1.Controls.Add(this.txtClinker);
-            this.panelControl1.Controls.Add(this.simpleButton3);
-            this.panelControl1.Controls.Add(this.txtPacket);
+            this.panelControl1.Controls.Add(this.btnAllPrint);
             this.panelControl1.Controls.Add(this.txtTotal);
-            this.panelControl1.Controls.Add(this.simpleButton2);
-            this.panelControl1.Controls.Add(this.txtGandom);
             this.panelControl1.Controls.Add(this.labelControl7);
-            this.panelControl1.Controls.Add(this.simpleButton1);
-            this.panelControl1.Controls.Add(this.labelControl6);
+            this.panelControl1.Controls.Add(this.simpleButton9);
             this.panelControl1.Controls.Add(this.labelControl5);
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Controls.Add(this.labelControl3);
-            this.panelControl1.Controls.Add(this.txtDate);
-            this.panelControl1.Controls.Add(this.labelControl4);
+            this.panelControl1.Controls.Add(this.txtNew);
+            this.panelControl1.Controls.Add(this.txtLast);
             this.panelControl1.Controls.Add(this.cbxSerial);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl1.Location = new System.Drawing.Point(636, 55);
+            this.panelControl1.Controls.Add(this.chkLastFish);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(2, 55);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(308, 596);
+            this.panelControl1.Size = new System.Drawing.Size(942, 190);
             this.panelControl1.TabIndex = 0;
             // 
-            // simpleButton5
+            // btnAllPrint
             // 
-            this.simpleButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton5.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.Image")));
-            this.simpleButton5.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton5.Location = new System.Drawing.Point(33, 312);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(43, 39);
-            this.simpleButton5.TabIndex = 7;
-            // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton4.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.Image")));
-            this.simpleButton4.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton4.Location = new System.Drawing.Point(33, 267);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(43, 39);
-            this.simpleButton4.TabIndex = 7;
-            // 
-            // txtFaleh
-            // 
-            this.txtFaleh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFaleh.Location = new System.Drawing.Point(82, 131);
-            this.txtFaleh.Name = "txtFaleh";
-            this.txtFaleh.Parmida_ActivePlusMultiKeys = false;
-            this.txtFaleh.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.txtFaleh.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtFaleh.Properties.Appearance.Options.UseFont = true;
-            this.txtFaleh.Properties.Appearance.Options.UseForeColor = true;
-            this.txtFaleh.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtFaleh.Properties.AppearanceDisabled.Options.UseFont = true;
-            this.txtFaleh.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtFaleh.Properties.AppearanceFocused.Options.UseFont = true;
-            this.txtFaleh.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.txtFaleh.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtFaleh.Properties.AppearanceReadOnly.Options.UseFont = true;
-            this.txtFaleh.Properties.AppearanceReadOnly.Options.UseForeColor = true;
-            this.txtFaleh.Properties.ReadOnly = true;
-            this.txtFaleh.Size = new System.Drawing.Size(105, 30);
-            this.txtFaleh.TabIndex = 4;
-            // 
-            // txtClinker
-            // 
-            this.txtClinker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtClinker.Location = new System.Drawing.Point(82, 225);
-            this.txtClinker.Name = "txtClinker";
-            this.txtClinker.Parmida_ActivePlusMultiKeys = false;
-            this.txtClinker.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.txtClinker.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtClinker.Properties.Appearance.Options.UseFont = true;
-            this.txtClinker.Properties.Appearance.Options.UseForeColor = true;
-            this.txtClinker.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtClinker.Properties.AppearanceDisabled.Options.UseFont = true;
-            this.txtClinker.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtClinker.Properties.AppearanceFocused.Options.UseFont = true;
-            this.txtClinker.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.txtClinker.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtClinker.Properties.AppearanceReadOnly.Options.UseFont = true;
-            this.txtClinker.Properties.AppearanceReadOnly.Options.UseForeColor = true;
-            this.txtClinker.Properties.ReadOnly = true;
-            this.txtClinker.Size = new System.Drawing.Size(105, 30);
-            this.txtClinker.TabIndex = 4;
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton3.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.Image")));
-            this.simpleButton3.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton3.Location = new System.Drawing.Point(33, 220);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(43, 39);
-            this.simpleButton3.TabIndex = 7;
-            // 
-            // txtPacket
-            // 
-            this.txtPacket.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPacket.Location = new System.Drawing.Point(82, 178);
-            this.txtPacket.Name = "txtPacket";
-            this.txtPacket.Parmida_ActivePlusMultiKeys = false;
-            this.txtPacket.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.txtPacket.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtPacket.Properties.Appearance.Options.UseFont = true;
-            this.txtPacket.Properties.Appearance.Options.UseForeColor = true;
-            this.txtPacket.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtPacket.Properties.AppearanceDisabled.Options.UseFont = true;
-            this.txtPacket.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtPacket.Properties.AppearanceFocused.Options.UseFont = true;
-            this.txtPacket.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.txtPacket.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtPacket.Properties.AppearanceReadOnly.Options.UseFont = true;
-            this.txtPacket.Properties.AppearanceReadOnly.Options.UseForeColor = true;
-            this.txtPacket.Properties.ReadOnly = true;
-            this.txtPacket.Size = new System.Drawing.Size(105, 30);
-            this.txtPacket.TabIndex = 4;
+            this.btnAllPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAllPrint.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.btnAllPrint.Appearance.Options.UseFont = true;
+            this.btnAllPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnAllPrint.Image")));
+            this.btnAllPrint.Location = new System.Drawing.Point(29, 122);
+            this.btnAllPrint.Name = "btnAllPrint";
+            this.btnAllPrint.Size = new System.Drawing.Size(151, 53);
+            this.btnAllPrint.TabIndex = 7;
+            this.btnAllPrint.Text = "پیش نمایش";
+            this.btnAllPrint.Click += new System.EventHandler(this.btnAllPrint_Click);
             // 
             // txtTotal
             // 
             this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTotal.Location = new System.Drawing.Point(82, 317);
+            this.txtTotal.Location = new System.Drawing.Point(393, 106);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Parmida_ActivePlusMultiKeys = false;
             this.txtTotal.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -413,76 +391,37 @@
             this.txtTotal.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtTotal.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtTotal.Properties.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(105, 30);
+            this.txtTotal.Size = new System.Drawing.Size(154, 30);
             this.txtTotal.TabIndex = 4;
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton2.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.Image")));
-            this.simpleButton2.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton2.Location = new System.Drawing.Point(33, 173);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(43, 39);
-            this.simpleButton2.TabIndex = 7;
-            // 
-            // txtGandom
-            // 
-            this.txtGandom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtGandom.Location = new System.Drawing.Point(82, 272);
-            this.txtGandom.Name = "txtGandom";
-            this.txtGandom.Parmida_ActivePlusMultiKeys = false;
-            this.txtGandom.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.txtGandom.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtGandom.Properties.Appearance.Options.UseFont = true;
-            this.txtGandom.Properties.Appearance.Options.UseForeColor = true;
-            this.txtGandom.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtGandom.Properties.AppearanceDisabled.Options.UseFont = true;
-            this.txtGandom.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtGandom.Properties.AppearanceFocused.Options.UseFont = true;
-            this.txtGandom.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.txtGandom.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtGandom.Properties.AppearanceReadOnly.Options.UseFont = true;
-            this.txtGandom.Properties.AppearanceReadOnly.Options.UseForeColor = true;
-            this.txtGandom.Properties.ReadOnly = true;
-            this.txtGandom.Size = new System.Drawing.Size(105, 30);
-            this.txtGandom.TabIndex = 4;
             // 
             // labelControl7
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl7.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl7.Location = new System.Drawing.Point(198, 320);
+            this.labelControl7.Location = new System.Drawing.Point(558, 109);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(38, 24);
             this.labelControl7.TabIndex = 6;
             this.labelControl7.Text = "مجموع";
             // 
-            // simpleButton1
+            // simpleButton9
             // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(33, 126);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(43, 39);
-            this.simpleButton1.TabIndex = 7;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl6.Location = new System.Drawing.Point(198, 275);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(28, 24);
-            this.labelControl6.TabIndex = 6;
-            this.labelControl6.Text = "غلات";
+            this.simpleButton9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton9.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.simpleButton9.Appearance.Options.UseFont = true;
+            this.simpleButton9.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton9.Image")));
+            this.simpleButton9.Location = new System.Drawing.Point(29, 63);
+            this.simpleButton9.Name = "simpleButton9";
+            this.simpleButton9.Size = new System.Drawing.Size(151, 53);
+            this.simpleButton9.TabIndex = 7;
+            this.simpleButton9.Text = "چاپ سریع";
+            this.simpleButton9.Click += new System.EventHandler(this.simpleButton9_Click);
             // 
             // labelControl5
             // 
             this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl5.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl5.Location = new System.Drawing.Point(199, 37);
+            this.labelControl5.Location = new System.Drawing.Point(833, 37);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(81, 24);
             this.labelControl5.TabIndex = 5;
@@ -492,68 +431,70 @@
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl2.Location = new System.Drawing.Point(198, 134);
+            this.labelControl2.Location = new System.Drawing.Point(558, 73);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(20, 24);
+            this.labelControl2.Size = new System.Drawing.Size(73, 24);
             this.labelControl2.TabIndex = 6;
-            this.labelControl2.Text = "فله";
+            this.labelControl2.Text = "صادره امروز";
             // 
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl1.Location = new System.Drawing.Point(198, 84);
+            this.labelControl1.Location = new System.Drawing.Point(558, 37);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(30, 24);
+            this.labelControl1.Size = new System.Drawing.Size(68, 24);
             this.labelControl1.TabIndex = 6;
-            this.labelControl1.Text = "تاریخ";
+            this.labelControl1.Text = "صادره قبلی";
             // 
-            // labelControl3
+            // txtNew
             // 
-            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl3.Location = new System.Drawing.Point(198, 181);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(29, 24);
-            this.labelControl3.TabIndex = 6;
-            this.labelControl3.Text = "پاکت";
+            this.txtNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNew.Location = new System.Drawing.Point(393, 70);
+            this.txtNew.Name = "txtNew";
+            this.txtNew.Parmida_ActivePlusMultiKeys = false;
+            this.txtNew.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtNew.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtNew.Properties.Appearance.Options.UseFont = true;
+            this.txtNew.Properties.Appearance.Options.UseForeColor = true;
+            this.txtNew.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtNew.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.txtNew.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtNew.Properties.AppearanceFocused.Options.UseFont = true;
+            this.txtNew.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtNew.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtNew.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.txtNew.Properties.AppearanceReadOnly.Options.UseForeColor = true;
+            this.txtNew.Properties.ReadOnly = true;
+            this.txtNew.Size = new System.Drawing.Size(154, 30);
+            this.txtNew.TabIndex = 4;
             // 
-            // txtDate
+            // txtLast
             // 
-            this.txtDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDate.Location = new System.Drawing.Point(33, 81);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Parmida_ActivePlusMultiKeys = false;
-            this.txtDate.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.txtDate.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtDate.Properties.Appearance.Options.UseFont = true;
-            this.txtDate.Properties.Appearance.Options.UseForeColor = true;
-            this.txtDate.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtDate.Properties.AppearanceDisabled.Options.UseFont = true;
-            this.txtDate.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtDate.Properties.AppearanceFocused.Options.UseFont = true;
-            this.txtDate.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.txtDate.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtDate.Properties.AppearanceReadOnly.Options.UseFont = true;
-            this.txtDate.Properties.AppearanceReadOnly.Options.UseForeColor = true;
-            this.txtDate.Properties.ReadOnly = true;
-            this.txtDate.Size = new System.Drawing.Size(154, 30);
-            this.txtDate.TabIndex = 4;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl4.Location = new System.Drawing.Point(198, 228);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(38, 24);
-            this.labelControl4.TabIndex = 6;
-            this.labelControl4.Text = "کلینکر";
+            this.txtLast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLast.Location = new System.Drawing.Point(393, 34);
+            this.txtLast.Name = "txtLast";
+            this.txtLast.Parmida_ActivePlusMultiKeys = false;
+            this.txtLast.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtLast.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtLast.Properties.Appearance.Options.UseFont = true;
+            this.txtLast.Properties.Appearance.Options.UseForeColor = true;
+            this.txtLast.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtLast.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.txtLast.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtLast.Properties.AppearanceFocused.Options.UseFont = true;
+            this.txtLast.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtLast.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtLast.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.txtLast.Properties.AppearanceReadOnly.Options.UseForeColor = true;
+            this.txtLast.Properties.ReadOnly = true;
+            this.txtLast.Size = new System.Drawing.Size(154, 30);
+            this.txtLast.TabIndex = 4;
             // 
             // cbxSerial
             // 
             this.cbxSerial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxSerial.Location = new System.Drawing.Point(33, 34);
+            this.cbxSerial.Location = new System.Drawing.Point(667, 34);
             this.cbxSerial.Name = "cbxSerial";
             this.cbxSerial.Parmida_ActivePlusMultiKeys = false;
             this.cbxSerial.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -568,8 +509,7 @@
             this.cbxSerial.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.cbxSerial.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbxSerial.Properties.DisplayMember = "SmartCart";
-            this.cbxSerial.Properties.ValueMember = "DriverID";
+            this.cbxSerial.Properties.PopupFormSize = new System.Drawing.Size(150, 0);
             this.cbxSerial.Properties.View = this.searchLookUpEdit1View;
             this.cbxSerial.Size = new System.Drawing.Size(154, 30);
             this.cbxSerial.TabIndex = 3;
@@ -700,8 +640,6 @@
             this.gridColumn3.Caption = "ID";
             this.gridColumn3.FieldName = "SereisID";
             this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
             // 
             // gridColumn1
             // 
@@ -710,7 +648,7 @@
             this.gridColumn1.FieldName = "SeriesName";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 1;
+            this.gridColumn1.VisibleIndex = 0;
             // 
             // gridColumn2
             // 
@@ -719,7 +657,27 @@
             this.gridColumn2.FieldName = "SeriesDateStart";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 2;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // chkLastFish
+            // 
+            this.chkLastFish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkLastFish.EditValue = true;
+            this.chkLastFish.Location = new System.Drawing.Point(223, 32);
+            this.chkLastFish.Name = "chkLastFish";
+            this.chkLastFish.Parmida_ActivePlusMultiKeys = false;
+            this.chkLastFish.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 11F);
+            this.chkLastFish.Properties.Appearance.Options.UseFont = true;
+            this.chkLastFish.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.chkLastFish.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.chkLastFish.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.chkLastFish.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.chkLastFish.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
+            this.chkLastFish.Properties.OffText = "";
+            this.chkLastFish.Properties.OnText = "اضافه شد";
+            this.chkLastFish.Size = new System.Drawing.Size(164, 33);
+            this.chkLastFish.TabIndex = 8;
+            this.chkLastFish.Toggled += new System.EventHandler(this.chkLastFish_Toggled);
             // 
             // FrmPrintList
             // 
@@ -738,14 +696,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFaleh.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtClinker.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPacket.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGandom.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNew.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLast.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxSerial.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkLastFish.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -755,34 +711,28 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit txtGandom;
-        private DevExpress.XtraEditors.TextEdit txtPacket;
-        private DevExpress.XtraEditors.TextEdit txtClinker;
-        private DevExpress.XtraEditors.TextEdit txtFaleh;
-        private DevExpress.XtraEditors.TextEdit txtDate;
+        private DevExpress.XtraEditors.TextEdit txtLast;
         private DevExpress.XtraEditors.SearchLookUpEdit cbxSerial;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.SimpleButton btnAllPrint;
         private DevExpress.XtraEditors.TextEdit txtTotal;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraGrid.Columns.GridColumn colNumber;
         private DevExpress.XtraGrid.Columns.GridColumn colDriverID_FK;
-        private DevExpress.XtraGrid.Columns.GridColumn colStatus_FK;
         private DevExpress.XtraGrid.Columns.GridColumn colDriver;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraEditors.SimpleButton simpleButton9;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit txtNew;
+        private DevExpress.XtraEditors.ToggleSwitch chkLastFish;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
     }
 }

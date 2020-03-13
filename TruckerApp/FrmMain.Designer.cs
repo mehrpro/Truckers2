@@ -51,6 +51,9 @@
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -93,9 +96,12 @@
             this.barButtonItem4,
             this.barButtonItem5,
             this.barButtonItem7,
-            this.barButtonItem8});
+            this.barButtonItem8,
+            this.barButtonItem9,
+            this.barButtonItem10,
+            this.barButtonItem11});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 16;
+            this.ribbonControl1.MaxItemId = 19;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -280,11 +286,35 @@
             // 
             // barButtonItem8
             // 
-            this.barButtonItem8.Caption = "لیست قبض های صادره";
+            this.barButtonItem8.Caption = "لیست سیمان\r\nفله";
             this.barButtonItem8.Id = 15;
-            this.barButtonItem8.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_bulleted_list_48;
+            this.barButtonItem8.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_transaction_list_48;
             this.barButtonItem8.Name = "barButtonItem8";
             this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
+            // 
+            // barButtonItem9
+            // 
+            this.barButtonItem9.Caption = "لیست سیمان پاکت";
+            this.barButtonItem9.Id = 16;
+            this.barButtonItem9.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_transaction_list_48;
+            this.barButtonItem9.Name = "barButtonItem9";
+            this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick);
+            // 
+            // barButtonItem10
+            // 
+            this.barButtonItem10.Caption = "لیست غلات";
+            this.barButtonItem10.Id = 17;
+            this.barButtonItem10.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_transaction_list_48;
+            this.barButtonItem10.Name = "barButtonItem10";
+            this.barButtonItem10.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem10_ItemClick);
+            // 
+            // barButtonItem11
+            // 
+            this.barButtonItem11.Caption = "لیست کلینکر";
+            this.barButtonItem11.Id = 18;
+            this.barButtonItem11.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_transaction_list_48;
+            this.barButtonItem11.Name = "barButtonItem11";
+            this.barButtonItem11.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem11_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -317,7 +347,7 @@
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup3});
             this.ribbonPage2.Name = "ribbonPage2";
-            this.ribbonPage2.Text = "نوبت دهی";
+            this.ribbonPage2.Text = "صدور قبض";
             // 
             // ribbonPageGroup3
             // 
@@ -350,13 +380,16 @@
             this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup7});
             this.ribbonPage5.Name = "ribbonPage5";
-            this.ribbonPage5.Text = "گزارشات";
+            this.ribbonPage5.Text = "چاپ و گزارش";
             // 
             // ribbonPageGroup7
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem8);
+            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem9);
+            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem10);
+            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem11);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
-            this.ribbonPageGroup7.Text = "نوبت دهی";
+            this.ribbonPageGroup7.Text = "چاپ و گزارش";
             // 
             // ribbonPage3
             // 
@@ -447,5 +480,8 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
     }
 }

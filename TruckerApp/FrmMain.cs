@@ -262,6 +262,58 @@ namespace TruckerApp
             }
             var frmSpring = new FrmPrintList()
             {
+                TypeID = 1,
+                FormBorderStyle = FormBorderStyle.None,
+                MdiParent = this,
+                StartPosition = FormStartPosition.CenterParent,
+                Dock = DockStyle.Fill
+            };
+            frmSpring.Show();
+        }
+
+        private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form c in this.MdiChildren)
+            {
+                c.Close();
+            }
+            var frmSpring = new FrmPrintList()
+            {
+                TypeID = 2,
+                FormBorderStyle = FormBorderStyle.None,
+                MdiParent = this,
+                StartPosition = FormStartPosition.CenterParent,
+                Dock = DockStyle.Fill
+            };
+            frmSpring.Show();
+        }
+
+        private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form c in this.MdiChildren)
+            {
+                c.Close();
+            }
+            var frmSpring = new FrmPrintList()
+            {
+                TypeID = 3,
+                FormBorderStyle = FormBorderStyle.None,
+                MdiParent = this,
+                StartPosition = FormStartPosition.CenterParent,
+                Dock = DockStyle.Fill
+            };
+            frmSpring.Show();
+        }
+
+        private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form c in this.MdiChildren)
+            {
+                c.Close();
+            }
+            var frmSpring = new FrmPrintList()
+            {
+                TypeID = 4,
                 FormBorderStyle = FormBorderStyle.None,
                 MdiParent = this,
                 StartPosition = FormStartPosition.CenterParent,
