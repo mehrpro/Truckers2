@@ -62,6 +62,7 @@ namespace TruckerApp.UserForm
                 last.Faleh = qryType.Count(x => x.Type_FK == 1);
                 last.Packet = qryType.Count(x => x.Type_FK == 2);
                 last.Gandom = qryType.Count(x => x.Type_FK == 3);
+                last.Clinker = qryType.Count(x => x.Type_FK == 4);
                 last.Member = Convert.ToInt16(qryType.Count(x => x.GroupCommission == 1));
                 last.Native = Convert.ToInt16(qryType.Count(x => x.GroupCommission == 2));
                 last.Other = Convert.ToInt16(qryType.Count(x => x.GroupCommission == 3));

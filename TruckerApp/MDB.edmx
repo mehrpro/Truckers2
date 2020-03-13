@@ -74,6 +74,7 @@
           <Property Name="Faleh" Type="int" />
           <Property Name="Packet" Type="int" />
           <Property Name="Gandom" Type="int" />
+          <Property Name="Clinker" Type="int" />
           <Property Name="closing" Type="bit" />
           <Property Name="userCreator" Type="tinyint" />
           <Property Name="Member" Type="smallint" />
@@ -420,6 +421,7 @@
           <Property Name="Faleh" Type="Int32" />
           <Property Name="Packet" Type="Int32" />
           <Property Name="Gandom" Type="Int32" />
+          <Property Name="Clinker" Type="Int32" />
           <Property Name="closing" Type="Boolean" />
           <Property Name="userCreator" Type="Byte" />
           <Property Name="Member" Type="Int16" />
@@ -654,6 +656,7 @@
                 <ScalarProperty Name="Member" ColumnName="Member" />
                 <ScalarProperty Name="userCreator" ColumnName="userCreator" />
                 <ScalarProperty Name="closing" ColumnName="closing" />
+                <ScalarProperty Name="Clinker" ColumnName="Clinker" />
                 <ScalarProperty Name="Gandom" ColumnName="Gandom" />
                 <ScalarProperty Name="Packet" ColumnName="Packet" />
                 <ScalarProperty Name="Faleh" ColumnName="Faleh" />

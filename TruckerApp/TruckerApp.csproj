@@ -330,6 +330,7 @@
       <DependentUpon>MDB.edmx</DependentUpon>
       <LastGenOutput>MDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-transaction-list-48.png" />
     <None Include="Resources\icons8-bulleted-list-48.png" />
     <None Include="Resources\icons8-mail-statistics-48.png" />
     <None Include="Resources\icons8-cash-receipt-48.png" />

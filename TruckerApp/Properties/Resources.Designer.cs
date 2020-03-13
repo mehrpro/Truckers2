@@ -253,6 +253,16 @@ namespace TruckerApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_transaction_list_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-transaction-list-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap oil_well_cement_500x500 {
             get {
                 object obj = ResourceManager.GetObject("oil-well-cement-500x500", resourceCulture);

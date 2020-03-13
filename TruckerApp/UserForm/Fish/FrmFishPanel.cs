@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using TruckerApp.UserForm;
 
-namespace TruckerApp.UserForm.Fish
+namespace TruckerApp
 {
     public partial class FrmFishPanel : Form
     {

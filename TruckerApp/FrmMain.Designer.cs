@@ -284,6 +284,7 @@
             this.barButtonItem8.Id = 15;
             this.barButtonItem8.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_bulleted_list_48;
             this.barButtonItem8.Name = "barButtonItem8";
+            this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
             // 
             // ribbonPage1
             // 

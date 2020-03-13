@@ -1,4 +1,4 @@
-﻿namespace TruckerApp.UserForm.Fish
+﻿namespace TruckerApp
 {
     partial class FrmFishPanel
     {

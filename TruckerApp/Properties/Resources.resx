@@ -124,6 +124,12 @@
   <data name="BunkerCement1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BunkerCement.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-bulleted-list-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-bulleted-list-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="لشدیخپ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\لشدیخپ.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-login-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-login-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,14 +154,11 @@
   <data name="۱۳" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\۱۳.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-mail-statistics-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-mail-statistics-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pact" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pact.jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="truck" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\truck.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="لشدیخپ" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\لشدیخپ.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-driver-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-driver-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,11 +172,11 @@
   <data name="۱۲" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\۱۲.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-mail-statistics-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-mail-statistics-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="automation (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\automation (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="truck2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\truck2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="automation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\automation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,10 +193,10 @@
   <data name="oil-well-cement-500x500" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\oil-well-cement-500x500.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="truck2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\truck2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="truck" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\truck.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-bulleted-list-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-bulleted-list-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-transaction-list-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-transaction-list-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

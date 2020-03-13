@@ -29,6 +29,7 @@ namespace TruckerApp
         public Nullable<int> Faleh { get; set; }
         public Nullable<int> Packet { get; set; }
         public Nullable<int> Gandom { get; set; }
+        public Nullable<int> Clinker { get; set; }
         public Nullable<bool> closing { get; set; }
         public Nullable<byte> userCreator { get; set; }
         public Nullable<short> Member { get; set; }
