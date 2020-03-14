@@ -177,7 +177,7 @@ namespace TruckerApp.UserForm
         private void btnPrint_Click(object sender, EventArgs e)
         {
             db = new TruckersEntities();
-            var driverCheck = db.Queues.Where(x => x.Status_FK == 4 && x.DriverID_FK == _driver).ToList();
+            var driverCheck = db.Queues.Where(x => x.Status_FK == 20 && x.DriverID_FK == _driver).ToList();
             if (driverCheck.Count == 0)
             {
             

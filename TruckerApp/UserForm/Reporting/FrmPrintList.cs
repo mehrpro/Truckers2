@@ -30,7 +30,7 @@ namespace TruckerApp
         private void cbxList()
         {
             List<SeriesPrice> series;
-            series = db.SeriesPrices.Where(x => x.closing == false && x.enabeled == false).ToList();
+            series = db.SeriesPrices.Where(x => x.closing == null && x.enabeled == true).ToList();
             cbxSerial.Properties.DataSource = series;
             cbxSerial.Properties.DisplayMember = "SeriesName";
             cbxSerial.Properties.ValueMember = "SereisID";
@@ -44,7 +44,7 @@ namespace TruckerApp
         private void grid(int seriesId)
         {
             ds = new BindingList<ReportList>();
-            var QueryAll = db.Queues.Where(x => x.Status_FK == 4 && x.Type_FK == TypeID).ToList().OrderBy(x => x.ID);
+            var QueryAll = db.Queues.Where(x => x.Status_FK == 20 && x.Type_FK == TypeID).ToList().OrderBy(x => x.ID);
             var QuerySeriesOnly = QueryAll.Where(x => x.SeriesID_FK == seriesId).ToList().OrderBy(x => x.ID);
 
             txtTotal.Text = QueryAll.Count().ToString();

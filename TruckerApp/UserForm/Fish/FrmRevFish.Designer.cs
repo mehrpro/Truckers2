@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRevFish));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.radioGroupType = new DevExpress.XtraEditors.RadioGroup();
             this.btnRevSave = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -58,7 +59,6 @@
             this.colTag = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTagNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtComossin = new DevExpress.XtraEditors.TextEdit();
-            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroupType.Properties)).BeginInit();
@@ -102,15 +102,28 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(473, 644);
+            this.groupControl1.Size = new System.Drawing.Size(473, 651);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "برگشت حواله";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.btnClose.Appearance.Options.UseFont = true;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(45, 558);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(135, 48);
+            this.btnClose.TabIndex = 21;
+            this.btnClose.Text = "بستن";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // radioGroupType
             // 
             this.radioGroupType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioGroupType.EditValue = ((byte)(10));
-            this.radioGroupType.Location = new System.Drawing.Point(124, 407);
+            this.radioGroupType.Location = new System.Drawing.Point(184, 425);
             this.radioGroupType.Name = "radioGroupType";
             this.radioGroupType.Parmida_ActivePlusMultiKeys = false;
             this.radioGroupType.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -122,7 +135,7 @@
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(10)), "خطا در صدور"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(11)), "ابطال و تعویض محموله"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(12)), "ابطال و بازگشت وجه")});
-            this.radioGroupType.Size = new System.Drawing.Size(239, 113);
+            this.radioGroupType.Size = new System.Drawing.Size(178, 113);
             this.radioGroupType.TabIndex = 20;
             // 
             // btnRevSave
@@ -131,7 +144,7 @@
             this.btnRevSave.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnRevSave.Appearance.Options.UseFont = true;
             this.btnRevSave.Image = ((System.Drawing.Image)(resources.GetObject("btnRevSave.Image")));
-            this.btnRevSave.Location = new System.Drawing.Point(228, 538);
+            this.btnRevSave.Location = new System.Drawing.Point(227, 556);
             this.btnRevSave.Name = "btnRevSave";
             this.btnRevSave.Size = new System.Drawing.Size(135, 50);
             this.btnRevSave.TabIndex = 16;
@@ -142,7 +155,7 @@
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl7.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl7.Location = new System.Drawing.Point(369, 374);
+            this.labelControl7.Location = new System.Drawing.Point(368, 392);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(41, 24);
             this.labelControl7.TabIndex = 15;
@@ -152,7 +165,7 @@
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl4.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl4.Location = new System.Drawing.Point(369, 330);
+            this.labelControl4.Location = new System.Drawing.Point(368, 348);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(30, 24);
             this.labelControl4.TabIndex = 15;
@@ -162,7 +175,7 @@
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl3.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl3.Location = new System.Drawing.Point(369, 286);
+            this.labelControl3.Location = new System.Drawing.Point(368, 304);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(85, 24);
             this.labelControl3.TabIndex = 14;
@@ -172,7 +185,7 @@
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl2.Location = new System.Drawing.Point(373, 242);
+            this.labelControl2.Location = new System.Drawing.Point(372, 260);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(26, 24);
             this.labelControl2.TabIndex = 13;
@@ -182,7 +195,7 @@
             // 
             this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl6.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl6.Location = new System.Drawing.Point(373, 154);
+            this.labelControl6.Location = new System.Drawing.Point(372, 172);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(81, 24);
             this.labelControl6.TabIndex = 12;
@@ -192,7 +205,7 @@
             // 
             this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl5.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl5.Location = new System.Drawing.Point(369, 110);
+            this.labelControl5.Location = new System.Drawing.Point(368, 128);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(83, 24);
             this.labelControl5.TabIndex = 18;
@@ -202,7 +215,7 @@
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl1.Location = new System.Drawing.Point(369, 198);
+            this.labelControl1.Location = new System.Drawing.Point(368, 216);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(58, 24);
             this.labelControl1.TabIndex = 19;
@@ -211,7 +224,7 @@
             // txtserial
             // 
             this.txtserial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtserial.Location = new System.Drawing.Point(300, 151);
+            this.txtserial.Location = new System.Drawing.Point(299, 169);
             this.txtserial.Name = "txtserial";
             this.txtserial.Parmida_ActivePlusMultiKeys = false;
             this.txtserial.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -233,7 +246,7 @@
             // txtNumber
             // 
             this.txtNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNumber.Location = new System.Drawing.Point(46, 151);
+            this.txtNumber.Location = new System.Drawing.Point(45, 169);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Parmida_ActivePlusMultiKeys = false;
             this.txtNumber.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -255,7 +268,7 @@
             // txtDateRegister
             // 
             this.txtDateRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDateRegister.Location = new System.Drawing.Point(46, 63);
+            this.txtDateRegister.Location = new System.Drawing.Point(45, 81);
             this.txtDateRegister.Name = "txtDateRegister";
             this.txtDateRegister.Parmida_ActivePlusMultiKeys = false;
             this.txtDateRegister.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -277,7 +290,7 @@
             // txtType
             // 
             this.txtType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtType.Location = new System.Drawing.Point(46, 371);
+            this.txtType.Location = new System.Drawing.Point(45, 389);
             this.txtType.Name = "txtType";
             this.txtType.Parmida_ActivePlusMultiKeys = false;
             this.txtType.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -299,7 +312,7 @@
             // txtDateReg
             // 
             this.txtDateReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDateReg.Location = new System.Drawing.Point(46, 327);
+            this.txtDateReg.Location = new System.Drawing.Point(45, 345);
             this.txtDateReg.Name = "txtDateReg";
             this.txtDateReg.Parmida_ActivePlusMultiKeys = false;
             this.txtDateReg.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -321,7 +334,7 @@
             // txtTag
             // 
             this.txtTag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTag.Location = new System.Drawing.Point(46, 239);
+            this.txtTag.Location = new System.Drawing.Point(45, 257);
             this.txtTag.Name = "txtTag";
             this.txtTag.Parmida_ActivePlusMultiKeys = false;
             this.txtTag.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -343,7 +356,7 @@
             // txtName
             // 
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName.Location = new System.Drawing.Point(46, 195);
+            this.txtName.Location = new System.Drawing.Point(45, 213);
             this.txtName.Name = "txtName";
             this.txtName.Parmida_ActivePlusMultiKeys = false;
             this.txtName.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -365,7 +378,7 @@
             // cbxSmart
             // 
             this.cbxSmart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxSmart.Location = new System.Drawing.Point(46, 107);
+            this.cbxSmart.Location = new System.Drawing.Point(45, 125);
             this.cbxSmart.Name = "cbxSmart";
             this.cbxSmart.Parmida_ActivePlusMultiKeys = false;
             this.cbxSmart.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -592,7 +605,7 @@
             // 
             this.txtComossin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtComossin.EditValue = "0";
-            this.txtComossin.Location = new System.Drawing.Point(46, 283);
+            this.txtComossin.Location = new System.Drawing.Point(45, 301);
             this.txtComossin.Name = "txtComossin";
             this.txtComossin.Parmida_ActivePlusMultiKeys = false;
             this.txtComossin.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -615,24 +628,11 @@
             this.txtComossin.Size = new System.Drawing.Size(317, 30);
             this.txtComossin.TabIndex = 11;
             // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.btnClose.Appearance.Options.UseFont = true;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(46, 540);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(135, 48);
-            this.btnClose.TabIndex = 21;
-            this.btnClose.Text = "بستن";
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // FrmRevFish
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 644);
+            this.ClientSize = new System.Drawing.Size(473, 651);
             this.Controls.Add(this.groupControl1);
             this.Name = "FrmRevFish";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;

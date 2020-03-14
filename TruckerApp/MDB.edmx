@@ -45,7 +45,7 @@
           <Key>
             <PropertyRef Name="TypeID" />
           </Key>
-          <Property Name="TypeID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeID" Type="tinyint" Nullable="false" />
           <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Queue">
@@ -383,7 +383,7 @@
           <Key>
             <PropertyRef Name="TypeID" />
           </Key>
-          <Property Name="TypeID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeID" Type="Byte" Nullable="false" />
           <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Commissions" Relationship="TruckersModel.FK_Commission_LoadType" FromRole="LoadType" ToRole="Commission" />
           <NavigationProperty Name="Queues" Relationship="TruckersModel.FK_Queue_LoadType" FromRole="LoadType" ToRole="Queue" />

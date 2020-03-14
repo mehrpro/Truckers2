@@ -34,7 +34,7 @@ namespace TruckerApp.UserForm
         {
             var qry = (Driver) cbxSmart.GetSelectedDataRow();
 
-            var qryQuese = db.Queues.Where(x => x.DriverID_FK == qry.DriverID && x.Status_FK == 4).ToList();
+            var qryQuese = db.Queues.Where(x => x.DriverID_FK == qry.DriverID && x.Status_FK == 20).ToList();
             if (qryQuese.Count > 0)
             {
                 selectid = qryQuese[0].ID;

@@ -20,7 +20,7 @@ namespace TruckerApp.UserForm
         private void calcuterList()
         {
             List<Queue> qryOLD;
-            queuesBindingSource.DataSource = qryOLD = Db.Queues.Where(x => x.Status_FK == 4).ToList();
+            queuesBindingSource.DataSource = qryOLD = Db.Queues.Where(x => x.Status_FK == 20).ToList();
             txtTotal.Text = qryOLD.Count.ToString();
             txtDate.Text = $"{PublicVar.DateSerial:yyyy/MM/dd}";
             txtSerial.Text = PublicVar.SeriesID.ToString();

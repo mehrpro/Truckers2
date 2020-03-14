@@ -209,6 +209,12 @@
     <Compile Include="UserForm\Fish\FrmQueueList.Designer.cs">
       <DependentUpon>FrmQueueList.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserForm\Fish\FrmResid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\Fish\FrmResid.Designer.cs">
+      <DependentUpon>FrmResid.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForm\Fish\FrmRevFish.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\Fish\FrmQueueList.resx">
       <DependentUpon>FrmQueueList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Fish\FrmResid.resx">
+      <DependentUpon>FrmResid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\Fish\FrmRevFish.resx">
       <DependentUpon>FrmRevFish.cs</DependentUpon>

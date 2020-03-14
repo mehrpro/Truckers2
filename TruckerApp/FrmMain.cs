@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Windows.Forms;
 using TruckerApp.UserForm;
+using TruckerApp.UserForm.Fish;
 
 
 namespace TruckerApp
@@ -314,6 +315,24 @@ namespace TruckerApp
             var frmSpring = new FrmPrintList()
             {
                 TypeID = 4,
+                FormBorderStyle = FormBorderStyle.None,
+                MdiParent = this,
+                StartPosition = FormStartPosition.CenterParent,
+                Dock = DockStyle.Fill
+            };
+            frmSpring.Show();
+        }
+
+        private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form c in this.MdiChildren)
+            {
+                c.Close();
+            }
+
+            var frmSpring = new FrmResid()
+            {
+                
                 FormBorderStyle = FormBorderStyle.None,
                 MdiParent = this,
                 StartPosition = FormStartPosition.CenterParent,
