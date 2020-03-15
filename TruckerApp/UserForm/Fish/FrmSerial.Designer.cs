@@ -134,7 +134,7 @@
             this.btnNewSerial.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnNewSerial.Appearance.Options.UseFont = true;
             this.btnNewSerial.Image = ((System.Drawing.Image)(resources.GetObject("btnNewSerial.Image")));
-            this.btnNewSerial.Location = new System.Drawing.Point(105, 64);
+            this.btnNewSerial.Location = new System.Drawing.Point(76, 64);
             this.btnNewSerial.Name = "btnNewSerial";
             this.btnNewSerial.Size = new System.Drawing.Size(134, 51);
             this.btnNewSerial.TabIndex = 2;
@@ -144,7 +144,7 @@
             // txtLastSerial
             // 
             this.txtLastSerial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLastSerial.Location = new System.Drawing.Point(265, 33);
+            this.txtLastSerial.Location = new System.Drawing.Point(236, 33);
             this.txtLastSerial.Name = "txtLastSerial";
             this.txtLastSerial.Parmida_ActivePlusMultiKeys = false;
             this.txtLastSerial.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -161,7 +161,7 @@
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl4.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl4.Location = new System.Drawing.Point(478, 88);
+            this.labelControl4.Location = new System.Drawing.Point(449, 88);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(67, 24);
             this.labelControl4.TabIndex = 1;
@@ -170,7 +170,7 @@
             // txtUsers
             // 
             this.txtUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUsers.Location = new System.Drawing.Point(265, 85);
+            this.txtUsers.Location = new System.Drawing.Point(236, 85);
             this.txtUsers.Name = "txtUsers";
             this.txtUsers.Parmida_ActivePlusMultiKeys = false;
             this.txtUsers.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -187,11 +187,11 @@
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl3.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl3.Location = new System.Drawing.Point(478, 36);
+            this.labelControl3.Location = new System.Drawing.Point(449, 36);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(69, 24);
+            this.labelControl3.Size = new System.Drawing.Size(113, 24);
             this.labelControl3.TabIndex = 1;
-            this.labelControl3.Text = "سریال قبلی";
+            this.labelControl3.Text = "سریال فروش فعلی";
             // 
             // labelControl1
             // 

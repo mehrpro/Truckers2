@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Windows.Forms;
 using TruckerApp.UserForm;
 using TruckerApp.UserForm.Fish;
@@ -21,7 +20,7 @@ namespace TruckerApp
 
             var frmSpring = new FrmNewDriver()
             {
-                FormBorderStyle = FormBorderStyle.None,
+              //  FormBorderStyle = FormBorderStyle.None,
               //  MdiParent = this,
                 StartPosition = FormStartPosition.CenterScreen,
                // Dock = DockStyle.Fill
@@ -46,20 +45,20 @@ namespace TruckerApp
         private void btnCommission_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            foreach (Form c in this.MdiChildren)
-            {
-                c.Close();
-            }
+            //foreach (Form c in this.MdiChildren)
+            //{
+            //    c.Close();
+            //}
             var frmSpring = new UserForm.Commission.FrmCommissionNative()
             {
                 Group1 = 14,
                 Group2 = 13,
-//FormBorderStyle = FormBorderStyle.None,
-               MdiParent = this,
+                //FormBorderStyle = FormBorderStyle.None,
+           //    MdiParent = this,
                 StartPosition = FormStartPosition.CenterScreen,
                // Dock = DockStyle.Fill
             };
-            frmSpring.Show();
+            frmSpring.ShowDialog();
         }
 
         private void btnNewQue_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -108,7 +107,7 @@ namespace TruckerApp
             //}
             var frmSpring = new FrmRevFish()
             {
-                FormBorderStyle = FormBorderStyle.None,
+                FormBorderStyle = FormBorderStyle.FixedSingle,
                 //MdiParent = this,
                 StartPosition = FormStartPosition.CenterScreen,
                 //Dock = DockStyle.Fill
@@ -150,38 +149,38 @@ namespace TruckerApp
 
         private void btnCommissionNative_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (Form c in this.MdiChildren)
-            {
-                c.Close();
-            }
+            //foreach (Form c in this.MdiChildren)
+            //{
+            //    c.Close();
+            //}
             var frmSpring = new UserForm.Commission.FrmCommissionNative()
             {
                 Group1 = 15,
                 Group2 = 17,
                 //FormBorderStyle = FormBorderStyle.None,
-                MdiParent = this,
+              //  MdiParent = this,
                 StartPosition = FormStartPosition.CenterScreen,
                 // Dock = DockStyle.Fill
             };
-            frmSpring.Show();
+            frmSpring.ShowDialog();
         }
 
         private void btnCommissionOther_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (Form c in this.MdiChildren)
-            {
-                c.Close();
-            }
+            //foreach (Form c in this.MdiChildren)
+            //{
+            //    c.Close();
+            //}
             var frmSpring = new UserForm.Commission.FrmCommissionNative()
             {
                 Group1 = 16,
                 Group2 = 18,
                 //FormBorderStyle = FormBorderStyle.None,
-                 MdiParent = this,
+                // MdiParent = this,
                 StartPosition = FormStartPosition.CenterScreen,
                 // Dock = DockStyle.Fill
             };
-            frmSpring.Show();
+            frmSpring.ShowDialog();
         }
 
         private void FrmMain_Load(object sender, EventArgs e)

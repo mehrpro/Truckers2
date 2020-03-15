@@ -88,7 +88,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(382, 417);
+            this.groupControl1.Size = new System.Drawing.Size(382, 430);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "راننده جدید";
             // 
@@ -100,7 +100,7 @@
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.Location = new System.Drawing.Point(157, 353);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 30);
+            this.btnSave.Size = new System.Drawing.Size(112, 52);
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "ذخیره";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -111,9 +111,9 @@
             this.btnClose.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnClose.Appearance.Options.UseFont = true;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(51, 353);
+            this.btnClose.Location = new System.Drawing.Point(36, 353);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(100, 30);
+            this.btnClose.Size = new System.Drawing.Size(112, 52);
             this.btnClose.TabIndex = 11;
             this.btnClose.Text = "بستن";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -291,9 +291,9 @@
             this.radComosiun.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.radComosiun.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.radComosiun.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(1)), "عضو"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(2)), "غیرعضو"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(3)), "غیربومی")});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(30)), "عضو"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(31)), "غیرعضو"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(32)), "غیربومی")});
             this.radComosiun.Size = new System.Drawing.Size(123, 92);
             this.radComosiun.TabIndex = 8;
             // 
@@ -301,8 +301,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 417);
+            this.ClientSize = new System.Drawing.Size(382, 430);
             this.Controls.Add(this.groupControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmNewDriver";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "راننده جدید";

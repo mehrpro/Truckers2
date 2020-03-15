@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.Entity;
-using System.Data.Entity.Core.Common;
+using DevExpress.XtraEditors;
 
 namespace TruckerApp.UserForm
 {
-    public partial class FrmCasheList : Form
+    public partial class FrmCasheList : XtraForm
     {
         public FrmCasheList()
         {
@@ -20,22 +13,21 @@ namespace TruckerApp.UserForm
 
         }
 
-        private TruckersEntities db = new TruckerApp.TruckersEntities();
-        private List<Cash> qryDB;
+        private TruckersEntities db = new TruckersEntities();
+        Counter counter =  new Counter();
 
         private void setup()
         {
             db = new TruckersEntities();
             db.Cashes.Load();
-            cashesBindingSource.DataSource = qryDB = db.Cashes.Where((x => x.seriesID_FK == PublicVar.SeriesID)).ToList();
-            txtFalaeh.Text = $"{qryDB.Count(x => x.Queue.Type_FK == 1)}";
-            txtPacket.Text = $"{qryDB.Count(x => x.Queue.Type_FK == 2)}";
-            txtGandom.Text = $"{qryDB.Count(x => x.Queue.Type_FK == 3)}";
-            txtClinker.Text = $"{qryDB.Count(x => x.Queue.Type_FK == 4)}";
-
-            txtMember.Text = $"{qryDB.Count(x => x.Queue.GroupCommission == 1)}";
-            txtNoMember.Text = $"{qryDB.Count(x => x.Queue.GroupCommission == 2)}";
-            txtOther.Text = $"{qryDB.Count(x => x.Queue.GroupCommission == 3)}";
+            cashesBindingSource.DataSource =  db.Cashes.Where((x => x.seriesID_FK == PublicVar.SeriesID)).ToList();
+            txtFalaeh.Text = counter.Faleh().ToString();
+            txtPacket.Text = counter.Packet().ToString();
+            txtGandom.Text = counter.Gandom().ToString();
+            txtClinker.Text = counter.Clinker().ToString();
+            txtMember.Text = counter.Member().ToString();
+            txtNoMember.Text = counter.noMember().ToString();
+            txtOther.Text = counter.Other().ToString();
 
             txtSerial.Text = PublicVar.SeriesName.ToString();
             txtDate.Text = $"{PublicVar.DateSerial:yyyy/MM/dd}";
@@ -43,10 +35,6 @@ namespace TruckerApp.UserForm
 
         }
 
-        private void panelControl1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void FrmCasheList_Load(object sender, EventArgs e)
         {

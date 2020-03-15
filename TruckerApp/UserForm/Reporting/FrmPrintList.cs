@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data.Entity;
 using System.Drawing.Printing;
-using System.IO;
 using System.Linq;
-using System.Windows.Forms;
 using DevExpress.LookAndFeel;
-using DevExpress.XtraGrid;
+using DevExpress.XtraEditors;
 using DevExpress.XtraPrinting;
 
 namespace TruckerApp
 {
-    public partial class FrmPrintList : Form
+    public partial class FrmPrintList : XtraForm
     {
         public FrmPrintList()
         {
@@ -24,22 +20,23 @@ namespace TruckerApp
         public int TypeID { get; set; }
         private void FrmPrintList_Load(object sender, EventArgs e)
         {
-            cbxList();
+            //cbxList();
+            _seriesid = PublicVar.SeriesID;
+            grid(_seriesid);
         }
 
-        private void cbxList()
-        {
-            List<SeriesPrice> series;
-            series = db.SeriesPrices.Where(x => x.closing == null && x.enabeled == true).ToList();
-            cbxSerial.Properties.DataSource = series;
-            cbxSerial.Properties.DisplayMember = "SeriesName";
-            cbxSerial.Properties.ValueMember = "SereisID";
-        }
+        //private void cbxList()
+        //{
+        //    List<SeriesPrice> series;
+        //    series = db.SeriesPrices.Where(x => x.closing == null && x.enabeled == true).ToList();
+        //    cbxSerial.Properties.DataSource = series;
+        //    cbxSerial.Properties.DisplayMember = "SeriesName";
+        //    cbxSerial.Properties.ValueMember = "SereisID";
+        //}
 
         private void cbxSerial_EditValueChanged(object sender, EventArgs e)
         {
-            _seriesid =Convert.ToInt32(cbxSerial.EditValue);
-            grid(_seriesid);
+            
         }
         private void grid(int seriesId)
         {

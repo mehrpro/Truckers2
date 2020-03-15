@@ -99,6 +99,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BindingList.cs" />
     <Compile Include="Cash.cs">
       <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
@@ -179,6 +180,7 @@
     <Compile Include="UserForm\cash\FrmCashStatus.Designer.cs">
       <DependentUpon>FrmCashStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Counter.cs" />
     <Compile Include="UserForm\Fish\FrmFishPanel.cs">
       <SubType>Form</SubType>
     </Compile>

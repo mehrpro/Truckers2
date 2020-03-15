@@ -6,7 +6,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraReports.UI;
 namespace TruckerApp.UserForm
 {
-    public partial class FrmFishPrint : Form
+    public partial class FrmFishPrint : XtraForm
     {
         private TruckersEntities db = new TruckersEntities();
 
@@ -22,7 +22,7 @@ namespace TruckerApp.UserForm
         public FrmFishPrint()
         {
             InitializeComponent();
-            driverList();
+            driversBindingSource.DataSource = new BindingList().DriversList();
         }
 
         private void SelectType()
@@ -51,23 +51,12 @@ namespace TruckerApp.UserForm
             }
         }
 
-        private void driverList()
-        {
-            db = new TruckersEntities();
-            db.Drivers.LoadAsync()
-                .ContinueWith(loadTask => { driversBindingSource.DataSource = db.Drivers.Local.ToBindingList(); },
-                    System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext());
-        }
+
 
         private void setupPage()
         {
-            //using (var db = new TruckersEntities())
-            //{
-            //    _series = db.SeriesPrices.Single(x => x.enabeled == true && x.closing == null).SereisID;
-            //    PublicVar.SeriesID = _series;
-                txtserial.Text = PublicVar.SeriesName.ToString();
-                _series = PublicVar.SeriesID;
-                //}
+            txtserial.Text = PublicVar.SeriesName.ToString();
+            _series = PublicVar.SeriesID;
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -76,8 +65,6 @@ namespace TruckerApp.UserForm
 
         private void PrintFish()
         {
-            //db = new TruckersEntities();
-            //var qryUser = db.Users.Single(row => row.UserID == PublicVariable.LoginUserId);
             var report = XtraReport.FromFile("ReportFish.repx", true);
             var tool = new ReportPrintTool(report);
             report.Parameters["date"].Value = DateTime.Now.ToLongDateString();
@@ -110,58 +97,55 @@ namespace TruckerApp.UserForm
             _smartcart = driver.SmartCart.ToString();
             _group = driver.GroupID;
 
-            if (_group == 1) //عضو
+            if (_group == 30)
             {
                 if (_typeID == 4)
                 {
-                    var qry2x = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 13);
-                    _commissionID = qry2x.CommissionID;
-                    _commission = qry2x.CommissionPrice;
+                    var qry = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 13);
+                    _commissionID = qry.CommissionID;
+                    _commission = qry.CommissionPrice;
                 }
 
                 else
                 {
-                    var qry2x = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 14);
-                    _commissionID = qry2x.CommissionID;
-                    _commission = qry2x.CommissionPrice;
+                    var qry = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 14);
+                    _commissionID = qry.CommissionID;
+                    _commission = qry.CommissionPrice;
                 }
 
             }
-            else if (_group == 2)
+            else if (_group == 31)
             {
                 if (_typeID == 4)
                 {
-                    var qry2x = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 17);
-                    _commissionID = qry2x.CommissionID;
-                    _commission = qry2x.CommissionPrice;
+                    var qry = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 17);
+                    _commissionID = qry.CommissionID;
+                    _commission = qry.CommissionPrice;
                 }
 
                 else
                 {
-                    var qry2x = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 15);
-                    _commissionID = qry2x.CommissionID;
-                    _commission = qry2x.CommissionPrice;
+                    var qry = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 15);
+                    _commissionID = qry.CommissionID;
+                    _commission = qry.CommissionPrice;
                 }
             }
-            else if (_group == 3)
+            else if (_group == 32)
             {
                 if (_typeID == 4)
                 {
-                    var qry2x = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 18);
-                    _commissionID = qry2x.CommissionID;
-                    _commission = qry2x.CommissionPrice;
+                    var qry = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 18);
+                    _commissionID = qry.CommissionID;
+                    _commission = qry.CommissionPrice;
                 }
 
                 else
                 {
-                    var qry2x = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 16);
-                    _commissionID = qry2x.CommissionID;
-                    _commission = qry2x.CommissionPrice;
+                    var qry = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 16);
+                    _commissionID = qry.CommissionID;
+                    _commission = qry.CommissionPrice;
                 }
             }
-
-            //var qryCommission1 = db.Commissions.SingleOrDefault(x => x.enabled == true && x.GroupID == _commissionID && x.Groups_FK ==_selectRadioButten);
-            //_commission = qryCommission1.CommissionID;
             txtComossin.Text = _commission.ToString();
         }
 
@@ -180,7 +164,6 @@ namespace TruckerApp.UserForm
             var driverCheck = db.Queues.Where(x => x.Status_FK == 20 && x.DriverID_FK == _driver).ToList();
             if (driverCheck.Count == 0)
             {
-            
                     try
                     {
                         var qu = new Queue();
@@ -205,9 +188,6 @@ namespace TruckerApp.UserForm
                     {
                         XtraMessageBox.Show(PublicVar.ErrorMessageForNotSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                
-                
-
             }
             else
             {
@@ -220,16 +200,14 @@ namespace TruckerApp.UserForm
         private void LastNumber()
         {
             var dbPrinter = new TruckersEntities();
-            var qryNumber = dbPrinter.Queues.Where(x => x.SeriesID_FK == _series).OrderByDescending(z => z.ID)
-                .FirstOrDefault();
+            int qryNumber = dbPrinter.Queues.Where(x => x.SeriesID_FK == _series).Max(x=> x.Number);
             if (qryNumber == null)
             {
-                //
                 txtNumber.Text = @"001";
             }
             else
             {
-                txtNumber.Text = ((qryNumber.Number) + 1).ToString("000");
+                txtNumber.Text = (qryNumber + 1).ToString("000");
             }
         }
     }

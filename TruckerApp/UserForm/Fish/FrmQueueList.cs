@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
-using System.Data.Entity;
+using DevExpress.XtraEditors;
 
 namespace TruckerApp.UserForm
 {
-    public partial class FrmQueueList : Form
+    public partial class FrmQueueList : XtraForm
     {
         public FrmQueueList()
         {
             InitializeComponent();
- 
-            calcuterList();
         }
 
         private TruckersEntities Db = new TruckersEntities();
@@ -23,7 +20,7 @@ namespace TruckerApp.UserForm
             queuesBindingSource.DataSource = qryOLD = Db.Queues.Where(x => x.Status_FK == 20).ToList();
             txtTotal.Text = qryOLD.Count.ToString();
             txtDate.Text = $"{PublicVar.DateSerial:yyyy/MM/dd}";
-            txtSerial.Text = PublicVar.SeriesID.ToString();
+            txtSerial.Text = PublicVar.SeriesName.ToString();
             var qry = qryOLD.Where(x => x.SeriesID_FK == PublicVar.SeriesID).ToList();
             txtNew.Text = qry.Count.ToString();
             txtFalaeh.Text = qry.Count(x => x.Type_FK == 1).ToString();
@@ -38,6 +35,11 @@ namespace TruckerApp.UserForm
             txtOld.Text = (Convert.ToInt32(txtTotal.Text) - Convert.ToInt32(txtNew.Text)).ToString();
 
 
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            calcuterList();
         }
     }
 }

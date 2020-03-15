@@ -142,6 +142,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Drivers_LoadType">
+          <End Role="LoadType" Type="Self.LoadType" Multiplicity="1" />
+          <End Role="Drivers" Type="Self.Drivers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoadType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="Drivers">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Drivers_Users">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Drivers" Type="Self.Drivers" Multiplicity="*" />
@@ -250,6 +262,10 @@
             <End Role="LoadType" EntitySet="LoadType" />
             <End Role="Commission" EntitySet="Commission" />
           </AssociationSet>
+          <AssociationSet Name="FK_Drivers_LoadType" Association="Self.FK_Drivers_LoadType">
+            <End Role="LoadType" EntitySet="LoadType" />
+            <End Role="Drivers" EntitySet="Drivers" />
+          </AssociationSet>
           <AssociationSet Name="FK_Drivers_Users" Association="Self.FK_Drivers_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Drivers" EntitySet="Drivers" />
@@ -310,6 +326,10 @@
           <AssociationSet Name="FK_Queue_Commission" Association="TruckersModel.FK_Queue_Commission">
             <End Role="Commission" EntitySet="Commissions" />
             <End Role="Queue" EntitySet="Queues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Drivers_LoadType" Association="TruckersModel.FK_Drivers_LoadType">
+            <End Role="LoadType" EntitySet="LoadTypes" />
+            <End Role="Driver" EntitySet="Drivers" />
           </AssociationSet>
           <AssociationSet Name="FK_Drivers_Users" Association="TruckersModel.FK_Drivers_Users">
             <End Role="User" EntitySet="Users" />
@@ -376,6 +396,7 @@
           <Property Name="Tag" Type="Byte" Nullable="false" />
           <Property Name="GroupID" Type="Byte" Nullable="false" />
           <Property Name="userID_FK" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="LoadType" Relationship="TruckersModel.FK_Drivers_LoadType" FromRole="Driver" ToRole="LoadType" />
           <NavigationProperty Name="User" Relationship="TruckersModel.FK_Drivers_Users" FromRole="Driver" ToRole="User" />
           <NavigationProperty Name="Queues" Relationship="TruckersModel.FK_Queue_Drivers" FromRole="Driver" ToRole="Queue" />
         </EntityType>
@@ -386,6 +407,7 @@
           <Property Name="TypeID" Type="Byte" Nullable="false" />
           <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Commissions" Relationship="TruckersModel.FK_Commission_LoadType" FromRole="LoadType" ToRole="Commission" />
+          <NavigationProperty Name="Drivers" Relationship="TruckersModel.FK_Drivers_LoadType" FromRole="LoadType" ToRole="Driver" />
           <NavigationProperty Name="Queues" Relationship="TruckersModel.FK_Queue_LoadType" FromRole="LoadType" ToRole="Queue" />
           <NavigationProperty Name="Queues1" Relationship="TruckersModel.FK_Queue_LoadType1" FromRole="LoadType" ToRole="Queue" />
         </EntityType>
@@ -504,6 +526,18 @@
             </Principal>
             <Dependent Role="Queue">
               <PropertyRef Name="ComosiunID_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Drivers_LoadType">
+          <End Type="TruckersModel.LoadType" Role="LoadType" Multiplicity="1" />
+          <End Type="TruckersModel.Driver" Role="Driver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoadType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="Driver">
+              <PropertyRef Name="GroupID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

@@ -30,6 +30,7 @@ namespace TruckerApp
         public byte GroupID { get; set; }
         public byte userID_FK { get; set; }
     
+        public virtual LoadType LoadType { get; set; }
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Queue> Queues { get; set; }

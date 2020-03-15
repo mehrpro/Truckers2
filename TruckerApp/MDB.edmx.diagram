@@ -5,18 +5,19 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="b6dc06e4128744fb9c5d129eb164ef9d" Name="Diagram1">
-        <EntityTypeShape EntityType="TruckersModel.Cash" Width="1.5" PointX="7.5" PointY="1.625" />
-        <EntityTypeShape EntityType="TruckersModel.Commission" Width="1.5" PointX="3" PointY="1.75" />
-        <EntityTypeShape EntityType="TruckersModel.Driver" Width="1.5" PointX="3" PointY="6.875" />
-        <EntityTypeShape EntityType="TruckersModel.LoadType" Width="1.5" PointX="0.75" PointY="2" />
-        <EntityTypeShape EntityType="TruckersModel.Queue" Width="1.5" PointX="5.25" PointY="1" />
-        <EntityTypeShape EntityType="TruckersModel.SeriesPrice" Width="1.5" PointX="3" PointY="10.75" />
-        <EntityTypeShape EntityType="TruckersModel.User" Width="1.5" PointX="0.75" PointY="7" />
+        <EntityTypeShape EntityType="TruckersModel.Cash" Width="1.5" PointX="7.5" PointY="8.625" />
+        <EntityTypeShape EntityType="TruckersModel.Commission" Width="1.5" PointX="3" PointY="11" />
+        <EntityTypeShape EntityType="TruckersModel.Driver" Width="1.5" PointX="3" PointY="6.5" />
+        <EntityTypeShape EntityType="TruckersModel.LoadType" Width="1.5" PointX="0.75" PointY="7" />
+        <EntityTypeShape EntityType="TruckersModel.Queue" Width="1.5" PointX="5.25" PointY="8" />
+        <EntityTypeShape EntityType="TruckersModel.SeriesPrice" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="TruckersModel.User" Width="1.5" PointX="0.75" PointY="2.625" />
         <AssociationConnector Association="TruckersModel.FK_Cash_Queue" />
         <AssociationConnector Association="TruckersModel.FK_Cash_SeriesPrice" />
         <AssociationConnector Association="TruckersModel.FK_Cash_Users" />
         <AssociationConnector Association="TruckersModel.FK_Commission_LoadType" />
         <AssociationConnector Association="TruckersModel.FK_Queue_Commission" />
+        <AssociationConnector Association="TruckersModel.FK_Drivers_LoadType" />
         <AssociationConnector Association="TruckersModel.FK_Drivers_Users" />
         <AssociationConnector Association="TruckersModel.FK_Queue_Drivers" />
         <AssociationConnector Association="TruckersModel.FK_Queue_LoadType" />

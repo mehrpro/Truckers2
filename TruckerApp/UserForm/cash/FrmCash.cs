@@ -4,7 +4,7 @@ using DevExpress.XtraEditors;
 
 namespace TruckerApp.UserForm
 {
-    public partial class FrmCash : Form
+    public partial class FrmCash : XtraForm
     {
         public int QueueID { get; set; }
         public string CashTemp { get; set; }

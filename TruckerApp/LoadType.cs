@@ -18,6 +18,7 @@ namespace TruckerApp
         public LoadType()
         {
             this.Commissions = new HashSet<Commission>();
+            this.Drivers = new HashSet<Driver>();
             this.Queues = new HashSet<Queue>();
             this.Queues1 = new HashSet<Queue>();
         }
@@ -27,6 +28,8 @@ namespace TruckerApp
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Commission> Commissions { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Driver> Drivers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Queue> Queues { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

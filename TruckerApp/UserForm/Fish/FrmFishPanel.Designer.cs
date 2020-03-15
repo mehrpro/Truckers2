@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFishPanel));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
             this.gaugeControl5 = new DevExpress.XtraGauges.Win.GaugeControl();
-            this.digitalGauge5 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
+            this.cntTotal = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
             this.digitalBackgroundLayerComponent5 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -50,29 +51,30 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.gaugeControl4 = new DevExpress.XtraGauges.Win.GaugeControl();
-            this.digitalGauge4 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
+            this.cntClinker = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
             this.digitalBackgroundLayerComponent4 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent();
             this.gaugeControl3 = new DevExpress.XtraGauges.Win.GaugeControl();
-            this.digitalGauge3 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
+            this.cntGandom = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
             this.digitalBackgroundLayerComponent3 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent();
             this.gaugeControl2 = new DevExpress.XtraGauges.Win.GaugeControl();
-            this.digitalGauge2 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
+            this.cntFalah = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
             this.digitalBackgroundLayerComponent2 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent();
             this.gaugeControl1 = new DevExpress.XtraGauges.Win.GaugeControl();
-            this.digitalGauge1 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
+            this.cntPacket = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
             this.digitalBackgroundLayerComponent1 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.timerCounter = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
             this.layoutControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.digitalGauge5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cntTotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
@@ -87,13 +89,13 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.digitalGauge4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cntClinker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digitalGauge3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cntGandom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digitalGauge2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cntFalah)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digitalGauge1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cntPacket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
@@ -146,23 +148,23 @@
             // gaugeControl5
             // 
             this.gaugeControl5.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
-            this.digitalGauge5});
+            this.cntTotal});
             this.gaugeControl5.Location = new System.Drawing.Point(12, 12);
             this.gaugeControl5.Name = "gaugeControl5";
             this.gaugeControl5.Size = new System.Drawing.Size(1082, 73);
             this.gaugeControl5.TabIndex = 5;
             // 
-            // digitalGauge5
+            // cntTotal
             // 
-            this.digitalGauge5.AppearanceOff.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#0FD4F2FF");
-            this.digitalGauge5.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#D4F2FF");
-            this.digitalGauge5.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
+            this.cntTotal.AppearanceOff.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#0FD4F2FF");
+            this.cntTotal.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#D4F2FF");
+            this.cntTotal.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
             this.digitalBackgroundLayerComponent5});
-            this.digitalGauge5.Bounds = new System.Drawing.Rectangle(6, 6, 1070, 61);
-            this.digitalGauge5.DigitCount = 5;
-            this.digitalGauge5.Name = "digitalGauge5";
-            this.digitalGauge5.RightToLeft = true;
-            this.digitalGauge5.Text = "00,000";
+            this.cntTotal.Bounds = new System.Drawing.Rectangle(6, 6, 1070, 61);
+            this.cntTotal.DigitCount = 5;
+            this.cntTotal.Name = "cntTotal";
+            this.cntTotal.RightToLeft = true;
+            this.cntTotal.Text = "00,000";
             // 
             // digitalBackgroundLayerComponent5
             // 
@@ -351,27 +353,27 @@
             // 
             this.gaugeControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gaugeControl4.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
-            this.digitalGauge4});
+            this.cntClinker});
             this.gaugeControl4.Location = new System.Drawing.Point(554, 12);
             this.gaugeControl4.Name = "gaugeControl4";
             this.gaugeControl4.Size = new System.Drawing.Size(267, 124);
             this.gaugeControl4.TabIndex = 1;
             // 
-            // digitalGauge4
+            // cntClinker
             // 
-            this.digitalGauge4.AppearanceOff.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#0FFF5000");
-            this.digitalGauge4.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#FF5000");
-            this.digitalGauge4.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
+            this.cntClinker.AppearanceOff.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#0FFF5000");
+            this.cntClinker.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#FF5000");
+            this.cntClinker.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
             this.digitalBackgroundLayerComponent4});
-            this.digitalGauge4.Bounds = new System.Drawing.Rectangle(6, 6, 255, 112);
-            this.digitalGauge4.DigitCount = 5;
-            this.digitalGauge4.Name = "digitalGauge4";
-            this.digitalGauge4.RightToLeft = true;
-            this.digitalGauge4.Text = "00,000";
+            this.cntClinker.Bounds = new System.Drawing.Rectangle(6, 6, 255, 112);
+            this.cntClinker.DigitCount = 4;
+            this.cntClinker.Name = "cntClinker";
+            this.cntClinker.RightToLeft = true;
+            this.cntClinker.Text = "0000";
             // 
             // digitalBackgroundLayerComponent4
             // 
-            this.digitalBackgroundLayerComponent4.BottomRight = new DevExpress.XtraGauges.Core.Base.PointF2D(259.8125F, 99.9625F);
+            this.digitalBackgroundLayerComponent4.BottomRight = new DevExpress.XtraGauges.Core.Base.PointF2D(211.85F, 99.9625F);
             this.digitalBackgroundLayerComponent4.Name = "bg1";
             this.digitalBackgroundLayerComponent4.ShapeType = DevExpress.XtraGauges.Core.Model.DigitalBackgroundShapeSetType.Style3;
             this.digitalBackgroundLayerComponent4.TopLeft = new DevExpress.XtraGauges.Core.Base.PointF2D(20F, 0F);
@@ -381,27 +383,27 @@
             // 
             this.gaugeControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gaugeControl3.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
-            this.digitalGauge3});
+            this.cntGandom});
             this.gaugeControl3.Location = new System.Drawing.Point(12, 12);
             this.gaugeControl3.Name = "gaugeControl3";
             this.gaugeControl3.Size = new System.Drawing.Size(267, 124);
             this.gaugeControl3.TabIndex = 1;
             // 
-            // digitalGauge3
+            // cntGandom
             // 
-            this.digitalGauge3.AppearanceOff.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#0FFF5000");
-            this.digitalGauge3.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#FF5000");
-            this.digitalGauge3.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
+            this.cntGandom.AppearanceOff.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#0FFF5000");
+            this.cntGandom.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#FF5000");
+            this.cntGandom.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
             this.digitalBackgroundLayerComponent3});
-            this.digitalGauge3.Bounds = new System.Drawing.Rectangle(6, 6, 255, 112);
-            this.digitalGauge3.DigitCount = 5;
-            this.digitalGauge3.Name = "digitalGauge3";
-            this.digitalGauge3.RightToLeft = true;
-            this.digitalGauge3.Text = "00,000";
+            this.cntGandom.Bounds = new System.Drawing.Rectangle(6, 6, 255, 112);
+            this.cntGandom.DigitCount = 4;
+            this.cntGandom.Name = "cntGandom";
+            this.cntGandom.RightToLeft = true;
+            this.cntGandom.Text = "0000";
             // 
             // digitalBackgroundLayerComponent3
             // 
-            this.digitalBackgroundLayerComponent3.BottomRight = new DevExpress.XtraGauges.Core.Base.PointF2D(259.8125F, 99.9625F);
+            this.digitalBackgroundLayerComponent3.BottomRight = new DevExpress.XtraGauges.Core.Base.PointF2D(211.85F, 99.9625F);
             this.digitalBackgroundLayerComponent3.Name = "bg1";
             this.digitalBackgroundLayerComponent3.ShapeType = DevExpress.XtraGauges.Core.Model.DigitalBackgroundShapeSetType.Style3;
             this.digitalBackgroundLayerComponent3.TopLeft = new DevExpress.XtraGauges.Core.Base.PointF2D(20F, 0F);
@@ -411,27 +413,27 @@
             // 
             this.gaugeControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gaugeControl2.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
-            this.digitalGauge2});
+            this.cntFalah});
             this.gaugeControl2.Location = new System.Drawing.Point(283, 12);
             this.gaugeControl2.Name = "gaugeControl2";
             this.gaugeControl2.Size = new System.Drawing.Size(267, 124);
             this.gaugeControl2.TabIndex = 1;
             // 
-            // digitalGauge2
+            // cntFalah
             // 
-            this.digitalGauge2.AppearanceOff.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#0FFF5000");
-            this.digitalGauge2.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#FF5000");
-            this.digitalGauge2.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
+            this.cntFalah.AppearanceOff.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#0FFF5000");
+            this.cntFalah.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#FF5000");
+            this.cntFalah.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
             this.digitalBackgroundLayerComponent2});
-            this.digitalGauge2.Bounds = new System.Drawing.Rectangle(6, 6, 255, 112);
-            this.digitalGauge2.DigitCount = 5;
-            this.digitalGauge2.Name = "digitalGauge2";
-            this.digitalGauge2.RightToLeft = true;
-            this.digitalGauge2.Text = "00,000";
+            this.cntFalah.Bounds = new System.Drawing.Rectangle(6, 6, 255, 112);
+            this.cntFalah.DigitCount = 4;
+            this.cntFalah.Name = "cntFalah";
+            this.cntFalah.RightToLeft = true;
+            this.cntFalah.Text = "0000";
             // 
             // digitalBackgroundLayerComponent2
             // 
-            this.digitalBackgroundLayerComponent2.BottomRight = new DevExpress.XtraGauges.Core.Base.PointF2D(259.8125F, 99.9625F);
+            this.digitalBackgroundLayerComponent2.BottomRight = new DevExpress.XtraGauges.Core.Base.PointF2D(211.85F, 99.9625F);
             this.digitalBackgroundLayerComponent2.Name = "bg1";
             this.digitalBackgroundLayerComponent2.ShapeType = DevExpress.XtraGauges.Core.Model.DigitalBackgroundShapeSetType.Style3;
             this.digitalBackgroundLayerComponent2.TopLeft = new DevExpress.XtraGauges.Core.Base.PointF2D(20F, 0F);
@@ -442,27 +444,27 @@
             this.gaugeControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gaugeControl1.ColorScheme.Color = System.Drawing.Color.Transparent;
             this.gaugeControl1.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
-            this.digitalGauge1});
+            this.cntPacket});
             this.gaugeControl1.Location = new System.Drawing.Point(825, 12);
             this.gaugeControl1.Name = "gaugeControl1";
             this.gaugeControl1.Size = new System.Drawing.Size(269, 124);
             this.gaugeControl1.TabIndex = 1;
             // 
-            // digitalGauge1
+            // cntPacket
             // 
-            this.digitalGauge1.AppearanceOff.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#0FFF5000");
-            this.digitalGauge1.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#FF5000");
-            this.digitalGauge1.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
+            this.cntPacket.AppearanceOff.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#0FFF5000");
+            this.cntPacket.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#FF5000");
+            this.cntPacket.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
             this.digitalBackgroundLayerComponent1});
-            this.digitalGauge1.Bounds = new System.Drawing.Rectangle(6, 6, 257, 112);
-            this.digitalGauge1.DigitCount = 5;
-            this.digitalGauge1.Name = "digitalGauge1";
-            this.digitalGauge1.RightToLeft = true;
-            this.digitalGauge1.Text = "152";
+            this.cntPacket.Bounds = new System.Drawing.Rectangle(6, 6, 257, 112);
+            this.cntPacket.DigitCount = 4;
+            this.cntPacket.Name = "cntPacket";
+            this.cntPacket.RightToLeft = true;
+            this.cntPacket.Text = "0000";
             // 
             // digitalBackgroundLayerComponent1
             // 
-            this.digitalBackgroundLayerComponent1.BottomRight = new DevExpress.XtraGauges.Core.Base.PointF2D(259.8125F, 99.9625F);
+            this.digitalBackgroundLayerComponent1.BottomRight = new DevExpress.XtraGauges.Core.Base.PointF2D(211.85F, 99.9625F);
             this.digitalBackgroundLayerComponent1.Name = "bg1";
             this.digitalBackgroundLayerComponent1.ShapeType = DevExpress.XtraGauges.Core.Model.DigitalBackgroundShapeSetType.Style3;
             this.digitalBackgroundLayerComponent1.TopLeft = new DevExpress.XtraGauges.Core.Base.PointF2D(20F, 0F);
@@ -522,6 +524,11 @@
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
+            // timerCounter
+            // 
+            this.timerCounter.Interval = 1000;
+            this.timerCounter.Tick += new System.EventHandler(this.timerCounter_Tick);
+            // 
             // FrmFishPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -531,6 +538,7 @@
             this.Name = "FrmFishPanel";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "FrmFishPanel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmFishPanel_FormClosing);
             this.Load += new System.EventHandler(this.FrmFishPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
@@ -538,7 +546,7 @@
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).EndInit();
             this.layoutControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.digitalGauge5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cntTotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
@@ -553,13 +561,13 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.digitalGauge4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cntClinker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digitalGauge3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cntGandom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digitalGauge2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cntFalah)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digitalGauge1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cntPacket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
@@ -576,16 +584,15 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraGauges.Win.GaugeControl gaugeControl1;
-        private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge digitalGauge1;
         private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent digitalBackgroundLayerComponent1;
         private DevExpress.XtraGauges.Win.GaugeControl gaugeControl2;
-        private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge digitalGauge2;
+        private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge cntFalah;
         private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent digitalBackgroundLayerComponent2;
         private DevExpress.XtraGauges.Win.GaugeControl gaugeControl3;
-        private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge digitalGauge3;
+        private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge cntGandom;
         private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent digitalBackgroundLayerComponent3;
         private DevExpress.XtraGauges.Win.GaugeControl gaugeControl4;
-        private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge digitalGauge4;
+        private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge cntClinker;
         private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent digitalBackgroundLayerComponent4;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
@@ -605,9 +612,11 @@
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraLayout.LayoutControl layoutControl3;
         private DevExpress.XtraGauges.Win.GaugeControl gaugeControl5;
-        private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge digitalGauge5;
+        private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge cntTotal;
         private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent digitalBackgroundLayerComponent5;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge cntPacket;
+        private System.Windows.Forms.Timer timerCounter;
     }
 }

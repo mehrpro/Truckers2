@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmQueueList));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -105,6 +107,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.simpleButton1);
             this.panelControl1.Controls.Add(this.labelControl9);
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.labelControl8);
@@ -135,11 +138,24 @@
             this.panelControl1.Size = new System.Drawing.Size(1004, 177);
             this.panelControl1.TabIndex = 1;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(10, 116);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(126, 44);
+            this.simpleButton1.TabIndex = 2;
+            this.simpleButton1.Text = "گزارش";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // labelControl9
             // 
             this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl9.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl9.Location = new System.Drawing.Point(176, 57);
+            this.labelControl9.Location = new System.Drawing.Point(315, 57);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(50, 24);
             this.labelControl9.TabIndex = 1;
@@ -149,7 +165,7 @@
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl3.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl3.Location = new System.Drawing.Point(426, 57);
+            this.labelControl3.Location = new System.Drawing.Point(520, 57);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(20, 24);
             this.labelControl3.TabIndex = 1;
@@ -159,7 +175,7 @@
             // 
             this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl8.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl8.Location = new System.Drawing.Point(176, 93);
+            this.labelControl8.Location = new System.Drawing.Point(315, 93);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(49, 24);
             this.labelControl8.TabIndex = 1;
@@ -169,7 +185,7 @@
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl1.Location = new System.Drawing.Point(426, 129);
+            this.labelControl1.Location = new System.Drawing.Point(520, 129);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(38, 24);
             this.labelControl1.TabIndex = 1;
@@ -179,7 +195,7 @@
             // 
             this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl5.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl5.Location = new System.Drawing.Point(426, 93);
+            this.labelControl5.Location = new System.Drawing.Point(520, 93);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(28, 24);
             this.labelControl5.TabIndex = 1;
@@ -189,7 +205,7 @@
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl7.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl7.Location = new System.Drawing.Point(176, 21);
+            this.labelControl7.Location = new System.Drawing.Point(315, 21);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(31, 24);
             this.labelControl7.TabIndex = 1;
@@ -199,7 +215,7 @@
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl4.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl4.Location = new System.Drawing.Point(426, 21);
+            this.labelControl4.Location = new System.Drawing.Point(520, 21);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(29, 24);
             this.labelControl4.TabIndex = 1;
@@ -219,7 +235,7 @@
             // 
             this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl6.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl6.Location = new System.Drawing.Point(663, 21);
+            this.labelControl6.Location = new System.Drawing.Point(707, 21);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(31, 24);
             this.labelControl6.TabIndex = 1;
@@ -239,7 +255,7 @@
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl2.Location = new System.Drawing.Point(663, 57);
+            this.labelControl2.Location = new System.Drawing.Point(707, 57);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(62, 24);
             this.labelControl2.TabIndex = 1;
@@ -249,7 +265,7 @@
             // 
             this.labelControl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl10.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl10.Location = new System.Drawing.Point(663, 93);
+            this.labelControl10.Location = new System.Drawing.Point(707, 93);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(38, 24);
             this.labelControl10.TabIndex = 1;
@@ -259,7 +275,7 @@
             // 
             this.txtOther.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtOther.EditValue = "352";
-            this.txtOther.Location = new System.Drawing.Point(70, 90);
+            this.txtOther.Location = new System.Drawing.Point(209, 90);
             this.txtOther.Name = "txtOther";
             this.txtOther.Parmida_ActivePlusMultiKeys = false;
             this.txtOther.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -278,7 +294,7 @@
             // 
             this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTotal.EditValue = "352";
-            this.txtTotal.Location = new System.Drawing.Point(557, 90);
+            this.txtTotal.Location = new System.Drawing.Point(601, 90);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Parmida_ActivePlusMultiKeys = false;
             this.txtTotal.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -297,7 +313,7 @@
             // 
             this.txtClinker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtClinker.EditValue = "352";
-            this.txtClinker.Location = new System.Drawing.Point(320, 126);
+            this.txtClinker.Location = new System.Drawing.Point(414, 126);
             this.txtClinker.Name = "txtClinker";
             this.txtClinker.Parmida_ActivePlusMultiKeys = false;
             this.txtClinker.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -316,7 +332,7 @@
             // 
             this.txtGandom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGandom.EditValue = "352";
-            this.txtGandom.Location = new System.Drawing.Point(320, 90);
+            this.txtGandom.Location = new System.Drawing.Point(414, 90);
             this.txtGandom.Name = "txtGandom";
             this.txtGandom.Parmida_ActivePlusMultiKeys = false;
             this.txtGandom.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -335,7 +351,7 @@
             // 
             this.txtNoMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNoMember.EditValue = "352";
-            this.txtNoMember.Location = new System.Drawing.Point(70, 54);
+            this.txtNoMember.Location = new System.Drawing.Point(209, 54);
             this.txtNoMember.Name = "txtNoMember";
             this.txtNoMember.Parmida_ActivePlusMultiKeys = false;
             this.txtNoMember.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -373,7 +389,7 @@
             // 
             this.txtOld.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtOld.EditValue = "352";
-            this.txtOld.Location = new System.Drawing.Point(557, 54);
+            this.txtOld.Location = new System.Drawing.Point(601, 54);
             this.txtOld.Name = "txtOld";
             this.txtOld.Parmida_ActivePlusMultiKeys = false;
             this.txtOld.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -411,7 +427,7 @@
             // 
             this.txtFalaeh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFalaeh.EditValue = "352";
-            this.txtFalaeh.Location = new System.Drawing.Point(320, 54);
+            this.txtFalaeh.Location = new System.Drawing.Point(414, 54);
             this.txtFalaeh.Name = "txtFalaeh";
             this.txtFalaeh.Parmida_ActivePlusMultiKeys = false;
             this.txtFalaeh.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -430,7 +446,7 @@
             // 
             this.txtNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNew.EditValue = "352";
-            this.txtNew.Location = new System.Drawing.Point(557, 18);
+            this.txtNew.Location = new System.Drawing.Point(601, 18);
             this.txtNew.Name = "txtNew";
             this.txtNew.Parmida_ActivePlusMultiKeys = false;
             this.txtNew.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -449,7 +465,7 @@
             // 
             this.txtMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMember.EditValue = "352";
-            this.txtMember.Location = new System.Drawing.Point(70, 18);
+            this.txtMember.Location = new System.Drawing.Point(209, 18);
             this.txtMember.Name = "txtMember";
             this.txtMember.Parmida_ActivePlusMultiKeys = false;
             this.txtMember.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -468,7 +484,7 @@
             // 
             this.txtPacket.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPacket.EditValue = "352";
-            this.txtPacket.Location = new System.Drawing.Point(320, 18);
+            this.txtPacket.Location = new System.Drawing.Point(414, 18);
             this.txtPacket.Name = "txtPacket";
             this.txtPacket.Parmida_ActivePlusMultiKeys = false;
             this.txtPacket.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -625,7 +641,6 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsFind.AlwaysVisible = true;
-            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colDateTimeRegister, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
@@ -695,7 +710,7 @@
             // 
             this.colComosiunID_FK.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.colComosiunID_FK.Caption = "کمیسیون";
-            this.colComosiunID_FK.FieldName = "Commission.Commission1";
+            this.colComosiunID_FK.FieldName = "Commission.CommissionPrice";
             this.colComosiunID_FK.Name = "colComosiunID_FK";
             this.colComosiunID_FK.Visible = true;
             this.colComosiunID_FK.VisibleIndex = 6;
@@ -704,7 +719,7 @@
             // 
             this.colDriver1.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.colDriver1.Caption = "عضویت";
-            this.colDriver1.FieldName = "Driver.Membership";
+            this.colDriver1.FieldName = "Driver.LoadType.Type";
             this.colDriver1.Name = "colDriver1";
             this.colDriver1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Driver.Membership", "تعداد اعضاء={0:0.##}")});
@@ -803,5 +818,6 @@
         private DevExpress.XtraEditors.TextEdit txtPacket;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtClinker;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

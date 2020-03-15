@@ -7,7 +7,7 @@ using DevExpress.XtraEditors;
 
 namespace TruckerApp.UserForm
 {
-    public partial class FrmRevFish : Form
+    public partial class FrmRevFish : XtraForm
     {
         public FrmRevFish()
         {
@@ -73,6 +73,11 @@ namespace TruckerApp.UserForm
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void FrmRevFish_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

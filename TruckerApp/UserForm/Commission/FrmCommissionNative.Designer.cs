@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCommissionNative));
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
@@ -39,6 +39,7 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAdd2 = new DevExpress.XtraEditors.SimpleButton();
             this.txtComosin2 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -48,13 +49,12 @@
             this.colCommission1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colenabled = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGroups = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAdd1 = new DevExpress.XtraEditors.SimpleButton();
             this.txtComosin1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.dxValidationProvider2 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
@@ -277,6 +277,13 @@
             this.gridColumn7.FieldName = "Groups";
             this.gridColumn7.Name = "gridColumn7";
             // 
+            // gridColumn2
+            // 
+            this.gridColumn2.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.gridColumn2.Caption = "ID";
+            this.gridColumn2.FieldName = "ID";
+            this.gridColumn2.Name = "gridColumn2";
+            // 
             // btnAdd2
             // 
             this.btnAdd2.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd2.Image")));
@@ -300,9 +307,9 @@
             this.txtComosin2.Properties.MaxLength = 6;
             this.txtComosin2.Size = new System.Drawing.Size(181, 30);
             this.txtComosin2.TabIndex = 0;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            this.dxValidationProvider2.SetValidationRule(this.txtComosin2, conditionValidationRule3);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dxValidationProvider2.SetValidationRule(this.txtComosin2, conditionValidationRule1);
             // 
             // labelControl3
             // 
@@ -506,6 +513,13 @@
             this.colGroups.FieldName = "Groups";
             this.colGroups.Name = "colGroups";
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.gridColumn1.Caption = "ID";
+            this.gridColumn1.FieldName = "ID";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
             // btnAdd1
             // 
             this.btnAdd1.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd1.Image")));
@@ -529,9 +543,9 @@
             this.txtComosin1.Properties.MaxLength = 6;
             this.txtComosin1.Size = new System.Drawing.Size(179, 30);
             this.txtComosin1.TabIndex = 0;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.txtComosin1, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtComosin1, conditionValidationRule2);
             // 
             // labelControl1
             // 
@@ -543,27 +557,13 @@
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "نرخ";
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.gridColumn1.Caption = "ID";
-            this.gridColumn1.FieldName = "ID";
-            this.gridColumn1.Name = "gridColumn1";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.gridColumn2.Caption = "ID";
-            this.gridColumn2.FieldName = "ID";
-            this.gridColumn2.Name = "gridColumn2";
-            // 
             // FrmCommissionNative
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(597, 444);
             this.Controls.Add(this.groupControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmCommissionNative";
