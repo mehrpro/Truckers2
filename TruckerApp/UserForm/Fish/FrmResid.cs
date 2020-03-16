@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Linq;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace TruckerApp.UserForm.Fish
 {
@@ -10,44 +11,75 @@ namespace TruckerApp.UserForm.Fish
         public FrmResid()
         {
             InitializeComponent();
-            cbxSerialList();
-
+      
         }
 
-        private TruckersEntities db;
-        private BindingList<NumberList> ds;
+        private TruckersEntities db = new TruckersEntities();
+        private BindingList<NumberList> dsAccept;
         private BindingList<NumberList> dsList;
-        private void cbxSerialList()
+
+        private void ListResied()
         {
-            db = new TruckersEntities();
-            var qry = db.SeriesPrices.Where(x => x.closing == null ).ToList();
-            cbxSerial.Properties.DataSource = qry;
-            cbxSerial.Properties.DisplayMember = "SeriesName";
-            cbxSerial.Properties.ValueMember = "SereisID";
+            dsAccept = new BindingList<NumberList>();
+            dsList = new BindingList<NumberList>();
+            var qry = db.Queues.Where(x => x.Status_FK == 20).ToList();
+            if (qry.Count > 0)
+            {
+                foreach (var itemQueue in qry)
+                {
+                    var id = itemQueue.ID;
+                    var name = $"{itemQueue.Driver.FirstName} {itemQueue.Driver.LastName}";
+                    var tag = $"{itemQueue.Driver.TagNumber}";
+                    var date = itemQueue.DateTimeRegister;
+                    dsList.Add(new NumberList(id,itemQueue.SeriesPrice.SeriesName, itemQueue.Number, name, tag, date));
+                }
+                gridControlTop.DataSource = dsList.ToList();
+                gridControlBotten.DataSource = dsAccept.ToList();
+            }
         }
 
-        private void cbxSerial_EditValueChanged(object sender, EventArgs e)
+        private void btnDeleteRow_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            ds = new BindingList<NumberList>();
-            dsList= new BindingList<NumberList>();
-            var qry = db.Queues.Where(x => x.Status_FK == 20).ToList();
-            foreach (Queue itemQueue in qry)
+            if (gridView1.GetFocusedRowCellValue("Serial") == null)
             {
-                var id = itemQueue.ID;
-                var fullname =
-                    $"{itemQueue.Number} {itemQueue.Driver.FirstName} {itemQueue.Driver.LastName} {itemQueue.Driver.TagNumber}";
-                var name = $"{itemQueue.Driver.FirstName} {itemQueue.Driver.LastName}";
-                var tag = $"{itemQueue.Driver.TagNumber}";
-                var date = itemQueue.DateTimeRegister;
-                ds.Add(new NumberList(id,fullname));
-                dsList.Add(new NumberList(itemQueue.SeriesPrice.SeriesName,itemQueue.Number,name,tag,date));
-                
-            }
 
-            gridControl1.DataSource = dsList.ToList();
-            cbxListNumber.Properties.DataSource = ds.ToList();
-            cbxListNumber.Properties.DisplayMember = "Name";
-            cbxListNumber.Properties.ValueMember = "Id";
+            }
+            else
+            {
+                var sel = gridView1.GetFocusedRow();
+                var id = (NumberList) sel;
+                dsList.Remove(id);
+                dsAccept.Add(id);
+                gridControlTop.DataSource = dsList.ToList();
+                gridControlBotten.DataSource = dsAccept.ToList();
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            ListResied();
+        }
+
+        private void repositoryItemButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (gridView2.GetFocusedRowCellValue("Serial") == null)
+            {
+
+            }
+            else
+            {
+                var sel = gridView2.GetFocusedRow();
+                var id = (NumberList)sel;
+                dsAccept.Remove(id);
+                dsList.Add(id);
+                gridControlTop.DataSource = dsList.ToList();
+                gridControlBotten.DataSource = dsAccept.ToList();
+            }
         }
     }
 
@@ -57,19 +89,12 @@ namespace TruckerApp.UserForm.Fish
         public short Number { get; }
         public string Tag { get; }
         public DateTime Date { get; }
-        public int Id { get; }
+        public int ID { get; }
         public string Name { get; }
-
-
-        public NumberList(int id,string name )
+        
+        public NumberList(int id, int serial,short number,string name,string tag,DateTime date)
         {
-            Id = id;
-            Name = name;
-        }
-
-        /// <inheritdoc />
-        public NumberList(int serial,short number,string name,string tag,DateTime date)
-        {
+            ID = id;
             Serial = serial;
             Number = number;
             Tag = tag;

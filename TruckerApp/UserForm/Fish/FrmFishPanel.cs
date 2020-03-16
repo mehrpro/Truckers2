@@ -22,54 +22,54 @@ namespace TruckerApp
 
         private void btnSimanFaleh_Click(object sender, EventArgs e)
         {
-            var frmSpring = new FrmFishPrint()
+            var newForm = new FrmFishPrint()
             {
                 _typeID = 1,
                 FormBorderStyle = FormBorderStyle.None,
                 StartPosition = FormStartPosition.CenterScreen,
             };
-            frmSpring.ShowDialog();
+            newForm.ShowDialog();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            var frmSpring = new FrmFishPrint()
+            var newForm = new FrmFishPrint()
             {
                 _typeID = 2,
                 FormBorderStyle = FormBorderStyle.None,
                 StartPosition = FormStartPosition.CenterScreen,
             };
-            frmSpring.ShowDialog();
+            newForm.ShowDialog();
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            var frmSpring = new FrmFishPrint()
+            var newForm = new FrmFishPrint()
             {
                 _typeID = 4,
                 FormBorderStyle = FormBorderStyle.None,
                 StartPosition = FormStartPosition.CenterScreen,
             };
-            frmSpring.ShowDialog();
+            newForm.ShowDialog();
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            var frmSpring = new FrmFishPrint()
+            var newForm = new FrmFishPrint()
             {
                 _typeID = 3,
                 FormBorderStyle = FormBorderStyle.None,
                 StartPosition = FormStartPosition.CenterScreen,
             };
-            frmSpring.ShowDialog();
+            newForm.ShowDialog();
         }
 
         private void timerCounter_Tick(object sender, EventArgs e)
         {
-            cntPacket.Text = counter.Packet().ToString("0000");
-            cntClinker.Text = counter.Clinker().ToString("0000");
-            cntFalah.Text = counter.Faleh().ToString("0000");
-            cntGandom.Text = counter.Gandom().ToString("0000");
+            cntPacket.Text = counter.packet().ToString("0000");
+            cntClinker.Text = counter.clinker().ToString("0000");
+            cntFalah.Text = counter.faleh().ToString("0000");
+            cntGandom.Text = counter.gandom().ToString("0000");
         }
 
         private void FrmFishPanel_FormClosing(object sender, FormClosingEventArgs e)

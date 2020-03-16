@@ -199,16 +199,9 @@ namespace TruckerApp.UserForm
 
         private void LastNumber()
         {
-            var dbPrinter = new TruckersEntities();
-            int qryNumber = dbPrinter.Queues.Where(x => x.SeriesID_FK == _series).Max(x=> x.Number);
-            if (qryNumber == null)
-            {
-                txtNumber.Text = @"001";
-            }
-            else
-            {
+            int qryNumber = new Counter().lastNumber(PublicVar.SeriesID);
                 txtNumber.Text = (qryNumber + 1).ToString("000");
-            }
+            
         }
     }
 }

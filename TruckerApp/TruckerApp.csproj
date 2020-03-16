@@ -235,7 +235,6 @@
     <Compile Include="UserForm\Reporting\FrmPrintList.Designer.cs">
       <DependentUpon>FrmPrintList.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserForm\SersID.cs" />
     <Compile Include="XRDesignRibbonControllerResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

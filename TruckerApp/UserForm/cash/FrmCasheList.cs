@@ -21,13 +21,13 @@ namespace TruckerApp.UserForm
             db = new TruckersEntities();
             db.Cashes.Load();
             cashesBindingSource.DataSource =  db.Cashes.Where((x => x.seriesID_FK == PublicVar.SeriesID)).ToList();
-            txtFalaeh.Text = counter.Faleh().ToString();
-            txtPacket.Text = counter.Packet().ToString();
-            txtGandom.Text = counter.Gandom().ToString();
-            txtClinker.Text = counter.Clinker().ToString();
-            txtMember.Text = counter.Member().ToString();
+            txtFalaeh.Text = counter.faleh().ToString();
+            txtPacket.Text = counter.packet().ToString();
+            txtGandom.Text = counter.gandom().ToString();
+            txtClinker.Text = counter.clinker().ToString();
+            txtMember.Text = counter.member().ToString();
             txtNoMember.Text = counter.noMember().ToString();
-            txtOther.Text = counter.Other().ToString();
+            txtOther.Text = counter.other().ToString();
 
             txtSerial.Text = PublicVar.SeriesName.ToString();
             txtDate.Text = $"{PublicVar.DateSerial:yyyy/MM/dd}";
