@@ -78,10 +78,10 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 245);
+            this.gridControl1.Location = new System.Drawing.Point(2, 197);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(942, 406);
+            this.gridControl1.Size = new System.Drawing.Size(942, 454);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -346,7 +346,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(2, 55);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(942, 190);
+            this.panelControl1.Size = new System.Drawing.Size(942, 142);
             this.panelControl1.TabIndex = 0;
             // 
             // btnAllPrint
@@ -355,7 +355,7 @@
             this.btnAllPrint.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnAllPrint.Appearance.Options.UseFont = true;
             this.btnAllPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnAllPrint.Image")));
-            this.btnAllPrint.Location = new System.Drawing.Point(29, 122);
+            this.btnAllPrint.Location = new System.Drawing.Point(39, 75);
             this.btnAllPrint.Name = "btnAllPrint";
             this.btnAllPrint.Size = new System.Drawing.Size(151, 53);
             this.btnAllPrint.TabIndex = 7;
@@ -365,7 +365,7 @@
             // txtTotal
             // 
             this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTotal.Location = new System.Drawing.Point(393, 106);
+            this.txtTotal.Location = new System.Drawing.Point(680, 101);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Parmida_ActivePlusMultiKeys = false;
             this.txtTotal.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -388,7 +388,7 @@
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl7.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl7.Location = new System.Drawing.Point(558, 109);
+            this.labelControl7.Location = new System.Drawing.Point(845, 104);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(38, 24);
             this.labelControl7.TabIndex = 6;
@@ -400,7 +400,7 @@
             this.simpleButton9.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.simpleButton9.Appearance.Options.UseFont = true;
             this.simpleButton9.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton9.Image")));
-            this.simpleButton9.Location = new System.Drawing.Point(29, 63);
+            this.simpleButton9.Location = new System.Drawing.Point(196, 75);
             this.simpleButton9.Name = "simpleButton9";
             this.simpleButton9.Size = new System.Drawing.Size(151, 53);
             this.simpleButton9.TabIndex = 7;
@@ -411,7 +411,7 @@
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl2.Location = new System.Drawing.Point(558, 73);
+            this.labelControl2.Location = new System.Drawing.Point(845, 68);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(73, 24);
             this.labelControl2.TabIndex = 6;
@@ -421,7 +421,7 @@
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl1.Location = new System.Drawing.Point(558, 37);
+            this.labelControl1.Location = new System.Drawing.Point(845, 32);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(68, 24);
             this.labelControl1.TabIndex = 6;
@@ -430,7 +430,7 @@
             // txtNew
             // 
             this.txtNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNew.Location = new System.Drawing.Point(393, 70);
+            this.txtNew.Location = new System.Drawing.Point(680, 65);
             this.txtNew.Name = "txtNew";
             this.txtNew.Parmida_ActivePlusMultiKeys = false;
             this.txtNew.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -452,7 +452,7 @@
             // txtLast
             // 
             this.txtLast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLast.Location = new System.Drawing.Point(393, 34);
+            this.txtLast.Location = new System.Drawing.Point(680, 29);
             this.txtLast.Name = "txtLast";
             this.txtLast.Parmida_ActivePlusMultiKeys = false;
             this.txtLast.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -475,7 +475,7 @@
             // 
             this.chkLastFish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkLastFish.EditValue = true;
-            this.chkLastFish.Location = new System.Drawing.Point(223, 32);
+            this.chkLastFish.Location = new System.Drawing.Point(510, 27);
             this.chkLastFish.Name = "chkLastFish";
             this.chkLastFish.Parmida_ActivePlusMultiKeys = false;
             this.chkLastFish.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 11F);

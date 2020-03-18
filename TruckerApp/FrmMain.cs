@@ -28,7 +28,7 @@ namespace TruckerApp
                 c.Close();
             }
 
-            var newForm = new FrmMembershipList
+            var newForm = new FrmMembershipList(true)
             {
                 FormBorderStyle = FormBorderStyle.None,
                 MdiParent = this,
@@ -217,7 +217,7 @@ namespace TruckerApp
             }
             var newForm = new FrmPrintList()
             {
-                TypeID = 1,
+                TypeId = 1,
                 FormBorderStyle = FormBorderStyle.None,
                 MdiParent = this,
                 StartPosition = FormStartPosition.CenterParent,
@@ -234,7 +234,7 @@ namespace TruckerApp
             }
             var newForm = new FrmPrintList()
             {
-                TypeID = 2,
+                TypeId = 2,
                 FormBorderStyle = FormBorderStyle.None,
                 MdiParent = this,
                 StartPosition = FormStartPosition.CenterParent,
@@ -251,7 +251,7 @@ namespace TruckerApp
             }
             var newForm = new FrmPrintList()
             {
-                TypeID = 3,
+                TypeId = 3,
                 FormBorderStyle = FormBorderStyle.None,
                 MdiParent = this,
                 StartPosition = FormStartPosition.CenterParent,
@@ -268,7 +268,7 @@ namespace TruckerApp
             }
             var newForm = new FrmPrintList()
             {
-                TypeID = 4,
+                TypeId = 4,
                 FormBorderStyle = FormBorderStyle.None,
                 MdiParent = this,
                 StartPosition = FormStartPosition.CenterParent,
@@ -284,6 +284,23 @@ namespace TruckerApp
                 c.Close();
             }
             var newForm = new FrmResid()
+            {
+                FormBorderStyle = FormBorderStyle.None,
+                MdiParent = this,
+                StartPosition = FormStartPosition.CenterParent,
+                Dock = DockStyle.Fill
+            };
+            newForm.Show();
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (var c in this.MdiChildren)
+            {
+                c.Close();
+            }
+
+            var newForm = new FrmMembershipList(false)
             {
                 FormBorderStyle = FormBorderStyle.None,
                 MdiParent = this,

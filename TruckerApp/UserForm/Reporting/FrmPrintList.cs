@@ -16,34 +16,18 @@ namespace TruckerApp
         }
         TruckersEntities db = new TruckersEntities();
         private BindingList<ReportList> ds;
-        private int _seriesid;
-        public int TypeID { get; set; }
+        public int TypeId { get; set; }
         private void FrmPrintList_Load(object sender, EventArgs e)
         {
-            //cbxList();
-            _seriesid = PublicVar.SeriesID;
-            grid(_seriesid);
+           
+            grid(PublicVar.SeriesID);
         }
 
-        //private void cbxList()
-        //{
-        //    List<SeriesPrice> series;
-        //    series = db.SeriesPrices.Where(x => x.closing == null && x.enabeled == true).ToList();
-        //    cbxSerial.Properties.DataSource = series;
-        //    cbxSerial.Properties.DisplayMember = "SeriesName";
-        //    cbxSerial.Properties.ValueMember = "SereisID";
-        //}
-
-        private void cbxSerial_EditValueChanged(object sender, EventArgs e)
-        {
-            
-        }
         private void grid(int seriesId)
         {
             ds = new BindingList<ReportList>();
-            var QueryAll = db.Queues.Where(x => x.Status_FK == 20 && x.Type_FK == TypeID).ToList().OrderBy(x => x.ID);
+            var QueryAll = db.Queues.Where(x => x.Status_FK == 20 && x.Type_FK == TypeId).ToList().OrderBy(x => x.ID);
             var QuerySeriesOnly = QueryAll.Where(x => x.SeriesID_FK == seriesId).ToList().OrderBy(x => x.ID);
-
             txtTotal.Text = QueryAll.Count().ToString();
             txtNew.Text = QuerySeriesOnly.Count().ToString();
             txtLast.Text = QueryAll.Count(x => x.SeriesID_FK != seriesId).ToString();
@@ -83,7 +67,6 @@ namespace TruckerApp
 
         private void btnAllPrint_Click(object sender, EventArgs e)
         {
-
             var ps = new PrintingSystem();
             var link = new PrintableComponentLink(ps);
             link.Component = gridControl1;
@@ -94,43 +77,11 @@ namespace TruckerApp
             link.PaperKind = PaperKind.A4;
             link.Landscape = false;
             link.CreateDocument();
-            // Show the report.  
-            //link.PrintingSystem.PreviewRibbonFormEx.Ribbon.ApplicationIcon = BackLinkCheck.Properties.Resources.RibbonIco;  
             link.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
-
-
         }
-        //private void ShowGridPreview(GridControl grid)
-        //{
-        //    // Check whether the GridControl can be previewed. 
-        //    if (!grid.IsPrintingAvailable)
-        //    {
-        //        MessageBox.Show("The 'DevExpress.XtraPrinting' library is not found", "Error");
-        //        return;
-        //    }
-
-        //    // Open the Preview window. 
-
-        //    grid.ShowPrintPreview();
-        //}
-
-        //private void PrintGrid(GridControl grid)
-        //{
-        //    // Check whether the GridControl can be printed. 
-        //    if (!grid.IsPrintingAvailable)
-        //    {
-        //        MessageBox.Show("The 'DevExpress.XtraPrinting' library is not found", "Error");
-        //        return;
-        //    }
-
-        //    // Print. 
-        //    grid.Print();
-        //}
-
         private void chkLastFish_Toggled(object sender, EventArgs e)
         {
-            
-            grid(_seriesid);
+            grid(PublicVar.SeriesID);
         }
 
         private void simpleButton9_Click(object sender, EventArgs e)
@@ -145,9 +96,6 @@ namespace TruckerApp
             link.PaperKind = PaperKind.A4;
             link.Landscape = false;
             link.CreateDocument();
-            // Show the report.  
-            //link.PrintingSystem.PreviewRibbonFormEx.Ribbon.ApplicationIcon = BackLinkCheck.Properties.Resources.RibbonIco;  
-           // link.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
             link.PrintDlg();
         }
     }

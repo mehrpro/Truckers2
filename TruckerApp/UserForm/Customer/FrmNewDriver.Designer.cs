@@ -277,7 +277,7 @@
             // radComosiun
             // 
             this.radComosiun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radComosiun.EditValue = ((byte)(1));
+            this.radComosiun.EditValue = ((byte)(30));
             this.radComosiun.Location = new System.Drawing.Point(134, 255);
             this.radComosiun.Name = "radComosiun";
             this.radComosiun.Parmida_ActivePlusMultiKeys = false;

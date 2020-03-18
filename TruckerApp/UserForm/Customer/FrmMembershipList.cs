@@ -5,13 +5,16 @@ namespace TruckerApp.UserForm
 {
     public partial class FrmMembershipList : XtraForm
     {
-        public FrmMembershipList()
+        public bool Member { get; set; }
+
+        public FrmMembershipList(bool member)
         {
+            Member = member;
             InitializeComponent();
         }
         private void FrmMembershipList_Load(object sender, EventArgs e)
         {
-            driversBindingSource.DataSource = new BindingList().DriversMembers();
+            driversBindingSource.DataSource = Member ? new BindingList().DriversMembers() : new BindingList().DriversList();
         }
     }
 }

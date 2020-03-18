@@ -134,12 +134,12 @@
             // 
             // barButtonItem2
             // 
-            this.barButtonItem2.Caption = "ویرایش";
-            this.barButtonItem2.Enabled = false;
+            this.barButtonItem2.Caption = "رانندگان";
             this.barButtonItem2.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.Glyph")));
             this.barButtonItem2.Id = 2;
             this.barButtonItem2.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.LargeGlyph")));
             this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // btnMemberShipList
             // 

@@ -14,6 +14,7 @@ namespace TruckerApp
         public int member() => db.Queues.Count(x => x.GroupCommission == 30 && x.SeriesID_FK == PublicVar.SeriesID);
         public int noMember() => db.Queues.Count(x => x.GroupCommission == 31 && x.SeriesID_FK == PublicVar.SeriesID);
         public int other()=> db.Queues.Count(x => x.GroupCommission == 32 && x.SeriesID_FK == PublicVar.SeriesID);
+        
 
         public int lastNumber(int seriesID)
         {
@@ -39,8 +40,12 @@ namespace TruckerApp
                 series.SeriesDateStart = DateTime.Now;
                 series.userCreator = PublicVar.UserID;
                 series.enabeled = true;
+                series.closing = false;
                 db.SeriesPrices.Add(series);
                 db.SaveChanges();
+                PublicVar.SeriesID = series.SereisID;
+                PublicVar.SeriesName = series.SeriesName;
+                PublicVar.DateSerial = series.SeriesDateStart;
             }
 
 

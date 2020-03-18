@@ -33,9 +33,10 @@ namespace TruckerApp.UserForm.Fish
                     var date = itemQueue.DateTimeRegister;
                     dsList.Add(new NumberList(id,itemQueue.SeriesPrice.SeriesName, itemQueue.Number, name, tag, date));
                 }
-                gridControlTop.DataSource = dsList.ToList();
-                gridControlBotten.DataSource = dsAccept.ToList();
+   
             }
+            gridControlTop.DataSource = dsList.ToList();
+            gridControlBotten.DataSource = dsAccept.ToList();
         }
 
         private void btnDeleteRow_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -80,6 +81,17 @@ namespace TruckerApp.UserForm.Fish
                 gridControlTop.DataSource = dsList.ToList();
                 gridControlBotten.DataSource = dsAccept.ToList();
             }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            foreach (var item in dsAccept)
+            {
+                db.Queues.Find(item.ID).Status_FK = 23;
+            }
+
+            db.SaveChanges();
+            ListResied();
         }
     }
 

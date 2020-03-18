@@ -577,6 +577,7 @@
             this.btnSave.Size = new System.Drawing.Size(112, 52);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "ذخیره ";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // queuesBindingSource
             // 
