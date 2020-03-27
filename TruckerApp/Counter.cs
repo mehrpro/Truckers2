@@ -7,15 +7,16 @@ namespace TruckerApp
     public class Counter
     {
         private TruckersEntities db = new TruckersEntities();
-        public int packet()=> db.Queues.Count(x => x.Type_FK == 2 && x.SeriesID_FK == PublicVar.SeriesID);
-        public int faleh() =>  db.Queues.Count(x => x.Type_FK == 1 && x.SeriesID_FK == PublicVar.SeriesID);
-        public int gandom()=>  db.Queues.Count(x => x.Type_FK == 3 && x.SeriesID_FK == PublicVar.SeriesID);
-        public int clinker() => db.Queues.Count(x => x.Type_FK == 4 && x.SeriesID_FK == PublicVar.SeriesID);
-        public int member() => db.Queues.Count(x => x.GroupCommission == 30 && x.SeriesID_FK == PublicVar.SeriesID);
-        public int noMember() => db.Queues.Count(x => x.GroupCommission == 31 && x.SeriesID_FK == PublicVar.SeriesID);
-        public int other()=> db.Queues.Count(x => x.GroupCommission == 32 && x.SeriesID_FK == PublicVar.SeriesID);
-        
-
+        public int packet(int seriesid) => db.Queues.Count(x => x.Type_FK == 2 && x.SeriesID_FK == seriesid);
+        public int faleh(int seriesid) => db.Queues.Count(x => x.Type_FK == 1 && x.SeriesID_FK == seriesid);
+        public int gandom(int seriesid) => db.Queues.Count(x => x.Type_FK == 3 && x.SeriesID_FK == seriesid);
+        public int clinker(int seriesid) => db.Queues.Count(x => x.Type_FK == 4 && x.SeriesID_FK == seriesid);
+        public short member(int seriesid) => (short)db.Queues.Count(x => x.GroupCommission == 30 && x.SeriesID_FK == seriesid);
+        public short noMember(int seriesid) => (short)db.Queues.Count(x => x.GroupCommission == 31 && x.SeriesID_FK == seriesid);
+        public short other(int seriesid) => (short)db.Queues.Count(x => x.GroupCommission == 32 && x.SeriesID_FK == seriesid);
+        public int SeriesCount(int seriesid) => db.Queues.Count(x => x.SeriesID_FK == seriesid);
+        public int LastSeriesNum() => db.SeriesPrices.Max(x => x.SeriesName);
+        public int? LastSeriesID()=> db.SeriesPrices.SingleOrDefault(x => x.enabeled == true && x.closing == false).SereisID;
         public int lastNumber(int seriesID)
         {
             var max = db.Queues.Where(x => x.SeriesID_FK == seriesID).ToList();

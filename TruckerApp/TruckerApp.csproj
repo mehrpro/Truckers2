@@ -150,6 +150,7 @@
     <Compile Include="Queue.cs">
       <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="SeriesClass.cs" />
     <Compile Include="SeriesPrice.cs">
       <DependentUpon>MDB.tt</DependentUpon>
     </Compile>

@@ -41,11 +41,7 @@ namespace TruckerApp.UserForm.Fish
 
         private void btnDeleteRow_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue("Serial") == null)
-            {
-
-            }
-            else
+            if (gridView1.GetFocusedRowCellValue("Serial") != null)
             {
                 var sel = gridView1.GetFocusedRow();
                 var id = (NumberList) sel;

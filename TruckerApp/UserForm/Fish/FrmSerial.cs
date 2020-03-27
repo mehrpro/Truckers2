@@ -15,7 +15,7 @@ namespace TruckerApp.UserForm
 
 
         }
-
+        Counter counter = new Counter();
 
 
         private void grid()
@@ -25,7 +25,7 @@ namespace TruckerApp.UserForm
         }
 
         private TruckersEntities db = new TruckersEntities();
-        private int serialNumber, lastID;
+        private int serialNumber;
         private List<SeriesPrice> _serList;
         private void SetupPage()
         {
@@ -33,10 +33,7 @@ namespace TruckerApp.UserForm
             txtTime.Text = DateTime.Now.ToLongTimeString();
             var userCreator = db.Users.SingleOrDefault(x => x.userID == PublicVar.UserID);
             txtUsers.Text = $"{userCreator.FirstName} {userCreator.LastName}";
-            lastID = _serList.Last().SereisID;
-            txtLastSerial.Text = _serList.Last().SeriesName.ToString();
-
-
+            txtLastSerial.Text = PublicVar.SeriesName.ToString();
         }
 
         private void FrmSerial_Load(object sender, EventArgs e)
@@ -47,42 +44,45 @@ namespace TruckerApp.UserForm
 
         private void btnNewSerial_Click(object sender, EventArgs e)
         {
-            var qryType = db.Queues.Where(x => x.SeriesID_FK == lastID).ToList();
-            try
+            using (var ts = db.Database.BeginTransaction())
             {
-                var last = _serList.Single(x => x.SereisID == lastID);
-                last.SeriesDateEnd = DateTime.Now;
-                last.Faleh = qryType.Count(x => x.Type_FK == 1);
-                last.Packet = qryType.Count(x => x.Type_FK == 2);
-                last.Gandom = qryType.Count(x => x.Type_FK == 3);
-                last.Clinker = qryType.Count(x => x.Type_FK == 4);
+                var lastSeries = counter.lastNumber(PublicVar.SeriesID);
+                try
+                {
+                    var last = db.SeriesPrices.Single(x => x.enabeled == true && x.closing == false);
+                    last.SeriesDateEnd = DateTime.Now;
+                    last.Faleh = counter.faleh(last.SereisID);
+                    last.Packet = counter.packet(last.SereisID);
+                    last.Gandom = counter.gandom(last.SereisID);
+                    last.Clinker = counter.clinker(last.SereisID);
+                    last.Member = counter.member(last.SereisID);
+                    last.Native = counter.noMember(last.SereisID);
+                    last.Other = counter.other(last.SereisID);
+                    last.SeriesCount = counter.SeriesCount(last.SereisID);
+                    last.enabeled = false;
+                    last.closing = true;
+                    var series = new SeriesPrice();
+                    series.SeriesName = counter.LastSeriesNum() + 1;
+                    series.SeriesDateStart = DateTime.Now;
+                    series.userCreator = PublicVar.UserID;
+                    series.enabeled = true;
+                    series.closing = false;
+                    db.SeriesPrices.Add(series);
+                    db.SaveChanges();
+                    var Msg = $"سریال فروش {series.SeriesName} در تاریخ {series.SeriesDateStart} ایجاد شد ";
+                    XtraMessageBox.Show(Msg, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    counter.serialBuy();
+                    grid();
+                    SetupPage();
+                }
+                catch
+                {
+                    XtraMessageBox.Show(PublicVar.ErrorMessageForNotSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                last.Member = Convert.ToInt16(qryType.Count(x => x.GroupCommission == 1));
-                last.Native = Convert.ToInt16(qryType.Count(x => x.GroupCommission == 2));
-                last.Other = Convert.ToInt16(qryType.Count(x => x.GroupCommission == 3));
+                }
 
-                last.SeriesCount = qryType.Count;
-                last.enabeled = false;
-                last.closing = true;
-                db.SaveChanges();
-                var series = new SeriesPrice();
-                series.SeriesName = _serList.Max(x => x.SeriesName) + 1;
-                series.SeriesDateStart = DateTime.Now;
-                series.userCreator = PublicVar.UserID;
-                series.enabeled = true;
-                db.SeriesPrices.Add(series);
-                db.SaveChanges();
-                var Msg = $"سریال فروش {series.SeriesName} در تاریخ {series.SeriesDateStart} ایجاد شد ";
-                XtraMessageBox.Show(Msg, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                new Counter().serialBuy();
-                grid();
-                SetupPage();
             }
-            catch
-            {
-                XtraMessageBox.Show(PublicVar.ErrorMessageForNotSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            }
 
         }
     }
