@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMembershipList));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -39,7 +40,8 @@
             this.colTagNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
-            this.DriverIDTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.FirstNameTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.LastNameTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.PhoneNumberTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -48,14 +50,15 @@
             this.TagTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.ItemForDriverID = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForPhoneNumber = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForTagNumber = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForFirstName = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForLastName = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForSmartCart = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForTag = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForTag = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForTagNumber = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForSmartCart = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForPhoneNumber = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -65,7 +68,6 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DriverIDTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FirstNameTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LastNameTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhoneNumberTextEdit.Properties)).BeginInit();
@@ -74,14 +76,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.TagTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForDriverID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForPhoneNumber)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForTagNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForFirstName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForLastName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForSmartCart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForTag)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForTag)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForTagNumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForSmartCart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForPhoneNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -102,10 +105,10 @@
             // 
             this.gridControl1.DataSource = this.driversBindingSource;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 216);
+            this.gridControl1.Location = new System.Drawing.Point(2, 185);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(834, 217);
+            this.gridControl1.Size = new System.Drawing.Size(834, 248);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -238,6 +241,7 @@
             this.colDriverID.Caption = "کد سیستم";
             this.colDriverID.FieldName = "DriverID";
             this.colDriverID.Name = "colDriverID";
+            this.colDriverID.OptionsColumn.ReadOnly = true;
             this.colDriverID.Visible = true;
             this.colDriverID.VisibleIndex = 0;
             this.colDriverID.Width = 131;
@@ -278,7 +282,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(2, 55);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(834, 161);
+            this.panelControl1.Size = new System.Drawing.Size(834, 130);
             this.panelControl1.TabIndex = 0;
             // 
             // dataLayoutControl1
@@ -299,7 +303,8 @@
             this.dataLayoutControl1.Appearance.DisabledLayoutGroupCaption.Options.UseFont = true;
             this.dataLayoutControl1.Appearance.DisabledLayoutItem.Font = new System.Drawing.Font("B Yekan", 12F);
             this.dataLayoutControl1.Appearance.DisabledLayoutItem.Options.UseFont = true;
-            this.dataLayoutControl1.Controls.Add(this.DriverIDTextEdit);
+            this.dataLayoutControl1.Controls.Add(this.simpleButton2);
+            this.dataLayoutControl1.Controls.Add(this.simpleButton1);
             this.dataLayoutControl1.Controls.Add(this.FirstNameTextEdit);
             this.dataLayoutControl1.Controls.Add(this.LastNameTextEdit);
             this.dataLayoutControl1.Controls.Add(this.PhoneNumberTextEdit);
@@ -307,7 +312,7 @@
             this.dataLayoutControl1.Controls.Add(this.TagNumberTextEdit);
             this.dataLayoutControl1.Controls.Add(this.TagTextEdit);
             this.dataLayoutControl1.DataSource = this.driversBindingSource;
-            this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataLayoutControl1.Font = new System.Drawing.Font("B Yekan", 12F);
             this.dataLayoutControl1.Location = new System.Drawing.Point(2, 2);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
@@ -320,36 +325,37 @@
             this.dataLayoutControl1.OptionsPrint.AppearanceItemCaption.Options.UseTextOptions = true;
             this.dataLayoutControl1.OptionsView.RightToLeftMirroringApplied = true;
             this.dataLayoutControl1.Root = this.layoutControlGroup1;
-            this.dataLayoutControl1.Size = new System.Drawing.Size(830, 157);
+            this.dataLayoutControl1.Size = new System.Drawing.Size(830, 124);
             this.dataLayoutControl1.TabIndex = 0;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
             // 
-            // DriverIDTextEdit
+            // simpleButton2
             // 
-            this.DriverIDTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.driversBindingSource, "DriverID", true));
-            this.DriverIDTextEdit.Location = new System.Drawing.Point(618, 12);
-            this.DriverIDTextEdit.Name = "DriverIDTextEdit";
-            this.DriverIDTextEdit.Parmida_ActivePlusMultiKeys = false;
-            this.DriverIDTextEdit.Properties.Appearance.Options.UseTextOptions = true;
-            this.DriverIDTextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.DriverIDTextEdit.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.DriverIDTextEdit.Properties.AppearanceReadOnly.Options.UseTextOptions = true;
-            this.DriverIDTextEdit.Properties.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.DriverIDTextEdit.Properties.Mask.EditMask = "N0";
-            this.DriverIDTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.DriverIDTextEdit.Properties.ReadOnly = true;
-            this.DriverIDTextEdit.Size = new System.Drawing.Size(114, 30);
-            this.DriverIDTextEdit.StyleController = this.dataLayoutControl1;
-            this.DriverIDTextEdit.TabIndex = 4;
+            this.simpleButton2.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.Image")));
+            this.simpleButton2.Location = new System.Drawing.Point(151, 80);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(131, 31);
+            this.simpleButton2.StyleController = this.dataLayoutControl1;
+            this.simpleButton2.TabIndex = 12;
+            this.simpleButton2.Text = "ذخیره";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(12, 80);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(135, 31);
+            this.simpleButton1.StyleController = this.dataLayoutControl1;
+            this.simpleButton1.TabIndex = 11;
+            this.simpleButton1.Text = "بستن";
             // 
             // FirstNameTextEdit
             // 
             this.FirstNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.driversBindingSource, "FirstName", true));
-            this.FirstNameTextEdit.Location = new System.Drawing.Point(358, 12);
+            this.FirstNameTextEdit.Location = new System.Drawing.Point(264, 12);
             this.FirstNameTextEdit.Name = "FirstNameTextEdit";
             this.FirstNameTextEdit.Parmida_ActivePlusMultiKeys = false;
             this.FirstNameTextEdit.Properties.ReadOnly = true;
-            this.FirstNameTextEdit.Size = new System.Drawing.Size(170, 30);
+            this.FirstNameTextEdit.Size = new System.Drawing.Size(160, 30);
             this.FirstNameTextEdit.StyleController = this.dataLayoutControl1;
             this.FirstNameTextEdit.TabIndex = 5;
             // 
@@ -360,52 +366,52 @@
             this.LastNameTextEdit.Name = "LastNameTextEdit";
             this.LastNameTextEdit.Parmida_ActivePlusMultiKeys = false;
             this.LastNameTextEdit.Properties.ReadOnly = true;
-            this.LastNameTextEdit.Size = new System.Drawing.Size(256, 30);
+            this.LastNameTextEdit.Size = new System.Drawing.Size(162, 30);
             this.LastNameTextEdit.StyleController = this.dataLayoutControl1;
             this.LastNameTextEdit.TabIndex = 6;
             // 
             // PhoneNumberTextEdit
             // 
             this.PhoneNumberTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.driversBindingSource, "PhoneNumber", true));
-            this.PhoneNumberTextEdit.Location = new System.Drawing.Point(618, 46);
+            this.PhoneNumberTextEdit.Location = new System.Drawing.Point(514, 46);
             this.PhoneNumberTextEdit.Name = "PhoneNumberTextEdit";
             this.PhoneNumberTextEdit.Parmida_ActivePlusMultiKeys = false;
             this.PhoneNumberTextEdit.Properties.AppearanceReadOnly.Options.UseTextOptions = true;
             this.PhoneNumberTextEdit.Properties.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.PhoneNumberTextEdit.Properties.ReadOnly = true;
-            this.PhoneNumberTextEdit.Size = new System.Drawing.Size(114, 30);
+            this.PhoneNumberTextEdit.Size = new System.Drawing.Size(218, 30);
             this.PhoneNumberTextEdit.StyleController = this.dataLayoutControl1;
             this.PhoneNumberTextEdit.TabIndex = 7;
             // 
             // SmartCartTextEdit
             // 
             this.SmartCartTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.driversBindingSource, "SmartCart", true));
-            this.SmartCartTextEdit.Location = new System.Drawing.Point(12, 46);
+            this.SmartCartTextEdit.Location = new System.Drawing.Point(514, 12);
             this.SmartCartTextEdit.Name = "SmartCartTextEdit";
             this.SmartCartTextEdit.Parmida_ActivePlusMultiKeys = false;
             this.SmartCartTextEdit.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.SmartCartTextEdit.Properties.Mask.EditMask = "N0";
             this.SmartCartTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.SmartCartTextEdit.Properties.ReadOnly = true;
-            this.SmartCartTextEdit.Size = new System.Drawing.Size(516, 30);
+            this.SmartCartTextEdit.Size = new System.Drawing.Size(218, 30);
             this.SmartCartTextEdit.StyleController = this.dataLayoutControl1;
             this.SmartCartTextEdit.TabIndex = 8;
             // 
             // TagNumberTextEdit
             // 
             this.TagNumberTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.driversBindingSource, "TagNumber", true));
-            this.TagNumberTextEdit.Location = new System.Drawing.Point(12, 80);
+            this.TagNumberTextEdit.Location = new System.Drawing.Point(12, 46);
             this.TagNumberTextEdit.Name = "TagNumberTextEdit";
             this.TagNumberTextEdit.Parmida_ActivePlusMultiKeys = false;
             this.TagNumberTextEdit.Properties.ReadOnly = true;
-            this.TagNumberTextEdit.Size = new System.Drawing.Size(516, 30);
+            this.TagNumberTextEdit.Size = new System.Drawing.Size(251, 30);
             this.TagNumberTextEdit.StyleController = this.dataLayoutControl1;
             this.TagNumberTextEdit.TabIndex = 9;
             // 
             // TagTextEdit
             // 
             this.TagTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.driversBindingSource, "Tag", true));
-            this.TagTextEdit.Location = new System.Drawing.Point(618, 80);
+            this.TagTextEdit.Location = new System.Drawing.Point(353, 46);
             this.TagTextEdit.Name = "TagTextEdit";
             this.TagTextEdit.Parmida_ActivePlusMultiKeys = false;
             this.TagTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -417,7 +423,7 @@
             this.TagTextEdit.Properties.Mask.EditMask = "N0";
             this.TagTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.TagTextEdit.Properties.ReadOnly = true;
-            this.TagTextEdit.Size = new System.Drawing.Size(114, 30);
+            this.TagTextEdit.Size = new System.Drawing.Size(71, 30);
             this.TagTextEdit.StyleController = this.dataLayoutControl1;
             this.TagTextEdit.TabIndex = 10;
             // 
@@ -433,7 +439,7 @@
             this.layoutControlGroup2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(830, 157);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(830, 124);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlGroup2
@@ -441,51 +447,25 @@
             this.layoutControlGroup2.AllowDrawBackground = false;
             this.layoutControlGroup2.GroupBordersVisible = false;
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.ItemForDriverID,
-            this.ItemForPhoneNumber,
-            this.ItemForTagNumber,
             this.ItemForFirstName,
             this.ItemForLastName,
-            this.ItemForSmartCart,
+            this.emptySpaceItem1,
+            this.layoutControlItem1,
+            this.layoutControlItem2,
             this.ItemForTag,
-            this.emptySpaceItem1});
+            this.ItemForTagNumber,
+            this.ItemForSmartCart,
+            this.ItemForPhoneNumber});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "autoGeneratedGroup0";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(810, 137);
-            // 
-            // ItemForDriverID
-            // 
-            this.ItemForDriverID.Control = this.DriverIDTextEdit;
-            this.ItemForDriverID.Location = new System.Drawing.Point(606, 0);
-            this.ItemForDriverID.Name = "ItemForDriverID";
-            this.ItemForDriverID.Size = new System.Drawing.Size(204, 34);
-            this.ItemForDriverID.Text = "کد";
-            this.ItemForDriverID.TextSize = new System.Drawing.Size(83, 24);
-            // 
-            // ItemForPhoneNumber
-            // 
-            this.ItemForPhoneNumber.Control = this.PhoneNumberTextEdit;
-            this.ItemForPhoneNumber.Location = new System.Drawing.Point(606, 34);
-            this.ItemForPhoneNumber.Name = "ItemForPhoneNumber";
-            this.ItemForPhoneNumber.Size = new System.Drawing.Size(204, 34);
-            this.ItemForPhoneNumber.Text = "تلفن همراه";
-            this.ItemForPhoneNumber.TextSize = new System.Drawing.Size(83, 24);
-            // 
-            // ItemForTagNumber
-            // 
-            this.ItemForTagNumber.Control = this.TagNumberTextEdit;
-            this.ItemForTagNumber.Location = new System.Drawing.Point(0, 68);
-            this.ItemForTagNumber.Name = "ItemForTagNumber";
-            this.ItemForTagNumber.Size = new System.Drawing.Size(606, 34);
-            this.ItemForTagNumber.Text = "پلاک";
-            this.ItemForTagNumber.TextSize = new System.Drawing.Size(83, 24);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(810, 104);
             // 
             // ItemForFirstName
             // 
             this.ItemForFirstName.Control = this.FirstNameTextEdit;
-            this.ItemForFirstName.Location = new System.Drawing.Point(346, 0);
+            this.ItemForFirstName.Location = new System.Drawing.Point(252, 0);
             this.ItemForFirstName.Name = "ItemForFirstName";
-            this.ItemForFirstName.Size = new System.Drawing.Size(260, 34);
+            this.ItemForFirstName.Size = new System.Drawing.Size(250, 34);
             this.ItemForFirstName.Text = "نام";
             this.ItemForFirstName.TextSize = new System.Drawing.Size(83, 24);
             // 
@@ -494,35 +474,71 @@
             this.ItemForLastName.Control = this.LastNameTextEdit;
             this.ItemForLastName.Location = new System.Drawing.Point(0, 0);
             this.ItemForLastName.Name = "ItemForLastName";
-            this.ItemForLastName.Size = new System.Drawing.Size(346, 34);
+            this.ItemForLastName.Size = new System.Drawing.Size(252, 34);
             this.ItemForLastName.Text = "نام خانوادگی";
             this.ItemForLastName.TextSize = new System.Drawing.Size(83, 24);
-            // 
-            // ItemForSmartCart
-            // 
-            this.ItemForSmartCart.Control = this.SmartCartTextEdit;
-            this.ItemForSmartCart.Location = new System.Drawing.Point(0, 34);
-            this.ItemForSmartCart.Name = "ItemForSmartCart";
-            this.ItemForSmartCart.Size = new System.Drawing.Size(606, 34);
-            this.ItemForSmartCart.Text = "کارت هوشمند";
-            this.ItemForSmartCart.TextSize = new System.Drawing.Size(83, 24);
-            // 
-            // ItemForTag
-            // 
-            this.ItemForTag.Control = this.TagTextEdit;
-            this.ItemForTag.Location = new System.Drawing.Point(606, 68);
-            this.ItemForTag.Name = "ItemForTag";
-            this.ItemForTag.Size = new System.Drawing.Size(204, 34);
-            this.ItemForTag.Text = "ایران";
-            this.ItemForTag.TextSize = new System.Drawing.Size(83, 24);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 102);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(274, 68);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(810, 35);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(536, 36);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.simpleButton1;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 68);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(139, 36);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.simpleButton2;
+            this.layoutControlItem2.Location = new System.Drawing.Point(139, 68);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(135, 36);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
+            // 
+            // ItemForTag
+            // 
+            this.ItemForTag.Control = this.TagTextEdit;
+            this.ItemForTag.Location = new System.Drawing.Point(341, 34);
+            this.ItemForTag.Name = "ItemForTag";
+            this.ItemForTag.Size = new System.Drawing.Size(161, 34);
+            this.ItemForTag.Text = "ایران";
+            this.ItemForTag.TextSize = new System.Drawing.Size(83, 24);
+            // 
+            // ItemForTagNumber
+            // 
+            this.ItemForTagNumber.Control = this.TagNumberTextEdit;
+            this.ItemForTagNumber.Location = new System.Drawing.Point(0, 34);
+            this.ItemForTagNumber.Name = "ItemForTagNumber";
+            this.ItemForTagNumber.Size = new System.Drawing.Size(341, 34);
+            this.ItemForTagNumber.Text = "پلاک";
+            this.ItemForTagNumber.TextSize = new System.Drawing.Size(83, 24);
+            // 
+            // ItemForSmartCart
+            // 
+            this.ItemForSmartCart.Control = this.SmartCartTextEdit;
+            this.ItemForSmartCart.Location = new System.Drawing.Point(502, 0);
+            this.ItemForSmartCart.Name = "ItemForSmartCart";
+            this.ItemForSmartCart.Size = new System.Drawing.Size(308, 34);
+            this.ItemForSmartCart.Text = "کارت هوشمند";
+            this.ItemForSmartCart.TextSize = new System.Drawing.Size(83, 24);
+            // 
+            // ItemForPhoneNumber
+            // 
+            this.ItemForPhoneNumber.Control = this.PhoneNumberTextEdit;
+            this.ItemForPhoneNumber.Location = new System.Drawing.Point(502, 34);
+            this.ItemForPhoneNumber.Name = "ItemForPhoneNumber";
+            this.ItemForPhoneNumber.Size = new System.Drawing.Size(308, 34);
+            this.ItemForPhoneNumber.Text = "تلفن همراه";
+            this.ItemForPhoneNumber.TextSize = new System.Drawing.Size(83, 24);
             // 
             // FrmMembershipList
             // 
@@ -544,7 +560,6 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DriverIDTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FirstNameTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LastNameTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhoneNumberTextEdit.Properties)).EndInit();
@@ -553,14 +568,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.TagTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForDriverID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForPhoneNumber)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForTagNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForFirstName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForLastName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForSmartCart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForTag)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForTag)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForTagNumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForSmartCart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForPhoneNumber)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -577,7 +593,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colLastName;
         private DevExpress.XtraGrid.Columns.GridColumn colTagNumber;
         private DevExpress.XtraDataLayout.DataLayoutControl dataLayoutControl1;
-        private DevExpress.XtraEditors.TextEdit DriverIDTextEdit;
         private DevExpress.XtraEditors.TextEdit FirstNameTextEdit;
         private DevExpress.XtraEditors.TextEdit LastNameTextEdit;
         private DevExpress.XtraEditors.TextEdit PhoneNumberTextEdit;
@@ -586,13 +601,16 @@
         private DevExpress.XtraEditors.TextEdit TagTextEdit;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
-        private DevExpress.XtraLayout.LayoutControlItem ItemForDriverID;
-        private DevExpress.XtraLayout.LayoutControlItem ItemForFirstName;
         private DevExpress.XtraLayout.LayoutControlItem ItemForLastName;
         private DevExpress.XtraLayout.LayoutControlItem ItemForPhoneNumber;
         private DevExpress.XtraLayout.LayoutControlItem ItemForSmartCart;
         private DevExpress.XtraLayout.LayoutControlItem ItemForTagNumber;
         private DevExpress.XtraLayout.LayoutControlItem ItemForTag;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem ItemForFirstName;
     }
 }

@@ -161,14 +161,14 @@
             this.cntTotal.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
             this.digitalBackgroundLayerComponent5});
             this.cntTotal.Bounds = new System.Drawing.Rectangle(6, 6, 1070, 61);
-            this.cntTotal.DigitCount = 5;
+            this.cntTotal.DigitCount = 4;
             this.cntTotal.Name = "cntTotal";
             this.cntTotal.RightToLeft = true;
-            this.cntTotal.Text = "00,000";
+            this.cntTotal.Text = "0000";
             // 
             // digitalBackgroundLayerComponent5
             // 
-            this.digitalBackgroundLayerComponent5.BottomRight = new DevExpress.XtraGauges.Core.Base.PointF2D(259.8125F, 99.9625F);
+            this.digitalBackgroundLayerComponent5.BottomRight = new DevExpress.XtraGauges.Core.Base.PointF2D(211.85F, 99.9625F);
             this.digitalBackgroundLayerComponent5.Name = "b1";
             this.digitalBackgroundLayerComponent5.ShapeType = DevExpress.XtraGauges.Core.Model.DigitalBackgroundShapeSetType.Style2;
             this.digitalBackgroundLayerComponent5.TopLeft = new DevExpress.XtraGauges.Core.Base.PointF2D(20F, 0F);

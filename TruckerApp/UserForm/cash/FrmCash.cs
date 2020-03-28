@@ -46,7 +46,7 @@ namespace TruckerApp.UserForm
 
         private void FrmCash_Load(object sender, EventArgs e)
         {
-            txtCash.Text = CashTemp;
+            txtPOS.Text = CashTemp;
         }
     }
 }

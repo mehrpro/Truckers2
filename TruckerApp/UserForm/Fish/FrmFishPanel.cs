@@ -66,10 +66,11 @@ namespace TruckerApp
 
         private void timerCounter_Tick(object sender, EventArgs e)
         {
-            cntPacket.Text = counter.packet(PublicVar.SeriesID).ToString("0000");
-            cntClinker.Text = counter.clinker(PublicVar.SeriesID).ToString("0000");
-            cntFalah.Text = counter.faleh(PublicVar.SeriesID).ToString("0000");
-            cntGandom.Text = counter.gandom(PublicVar.SeriesID).ToString("0000");
+            cntPacket.Text = counter.packet_cnt(PublicVar.SeriesID).ToString("0000");
+            cntClinker.Text = counter.clinker_cnt(PublicVar.SeriesID).ToString("0000");
+            cntFalah.Text =  counter.faleh_cnt(PublicVar.SeriesID).ToString("0000");
+            cntGandom.Text = counter.gandom_cnt(PublicVar.SeriesID).ToString("0000");
+            cntTotal.Text = counter.total_cnt(PublicVar.SeriesID).ToString("0000");
         }
 
         private void FrmFishPanel_FormClosing(object sender, FormClosingEventArgs e)

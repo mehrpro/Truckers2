@@ -34,18 +34,18 @@ namespace TruckerApp.UserForm
         {
             var qry = (Driver) cbxSmart.GetSelectedDataRow();
 
-            var qryQuese = db.Queues.Where(x => x.DriverID_FK == qry.DriverID && x.Status_FK == 20).ToList();
-            if (qryQuese.Count > 0)
+            var qryQuese = db.Queues.SingleOrDefault(x => x.DriverID_FK == qry.DriverID && x.Status_FK == 20);
+            if (qryQuese != null)
             {
-                selectid = qryQuese[0].ID;
-                 qryQuese[0].DateTimeRegister.ToLongDateString();
+                selectid = qryQuese.ID;
+                 qryQuese.DateTimeRegister.ToLongDateString();
                 txtName.Text = $"{qry.FirstName}  {qry.LastName}";
                 txtTag.Text = $"ایران {qry.Tag}-{qry.TagNumber}";
-                txtComossin.Text = qryQuese[0].Commission.CommissionPrice.ToString();
-                txtserial.Text = qryQuese[0].SeriesID_FK.ToString();
-                txtNumber.Text = qryQuese[0].Number.ToString();
-                txtType.Text = qryQuese[0].LoadType.Type;
-                txtDateReg.Text = qryQuese[0].DateTimeRegister.ToLongDateString();
+                txtComossin.Text = qryQuese.Commission.CommissionPrice.ToString();
+                txtserial.Text = qryQuese.SeriesID_FK.ToString();
+                txtNumber.Text = qryQuese.Number.ToString();
+                txtType.Text = qryQuese.LoadType.Type;
+                txtDateReg.Text = qryQuese.DateTimeRegister.ToLongDateString();
             }
             else
             {
@@ -60,8 +60,10 @@ namespace TruckerApp.UserForm
         {
             db = new TruckersEntities();
             var qry = db.Cashes.Single(x => x.QueueID_FK == selectid);
-            qry.Queue.Status_FK = byte.Parse(radioGroupType.EditValue.ToString());
+            var qryQueue = db.Queues.Single(x => x.ID == selectid);
+            qryQueue.Status_FK = byte.Parse(radioGroupType.EditValue.ToString());
             qry.Pos = qry.CashDesk =  0;
+            
             db.SaveChanges();
             var str = $"باطل شد";
             XtraMessageBox.Show(str, Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
