@@ -73,7 +73,7 @@ namespace TruckerApp.UserForm
             report.Parameters["smartcart"].Value = _smartcart;
             report.Parameters["TagNumbers"].Value = _tagnumber;
             report.Parameters["Type"].Value = _type;
-            tool.Print();
+            tool.PrintDialog();
 
         }
 
