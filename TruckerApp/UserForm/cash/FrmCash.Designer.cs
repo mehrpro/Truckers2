@@ -60,7 +60,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(319, 251);
+            this.groupControl1.Size = new System.Drawing.Size(305, 243);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "پرداخت";
             // 
@@ -70,7 +70,7 @@
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(69, 165);
+            this.simpleButton1.Location = new System.Drawing.Point(55, 165);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(93, 46);
             this.simpleButton1.TabIndex = 3;
@@ -83,7 +83,7 @@
             this.btnPrint.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.btnPrint.Appearance.Options.UseFont = true;
             this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(168, 165);
+            this.btnPrint.Location = new System.Drawing.Point(154, 165);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(93, 46);
             this.btnPrint.TabIndex = 2;
@@ -94,7 +94,7 @@
             // 
             this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl8.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.labelControl8.Location = new System.Drawing.Point(230, 124);
+            this.labelControl8.Location = new System.Drawing.Point(216, 124);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(31, 24);
             this.labelControl8.TabIndex = 5;
@@ -104,7 +104,7 @@
             // 
             this.labelControl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl10.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.labelControl10.Location = new System.Drawing.Point(62, 123);
+            this.labelControl10.Location = new System.Drawing.Point(48, 123);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(27, 24);
             this.labelControl10.TabIndex = 6;
@@ -114,7 +114,7 @@
             // 
             this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl9.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.labelControl9.Location = new System.Drawing.Point(62, 80);
+            this.labelControl9.Location = new System.Drawing.Point(48, 80);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(27, 24);
             this.labelControl9.TabIndex = 7;
@@ -124,7 +124,7 @@
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl7.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.labelControl7.Location = new System.Drawing.Point(230, 81);
+            this.labelControl7.Location = new System.Drawing.Point(216, 81);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(55, 24);
             this.labelControl7.TabIndex = 8;
@@ -134,7 +134,7 @@
             // 
             this.txtCash.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCash.EditValue = "0";
-            this.txtCash.Location = new System.Drawing.Point(95, 121);
+            this.txtCash.Location = new System.Drawing.Point(81, 121);
             this.txtCash.Name = "txtCash";
             this.txtCash.Parmida_ActivePlusMultiKeys = false;
             this.txtCash.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
@@ -158,7 +158,7 @@
             // 
             this.txtPOS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPOS.EditValue = "0";
-            this.txtPOS.Location = new System.Drawing.Point(95, 78);
+            this.txtPOS.Location = new System.Drawing.Point(81, 78);
             this.txtPOS.Name = "txtPOS";
             this.txtPOS.Parmida_ActivePlusMultiKeys = false;
             this.txtPOS.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
@@ -182,7 +182,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(319, 251);
+            this.ClientSize = new System.Drawing.Size(305, 243);
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCash";

@@ -21,7 +21,6 @@ namespace TruckerApp.UserForm
         private void grid()
         {
             seriesBindingSource.DataSource = _serList = db.SeriesPrices.ToList();
-
         }
 
         private TruckersEntities db = new TruckersEntities();
@@ -44,8 +43,8 @@ namespace TruckerApp.UserForm
 
         private void btnNewSerial_Click(object sender, EventArgs e)
         {
-            using (var ts = db.Database.BeginTransaction())
-            {
+            //using (var ts = db.Database.BeginTransaction())
+            //{
                 var lastSeries = counter.lastNumber(PublicVar.SeriesID);
                 try
                 {
@@ -81,7 +80,7 @@ namespace TruckerApp.UserForm
 
                 }
 
-            }
+          //  }
 
 
         }

@@ -22,7 +22,6 @@ namespace TruckerApp
             var max = db.Queues.Where(x => x.SeriesID_FK == seriesID).ToList();
             if (max.Count == 0) return 0;
             return max.Max(x => x.Number);
-
         }
         public void serialBuy()
         {
