@@ -609,7 +609,7 @@
             this.Controls.Add(this.groupControl1);
             this.Name = "FrmCasheList";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Text = "FrmCasheList";
+            this.Text = "گزارش صندوق";
             this.Load += new System.EventHandler(this.FrmCasheList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);

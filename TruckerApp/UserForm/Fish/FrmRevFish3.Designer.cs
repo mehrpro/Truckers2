@@ -1,6 +1,6 @@
 ﻿namespace TruckerApp.UserForm
 {
-    partial class FrmRevFish
+    partial class FrmRevFish3
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRevFish));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRevFish3));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
-            this.radioGroupType = new DevExpress.XtraEditors.RadioGroup();
             this.btnRevSave = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -61,7 +60,6 @@
             this.txtComossin = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroupType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtserial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDateRegister.Properties)).BeginInit();
@@ -81,7 +79,6 @@
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.CaptionImage = global::TruckerApp.Properties.Resources.icons8_mail_statistics_48;
             this.groupControl1.Controls.Add(this.btnClose);
-            this.groupControl1.Controls.Add(this.radioGroupType);
             this.groupControl1.Controls.Add(this.btnRevSave);
             this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.labelControl4);
@@ -102,9 +99,9 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(473, 651);
+            this.groupControl1.Size = new System.Drawing.Size(473, 506);
             this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "برگشت حواله";
+            this.groupControl1.Text = "رسید حواله";
             // 
             // btnClose
             // 
@@ -112,31 +109,12 @@
             this.btnClose.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnClose.Appearance.Options.UseFont = true;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(45, 558);
+            this.btnClose.Location = new System.Drawing.Point(45, 437);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(135, 48);
             this.btnClose.TabIndex = 21;
             this.btnClose.Text = "بستن";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // radioGroupType
-            // 
-            this.radioGroupType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioGroupType.EditValue = ((byte)(10));
-            this.radioGroupType.Location = new System.Drawing.Point(45, 425);
-            this.radioGroupType.Name = "radioGroupType";
-            this.radioGroupType.Parmida_ActivePlusMultiKeys = false;
-            this.radioGroupType.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.radioGroupType.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.radioGroupType.Properties.Appearance.Options.UseBackColor = true;
-            this.radioGroupType.Properties.Appearance.Options.UseFont = true;
-            this.radioGroupType.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.radioGroupType.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(10)), "خطا در صدور"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(11)), "ابطال و تعویض محموله"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(12)), "ابطال و بازگشت وجه")});
-            this.radioGroupType.Size = new System.Drawing.Size(317, 125);
-            this.radioGroupType.TabIndex = 20;
             // 
             // btnRevSave
             // 
@@ -144,7 +122,7 @@
             this.btnRevSave.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnRevSave.Appearance.Options.UseFont = true;
             this.btnRevSave.Image = ((System.Drawing.Image)(resources.GetObject("btnRevSave.Image")));
-            this.btnRevSave.Location = new System.Drawing.Point(227, 556);
+            this.btnRevSave.Location = new System.Drawing.Point(227, 435);
             this.btnRevSave.Name = "btnRevSave";
             this.btnRevSave.Size = new System.Drawing.Size(135, 50);
             this.btnRevSave.TabIndex = 16;
@@ -628,23 +606,22 @@
             this.txtComossin.Size = new System.Drawing.Size(317, 30);
             this.txtComossin.TabIndex = 11;
             // 
-            // FrmRevFish
+            // FrmRevFish3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 651);
+            this.ClientSize = new System.Drawing.Size(473, 506);
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmRevFish";
+            this.Name = "FrmRevFish3";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Text = "برگشت حواله";
+            this.Text = "رسید حواله";
             this.Load += new System.EventHandler(this.FrmRevFish_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroupType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtserial.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDateRegister.Properties)).EndInit();
@@ -689,7 +666,6 @@
         private System.Windows.Forms.BindingSource driversBindingSource;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.TextEdit txtType;
-        private DevExpress.XtraEditors.RadioGroup radioGroupType;
         private DevExpress.XtraEditors.SimpleButton btnClose;
     }
 }

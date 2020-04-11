@@ -537,7 +537,7 @@
             this.Controls.Add(this.groupControl1);
             this.Name = "FrmFishPanel";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Text = "FrmFishPanel";
+            this.Text = "میزکار";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmFishPanel_FormClosing);
             this.Load += new System.EventHandler(this.FrmFishPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();

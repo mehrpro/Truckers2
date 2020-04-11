@@ -28,7 +28,7 @@ namespace TruckerApp
                 c.Close();
             }
 
-            var newForm = new FrmMembershipList(true)
+            var newForm = new FrmMembershipList(true,false)
             {
                 FormBorderStyle = FormBorderStyle.None,
                 MdiParent = this,
@@ -300,7 +300,7 @@ namespace TruckerApp
                 c.Close();
             }
 
-            var newForm = new FrmMembershipList(false)
+            var newForm = new FrmMembershipList(false,false)
             {
                 FormBorderStyle = FormBorderStyle.None,
                 MdiParent = this,
@@ -308,6 +308,33 @@ namespace TruckerApp
                 Dock = DockStyle.Fill
             };
             newForm.Show();
+        }
+
+        private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (var c in this.MdiChildren)
+            {
+                c.Close();
+            }
+
+            var newForm = new FrmMembershipList(false, true)
+            {
+                FormBorderStyle = FormBorderStyle.None,
+                MdiParent = this,
+                StartPosition = FormStartPosition.CenterParent,
+                Dock = DockStyle.Fill
+            };
+            newForm.Show();
+        }
+
+        private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var newForm = new FrmRevFish3()
+            {
+                FormBorderStyle = FormBorderStyle.None,
+                StartPosition = FormStartPosition.CenterScreen,
+            };
+            newForm.ShowDialog();
         }
     }
 }

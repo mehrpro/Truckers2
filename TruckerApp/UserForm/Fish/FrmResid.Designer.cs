@@ -591,7 +591,7 @@
             this.Controls.Add(this.groupControl1);
             this.Name = "FrmResid";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Text = "FrmResid";
+            this.Text = "رسید حواله ها";
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();

@@ -226,6 +226,12 @@
     <Compile Include="UserForm\Fish\FrmRevFish.Designer.cs">
       <DependentUpon>FrmRevFish.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserForm\Fish\FrmRevFish3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\Fish\FrmRevFish3.Designer.cs">
+      <DependentUpon>FrmRevFish3.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForm\Fish\FrmSerial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\Fish\FrmRevFish.resx">
       <DependentUpon>FrmRevFish.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Fish\FrmRevFish3.resx">
+      <DependentUpon>FrmRevFish3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\Fish\FrmSerial.resx">
       <DependentUpon>FrmSerial.cs</DependentUpon>
