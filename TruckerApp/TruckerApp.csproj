@@ -353,6 +353,16 @@
       <DependentUpon>MDB.edmx</DependentUpon>
       <LastGenOutput>MDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-bulleted-list-64.png" />
+    <None Include="Resources\icons8-todo-list-641.png" />
+    <None Include="Resources\icons8-todo-list-64.png" />
+    <None Include="Resources\icons8-undo-64.png" />
+    <None Include="Resources\icons8-undo-48.png" />
+    <None Include="Resources\icons8-undo-128.png" />
+    <None Include="Resources\icons8-bill-96.png" />
+    <None Include="Resources\icons8-file-delete-64.png" />
+    <None Include="Resources\3666.png" />
+    <None Include="Resources\images.jpg" />
     <None Include="Resources\icons8-transaction-list-48.png" />
     <None Include="Resources\icons8-bulleted-list-48.png" />
     <None Include="Resources\icons8-mail-statistics-48.png" />

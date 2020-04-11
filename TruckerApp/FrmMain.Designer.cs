@@ -358,7 +358,7 @@
             this.ribbonPageGroup1,
             this.ribbonPageGroup2});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "مشتریان";
+            this.ribbonPage1.Text = "رانندگان";
             // 
             // ribbonPageGroup1
             // 

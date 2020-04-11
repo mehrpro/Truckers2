@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using TruckerApp.UserForm;
+using TruckerApp.UserForm.Fish;
 
 namespace TruckerApp
 {
@@ -76,6 +77,52 @@ namespace TruckerApp
         private void FrmFishPanel_FormClosing(object sender, FormClosingEventArgs e)
         {
             timerCounter.Stop();
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            var newForm = new FrmRevFish3()
+            {
+                FormBorderStyle = FormBorderStyle.None,
+                StartPosition = FormStartPosition.CenterScreen,
+            };
+            newForm.ShowDialog();
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            var newForm = new FrmRevFish()
+            {
+                FormBorderStyle = FormBorderStyle.FixedSingle,
+                StartPosition = FormStartPosition.CenterScreen,
+            };
+            newForm.ShowDialog();
+        }
+
+        private void simpleButton6_Click(object sender, EventArgs e)
+        {
+
+            var newForm = new FrmResid()
+            {
+                FormBorderStyle = FormBorderStyle.None,
+               // MdiParent = this,
+                StartPosition = FormStartPosition.CenterParent,
+                Dock = DockStyle.Fill
+            };
+            newForm.Show();
+        }
+
+        private void simpleButton7_Click(object sender, EventArgs e)
+        {
+
+            var newForm = new FrmQueueList()
+            {
+                FormBorderStyle = FormBorderStyle.None,
+                MdiParent = this,
+                StartPosition = FormStartPosition.CenterParent,
+                Dock = DockStyle.Fill
+            };
+            newForm.Show();
         }
     }
 }

@@ -65,8 +65,8 @@ namespace TruckerApp.UserForm
         //    qry.Pos = qry.CashDesk = 0;
 
             db.SaveChanges();
-            var str = $"باطل شد";
-            XtraMessageBox.Show(str, Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            var str = $"رسید حواله ثبت شد";
+            XtraMessageBox.Show(str, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
             Close();
 
 
