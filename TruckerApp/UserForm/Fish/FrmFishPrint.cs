@@ -178,7 +178,7 @@ namespace TruckerApp.UserForm
                         db.Queues.Add(qu);
                         db.SaveChanges();
                         _queue = qu.ID;
-                        _number = $"س{qu.SeriesID_FK}  شماره {qu.Number}";
+                        _number = $"س{qu.SeriesPrice.SeriesName}  شماره {qu.Number}";
                         XtraMessageBox.Show(PublicVar.SuccessfulSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         PrintFish();
                         Pardakht();
