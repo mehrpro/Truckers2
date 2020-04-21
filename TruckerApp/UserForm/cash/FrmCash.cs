@@ -6,20 +6,20 @@ namespace TruckerApp.UserForm
 {
     public partial class FrmCash : XtraForm
     {
+        private TruckersEntities db;
         public int QueueID { get; set; }
         public string CashTemp { get; set; }
-        TruckersEntities db = new TruckersEntities();
         public byte _userid { get; set; }
-        public FrmCash()
+        public FrmCash(TruckersEntities entities)
         {
             InitializeComponent();
-
+            db = entities;
         }
         private void btnPrint_Click(object sender, EventArgs e)
         {
             try
             {
-                Cash c = new Cash();
+                var c = new Cash();
                 c.QueueID_FK = QueueID;
                 c.Pos = Convert.ToInt32(txtPOS.EditValue);
                 c.CashDesk = Convert.ToInt32(txtCash.EditValue);
