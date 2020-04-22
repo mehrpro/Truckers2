@@ -48,16 +48,14 @@
             this.txtTag = new DevExpress.XtraEditors.TextEdit();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.cbxSmart = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDriverID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFirstName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLastName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMembership = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSmartCart = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTag = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTagNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtComossin = new DevExpress.XtraEditors.TextEdit();
+            this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtserial.Properties)).BeginInit();
@@ -68,9 +66,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTag.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxSmart.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComossin.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -373,15 +371,12 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxSmart.Properties.DataSource = this.driversBindingSource;
             this.cbxSmart.Properties.DisplayMember = "SmartCart";
+            this.cbxSmart.Properties.PopupFormSize = new System.Drawing.Size(600, 0);
             this.cbxSmart.Properties.ValueMember = "DriverID";
             this.cbxSmart.Properties.View = this.searchLookUpEdit1View;
             this.cbxSmart.Size = new System.Drawing.Size(317, 30);
             this.cbxSmart.TabIndex = 3;
             this.cbxSmart.EditValueChanged += new System.EventHandler(this.cbxSmart_EditValueChanged);
-            // 
-            // driversBindingSource
-            // 
-            this.driversBindingSource.DataSource = typeof(TruckerApp.Driver);
             // 
             // searchLookUpEdit1View
             // 
@@ -497,9 +492,7 @@
             this.colDriverID,
             this.colFirstName,
             this.colLastName,
-            this.colMembership,
             this.colSmartCart,
-            this.colTag,
             this.colTagNumber});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
@@ -507,7 +500,7 @@
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             this.searchLookUpEdit1View.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colSmartCart, DevExpress.Data.ColumnSortOrder.Descending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colDriverID, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // colDriverID
             // 
@@ -539,16 +532,6 @@
             this.colLastName.VisibleIndex = 2;
             this.colLastName.Width = 153;
             // 
-            // colMembership
-            // 
-            this.colMembership.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colMembership.Caption = "عضو";
-            this.colMembership.FieldName = "Membership";
-            this.colMembership.Name = "colMembership";
-            this.colMembership.Visible = true;
-            this.colMembership.VisibleIndex = 3;
-            this.colMembership.Width = 146;
-            // 
             // colSmartCart
             // 
             this.colSmartCart.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -556,18 +539,8 @@
             this.colSmartCart.FieldName = "SmartCart";
             this.colSmartCart.Name = "colSmartCart";
             this.colSmartCart.Visible = true;
-            this.colSmartCart.VisibleIndex = 4;
+            this.colSmartCart.VisibleIndex = 3;
             this.colSmartCart.Width = 170;
-            // 
-            // colTag
-            // 
-            this.colTag.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colTag.Caption = "ایران پلاک";
-            this.colTag.FieldName = "Tag";
-            this.colTag.Name = "colTag";
-            this.colTag.Visible = true;
-            this.colTag.VisibleIndex = 5;
-            this.colTag.Width = 91;
             // 
             // colTagNumber
             // 
@@ -576,7 +549,7 @@
             this.colTagNumber.FieldName = "TagNumber";
             this.colTagNumber.Name = "colTagNumber";
             this.colTagNumber.Visible = true;
-            this.colTagNumber.VisibleIndex = 6;
+            this.colTagNumber.VisibleIndex = 4;
             this.colTagNumber.Width = 188;
             // 
             // txtComossin
@@ -606,6 +579,10 @@
             this.txtComossin.Size = new System.Drawing.Size(317, 30);
             this.txtComossin.TabIndex = 11;
             // 
+            // driversBindingSource
+            // 
+            this.driversBindingSource.DataSource = typeof(TruckerApp.Driver);
+            // 
             // FrmRevFish3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -630,9 +607,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTag.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxSmart.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComossin.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -658,9 +635,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDriverID;
         private DevExpress.XtraGrid.Columns.GridColumn colFirstName;
         private DevExpress.XtraGrid.Columns.GridColumn colLastName;
-        private DevExpress.XtraGrid.Columns.GridColumn colMembership;
         private DevExpress.XtraGrid.Columns.GridColumn colSmartCart;
-        private DevExpress.XtraGrid.Columns.GridColumn colTag;
         private DevExpress.XtraGrid.Columns.GridColumn colTagNumber;
         private DevExpress.XtraEditors.TextEdit txtComossin;
         private System.Windows.Forms.BindingSource driversBindingSource;

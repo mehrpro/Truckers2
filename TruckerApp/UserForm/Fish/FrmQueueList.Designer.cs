@@ -274,7 +274,7 @@
             // txtOther
             // 
             this.txtOther.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOther.EditValue = "352";
+            this.txtOther.EditValue = "0";
             this.txtOther.Location = new System.Drawing.Point(209, 90);
             this.txtOther.Name = "txtOther";
             this.txtOther.Parmida_ActivePlusMultiKeys = false;
@@ -293,7 +293,7 @@
             // txtTotal
             // 
             this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTotal.EditValue = "352";
+            this.txtTotal.EditValue = "0";
             this.txtTotal.Location = new System.Drawing.Point(601, 90);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Parmida_ActivePlusMultiKeys = false;
@@ -312,7 +312,7 @@
             // txtClinker
             // 
             this.txtClinker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtClinker.EditValue = "352";
+            this.txtClinker.EditValue = "0";
             this.txtClinker.Location = new System.Drawing.Point(414, 126);
             this.txtClinker.Name = "txtClinker";
             this.txtClinker.Parmida_ActivePlusMultiKeys = false;
@@ -331,7 +331,7 @@
             // txtGandom
             // 
             this.txtGandom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtGandom.EditValue = "352";
+            this.txtGandom.EditValue = "0";
             this.txtGandom.Location = new System.Drawing.Point(414, 90);
             this.txtGandom.Name = "txtGandom";
             this.txtGandom.Parmida_ActivePlusMultiKeys = false;
@@ -350,7 +350,7 @@
             // txtNoMember
             // 
             this.txtNoMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNoMember.EditValue = "352";
+            this.txtNoMember.EditValue = "0";
             this.txtNoMember.Location = new System.Drawing.Point(209, 54);
             this.txtNoMember.Name = "txtNoMember";
             this.txtNoMember.Parmida_ActivePlusMultiKeys = false;
@@ -369,7 +369,7 @@
             // txtSerial
             // 
             this.txtSerial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSerial.EditValue = "352";
+            this.txtSerial.EditValue = "0";
             this.txtSerial.Location = new System.Drawing.Point(794, 54);
             this.txtSerial.Name = "txtSerial";
             this.txtSerial.Parmida_ActivePlusMultiKeys = false;
@@ -388,7 +388,7 @@
             // txtOld
             // 
             this.txtOld.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOld.EditValue = "352";
+            this.txtOld.EditValue = "0";
             this.txtOld.Location = new System.Drawing.Point(601, 54);
             this.txtOld.Name = "txtOld";
             this.txtOld.Parmida_ActivePlusMultiKeys = false;
@@ -407,7 +407,7 @@
             // txtDate
             // 
             this.txtDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDate.EditValue = "352";
+            this.txtDate.EditValue = "0";
             this.txtDate.Location = new System.Drawing.Point(794, 18);
             this.txtDate.Name = "txtDate";
             this.txtDate.Parmida_ActivePlusMultiKeys = false;
@@ -426,7 +426,7 @@
             // txtFalaeh
             // 
             this.txtFalaeh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFalaeh.EditValue = "352";
+            this.txtFalaeh.EditValue = "0";
             this.txtFalaeh.Location = new System.Drawing.Point(414, 54);
             this.txtFalaeh.Name = "txtFalaeh";
             this.txtFalaeh.Parmida_ActivePlusMultiKeys = false;
@@ -445,7 +445,7 @@
             // txtNew
             // 
             this.txtNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNew.EditValue = "352";
+            this.txtNew.EditValue = "0";
             this.txtNew.Location = new System.Drawing.Point(601, 18);
             this.txtNew.Name = "txtNew";
             this.txtNew.Parmida_ActivePlusMultiKeys = false;
@@ -464,7 +464,7 @@
             // txtMember
             // 
             this.txtMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMember.EditValue = "352";
+            this.txtMember.EditValue = "0";
             this.txtMember.Location = new System.Drawing.Point(209, 18);
             this.txtMember.Name = "txtMember";
             this.txtMember.Parmida_ActivePlusMultiKeys = false;
@@ -483,7 +483,7 @@
             // txtPacket
             // 
             this.txtPacket.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPacket.EditValue = "352";
+            this.txtPacket.EditValue = "0";
             this.txtPacket.Location = new System.Drawing.Point(414, 18);
             this.txtPacket.Name = "txtPacket";
             this.txtPacket.Parmida_ActivePlusMultiKeys = false;
