@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using System.Data.Entity;
-using DevExpress.LookAndFeel;
 using DevExpress.XtraEditors;
 using DevExpress.XtraReports.UI;
-namespace TruckerApp.UserForm
+using TruckerApp.UserForm.cash;
+
+namespace TruckerApp.UserForm.Fish
 {
     public partial class FrmFishPrint : XtraForm
     {
-        private TruckersEntities db;
+        private readonly TruckersEntities _db = new TruckersEntities();
         private int _driver, _series;
         private int _commission;
-        private short _commissionID;//حق کمیسیون
+        private short _commissionId;//حق کمیسیون
         private string _name, _number, _smartcart, _tagnumber, _type;
-        public byte _typeID { get; set; }
-        private int _queue;
+        public byte TypeId { get; set; }
         private byte _group;
 
 
@@ -23,12 +22,13 @@ namespace TruckerApp.UserForm
         {
             InitializeComponent();
             driversBindingSource.DataSource = new BindingList().DriversList();
-            db = new TruckersEntities();
+            //  db = new TruckersEntities();
+
         }
 
-        private void SelectType()
+        private void selectType()
         {
-            switch (_typeID)
+            switch (TypeId)
             {
                 case 1:
                     _type = "فله";
@@ -74,18 +74,8 @@ namespace TruckerApp.UserForm
             report.Parameters["smartcart"].Value = _smartcart;
             report.Parameters["TagNumbers"].Value = _tagnumber;
             report.Parameters["Type"].Value = _type;
-            tool.PrintDialog(UserLookAndFeel.Default);
+            tool.PrintDialog();
 
-        }
-
-        private void pardakht(TruckersEntities dbEntities)
-        {
-            var frm = new FrmCash(dbEntities);
-            frm._userid = PublicVar.UserID;
-            frm.QueueID = _queue;
-            frm._serialID = _series;
-            frm.CashTemp = txtComossin.Text;
-            frm.ShowDialog();
         }
 
         private void cbxSmart_EditValueChanged(object sender, EventArgs e)
@@ -99,47 +89,47 @@ namespace TruckerApp.UserForm
             _group = driver.GroupID;
             if (_group == 30)
             {
-                if (_typeID == 4)
+                if (TypeId == 4)
                 {
-                    var qry = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 13);
-                    _commissionID = qry.CommissionID;
+                    var qry = _db.Commissions.SingleOrDefault(x => x.enabled && x.Groups_FK == 13);
+                    _commissionId = qry.CommissionID;
                     _commission = qry.CommissionPrice;
                 }
                 else
                 {
-                    var qry = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 14);
-                    _commissionID = qry.CommissionID;
+                    var qry = _db.Commissions.SingleOrDefault(x => x.enabled  && x.Groups_FK == 14);
+                    _commissionId = qry.CommissionID;
                     _commission = qry.CommissionPrice;
                 }
             }
             else if (_group == 31)
             {
-                if (_typeID == 4)
+                if (TypeId == 4)
                 {
-                    var qry = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 17);
-                    _commissionID = qry.CommissionID;
+                    var qry = _db.Commissions.SingleOrDefault(x => x.enabled  && x.Groups_FK == 17);
+                    _commissionId = qry.CommissionID;
                     _commission = qry.CommissionPrice;
                 }
                 else
                 {
-                    var qry = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 15);
-                    _commissionID = qry.CommissionID;
+                    var qry = _db.Commissions.SingleOrDefault(x => x.enabled  && x.Groups_FK == 15);
+                    _commissionId = qry.CommissionID;
                     _commission = qry.CommissionPrice;
                 }
             }
             else if (_group == 32)
             {
-                if (_typeID == 4)
+                if (TypeId == 4)
                 {
-                    var qry = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 18);
-                    _commissionID = qry.CommissionID;
+                    var qry = _db.Commissions.SingleOrDefault(x => x.enabled  && x.Groups_FK == 18);
+                    _commissionId = qry.CommissionID;
                     _commission = qry.CommissionPrice;
                 }
 
                 else
                 {
-                    var qry = db.Commissions.SingleOrDefault(x => x.enabled == true && x.Groups_FK == 16);
-                    _commissionID = qry.CommissionID;
+                    var qry = _db.Commissions.SingleOrDefault(x => x.enabled  && x.Groups_FK == 16);
+                    _commissionId = qry.CommissionID;
                     _commission = qry.CommissionPrice;
                 }
             }
@@ -150,61 +140,58 @@ namespace TruckerApp.UserForm
         {
             setupPage();
             txtDateRegister.Text = DateTime.Today.ToLongDateString();
-            LastNumber();
-            SelectType();
+            lastNumber();
+            selectType();
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            using (var dbx = new TruckersEntities())
+            var driverCheck = _db.Queues.Where(x => x.Status_FK == 20 && x.DriverID_FK == _driver).ToList();
+            if (driverCheck.Count == 0)
             {
-                var driverCheck = dbx.Queues.Where(x => x.Status_FK == 20 && x.DriverID_FK == _driver).ToList();
-                if (driverCheck.Count == 0)
+                try
                 {
-                    using (var ts = dbx.Database.BeginTransaction())
+                    var queue = new Queue
                     {
-                        try
+                        DriverID_FK = _driver,
+                        ComosiunID_FK = _commissionId,
+                        Type_FK = TypeId,
+                        DateTimeRegister = DateTime.Now,
+                        SeriesID_FK = _series,
+                        Number = Convert.ToInt16(txtNumber.EditValue),
+                        GroupCommission = _group,
+                        Status_FK = 20
+                    };
+                    var frm = new FrmCash(txtComossin.Text);
+                    var result = frm.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        var adding = new Adding();
+                        var rec = adding.addingFish(queue, frm.Cash);
+                        if (rec)
                         {
-                            var qu = new Queue
-                            {
-                                DriverID_FK = _driver,
-                                ComosiunID_FK = _commissionID,
-                                Type_FK = _typeID,
-                                DateTimeRegister = DateTime.Now,
-                                SeriesID_FK = _series,
-                                Number = Convert.ToInt16(txtNumber.EditValue),
-                                GroupCommission = _group,
-                                Status_FK = 20
-                            };
-                            dbx.Queues.Add(qu);
-                            dbx.SaveChanges();
-                            var seriesname = dbx.SeriesPrices.Find(_series).SeriesName;
-                            _queue = qu.ID;
-                            _number = $"س {seriesname}  شماره {qu.Number}";
-                            //XtraMessageBox.Show(PublicVar.SuccessfulSave, Text, MessageBoxButtons.OK,
-                            //    MessageBoxIcon.Information);
+                            _number = $"س {PublicVar.SeriesName}  شماره {adding.StrNumber}";
                             printFish();
-                            pardakht(dbx);
-                            LastNumber();
-                            ts.Commit();
-                        }
-                        catch
-                        {
-                            XtraMessageBox.Show(PublicVar.ErrorMessageForNotSave, Text, MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                            lastNumber();
                         }
                     }
                 }
-                else
+                catch
                 {
-                    var str =
-                        $"برای شماره هوشمند {driverCheck[0].Driver.SmartCart} نوبت محموله {driverCheck[0].LoadType.Type} در تاریخ {driverCheck[0].DateTimeRegister} ثبت شده است";
-                    XtraMessageBox.Show(str, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show(PublicVar.ErrorMessageForNotSave, Text, MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
+            }
+            else
+            {
+                var str =
+                    $"برای شماره هوشمند {driverCheck[0].Driver.SmartCart} نوبت محموله {driverCheck[0].LoadType.Type} در تاریخ {driverCheck[0].DateTimeRegister} ثبت شده است";
+                XtraMessageBox.Show(str, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        private void LastNumber()
+
+        private void lastNumber()
         {
             var qryNumber = new Counter().lastNumber(PublicVar.SeriesID);
             txtNumber.Text = (qryNumber + 1).ToString("000");

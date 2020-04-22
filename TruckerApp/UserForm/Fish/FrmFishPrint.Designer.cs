@@ -1,4 +1,4 @@
-﻿namespace TruckerApp.UserForm
+﻿namespace TruckerApp.UserForm.Fish
 {
     partial class FrmFishPrint
     {

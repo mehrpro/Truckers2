@@ -2,10 +2,8 @@
 using System.Drawing;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using TruckerApp.UserForm;
-using TruckerApp.UserForm.Fish;
 
-namespace TruckerApp
+namespace TruckerApp.UserForm.Fish
 {
     public partial class FrmFishPanel : XtraForm
     {
@@ -13,7 +11,8 @@ namespace TruckerApp
         {
             InitializeComponent();
         }
-        Counter counter = new Counter();
+
+        private readonly Counter _counter = new Counter();
         private void FrmFishPanel_Load(object sender, EventArgs e)
         {
             layoutControl1.Location = new Point(this.Width / 2 - (layoutControl1.Width / 2), layoutControl1.Location.Y);
@@ -25,7 +24,7 @@ namespace TruckerApp
         {
             var newForm = new FrmFishPrint()
             {
-                _typeID = 1,
+                TypeId = 1,
                 FormBorderStyle = FormBorderStyle.None,
                 StartPosition = FormStartPosition.CenterScreen,
             };
@@ -36,7 +35,7 @@ namespace TruckerApp
         {
             var newForm = new FrmFishPrint()
             {
-                _typeID = 2,
+                TypeId = 2,
                 FormBorderStyle = FormBorderStyle.None,
                 StartPosition = FormStartPosition.CenterScreen,
             };
@@ -47,7 +46,7 @@ namespace TruckerApp
         {
             var newForm = new FrmFishPrint()
             {
-                _typeID = 4,
+                TypeId = 4,
                 FormBorderStyle = FormBorderStyle.None,
                 StartPosition = FormStartPosition.CenterScreen,
             };
@@ -58,7 +57,7 @@ namespace TruckerApp
         {
             var newForm = new FrmFishPrint()
             {
-                _typeID = 3,
+                TypeId = 3,
                 FormBorderStyle = FormBorderStyle.None,
                 StartPosition = FormStartPosition.CenterScreen,
             };
@@ -67,11 +66,11 @@ namespace TruckerApp
 
         private void timerCounter_Tick(object sender, EventArgs e)
         {
-            cntPacket.Text = counter.packet_cnt(PublicVar.SeriesID).ToString("0000");
-            cntClinker.Text = counter.clinker_cnt(PublicVar.SeriesID).ToString("0000");
-            cntFalah.Text =  counter.faleh_cnt(PublicVar.SeriesID).ToString("0000");
-            cntGandom.Text = counter.gandom_cnt(PublicVar.SeriesID).ToString("0000");
-            cntTotal.Text = counter.total_cnt(PublicVar.SeriesID).ToString("0000");
+            cntPacket.Text = _counter.packet_cnt(PublicVar.SeriesID).ToString("0000");
+            cntClinker.Text = _counter.clinker_cnt(PublicVar.SeriesID).ToString("0000");
+            cntFalah.Text =  _counter.faleh_cnt(PublicVar.SeriesID).ToString("0000");
+            cntGandom.Text = _counter.gandom_cnt(PublicVar.SeriesID).ToString("0000");
+            cntTotal.Text = _counter.total_cnt(PublicVar.SeriesID).ToString("0000");
         }
 
         private void FrmFishPanel_FormClosing(object sender, FormClosingEventArgs e)

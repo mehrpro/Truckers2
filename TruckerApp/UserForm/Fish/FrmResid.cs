@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using System.Linq;
 using DevExpress.XtraEditors;
-using DevExpress.XtraGrid.Views.Grid;
 
 namespace TruckerApp.UserForm.Fish
 {

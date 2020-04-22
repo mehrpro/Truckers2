@@ -54,7 +54,7 @@ namespace TruckerApp
 
             var newForm = new FrmFishPrint
             {
-                _typeID = 1,
+                TypeId = 1,
                 FormBorderStyle = FormBorderStyle.None,
                 StartPosition = FormStartPosition.CenterScreen
             };
@@ -164,7 +164,7 @@ namespace TruckerApp
         {
             var newForm = new FrmFishPrint()
             {
-                _typeID = 2,
+                TypeId = 2,
                 FormBorderStyle = FormBorderStyle.None,
                 StartPosition = FormStartPosition.CenterScreen,
             };
@@ -175,7 +175,7 @@ namespace TruckerApp
         {
             var newForm = new FrmFishPrint()
             {
-                _typeID = 4,
+                TypeId = 4,
                 FormBorderStyle = FormBorderStyle.None,
                 StartPosition = FormStartPosition.CenterScreen,
             };
@@ -186,7 +186,7 @@ namespace TruckerApp
         {
             var newForm = new FrmFishPrint()
             {
-                _typeID = 3,
+                TypeId = 3,
                 FormBorderStyle = FormBorderStyle.None,
                 StartPosition = FormStartPosition.CenterScreen,
             };
