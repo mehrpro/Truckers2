@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCasheList));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.cashesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -52,15 +53,16 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.txtOther = new DevExpress.XtraEditors.TextEdit();
+            this.txtTotalCash = new DevExpress.XtraEditors.TextEdit();
             this.txtClinker = new DevExpress.XtraEditors.TextEdit();
             this.txtGandom = new DevExpress.XtraEditors.TextEdit();
-            this.txtNoMember = new DevExpress.XtraEditors.TextEdit();
+            this.txtPOS = new DevExpress.XtraEditors.TextEdit();
             this.txtSerial = new DevExpress.XtraEditors.TextEdit();
             this.txtDate = new DevExpress.XtraEditors.TextEdit();
             this.txtFalaeh = new DevExpress.XtraEditors.TextEdit();
-            this.txtMember = new DevExpress.XtraEditors.TextEdit();
+            this.txtCash = new DevExpress.XtraEditors.TextEdit();
             this.txtPacket = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -68,14 +70,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOther.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTotalCash.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtClinker.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGandom.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNoMember.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPOS.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSerial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFalaeh.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMember.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCash.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPacket.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,10 +99,10 @@
             // 
             this.gridControl1.DataSource = this.cashesBindingSource;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 237);
+            this.gridControl1.Location = new System.Drawing.Point(2, 238);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1103, 404);
+            this.gridControl1.Size = new System.Drawing.Size(1103, 403);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -316,6 +318,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.simpleButton9);
             this.panelControl1.Controls.Add(this.labelControl9);
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.labelControl8);
@@ -325,20 +328,21 @@
             this.panelControl1.Controls.Add(this.labelControl4);
             this.panelControl1.Controls.Add(this.labelControl12);
             this.panelControl1.Controls.Add(this.labelControl11);
-            this.panelControl1.Controls.Add(this.txtOther);
+            this.panelControl1.Controls.Add(this.txtTotalCash);
             this.panelControl1.Controls.Add(this.txtClinker);
             this.panelControl1.Controls.Add(this.txtGandom);
-            this.panelControl1.Controls.Add(this.txtNoMember);
+            this.panelControl1.Controls.Add(this.txtPOS);
             this.panelControl1.Controls.Add(this.txtSerial);
             this.panelControl1.Controls.Add(this.txtDate);
             this.panelControl1.Controls.Add(this.txtFalaeh);
-            this.panelControl1.Controls.Add(this.txtMember);
+            this.panelControl1.Controls.Add(this.txtCash);
             this.panelControl1.Controls.Add(this.txtPacket);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(2, 55);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1103, 182);
+            this.panelControl1.Size = new System.Drawing.Size(1103, 183);
             this.panelControl1.TabIndex = 2;
+            this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
             // labelControl9
             // 
@@ -346,9 +350,9 @@
             this.labelControl9.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.labelControl9.Location = new System.Drawing.Point(464, 63);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(50, 24);
+            this.labelControl9.Size = new System.Drawing.Size(35, 24);
             this.labelControl9.TabIndex = 23;
-            this.labelControl9.Text = "غیر عضو";
+            this.labelControl9.Text = "POS";
             // 
             // labelControl3
             // 
@@ -366,9 +370,9 @@
             this.labelControl8.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.labelControl8.Location = new System.Drawing.Point(464, 99);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(49, 24);
+            this.labelControl8.Size = new System.Drawing.Size(38, 24);
             this.labelControl8.TabIndex = 20;
-            this.labelControl8.Text = "غیربومی";
+            this.labelControl8.Text = "مجموع";
             // 
             // labelControl1
             // 
@@ -396,9 +400,9 @@
             this.labelControl7.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.labelControl7.Location = new System.Drawing.Point(464, 27);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(31, 24);
+            this.labelControl7.Size = new System.Drawing.Size(43, 24);
             this.labelControl7.TabIndex = 18;
-            this.labelControl7.Text = "اعضاء";
+            this.labelControl7.Text = "صندوق";
             // 
             // labelControl4
             // 
@@ -430,29 +434,29 @@
             this.labelControl11.TabIndex = 14;
             this.labelControl11.Text = "سریال فروش";
             // 
-            // txtOther
+            // txtTotalCash
             // 
-            this.txtOther.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOther.EditValue = "352";
-            this.txtOther.Location = new System.Drawing.Point(358, 96);
-            this.txtOther.Name = "txtOther";
-            this.txtOther.Parmida_ActivePlusMultiKeys = false;
-            this.txtOther.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.txtOther.Properties.Appearance.Options.UseFont = true;
-            this.txtOther.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtOther.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.txtOther.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Blue;
-            this.txtOther.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtOther.Properties.AppearanceReadOnly.Options.UseFont = true;
-            this.txtOther.Properties.AppearanceReadOnly.Options.UseForeColor = true;
-            this.txtOther.Properties.ReadOnly = true;
-            this.txtOther.Size = new System.Drawing.Size(100, 30);
-            this.txtOther.TabIndex = 11;
+            this.txtTotalCash.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTotalCash.EditValue = "";
+            this.txtTotalCash.Location = new System.Drawing.Point(289, 96);
+            this.txtTotalCash.Name = "txtTotalCash";
+            this.txtTotalCash.Parmida_ActivePlusMultiKeys = false;
+            this.txtTotalCash.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtTotalCash.Properties.Appearance.Options.UseFont = true;
+            this.txtTotalCash.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtTotalCash.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtTotalCash.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Blue;
+            this.txtTotalCash.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.txtTotalCash.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.txtTotalCash.Properties.AppearanceReadOnly.Options.UseForeColor = true;
+            this.txtTotalCash.Properties.ReadOnly = true;
+            this.txtTotalCash.Size = new System.Drawing.Size(169, 30);
+            this.txtTotalCash.TabIndex = 11;
             // 
             // txtClinker
             // 
             this.txtClinker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtClinker.EditValue = "352";
+            this.txtClinker.EditValue = "";
             this.txtClinker.Location = new System.Drawing.Point(613, 132);
             this.txtClinker.Name = "txtClinker";
             this.txtClinker.Parmida_ActivePlusMultiKeys = false;
@@ -471,7 +475,7 @@
             // txtGandom
             // 
             this.txtGandom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtGandom.EditValue = "352";
+            this.txtGandom.EditValue = "";
             this.txtGandom.Location = new System.Drawing.Point(613, 96);
             this.txtGandom.Name = "txtGandom";
             this.txtGandom.Parmida_ActivePlusMultiKeys = false;
@@ -487,30 +491,30 @@
             this.txtGandom.Size = new System.Drawing.Size(100, 30);
             this.txtGandom.TabIndex = 9;
             // 
-            // txtNoMember
+            // txtPOS
             // 
-            this.txtNoMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNoMember.EditValue = "352";
-            this.txtNoMember.Location = new System.Drawing.Point(358, 60);
-            this.txtNoMember.Name = "txtNoMember";
-            this.txtNoMember.Parmida_ActivePlusMultiKeys = false;
-            this.txtNoMember.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.txtNoMember.Properties.Appearance.Options.UseFont = true;
-            this.txtNoMember.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtNoMember.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.txtNoMember.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Blue;
-            this.txtNoMember.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtNoMember.Properties.AppearanceReadOnly.Options.UseFont = true;
-            this.txtNoMember.Properties.AppearanceReadOnly.Options.UseForeColor = true;
-            this.txtNoMember.Properties.ReadOnly = true;
-            this.txtNoMember.Size = new System.Drawing.Size(100, 30);
-            this.txtNoMember.TabIndex = 8;
+            this.txtPOS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPOS.EditValue = "";
+            this.txtPOS.Location = new System.Drawing.Point(289, 60);
+            this.txtPOS.Name = "txtPOS";
+            this.txtPOS.Parmida_ActivePlusMultiKeys = false;
+            this.txtPOS.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtPOS.Properties.Appearance.Options.UseFont = true;
+            this.txtPOS.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtPOS.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtPOS.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Blue;
+            this.txtPOS.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.txtPOS.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.txtPOS.Properties.AppearanceReadOnly.Options.UseForeColor = true;
+            this.txtPOS.Properties.ReadOnly = true;
+            this.txtPOS.Size = new System.Drawing.Size(169, 30);
+            this.txtPOS.TabIndex = 8;
             // 
             // txtSerial
             // 
             this.txtSerial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSerial.EditValue = "352";
-            this.txtSerial.Location = new System.Drawing.Point(864, 60);
+            this.txtSerial.EditValue = "";
+            this.txtSerial.Location = new System.Drawing.Point(819, 60);
             this.txtSerial.Name = "txtSerial";
             this.txtSerial.Parmida_ActivePlusMultiKeys = false;
             this.txtSerial.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -522,14 +526,14 @@
             this.txtSerial.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtSerial.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtSerial.Properties.ReadOnly = true;
-            this.txtSerial.Size = new System.Drawing.Size(100, 30);
+            this.txtSerial.Size = new System.Drawing.Size(145, 30);
             this.txtSerial.TabIndex = 7;
             // 
             // txtDate
             // 
             this.txtDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDate.EditValue = "352";
-            this.txtDate.Location = new System.Drawing.Point(864, 24);
+            this.txtDate.EditValue = "";
+            this.txtDate.Location = new System.Drawing.Point(819, 24);
             this.txtDate.Name = "txtDate";
             this.txtDate.Parmida_ActivePlusMultiKeys = false;
             this.txtDate.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -541,13 +545,13 @@
             this.txtDate.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtDate.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtDate.Properties.ReadOnly = true;
-            this.txtDate.Size = new System.Drawing.Size(100, 30);
+            this.txtDate.Size = new System.Drawing.Size(145, 30);
             this.txtDate.TabIndex = 5;
             // 
             // txtFalaeh
             // 
             this.txtFalaeh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFalaeh.EditValue = "352";
+            this.txtFalaeh.EditValue = "";
             this.txtFalaeh.Location = new System.Drawing.Point(613, 60);
             this.txtFalaeh.Name = "txtFalaeh";
             this.txtFalaeh.Parmida_ActivePlusMultiKeys = false;
@@ -563,29 +567,29 @@
             this.txtFalaeh.Size = new System.Drawing.Size(100, 30);
             this.txtFalaeh.TabIndex = 4;
             // 
-            // txtMember
+            // txtCash
             // 
-            this.txtMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMember.EditValue = "352";
-            this.txtMember.Location = new System.Drawing.Point(358, 24);
-            this.txtMember.Name = "txtMember";
-            this.txtMember.Parmida_ActivePlusMultiKeys = false;
-            this.txtMember.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.txtMember.Properties.Appearance.Options.UseFont = true;
-            this.txtMember.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtMember.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.txtMember.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Blue;
-            this.txtMember.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtMember.Properties.AppearanceReadOnly.Options.UseFont = true;
-            this.txtMember.Properties.AppearanceReadOnly.Options.UseForeColor = true;
-            this.txtMember.Properties.ReadOnly = true;
-            this.txtMember.Size = new System.Drawing.Size(100, 30);
-            this.txtMember.TabIndex = 12;
+            this.txtCash.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCash.EditValue = "";
+            this.txtCash.Location = new System.Drawing.Point(289, 24);
+            this.txtCash.Name = "txtCash";
+            this.txtCash.Parmida_ActivePlusMultiKeys = false;
+            this.txtCash.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtCash.Properties.Appearance.Options.UseFont = true;
+            this.txtCash.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtCash.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtCash.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Blue;
+            this.txtCash.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.txtCash.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.txtCash.Properties.AppearanceReadOnly.Options.UseForeColor = true;
+            this.txtCash.Properties.ReadOnly = true;
+            this.txtCash.Size = new System.Drawing.Size(169, 30);
+            this.txtCash.TabIndex = 12;
             // 
             // txtPacket
             // 
             this.txtPacket.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPacket.EditValue = "352";
+            this.txtPacket.EditValue = "";
             this.txtPacket.Location = new System.Drawing.Point(613, 24);
             this.txtPacket.Name = "txtPacket";
             this.txtPacket.Parmida_ActivePlusMultiKeys = false;
@@ -600,6 +604,19 @@
             this.txtPacket.Properties.ReadOnly = true;
             this.txtPacket.Size = new System.Drawing.Size(100, 30);
             this.txtPacket.TabIndex = 2;
+            // 
+            // simpleButton9
+            // 
+            this.simpleButton9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton9.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.simpleButton9.Appearance.Options.UseFont = true;
+            this.simpleButton9.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton9.Image")));
+            this.simpleButton9.Location = new System.Drawing.Point(108, 109);
+            this.simpleButton9.Name = "simpleButton9";
+            this.simpleButton9.Size = new System.Drawing.Size(133, 53);
+            this.simpleButton9.TabIndex = 24;
+            this.simpleButton9.Text = "چاپ";
+            this.simpleButton9.Click += new System.EventHandler(this.simpleButton9_Click);
             // 
             // FrmCasheList
             // 
@@ -619,14 +636,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOther.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTotalCash.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtClinker.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGandom.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNoMember.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPOS.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSerial.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFalaeh.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMember.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCash.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPacket.Properties)).EndInit();
             this.ResumeLayout(false);
 
@@ -648,23 +665,24 @@
         private DevExpress.XtraGrid.Columns.GridColumn colUser;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.TextEdit txtOther;
         private DevExpress.XtraEditors.TextEdit txtGandom;
-        private DevExpress.XtraEditors.TextEdit txtNoMember;
+        private DevExpress.XtraEditors.TextEdit txtPOS;
         private DevExpress.XtraEditors.TextEdit txtSerial;
         private DevExpress.XtraEditors.TextEdit txtDate;
         private DevExpress.XtraEditors.TextEdit txtFalaeh;
-        private DevExpress.XtraEditors.TextEdit txtMember;
+        private DevExpress.XtraEditors.TextEdit txtCash;
         private DevExpress.XtraEditors.TextEdit txtPacket;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtClinker;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.TextEdit txtTotalCash;
+        private DevExpress.XtraEditors.SimpleButton simpleButton9;
     }
 }

@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Data.Entity;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
 
 namespace TruckerApp.UserForm
 {
@@ -25,20 +26,39 @@ namespace TruckerApp.UserForm
             txtPacket.Text = counter.packet(PublicVar.SeriesID).ToString();
             txtGandom.Text = counter.gandom(PublicVar.SeriesID).ToString();
             txtClinker.Text = counter.clinker(PublicVar.SeriesID).ToString();
-            txtMember.Text = counter.member(PublicVar.SeriesID).ToString();
-            txtNoMember.Text = counter.noMember(PublicVar.SeriesID).ToString();
-            txtOther.Text = counter.other(PublicVar.SeriesID).ToString();
-
+            txtCash.Text = counter.TotalCash(PublicVar.SeriesID).ToString();
+            txtPOS.Text = counter.TotalPOS(PublicVar.SeriesID).ToString();
+            txtTotalCash.Text = $"{counter.TotalCash(PublicVar.SeriesID)+ counter.TotalPOS(PublicVar.SeriesID)}";
             txtSerial.Text = PublicVar.SeriesName.ToString();
             txtDate.Text = $"{PublicVar.DateSerial:yyyy/MM/dd}";
-
-
         }
-
-
         private void FrmCasheList_Load(object sender, EventArgs e)
         {
             setup();
+        }
+
+        private void panelControl1_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
+        {
+
+        }
+        private void printFish()
+        {
+            var report = XtraReport.FromFile("Cash.repx", true);
+            var tool = new ReportPrintTool(report);
+            report.Parameters["datetime"].Value = $"{PublicVar.DateSerial:yyyy/MM/dd}";
+            report.Parameters["faleh"].Value = $"{ txtFalaeh.Text}";
+            report.Parameters["packat"].Value = $"{txtPacket.Text}";
+            report.Parameters["clinker"].Value = $"{ txtClinker.Text}";
+            report.Parameters["gandom"].Value = $"{txtGandom.Text}";
+            report.Parameters["cash"].Value = $"{txtCash.Text}";
+            report.Parameters["pos"].Value = $"{txtPOS.Text}";
+            report.Parameters["total"].Value = $"{ txtTotalCash.Text}";
+            tool.PrintDialog();
+        }
+
+        private void simpleButton9_Click(object sender, EventArgs e)
+        {
+            printFish();
         }
     }
 }

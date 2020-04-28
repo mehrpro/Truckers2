@@ -21,6 +21,12 @@ namespace TruckerApp
         public short member(int seriesid) => (short)db.Queues.Count(x => x.GroupCommission == 30 && x.SeriesID_FK == seriesid);
         public short noMember(int seriesid) => (short)db.Queues.Count(x => x.GroupCommission == 31 && x.SeriesID_FK == seriesid);
         public short other(int seriesid) => (short)db.Queues.Count(x => x.GroupCommission == 32 && x.SeriesID_FK == seriesid);
+
+        public int TotalCash(int seriesid) =>(int)
+            db.Cashes.Where(x => x.seriesID_FK == seriesid).Sum(x => x.CashDesk.Value);
+
+        public int TotalPOS(int seriesid) =>(int)
+            db.Cashes.Where(x => x.seriesID_FK == seriesid).Sum(x => x.Pos.Value);
         public int SeriesCount(int seriesid) => db.Queues.Count(x => x.SeriesID_FK == seriesid);
         public int LastSeriesNum() => db.SeriesPrices.Max(x => x.SeriesName);
         public int? LastSeriesID()=> db.SeriesPrices.SingleOrDefault(x => x.enabeled == true && x.closing == false).SereisID;

@@ -75,7 +75,6 @@ namespace TruckerApp.UserForm.Fish
             report.Parameters["TagNumbers"].Value = _tagnumber;
             report.Parameters["Type"].Value = _type;
             tool.PrintDialog();
-
         }
 
         private void cbxSmart_EditValueChanged(object sender, EventArgs e)
