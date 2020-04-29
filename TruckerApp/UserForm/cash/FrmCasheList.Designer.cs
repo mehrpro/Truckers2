@@ -44,6 +44,7 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -62,7 +63,7 @@
             this.txtFalaeh = new DevExpress.XtraEditors.TextEdit();
             this.txtCash = new DevExpress.XtraEditors.TextEdit();
             this.txtPacket = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -318,6 +319,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.simpleButton1);
             this.panelControl1.Controls.Add(this.simpleButton9);
             this.panelControl1.Controls.Add(this.labelControl9);
             this.panelControl1.Controls.Add(this.labelControl3);
@@ -343,6 +345,19 @@
             this.panelControl1.Size = new System.Drawing.Size(1103, 183);
             this.panelControl1.TabIndex = 2;
             this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
+            // 
+            // simpleButton9
+            // 
+            this.simpleButton9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton9.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.simpleButton9.Appearance.Options.UseFont = true;
+            this.simpleButton9.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton9.Image")));
+            this.simpleButton9.Location = new System.Drawing.Point(108, 109);
+            this.simpleButton9.Name = "simpleButton9";
+            this.simpleButton9.Size = new System.Drawing.Size(133, 53);
+            this.simpleButton9.TabIndex = 24;
+            this.simpleButton9.Text = "چاپ";
+            this.simpleButton9.Click += new System.EventHandler(this.simpleButton9_Click);
             // 
             // labelControl9
             // 
@@ -605,18 +620,18 @@
             this.txtPacket.Size = new System.Drawing.Size(100, 30);
             this.txtPacket.TabIndex = 2;
             // 
-            // simpleButton9
+            // simpleButton1
             // 
-            this.simpleButton9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton9.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.simpleButton9.Appearance.Options.UseFont = true;
-            this.simpleButton9.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton9.Image")));
-            this.simpleButton9.Location = new System.Drawing.Point(108, 109);
-            this.simpleButton9.Name = "simpleButton9";
-            this.simpleButton9.Size = new System.Drawing.Size(133, 53);
-            this.simpleButton9.TabIndex = 24;
-            this.simpleButton9.Text = "چاپ";
-            this.simpleButton9.Click += new System.EventHandler(this.simpleButton9_Click);
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(-31, 109);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(133, 53);
+            this.simpleButton1.TabIndex = 24;
+            this.simpleButton1.Text = "خروج";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // FrmCasheList
             // 
@@ -684,5 +699,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.TextEdit txtTotalCash;
         private DevExpress.XtraEditors.SimpleButton simpleButton9;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

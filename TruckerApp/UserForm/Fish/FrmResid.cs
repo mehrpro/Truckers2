@@ -17,11 +17,11 @@ namespace TruckerApp.UserForm.Fish
         private BindingList<NumberList> dsAccept;
         private BindingList<NumberList> dsList;
 
-        private void ListResied()
+        private void ListResied(int typr)
         {
             dsAccept = new BindingList<NumberList>();
             dsList = new BindingList<NumberList>();
-            var qry = db.Queues.Where(x => x.Status_FK == 20).ToList();
+            var qry = db.Queues.Where(x => x.Status_FK == 20 && x.Type_FK==typr).ToList();
             if (qry.Count > 0)
             {
                 foreach (var itemQueue in qry)
@@ -58,7 +58,7 @@ namespace TruckerApp.UserForm.Fish
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            ListResied();
+            ListResied(3);
         }
 
         private void repositoryItemButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -86,7 +86,22 @@ namespace TruckerApp.UserForm.Fish
             }
 
             db.SaveChanges();
-            ListResied();
+          //  ListResied();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            ListResied(2);
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            ListResied(4);
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            ListResied(1);
         }
     }
 
