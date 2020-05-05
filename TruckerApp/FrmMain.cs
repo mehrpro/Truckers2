@@ -55,7 +55,7 @@ namespace TruckerApp
             var newForm = new FrmFishPrint
             {
                 TypeId = 1,
-                FormBorderStyle = FormBorderStyle.None,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
                 StartPosition = FormStartPosition.CenterScreen
             };
             newForm.ShowDialog();
@@ -90,10 +90,7 @@ namespace TruckerApp
 
         private void btnHavaleh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (var c in this.MdiChildren)
-            {
-                c.Close();
-            }
+            foreach (var c in MdiChildren) c.Close();
             var newForm = new FrmQueueList()
             {
                 FormBorderStyle = FormBorderStyle.None,
@@ -106,10 +103,7 @@ namespace TruckerApp
 
         private void btnCasheStatus_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (var c in this.MdiChildren)
-            {
-                c.Close();
-            }
+            foreach (var c in MdiChildren) c.Close();
             var newForm = new FrmCasheList()
             {
                 FormBorderStyle = FormBorderStyle.None,
@@ -122,7 +116,6 @@ namespace TruckerApp
 
         private void btnCommissionNative_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
             var newForm = new UserForm.Commission.FrmCommissionNative()
             {
                 Group1 = 15,
@@ -134,7 +127,6 @@ namespace TruckerApp
 
         private void btnCommissionOther_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
             var newForm = new UserForm.Commission.FrmCommissionNative()
             {
                 Group1 = 16,
@@ -165,7 +157,7 @@ namespace TruckerApp
             var newForm = new FrmFishPrint()
             {
                 TypeId = 2,
-                FormBorderStyle = FormBorderStyle.None,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
                 StartPosition = FormStartPosition.CenterScreen,
             };
             newForm.ShowDialog();
@@ -176,7 +168,7 @@ namespace TruckerApp
             var newForm = new FrmFishPrint()
             {
                 TypeId = 4,
-                FormBorderStyle = FormBorderStyle.None,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
                 StartPosition = FormStartPosition.CenterScreen,
             };
             newForm.ShowDialog();
@@ -187,7 +179,7 @@ namespace TruckerApp
             var newForm = new FrmFishPrint()
             {
                 TypeId = 3,
-                FormBorderStyle = FormBorderStyle.None,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
                 StartPosition = FormStartPosition.CenterScreen,
             };
             newForm.ShowDialog();
@@ -211,70 +203,50 @@ namespace TruckerApp
 
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (var c in this.MdiChildren)
-            {
-                c.Close();
-            }
             var newForm = new FrmPrintList()
             {
                 TypeId = 1,
-                FormBorderStyle = FormBorderStyle.None,
-                MdiParent = this,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+               WindowState = FormWindowState.Maximized,
                 StartPosition = FormStartPosition.CenterParent,
-                Dock = DockStyle.Fill
             };
-            newForm.Show();
+            newForm.ShowDialog();
         }
 
         private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (var c in this.MdiChildren)
-            {
-                c.Close();
-            }
             var newForm = new FrmPrintList()
             {
                 TypeId = 2,
-                FormBorderStyle = FormBorderStyle.None,
-                MdiParent = this,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                WindowState = FormWindowState.Maximized,
                 StartPosition = FormStartPosition.CenterParent,
-                Dock = DockStyle.Fill
             };
-            newForm.Show();
+            newForm.ShowDialog();
         }
 
         private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (var c in this.MdiChildren)
-            {
-                c.Close();
-            }
             var newForm = new FrmPrintList()
             {
                 TypeId = 3,
-                FormBorderStyle = FormBorderStyle.None,
-                MdiParent = this,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                WindowState = FormWindowState.Maximized,
                 StartPosition = FormStartPosition.CenterParent,
-                Dock = DockStyle.Fill
             };
-            newForm.Show();
+            newForm.ShowDialog();
         }
 
         private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (var c in this.MdiChildren)
-            {
-                c.Close();
-            }
             var newForm = new FrmPrintList()
             {
                 TypeId = 4,
-                FormBorderStyle = FormBorderStyle.None,
-                MdiParent = this,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                WindowState = FormWindowState.Maximized,
                 StartPosition = FormStartPosition.CenterParent,
-                Dock = DockStyle.Fill
             };
-            newForm.Show();
+            newForm.ShowDialog();
         }
 
         private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

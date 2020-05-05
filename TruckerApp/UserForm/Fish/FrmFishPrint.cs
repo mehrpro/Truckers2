@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraReports.UI;
@@ -16,6 +17,8 @@ namespace TruckerApp.UserForm.Fish
         private string _name, _number, _smartcart, _tagnumber, _type;
         public byte TypeId { get; set; }
         private byte _group;
+        //private string _price;
+        private string _memeber;
 
 
         public FrmFishPrint()
@@ -73,9 +76,12 @@ namespace TruckerApp.UserForm.Fish
             report.Parameters["number"].Value = _number;
             report.Parameters["smartcart"].Value = _smartcart;
             report.Parameters["TagNumbers"].Value = _tagnumber;
+            report.Parameters["member"].Value = _memeber;
+            report.Parameters["price"].Value = _commission;
             report.Parameters["Type"].Value = _type;
             tool.PrintDialog();
         }
+
 
         private void cbxSmart_EditValueChanged(object sender, EventArgs e)
         {
@@ -86,6 +92,7 @@ namespace TruckerApp.UserForm.Fish
             _driver = driver.DriverID;
             _smartcart = driver.SmartCart.ToString();
             _group = driver.GroupID;
+            _memeber = driver.LoadType.Type;
             if (_group == 30)
             {
                 if (TypeId == 4)
@@ -93,6 +100,7 @@ namespace TruckerApp.UserForm.Fish
                     var qry = _db.Commissions.SingleOrDefault(x => x.enabled && x.Groups_FK == 13);
                     _commissionId = qry.CommissionID;
                     _commission = qry.CommissionPrice;
+                    
                 }
                 else
                 {

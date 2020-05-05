@@ -245,6 +245,12 @@
     <Compile Include="UserForm\Reporting\FrmPrintList.Designer.cs">
       <DependentUpon>FrmPrintList.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserForm\users\FrmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\users\FrmUsers.Designer.cs">
+      <DependentUpon>FrmUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForm\users\UserClass.cs" />
     <Compile Include="XRDesignRibbonControllerResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -313,6 +319,9 @@
     <EmbeddedResource Include="UserForm\Reporting\FrmPrintList.resx">
       <DependentUpon>FrmPrintList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\users\FrmUsers.resx">
+      <DependentUpon>FrmUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XRDesignRibbonControllerResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>XRDesignRibbonControllerResources.Designer.cs</LastGenOutput>
@@ -355,6 +364,8 @@
       <DependentUpon>MDB.edmx</DependentUpon>
       <LastGenOutput>MDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-driver-64.png" />
+    <None Include="Resources\icons8-cash-receipt-64.png" />
     <None Include="Resources\icons8-bulleted-list-64.png" />
     <None Include="Resources\icons8-todo-list-641.png" />
     <None Include="Resources\icons8-todo-list-64.png" />

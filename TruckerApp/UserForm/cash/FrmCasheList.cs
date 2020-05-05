@@ -45,7 +45,7 @@ namespace TruckerApp.UserForm
         {
             var report = XtraReport.FromFile("Cash.repx", true);
             var tool = new ReportPrintTool(report);
-            report.Parameters["datetime"].Value = $"{PublicVar.DateSerial:yyyy/MM/dd}";
+            report.Parameters["datetime"].Value = $"{DateTime.Now:yyyy/MM/dd}  {DateTime.Now.ToShortTimeString()}";
             report.Parameters["faleh"].Value = $"{ txtFalaeh.Text}";
             report.Parameters["packat"].Value = $"{txtPacket.Text}";
             report.Parameters["clinker"].Value = $"{ txtClinker.Text}";
@@ -53,6 +53,7 @@ namespace TruckerApp.UserForm
             report.Parameters["cash"].Value = $"{txtCash.Text}";
             report.Parameters["pos"].Value = $"{txtPOS.Text}";
             report.Parameters["total"].Value = $"{ txtTotalCash.Text}";
+            report.Parameters["serial"].Value = $"س {PublicVar.SeriesName} - {PublicVar.DateSerial:yyyy/MM/dd}";
             tool.PrintDialog();
         }
 

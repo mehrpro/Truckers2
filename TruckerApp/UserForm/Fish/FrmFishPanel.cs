@@ -18,7 +18,7 @@ namespace TruckerApp.UserForm.Fish
             layoutControl1.Location = new Point(this.Width / 2 - (layoutControl1.Width / 2), layoutControl1.Location.Y);
             timerCounter.Start();
         }
-        
+
 
         private void btnSimanFaleh_Click(object sender, EventArgs e)
         {
@@ -68,7 +68,7 @@ namespace TruckerApp.UserForm.Fish
         {
             cntPacket.Text = _counter.packet_cnt(PublicVar.SeriesID).ToString("0000");
             cntClinker.Text = _counter.clinker_cnt(PublicVar.SeriesID).ToString("0000");
-            cntFalah.Text =  _counter.faleh_cnt(PublicVar.SeriesID).ToString("0000");
+            cntFalah.Text = _counter.faleh_cnt(PublicVar.SeriesID).ToString("0000");
             cntGandom.Text = _counter.gandom_cnt(PublicVar.SeriesID).ToString("0000");
             cntTotal.Text = _counter.total_cnt(PublicVar.SeriesID).ToString("0000");
         }
@@ -82,7 +82,7 @@ namespace TruckerApp.UserForm.Fish
         {
             var newForm = new FrmRevFish3()
             {
-                FormBorderStyle = FormBorderStyle.None,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
                 StartPosition = FormStartPosition.CenterScreen,
             };
             newForm.ShowDialog();
@@ -104,7 +104,7 @@ namespace TruckerApp.UserForm.Fish
             var newForm = new FrmResid()
             {
                 FormBorderStyle = FormBorderStyle.None,
-               // MdiParent = this,
+                // MdiParent = this,
                 StartPosition = FormStartPosition.CenterParent,
                 Dock = DockStyle.Fill
             };
@@ -120,6 +120,37 @@ namespace TruckerApp.UserForm.Fish
                 MdiParent = this,
                 StartPosition = FormStartPosition.CenterParent,
                 Dock = DockStyle.Fill
+            };
+            newForm.Show();
+        }
+
+        private void simpleButton6_Click_1(object sender, EventArgs e)
+        {
+
+            var newForm = new FrmNewDriver { StartPosition = FormStartPosition.CenterScreen };
+            newForm.ShowDialog();
+        }
+
+        private void simpleButton7_Click_1(object sender, EventArgs e)
+        {
+            var newForm = new FrmMembershipList(false, false)
+            {
+                FormBorderStyle = FormBorderStyle.FixedSingle,
+                WindowState = FormWindowState.Maximized,
+                StartPosition = FormStartPosition.CenterScreen,
+               // Dock = DockStyle.Fill
+            };
+            newForm.ShowDialog();
+        }
+
+        private void simpleButton8_Click(object sender, EventArgs e)
+        {
+            var newForm = new FrmCasheList()
+            {
+                FormBorderStyle = FormBorderStyle.FixedSingle,
+                WindowState = FormWindowState.Maximized,
+                StartPosition = FormStartPosition.CenterScreen,
+                //Dock = DockStyle.Fill
             };
             newForm.Show();
         }

@@ -18,7 +18,7 @@ namespace TruckerApp
         {
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");   // Whiteprint Blueprint Darkroom Metropolis  Visual Studio 2013 Light DevExpress Style
+            UserLookAndFeel.Default.SetSkinStyle("Office 2007 Black");   // Whiteprint Blueprint Darkroom Metropolis  Visual Studio 2013 Light DevExpress Style
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             SkinManager.EnableFormSkins();

@@ -102,7 +102,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(473, 651);
+            this.groupControl1.Size = new System.Drawing.Size(473, 591);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "برگشت حواله";
             // 
@@ -112,7 +112,7 @@
             this.btnClose.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnClose.Appearance.Options.UseFont = true;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(45, 558);
+            this.btnClose.Location = new System.Drawing.Point(45, 521);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(135, 48);
             this.btnClose.TabIndex = 21;
@@ -133,9 +133,8 @@
             this.radioGroupType.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.radioGroupType.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(10)), "خطا در صدور"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(11)), "ابطال و تعویض محموله"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(12)), "ابطال و بازگشت وجه")});
-            this.radioGroupType.Size = new System.Drawing.Size(317, 125);
+            this.radioGroupType.Size = new System.Drawing.Size(317, 88);
             this.radioGroupType.TabIndex = 20;
             // 
             // btnRevSave
@@ -144,7 +143,7 @@
             this.btnRevSave.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnRevSave.Appearance.Options.UseFont = true;
             this.btnRevSave.Image = ((System.Drawing.Image)(resources.GetObject("btnRevSave.Image")));
-            this.btnRevSave.Location = new System.Drawing.Point(227, 556);
+            this.btnRevSave.Location = new System.Drawing.Point(227, 519);
             this.btnRevSave.Name = "btnRevSave";
             this.btnRevSave.Size = new System.Drawing.Size(135, 50);
             this.btnRevSave.TabIndex = 16;
@@ -632,7 +631,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 651);
+            this.ClientSize = new System.Drawing.Size(473, 591);
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
