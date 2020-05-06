@@ -17,9 +17,6 @@ namespace TruckerApp
             Environment.Exit(0);
         }
 
-        private byte _UserID { get; set; }
-        private bool _Accsept { get; set; }
-        private string _OpName { get; set; }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -34,6 +31,7 @@ namespace TruckerApp
                 {
                     if (qry.password.Trim() == _Pass)
                     {
+                        PublicVar.userMode = qry.Roul.Trim();
                         PublicVar.Accsept = true;
                         PublicVar.UserID = qry.userID;
                         PublicVar.OpName = $"{qry.FirstName} {qry.FirstName}";

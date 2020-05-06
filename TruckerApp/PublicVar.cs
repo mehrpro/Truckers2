@@ -12,6 +12,7 @@ namespace TruckerApp
         public static string OpName { get; set; }
         public static int SeriesID { get; set; }
         public static int SeriesName { get; set; }
+        public static string userMode { get; set; }
         
 
         public static DateTime DateSerial { get; set; }

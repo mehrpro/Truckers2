@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
@@ -48,15 +47,11 @@
             this.txtFalaeh = new DevExpress.XtraEditors.TextEdit();
             this.txtMember = new DevExpress.XtraEditors.TextEdit();
             this.txtPacket = new DevExpress.XtraEditors.TextEdit();
-            this.txtSerial = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.seriesPricesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbxSerial = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSeriesName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeriesDateStart = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSeriesDateEnd = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSeriesCount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.queuesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDateTimeRegister = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -68,6 +63,8 @@
             this.colDriver1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDriver2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDriver3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -80,12 +77,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtFalaeh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMember.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPacket.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSerial.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seriesPricesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxSerial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.queuesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -104,6 +101,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.searchLookUpEdit1);
             this.panelControl1.Controls.Add(this.labelControl9);
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.labelControl8);
@@ -121,7 +119,7 @@
             this.panelControl1.Controls.Add(this.txtFalaeh);
             this.panelControl1.Controls.Add(this.txtMember);
             this.panelControl1.Controls.Add(this.txtPacket);
-            this.panelControl1.Controls.Add(this.txtSerial);
+            this.panelControl1.Controls.Add(this.cbxSerial);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(2, 55);
             this.panelControl1.Name = "panelControl1";
@@ -368,39 +366,33 @@
             this.txtPacket.Size = new System.Drawing.Size(100, 30);
             this.txtPacket.TabIndex = 0;
             // 
-            // txtSerial
+            // cbxSerial
             // 
-            this.txtSerial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSerial.EditValue = "[]";
-            this.txtSerial.Location = new System.Drawing.Point(592, 19);
-            this.txtSerial.Name = "txtSerial";
-            this.txtSerial.Parmida_ActivePlusMultiKeys = false;
-            this.txtSerial.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.txtSerial.Properties.Appearance.Options.UseFont = true;
-            this.txtSerial.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtSerial.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtSerial.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtSerial.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtSerial.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.txtSerial.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Blue;
-            this.txtSerial.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtSerial.Properties.AppearanceReadOnly.Options.UseFont = true;
-            this.txtSerial.Properties.AppearanceReadOnly.Options.UseForeColor = true;
-            this.txtSerial.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtSerial.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbxSerial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxSerial.EditValue = "[]";
+            this.cbxSerial.Location = new System.Drawing.Point(592, 19);
+            this.cbxSerial.Name = "cbxSerial";
+            this.cbxSerial.Parmida_ActivePlusMultiKeys = false;
+            this.cbxSerial.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.cbxSerial.Properties.Appearance.Options.UseFont = true;
+            this.cbxSerial.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxSerial.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxSerial.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxSerial.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.cbxSerial.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.cbxSerial.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Blue;
+            this.cbxSerial.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.cbxSerial.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.cbxSerial.Properties.AppearanceReadOnly.Options.UseForeColor = true;
+            this.cbxSerial.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxSerial.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtSerial.Properties.DataSource = this.seriesPricesBindingSource;
-            this.txtSerial.Properties.DisplayMember = "SeriesName";
-            this.txtSerial.Properties.NullText = "";
-            this.txtSerial.Properties.ValueMember = "SereisID";
-            this.txtSerial.Properties.View = this.searchLookUpEdit1View;
-            this.txtSerial.Size = new System.Drawing.Size(277, 30);
-            this.txtSerial.TabIndex = 0;
-            this.txtSerial.EditValueChanged += new System.EventHandler(this.txtSerial_EditValueChanged);
-            // 
-            // seriesPricesBindingSource
-            // 
-            this.seriesPricesBindingSource.DataSource = typeof(TruckerApp.SeriesPrice);
+            this.cbxSerial.Properties.NullText = "";
+            this.cbxSerial.Properties.PopupFormSize = new System.Drawing.Size(450, 0);
+            this.cbxSerial.Properties.View = this.searchLookUpEdit1View;
+            this.cbxSerial.Size = new System.Drawing.Size(277, 30);
+            this.cbxSerial.TabIndex = 0;
+            this.cbxSerial.EditValueChanged += new System.EventHandler(this.txtSerial_EditValueChanged);
             // 
             // searchLookUpEdit1View
             // 
@@ -514,9 +506,7 @@
             this.searchLookUpEdit1View.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colSeriesName,
-            this.colSeriesDateStart,
-            this.colSeriesDateEnd,
-            this.colSeriesCount});
+            this.colSeriesDateStart});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -542,32 +532,11 @@
             this.colSeriesDateStart.VisibleIndex = 2;
             this.colSeriesDateStart.Width = 467;
             // 
-            // colSeriesDateEnd
-            // 
-            this.colSeriesDateEnd.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colSeriesDateEnd.Caption = "اتمام فروش";
-            this.colSeriesDateEnd.FieldName = "SeriesDateEnd";
-            this.colSeriesDateEnd.Name = "colSeriesDateEnd";
-            this.colSeriesDateEnd.Visible = true;
-            this.colSeriesDateEnd.VisibleIndex = 3;
-            this.colSeriesDateEnd.Width = 467;
-            // 
-            // colSeriesCount
-            // 
-            this.colSeriesCount.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colSeriesCount.Caption = "جمع تعدادی";
-            this.colSeriesCount.FieldName = "SeriesCount";
-            this.colSeriesCount.Name = "colSeriesCount";
-            this.colSeriesCount.Visible = true;
-            this.colSeriesCount.VisibleIndex = 1;
-            this.colSeriesCount.Width = 221;
-            // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.DataSource = this.queuesBindingSource;
             this.gridControl1.Location = new System.Drawing.Point(4, 200);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -575,10 +544,6 @@
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            // 
-            // queuesBindingSource
-            // 
-            this.queuesBindingSource.DataSource = typeof(TruckerApp.Queue);
             // 
             // gridView1
             // 
@@ -808,6 +773,26 @@
             this.colDriver3.Visible = true;
             this.colDriver3.VisibleIndex = 9;
             // 
+            // searchLookUpEdit1
+            // 
+            this.searchLookUpEdit1.Location = new System.Drawing.Point(45, 67);
+            this.searchLookUpEdit1.Name = "searchLookUpEdit1";
+            this.searchLookUpEdit1.Parmida_ActivePlusMultiKeys = false;
+            this.searchLookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.searchLookUpEdit1.Properties.Appearance.Options.UseFont = true;
+            this.searchLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.searchLookUpEdit1.Properties.View = this.gridView2;
+            this.searchLookUpEdit1.Size = new System.Drawing.Size(296, 30);
+            this.searchLookUpEdit1.TabIndex = 2;
+            // 
+            // gridView2
+            // 
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
             // FrmQueueList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -817,6 +802,7 @@
             this.Name = "FrmQueueList";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "حواله های صادرشده";
+            this.Load += new System.EventHandler(this.FrmQueueList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -830,12 +816,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtFalaeh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMember.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPacket.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSerial.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seriesPricesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxSerial.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.queuesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -844,7 +830,6 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraGrid.GridControl gridControl1;
-        private System.Windows.Forms.BindingSource queuesBindingSource;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colNumber;
         private DevExpress.XtraGrid.Columns.GridColumn colDateTimeRegister;
@@ -874,12 +859,11 @@
         private DevExpress.XtraEditors.TextEdit txtPacket;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtClinker;
-        private DevExpress.XtraEditors.SearchLookUpEdit txtSerial;
-        private System.Windows.Forms.BindingSource seriesPricesBindingSource;
+        private DevExpress.XtraEditors.SearchLookUpEdit cbxSerial;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
         private DevExpress.XtraGrid.Columns.GridColumn colSeriesName;
         private DevExpress.XtraGrid.Columns.GridColumn colSeriesDateStart;
-        private DevExpress.XtraGrid.Columns.GridColumn colSeriesDateEnd;
-        private DevExpress.XtraGrid.Columns.GridColumn colSeriesCount;
+        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
     }
 }

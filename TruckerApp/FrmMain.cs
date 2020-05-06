@@ -75,7 +75,10 @@ namespace TruckerApp
         }
 
         private void btnReportDis_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {}
+        {
+            var frm = new FrmReport();
+            frm.ShowDialog();
+        }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -138,7 +141,7 @@ namespace TruckerApp
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            if (PublicVar.UserID > 1)
+            if (PublicVar.userMode == "user")
             {
                 ribSetting.Visible = false;
             }
@@ -311,6 +314,11 @@ namespace TruckerApp
                 StartPosition = FormStartPosition.CenterScreen,
             };
             newForm.ShowDialog();
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = new FrmUser().ShowDialog();
         }
     }
 }
