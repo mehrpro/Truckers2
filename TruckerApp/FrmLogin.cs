@@ -37,6 +37,7 @@ namespace TruckerApp
                         PublicVar.Accsept = true;
                         PublicVar.UserID = qry.userID;
                         PublicVar.OpName = $"{qry.FirstName} {qry.FirstName}";
+
                         Close();
 
                     }

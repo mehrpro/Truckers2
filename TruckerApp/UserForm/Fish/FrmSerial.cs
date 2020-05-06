@@ -45,7 +45,7 @@ namespace TruckerApp.UserForm
         {
             //using (var ts = db.Database.BeginTransaction())
             //{
-                var lastSeries = counter.lastNumber(PublicVar.SeriesID);
+               // var lastSeries = counter.lastNumber(PublicVar.SeriesID);
                 try
                 {
                     var last = db.SeriesPrices.Single(x => x.enabeled == true && x.closing == false);

@@ -200,7 +200,7 @@ namespace TruckerApp.UserForm.Fish
 
         private void lastNumber()
         {
-            var qryNumber = new Counter().lastNumber(PublicVar.SeriesID);
+            var qryNumber = new Counter().lastNumber(PublicVar.SeriesID , (byte)TypeId);
             txtNumber.Text = (qryNumber + 1).ToString("000");
 
         }

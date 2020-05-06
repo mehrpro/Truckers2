@@ -138,6 +138,10 @@ namespace TruckerApp
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            if (PublicVar.UserID > 1)
+            {
+                ribSetting.Visible = false;
+            }
             foreach (var c in this.MdiChildren)
             {
                 c.Close();

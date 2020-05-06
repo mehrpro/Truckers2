@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Linq;
+using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
 namespace TruckerApp.UserForm.Fish
@@ -80,13 +81,21 @@ namespace TruckerApp.UserForm.Fish
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            foreach (var item in dsAccept)
+            try
             {
-                db.Queues.Find(item.ID).Status_FK = 23;
+                foreach (var item in dsAccept)
+                {
+                    db.Queues.Find(item.ID).Status_FK = 23;
+                }
+                db.SaveChanges();
+                XtraMessageBox.Show("ثبت شد",Text,MessageBoxButtons.OK,MessageBoxIcon.Information);
+                Close();
+            }
+            catch
+            {
+                XtraMessageBox.Show("ذخیره نشد مجدد تلاش کنید",Text,MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
-            db.SaveChanges();
-          //  ListResied();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
