@@ -38,9 +38,9 @@ namespace TruckerApp.UserForm
         {
             List<SeriesPrice> list = new List<SeriesPrice>();
             foreach (var price in db.SeriesPrices.OrderByDescending(x => x.SereisID)) list.Add(price);
-            searchLookUpEdit1.Properties.DataSource= cbxSerial.Properties.DataSource = list;
-            searchLookUpEdit1.Properties.DisplayMember= cbxSerial.Properties.DisplayMember = "SeriesName";
-            searchLookUpEdit1.Properties.ValueMember= cbxSerial.Properties.ValueMember = "SereisID";
+          cbxSerial.Properties.DataSource = list;
+         cbxSerial.Properties.DisplayMember = "SeriesName";
+        cbxSerial.Properties.ValueMember = "SereisID";
         }
         private void txtSerial_EditValueChanged(object sender, EventArgs e)
         {

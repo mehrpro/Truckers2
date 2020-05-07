@@ -33,10 +33,10 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtPassword = new DevExpress.XtraEditors.TextEdit();
             this.txtUsername = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
@@ -93,7 +93,6 @@
             this.groupControl1.Size = new System.Drawing.Size(494, 238);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "اتوماسیون پایانه";
-            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // labelControl2
             // 
@@ -104,6 +103,17 @@
             this.labelControl2.Size = new System.Drawing.Size(51, 24);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "رمز عبور";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("B Yekan", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.labelControl3.Location = new System.Drawing.Point(27, 16);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(354, 39);
+            this.labelControl3.TabIndex = 1;
+            this.labelControl3.Text = "انجمن صنفی رانندگان شهرستان بیجار";
             // 
             // labelControl1
             // 
@@ -118,7 +128,7 @@
             // txtPassword
             // 
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPassword.EditValue = "708801";
+            this.txtPassword.EditValue = "";
             this.txtPassword.Location = new System.Drawing.Point(69, 122);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Parmida_ActivePlusMultiKeys = false;
@@ -126,14 +136,14 @@
             this.txtPassword.Properties.Appearance.Options.UseFont = true;
             this.txtPassword.Properties.Appearance.Options.UseTextOptions = true;
             this.txtPassword.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.txtPassword.Properties.PasswordChar = '#';
+            this.txtPassword.Properties.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(239, 30);
             this.txtPassword.TabIndex = 1;
             // 
             // txtUsername
             // 
             this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUsername.EditValue = "admin";
+            this.txtUsername.EditValue = "";
             this.txtUsername.Location = new System.Drawing.Point(69, 77);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Parmida_ActivePlusMultiKeys = false;
@@ -143,17 +153,6 @@
             this.txtUsername.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtUsername.Size = new System.Drawing.Size(239, 30);
             this.txtUsername.TabIndex = 0;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("B Yekan", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.Blue;
-            this.labelControl3.Location = new System.Drawing.Point(27, 16);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(354, 39);
-            this.labelControl3.TabIndex = 1;
-            this.labelControl3.Text = "انجمن صنفی رانندگان شهرستان بیجار";
             // 
             // FrmLogin
             // 

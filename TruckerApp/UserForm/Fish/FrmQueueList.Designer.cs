@@ -63,8 +63,6 @@
             this.colDriver1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDriver2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDriver3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -81,8 +79,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -101,7 +97,6 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.searchLookUpEdit1);
             this.panelControl1.Controls.Add(this.labelControl9);
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.labelControl8);
@@ -773,26 +768,6 @@
             this.colDriver3.Visible = true;
             this.colDriver3.VisibleIndex = 9;
             // 
-            // searchLookUpEdit1
-            // 
-            this.searchLookUpEdit1.Location = new System.Drawing.Point(45, 67);
-            this.searchLookUpEdit1.Name = "searchLookUpEdit1";
-            this.searchLookUpEdit1.Parmida_ActivePlusMultiKeys = false;
-            this.searchLookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.searchLookUpEdit1.Properties.Appearance.Options.UseFont = true;
-            this.searchLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.searchLookUpEdit1.Properties.View = this.gridView2;
-            this.searchLookUpEdit1.Size = new System.Drawing.Size(296, 30);
-            this.searchLookUpEdit1.TabIndex = 2;
-            // 
-            // gridView2
-            // 
-            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
             // FrmQueueList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -820,8 +795,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -863,7 +836,5 @@
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
         private DevExpress.XtraGrid.Columns.GridColumn colSeriesName;
         private DevExpress.XtraGrid.Columns.GridColumn colSeriesDateStart;
-        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
     }
 }
