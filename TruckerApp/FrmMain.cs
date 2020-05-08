@@ -326,5 +326,10 @@ namespace TruckerApp
 
             var frm = new FrmEmailSetting().ShowDialog();
         }
+
+        private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = new FrmNewDriver3().ShowDialog();
+        }
     }
 }

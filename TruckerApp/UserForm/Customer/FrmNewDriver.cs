@@ -35,6 +35,7 @@ namespace TruckerApp.UserForm
                         newDriver.Tag = Convert.ToByte(txtTag.Text);
                         newDriver.TagNumber = txtTagNumber.Text;
                         newDriver.SmartCart = smartcart;
+                        newDriver.driver_code = Convert.ToInt32(txtCode.Text);
                         newDriver.GroupID = Convert.ToByte(radComosiun.EditValue);
                         db.Drivers.Add(newDriver);
                         db.SaveChanges();

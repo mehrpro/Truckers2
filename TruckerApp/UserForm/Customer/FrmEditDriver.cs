@@ -26,11 +26,12 @@ namespace TruckerApp.UserForm
         {
             if (dxValidationProvider1.Validate())
             {
+                var num = Convert.ToInt32(txtDriverCode.Text.Trim());
                 var qry = db.Drivers.Find(selectDriver.DriverID);
                 if (qry != null)
                 {
                     qry.PhoneNumber = txtPhoneNumber.Text;
-                    qry.driver_code =Convert.ToInt32(txtDriverCode.Text)>0 ? Convert.ToInt32(txtDriverCode.Text) : 0;
+                    qry.driver_code = num;
                     qry.FirstName = txtFirstName.Text;
                     qry.LastName = txtLastNAme.Text;
                     qry.Tag = Convert.ToByte(txtTag.Text);
@@ -60,7 +61,7 @@ namespace TruckerApp.UserForm
             selectDriver = (Driver) txtSmartCart.GetSelectedDataRow();
             if (selectDriver==null)return;
             txtPhoneNumber.Text = selectDriver.PhoneNumber;
-            txtDriverCode.Text = selectDriver.driver_code.ToString();
+            txtDriverCode.Text = selectDriver.driver_code == null ? "0" : selectDriver.driver_code.Value.ToString();
             txtFirstName.Text = selectDriver.FirstName;
             txtLastNAme.Text = selectDriver.LastName;
             txtTag.Text = selectDriver.Tag.ToString();
