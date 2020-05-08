@@ -33,7 +33,6 @@ namespace TruckerApp.UserForm
         private void cbxSmart_EditValueChanged(object sender, EventArgs e)
         {
             var qry = (Driver) cbxSmart.GetSelectedDataRow();
-
             var qryQuese = db.Queues.SingleOrDefault(x => x.DriverID_FK == qry.DriverID && x.Status_FK == 20);
             if (qryQuese != null)
             {

@@ -124,16 +124,22 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmReport.cs">
+    <Compile Include="UserForm\Administrator\FrmEmailSetting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmReport.Designer.cs">
+    <Compile Include="UserForm\Administrator\FrmEmailSetting.Designer.cs">
+      <DependentUpon>FrmEmailSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm\Administrator\FrmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\Administrator\FrmReport.Designer.cs">
       <DependentUpon>FrmReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmUser.cs">
+    <Compile Include="UserForm\Administrator\FrmUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmUser.Designer.cs">
+    <Compile Include="UserForm\Administrator\FrmUser.Designer.cs">
       <DependentUpon>FrmUser.cs</DependentUpon>
     </Compile>
     <Compile Include="LoadType.cs">
@@ -196,6 +202,12 @@
       <DependentUpon>FrmCashStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="Counter.cs" />
+    <Compile Include="UserForm\Customer\FrmEditDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\Customer\FrmEditDriver.Designer.cs">
+      <DependentUpon>FrmEditDriver.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForm\Fish\adding.cs" />
     <Compile Include="UserForm\Fish\FrmFishPanel.cs">
       <SubType>Form</SubType>
@@ -257,13 +269,6 @@
     <Compile Include="UserForm\Reporting\FrmPrintList.Designer.cs">
       <DependentUpon>FrmPrintList.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserForm\users\FrmUsers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserForm\users\FrmUsers.Designer.cs">
-      <DependentUpon>FrmUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserForm\users\UserClass.cs" />
     <Compile Include="XRDesignRibbonControllerResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -275,10 +280,13 @@
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmReport.resx">
+    <EmbeddedResource Include="UserForm\Administrator\FrmEmailSetting.resx">
+      <DependentUpon>FrmEmailSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Administrator\FrmReport.resx">
       <DependentUpon>FrmReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmUser.resx">
+    <EmbeddedResource Include="UserForm\Administrator\FrmUser.resx">
       <DependentUpon>FrmUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrintRibbonControllerResources.resx">
@@ -306,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\cash\FrmCashStatus.resx">
       <DependentUpon>FrmCashStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Customer\FrmEditDriver.resx">
+      <DependentUpon>FrmEditDriver.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\Fish\FrmFishPanel.resx">
       <DependentUpon>FrmFishPanel.cs</DependentUpon>
@@ -336,9 +347,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\Reporting\FrmPrintList.resx">
       <DependentUpon>FrmPrintList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserForm\users\FrmUsers.resx">
-      <DependentUpon>FrmUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XRDesignRibbonControllerResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

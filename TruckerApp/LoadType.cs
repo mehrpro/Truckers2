@@ -21,6 +21,7 @@ namespace TruckerApp
             this.Drivers = new HashSet<Driver>();
             this.Queues = new HashSet<Queue>();
             this.Queues1 = new HashSet<Queue>();
+            this.Commissions1 = new HashSet<Commission>();
         }
     
         public byte TypeID { get; set; }
@@ -34,5 +35,7 @@ namespace TruckerApp
         public virtual ICollection<Queue> Queues { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Queue> Queues1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Commission> Commissions1 { get; set; }
     }
 }

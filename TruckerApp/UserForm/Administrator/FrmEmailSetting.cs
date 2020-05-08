@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TruckerApp.UserForm.users
+namespace TruckerApp
 {
-    public partial class FrmUsers : Form
+    public partial class FrmEmailSetting : Form
     {
-        public FrmUsers()
+        public FrmEmailSetting()
         {
             InitializeComponent();
         }

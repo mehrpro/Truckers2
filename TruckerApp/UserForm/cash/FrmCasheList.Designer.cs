@@ -40,10 +40,10 @@
             this.colType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCasher = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQueue = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colUser = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -63,7 +63,6 @@
             this.txtFalaeh = new DevExpress.XtraEditors.TextEdit();
             this.txtCash = new DevExpress.XtraEditors.TextEdit();
             this.txtPacket = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -229,12 +228,14 @@
             this.colType,
             this.colCasher,
             this.colQueue,
-            this.colUser,
             this.gridColumn1,
             this.gridColumn2});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsFind.AlwaysVisible = true;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colType, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colQueue, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // colName
             // 
@@ -290,15 +291,6 @@
             this.colQueue.Visible = true;
             this.colQueue.VisibleIndex = 5;
             // 
-            // colUser
-            // 
-            this.colUser.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colUser.Caption = "کمیسیون";
-            this.colUser.FieldName = "Queue.Commission.Commission1";
-            this.colUser.Name = "colUser";
-            this.colUser.Visible = true;
-            this.colUser.VisibleIndex = 6;
-            // 
             // gridColumn1
             // 
             this.gridColumn1.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -306,7 +298,7 @@
             this.gridColumn1.FieldName = "CashDesk";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 7;
+            this.gridColumn1.VisibleIndex = 6;
             // 
             // gridColumn2
             // 
@@ -315,7 +307,7 @@
             this.gridColumn2.FieldName = "Pos";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 8;
+            this.gridColumn2.VisibleIndex = 7;
             // 
             // panelControl1
             // 
@@ -345,6 +337,19 @@
             this.panelControl1.Size = new System.Drawing.Size(1103, 183);
             this.panelControl1.TabIndex = 2;
             this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(-31, 109);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(133, 53);
+            this.simpleButton1.TabIndex = 24;
+            this.simpleButton1.Text = "خروج";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // simpleButton9
             // 
@@ -620,19 +625,6 @@
             this.txtPacket.Size = new System.Drawing.Size(100, 30);
             this.txtPacket.TabIndex = 2;
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(-31, 109);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(133, 53);
-            this.simpleButton1.TabIndex = 24;
-            this.simpleButton1.Text = "خروج";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
             // FrmCasheList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -677,7 +669,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colType;
         private DevExpress.XtraGrid.Columns.GridColumn colCasher;
         private DevExpress.XtraGrid.Columns.GridColumn colQueue;
-        private DevExpress.XtraGrid.Columns.GridColumn colUser;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl5;

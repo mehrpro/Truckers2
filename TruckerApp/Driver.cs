@@ -29,6 +29,8 @@ namespace TruckerApp
         public byte Tag { get; set; }
         public byte GroupID { get; set; }
         public byte userID_FK { get; set; }
+        public Nullable<byte> editor_FK { get; set; }
+        public Nullable<int> driver_code { get; set; }
     
         public virtual LoadType LoadType { get; set; }
         public virtual User User { get; set; }

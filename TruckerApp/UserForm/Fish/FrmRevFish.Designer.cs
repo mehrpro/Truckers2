@@ -102,7 +102,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(473, 591);
+            this.groupControl1.Size = new System.Drawing.Size(473, 605);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "برگشت حواله";
             // 
@@ -112,7 +112,7 @@
             this.btnClose.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnClose.Appearance.Options.UseFont = true;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(45, 521);
+            this.btnClose.Location = new System.Drawing.Point(45, 545);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(135, 48);
             this.btnClose.TabIndex = 21;
@@ -123,7 +123,7 @@
             // 
             this.radioGroupType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioGroupType.EditValue = ((byte)(10));
-            this.radioGroupType.Location = new System.Drawing.Point(45, 425);
+            this.radioGroupType.Location = new System.Drawing.Point(172, 425);
             this.radioGroupType.Name = "radioGroupType";
             this.radioGroupType.Parmida_ActivePlusMultiKeys = false;
             this.radioGroupType.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -133,8 +133,9 @@
             this.radioGroupType.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.radioGroupType.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(10)), "خطا در صدور"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(11)), "ابطال و تعویض محموله"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(12)), "ابطال و بازگشت وجه")});
-            this.radioGroupType.Size = new System.Drawing.Size(317, 88);
+            this.radioGroupType.Size = new System.Drawing.Size(190, 112);
             this.radioGroupType.TabIndex = 20;
             // 
             // btnRevSave
@@ -143,7 +144,7 @@
             this.btnRevSave.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnRevSave.Appearance.Options.UseFont = true;
             this.btnRevSave.Image = ((System.Drawing.Image)(resources.GetObject("btnRevSave.Image")));
-            this.btnRevSave.Location = new System.Drawing.Point(227, 519);
+            this.btnRevSave.Location = new System.Drawing.Point(227, 543);
             this.btnRevSave.Name = "btnRevSave";
             this.btnRevSave.Size = new System.Drawing.Size(135, 50);
             this.btnRevSave.TabIndex = 16;
@@ -528,7 +529,7 @@
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             this.searchLookUpEdit1View.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colSmartCart, DevExpress.Data.ColumnSortOrder.Descending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colDriverID, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // colDriverID
             // 
@@ -631,7 +632,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 591);
+            this.ClientSize = new System.Drawing.Size(473, 605);
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

@@ -28,7 +28,7 @@ namespace TruckerApp
                 c.Close();
             }
 
-            var newForm = new FrmMembershipList(true,false)
+            var newForm = new FrmMembershipList(30)
             {
                 FormBorderStyle = FormBorderStyle.None,
                 MdiParent = this,
@@ -279,7 +279,7 @@ namespace TruckerApp
                 c.Close();
             }
 
-            var newForm = new FrmMembershipList(false,false)
+            var newForm = new FrmMembershipList(31)
             {
                 FormBorderStyle = FormBorderStyle.None,
                 MdiParent = this,
@@ -296,7 +296,7 @@ namespace TruckerApp
                 c.Close();
             }
 
-            var newForm = new FrmMembershipList(false, true)
+            var newForm = new FrmMembershipList(32)
             {
                 FormBorderStyle = FormBorderStyle.None,
                 MdiParent = this,
@@ -319,6 +319,12 @@ namespace TruckerApp
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var frm = new FrmUser().ShowDialog();
+        }
+
+        private void btnMailSetting_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            var frm = new FrmEmailSetting().ShowDialog();
         }
     }
 }

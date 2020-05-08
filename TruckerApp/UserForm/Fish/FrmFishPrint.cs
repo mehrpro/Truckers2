@@ -19,6 +19,7 @@ namespace TruckerApp.UserForm.Fish
         private byte _group;
         //private string _price;
         private string _memeber;
+        private string _code;
 
 
         public FrmFishPrint()
@@ -79,6 +80,7 @@ namespace TruckerApp.UserForm.Fish
             report.Parameters["member"].Value = _memeber;
             report.Parameters["price"].Value = _commission;
             report.Parameters["Type"].Value = _type;
+            report.Parameters["code"].Value = _code;
             tool.PrintDialog();
         }
 
@@ -86,6 +88,8 @@ namespace TruckerApp.UserForm.Fish
         private void cbxSmart_EditValueChanged(object sender, EventArgs e)
         {
             var driver = (Driver)cbxSmart.GetSelectedDataRow();
+            if (driver==null)return;
+            _code = Convert.ToInt32(driver.driver_code) > 0 ? driver.driver_code.ToString() : " ";
             txtName.Text = _name = $"{driver.FirstName}  {driver.LastName}";
             txtTag.Text = _tagnumber = $"ایران {driver.Tag}  {driver.TagNumber}";
             txtPhoneNumber.Text = driver.PhoneNumber;

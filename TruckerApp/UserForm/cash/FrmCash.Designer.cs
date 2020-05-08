@@ -69,6 +69,7 @@
             this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
             this.simpleButton1.Location = new System.Drawing.Point(55, 165);
             this.simpleButton1.Name = "simpleButton1";
@@ -104,21 +105,21 @@
             // 
             this.labelControl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl10.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.labelControl10.Location = new System.Drawing.Point(48, 123);
+            this.labelControl10.Location = new System.Drawing.Point(44, 123);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(27, 24);
+            this.labelControl10.Size = new System.Drawing.Size(33, 24);
             this.labelControl10.TabIndex = 6;
-            this.labelControl10.Text = "ریال";
+            this.labelControl10.Text = "تومان";
             // 
             // labelControl9
             // 
             this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl9.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.labelControl9.Location = new System.Drawing.Point(48, 80);
+            this.labelControl9.Location = new System.Drawing.Point(44, 80);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(27, 24);
+            this.labelControl9.Size = new System.Drawing.Size(33, 24);
             this.labelControl9.TabIndex = 7;
-            this.labelControl9.Text = "ریال";
+            this.labelControl9.Text = "تومان";
             // 
             // labelControl7
             // 
@@ -180,8 +181,10 @@
             // 
             // FrmCash
             // 
+            this.AcceptButton = this.btnPrint;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.simpleButton1;
             this.ClientSize = new System.Drawing.Size(305, 243);
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

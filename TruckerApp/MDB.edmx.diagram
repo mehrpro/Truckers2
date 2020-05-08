@@ -24,6 +24,7 @@
         <AssociationConnector Association="TruckersModel.FK_Queue_LoadType1" />
         <AssociationConnector Association="TruckersModel.FK_Queue_Series" />
         <AssociationConnector Association="TruckersModel.FK_Series_Users" />
+        <AssociationConnector Association="TruckersModel.FK_Commission_LoadType1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

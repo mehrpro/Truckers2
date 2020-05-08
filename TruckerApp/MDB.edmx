@@ -25,7 +25,7 @@
           <Property Name="CommissionPrice" Type="int" Nullable="false" />
           <Property Name="DataRegister" Type="date" Nullable="false" />
           <Property Name="enabled" Type="bit" Nullable="false" />
-          <Property Name="GroupID" Type="tinyint" />
+          <Property Name="GroupID" Type="tinyint" Nullable="false" />
         </EntityType>
         <EntityType Name="Drivers">
           <Key>
@@ -40,6 +40,8 @@
           <Property Name="Tag" Type="tinyint" Nullable="false" />
           <Property Name="GroupID" Type="tinyint" Nullable="false" />
           <Property Name="userID_FK" Type="tinyint" Nullable="false" />
+          <Property Name="editor_FK" Type="tinyint" />
+          <Property Name="driver_code" Type="int" />
         </EntityType>
         <EntityType Name="LoadType">
           <Key>
@@ -139,6 +141,18 @@
             </Principal>
             <Dependent Role="Commission">
               <PropertyRef Name="Groups_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Commission_LoadType1">
+          <End Role="LoadType" Type="Self.LoadType" Multiplicity="1" />
+          <End Role="Commission" Type="Self.Commission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoadType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="Commission">
+              <PropertyRef Name="GroupID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -262,6 +276,10 @@
             <End Role="LoadType" EntitySet="LoadType" />
             <End Role="Commission" EntitySet="Commission" />
           </AssociationSet>
+          <AssociationSet Name="FK_Commission_LoadType1" Association="Self.FK_Commission_LoadType1">
+            <End Role="LoadType" EntitySet="LoadType" />
+            <End Role="Commission" EntitySet="Commission" />
+          </AssociationSet>
           <AssociationSet Name="FK_Drivers_LoadType" Association="Self.FK_Drivers_LoadType">
             <End Role="LoadType" EntitySet="LoadType" />
             <End Role="Drivers" EntitySet="Drivers" />
@@ -355,6 +373,10 @@
             <End Role="User" EntitySet="Users" />
             <End Role="SeriesPrice" EntitySet="SeriesPrices" />
           </AssociationSet>
+          <AssociationSet Name="FK_Commission_LoadType1" Association="TruckersModel.FK_Commission_LoadType1">
+            <End Role="LoadType" EntitySet="LoadTypes" />
+            <End Role="Commission" EntitySet="Commissions" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Cash">
           <Key>
@@ -379,9 +401,10 @@
           <Property Name="CommissionPrice" Type="Int32" Nullable="false" />
           <Property Name="DataRegister" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="enabled" Type="Boolean" Nullable="false" />
-          <Property Name="GroupID" Type="Byte" />
+          <Property Name="GroupID" Type="Byte" Nullable="false" />
           <NavigationProperty Name="LoadType" Relationship="TruckersModel.FK_Commission_LoadType" FromRole="Commission" ToRole="LoadType" />
           <NavigationProperty Name="Queues" Relationship="TruckersModel.FK_Queue_Commission" FromRole="Commission" ToRole="Queue" />
+          <NavigationProperty Name="LoadType1" Relationship="TruckersModel.FK_Commission_LoadType1" FromRole="Commission" ToRole="LoadType" />
         </EntityType>
         <EntityType Name="Driver">
           <Key>
@@ -399,6 +422,8 @@
           <NavigationProperty Name="LoadType" Relationship="TruckersModel.FK_Drivers_LoadType" FromRole="Driver" ToRole="LoadType" />
           <NavigationProperty Name="User" Relationship="TruckersModel.FK_Drivers_Users" FromRole="Driver" ToRole="User" />
           <NavigationProperty Name="Queues" Relationship="TruckersModel.FK_Queue_Drivers" FromRole="Driver" ToRole="Queue" />
+          <Property Name="editor_FK" Type="Byte" />
+          <Property Name="driver_code" Type="Int32" />
         </EntityType>
         <EntityType Name="LoadType">
           <Key>
@@ -410,6 +435,7 @@
           <NavigationProperty Name="Drivers" Relationship="TruckersModel.FK_Drivers_LoadType" FromRole="LoadType" ToRole="Driver" />
           <NavigationProperty Name="Queues" Relationship="TruckersModel.FK_Queue_LoadType" FromRole="LoadType" ToRole="Queue" />
           <NavigationProperty Name="Queues1" Relationship="TruckersModel.FK_Queue_LoadType1" FromRole="LoadType" ToRole="Queue" />
+          <NavigationProperty Name="Commissions1" Relationship="TruckersModel.FK_Commission_LoadType1" FromRole="LoadType" ToRole="Commission" />
         </EntityType>
         <EntityType Name="Queue">
           <Key>
@@ -613,6 +639,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Commission_LoadType1">
+          <End Type="TruckersModel.LoadType" Role="LoadType" Multiplicity="1" />
+          <End Type="TruckersModel.Commission" Role="Commission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoadType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="Commission">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -646,6 +684,8 @@
           <EntitySetMapping Name="Drivers">
             <EntityTypeMapping TypeName="TruckersModel.Driver">
               <MappingFragment StoreEntitySet="Drivers">
+                <ScalarProperty Name="driver_code" ColumnName="driver_code" />
+                <ScalarProperty Name="editor_FK" ColumnName="editor_FK" />
                 <ScalarProperty Name="userID_FK" ColumnName="userID_FK" />
                 <ScalarProperty Name="GroupID" ColumnName="GroupID" />
                 <ScalarProperty Name="Tag" ColumnName="Tag" />

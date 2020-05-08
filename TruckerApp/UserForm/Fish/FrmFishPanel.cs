@@ -133,7 +133,7 @@ namespace TruckerApp.UserForm.Fish
 
         private void simpleButton7_Click_1(object sender, EventArgs e)
         {
-            var newForm = new FrmMembershipList(false, false)
+            var newForm = new FrmMembershipList(0)
             {
                 FormBorderStyle = FormBorderStyle.FixedSingle,
                 WindowState = FormWindowState.Maximized,

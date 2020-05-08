@@ -32,8 +32,6 @@ namespace TruckerApp
             return 0;
         }
         public int SeriesCount(int seriesid) => db.Queues.Count(x => x.SeriesID_FK == seriesid);
-        public int LastSeriesNum() => db.SeriesPrices.Max(x => x.SeriesName);
-        public int? LastSeriesID()=> db.SeriesPrices.SingleOrDefault(x => x.enabeled == true && x.closing == false).SereisID;
         public int lastNumber(int seriesID,byte typ)
         {
             var max = db.Queues.Where(x => x.SeriesID_FK == seriesID && x.Type_FK ==typ).ToList();

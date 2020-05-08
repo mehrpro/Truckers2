@@ -54,9 +54,9 @@ namespace TruckerApp.UserForm
                 txtGandom.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.Type_FK == 3).ToString();
                 txtClinker.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.Type_FK == 4).ToString();
 
-                txtMember.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.GroupCommission == 31).ToString();
-                txtNoMember.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.GroupCommission == 32).ToString();
-                txtOther.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.GroupCommission == 33).ToString();
+                txtMember.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.GroupCommission == 30).ToString();
+                txtNoMember.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.GroupCommission == 31).ToString();
+                txtOther.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.GroupCommission == 32).ToString();
                 gridControl1.DataSource = db.Queues.Where(x => x.SeriesID_FK == select.SereisID).ToList();
                 //gridView1.RefreshData();
 

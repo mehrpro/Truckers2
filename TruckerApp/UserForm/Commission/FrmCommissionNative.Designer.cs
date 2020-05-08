@@ -55,6 +55,8 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.dxValidationProvider2 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
@@ -93,6 +95,7 @@
             this.groupControl5.Controls.Add(this.gridControl2);
             this.groupControl5.Controls.Add(this.btnAdd2);
             this.groupControl5.Controls.Add(this.txtComosin2);
+            this.groupControl5.Controls.Add(this.labelControl4);
             this.groupControl5.Controls.Add(this.labelControl3);
             this.groupControl5.Location = new System.Drawing.Point(13, 71);
             this.groupControl5.Name = "groupControl5";
@@ -102,10 +105,10 @@
             // 
             // gridControl2
             // 
-            this.gridControl2.Location = new System.Drawing.Point(18, 95);
+            this.gridControl2.Location = new System.Drawing.Point(18, 119);
             this.gridControl2.MainView = this.gridView4;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(248, 249);
+            this.gridControl2.Size = new System.Drawing.Size(248, 225);
             this.gridControl2.TabIndex = 3;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -329,6 +332,7 @@
             this.groupControl2.Controls.Add(this.gridControl1);
             this.groupControl2.Controls.Add(this.btnAdd1);
             this.groupControl2.Controls.Add(this.txtComosin1);
+            this.groupControl2.Controls.Add(this.labelControl2);
             this.groupControl2.Controls.Add(this.labelControl1);
             this.groupControl2.Location = new System.Drawing.Point(301, 71);
             this.groupControl2.Name = "groupControl2";
@@ -338,10 +342,10 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(18, 95);
+            this.gridControl1.Location = new System.Drawing.Point(18, 119);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(248, 249);
+            this.gridControl1.Size = new System.Drawing.Size(248, 225);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -557,6 +561,30 @@
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "نرخ";
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl2.Location = new System.Drawing.Point(77, 89);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(166, 24);
+            this.labelControl2.TabIndex = 1;
+            this.labelControl2.Text = "واحد پولی به تومان می باشد";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl4.Location = new System.Drawing.Point(76, 89);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(166, 24);
+            this.labelControl4.TabIndex = 1;
+            this.labelControl4.Text = "واحد پولی به تومان می باشد";
+            // 
             // FrmCommissionNative
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -615,5 +643,7 @@
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
     }
 }
