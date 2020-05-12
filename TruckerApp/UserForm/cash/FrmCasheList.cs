@@ -19,16 +19,20 @@ namespace TruckerApp.UserForm
 
         private void setup()
         {
+            int id = PublicVar.SeriesID;
             db = new TruckersEntities();
             db.Cashes.Load();
-            cashesBindingSource.DataSource =  db.Cashes.Where((x => x.seriesID_FK == PublicVar.SeriesID)).ToList();
-            txtFalaeh.Text = counter.faleh(PublicVar.SeriesID).ToString();
-            txtPacket.Text = counter.packet(PublicVar.SeriesID).ToString();
-            txtGandom.Text = counter.gandom(PublicVar.SeriesID).ToString();
-            txtClinker.Text = counter.clinker(PublicVar.SeriesID).ToString();
-            txtCash.Text = counter.TotalCash(PublicVar.SeriesID).ToString();
-            txtPOS.Text = counter.TotalPOS(PublicVar.SeriesID).ToString();
-            txtTotalCash.Text = $"{counter.TotalCash(PublicVar.SeriesID)+ counter.TotalPOS(PublicVar.SeriesID)}";
+            cashesBindingSource.DataSource =  db.Cashes.Where(x => x.seriesID_FK == id).ToList();
+            txtFalaeh.Text = counter.faleh(id).ToString();
+            txtPacket.Text = counter.packet(id).ToString();
+            txtGandom.Text = counter.gandom(id).ToString();
+            txtClinker.Text = counter.clinker(id).ToString();
+            txtCash.Text = counter.TotalCash(id).ToString();
+            txtPOS.Text = counter.TotalPOS(id).ToString();
+            txtAhakFaleh.Text = counter.AhakFaleh(id).ToString();
+            txtAhakPackat.Text = counter.AhakPackat(id).ToString();
+            txtOtherType.Text = counter.OtherType(id).ToString();
+            txtTotalCash.Text = $"{counter.TotalCash(id)+ counter.TotalPOS(id)}";
             txtSerial.Text = PublicVar.SeriesName.ToString();
             txtDate.Text = $"{PublicVar.DateSerial:yyyy/MM/dd}";
         }
@@ -53,6 +57,9 @@ namespace TruckerApp.UserForm
             report.Parameters["cash"].Value = $"{txtCash.Text}";
             report.Parameters["pos"].Value = $"{txtPOS.Text}";
             report.Parameters["total"].Value = $"{ txtTotalCash.Text}";
+            report.Parameters["ahakfaleh"].Value = $"{ txtAhakFaleh.Text}";
+            report.Parameters["ahakpackat"].Value = $"{ txtAhakPackat.Text}";
+            report.Parameters["other"].Value = $"{ txtOtherType.Text}";
             report.Parameters["serial"].Value = $"س {PublicVar.SeriesName} - {PublicVar.DateSerial:yyyy/MM/dd}";
             tool.PrintDialog();
         }

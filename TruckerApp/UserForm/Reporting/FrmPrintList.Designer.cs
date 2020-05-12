@@ -270,17 +270,17 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 0;
-            this.gridColumn6.Width = 104;
+            this.gridColumn6.Width = 96;
             // 
             // gridColumn7
             // 
             this.gridColumn7.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.gridColumn7.Caption = "شماره هوشمند";
-            this.gridColumn7.FieldName = "Smart";
+            this.gridColumn7.Caption = "کد راننده";
+            this.gridColumn7.FieldName = "driver_code";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 1;
-            this.gridColumn7.Width = 146;
+            this.gridColumn7.Width = 81;
             // 
             // colNumber
             // 
@@ -290,7 +290,7 @@
             this.colNumber.Name = "colNumber";
             this.colNumber.Visible = true;
             this.colNumber.VisibleIndex = 2;
-            this.colNumber.Width = 140;
+            this.colNumber.Width = 66;
             // 
             // colDriverID_FK
             // 
@@ -300,7 +300,7 @@
             this.colDriverID_FK.Name = "colDriverID_FK";
             this.colDriverID_FK.Visible = true;
             this.colDriverID_FK.VisibleIndex = 3;
-            this.colDriverID_FK.Width = 219;
+            this.colDriverID_FK.Width = 290;
             // 
             // colDriver
             // 
@@ -310,7 +310,7 @@
             this.colDriver.Name = "colDriver";
             this.colDriver.Visible = true;
             this.colDriver.VisibleIndex = 4;
-            this.colDriver.Width = 125;
+            this.colDriver.Width = 140;
             // 
             // gridColumn4
             // 
@@ -320,7 +320,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 5;
-            this.gridColumn4.Width = 115;
+            this.gridColumn4.Width = 137;
             // 
             // gridColumn5
             // 
@@ -330,7 +330,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 6;
-            this.gridColumn5.Width = 143;
+            this.gridColumn5.Width = 114;
             // 
             // panelControl1
             // 

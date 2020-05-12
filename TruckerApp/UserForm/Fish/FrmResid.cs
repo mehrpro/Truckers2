@@ -59,7 +59,7 @@ namespace TruckerApp.UserForm.Fish
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            ListResied(3);
+            ListResied(1);
         }
 
         private void repositoryItemButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -105,12 +105,30 @@ namespace TruckerApp.UserForm.Fish
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            ListResied(4);
+            ListResied(3);
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            ListResied(1);
+            ListResied(4);
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            ListResied(5);
+
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            ListResied(6);
+
+        }
+
+        private void simpleButton6_Click(object sender, EventArgs e)
+        {
+            ListResied(7);
+
         }
     }
 

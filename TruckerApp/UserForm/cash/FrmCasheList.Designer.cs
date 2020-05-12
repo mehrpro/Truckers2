@@ -48,6 +48,9 @@
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -55,6 +58,9 @@
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.txtTotalCash = new DevExpress.XtraEditors.TextEdit();
+            this.txtOtherType = new DevExpress.XtraEditors.TextEdit();
+            this.txtAhakPackat = new DevExpress.XtraEditors.TextEdit();
+            this.txtAhakFaleh = new DevExpress.XtraEditors.TextEdit();
             this.txtClinker = new DevExpress.XtraEditors.TextEdit();
             this.txtGandom = new DevExpress.XtraEditors.TextEdit();
             this.txtPOS = new DevExpress.XtraEditors.TextEdit();
@@ -71,6 +77,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalCash.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOtherType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAhakPackat.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAhakFaleh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtClinker.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGandom.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPOS.Properties)).BeginInit();
@@ -91,7 +100,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1107, 643);
+            this.groupControl1.Size = new System.Drawing.Size(1292, 643);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "صندوق";
             // 
@@ -99,10 +108,10 @@
             // 
             this.gridControl1.DataSource = this.cashesBindingSource;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 238);
+            this.gridControl1.Location = new System.Drawing.Point(2, 55);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1103, 403);
+            this.gridControl1.Size = new System.Drawing.Size(1057, 586);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -316,6 +325,9 @@
             this.panelControl1.Controls.Add(this.labelControl9);
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.labelControl8);
+            this.panelControl1.Controls.Add(this.labelControl10);
+            this.panelControl1.Controls.Add(this.labelControl6);
+            this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.labelControl5);
             this.panelControl1.Controls.Add(this.labelControl7);
@@ -323,6 +335,9 @@
             this.panelControl1.Controls.Add(this.labelControl12);
             this.panelControl1.Controls.Add(this.labelControl11);
             this.panelControl1.Controls.Add(this.txtTotalCash);
+            this.panelControl1.Controls.Add(this.txtOtherType);
+            this.panelControl1.Controls.Add(this.txtAhakPackat);
+            this.panelControl1.Controls.Add(this.txtAhakFaleh);
             this.panelControl1.Controls.Add(this.txtClinker);
             this.panelControl1.Controls.Add(this.txtGandom);
             this.panelControl1.Controls.Add(this.txtPOS);
@@ -331,10 +346,10 @@
             this.panelControl1.Controls.Add(this.txtFalaeh);
             this.panelControl1.Controls.Add(this.txtCash);
             this.panelControl1.Controls.Add(this.txtPacket);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(2, 55);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelControl1.Location = new System.Drawing.Point(1059, 55);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1103, 183);
+            this.panelControl1.Size = new System.Drawing.Size(231, 586);
             this.panelControl1.TabIndex = 2;
             this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
@@ -344,9 +359,9 @@
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(-31, 109);
+            this.simpleButton1.Location = new System.Drawing.Point(18, 457);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(133, 53);
+            this.simpleButton1.Size = new System.Drawing.Size(93, 53);
             this.simpleButton1.TabIndex = 24;
             this.simpleButton1.Text = "خروج";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -357,9 +372,9 @@
             this.simpleButton9.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.simpleButton9.Appearance.Options.UseFont = true;
             this.simpleButton9.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton9.Image")));
-            this.simpleButton9.Location = new System.Drawing.Point(108, 109);
+            this.simpleButton9.Location = new System.Drawing.Point(119, 457);
             this.simpleButton9.Name = "simpleButton9";
-            this.simpleButton9.Size = new System.Drawing.Size(133, 53);
+            this.simpleButton9.Size = new System.Drawing.Size(93, 53);
             this.simpleButton9.TabIndex = 24;
             this.simpleButton9.Text = "چاپ";
             this.simpleButton9.Click += new System.EventHandler(this.simpleButton9_Click);
@@ -368,7 +383,7 @@
             // 
             this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl9.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl9.Location = new System.Drawing.Point(464, 63);
+            this.labelControl9.Location = new System.Drawing.Point(133, 375);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(35, 24);
             this.labelControl9.TabIndex = 23;
@@ -378,7 +393,7 @@
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl3.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl3.Location = new System.Drawing.Point(719, 63);
+            this.labelControl3.Location = new System.Drawing.Point(133, 87);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(20, 24);
             this.labelControl3.TabIndex = 21;
@@ -388,17 +403,47 @@
             // 
             this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl8.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl8.Location = new System.Drawing.Point(464, 99);
+            this.labelControl8.Location = new System.Drawing.Point(133, 411);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(38, 24);
             this.labelControl8.TabIndex = 20;
             this.labelControl8.Text = "مجموع";
             // 
+            // labelControl10
+            // 
+            this.labelControl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl10.Location = new System.Drawing.Point(133, 303);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(27, 24);
+            this.labelControl10.TabIndex = 19;
+            this.labelControl10.Text = "سایر";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl6.Location = new System.Drawing.Point(133, 267);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(61, 24);
+            this.labelControl6.TabIndex = 19;
+            this.labelControl6.Text = "آهک پاکت";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl2.Location = new System.Drawing.Point(133, 231);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(52, 24);
+            this.labelControl2.TabIndex = 19;
+            this.labelControl2.Text = "آهک فله";
+            // 
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl1.Location = new System.Drawing.Point(719, 135);
+            this.labelControl1.Location = new System.Drawing.Point(133, 195);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(38, 24);
             this.labelControl1.TabIndex = 19;
@@ -408,7 +453,7 @@
             // 
             this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl5.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl5.Location = new System.Drawing.Point(719, 99);
+            this.labelControl5.Location = new System.Drawing.Point(133, 159);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(28, 24);
             this.labelControl5.TabIndex = 19;
@@ -418,7 +463,7 @@
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl7.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl7.Location = new System.Drawing.Point(464, 27);
+            this.labelControl7.Location = new System.Drawing.Point(133, 339);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(43, 24);
             this.labelControl7.TabIndex = 18;
@@ -428,7 +473,7 @@
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl4.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl4.Location = new System.Drawing.Point(718, 27);
+            this.labelControl4.Location = new System.Drawing.Point(132, 123);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(29, 24);
             this.labelControl4.TabIndex = 17;
@@ -438,7 +483,7 @@
             // 
             this.labelControl12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl12.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl12.Location = new System.Drawing.Point(970, 27);
+            this.labelControl12.Location = new System.Drawing.Point(133, 15);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(30, 24);
             this.labelControl12.TabIndex = 16;
@@ -448,7 +493,7 @@
             // 
             this.labelControl11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl11.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl11.Location = new System.Drawing.Point(970, 63);
+            this.labelControl11.Location = new System.Drawing.Point(133, 51);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(81, 24);
             this.labelControl11.TabIndex = 14;
@@ -458,7 +503,7 @@
             // 
             this.txtTotalCash.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTotalCash.EditValue = "";
-            this.txtTotalCash.Location = new System.Drawing.Point(289, 96);
+            this.txtTotalCash.Location = new System.Drawing.Point(18, 408);
             this.txtTotalCash.Name = "txtTotalCash";
             this.txtTotalCash.Parmida_ActivePlusMultiKeys = false;
             this.txtTotalCash.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -470,14 +515,71 @@
             this.txtTotalCash.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtTotalCash.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtTotalCash.Properties.ReadOnly = true;
-            this.txtTotalCash.Size = new System.Drawing.Size(169, 30);
+            this.txtTotalCash.Size = new System.Drawing.Size(109, 30);
             this.txtTotalCash.TabIndex = 11;
+            // 
+            // txtOtherType
+            // 
+            this.txtOtherType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtOtherType.EditValue = "";
+            this.txtOtherType.Location = new System.Drawing.Point(18, 300);
+            this.txtOtherType.Name = "txtOtherType";
+            this.txtOtherType.Parmida_ActivePlusMultiKeys = false;
+            this.txtOtherType.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtOtherType.Properties.Appearance.Options.UseFont = true;
+            this.txtOtherType.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtOtherType.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtOtherType.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Blue;
+            this.txtOtherType.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.txtOtherType.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.txtOtherType.Properties.AppearanceReadOnly.Options.UseForeColor = true;
+            this.txtOtherType.Properties.ReadOnly = true;
+            this.txtOtherType.Size = new System.Drawing.Size(109, 30);
+            this.txtOtherType.TabIndex = 9;
+            // 
+            // txtAhakPackat
+            // 
+            this.txtAhakPackat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtAhakPackat.EditValue = "";
+            this.txtAhakPackat.Location = new System.Drawing.Point(18, 264);
+            this.txtAhakPackat.Name = "txtAhakPackat";
+            this.txtAhakPackat.Parmida_ActivePlusMultiKeys = false;
+            this.txtAhakPackat.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtAhakPackat.Properties.Appearance.Options.UseFont = true;
+            this.txtAhakPackat.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtAhakPackat.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtAhakPackat.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Blue;
+            this.txtAhakPackat.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.txtAhakPackat.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.txtAhakPackat.Properties.AppearanceReadOnly.Options.UseForeColor = true;
+            this.txtAhakPackat.Properties.ReadOnly = true;
+            this.txtAhakPackat.Size = new System.Drawing.Size(109, 30);
+            this.txtAhakPackat.TabIndex = 9;
+            // 
+            // txtAhakFaleh
+            // 
+            this.txtAhakFaleh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtAhakFaleh.EditValue = "";
+            this.txtAhakFaleh.Location = new System.Drawing.Point(18, 228);
+            this.txtAhakFaleh.Name = "txtAhakFaleh";
+            this.txtAhakFaleh.Parmida_ActivePlusMultiKeys = false;
+            this.txtAhakFaleh.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtAhakFaleh.Properties.Appearance.Options.UseFont = true;
+            this.txtAhakFaleh.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtAhakFaleh.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtAhakFaleh.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Blue;
+            this.txtAhakFaleh.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.txtAhakFaleh.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.txtAhakFaleh.Properties.AppearanceReadOnly.Options.UseForeColor = true;
+            this.txtAhakFaleh.Properties.ReadOnly = true;
+            this.txtAhakFaleh.Size = new System.Drawing.Size(109, 30);
+            this.txtAhakFaleh.TabIndex = 9;
             // 
             // txtClinker
             // 
             this.txtClinker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtClinker.EditValue = "";
-            this.txtClinker.Location = new System.Drawing.Point(613, 132);
+            this.txtClinker.Location = new System.Drawing.Point(18, 192);
             this.txtClinker.Name = "txtClinker";
             this.txtClinker.Parmida_ActivePlusMultiKeys = false;
             this.txtClinker.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -489,14 +591,14 @@
             this.txtClinker.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtClinker.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtClinker.Properties.ReadOnly = true;
-            this.txtClinker.Size = new System.Drawing.Size(100, 30);
+            this.txtClinker.Size = new System.Drawing.Size(109, 30);
             this.txtClinker.TabIndex = 9;
             // 
             // txtGandom
             // 
             this.txtGandom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGandom.EditValue = "";
-            this.txtGandom.Location = new System.Drawing.Point(613, 96);
+            this.txtGandom.Location = new System.Drawing.Point(18, 156);
             this.txtGandom.Name = "txtGandom";
             this.txtGandom.Parmida_ActivePlusMultiKeys = false;
             this.txtGandom.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -508,14 +610,14 @@
             this.txtGandom.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtGandom.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtGandom.Properties.ReadOnly = true;
-            this.txtGandom.Size = new System.Drawing.Size(100, 30);
+            this.txtGandom.Size = new System.Drawing.Size(109, 30);
             this.txtGandom.TabIndex = 9;
             // 
             // txtPOS
             // 
             this.txtPOS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPOS.EditValue = "";
-            this.txtPOS.Location = new System.Drawing.Point(289, 60);
+            this.txtPOS.Location = new System.Drawing.Point(18, 372);
             this.txtPOS.Name = "txtPOS";
             this.txtPOS.Parmida_ActivePlusMultiKeys = false;
             this.txtPOS.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -527,14 +629,14 @@
             this.txtPOS.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtPOS.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtPOS.Properties.ReadOnly = true;
-            this.txtPOS.Size = new System.Drawing.Size(169, 30);
+            this.txtPOS.Size = new System.Drawing.Size(109, 30);
             this.txtPOS.TabIndex = 8;
             // 
             // txtSerial
             // 
             this.txtSerial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSerial.EditValue = "";
-            this.txtSerial.Location = new System.Drawing.Point(819, 60);
+            this.txtSerial.Location = new System.Drawing.Point(18, 48);
             this.txtSerial.Name = "txtSerial";
             this.txtSerial.Parmida_ActivePlusMultiKeys = false;
             this.txtSerial.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -546,14 +648,14 @@
             this.txtSerial.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtSerial.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtSerial.Properties.ReadOnly = true;
-            this.txtSerial.Size = new System.Drawing.Size(145, 30);
+            this.txtSerial.Size = new System.Drawing.Size(109, 30);
             this.txtSerial.TabIndex = 7;
             // 
             // txtDate
             // 
             this.txtDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDate.EditValue = "";
-            this.txtDate.Location = new System.Drawing.Point(819, 24);
+            this.txtDate.Location = new System.Drawing.Point(18, 12);
             this.txtDate.Name = "txtDate";
             this.txtDate.Parmida_ActivePlusMultiKeys = false;
             this.txtDate.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -565,14 +667,14 @@
             this.txtDate.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtDate.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtDate.Properties.ReadOnly = true;
-            this.txtDate.Size = new System.Drawing.Size(145, 30);
+            this.txtDate.Size = new System.Drawing.Size(109, 30);
             this.txtDate.TabIndex = 5;
             // 
             // txtFalaeh
             // 
             this.txtFalaeh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFalaeh.EditValue = "";
-            this.txtFalaeh.Location = new System.Drawing.Point(613, 60);
+            this.txtFalaeh.Location = new System.Drawing.Point(18, 84);
             this.txtFalaeh.Name = "txtFalaeh";
             this.txtFalaeh.Parmida_ActivePlusMultiKeys = false;
             this.txtFalaeh.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -584,14 +686,14 @@
             this.txtFalaeh.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtFalaeh.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtFalaeh.Properties.ReadOnly = true;
-            this.txtFalaeh.Size = new System.Drawing.Size(100, 30);
+            this.txtFalaeh.Size = new System.Drawing.Size(109, 30);
             this.txtFalaeh.TabIndex = 4;
             // 
             // txtCash
             // 
             this.txtCash.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCash.EditValue = "";
-            this.txtCash.Location = new System.Drawing.Point(289, 24);
+            this.txtCash.Location = new System.Drawing.Point(18, 336);
             this.txtCash.Name = "txtCash";
             this.txtCash.Parmida_ActivePlusMultiKeys = false;
             this.txtCash.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -603,14 +705,14 @@
             this.txtCash.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtCash.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtCash.Properties.ReadOnly = true;
-            this.txtCash.Size = new System.Drawing.Size(169, 30);
+            this.txtCash.Size = new System.Drawing.Size(109, 30);
             this.txtCash.TabIndex = 12;
             // 
             // txtPacket
             // 
             this.txtPacket.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPacket.EditValue = "";
-            this.txtPacket.Location = new System.Drawing.Point(613, 24);
+            this.txtPacket.Location = new System.Drawing.Point(18, 120);
             this.txtPacket.Name = "txtPacket";
             this.txtPacket.Parmida_ActivePlusMultiKeys = false;
             this.txtPacket.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -622,18 +724,19 @@
             this.txtPacket.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtPacket.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtPacket.Properties.ReadOnly = true;
-            this.txtPacket.Size = new System.Drawing.Size(100, 30);
+            this.txtPacket.Size = new System.Drawing.Size(109, 30);
             this.txtPacket.TabIndex = 2;
             // 
             // FrmCasheList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1107, 643);
+            this.ClientSize = new System.Drawing.Size(1292, 643);
             this.Controls.Add(this.groupControl1);
             this.Name = "FrmCasheList";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "گزارش صندوق";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmCasheList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
@@ -644,6 +747,9 @@
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalCash.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOtherType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAhakPackat.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAhakFaleh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtClinker.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGandom.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPOS.Properties)).EndInit();
@@ -691,5 +797,11 @@
         private DevExpress.XtraEditors.TextEdit txtTotalCash;
         private DevExpress.XtraEditors.SimpleButton simpleButton9;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit txtOtherType;
+        private DevExpress.XtraEditors.TextEdit txtAhakPackat;
+        private DevExpress.XtraEditors.TextEdit txtAhakFaleh;
     }
 }

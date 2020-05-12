@@ -48,12 +48,14 @@ namespace TruckerApp.UserForm
             var select = (SeriesPrice) cbxSerial.GetSelectedDataRow();
             if (select!= null)
             {
-                txtDate.Text = select.SeriesDateStart.ToLongDateString();
+                txtDate.Text = select.SeriesDateStart.Date.ToString("yyyy/MM/dd");
                 txtFalaeh.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.Type_FK== 1).ToString();
                 txtPacket.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.Type_FK == 2).ToString();
                 txtGandom.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.Type_FK == 3).ToString();
                 txtClinker.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.Type_FK == 4).ToString();
-
+                txtAhakfaleh.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.Type_FK == 5).ToString();
+                txtAhakPackat.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.Type_FK == 6).ToString();
+                txtOtherType.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.Type_FK == 7).ToString();
                 txtMember.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.GroupCommission == 30).ToString();
                 txtNoMember.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.GroupCommission == 31).ToString();
                 txtOther.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.GroupCommission == 32).ToString();

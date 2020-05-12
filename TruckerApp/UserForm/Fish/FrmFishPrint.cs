@@ -53,6 +53,21 @@ namespace TruckerApp.UserForm.Fish
                     groupControl1.Text = "صدور حواله کلینکر";
 
                     break;
+                case 5:
+                    _type = "آهک فله";
+                    groupControl1.Text = "صدور حواله آهک فله";
+
+                    break;
+                case 6:
+                    _type = "آهک پاکت";
+                    groupControl1.Text = "صدور حواله آهک پاکت";
+
+                    break;
+                case 7:
+                    _type = "متفرقه";
+                    groupControl1.Text = "صدور حواله متفرقه";
+
+                    break;
             }
         }
 

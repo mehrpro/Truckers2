@@ -15,7 +15,7 @@ namespace TruckerApp.UserForm.Fish
         private readonly Counter _counter = new Counter();
         private void FrmFishPanel_Load(object sender, EventArgs e)
         {
-            layoutControl1.Location = new Point(this.Width / 2 - (layoutControl1.Width / 2), layoutControl1.Location.Y);
+            //layoutControl1.Location = new Point(this.Width / 2 - (layoutControl1.Width / 2), layoutControl1.Location.Y);
             timerCounter.Start();
         }
 
@@ -66,10 +66,14 @@ namespace TruckerApp.UserForm.Fish
 
         private void timerCounter_Tick(object sender, EventArgs e)
         {
-            cntPacket.Text = _counter.packet_cnt(PublicVar.SeriesID).ToString("0000");
-            cntClinker.Text = _counter.clinker_cnt(PublicVar.SeriesID).ToString("0000");
-            cntFalah.Text = _counter.faleh_cnt(PublicVar.SeriesID).ToString("0000");
-            cntGandom.Text = _counter.gandom_cnt(PublicVar.SeriesID).ToString("0000");
+            cntPacket.Text = _counter.packet_cnt(PublicVar.SeriesID).ToString("000");
+            cntClinker.Text = _counter.clinker_cnt(PublicVar.SeriesID).ToString("000");
+            cntFalah.Text = _counter.faleh_cnt(PublicVar.SeriesID).ToString("000");
+            cntGandom.Text = _counter.gandom_cnt(PublicVar.SeriesID).ToString("000");
+            cntahakfalae.Text = _counter.ahakfaleh(PublicVar.SeriesID).ToString("000");
+            cntahakPakat.Text = _counter.ahakpackat(PublicVar.SeriesID).ToString("000");
+            cntothertype.Text = _counter.othertype(PublicVar.SeriesID).ToString("000");
+
             cntTotal.Text = _counter.total_cnt(PublicVar.SeriesID).ToString("0000");
         }
 
@@ -153,6 +157,39 @@ namespace TruckerApp.UserForm.Fish
                 //Dock = DockStyle.Fill
             };
             newForm.Show();
+        }
+
+        private void simpleButton9_Click(object sender, EventArgs e)
+        {
+            var newForm = new FrmFishPrint()
+            {
+                TypeId = 5,
+                FormBorderStyle = FormBorderStyle.None,
+                StartPosition = FormStartPosition.CenterScreen,
+            };
+            newForm.ShowDialog();
+        }
+
+        private void simpleButton10_Click(object sender, EventArgs e)
+        {
+            var newForm = new FrmFishPrint()
+            {
+                TypeId =6,
+                FormBorderStyle = FormBorderStyle.None,
+                StartPosition = FormStartPosition.CenterScreen,
+            };
+            newForm.ShowDialog();
+        }
+
+        private void simpleButton11_Click(object sender, EventArgs e)
+        {
+            var newForm = new FrmFishPrint()
+            {
+                TypeId = 7,
+                FormBorderStyle = FormBorderStyle.None,
+                StartPosition = FormStartPosition.CenterScreen,
+            };
+            newForm.ShowDialog();
         }
     }
 }

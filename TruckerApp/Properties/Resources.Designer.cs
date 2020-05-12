@@ -213,6 +213,146 @@ namespace TruckerApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_calendar_1_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-calendar-1-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_calendar_1_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-calendar-1-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_calendar_2_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-calendar-2-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_calendar_2_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-calendar-2-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_calendar_3_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-calendar-3-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_calendar_3_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-calendar-3-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_calendar_4_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-calendar-4-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_calendar_4_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-calendar-4-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_calendar_5_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-calendar-5-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_calendar_5_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-calendar-5-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_calendar_6_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-calendar-6-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_calendar_6_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-calendar-6-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_calendar_7_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-calendar-7-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_calendar_7_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-calendar-7-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_cash_receipt_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-cash-receipt-48", resourceCulture);
@@ -226,6 +366,66 @@ namespace TruckerApp.Properties {
         internal static System.Drawing.Bitmap icons8_cash_receipt_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-cash-receipt-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_circled_2_c_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-circled-2-c-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_circled_3_c_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-circled-3-c-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_circled_4_c_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-circled-4-c-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_circled_5_c_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-circled-5-c-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_circled_6_c_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-circled-6-c-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_circled_7_c_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-circled-7-c-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,6 +483,16 @@ namespace TruckerApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_level_1_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-level-1-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_list_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-list-48", resourceCulture);
@@ -306,6 +516,16 @@ namespace TruckerApp.Properties {
         internal static System.Drawing.Bitmap icons8_mail_statistics_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-mail-statistics-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_numeric_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-numeric-40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

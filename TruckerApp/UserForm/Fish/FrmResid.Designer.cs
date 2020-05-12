@@ -60,6 +60,9 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnDeleteRow = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -105,9 +108,9 @@
             this.groupControl3.AppearanceCaption.Options.UseFont = true;
             this.groupControl3.Controls.Add(this.gridControlBotten);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(2, 298);
+            this.groupControl3.Location = new System.Drawing.Point(2, 55);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(1036, 267);
+            this.groupControl3.Size = new System.Drawing.Size(387, 489);
             this.groupControl3.TabIndex = 5;
             this.groupControl3.Text = "حواله های باطل شده";
             // 
@@ -119,7 +122,7 @@
             this.gridControlBotten.Name = "gridControlBotten";
             this.gridControlBotten.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1});
-            this.gridControlBotten.Size = new System.Drawing.Size(1032, 234);
+            this.gridControlBotten.Size = new System.Drawing.Size(383, 456);
             this.gridControlBotten.TabIndex = 2;
             this.gridControlBotten.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -248,22 +251,22 @@
             // gridColumn7
             // 
             this.gridColumn7.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.gridColumn7.Caption = "سریال فروش";
+            this.gridColumn7.Caption = "سریال";
             this.gridColumn7.FieldName = "Serial";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 1;
-            this.gridColumn7.Width = 132;
+            this.gridColumn7.Width = 89;
             // 
             // gridColumn8
             // 
             this.gridColumn8.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.gridColumn8.Caption = "شماره نوبت";
+            this.gridColumn8.Caption = "شماره";
             this.gridColumn8.FieldName = "Number";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 2;
-            this.gridColumn8.Width = 132;
+            this.gridColumn8.Width = 76;
             // 
             // gridColumn9
             // 
@@ -273,7 +276,7 @@
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 4;
-            this.gridColumn9.Width = 132;
+            this.gridColumn9.Width = 536;
             // 
             // gridColumn10
             // 
@@ -283,7 +286,7 @@
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 5;
-            this.gridColumn10.Width = 139;
+            this.gridColumn10.Width = 193;
             // 
             // gridColumn11
             // 
@@ -293,7 +296,7 @@
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 3;
-            this.gridColumn11.Width = 132;
+            this.gridColumn11.Width = 129;
             // 
             // gridColumn12
             // 
@@ -302,7 +305,7 @@
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
             this.gridColumn12.VisibleIndex = 0;
-            this.gridColumn12.Width = 37;
+            this.gridColumn12.Width = 55;
             // 
             // repositoryItemButtonEdit1
             // 
@@ -322,10 +325,10 @@
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("B Yekan", 12F);
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
             this.groupControl2.Controls.Add(this.gridControlTop);
-            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl2.Location = new System.Drawing.Point(2, 55);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupControl2.Location = new System.Drawing.Point(389, 55);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1036, 243);
+            this.groupControl2.Size = new System.Drawing.Size(649, 489);
             this.groupControl2.TabIndex = 4;
             this.groupControl2.Text = "حواله ی صادرشده";
             // 
@@ -337,7 +340,7 @@
             this.gridControlTop.Name = "gridControlTop";
             this.gridControlTop.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnDeleteRow});
-            this.gridControlTop.Size = new System.Drawing.Size(1032, 210);
+            this.gridControlTop.Size = new System.Drawing.Size(645, 456);
             this.gridControlTop.TabIndex = 1;
             this.gridControlTop.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -466,22 +469,22 @@
             // gridColumn2
             // 
             this.gridColumn2.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.gridColumn2.Caption = "سریال فروش";
+            this.gridColumn2.Caption = "سریال";
             this.gridColumn2.FieldName = "Serial";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 131;
+            this.gridColumn2.VisibleIndex = 0;
+            this.gridColumn2.Width = 53;
             // 
             // gridColumn1
             // 
             this.gridColumn1.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.gridColumn1.Caption = "شماره نوبت";
+            this.gridColumn1.Caption = "نوبت";
             this.gridColumn1.FieldName = "Number";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 2;
-            this.gridColumn1.Width = 131;
+            this.gridColumn1.VisibleIndex = 1;
+            this.gridColumn1.Width = 47;
             // 
             // gridColumn3
             // 
@@ -490,8 +493,8 @@
             this.gridColumn3.FieldName = "Name";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 4;
-            this.gridColumn3.Width = 131;
+            this.gridColumn3.VisibleIndex = 3;
+            this.gridColumn3.Width = 239;
             // 
             // gridColumn4
             // 
@@ -500,8 +503,8 @@
             this.gridColumn4.FieldName = "Tag";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 5;
-            this.gridColumn4.Width = 141;
+            this.gridColumn4.VisibleIndex = 4;
+            this.gridColumn4.Width = 73;
             // 
             // gridColumn5
             // 
@@ -510,8 +513,8 @@
             this.gridColumn5.FieldName = "Date";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 3;
-            this.gridColumn5.Width = 131;
+            this.gridColumn5.VisibleIndex = 2;
+            this.gridColumn5.Width = 66;
             // 
             // gridColumn6
             // 
@@ -519,8 +522,8 @@
             this.gridColumn6.ColumnEdit = this.btnDeleteRow;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 0;
-            this.gridColumn6.Width = 39;
+            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.Width = 27;
             // 
             // btnDeleteRow
             // 
@@ -537,6 +540,9 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.simpleButton6);
+            this.panelControl1.Controls.Add(this.simpleButton5);
+            this.panelControl1.Controls.Add(this.simpleButton4);
             this.panelControl1.Controls.Add(this.simpleButton3);
             this.panelControl1.Controls.Add(this.simpleButton2);
             this.panelControl1.Controls.Add(this.simpleButton1);
@@ -544,67 +550,119 @@
             this.panelControl1.Controls.Add(this.btnClose);
             this.panelControl1.Controls.Add(this.btnSave);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(2, 565);
+            this.panelControl1.Location = new System.Drawing.Point(2, 544);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1036, 64);
+            this.panelControl1.Size = new System.Drawing.Size(1036, 85);
             this.panelControl1.TabIndex = 3;
+            // 
+            // simpleButton6
+            // 
+            this.simpleButton6.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.simpleButton6.Appearance.Options.UseFont = true;
+            this.simpleButton6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.simpleButton6.Image = global::TruckerApp.Properties.Resources.icons8_calendar_7_32;
+            this.simpleButton6.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton6.Location = new System.Drawing.Point(224, 2);
+            this.simpleButton6.Name = "simpleButton6";
+            this.simpleButton6.Size = new System.Drawing.Size(90, 81);
+            this.simpleButton6.TabIndex = 3;
+            this.simpleButton6.Text = "متفرقه";
+            this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
+            // 
+            // simpleButton5
+            // 
+            this.simpleButton5.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.simpleButton5.Appearance.Options.UseFont = true;
+            this.simpleButton5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.simpleButton5.Image = global::TruckerApp.Properties.Resources.icons8_calendar_6_32;
+            this.simpleButton5.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton5.Location = new System.Drawing.Point(314, 2);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(90, 81);
+            this.simpleButton5.TabIndex = 2;
+            this.simpleButton5.Text = "اهک پاکت";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.simpleButton4.Appearance.Options.UseFont = true;
+            this.simpleButton4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.simpleButton4.Image = global::TruckerApp.Properties.Resources.icons8_calendar_5_32;
+            this.simpleButton4.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton4.Location = new System.Drawing.Point(404, 2);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(90, 81);
+            this.simpleButton4.TabIndex = 1;
+            this.simpleButton4.Text = "آهک فله";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // simpleButton3
             // 
             this.simpleButton3.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(604, 7);
+            this.simpleButton3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.simpleButton3.Image = global::TruckerApp.Properties.Resources.icons8_calendar_4_32;
+            this.simpleButton3.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton3.Location = new System.Drawing.Point(494, 2);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(112, 52);
+            this.simpleButton3.Size = new System.Drawing.Size(90, 81);
             this.simpleButton3.TabIndex = 0;
-            this.simpleButton3.Text = "فله";
+            this.simpleButton3.Text = "کلینکر";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // simpleButton2
             // 
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(486, 7);
+            this.simpleButton2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.simpleButton2.Image = global::TruckerApp.Properties.Resources.icons8_calendar_3_32;
+            this.simpleButton2.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton2.Location = new System.Drawing.Point(584, 2);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(112, 52);
+            this.simpleButton2.Size = new System.Drawing.Size(90, 81);
             this.simpleButton2.TabIndex = 0;
-            this.simpleButton2.Text = "کلینکر";
+            this.simpleButton2.Text = "غلات";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton1
             // 
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(368, 7);
+            this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.simpleButton1.Image = global::TruckerApp.Properties.Resources.icons8_calendar_2_32;
+            this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton1.Location = new System.Drawing.Point(674, 2);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(112, 52);
+            this.simpleButton1.Size = new System.Drawing.Size(90, 81);
             this.simpleButton1.TabIndex = 0;
-            this.simpleButton1.Text = "پاکت";
+            this.simpleButton1.Text = "سیمان پاکت";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // btnReport
             // 
             this.btnReport.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnReport.Appearance.Options.UseFont = true;
-            this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
-            this.btnReport.Location = new System.Drawing.Point(250, 6);
+            this.btnReport.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnReport.Image = global::TruckerApp.Properties.Resources.icons8_calendar_1_32;
+            this.btnReport.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btnReport.Location = new System.Drawing.Point(764, 2);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(112, 52);
+            this.btnReport.Size = new System.Drawing.Size(90, 81);
             this.btnReport.TabIndex = 0;
-            this.btnReport.Text = "غلات";
+            this.btnReport.Text = "سیمان فله";
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // btnClose
             // 
             this.btnClose.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnClose.Appearance.Options.UseFont = true;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(10, 6);
+            this.btnClose.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btnClose.Location = new System.Drawing.Point(854, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(112, 52);
+            this.btnClose.Size = new System.Drawing.Size(90, 81);
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "انصراف";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -613,10 +671,12 @@
             // 
             this.btnSave.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnSave.Appearance.Options.UseFont = true;
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(130, 6);
+            this.btnSave.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btnSave.Location = new System.Drawing.Point(944, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(112, 52);
+            this.btnSave.Size = new System.Drawing.Size(90, 81);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "ذخیره ";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -634,6 +694,7 @@
             this.Name = "FrmResid";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "رسید حواله ها";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
@@ -684,5 +745,8 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
     }
 }

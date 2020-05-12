@@ -58,6 +58,13 @@
             this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.btnMailSetting = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem21 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -73,7 +80,6 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             this.SuspendLayout();
@@ -111,9 +117,15 @@
             this.barButtonItem14,
             this.barButtonItem3,
             this.btnMailSetting,
-            this.barButtonItem15});
+            this.barButtonItem15,
+            this.barButtonItem16,
+            this.barButtonItem17,
+            this.barButtonItem18,
+            this.barButtonItem19,
+            this.barButtonItem20,
+            this.barButtonItem21});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 25;
+            this.ribbonControl1.MaxItemId = 31;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -169,9 +181,8 @@
             // btnNewFaleh
             // 
             this.btnNewFaleh.Caption = "حواله فله";
-            this.btnNewFaleh.Glyph = ((System.Drawing.Image)(resources.GetObject("btnNewFaleh.Glyph")));
             this.btnNewFaleh.Id = 5;
-            this.btnNewFaleh.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnNewFaleh.LargeGlyph")));
+            this.btnNewFaleh.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_calendar_1_40;
             this.btnNewFaleh.Name = "btnNewFaleh";
             this.btnNewFaleh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewQue_ItemClick);
             // 
@@ -202,9 +213,8 @@
             // btnSeries
             // 
             this.btnSeries.Caption = "سریال فروش";
-            this.btnSeries.Glyph = ((System.Drawing.Image)(resources.GetObject("btnSeries.Glyph")));
             this.btnSeries.Id = 5;
-            this.btnSeries.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnSeries.LargeGlyph")));
+            this.btnSeries.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_numeric_40;
             this.btnSeries.Name = "btnSeries";
             this.btnSeries.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeries_ItemClick);
             // 
@@ -247,27 +257,24 @@
             // barButtonItem1
             // 
             this.barButtonItem1.Caption = "حواله پاکت";
-            this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
             this.barButtonItem1.Id = 11;
-            this.barButtonItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.LargeGlyph")));
+            this.barButtonItem1.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_calendar_2_40;
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barButtonItem4
             // 
             this.barButtonItem4.Caption = "حواله کلینکر";
-            this.barButtonItem4.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.Glyph")));
             this.barButtonItem4.Id = 12;
-            this.barButtonItem4.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.LargeGlyph")));
+            this.barButtonItem4.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_calendar_4_40;
             this.barButtonItem4.Name = "barButtonItem4";
             this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
             // barButtonItem5
             // 
             this.barButtonItem5.Caption = "حواله غلات";
-            this.barButtonItem5.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.Glyph")));
             this.barButtonItem5.Id = 13;
-            this.barButtonItem5.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.LargeGlyph")));
+            this.barButtonItem5.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_calendar_3_40;
             this.barButtonItem5.Name = "barButtonItem5";
             this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
@@ -292,7 +299,7 @@
             // 
             this.barButtonItem8.Caption = "لیست سیمان\r\nفله";
             this.barButtonItem8.Id = 15;
-            this.barButtonItem8.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_transaction_list_48;
+            this.barButtonItem8.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_level_1_48;
             this.barButtonItem8.Name = "barButtonItem8";
             this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
             // 
@@ -300,7 +307,7 @@
             // 
             this.barButtonItem9.Caption = "لیست سیمان پاکت";
             this.barButtonItem9.Id = 16;
-            this.barButtonItem9.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_transaction_list_48;
+            this.barButtonItem9.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_circled_2_c_48;
             this.barButtonItem9.Name = "barButtonItem9";
             this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick);
             // 
@@ -308,7 +315,7 @@
             // 
             this.barButtonItem10.Caption = "لیست غلات";
             this.barButtonItem10.Id = 17;
-            this.barButtonItem10.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_transaction_list_48;
+            this.barButtonItem10.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_circled_3_c_48;
             this.barButtonItem10.Name = "barButtonItem10";
             this.barButtonItem10.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem10_ItemClick);
             // 
@@ -316,7 +323,7 @@
             // 
             this.barButtonItem11.Caption = "لیست کلینکر";
             this.barButtonItem11.Id = 18;
-            this.barButtonItem11.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_transaction_list_48;
+            this.barButtonItem11.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_circled_4_c_48;
             this.barButtonItem11.Name = "barButtonItem11";
             this.barButtonItem11.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem11_ItemClick);
             // 
@@ -365,6 +372,63 @@
             this.btnMailSetting.Name = "btnMailSetting";
             this.btnMailSetting.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMailSetting_ItemClick);
             // 
+            // barButtonItem15
+            // 
+            this.barButtonItem15.Caption = "ویرایش راننده";
+            this.barButtonItem15.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.Glyph")));
+            this.barButtonItem15.Id = 24;
+            this.barButtonItem15.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.LargeGlyph")));
+            this.barButtonItem15.Name = "barButtonItem15";
+            this.barButtonItem15.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem15_ItemClick);
+            // 
+            // barButtonItem16
+            // 
+            this.barButtonItem16.Caption = "لیست آهک فله";
+            this.barButtonItem16.Id = 25;
+            this.barButtonItem16.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_circled_5_c_48;
+            this.barButtonItem16.Name = "barButtonItem16";
+            this.barButtonItem16.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem16_ItemClick);
+            // 
+            // barButtonItem17
+            // 
+            this.barButtonItem17.Caption = "لیست آهک پاکتی";
+            this.barButtonItem17.Id = 26;
+            this.barButtonItem17.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_circled_6_c_48;
+            this.barButtonItem17.Name = "barButtonItem17";
+            this.barButtonItem17.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem17_ItemClick);
+            // 
+            // barButtonItem18
+            // 
+            this.barButtonItem18.Caption = "لیست متفرقه";
+            this.barButtonItem18.Id = 27;
+            this.barButtonItem18.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_circled_7_c_48;
+            this.barButtonItem18.Name = "barButtonItem18";
+            this.barButtonItem18.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem18_ItemClick);
+            // 
+            // barButtonItem19
+            // 
+            this.barButtonItem19.Caption = "آهک فله";
+            this.barButtonItem19.Id = 28;
+            this.barButtonItem19.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_calendar_5_40;
+            this.barButtonItem19.Name = "barButtonItem19";
+            this.barButtonItem19.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem19_ItemClick);
+            // 
+            // barButtonItem20
+            // 
+            this.barButtonItem20.Caption = "آهک پاکت";
+            this.barButtonItem20.Id = 29;
+            this.barButtonItem20.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_calendar_6_40;
+            this.barButtonItem20.Name = "barButtonItem20";
+            this.barButtonItem20.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem20_ItemClick);
+            // 
+            // barButtonItem21
+            // 
+            this.barButtonItem21.Caption = "متفرقه";
+            this.barButtonItem21.Id = 30;
+            this.barButtonItem21.LargeGlyph = global::TruckerApp.Properties.Resources.icons8_calendar_7_40;
+            this.barButtonItem21.Name = "barButtonItem21";
+            this.barButtonItem21.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem21_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -406,8 +470,11 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.btnSeries);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnNewFaleh);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem4);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem5);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem19);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem20);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem21);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "صدور";
@@ -446,6 +513,9 @@
             this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem9);
             this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem10);
             this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem11);
+            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem16);
+            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem17);
+            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem18);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "چاپ و گزارش";
             // 
@@ -485,15 +555,6 @@
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(727, 31);
-            // 
-            // barButtonItem15
-            // 
-            this.barButtonItem15.Caption = "ویرایش راننده";
-            this.barButtonItem15.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.Glyph")));
-            this.barButtonItem15.Id = 24;
-            this.barButtonItem15.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.LargeGlyph")));
-            this.barButtonItem15.Name = "barButtonItem15";
-            this.barButtonItem15.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem15_ItemClick);
             // 
             // FrmMain
             // 
@@ -565,5 +626,11 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem btnMailSetting;
         private DevExpress.XtraBars.BarButtonItem barButtonItem15;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem16;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem17;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem18;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem19;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem20;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem21;
     }
 }

@@ -195,12 +195,6 @@
     <Compile Include="UserForm\cash\FrmCasheList.Designer.cs">
       <DependentUpon>FrmCasheList.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserForm\cash\FrmCashStatus.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserForm\cash\FrmCashStatus.Designer.cs">
-      <DependentUpon>FrmCashStatus.cs</DependentUpon>
-    </Compile>
     <Compile Include="Counter.cs" />
     <Compile Include="UserForm\Customer\FrmEditDriver.cs">
       <SubType>Form</SubType>
@@ -312,9 +306,6 @@
     <EmbeddedResource Include="UserForm\cash\FrmCasheList.resx">
       <DependentUpon>FrmCasheList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForm\cash\FrmCashStatus.resx">
-      <DependentUpon>FrmCashStatus.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserForm\Customer\FrmEditDriver.resx">
       <DependentUpon>FrmEditDriver.cs</DependentUpon>
     </EmbeddedResource>
@@ -389,6 +380,28 @@
       <DependentUpon>MDB.edmx</DependentUpon>
       <LastGenOutput>MDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-calendar-7-32.png" />
+    <None Include="Resources\icons8-calendar-6-32.png" />
+    <None Include="Resources\icons8-calendar-5-32.png" />
+    <None Include="Resources\icons8-calendar-4-32.png" />
+    <None Include="Resources\icons8-calendar-3-32.png" />
+    <None Include="Resources\icons8-calendar-2-32.png" />
+    <None Include="Resources\icons8-calendar-1-32.png" />
+    <None Include="Resources\icons8-numeric-40.png" />
+    <None Include="Resources\icons8-calendar-7-40.png" />
+    <None Include="Resources\icons8-calendar-6-40.png" />
+    <None Include="Resources\icons8-calendar-4-40.png" />
+    <None Include="Resources\icons8-calendar-3-40.png" />
+    <None Include="Resources\icons8-calendar-2-40.png" />
+    <None Include="Resources\icons8-calendar-1-40.png" />
+    <None Include="Resources\icons8-calendar-5-40.png" />
+    <None Include="Resources\icons8-circled-7-c-48.png" />
+    <None Include="Resources\icons8-circled-6-c-48.png" />
+    <None Include="Resources\icons8-circled-5-c-48.png" />
+    <None Include="Resources\icons8-circled-4-c-48.png" />
+    <None Include="Resources\icons8-circled-3-c-48.png" />
+    <None Include="Resources\icons8-circled-2-c-48.png" />
+    <None Include="Resources\icons8-level-1-48.png" />
     <None Include="Resources\icons8-driver-64.png" />
     <None Include="Resources\icons8-cash-receipt-64.png" />
     <None Include="Resources\icons8-bulleted-list-64.png" />
