@@ -29,6 +29,7 @@ namespace TruckerApp
         public byte Status_FK { get; set; }
         public short ComosiunID_FK { get; set; }
         public int SeriesID_FK { get; set; }
+        public Nullable<byte> userid { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cash> Cashes { get; set; }

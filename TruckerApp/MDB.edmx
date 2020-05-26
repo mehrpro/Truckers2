@@ -63,6 +63,7 @@
           <Property Name="Status_FK" Type="tinyint" Nullable="false" />
           <Property Name="ComosiunID_FK" Type="smallint" Nullable="false" />
           <Property Name="SeriesID_FK" Type="int" Nullable="false" />
+          <Property Name="userid" Type="tinyint" />
         </EntityType>
         <EntityType Name="SeriesPrice">
           <Key>
@@ -456,6 +457,7 @@
           <NavigationProperty Name="LoadType" Relationship="TruckersModel.FK_Queue_LoadType" FromRole="Queue" ToRole="LoadType" />
           <NavigationProperty Name="LoadType1" Relationship="TruckersModel.FK_Queue_LoadType1" FromRole="Queue" ToRole="LoadType" />
           <NavigationProperty Name="SeriesPrice" Relationship="TruckersModel.FK_Queue_Series" FromRole="Queue" ToRole="SeriesPrice" />
+          <Property Name="userid" Type="Byte" />
         </EntityType>
         <EntityType Name="SeriesPrice">
           <Key>
@@ -709,6 +711,7 @@
           <EntitySetMapping Name="Queues">
             <EntityTypeMapping TypeName="TruckersModel.Queue">
               <MappingFragment StoreEntitySet="Queue">
+                <ScalarProperty Name="userid" ColumnName="userid" />
                 <ScalarProperty Name="SeriesID_FK" ColumnName="SeriesID_FK" />
                 <ScalarProperty Name="ComosiunID_FK" ColumnName="ComosiunID_FK" />
                 <ScalarProperty Name="Status_FK" ColumnName="Status_FK" />

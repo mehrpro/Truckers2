@@ -191,5 +191,10 @@ namespace TruckerApp.UserForm.Fish
             };
             newForm.ShowDialog();
         }
+
+        private void btnDaftarRozaneh_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmRevFish().ShowDialog();
+        }
     }
 }

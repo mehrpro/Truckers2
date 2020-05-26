@@ -177,6 +177,19 @@
     <Compile Include="User.cs">
       <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserForm\cash\FrmCasheList3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\cash\FrmCasheList3.Designer.cs">
+      <DependentUpon>FrmCasheList3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm\cash\FrmCashPiriodList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\cash\FrmCashPiriodList.Designer.cs">
+      <DependentUpon>FrmCashPiriodList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm\cash\TotalCashList.cs" />
     <Compile Include="UserForm\Commission\FrmCommissionNative.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +310,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserForm\cash\FrmCasheList3.resx">
+      <DependentUpon>FrmCasheList3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\cash\FrmCashPiriodList.resx">
+      <DependentUpon>FrmCashPiriodList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserForm\Commission\FrmCommissionNative.resx">
       <DependentUpon>FrmCommissionNative.cs</DependentUpon>
     </EmbeddedResource>

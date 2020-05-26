@@ -186,7 +186,8 @@ namespace TruckerApp.UserForm.Fish
                         SeriesID_FK = _series,
                         Number = Convert.ToInt16(txtNumber.EditValue),
                         GroupCommission = _group,
-                        Status_FK = 20
+                        Status_FK = 20,
+                        userid = PublicVar.UserID,
                     };
                     var frm = new FrmCash(txtComossin.Text);
                     var result = frm.ShowDialog();

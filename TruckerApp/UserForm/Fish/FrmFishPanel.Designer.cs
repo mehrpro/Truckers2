@@ -84,6 +84,7 @@
             this.cntPacket = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
             this.digitalBackgroundLayerComponent1 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDaftarRozaneh = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cntTotal)).BeginInit();
@@ -191,6 +192,7 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.btnDaftarRozaneh);
             this.panelControl3.Controls.Add(this.simpleButton4);
             this.panelControl3.Controls.Add(this.simpleButton7);
             this.panelControl3.Controls.Add(this.simpleButton5);
@@ -729,6 +731,20 @@
             this.simpleButton1.Text = "پاکت";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
+            // btnDaftarRozaneh
+            // 
+            this.btnDaftarRozaneh.Appearance.Font = new System.Drawing.Font("B Yekan", 18F);
+            this.btnDaftarRozaneh.Appearance.Options.UseFont = true;
+            this.btnDaftarRozaneh.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnDaftarRozaneh.Image = global::TruckerApp.Properties.Resources.icons8_list_48;
+            this.btnDaftarRozaneh.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btnDaftarRozaneh.Location = new System.Drawing.Point(208, 2);
+            this.btnDaftarRozaneh.Name = "btnDaftarRozaneh";
+            this.btnDaftarRozaneh.Size = new System.Drawing.Size(150, 159);
+            this.btnDaftarRozaneh.TabIndex = 7;
+            this.btnDaftarRozaneh.Text = "دفتر روزانه\r\n فروش";
+            this.btnDaftarRozaneh.Click += new System.EventHandler(this.btnDaftarRozaneh_Click);
+            // 
             // FrmFishPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -850,5 +866,6 @@
         private DevExpress.XtraGauges.Win.GaugeControl gaugeControl5;
         private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge cntTotal;
         private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent digitalBackgroundLayerComponent5;
+        private DevExpress.XtraEditors.SimpleButton btnDaftarRozaneh;
     }
 }

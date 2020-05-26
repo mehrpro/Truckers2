@@ -20,6 +20,7 @@ namespace TruckerApp
         public int total_cnt(int seriesid) => db.Queues.Count(x=> x.SeriesID_FK == seriesid && x.Status_FK == 20);
         public int packet(int seriesid) => db.Queues.Count(x => x.Type_FK == 2 && x.SeriesID_FK == seriesid);
         public int faleh(int seriesid) => db.Queues.Count(x => x.Type_FK == 1 && x.SeriesID_FK == seriesid);
+
         public int gandom(int seriesid) => db.Queues.Count(x => x.Type_FK == 3 && x.SeriesID_FK == seriesid);
         public int clinker(int seriesid) => db.Queues.Count(x => x.Type_FK == 4 && x.SeriesID_FK == seriesid);
         public int AhakFaleh(int seriesid) => db.Queues.Count(x => x.Type_FK == 5 && x.SeriesID_FK == seriesid);

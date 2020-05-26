@@ -65,6 +65,8 @@
             this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem21 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem22 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem23 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -123,9 +125,11 @@
             this.barButtonItem18,
             this.barButtonItem19,
             this.barButtonItem20,
-            this.barButtonItem21});
+            this.barButtonItem21,
+            this.barButtonItem22,
+            this.barButtonItem23});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 31;
+            this.ribbonControl1.MaxItemId = 33;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -429,6 +433,24 @@
             this.barButtonItem21.Name = "barButtonItem21";
             this.barButtonItem21.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem21_ItemClick);
             // 
+            // barButtonItem22
+            // 
+            this.barButtonItem22.Caption = "گزارش دوره ای ";
+            this.barButtonItem22.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem22.Glyph")));
+            this.barButtonItem22.Id = 31;
+            this.barButtonItem22.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem22.LargeGlyph")));
+            this.barButtonItem22.Name = "barButtonItem22";
+            this.barButtonItem22.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem22_ItemClick);
+            // 
+            // barButtonItem23
+            // 
+            this.barButtonItem23.Caption = "وضعیت صندوق شیفت";
+            this.barButtonItem23.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem23.Glyph")));
+            this.barButtonItem23.Id = 32;
+            this.barButtonItem23.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem23.LargeGlyph")));
+            this.barButtonItem23.Name = "barButtonItem23";
+            this.barButtonItem23.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem23_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -496,6 +518,7 @@
             // ribbonPageGroup6
             // 
             this.ribbonPageGroup6.ItemLinks.Add(this.btnCasheStatus);
+            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem23);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "صندوق";
             // 
@@ -522,6 +545,7 @@
             // ribbonPageGroup9
             // 
             this.ribbonPageGroup9.ItemLinks.Add(this.btnHavaleh);
+            this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem22);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "دفتر روزانه";
             // 
@@ -632,5 +656,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem19;
         private DevExpress.XtraBars.BarButtonItem barButtonItem20;
         private DevExpress.XtraBars.BarButtonItem barButtonItem21;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem22;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem23;
     }
 }

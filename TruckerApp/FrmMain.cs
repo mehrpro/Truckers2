@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using TruckerApp.UserForm;
+using TruckerApp.UserForm.cash;
 using TruckerApp.UserForm.Fish;
 
 
@@ -399,6 +400,16 @@ namespace TruckerApp
                 StartPosition = FormStartPosition.CenterScreen,
             };
             newForm.ShowDialog();
+        }
+
+        private void barButtonItem22_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = new FrmCashPiriodList().ShowDialog();
+        }
+
+        private void barButtonItem23_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = new FrmCasheList3().ShowDialog();
         }
     }
 }
