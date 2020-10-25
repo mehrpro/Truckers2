@@ -34,7 +34,7 @@ namespace TruckerApp.UserForm
                     qry.driver_code = num;
                     qry.FirstName = txtFirstName.Text;
                     qry.LastName = txtLastNAme.Text;
-                    qry.Tag = Convert.ToByte(txtTag.Text);
+                    qry.Tag = @"پلاک تایید نشده است";
                     qry.TagNumber = txtTagNumber.Text;
                     qry.GroupID = (byte) radComosiun.EditValue;
                     qry.editor_FK = PublicVar.UserID;

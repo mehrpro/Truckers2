@@ -5,11 +5,13 @@ using DevExpress.XtraEditors;
 
 namespace TruckerApp
 {
-    public partial class FrmLogin : Form
+    public partial class FrmLogin : DevExpress.XtraEditors.XtraForm
     {
         public FrmLogin()
         {
             InitializeComponent();
+            txtPassword.Text = "708801298";
+            txtUsername.Text = "admin";
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)

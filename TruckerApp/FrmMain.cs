@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 using TruckerApp.UserForm;
 using TruckerApp.UserForm.cash;
 using TruckerApp.UserForm.Fish;
@@ -410,6 +411,19 @@ namespace TruckerApp
         private void barButtonItem23_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var frm = new FrmCasheList3().ShowDialog();
+        }
+
+        private void btnConvertPlate_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+           var result = PlateEditor.SaveChanage(new TruckersEntities());
+           if (result)
+           {
+               XtraMessageBox.Show("انتقال انجام شد");
+           }
+           else
+           {
+               XtraMessageBox.Show("انتقال انجام نشد");
+           }
         }
     }
 }

@@ -26,7 +26,7 @@ namespace TruckerApp
         public string PhoneNumber { get; set; }
         public int SmartCart { get; set; }
         public string TagNumber { get; set; }
-        public byte Tag { get; set; }
+        public string Tag { get; set; }
         public byte GroupID { get; set; }
         public byte userID_FK { get; set; }
         public Nullable<byte> editor_FK { get; set; }

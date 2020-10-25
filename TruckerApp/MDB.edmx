@@ -36,8 +36,8 @@
           <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PhoneNumber" Type="nchar" MaxLength="10" />
           <Property Name="SmartCart" Type="int" Nullable="false" />
-          <Property Name="TagNumber" Type="nvarchar" MaxLength="6" Nullable="false" />
-          <Property Name="Tag" Type="tinyint" Nullable="false" />
+          <Property Name="TagNumber" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="GroupID" Type="tinyint" Nullable="false" />
           <Property Name="userID_FK" Type="tinyint" Nullable="false" />
           <Property Name="editor_FK" Type="tinyint" />
@@ -342,6 +342,10 @@
             <End Role="LoadType" EntitySet="LoadTypes" />
             <End Role="Commission" EntitySet="Commissions" />
           </AssociationSet>
+          <AssociationSet Name="FK_Commission_LoadType1" Association="TruckersModel.FK_Commission_LoadType1">
+            <End Role="LoadType" EntitySet="LoadTypes" />
+            <End Role="Commission" EntitySet="Commissions" />
+          </AssociationSet>
           <AssociationSet Name="FK_Queue_Commission" Association="TruckersModel.FK_Queue_Commission">
             <End Role="Commission" EntitySet="Commissions" />
             <End Role="Queue" EntitySet="Queues" />
@@ -374,10 +378,6 @@
             <End Role="User" EntitySet="Users" />
             <End Role="SeriesPrice" EntitySet="SeriesPrices" />
           </AssociationSet>
-          <AssociationSet Name="FK_Commission_LoadType1" Association="TruckersModel.FK_Commission_LoadType1">
-            <End Role="LoadType" EntitySet="LoadTypes" />
-            <End Role="Commission" EntitySet="Commissions" />
-          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Cash">
           <Key>
@@ -404,8 +404,8 @@
           <Property Name="enabled" Type="Boolean" Nullable="false" />
           <Property Name="GroupID" Type="Byte" Nullable="false" />
           <NavigationProperty Name="LoadType" Relationship="TruckersModel.FK_Commission_LoadType" FromRole="Commission" ToRole="LoadType" />
-          <NavigationProperty Name="Queues" Relationship="TruckersModel.FK_Queue_Commission" FromRole="Commission" ToRole="Queue" />
           <NavigationProperty Name="LoadType1" Relationship="TruckersModel.FK_Commission_LoadType1" FromRole="Commission" ToRole="LoadType" />
+          <NavigationProperty Name="Queues" Relationship="TruckersModel.FK_Queue_Commission" FromRole="Commission" ToRole="Queue" />
         </EntityType>
         <EntityType Name="Driver">
           <Key>
@@ -416,15 +416,15 @@
           <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="SmartCart" Type="Int32" Nullable="false" />
-          <Property Name="TagNumber" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="Tag" Type="Byte" Nullable="false" />
+          <Property Name="TagNumber" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Tag" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="GroupID" Type="Byte" Nullable="false" />
           <Property Name="userID_FK" Type="Byte" Nullable="false" />
+          <Property Name="editor_FK" Type="Byte" />
+          <Property Name="driver_code" Type="Int32" />
           <NavigationProperty Name="LoadType" Relationship="TruckersModel.FK_Drivers_LoadType" FromRole="Driver" ToRole="LoadType" />
           <NavigationProperty Name="User" Relationship="TruckersModel.FK_Drivers_Users" FromRole="Driver" ToRole="User" />
           <NavigationProperty Name="Queues" Relationship="TruckersModel.FK_Queue_Drivers" FromRole="Driver" ToRole="Queue" />
-          <Property Name="editor_FK" Type="Byte" />
-          <Property Name="driver_code" Type="Int32" />
         </EntityType>
         <EntityType Name="LoadType">
           <Key>
@@ -433,10 +433,10 @@
           <Property Name="TypeID" Type="Byte" Nullable="false" />
           <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Commissions" Relationship="TruckersModel.FK_Commission_LoadType" FromRole="LoadType" ToRole="Commission" />
+          <NavigationProperty Name="Commissions1" Relationship="TruckersModel.FK_Commission_LoadType1" FromRole="LoadType" ToRole="Commission" />
           <NavigationProperty Name="Drivers" Relationship="TruckersModel.FK_Drivers_LoadType" FromRole="LoadType" ToRole="Driver" />
           <NavigationProperty Name="Queues" Relationship="TruckersModel.FK_Queue_LoadType" FromRole="LoadType" ToRole="Queue" />
           <NavigationProperty Name="Queues1" Relationship="TruckersModel.FK_Queue_LoadType1" FromRole="LoadType" ToRole="Queue" />
-          <NavigationProperty Name="Commissions1" Relationship="TruckersModel.FK_Commission_LoadType1" FromRole="LoadType" ToRole="Commission" />
         </EntityType>
         <EntityType Name="Queue">
           <Key>
@@ -451,13 +451,13 @@
           <Property Name="Status_FK" Type="Byte" Nullable="false" />
           <Property Name="ComosiunID_FK" Type="Int16" Nullable="false" />
           <Property Name="SeriesID_FK" Type="Int32" Nullable="false" />
+          <Property Name="userid" Type="Byte" />
           <NavigationProperty Name="Cashes" Relationship="TruckersModel.FK_Cash_Queue" FromRole="Queue" ToRole="Cash" />
           <NavigationProperty Name="Commission" Relationship="TruckersModel.FK_Queue_Commission" FromRole="Queue" ToRole="Commission" />
           <NavigationProperty Name="Driver" Relationship="TruckersModel.FK_Queue_Drivers" FromRole="Queue" ToRole="Driver" />
           <NavigationProperty Name="LoadType" Relationship="TruckersModel.FK_Queue_LoadType" FromRole="Queue" ToRole="LoadType" />
           <NavigationProperty Name="LoadType1" Relationship="TruckersModel.FK_Queue_LoadType1" FromRole="Queue" ToRole="LoadType" />
           <NavigationProperty Name="SeriesPrice" Relationship="TruckersModel.FK_Queue_Series" FromRole="Queue" ToRole="SeriesPrice" />
-          <Property Name="userid" Type="Byte" />
         </EntityType>
         <EntityType Name="SeriesPrice">
           <Key>
@@ -542,6 +542,18 @@
             </Principal>
             <Dependent Role="Commission">
               <PropertyRef Name="Groups_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Commission_LoadType1">
+          <End Type="TruckersModel.LoadType" Role="LoadType" Multiplicity="1" />
+          <End Type="TruckersModel.Commission" Role="Commission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoadType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="Commission">
+              <PropertyRef Name="GroupID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -638,18 +650,6 @@
             </Principal>
             <Dependent Role="SeriesPrice">
               <PropertyRef Name="userCreator" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Commission_LoadType1">
-          <End Type="TruckersModel.LoadType" Role="LoadType" Multiplicity="1" />
-          <End Type="TruckersModel.Commission" Role="Commission" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="LoadType">
-              <PropertyRef Name="TypeID" />
-            </Principal>
-            <Dependent Role="Commission">
-              <PropertyRef Name="GroupID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

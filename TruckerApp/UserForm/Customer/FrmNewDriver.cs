@@ -32,7 +32,7 @@ namespace TruckerApp.UserForm
                         newDriver.LastName = txtLastNAme.Text.Trim();
                         newDriver.PhoneNumber = txtPhoneNumber.Text.Trim();
                         newDriver.userID_FK = PublicVar.UserID;
-                        newDriver.Tag = Convert.ToByte(txtTag.Text);
+                        newDriver.Tag = txtTagNumber.Text;
                         newDriver.TagNumber = txtTagNumber.Text;
                         newDriver.SmartCart = smartcart;
                         newDriver.driver_code = Convert.ToInt32(txtCode.Text);
@@ -72,7 +72,7 @@ namespace TruckerApp.UserForm
         private void Clear()
         {
             txtSmartCart.Text = txtFirstName.Text =
-                txtLastNAme.Text = txtPhoneNumber.Text = txtTag.Text = txtTagNumber.Text = "";
+                txtLastNAme.Text = txtPhoneNumber.Text = "";
 
         }
 

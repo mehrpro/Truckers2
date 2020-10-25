@@ -55,10 +55,10 @@
             this.radComosiun = new DevExpress.XtraEditors.RadioGroup();
             this.txtSmartCart = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.colSmartCart = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFirstName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLastName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -79,7 +79,7 @@
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("B Yekan", 18F);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
-            this.groupControl1.CaptionImage = global::TruckerApp.Properties.Resources.icons8_driver_48;
+            this.groupControl1.CaptionImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_driver_48;
             this.groupControl1.Controls.Add(this.btnSave);
             this.groupControl1.Controls.Add(this.btnClose);
             this.groupControl1.Controls.Add(this.labelControl1);
@@ -100,7 +100,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(382, 464);
+            this.groupControl1.Size = new System.Drawing.Size(386, 456);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "ویرایش راننده";
             // 
@@ -109,8 +109,8 @@
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnSave.Appearance.Options.UseFont = true;
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(160, 386);
+            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
+            this.btnSave.Location = new System.Drawing.Point(164, 386);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(112, 52);
             this.btnSave.TabIndex = 10;
@@ -122,8 +122,8 @@
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnClose.Appearance.Options.UseFont = true;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(39, 386);
+            this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
+            this.btnClose.Location = new System.Drawing.Point(43, 386);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(112, 52);
             this.btnClose.TabIndex = 11;
@@ -134,7 +134,8 @@
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl1.Location = new System.Drawing.Point(264, 295);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(268, 295);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(80, 24);
             this.labelControl1.TabIndex = 1;
@@ -144,7 +145,8 @@
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl2.Location = new System.Drawing.Point(266, 219);
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(270, 219);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(56, 24);
             this.labelControl2.TabIndex = 1;
@@ -154,7 +156,8 @@
             // 
             this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl9.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl9.Location = new System.Drawing.Point(266, 75);
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Location = new System.Drawing.Point(270, 75);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(83, 24);
             this.labelControl9.TabIndex = 1;
@@ -164,7 +167,8 @@
             // 
             this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl8.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl8.Location = new System.Drawing.Point(266, 147);
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(270, 147);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(75, 24);
             this.labelControl8.TabIndex = 1;
@@ -174,7 +178,8 @@
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl3.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl3.Location = new System.Drawing.Point(266, 255);
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(270, 255);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(34, 24);
             this.labelControl3.TabIndex = 1;
@@ -184,7 +189,8 @@
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl7.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl7.Location = new System.Drawing.Point(266, 183);
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Location = new System.Drawing.Point(270, 183);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(65, 24);
             this.labelControl7.TabIndex = 1;
@@ -194,7 +200,8 @@
             // 
             this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl6.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl6.Location = new System.Drawing.Point(266, 111);
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(270, 111);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(18, 24);
             this.labelControl6.TabIndex = 1;
@@ -203,7 +210,7 @@
             // txtDriverCode
             // 
             this.txtDriverCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDriverCode.Location = new System.Drawing.Point(39, 216);
+            this.txtDriverCode.Location = new System.Drawing.Point(43, 216);
             this.txtDriverCode.Name = "txtDriverCode";
             this.txtDriverCode.Parmida_ActivePlusMultiKeys = false;
             this.txtDriverCode.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -216,7 +223,7 @@
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(39, 180);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(43, 180);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Parmida_ActivePlusMultiKeys = false;
             this.txtPhoneNumber.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -233,7 +240,7 @@
             // txtLastNAme
             // 
             this.txtLastNAme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLastNAme.Location = new System.Drawing.Point(39, 144);
+            this.txtLastNAme.Location = new System.Drawing.Point(43, 144);
             this.txtLastNAme.Name = "txtLastNAme";
             this.txtLastNAme.Parmida_ActivePlusMultiKeys = false;
             this.txtLastNAme.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -248,7 +255,7 @@
             // txtTag
             // 
             this.txtTag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTag.Location = new System.Drawing.Point(217, 252);
+            this.txtTag.Location = new System.Drawing.Point(221, 252);
             this.txtTag.Name = "txtTag";
             this.txtTag.Parmida_ActivePlusMultiKeys = false;
             this.txtTag.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -264,7 +271,7 @@
             // txtFirstName
             // 
             this.txtFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFirstName.Location = new System.Drawing.Point(39, 108);
+            this.txtFirstName.Location = new System.Drawing.Point(43, 108);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Parmida_ActivePlusMultiKeys = false;
             this.txtFirstName.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -280,7 +287,7 @@
             // 
             this.txtTagNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTagNumber.EditValue = "";
-            this.txtTagNumber.Location = new System.Drawing.Point(39, 252);
+            this.txtTagNumber.Location = new System.Drawing.Point(43, 252);
             this.txtTagNumber.Name = "txtTagNumber";
             this.txtTagNumber.Parmida_ActivePlusMultiKeys = false;
             this.txtTagNumber.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -297,7 +304,7 @@
             // 
             this.radComosiun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radComosiun.EditValue = ((byte)(30));
-            this.radComosiun.Location = new System.Drawing.Point(135, 288);
+            this.radComosiun.Location = new System.Drawing.Point(139, 288);
             this.radComosiun.Name = "radComosiun";
             this.radComosiun.Parmida_ActivePlusMultiKeys = false;
             this.radComosiun.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -319,7 +326,7 @@
             // txtSmartCart
             // 
             this.txtSmartCart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSmartCart.Location = new System.Drawing.Point(39, 72);
+            this.txtSmartCart.Location = new System.Drawing.Point(43, 72);
             this.txtSmartCart.Name = "txtSmartCart";
             this.txtSmartCart.Parmida_ActivePlusMultiKeys = false;
             this.txtSmartCart.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -333,8 +340,8 @@
             this.txtSmartCart.Properties.DataSource = this.driversBindingSource;
             this.txtSmartCart.Properties.DisplayMember = "SmartCart";
             this.txtSmartCart.Properties.NullText = "";
+            this.txtSmartCart.Properties.PopupView = this.searchLookUpEdit1View;
             this.txtSmartCart.Properties.ValueMember = "DriverID";
-            this.txtSmartCart.Properties.View = this.searchLookUpEdit1View;
             this.txtSmartCart.Size = new System.Drawing.Size(221, 30);
             this.txtSmartCart.TabIndex = 3;
             conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
@@ -500,7 +507,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 464);
+            this.ClientSize = new System.Drawing.Size(386, 456);
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
