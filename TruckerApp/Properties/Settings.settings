@@ -1,15 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TruckerApp.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
   <Profiles />
-  <Settings>
-    <Setting Name="LastVideoPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="FrmFishPrint_HandleAnprEvents_CameraNotConnected" Type="System.String" Scope="User">
-      <Value Profile="(Default)">ارتباط با دوربین به درستی برقرار نشده، دوباره تلاش کنید</Value>
-    </Setting>
-    <Setting Name="FrmFishPrint_HandleAnprEvents_NotConnectedToCamera" Type="System.String" Scope="User">
-      <Value Profile="(Default)">ارتباط با فایل یا دوربین برقرار نشد. آدرس را بررسی کرده و اگر نام کاربری و رمز می خواهد آنها را بازبینی کنید.</Value>
-    </Setting>
-  </Settings>
+  <Settings />
 </SettingsFile>

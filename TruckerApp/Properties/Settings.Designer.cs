@@ -22,42 +22,5 @@ namespace TruckerApp.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string LastVideoPath {
-            get {
-                return ((string)(this["LastVideoPath"]));
-            }
-            set {
-                this["LastVideoPath"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("ارتباط با دوربین به درستی برقرار نشده، دوباره تلاش کنید")]
-        public string FrmFishPrint_HandleAnprEvents_CameraNotConnected {
-            get {
-                return ((string)(this["FrmFishPrint_HandleAnprEvents_CameraNotConnected"]));
-            }
-            set {
-                this["FrmFishPrint_HandleAnprEvents_CameraNotConnected"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("ارتباط با فایل یا دوربین برقرار نشد. آدرس را بررسی کرده و اگر نام کاربری و رمز می" +
-            " خواهد آنها را بازبینی کنید.")]
-        public string FrmFishPrint_HandleAnprEvents_NotConnectedToCamera {
-            get {
-                return ((string)(this["FrmFishPrint_HandleAnprEvents_NotConnectedToCamera"]));
-            }
-            set {
-                this["FrmFishPrint_HandleAnprEvents_NotConnectedToCamera"] = value;
-            }
-        }
     }
 }

@@ -31,9 +31,9 @@ namespace TruckerApp.UserForm.Fish
 
 
         SLPRPropertyGrid anpr_settings = new SLPRPropertyGrid();
-        public string license_plate;
-        public string recieve;
-        public FileStream fileStream;
+        //public string license_plate;
+        //public string recieve;
+        //public FileStream fileStream;
         //Frame width, height, number of channels and step size of the frame (usually = width x number of channels)
         public int FrameW, FrameH, FrameCh, FrameStep;
         public int missed_count = 0, repeat_count = 0;
@@ -44,14 +44,14 @@ namespace TruckerApp.UserForm.Fish
         Bitmap[] img_plate = new Bitmap[2];
         UserRect sel_rect, sel_rect2;
         Rectangle roi1, roi2;
-        string last_result;
-        System.Drawing.Graphics picg;
-        double ratio = 1.0;
+        string _resultFarsi;//پلاک فارسی
+        Graphics picg;
+        double _ratio = 1.0;
         byte draw_method = 0; //{ DRAW_GDI, DRAW_OPENGL, DRAW_SDL, DRAW_NONE }; //best method is DRAW_SDL but it may differ based on PC config
         int dir_in = 0, dir_out = 0;
         SLPRParams prm = new SLPRParams();
         // PictureBox[] picPlate = new PictureBox[5];
-        System.Drawing.Pen pen_rect = new System.Drawing.Pen(System.Drawing.Color.Red, 3);
+        Pen pen_rect = new Pen(Color.Red, 3);
         // Open App.Config of executable
         // Configuration configFile = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
         System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
@@ -63,55 +63,30 @@ namespace TruckerApp.UserForm.Fish
         [System.Runtime.InteropServices.DllImport("kernel32.dll", EntryPoint = "CopyMemory", SetLastError = false)]
         public static extern void CopyMemory(IntPtr dest, IntPtr src, uint count);
 
-        string[] dir_strings = new string[3] { "", "IN", "OUT" };
+       // string[] dir_strings = new string[3] { "", "IN", "OUT" };
         private string _resultEn;
 
 
         public FrmFishPrint()
         {
             InitializeComponent();
-            driversBindingSource.DataSource = new BindingList().DriversList();
+            //driversBindingSource.DataSource = new BindingList().DriversList();
             //  db = new TruckersEntities();
-
-
             string security_code = "www.shahaab-co.ir 02332300204";
             anpr_create(0, security_code, 1);
             //it is not required to call anpr_set_params with default params, but if you want to change them, you must call it
             SetDefParams();
-
             HandleANPREventsDelegate = new ANPR_EVENT_CALLBACK(HandleAnprEvents);
             anpr_set_event_callback(HandleANPREventsDelegate);
-
         }
 
 
         private void ReadSettings()
         {
-            edtURL.Text = Settings.Default["LastVideoPath"].ToString();
-
-            int x = 10;
-            int y = picture.Size.Height * 2 / 10;
-
+            var x = 10;
+            var y = picture.Size.Height * 2 / 10;
             roi2 = roi1 = new Rectangle(x, y, picture.Size.Width / 2 - 20, 6 * picture.Size.Height / 10);
             roi2.X = picture.Size.Width / 2 + 10;
-
-            //int w = (int)Settings.Default["roi1_w"];
-            //if (w > 0)
-            //{
-            //    roi1.X = (int)Settings.Default["roi1_x"];
-            //    roi1.Y = (int)Settings.Default["roi1_y"];
-            //    roi1.Height = (int)Settings.Default["roi1_h"];
-            //    roi1.Width = w;
-            //}
-
-            //w = (int)Settings.Default["roi2_w"];
-            //if (w > 0)
-            //{
-            //    roi2.X = (int)Settings.Default["roi2_x"];
-            //    roi2.Y = (int)Settings.Default["roi2_y"];
-            //    roi2.Height = (int)Settings.Default["roi2_h"];
-            //    roi2.Width = w;
-            //}
         }
         private void UpdateFrame()
         {
@@ -122,11 +97,10 @@ namespace TruckerApp.UserForm.Fish
                 frame_counter++;
                 return;
             }
-
             if ((FrameW > 0) && (Grabbing > 0))
             {
                 //vlpr_pause_or_resume(1); //Prevent changing frame in C++ while showing it here in C#
-                IntPtr pFrame = vlpr_get_frame(0);
+                var pFrame = vlpr_get_frame(0);
                 if (pFrame == IntPtr.Zero)
                 {
                     count_empty_frame++;
@@ -135,21 +109,16 @@ namespace TruckerApp.UserForm.Fish
                     {
                         StopEveryThing();
                     }
-
-
                     return;
                 }
-
                 frame_counter++;
                 count_empty_frame = 0;
-
                 if (frame == null)
                 {
                     frame = new Bitmap(FrameW, FrameH, FrameStep, PixelFormat.Format24bppRgb, pFrame);
                     picture.Image = frame;
                 }
-
-                //vlpr_pause_or_resume(0);//Resume changing frame
+                //vlpr_pause_or_resume(0);//Resume changing frame;
                 picture.Invalidate();
             }
         }
@@ -169,7 +138,7 @@ namespace TruckerApp.UserForm.Fish
                 if (FrameW < 1)
                 {
                     Grabbing = 0;
-                    MessageBox.Show(Settings.Default.FrmFishPrint_HandleAnprEvents_CameraNotConnected);
+                    MessageBox.Show(@"ارتباط با دوربین به درستی برقرار نشده، دوباره تلاش کنید");
                     return;
                 }
                 lblWH.Text = $@"{FrameW}x{FrameH}";
@@ -180,8 +149,10 @@ namespace TruckerApp.UserForm.Fish
             else if (eventType == WM_CAM_NOT_FOUND)
             {
                 Grabbing = 0;
-                MessageBox.Show(Settings.Default.FrmFishPrint_HandleAnprEvents_NotConnectedToCamera,
-                    "خطا", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading | MessageBoxOptions.RightAlign);
+                MessageBox.Show(@"ارتباط با فایل یا دوربین برقرار نشد. آدرس را بررسی کرده و اگر نام کاربری و رمز می خواهد آنها را بازبینی کنید.",
+                    "خطا", MessageBoxButtons.OK, MessageBoxIcon.Warning,
+                    MessageBoxDefaultButton.Button1, 
+                    MessageBoxOptions.RtlReading | MessageBoxOptions.RightAlign);
             }
             else if (eventType == WM_NEW_FRAME)//New Frame Captured
             {
@@ -224,9 +195,7 @@ namespace TruckerApp.UserForm.Fish
         {
             //if (direct_play == 1)
             //  return;
-            System.Drawing.Graphics g = picg;// 
-            if (g == null)
-                g = picture.CreateGraphics();
+            var g = picg ?? picture.CreateGraphics();
             float w = FrameW;
             float h = FrameH;
             if (picture.Image != null)
@@ -319,8 +288,8 @@ namespace TruckerApp.UserForm.Fish
                     return;
             }
             plate_counter++;
-            last_result = "";
-            last_result = plate.str;
+            _resultFarsi = "";
+            txtTagNumber.Text = _resultFarsi = plate.str;
             MEAN += plate.cnf;
             _resultEn = new string(' ', 20);
             anpr_get_en_result(plate.str, _resultEn);
@@ -330,7 +299,7 @@ namespace TruckerApp.UserForm.Fish
             {
                 GetPropertyByDriver(resultFind);
             }
-            UpdateFarsiResult(last_result);
+            UpdateFarsiResult(_resultFarsi);
             for (var i = 19; i > 0; i--)
                 if (_resultEn[i] == 0)
                 {
@@ -417,11 +386,11 @@ namespace TruckerApp.UserForm.Fish
             //Application.DoEvents();            
             if (start)
             {
-                SaveSettings();
+                
                 SetParams();
                 var interval = (byte)(1000 / anpr_settings.frame_rate);
                 //rtsp://admin:admin@192.168.55.160:554/h264
-                string str = edtURL.Text;
+                string str = PublicVar.cameraString;
                 var takeShots = anpr_settings.take_shots_from_camera ? (byte)1 : (byte)0;
                 draw_method = (byte)cmbDrawMethod.SelectedIndex;
 
@@ -464,7 +433,7 @@ namespace TruckerApp.UserForm.Fish
                 return;
 
             string result = new string(' ', 20);
-            string result_en = new string(' ', 20);
+           // string result_en = new string(' ', 20);
 
             float cnf = 0;
             RECT rc = new RECT();
@@ -547,11 +516,7 @@ namespace TruckerApp.UserForm.Fish
             anpr_set_debug_mode(0, anpr_settings.debug_level);
             //SetROI();
         }
-        private void SaveSettings()
-        {
-            Settings.Default["LastVideoPath"] = edtURL.Text;
-            Settings.Default.Save();
-        }
+
         private void printFish()
         {
             var report = XtraReport.FromFile("ReportFish.repx", true);
@@ -573,11 +538,11 @@ namespace TruckerApp.UserForm.Fish
             if (driver == null) return;
             _code = Convert.ToInt32(driver.driver_code) > 0 ? driver.driver_code.ToString() : " ";
             txtName.Text = _name = $"{driver.FirstName}  {driver.LastName}";
-            //txtTag.Text =  driver.Tag;
-            txtTagNumber.Text = _tagnumber = driver.TagNumber;
+            txtTag.Text =  driver.Tag;
+            txtTagNumber.Text = _tagnumber = _resultFarsi;
             txtPhoneNumber.Text = driver.PhoneNumber;
             _driver = driver.DriverID;
-            _smartcart = driver.SmartCart.ToString();
+            _smartcart = txtHosmand.Text = driver.SmartCart.ToString();
             _group = driver.GroupID;
             _memeber = driver.LoadType.Type;
             if (_group == 30)
@@ -628,6 +593,10 @@ namespace TruckerApp.UserForm.Fish
                 }
             }
             txtComossin.Text = _commission.ToString();
+
+            timer_process.Enabled = false;
+            btnPlay.Enabled = true;
+            btnStop.Enabled = false;
         }
         private void cbxSmart_EditValueChanged(object sender, EventArgs e)
         {
@@ -694,15 +663,13 @@ namespace TruckerApp.UserForm.Fish
 
         private void FrmFishPrint_Load(object sender, EventArgs e)
         {
+            //SaveSettings();
             ReadSettings();
             //cmbDrawMethod.SelectedIndex = 0;
-
             sel_rect = new UserRect(roi1);
             sel_rect.SetPictureBox(null);
-
             sel_rect2 = new UserRect(roi2);
             sel_rect2.SetPictureBox(null);
-
             setupPage();
             txtDateRegister.EditValue = DateTime.Today.ToLongDateString();
             lastNumber();

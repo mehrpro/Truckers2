@@ -7,8 +7,10 @@ namespace TruckerApp
 {
     public partial class FrmLogin : DevExpress.XtraEditors.XtraForm
     {
+        private readonly TruckersEntities _db;
         public FrmLogin()
         {
+            this._db = new TruckersEntities();
             InitializeComponent();
             txtPassword.Text = "708801298";
             txtUsername.Text = "admin";
@@ -26,9 +28,8 @@ namespace TruckerApp
             string _User, _Pass;
             _User = txtUsername.Text.Trim();
             _Pass = txtPassword.Text.Trim();
-            using (var db = new TruckersEntities())
-            {
-                var qry = db.Users.SingleOrDefault(x => x.username.Trim() == _User);
+        
+                var qry = _db.Users.SingleOrDefault(x => x.username.Trim() == _User);
                 if (qry != null)
                 {
                     if (qry.password.Trim() == _Pass)
@@ -53,7 +54,7 @@ namespace TruckerApp
                     XtraMessageBox.Show("'نام کاربری اشتباه است مجدد تلاش کنید", "اتوماسیون پایانه");
 
                 }
-            }
+            
         }
 
 

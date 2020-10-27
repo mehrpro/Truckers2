@@ -41,7 +41,6 @@
             this.Res2 = new System.Windows.Forms.Label();
             this.Res3 = new System.Windows.Forms.Label();
             this.Res1 = new System.Windows.Forms.Label();
-            this.edtURL = new System.Windows.Forms.TextBox();
             this.btnStop = new DevExpress.XtraEditors.SimpleButton();
             this.btnPlay = new DevExpress.XtraEditors.SimpleButton();
             this.picture = new System.Windows.Forms.PictureBox();
@@ -49,7 +48,7 @@
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -59,9 +58,11 @@
             this.txtDateRegister = new DevExpress.XtraEditors.TextEdit();
             this.txtPhoneNumber = new DevExpress.XtraEditors.TextEdit();
             this.txtTagNumber = new DevExpress.XtraEditors.TextEdit();
+            this.txtHosmand = new DevExpress.XtraEditors.TextEdit();
             this.txtTag = new DevExpress.XtraEditors.TextEdit();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.cbxSmart = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDriverID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFirstName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -70,7 +71,6 @@
             this.colTagNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTagNumber1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtComossin = new DevExpress.XtraEditors.TextEdit();
-            this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPlateLast)).BeginInit();
@@ -80,12 +80,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDateRegister.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhoneNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTagNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHosmand.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTag.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxSmart.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComossin.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // timer_process
@@ -107,7 +108,6 @@
             this.groupControl1.Controls.Add(this.Res2);
             this.groupControl1.Controls.Add(this.Res3);
             this.groupControl1.Controls.Add(this.Res1);
-            this.groupControl1.Controls.Add(this.edtURL);
             this.groupControl1.Controls.Add(this.btnStop);
             this.groupControl1.Controls.Add(this.btnPlay);
             this.groupControl1.Controls.Add(this.picture);
@@ -115,7 +115,7 @@
             this.groupControl1.Controls.Add(this.btnPrint);
             this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.labelControl3);
-            this.groupControl1.Controls.Add(this.labelControl2);
+            this.groupControl1.Controls.Add(this.labelControl8);
             this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.labelControl5);
@@ -125,6 +125,7 @@
             this.groupControl1.Controls.Add(this.txtDateRegister);
             this.groupControl1.Controls.Add(this.txtPhoneNumber);
             this.groupControl1.Controls.Add(this.txtTagNumber);
+            this.groupControl1.Controls.Add(this.txtHosmand);
             this.groupControl1.Controls.Add(this.txtTag);
             this.groupControl1.Controls.Add(this.txtName);
             this.groupControl1.Controls.Add(this.cbxSmart);
@@ -132,7 +133,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(919, 536);
+            this.groupControl1.Size = new System.Drawing.Size(919, 404);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = " صدور حواله ";
             // 
@@ -178,7 +179,7 @@
             this.lbl_result.AutoSize = true;
             this.lbl_result.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.lbl_result.ForeColor = System.Drawing.Color.OliveDrab;
-            this.lbl_result.Location = new System.Drawing.Point(12, 477);
+            this.lbl_result.Location = new System.Drawing.Point(577, 45);
             this.lbl_result.Name = "lbl_result";
             this.lbl_result.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl_result.Size = new System.Drawing.Size(93, 16);
@@ -190,79 +191,62 @@
             // 
             this.picPlateLast.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.picPlateLast.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picPlateLast.Location = new System.Drawing.Point(12, 397);
+            this.picPlateLast.Location = new System.Drawing.Point(112, 330);
             this.picPlateLast.Name = "picPlateLast";
             this.picPlateLast.Size = new System.Drawing.Size(179, 41);
             this.picPlateLast.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picPlateLast.TabIndex = 47;
             this.picPlateLast.TabStop = false;
-            this.picPlateLast.Visible = false;
             // 
             // Res4
             // 
             this.Res4.AutoSize = true;
             this.Res4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Res4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Res4.Location = new System.Drawing.Point(161, 443);
+            this.Res4.Location = new System.Drawing.Point(442, 341);
             this.Res4.Name = "Res4";
             this.Res4.Size = new System.Drawing.Size(34, 24);
             this.Res4.TabIndex = 46;
             this.Res4.Text = "P4";
-            this.Res4.Visible = false;
             // 
             // Res2
             // 
             this.Res2.AutoSize = true;
             this.Res2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Res2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Res2.Location = new System.Drawing.Point(65, 443);
+            this.Res2.Location = new System.Drawing.Point(346, 341);
             this.Res2.Name = "Res2";
             this.Res2.Size = new System.Drawing.Size(34, 24);
             this.Res2.TabIndex = 45;
             this.Res2.Text = "P2";
-            this.Res2.Visible = false;
             // 
             // Res3
             // 
             this.Res3.AutoSize = true;
             this.Res3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Res3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Res3.Location = new System.Drawing.Point(111, 443);
+            this.Res3.Location = new System.Drawing.Point(392, 341);
             this.Res3.Name = "Res3";
             this.Res3.Size = new System.Drawing.Size(34, 24);
             this.Res3.TabIndex = 44;
             this.Res3.Text = "P3";
-            this.Res3.Visible = false;
             // 
             // Res1
             // 
             this.Res1.AutoSize = true;
             this.Res1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Res1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Res1.Location = new System.Drawing.Point(16, 443);
+            this.Res1.Location = new System.Drawing.Point(297, 341);
             this.Res1.Name = "Res1";
             this.Res1.Size = new System.Drawing.Size(34, 24);
             this.Res1.TabIndex = 43;
             this.Res1.Text = "P1";
-            this.Res1.Visible = false;
-            // 
-            // edtURL
-            // 
-            this.edtURL.BackColor = System.Drawing.Color.White;
-            this.edtURL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.edtURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.edtURL.Location = new System.Drawing.Point(24, 14);
-            this.edtURL.Name = "edtURL";
-            this.edtURL.Size = new System.Drawing.Size(485, 21);
-            this.edtURL.TabIndex = 34;
-            this.edtURL.Text = "rtsp://admin:admin@192.168.1.20/media/media.amp";
-            this.edtURL.Visible = false;
             // 
             // btnStop
             // 
             this.btnStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStop.ImageOptions.Image = global::TruckerApp.Properties.Resources.stop_32x321;
-            this.btnStop.Location = new System.Drawing.Point(435, 345);
+            this.btnStop.Location = new System.Drawing.Point(64, 330);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(42, 41);
             this.btnStop.TabIndex = 4;
@@ -272,7 +256,7 @@
             // 
             this.btnPlay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPlay.ImageOptions.Image = global::TruckerApp.Properties.Resources.play_32x321;
-            this.btnPlay.Location = new System.Drawing.Point(387, 345);
+            this.btnPlay.Location = new System.Drawing.Point(16, 330);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(42, 41);
             this.btnPlay.TabIndex = 4;
@@ -283,9 +267,9 @@
             this.picture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picture.BackColor = System.Drawing.SystemColors.Control;
             this.picture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picture.Location = new System.Drawing.Point(12, 78);
+            this.picture.Location = new System.Drawing.Point(16, 78);
             this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(474, 311);
+            this.picture.Size = new System.Drawing.Size(470, 246);
             this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picture.TabIndex = 3;
             this.picture.TabStop = false;
@@ -296,7 +280,7 @@
             this.btnClose.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnClose.Appearance.Options.UseFont = true;
             this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
-            this.btnClose.Location = new System.Drawing.Point(502, 456);
+            this.btnClose.Location = new System.Drawing.Point(503, 341);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(135, 48);
             this.btnClose.TabIndex = 2;
@@ -309,7 +293,7 @@
             this.btnPrint.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnPrint.Appearance.Options.UseFont = true;
             this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(652, 456);
+            this.btnPrint.Location = new System.Drawing.Point(653, 341);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(135, 48);
             this.btnPrint.TabIndex = 2;
@@ -321,7 +305,7 @@
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl4.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(799, 362);
+            this.labelControl4.Location = new System.Drawing.Point(800, 261);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(67, 24);
             this.labelControl4.TabIndex = 2;
@@ -332,29 +316,29 @@
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl3.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(799, 411);
+            this.labelControl3.Location = new System.Drawing.Point(799, 297);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(49, 24);
             this.labelControl3.TabIndex = 2;
             this.labelControl3.Text = "کمسیون";
             // 
-            // labelControl2
+            // labelControl8
             // 
-            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(805, 317);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(26, 24);
-            this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "پلاک";
+            this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(800, 225);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(26, 24);
+            this.labelControl8.TabIndex = 2;
+            this.labelControl8.Text = "پلاک";
             // 
             // labelControl7
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl7.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(799, 89);
+            this.labelControl7.Location = new System.Drawing.Point(799, 80);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(32, 24);
             this.labelControl7.TabIndex = 2;
@@ -365,7 +349,7 @@
             this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl6.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(799, 123);
+            this.labelControl6.Location = new System.Drawing.Point(799, 114);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(81, 24);
             this.labelControl6.TabIndex = 2;
@@ -376,7 +360,7 @@
             this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl5.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(801, 172);
+            this.labelControl5.Location = new System.Drawing.Point(801, 153);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(83, 24);
             this.labelControl5.TabIndex = 2;
@@ -387,7 +371,7 @@
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(799, 220);
+            this.labelControl1.Location = new System.Drawing.Point(799, 189);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(58, 24);
             this.labelControl1.TabIndex = 2;
@@ -396,7 +380,7 @@
             // txtserial
             // 
             this.txtserial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtserial.Location = new System.Drawing.Point(725, 123);
+            this.txtserial.Location = new System.Drawing.Point(725, 114);
             this.txtserial.Name = "txtserial";
             this.txtserial.Parmida_ActivePlusMultiKeys = false;
             this.txtserial.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -418,7 +402,7 @@
             // txtNumber
             // 
             this.txtNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNumber.Location = new System.Drawing.Point(503, 123);
+            this.txtNumber.Location = new System.Drawing.Point(503, 114);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Parmida_ActivePlusMultiKeys = false;
             this.txtNumber.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -462,7 +446,7 @@
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(502, 359);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(503, 258);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Parmida_ActivePlusMultiKeys = false;
             this.txtPhoneNumber.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -484,7 +468,7 @@
             // txtTagNumber
             // 
             this.txtTagNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTagNumber.Location = new System.Drawing.Point(504, 314);
+            this.txtTagNumber.Location = new System.Drawing.Point(657, 222);
             this.txtTagNumber.Name = "txtTagNumber";
             this.txtTagNumber.Parmida_ActivePlusMultiKeys = false;
             this.txtTagNumber.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -499,15 +483,40 @@
             this.txtTagNumber.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtTagNumber.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.txtTagNumber.Properties.AppearanceReadOnly.Options.UseForeColor = true;
+            this.txtTagNumber.Properties.Mask.EditMask = "\\d\\d-[آ-م]-\\d\\d\\d-\\d\\d";
+            this.txtTagNumber.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtTagNumber.Properties.ReadOnly = true;
             this.txtTagNumber.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtTagNumber.Size = new System.Drawing.Size(285, 30);
+            this.txtTagNumber.Size = new System.Drawing.Size(131, 30);
             this.txtTagNumber.TabIndex = 1;
+            // 
+            // txtHosmand
+            // 
+            this.txtHosmand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtHosmand.Location = new System.Drawing.Point(503, 150);
+            this.txtHosmand.Name = "txtHosmand";
+            this.txtHosmand.Parmida_ActivePlusMultiKeys = false;
+            this.txtHosmand.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtHosmand.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtHosmand.Properties.Appearance.Options.UseFont = true;
+            this.txtHosmand.Properties.Appearance.Options.UseForeColor = true;
+            this.txtHosmand.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtHosmand.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.txtHosmand.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtHosmand.Properties.AppearanceFocused.Options.UseFont = true;
+            this.txtHosmand.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.txtHosmand.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtHosmand.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.txtHosmand.Properties.AppearanceReadOnly.Options.UseForeColor = true;
+            this.txtHosmand.Properties.ReadOnly = true;
+            this.txtHosmand.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtHosmand.Size = new System.Drawing.Size(285, 30);
+            this.txtHosmand.TabIndex = 1;
             // 
             // txtTag
             // 
             this.txtTag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTag.Location = new System.Drawing.Point(504, 265);
+            this.txtTag.Location = new System.Drawing.Point(503, 222);
             this.txtTag.Name = "txtTag";
             this.txtTag.Parmida_ActivePlusMultiKeys = false;
             this.txtTag.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -524,13 +533,13 @@
             this.txtTag.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtTag.Properties.ReadOnly = true;
             this.txtTag.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtTag.Size = new System.Drawing.Size(285, 30);
+            this.txtTag.Size = new System.Drawing.Size(148, 30);
             this.txtTag.TabIndex = 1;
             // 
             // txtName
             // 
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName.Location = new System.Drawing.Point(503, 217);
+            this.txtName.Location = new System.Drawing.Point(503, 186);
             this.txtName.Name = "txtName";
             this.txtName.Parmida_ActivePlusMultiKeys = false;
             this.txtName.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -552,7 +561,7 @@
             // cbxSmart
             // 
             this.cbxSmart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxSmart.Location = new System.Drawing.Point(504, 169);
+            this.cbxSmart.Location = new System.Drawing.Point(25, 42);
             this.cbxSmart.Name = "cbxSmart";
             this.cbxSmart.Parmida_ActivePlusMultiKeys = false;
             this.cbxSmart.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -571,9 +580,14 @@
             this.cbxSmart.Properties.DisplayMember = "SmartCart";
             this.cbxSmart.Properties.PopupView = this.searchLookUpEdit1View;
             this.cbxSmart.Properties.ValueMember = "DriverID";
-            this.cbxSmart.Size = new System.Drawing.Size(285, 30);
+            this.cbxSmart.Size = new System.Drawing.Size(124, 30);
             this.cbxSmart.TabIndex = 0;
+            this.cbxSmart.Visible = false;
             this.cbxSmart.EditValueChanged += new System.EventHandler(this.cbxSmart_EditValueChanged);
+            // 
+            // driversBindingSource
+            // 
+            this.driversBindingSource.DataSource = typeof(TruckerApp.Driver);
             // 
             // searchLookUpEdit1View
             // 
@@ -755,7 +769,7 @@
             // 
             this.txtComossin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtComossin.EditValue = "0";
-            this.txtComossin.Location = new System.Drawing.Point(503, 408);
+            this.txtComossin.Location = new System.Drawing.Point(503, 294);
             this.txtComossin.Name = "txtComossin";
             this.txtComossin.Parmida_ActivePlusMultiKeys = false;
             this.txtComossin.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -778,15 +792,11 @@
             this.txtComossin.Size = new System.Drawing.Size(284, 30);
             this.txtComossin.TabIndex = 1;
             // 
-            // driversBindingSource
-            // 
-            this.driversBindingSource.DataSource = typeof(TruckerApp.Driver);
-            // 
             // FrmFishPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(919, 536);
+            this.ClientSize = new System.Drawing.Size(919, 404);
             this.Controls.Add(this.groupControl1);
             this.Name = "FrmFishPrint";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -803,12 +813,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDateRegister.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhoneNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTagNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHosmand.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTag.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxSmart.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComossin.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -827,7 +838,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtPhoneNumber;
@@ -843,7 +853,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.SimpleButton btnPlay;
         private System.Windows.Forms.PictureBox picture;
-        private System.Windows.Forms.TextBox edtURL;
         private System.Windows.Forms.PictureBox picPlateLast;
         private System.Windows.Forms.Label Res4;
         private System.Windows.Forms.Label Res2;
@@ -857,5 +866,7 @@
         private DevExpress.XtraEditors.SimpleButton btnStop;
         private DevExpress.XtraEditors.TextEdit txtTagNumber;
         private DevExpress.XtraGrid.Columns.GridColumn colTagNumber1;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.TextEdit txtHosmand;
     }
 }

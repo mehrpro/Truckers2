@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using TruckerApp.UserForm;
 using TruckerApp.UserForm.cash;
+using TruckerApp.UserForm.Customer;
 using TruckerApp.UserForm.Fish;
 
 
@@ -19,7 +20,7 @@ namespace TruckerApp
         private void btnAddDriver_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            var newForm = new FrmNewDriver { StartPosition = FormStartPosition.CenterScreen };
+            var newForm = new FrmNewDriverWithCamera() { StartPosition = FormStartPosition.CenterScreen };
             newForm.ShowDialog();
         }
 
@@ -331,7 +332,7 @@ namespace TruckerApp
 
         private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frm = new FrmNewDriver3().ShowDialog();
+            var frm = new FrmEditDriverWithCamera().ShowDialog();
         }
 
         private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
