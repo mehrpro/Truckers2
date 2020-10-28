@@ -10,7 +10,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraReports.UI;
 using TruckerApp.Properties;
 using TruckerApp.UserForm.cash;
-using static TruckerApp.ANPR_API;
+using static TruckerApp.AnprApi;
 
 namespace TruckerApp.UserForm.Fish
 {
@@ -58,7 +58,7 @@ namespace TruckerApp.UserForm.Fish
         int count_empty_frame = 0;
         float MEAN = 0;
 
-        ANPR_EVENT_CALLBACK HandleANPREventsDelegate = null;
+       private ANPR_EVENT_CALLBACK _handleAnprEventsDelegate = null;
 
         [System.Runtime.InteropServices.DllImport("kernel32.dll", EntryPoint = "CopyMemory", SetLastError = false)]
         public static extern void CopyMemory(IntPtr dest, IntPtr src, uint count);
@@ -72,14 +72,32 @@ namespace TruckerApp.UserForm.Fish
             InitializeComponent();
             //driversBindingSource.DataSource = new BindingList().DriversList();
             //  db = new TruckersEntities();
-            string security_code = "www.shahaab-co.ir 02332300204";
-            anpr_create(0, security_code, 1);
-            //it is not required to call anpr_set_params with default params, but if you want to change them, you must call it
-            SetDefParams();
-            HandleANPREventsDelegate = new ANPR_EVENT_CALLBACK(HandleAnprEvents);
-            anpr_set_event_callback(HandleANPREventsDelegate);
+            //string security_code = "www.shahaab-co.ir 02332300204";
+            //anpr_create(0, security_code, 1);
+            ////it is not required to call anpr_set_params with default params, but if you want to change them, you must call it
+            //SetDefParams();
+            //HandleANPREventsDelegate = new ANPR_EVENT_CALLBACK(HandleAnprEvents);
+            //anpr_set_event_callback(HandleANPREventsDelegate);
+            CamSetup();
         }
+        private void CamSetup()
+        {
+            try
+            {
+                string security_code = "www.shahaab-co.ir 02332300204";
+                anpr_create(0, security_code, 1);
+                //it is not required to call anpr_set_params with default params, but if you want to change them, you must call it
+                SetDefParams();
+                _handleAnprEventsDelegate = new ANPR_EVENT_CALLBACK(HandleAnprEvents);
+                anpr_set_event_callback(_handleAnprEventsDelegate);
+            }
+            catch (Exception e)
+            {
+                //MessageBox.Show("Error Load Form");
+                this.Close();
+            }
 
+        }
 
         private void ReadSettings()
         {
@@ -129,7 +147,7 @@ namespace TruckerApp.UserForm.Fish
             //باید قطعه کد زیر را استفاده کنیم
             if (InvokeRequired)
             {
-                Invoke(HandleANPREventsDelegate, eventType, stream, pltIdx);
+                Invoke(_handleAnprEventsDelegate, eventType, stream, pltIdx);
                 return;
             }
             if (eventType == WM_CONNECTED)
@@ -390,9 +408,9 @@ namespace TruckerApp.UserForm.Fish
                 SetParams();
                 var interval = (byte)(1000 / anpr_settings.frame_rate);
                 //rtsp://admin:admin@192.168.55.160:554/h264
-                string str = PublicVar.cameraString;
+                string str = PublicVar.CameraString;
                 var takeShots = anpr_settings.take_shots_from_camera ? (byte)1 : (byte)0;
-                draw_method = (byte)cmbDrawMethod.SelectedIndex;
+                draw_method = 0;// (byte)cmbDrawMethod.SelectedIndex;
 
                 Grabbing = 2;
 
@@ -421,7 +439,7 @@ namespace TruckerApp.UserForm.Fish
 
         private void btnRefreshPlayer_Click(object sender, EventArgs e)
         {
-            timer_process.Interval = Convert.ToInt32(edtProcessInterval.Text);
+            timer_process.Interval = PublicVar.ProcessInterval;// Convert.ToInt32(edtProcessInterval.Text);
             timer_process.Enabled = true;
             btnPlay.Enabled = false;
             btnStop.Enabled = true;
@@ -695,7 +713,7 @@ namespace TruckerApp.UserForm.Fish
                         Number = Convert.ToInt16(txtNumber.EditValue),
                         GroupCommission = _group,
                         Status_FK = 20,
-                        userid = PublicVar.UserID,
+                        
                     };
                     var frm = new FrmCash(txtComossin.Text);
                     var result = frm.ShowDialog();

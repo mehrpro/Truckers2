@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using static TruckerApp.ANPR_API;
+using static TruckerApp.AnprApi;
 using System.Drawing;
 using System.Drawing.Imaging;
 using TruckerApp.Properties;
@@ -31,24 +31,38 @@ namespace TruckerApp.UserForm.Customer
         int count_empty_frame = 0;
         float MEAN = 0;
 
-        ANPR_EVENT_CALLBACK HandleANPREventsDelegate = null;
+        private ANPR_EVENT_CALLBACK _handleAnprEventsDelegate = null;
 
         [System.Runtime.InteropServices.DllImport("kernel32.dll", EntryPoint = "CopyMemory", SetLastError = false)]
         public static extern void CopyMemory(IntPtr dest, IntPtr src, uint count);
 
 
         private string _resultEn;
-        private Driver selectDriver;
+        private Driver _selectDriver;
         TruckerApp.TruckersEntities db = new TruckerApp.TruckersEntities();
         public FrmEditDriverWithCamera()
         {
             InitializeComponent();
-            string security_code = "www.shahaab-co.ir 02332300204";
-            anpr_create(0, security_code, 1);
-            //it is not required to call anpr_set_params with default params, but if you want to change them, you must call it
-            SetDefParams();
-            HandleANPREventsDelegate = new ANPR_EVENT_CALLBACK(HandleAnprEvents);
-            anpr_set_event_callback(HandleANPREventsDelegate);
+            CamSetup();
+
+        }
+
+        private void CamSetup()
+        {
+            try
+            {
+                string security_code = "www.shahaab-co.ir 02332300204";
+                anpr_create(0, security_code, 1);
+                //it is not required to call anpr_set_params with default params, but if you want to change them, you must call it
+                SetDefParams();
+                _handleAnprEventsDelegate = new ANPR_EVENT_CALLBACK(HandleAnprEvents);
+                anpr_set_event_callback(_handleAnprEventsDelegate);
+            }
+            catch (Exception e)
+            {
+                //MessageBox.Show("Error Load Form");
+                this.Close();
+            }
 
         }
 
@@ -63,12 +77,12 @@ namespace TruckerApp.UserForm.Customer
             if (txtTag.Text.CheckPlateAny(db))
             {
                 //پلاک قبلا ثبت شده است
-                if (txtTag.Text.FindByPlate(db).DriverID == selectDriver.DriverID)
+                if (txtTag.Text.FindByPlate(db).DriverID == _selectDriver.DriverID)
                 {
                     //پلاک مربوط به همین راننده است و اجازه ویرایش دیگر مقادیر داده شد
                     if (dxValidationProvider1.Validate())
                     {
-                        var driver = db.Drivers.Find(selectDriver.DriverID);
+                        var driver = db.Drivers.Find(_selectDriver.DriverID);
                         var num = Convert.ToInt32(txtDriverCode.Text.Trim());
                         if (driver != null)
                         {
@@ -93,6 +107,7 @@ namespace TruckerApp.UserForm.Customer
                 }
                 else
                 {
+                    //تغییر پلاک برای راننده
                     XtraMessageBox.Show("این پلاک قبلا برای راننده ی دیگری ثبت شده است");
 
                     var result = XtraMessageBox.Show("آیا قصد تغییر راننده را دارید", Text, MessageBoxButtons.YesNo,
@@ -105,7 +120,7 @@ namespace TruckerApp.UserForm.Customer
                             var lastDriver = txtTag.Text.FindByPlate(db);
                             lastDriver.Tag = lastDriver.TagNumber = "!";
                             db.SaveChanges();
-                            var driver = db.Drivers.Find(selectDriver.DriverID);
+                            var driver = db.Drivers.Find(_selectDriver.DriverID);
                             var num = Convert.ToInt32(txtDriverCode.Text.Trim());
                             if (driver != null)
                             {
@@ -130,6 +145,30 @@ namespace TruckerApp.UserForm.Customer
             else
             {
                 //پلاک جدید
+                if (dxValidationProvider1.Validate())
+                {
+                    var driver = db.Drivers.Find(_selectDriver.DriverID);
+                    var num = Convert.ToInt32(txtDriverCode.Text.Trim());
+                    if (driver != null)
+                    {
+                        driver.PhoneNumber = txtPhoneNumber.Text;
+                        driver.driver_code = num;
+                        driver.FirstName = txtFirstName.Text;
+                        driver.LastName = txtLastNAme.Text;
+                        driver.Tag = txtTag.Text;
+                        driver.TagNumber = txtTagNumber.Text;
+                        driver.GroupID = (byte)radComosiun.EditValue;
+                        driver.editor_FK = PublicVar.UserID;
+                    }
+                    db.SaveChanges();
+                    XtraMessageBox.Show(PublicVar.SuccessfulSave, Text, MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                else
+                {
+                    XtraMessageBox.Show(PublicVar.NotComplateForm, this.Text, MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
 
             }
         }
@@ -143,15 +182,15 @@ namespace TruckerApp.UserForm.Customer
 
         private void txtSmartCart_EditValueChanged(object sender, EventArgs e)
         {
-            selectDriver = (Driver)txtSmartCart.GetSelectedDataRow();
-            if (selectDriver == null) return;
-            txtPhoneNumber.Text = selectDriver.PhoneNumber;
-            txtDriverCode.Text = selectDriver.driver_code == null ? "0" : selectDriver.driver_code.Value.ToString();
-            txtFirstName.Text = selectDriver.FirstName;
-            txtLastNAme.Text = selectDriver.LastName;
-            txtTag.Text = selectDriver.Tag;
-            txtTagNumber.Text = selectDriver.TagNumber;
-            radComosiun.EditValue = selectDriver.GroupID;
+            _selectDriver = (Driver)txtSmartCart.GetSelectedDataRow();
+            if (_selectDriver == null) return;
+            txtPhoneNumber.Text = _selectDriver.PhoneNumber;
+            txtDriverCode.Text = _selectDriver.driver_code == null ? "0" : _selectDriver.driver_code.Value.ToString();
+            txtFirstName.Text = _selectDriver.FirstName;
+            txtLastNAme.Text = _selectDriver.LastName;
+            txtTag.Text = _selectDriver.Tag;
+            txtTagNumber.Text = _selectDriver.TagNumber;
+            radComosiun.EditValue = _selectDriver.GroupID;
         }
         private void timer_process_Tick(object sender, EventArgs e)
         {
@@ -195,7 +234,7 @@ namespace TruckerApp.UserForm.Customer
             timer_process.Enabled = false;
             Grabbing = 0;
             frame_vehicle = frame = null; //DONT DELETE THIS LINE. They must be set to null so that reallocate with the correct memory in vlpr_get_frame. 
-            lblWH.Text = "0x0";
+            lblWH.Text = @"0x0";
             picture.Image = null;
         }
         private void SetParams()
@@ -245,7 +284,7 @@ namespace TruckerApp.UserForm.Customer
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            timer_process.Interval = Convert.ToInt32(edtProcessInterval.Text);
+            timer_process.Interval = PublicVar.ProcessInterval;
             timer_process.Enabled = true;
             btnPlay.Enabled = false;
             btnStop.Enabled = true;
@@ -300,7 +339,7 @@ namespace TruckerApp.UserForm.Customer
             //باید قطعه کد زیر را استفاده کنیم
             if (InvokeRequired)
             {
-                Invoke(HandleANPREventsDelegate, eventType, stream, pltIdx);
+                Invoke(_handleAnprEventsDelegate, eventType, stream, pltIdx);
                 return;
             }
             if (eventType == WM_CONNECTED)
@@ -501,7 +540,7 @@ namespace TruckerApp.UserForm.Customer
             Res3.Text = LPResult.Length > 3 ? LPResult.Substring(3, Math.Min(3, LPResult.Length - 3)) : "";
             Res4.Text = LPResult.Length > 6 ? LPResult.Substring(6, LPResult.Length - 6) : "";
         }
-        private void StartPlayerVLC(bool start)
+        private void StartPlayerVlc(bool start)
         {
             picg?.Dispose();
             picg = picture.CreateGraphics();
@@ -514,9 +553,9 @@ namespace TruckerApp.UserForm.Customer
                 SetParams();
                 var interval = (byte)(1000 / anpr_settings.frame_rate);
                 //rtsp://admin:admin@192.168.55.160:554/h264
-                string str = edtURL.Text;
+                string str = PublicVar.CameraString;
                 var takeShots = anpr_settings.take_shots_from_camera ? (byte)1 : (byte)0;
-                draw_method = (byte)cmbDrawMethod.SelectedIndex;
+                draw_method = 0;// (byte)cmbDrawMethod.SelectedIndex;
 
                 Grabbing = 2;
 
@@ -542,7 +581,7 @@ namespace TruckerApp.UserForm.Customer
             sel_rect.SetPictureBox(null);
             sel_rect2 = new UserRect(roi2);
             sel_rect2.SetPictureBox(null);
-            StartPlayerVLC(true);
+            StartPlayerVlc(true);
         }
     }
 }

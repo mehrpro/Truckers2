@@ -14,7 +14,11 @@ namespace TruckerApp
         public static int SeriesName { get; set; }
         public static string userMode { get; set; }
 
-        public static string cameraString = @"rtsp://admin:admin@192.168.1.20/media/media.amp";
+        public static readonly string CameraString = @"rtsp://admin:admin@192.168.1.20/media/media.amp";
+
+        public static int ProcessInterval { get; } = 500;
+
+
         public static DateTime DateSerial { get; set; }
     }
 }

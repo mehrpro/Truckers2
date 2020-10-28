@@ -30,21 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditDriverWithCamera));
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lblWH = new System.Windows.Forms.Label();
-            this.edtProcessInterval = new System.Windows.Forms.TextBox();
             this.picPlateLast = new System.Windows.Forms.PictureBox();
             this.cmbDrawMethod = new System.Windows.Forms.ComboBox();
             this.Res4 = new System.Windows.Forms.Label();
             this.lbl_result = new System.Windows.Forms.Label();
             this.Res2 = new System.Windows.Forms.Label();
-            this.edtURL = new System.Windows.Forms.TextBox();
             this.Res3 = new System.Windows.Forms.Label();
             this.Res1 = new System.Windows.Forms.Label();
             this.btnStop = new DevExpress.XtraEditors.SimpleButton();
@@ -98,13 +96,11 @@
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.CaptionImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_driver_48;
             this.groupControl1.Controls.Add(this.lblWH);
-            this.groupControl1.Controls.Add(this.edtProcessInterval);
             this.groupControl1.Controls.Add(this.picPlateLast);
             this.groupControl1.Controls.Add(this.cmbDrawMethod);
             this.groupControl1.Controls.Add(this.Res4);
             this.groupControl1.Controls.Add(this.lbl_result);
             this.groupControl1.Controls.Add(this.Res2);
-            this.groupControl1.Controls.Add(this.edtURL);
             this.groupControl1.Controls.Add(this.Res3);
             this.groupControl1.Controls.Add(this.Res1);
             this.groupControl1.Controls.Add(this.btnStop);
@@ -144,17 +140,6 @@
             this.lblWH.TabIndex = 86;
             this.lblWH.Text = "label1";
             // 
-            // edtProcessInterval
-            // 
-            this.edtProcessInterval.BackColor = System.Drawing.Color.Honeydew;
-            this.edtProcessInterval.Location = new System.Drawing.Point(493, 12);
-            this.edtProcessInterval.Name = "edtProcessInterval";
-            this.edtProcessInterval.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.edtProcessInterval.Size = new System.Drawing.Size(45, 21);
-            this.edtProcessInterval.TabIndex = 85;
-            this.edtProcessInterval.Text = "500";
-            this.edtProcessInterval.Visible = false;
-            // 
             // picPlateLast
             // 
             this.picPlateLast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -180,7 +165,7 @@
             this.cmbDrawMethod.Margin = new System.Windows.Forms.Padding(2);
             this.cmbDrawMethod.Name = "cmbDrawMethod";
             this.cmbDrawMethod.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cmbDrawMethod.Size = new System.Drawing.Size(105, 21);
+            this.cmbDrawMethod.Size = new System.Drawing.Size(187, 21);
             this.cmbDrawMethod.TabIndex = 84;
             this.cmbDrawMethod.Text = "Draw by WIN API";
             this.cmbDrawMethod.Visible = false;
@@ -221,19 +206,6 @@
             this.Res2.Size = new System.Drawing.Size(34, 24);
             this.Res2.TabIndex = 53;
             this.Res2.Text = "P2";
-            // 
-            // edtURL
-            // 
-            this.edtURL.BackColor = System.Drawing.Color.White;
-            this.edtURL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.edtURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.edtURL.Location = new System.Drawing.Point(12, 12);
-            this.edtURL.Name = "edtURL";
-            this.edtURL.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.edtURL.Size = new System.Drawing.Size(366, 21);
-            this.edtURL.TabIndex = 82;
-            this.edtURL.Text = "rtsp://admin:admin@192.168.1.20/media/media.amp";
-            this.edtURL.Visible = false;
             // 
             // Res3
             // 
@@ -430,9 +402,9 @@
             this.txtPhoneNumber.Properties.MaxLength = 10;
             this.txtPhoneNumber.Size = new System.Drawing.Size(221, 30);
             this.txtPhoneNumber.TabIndex = 2;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.txtPhoneNumber, conditionValidationRule1);
+            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule7.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtPhoneNumber, conditionValidationRule7);
             // 
             // txtLastNAme
             // 
@@ -445,9 +417,9 @@
             this.txtLastNAme.Properties.MaxLength = 49;
             this.txtLastNAme.Size = new System.Drawing.Size(221, 30);
             this.txtLastNAme.TabIndex = 1;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.txtLastNAme, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtLastNAme, conditionValidationRule1);
             // 
             // txtTag
             // 
@@ -463,9 +435,9 @@
             this.txtTag.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtTag.Size = new System.Drawing.Size(221, 30);
             this.txtTag.TabIndex = 5;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.txtTag, conditionValidationRule3);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtTag, conditionValidationRule2);
             // 
             // txtFirstName
             // 
@@ -478,9 +450,9 @@
             this.txtFirstName.Properties.MaxLength = 49;
             this.txtFirstName.Size = new System.Drawing.Size(221, 30);
             this.txtFirstName.TabIndex = 0;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.txtFirstName, conditionValidationRule4);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtFirstName, conditionValidationRule3);
             // 
             // txtTagNumber
             // 
@@ -497,9 +469,9 @@
             this.txtTagNumber.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtTagNumber.Size = new System.Drawing.Size(221, 30);
             this.txtTagNumber.TabIndex = 4;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.txtTagNumber, conditionValidationRule5);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtTagNumber, conditionValidationRule4);
             // 
             // radComosiun
             // 
@@ -545,15 +517,11 @@
             this.txtSmartCart.Properties.ValueMember = "DriverID";
             this.txtSmartCart.Size = new System.Drawing.Size(221, 30);
             this.txtSmartCart.TabIndex = 3;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule6.ErrorText = "This value is not valid";
-            conditionValidationRule6.Value1 = "0";
-            this.dxValidationProvider1.SetValidationRule(this.txtSmartCart, conditionValidationRule6);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule5.ErrorText = "This value is not valid";
+            conditionValidationRule5.Value1 = "0";
+            this.dxValidationProvider1.SetValidationRule(this.txtSmartCart, conditionValidationRule5);
             this.txtSmartCart.EditValueChanged += new System.EventHandler(this.txtSmartCart_EditValueChanged);
-            // 
-            // driversBindingSource
-            // 
-//            this.driversBindingSource.DataSource = typeof(TruckerApp.Driver);
             // 
             // searchLookUpEdit1View
             // 
@@ -708,7 +676,7 @@
             // 
             this.timer_process.Tick += new System.EventHandler(this.timer_process_Tick);
             // 
-            // FrmNewDriver3
+            // FrmEditDriverWithCamera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -717,7 +685,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmNewDriver3";
+            this.Name = "FrmEditDriverWithCamera";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ویرایش راننده";
@@ -778,10 +746,8 @@
         private DevExpress.XtraEditors.SimpleButton btnPlay;
         private System.Windows.Forms.PictureBox picture;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private System.Windows.Forms.TextBox edtProcessInterval;
         private System.Windows.Forms.ComboBox cmbDrawMethod;
         private System.Windows.Forms.Label lbl_result;
-        private System.Windows.Forms.TextBox edtURL;
         private System.Windows.Forms.Timer timer_process;
         private System.Windows.Forms.Label lblWH;
     }

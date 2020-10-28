@@ -44,13 +44,7 @@ namespace TruckerApp
                 config.Save();
                 return;
             }
-            //BonusSkins.Register();
-            //SkinManager.EnableFormSkins();
-            //UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");   // Whiteprint Blueprint Darkroom Metropolis  Visual Studio 2013 Light DevExpress Style
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //SkinManager.EnableFormSkins();
-            //BonusSkins.Register();
+
             Thread.CurrentThread.CurrentCulture = new CultureInfo("fa-IR");
             Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
             Application.EnableVisualStyles();

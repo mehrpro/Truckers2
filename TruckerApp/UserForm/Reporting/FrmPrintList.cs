@@ -2,67 +2,40 @@
 using System.ComponentModel;
 using System.Drawing.Printing;
 using System.Linq;
+using System.Threading.Tasks;
 using DevExpress.LookAndFeel;
 using DevExpress.XtraEditors;
 using DevExpress.XtraPrinting;
+using TruckerApp.Repository;
 
 namespace TruckerApp
 {
     public partial class FrmPrintList : XtraForm
     {
+        private readonly ICustomReport _customReport;
+        private TruckersEntities db;
+        public byte TypeId { get; set; }
         public FrmPrintList()
         {
             InitializeComponent();
+            db = new TruckersEntities();
+            _customReport = new CustomReport(db);
+          
         }
-        TruckersEntities db = new TruckersEntities();
-        private BindingList<ReportList> ds;
-        public int TypeId { get; set; }
-        private void FrmPrintList_Load(object sender, EventArgs e)
+        
+        private async  void Grid()
         {
-           
-            grid(PublicVar.SeriesID);
-        }
-
-        private void grid(int seriesId)
-        {
-            ds = new BindingList<ReportList>();
-            var QueryAll = db.Queues.Where(x => x.Status_FK == 20 && x.Type_FK == TypeId).ToList().OrderBy(x => x.ID);
-            var QuerySeriesOnly = QueryAll.Where(x => x.SeriesID_FK == seriesId).ToList().OrderBy(x => x.ID);
-            txtTotal.Text = QueryAll.Count().ToString();
-            txtNew.Text = QuerySeriesOnly.Count().ToString();
-            txtLast.Text = QueryAll.Count(x => x.SeriesID_FK != seriesId).ToString();
-            int counter = 0;
+            txtTotal.EditValue = await _customReport.CountOfStatus20_All(TypeId);
+            txtNew.EditValue = await _customReport.CountOfStatus20_LastSeries(TypeId);
+            txtLast.EditValue = await _customReport.CountOfStatus20_Old(TypeId);
+            
             if (chkLastFish.IsOn)
-            {
-                foreach (var item in QueryAll)
-                {
-                    counter++;
-                    var itemId = item.ID;
-                    var itemNumber = $"({item.SeriesPrice.SeriesName})-{item.Number}";
-                    var itemSmart = item.Driver.SmartCart;
-                    var itemName = $"{item.Driver.FirstName} {item.Driver.LastName}";
-                    var itemTag = $"ایران{item.Driver.Tag}-{item.Driver.TagNumber}";
-                    var itemType = $"{item.LoadType.Type}";
-                    var itemDate = item.DateTimeRegister;
-                    ds.Add(new ReportList(counter, itemSmart, itemId, itemNumber, itemName, itemTag, itemType, itemDate));
-                }
-            }
+                gridControl1.DataSource = await  _customReport.GetAllReportListByType(TypeId);
             else
-            {
-                foreach (var item in QuerySeriesOnly)
-                {
-                    counter++;
-                    var itemId = item.ID;
-                    var itemNumber = $"({item.SeriesPrice.SeriesName})-{item.Number}";
-                    var itemSmart = item.Driver.SmartCart;
-                    var itemName = $"{item.Driver.FirstName} {item.Driver.LastName}";
-                    var itemTag = $"ایران{item.Driver.Tag}-{item.Driver.TagNumber}";
-                    var itemType = $"{item.LoadType.Type}";
-                    var itemDate = item.DateTimeRegister;
-                    ds.Add(new ReportList(counter, itemSmart, itemId, itemNumber, itemName, itemTag, itemType, itemDate));
-                }
-            }
-            gridControl1.DataSource = ds.OrderBy(x => x.Typeid);
+                gridControl1.DataSource = await _customReport.GetLastSeriesReportListByType(TypeId);
+
+            gridView1.RefreshData();
+
         }
 
         private void btnAllPrint_Click(object sender, EventArgs e)
@@ -81,7 +54,7 @@ namespace TruckerApp
         }
         private void chkLastFish_Toggled(object sender, EventArgs e)
         {
-            grid(PublicVar.SeriesID);
+            Grid();
         }
 
         private void simpleButton9_Click(object sender, EventArgs e)
@@ -98,29 +71,11 @@ namespace TruckerApp
             link.CreateDocument();
             link.PrintDlg();
         }
-    }
 
-    public class ReportList
-    {
-        public int Counter { get; }
-        public int Smart { get; }
-        public int Id { get; }
-        public string Number { get; }
-        public string Name { get; }
-        public string Tag { get; }
-        public string Typeid { get; }
-        public DateTime DateTime { get; }
-
-        public ReportList(int counter, int smart, int id, string number, string name, string tag, string typeid, DateTime dateTime)
+        private void FrmPrintList_Load(object sender, EventArgs e)
         {
-            Counter = counter;
-            Smart = smart;
-            Id = id;
-            Number = number;
-            Name = name;
-            Tag = tag;
-            Typeid = typeid;
-            DateTime = dateTime;
+            Grid();
+
         }
     }
 }

@@ -32,9 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFishPrint));
             this.timer_process = new System.Windows.Forms.Timer(this.components);
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.edtProcessInterval = new System.Windows.Forms.TextBox();
             this.lblWH = new System.Windows.Forms.Label();
-            this.cmbDrawMethod = new System.Windows.Forms.ComboBox();
             this.lbl_result = new System.Windows.Forms.Label();
             this.picPlateLast = new System.Windows.Forms.PictureBox();
             this.Res4 = new System.Windows.Forms.Label();
@@ -99,9 +97,7 @@
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.AutoSize = true;
             this.groupControl1.CaptionImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_label_printer_48;
-            this.groupControl1.Controls.Add(this.edtProcessInterval);
             this.groupControl1.Controls.Add(this.lblWH);
-            this.groupControl1.Controls.Add(this.cmbDrawMethod);
             this.groupControl1.Controls.Add(this.lbl_result);
             this.groupControl1.Controls.Add(this.picPlateLast);
             this.groupControl1.Controls.Add(this.Res4);
@@ -137,16 +133,6 @@
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = " صدور حواله ";
             // 
-            // edtProcessInterval
-            // 
-            this.edtProcessInterval.BackColor = System.Drawing.Color.Honeydew;
-            this.edtProcessInterval.Location = new System.Drawing.Point(655, 14);
-            this.edtProcessInterval.Name = "edtProcessInterval";
-            this.edtProcessInterval.Size = new System.Drawing.Size(45, 21);
-            this.edtProcessInterval.TabIndex = 81;
-            this.edtProcessInterval.Text = "500";
-            this.edtProcessInterval.Visible = false;
-            // 
             // lblWH
             // 
             this.lblWH.AutoSize = true;
@@ -156,23 +142,6 @@
             this.lblWH.Name = "lblWH";
             this.lblWH.Size = new System.Drawing.Size(0, 13);
             this.lblWH.TabIndex = 64;
-            // 
-            // cmbDrawMethod
-            // 
-            this.cmbDrawMethod.BackColor = System.Drawing.Color.Honeydew;
-            this.cmbDrawMethod.FormattingEnabled = true;
-            this.cmbDrawMethod.Items.AddRange(new object[] {
-            "Draw by WIN API",
-            "Draw by OpenGL",
-            "Draw by SDL",
-            "Draw in Host (C#)"});
-            this.cmbDrawMethod.Location = new System.Drawing.Point(516, 14);
-            this.cmbDrawMethod.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbDrawMethod.Name = "cmbDrawMethod";
-            this.cmbDrawMethod.Size = new System.Drawing.Size(134, 21);
-            this.cmbDrawMethod.TabIndex = 63;
-            this.cmbDrawMethod.Text = "Draw by WIN API";
-            this.cmbDrawMethod.Visible = false;
             // 
             // lbl_result
             // 
@@ -859,10 +828,8 @@
         private System.Windows.Forms.Label Res3;
         private System.Windows.Forms.Label Res1;
         private System.Windows.Forms.Label lbl_result;
-        private System.Windows.Forms.ComboBox cmbDrawMethod;
         private System.Windows.Forms.Label lblWH;
         private System.Windows.Forms.Timer timer_process;
-        private System.Windows.Forms.TextBox edtProcessInterval;
         private DevExpress.XtraEditors.SimpleButton btnStop;
         private DevExpress.XtraEditors.TextEdit txtTagNumber;
         private DevExpress.XtraGrid.Columns.GridColumn colTagNumber1;

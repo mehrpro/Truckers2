@@ -18,7 +18,7 @@ namespace TruckerApp.UserForm
         private void setup()
         {
             int id = PublicVar.SeriesID;
-            var qryList = db.Queues.Where(x => x.SeriesID_FK == id && x.userid == PublicVar.UserID).AsNoTracking();
+            var qryList = db.Queues.Where(x => x.SeriesID_FK == id).AsNoTracking();
             var qryCash = db.Cashes.Where(x => x.seriesID_FK == id && x.userID == PublicVar.UserID).AsNoTracking();
             txtFalaeh.Text = qryList.Count(x => x.Type_FK == 1).ToString();
             txtPacket.Text = qryList.Count(x => x.Type_FK == 2).ToString();

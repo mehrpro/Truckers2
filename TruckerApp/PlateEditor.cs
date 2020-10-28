@@ -25,16 +25,16 @@ namespace TruckerApp
                         plate.Tag = $"{temp[4]}{temp[5]}-Ain-{temp[0]}{temp[1]}{temp[2]}{plate.Tag}";
                     }
                     var newtag = plate.Tag.Trim().ToCharArray();
-                    if (newtag.Length > 5)
-                    {
-                        var ta = $"{newtag[0]}{newtag[1]}ع{newtag[7]}{newtag[8]}{newtag[9]}{newtag[10]}{newtag[11]}";
-                        var ff = ta.ToCharArray();
-                    }
+                    //if (newtag.Length > 5)
+                    //{
+                    //    var ta = $"{newtag[0]}{newtag[1]}ع{newtag[7]}{newtag[8]}{newtag[9]}{newtag[10]}{newtag[11]}";
+                    //    var ff = ta.ToCharArray();
+                    //}
                 }
                 db.SaveChanges();
                 return true;
             }
-            catch 
+            catch (Exception exception)
             {
                 return false;
             }

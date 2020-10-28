@@ -217,7 +217,7 @@ namespace TruckerApp
             {
                 TypeId = 1,
                 FormBorderStyle = FormBorderStyle.FixedDialog,
-               WindowState = FormWindowState.Maximized,
+                WindowState = FormWindowState.Maximized,
                 StartPosition = FormStartPosition.CenterParent,
             };
             newForm.ShowDialog();
@@ -225,13 +225,11 @@ namespace TruckerApp
 
         private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var newForm = new FrmPrintList()
-            {
-                TypeId = 2,
-                FormBorderStyle = FormBorderStyle.FixedDialog,
-                WindowState = FormWindowState.Maximized,
-                StartPosition = FormStartPosition.CenterParent,
-            };
+            var newForm = new FrmPrintList();
+            newForm.TypeId = 2;
+            newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
+            newForm.WindowState = FormWindowState.Maximized;
+            newForm.StartPosition = FormStartPosition.CenterParent;
             newForm.ShowDialog();
         }
 
@@ -416,15 +414,15 @@ namespace TruckerApp
 
         private void btnConvertPlate_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           var result = PlateEditor.SaveChanage(new TruckersEntities());
-           if (result)
-           {
-               XtraMessageBox.Show("انتقال انجام شد");
-           }
-           else
-           {
-               XtraMessageBox.Show("انتقال انجام نشد");
-           }
+            var result = PlateEditor.SaveChanage(new TruckersEntities());
+            if (result)
+            {
+                XtraMessageBox.Show("انتقال انجام شد");
+            }
+            else
+            {
+                XtraMessageBox.Show("انتقال انجام نشد");
+            }
         }
     }
 }

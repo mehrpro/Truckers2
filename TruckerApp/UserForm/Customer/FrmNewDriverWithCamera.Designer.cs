@@ -37,13 +37,10 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lblWH = new System.Windows.Forms.Label();
-            this.edtProcessInterval = new System.Windows.Forms.TextBox();
             this.picPlateLast = new System.Windows.Forms.PictureBox();
-            this.cmbDrawMethod = new System.Windows.Forms.ComboBox();
             this.Res4 = new System.Windows.Forms.Label();
             this.lbl_result = new System.Windows.Forms.Label();
             this.Res2 = new System.Windows.Forms.Label();
-            this.edtURL = new System.Windows.Forms.TextBox();
             this.Res3 = new System.Windows.Forms.Label();
             this.Res1 = new System.Windows.Forms.Label();
             this.btnStop = new DevExpress.XtraEditors.SimpleButton();
@@ -90,13 +87,10 @@
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.CaptionImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_driver_48;
             this.groupControl1.Controls.Add(this.lblWH);
-            this.groupControl1.Controls.Add(this.edtProcessInterval);
             this.groupControl1.Controls.Add(this.picPlateLast);
-            this.groupControl1.Controls.Add(this.cmbDrawMethod);
             this.groupControl1.Controls.Add(this.Res4);
             this.groupControl1.Controls.Add(this.lbl_result);
             this.groupControl1.Controls.Add(this.Res2);
-            this.groupControl1.Controls.Add(this.edtURL);
             this.groupControl1.Controls.Add(this.Res3);
             this.groupControl1.Controls.Add(this.Res1);
             this.groupControl1.Controls.Add(this.btnStop);
@@ -136,17 +130,6 @@
             this.lblWH.TabIndex = 86;
             this.lblWH.Text = "label1";
             // 
-            // edtProcessInterval
-            // 
-            this.edtProcessInterval.BackColor = System.Drawing.Color.Honeydew;
-            this.edtProcessInterval.Location = new System.Drawing.Point(493, 12);
-            this.edtProcessInterval.Name = "edtProcessInterval";
-            this.edtProcessInterval.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.edtProcessInterval.Size = new System.Drawing.Size(45, 21);
-            this.edtProcessInterval.TabIndex = 85;
-            this.edtProcessInterval.Text = "500";
-            this.edtProcessInterval.Visible = false;
-            // 
             // picPlateLast
             // 
             this.picPlateLast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -158,24 +141,6 @@
             this.picPlateLast.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picPlateLast.TabIndex = 55;
             this.picPlateLast.TabStop = false;
-            // 
-            // cmbDrawMethod
-            // 
-            this.cmbDrawMethod.BackColor = System.Drawing.Color.Honeydew;
-            this.cmbDrawMethod.FormattingEnabled = true;
-            this.cmbDrawMethod.Items.AddRange(new object[] {
-            "Draw by WIN API",
-            "Draw by OpenGL",
-            "Draw by SDL",
-            "Draw in Host (C#)"});
-            this.cmbDrawMethod.Location = new System.Drawing.Point(383, 12);
-            this.cmbDrawMethod.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbDrawMethod.Name = "cmbDrawMethod";
-            this.cmbDrawMethod.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cmbDrawMethod.Size = new System.Drawing.Size(105, 21);
-            this.cmbDrawMethod.TabIndex = 84;
-            this.cmbDrawMethod.Text = "Draw by WIN API";
-            this.cmbDrawMethod.Visible = false;
             // 
             // Res4
             // 
@@ -213,19 +178,6 @@
             this.Res2.Size = new System.Drawing.Size(34, 24);
             this.Res2.TabIndex = 53;
             this.Res2.Text = "P2";
-            // 
-            // edtURL
-            // 
-            this.edtURL.BackColor = System.Drawing.Color.White;
-            this.edtURL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.edtURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.edtURL.Location = new System.Drawing.Point(12, 12);
-            this.edtURL.Name = "edtURL";
-            this.edtURL.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.edtURL.Size = new System.Drawing.Size(366, 21);
-            this.edtURL.TabIndex = 82;
-            this.edtURL.Text = "rtsp://admin:admin@192.168.1.20/media/media.amp";
-            this.edtURL.Visible = false;
             // 
             // Res3
             // 
@@ -601,10 +553,7 @@
         private DevExpress.XtraEditors.SimpleButton btnPlay;
         private System.Windows.Forms.PictureBox picture;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private System.Windows.Forms.TextBox edtProcessInterval;
-        private System.Windows.Forms.ComboBox cmbDrawMethod;
         private System.Windows.Forms.Label lbl_result;
-        private System.Windows.Forms.TextBox edtURL;
         private System.Windows.Forms.Timer timer_process;
         private System.Windows.Forms.Label lblWH;
         private DevExpress.XtraEditors.TextEdit txtSmartCart;
