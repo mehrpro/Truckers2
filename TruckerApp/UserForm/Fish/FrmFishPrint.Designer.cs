@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFishPrint));
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.timer_process = new System.Windows.Forms.Timer(this.components);
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lblWH = new System.Windows.Forms.Label();
@@ -518,10 +518,10 @@
             this.txtTag.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtTag.Size = new System.Drawing.Size(286, 30);
             this.txtTag.TabIndex = 1;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
-            conditionValidationRule4.ErrorText = "پلاک معتبر نیست";
-            conditionValidationRule4.Value1 = "!";
-            this.dxValidationProvider1.SetValidationRule(this.txtTag, conditionValidationRule4);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule1.ErrorText = "پلاک معتبر نیست";
+            conditionValidationRule1.Value1 = "!";
+            this.dxValidationProvider1.SetValidationRule(this.txtTag, conditionValidationRule1);
             // 
             // txtName
             // 
@@ -568,10 +568,10 @@
             this.cbxCargoType.Properties.ValueMember = "TypeID";
             this.cbxCargoType.Size = new System.Drawing.Size(286, 30);
             this.cbxCargoType.TabIndex = 0;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule1.ErrorText = "نوع محموله را انتخاب کنید";
-            conditionValidationRule1.Value1 = ((byte)(0));
-            this.dxValidationProvider1.SetValidationRule(this.cbxCargoType, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule2.ErrorText = "نوع محموله را انتخاب کنید";
+            conditionValidationRule2.Value1 = ((byte)(0));
+            this.dxValidationProvider1.SetValidationRule(this.cbxCargoType, conditionValidationRule2);
             this.cbxCargoType.EditValueChanged += new System.EventHandler(this.cbxCargoType_EditValueChanged);
             // 
             // gridView1
@@ -715,10 +715,10 @@
             this.txtComossin.Properties.ReadOnly = true;
             this.txtComossin.Size = new System.Drawing.Size(284, 30);
             this.txtComossin.TabIndex = 1;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule2.ErrorText = "حق کمیسیون نمی تواند صفر باشد";
-            conditionValidationRule2.Value1 = 0;
-            this.dxValidationProvider1.SetValidationRule(this.txtComossin, conditionValidationRule2);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule3.ErrorText = "حق کمیسیون نمی تواند صفر باشد";
+            conditionValidationRule3.Value1 = 0;
+            this.dxValidationProvider1.SetValidationRule(this.txtComossin, conditionValidationRule3);
             // 
             // FrmFishPrint
             // 

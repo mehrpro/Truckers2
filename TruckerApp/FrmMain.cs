@@ -13,19 +13,19 @@ namespace TruckerApp
 {
     public partial class FrmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        private Container mainContainer;
+        private readonly Container _mainContainer;
 
         public FrmMain()
         {
             InitializeComponent();
-            mainContainer = new StructureMap.Container(new TypeRegistery());
+            _mainContainer = new Container(new TypeRegistery());
             new Counter().serialBuy();
         }
 
         private void btnAddDriver_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            var newForm = new FrmNewDriverWithCamera() { StartPosition = FormStartPosition.CenterScreen };
+            var newForm = _mainContainer.GetInstance<FrmNewDriverWithCamera>();
             newForm.ShowDialog();
         }
 
@@ -60,7 +60,7 @@ namespace TruckerApp
         private void btnNewQue_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            var newForm = mainContainer.GetInstance<FrmFishPrint>();
+            var newForm = _mainContainer.GetInstance<FrmFishPrint>();
             newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
             newForm.StartPosition = FormStartPosition.CenterScreen;
             newForm.ShowDialog();
@@ -167,7 +167,7 @@ namespace TruckerApp
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            var newForm = mainContainer.GetInstance<FrmFishPrint>();
+            var newForm = _mainContainer.GetInstance<FrmFishPrint>();
             newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
             newForm.StartPosition = FormStartPosition.CenterScreen;
             newForm.ShowDialog();
@@ -176,7 +176,7 @@ namespace TruckerApp
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            var newForm = mainContainer.GetInstance<FrmFishPrint>();
+            var newForm = _mainContainer.GetInstance<FrmFishPrint>();
             newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
             newForm.StartPosition = FormStartPosition.CenterScreen;
             newForm.ShowDialog();
@@ -185,7 +185,7 @@ namespace TruckerApp
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            var newForm = mainContainer.GetInstance<FrmFishPrint>();
+            var newForm = _mainContainer.GetInstance<FrmFishPrint>();
             newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
             newForm.StartPosition = FormStartPosition.CenterScreen;
             newForm.ShowDialog();
@@ -209,7 +209,7 @@ namespace TruckerApp
 
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var newForm = mainContainer.GetInstance<FrmPrintList>();
+            var newForm = _mainContainer.GetInstance<FrmPrintList>();
             newForm.TypeId = 1;
             newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
             newForm.WindowState = FormWindowState.Maximized;
@@ -219,7 +219,7 @@ namespace TruckerApp
 
         private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var newForm = mainContainer.GetInstance<FrmPrintList>();
+            var newForm = _mainContainer.GetInstance<FrmPrintList>();
             newForm.TypeId = 2;
             newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
             newForm.WindowState = FormWindowState.Maximized;
@@ -229,7 +229,7 @@ namespace TruckerApp
 
         private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var newForm = mainContainer.GetInstance<FrmPrintList>();
+            var newForm = _mainContainer.GetInstance<FrmPrintList>();
             newForm.TypeId = 3;
             newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
             newForm.WindowState = FormWindowState.Maximized;
@@ -239,7 +239,7 @@ namespace TruckerApp
 
         private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var newForm = mainContainer.GetInstance<FrmPrintList>();
+            var newForm = _mainContainer.GetInstance<FrmPrintList>();
             newForm.TypeId = 4;
             newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
             newForm.WindowState = FormWindowState.Maximized;
@@ -320,12 +320,13 @@ namespace TruckerApp
 
         private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frm = new FrmEditDriverWithCamera().ShowDialog();
+            var frm = _mainContainer.GetInstance<FrmEditDriverWithCamera>();
+            frm.ShowDialog();
         }
 
         private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var newForm = mainContainer.GetInstance<FrmPrintList>();
+            var newForm = _mainContainer.GetInstance<FrmPrintList>();
             newForm.TypeId = 5;
             newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
             newForm.WindowState = FormWindowState.Maximized;
@@ -335,7 +336,7 @@ namespace TruckerApp
 
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var newForm = mainContainer.GetInstance<FrmPrintList>();
+            var newForm = _mainContainer.GetInstance<FrmPrintList>();
             newForm.TypeId = 6;
             newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
             newForm.WindowState = FormWindowState.Maximized;
@@ -345,7 +346,7 @@ namespace TruckerApp
 
         private void barButtonItem18_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var newForm = mainContainer.GetInstance<FrmPrintList>();
+            var newForm = _mainContainer.GetInstance<FrmPrintList>();
             newForm.TypeId = 7;
             newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
             newForm.WindowState = FormWindowState.Maximized;
@@ -356,7 +357,7 @@ namespace TruckerApp
         private void barButtonItem19_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            var newForm = mainContainer.GetInstance<FrmFishPrint>();
+            var newForm = _mainContainer.GetInstance<FrmFishPrint>();
             newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
             newForm.StartPosition = FormStartPosition.CenterScreen;
             newForm.ShowDialog();
@@ -365,7 +366,7 @@ namespace TruckerApp
         private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            var newForm = mainContainer.GetInstance<FrmFishPrint>();
+            var newForm = _mainContainer.GetInstance<FrmFishPrint>();
             newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
             newForm.StartPosition = FormStartPosition.CenterScreen;
             newForm.ShowDialog();
@@ -374,7 +375,7 @@ namespace TruckerApp
         private void barButtonItem21_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            var newForm = mainContainer.GetInstance<FrmFishPrint>();
+            var newForm = _mainContainer.GetInstance<FrmFishPrint>();
             newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
             newForm.StartPosition = FormStartPosition.CenterScreen;
             newForm.ShowDialog();

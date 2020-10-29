@@ -1,22 +1,25 @@
 ﻿using System;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using TruckerApp.ViewModels;
 
 namespace TruckerApp.UserForm.cash
 {
     public partial class FrmCash : XtraForm
     {
-        public Cash Cash { get; set; } = new Cash();
-        public FrmCash(string cashTemp)
+        public ViewModelCash ModelCash;
+        public string CashTemp { get; set; }
+        public FrmCash()
         {
             InitializeComponent();
-            txtPOS.Text = cashTemp;
+            ModelCash = new ViewModelCash();
+            txtPOS.Text = CashTemp;
 
         }
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            Cash.Pos = Convert.ToInt32(txtPOS.EditValue);
-            Cash.CashDesk = Convert.ToInt32(txtCash.EditValue);
+            ModelCash.Pos = Convert.ToInt32(txtPOS.EditValue);
+            ModelCash.CashDesk = Convert.ToInt32(txtCash.EditValue);
             DialogResult = DialogResult.OK;
             Close();
         }

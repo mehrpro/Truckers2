@@ -1,51 +1,49 @@
 ﻿using System;
-using System.Linq;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using static TruckerApp.AnprApi;
 using System.Drawing;
 using System.Drawing.Imaging;
-using TruckerApp.Properties;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using TruckerApp.Repository;
+using TruckerApp.ViewModels.Customers;
+using static TruckerApp.AnprApi;
 
-namespace TruckerApp.UserForm
+namespace TruckerApp.UserForm.Customer
 {
     public partial class FrmNewDriverWithCamera : XtraForm
     {
 
         SLPRPropertyGrid anpr_settings = new SLPRPropertyGrid();
-
-        public int FrameW, FrameH, FrameCh, FrameStep;
+        private int FrameW;
+        private int FrameH;
+        private int FrameCh;
+        private int FrameStep;
         int Grabbing; //indicates whether we are grabbing or not: 0 --> not grabbing, 1 regular grabbing, 2 VLC grabbing 
-        Bitmap frame; //bitmap of playing frames on picture control (in video mode)
+        Bitmap _frame; //bitmap of playing frames on picture control (in video mode)
         Bitmap frame_vehicle; //bitmap of last frame containing car (may be detected or not)
         Bitmap[] img_plate = new Bitmap[2];
         UserRect sel_rect, sel_rect2;
         Rectangle roi1, roi2;
         string _resultFarsi;//پلاک فارسی
-        Graphics picg;
+        Graphics _picg;
         double _ratio = 1.0;
         byte draw_method = 0; //{ DRAW_GDI, DRAW_OPENGL, DRAW_SDL, DRAW_NONE }; //best method is DRAW_SDL but it may differ based on PC config
         int dir_in = 0, dir_out = 0;
         SLPRParams prm = new SLPRParams();
         Pen pen_rect = new System.Drawing.Pen(System.Drawing.Color.Red, 3);
         int count_empty_frame = 0;
-        float MEAN = 0;
-
-        private  ANPR_EVENT_CALLBACK _handleAnprEventsDelegate = null;
-
+        //float MEAN = 0;
+        private ANPR_EVENT_CALLBACK _handleAnprEventsDelegate = null;
         [System.Runtime.InteropServices.DllImport("kernel32.dll", EntryPoint = "CopyMemory", SetLastError = false)]
-        public static extern void CopyMemory(IntPtr dest, IntPtr src, uint count);
-
-
+        private static extern void CopyMemory(IntPtr dest, IntPtr src, uint count);
         private string _resultEn;
-        //private Driver selectDriver;
-        TruckersEntities db = new TruckersEntities();
-        public FrmNewDriverWithCamera()
+
+        private readonly ICustomers _customers;
+        public FrmNewDriverWithCamera(ICustomers customers)
         {
+            _customers = customers;
             InitializeComponent();
             CamSetup();
         }
-
         private void CamSetup()
         {
             try
@@ -57,10 +55,10 @@ namespace TruckerApp.UserForm
                 _handleAnprEventsDelegate = new ANPR_EVENT_CALLBACK(HandleAnprEvents);
                 anpr_set_event_callback(_handleAnprEventsDelegate);
             }
-            catch (Exception e)
+            catch
             {
                 //MessageBox.Show("Error Load Form");
-                this.Close();
+                Close();
             }
         }
         private void btnClose_Click(object sender, EventArgs e)
@@ -69,55 +67,55 @@ namespace TruckerApp.UserForm
             Close();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private async void btnSave_Click(object sender, EventArgs e)
         {
+            var smartcart = Convert.ToInt32(txtSmartCart.Text);
             if (dxValidationProvider1.Validate())
             {
-                if (txtTag.Text.CheckPlateAny(db))
+                if (await _customers.FindPlate(txtTag.Text.Trim()))
                 {
                     XtraMessageBox.Show("این پلاک قبلا ثبت شده است");
                 }
-                else if (Convert.ToInt32(txtSmartCart.Text).CheckSmartID(db))
+                else if (await _customers.FindSmartCart(smartcart))
                 {
-                    XtraMessageBox.Show("این شماره هوشمند قبلا ثبت شده است");
+
+                    var qry = await _customers.FindDriverBySmartCart(smartcart);
+                    if (qry != null)
+                    {
+                        var varString = $"شماره هوشمند {qry.SmartCart} به نام {qry.FirstName} {qry.LastName} قبلا ثبت شده است";
+                        XtraMessageBox.Show(varString, "خطایی کاربری", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("این شماره هوشمند قبلا ثبت شده است", "خطایی کاربری", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    var smartcart = Convert.ToInt32(txtSmartCart.Text);
-                    try
+                    var newDriver = new ViewModelCustomer
                     {
-                        var newDriver = new Driver();
-                        newDriver.FirstName = txtFirstName.Text.Trim();
-                        newDriver.LastName = txtLastNAme.Text.Trim();
-                        newDriver.PhoneNumber = txtPhoneNumber.Text.Trim();
-                        newDriver.userID_FK = PublicVar.UserID;
-                        newDriver.Tag = txtTag.Text;
-                        newDriver.TagNumber = txtTagNumber.Text;
-                        newDriver.SmartCart = smartcart;
-                        newDriver.driver_code = Convert.ToInt32(txtDriverCode.Text);
-                        newDriver.GroupID = Convert.ToByte(radComosiun.EditValue);
-                        db.Drivers.Add(newDriver);
-                        db.SaveChanges();
+                        FirstName = txtFirstName.Text.Trim(),
+                        LastName = txtLastNAme.Text.Trim(),
+                        PhoneNumber = txtPhoneNumber.Text.Trim(),
+                        userID_FK = PublicVar.UserID,
+                        Tag = txtTag.Text,
+                        TagNumber = txtTagNumber.Text,
+                        SmartCart = smartcart,
+                        driver_code = Convert.ToInt32(txtDriverCode.Text),
+                        GroupID = Convert.ToByte(radComosiun.EditValue),
+                        editor_FK = null,
+                    };
+                    var result = await _customers.AddNewDriver(newDriver);
+                    if (result)
+                    {
                         XtraMessageBox.Show(PublicVar.SuccessfulSave,
                             Text, MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                         Clear();
-
                     }
-                    catch
+                    else
                     {
-                        var qry = db.Drivers.SingleOrDefault(x => x.SmartCart == smartcart);
-                        if (qry != null)
-                        {
-                            
-                            string varString =
-                                $"شماره هوشمند {qry.SmartCart} به نام {qry.FirstName} {qry.LastName} قبلا ثبت شده است";
-                            XtraMessageBox.Show(varString,
-                                "خطایی کاربری", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-
-                        XtraMessageBox.Show(PublicVar.ErrorMessageForNotSave,
-                            Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        XtraMessageBox.Show(PublicVar.ErrorMessageForNotSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -127,23 +125,19 @@ namespace TruckerApp.UserForm
 
         private void Clear()
         {
-            txtSmartCart.Text = txtFirstName.Text =
-                txtLastNAme.Text = txtPhoneNumber.Text = txtTag.Text = txtTagNumber.Text = "";
+            txtSmartCart.ResetText();
+            txtFirstName.ResetText();
+            txtLastNAme.ResetText();
+            txtPhoneNumber.ResetText();
+            txtTag.ResetText();
+            txtTagNumber.ResetText();
+            txtDriverCode.ResetText();
+            radComosiun.SelectedIndex = 0;
+            picPlateLast.Image = null;
+            Res1.Text = Res2.Text = Res3.Text = Res4.Text = @"--";
 
         }
 
-        private void txtSmartCart_EditValueChanged(object sender, EventArgs e)
-        {
-            //selectDriver = (Driver)txtSmartCart.GetSelectedDataRow();
-            //if (selectDriver == null) return;
-            //txtPhoneNumber.Text = selectDriver.PhoneNumber;
-            //txtDriverCode.Text = selectDriver.driver_code == null ? "0" : selectDriver.driver_code.Value.ToString();
-            //txtFirstName.Text = selectDriver.FirstName;
-            //txtLastNAme.Text = selectDriver.LastName;
-            //txtTag.Text = selectDriver.Tag;
-            //txtTagNumber.Text = selectDriver.TagNumber;
-            //radComosiun.EditValue = selectDriver.GroupID;
-        }
         private void timer_process_Tick(object sender, EventArgs e)
         {
             if (Grabbing == 0)
@@ -185,14 +179,14 @@ namespace TruckerApp.UserForm
             vlpr_stop_grabbingVLC(0);
             timer_process.Enabled = false;
             Grabbing = 0;
-            frame_vehicle = frame = null; //DONT DELETE THIS LINE. They must be set to null so that reallocate with the correct memory in vlpr_get_frame. 
+            frame_vehicle = _frame = null; //DONT DELETE THIS LINE. They must be set to null so that reallocate with the correct memory in vlpr_get_frame. 
             lblWH.Text = @"0x0";
             picture.Image = null;
         }
         private void SetParams()
         {
             picPlateLast.Image = null;
-            Res1.Text = Res2.Text = Res3.Text = Res4.Text = lbl_result.Text = @"--";
+            Res1.Text = Res2.Text = Res3.Text = Res4.Text = @"--";
 
 
             prm.plate_buf_size = anpr_settings.plate_buf_size;
@@ -233,7 +227,6 @@ namespace TruckerApp.UserForm
             anpr_set_debug_mode(0, anpr_settings.debug_level);
             //SetROI();
         }
-
         private void btnPlay_Click(object sender, EventArgs e)
         {
             timer_process.Interval = Convert.ToInt32(PublicVar.ProcessInterval);
@@ -241,10 +234,8 @@ namespace TruckerApp.UserForm
             btnPlay.Enabled = false;
             btnStop.Enabled = true;
         }
-
         private void ReadSettings()
         {
-            //edtURL.Text = Settings.Default["LastVideoPath"].ToString();
             var x = 10;
             var y = picture.Size.Height * 2 / 10;
             roi2 = roi1 = new Rectangle(x, y, picture.Size.Width / 2 - 20, 6 * picture.Size.Height / 10);
@@ -275,16 +266,15 @@ namespace TruckerApp.UserForm
                 }
                 //frame_counter++;
                 count_empty_frame = 0;
-                if (frame == null)
+                if (_frame == null)
                 {
-                    frame = new Bitmap(FrameW, FrameH, FrameStep, PixelFormat.Format24bppRgb, pFrame);
-                    picture.Image = frame;
+                    _frame = new Bitmap(FrameW, FrameH, FrameStep, PixelFormat.Format24bppRgb, pFrame);
+                    picture.Image = _frame;
                 }
                 //vlpr_pause_or_resume(0);//Resume changing frame;
                 picture.Invalidate();
             }
         }
-
         private void HandleAnprEvents(int eventType, byte stream, byte pltIdx)
         {
             //چون این تابع از تردی غیر از ترد رابط کاربری فراخوانی می شود 
@@ -304,9 +294,9 @@ namespace TruckerApp.UserForm
                     return;
                 }
                 lblWH.Text = $@"{FrameW}x{FrameH}";
-                frame = null;// new Bitmap(FrameW, FrameH, PixelFormat.Format24bppRgb);
-                             //if (!anpr_settings.repeat)
-                             // frame_counter = 0;
+                _frame = null;// new Bitmap(FrameW, FrameH, PixelFormat.Format24bppRgb);
+                              //if (!anpr_settings.repeat)
+                              // frame_counter = 0;
             }
             else if (eventType == WM_CAM_NOT_FOUND)
             {
@@ -353,17 +343,15 @@ namespace TruckerApp.UserForm
                     frame_vehicle = new Bitmap(FrameW, FrameH, FrameStep, PixelFormat.Format24bppRgb, pFrame);
             }
         }
-
         private void FrmNewDriverWithCamera_FormClosing(object sender, FormClosingEventArgs e)
         {
             StopEveryThing();
         }
-
         private void DrawRect(RECT rc)
         {
             //if (direct_play == 1)
             //  return;
-            var g = picg ?? picture.CreateGraphics();
+            var g = _picg ?? picture.CreateGraphics();
             float w = FrameW;
             float h = FrameH;
             if (picture.Image != null)
@@ -403,8 +391,8 @@ namespace TruckerApp.UserForm
             Bitmap fullFrame = null;
             if (src == IntPtr.Zero)
             {
-                if (frame != null)//in the case of video grabbing (and draw_method == NONE)
-                    fullFrame = frame;
+                if (_frame != null)//in the case of video grabbing (and draw_method == NONE)
+                    fullFrame = _frame;
                 else if (picture.Image != null)//
                     fullFrame = new Bitmap(picture.Image);//in the case of Image operations            
 
@@ -431,8 +419,6 @@ namespace TruckerApp.UserForm
             img_plate[roi].UnlockBits(dataDst);
             picPlateLast.Image = img_plate[roi];
         }
-
-
         private void UpdateResults(byte plt_idx)
         {
             var plate = new SPlateResult();
@@ -458,11 +444,10 @@ namespace TruckerApp.UserForm
             //plate_counter++;
             _resultFarsi = "";
             txtTagNumber.Text = _resultFarsi = plate.str;
-            MEAN += plate.cnf;
+            //MEAN += plate.cnf;
             _resultEn = new string(' ', 20);
             anpr_get_en_result(plate.str, _resultEn);
-            txtTag.Text = lbl_result.Text = _resultEn;
-            //var resultFind = _resultEn.FindByPlate(_db);
+            txtTag.Text = _resultEn;
             if (_resultEn != null && plate.cnf > 0.8)
             {
                 timer_process.Enabled = false;
@@ -484,7 +469,6 @@ namespace TruckerApp.UserForm
             var rc2 = new Rectangle(plate.rc.left, plate.rc.top, plate.rc.right - plate.rc.left, plate.rc.bottom - plate.rc.top);
             g.DrawRectangle(pen_rect, rc2);
         }
-
         private void UpdateFarsiResult(string lpResult)
         {
             Res1.Text = lpResult.Length > 1 ? lpResult.Substring(0, 2) : "";
@@ -494,8 +478,8 @@ namespace TruckerApp.UserForm
         }
         private void StartPlayerVlc(bool start)
         {
-            picg?.Dispose();
-            picg = picture.CreateGraphics();
+            _picg?.Dispose();
+            _picg = picture.CreateGraphics();
             FrameH = 0;
             FrameW = 0;
             //Application.DoEvents();            
@@ -522,12 +506,9 @@ namespace TruckerApp.UserForm
                 StopEveryThing();
             }
         }
-
         private void FrmNewDriverWithCamera_Load(object sender, EventArgs e)
         {
-            // driversBindingSource.DataSource = db.Drivers.ToList();
             ReadSettings();
-            //cmbDrawMethod.SelectedIndex = 0;
             sel_rect = new UserRect(roi1);
             sel_rect.SetPictureBox(null);
             sel_rect2 = new UserRect(roi2);

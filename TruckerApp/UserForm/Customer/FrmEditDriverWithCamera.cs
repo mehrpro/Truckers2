@@ -6,6 +6,7 @@ using static TruckerApp.AnprApi;
 using System.Drawing;
 using System.Drawing.Imaging;
 using TruckerApp.Properties;
+using TruckerApp.Repository;
 
 namespace TruckerApp.UserForm.Customer
 {
@@ -39,9 +40,12 @@ namespace TruckerApp.UserForm.Customer
 
         private string _resultEn;
         private Driver _selectDriver;
-        TruckerApp.TruckersEntities db = new TruckerApp.TruckersEntities();
-        public FrmEditDriverWithCamera()
+        private Driver _driver;
+
+        private readonly ICustomers _customers;
+        public FrmEditDriverWithCamera(ICustomers customers)
         {
+            _customers = customers;
             InitializeComponent();
             CamSetup();
 
@@ -72,73 +76,42 @@ namespace TruckerApp.UserForm.Customer
             Close();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private async void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtTag.Text.CheckPlateAny(db))
+            if (await _customers.FindPlate(txtTag.Text))
             {
-                //پلاک قبلا ثبت شده است
-                if (txtTag.Text.FindByPlate(db).DriverID == _selectDriver.DriverID)
+                _driver = await _customers.FindDriverByTag(txtTag.Text.Trim());
+
+                if (_driver.DriverID == _selectDriver.DriverID)
                 {
                     //پلاک مربوط به همین راننده است و اجازه ویرایش دیگر مقادیر داده شد
                     if (dxValidationProvider1.Validate())
                     {
-                        var driver = db.Drivers.Find(_selectDriver.DriverID);
-                        var num = Convert.ToInt32(txtDriverCode.Text.Trim());
-                        if (driver != null)
-                        {
-                            driver.PhoneNumber = txtPhoneNumber.Text;
-                            driver.driver_code = num;
-                            driver.FirstName = txtFirstName.Text;
-                            driver.LastName = txtLastNAme.Text;
-                            driver.Tag = txtTag.Text;
-                            driver.TagNumber = txtTagNumber.Text;
-                            driver.GroupID = (byte)radComosiun.EditValue;
-                            driver.editor_FK = PublicVar.UserID;
-                        }
-                        db.SaveChanges();
-                        XtraMessageBox.Show(PublicVar.SuccessfulSave, Text, MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
+                        NewValuesDriver();
+                        if (await _customers.EditDriver(_selectDriver))
+                            SuccessFulSaveMessage();
+                        else
+                            ErrorMessageForNotSave();
                     }
                     else
-                    {
-                        XtraMessageBox.Show(PublicVar.NotComplateForm, this.Text, MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                    }
+                        NotComplateFormMessage();
                 }
                 else
                 {
                     //تغییر پلاک برای راننده
-                    XtraMessageBox.Show("این پلاک قبلا برای راننده ی دیگری ثبت شده است");
-
-                    var result = XtraMessageBox.Show("آیا قصد تغییر راننده را دارید", Text, MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question);
+                    var result = XtraMessageBox.Show("آیا قصد تغییر راننده را دارید", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
-                        using (var trans = db.Database.BeginTransaction())
+                        if (dxValidationProvider1.Validate())
                         {
-                            //تغییر راننده
-                            var lastDriver = txtTag.Text.FindByPlate(db);
-                            lastDriver.Tag = lastDriver.TagNumber = "!";
-                            db.SaveChanges();
-                            var driver = db.Drivers.Find(_selectDriver.DriverID);
-                            var num = Convert.ToInt32(txtDriverCode.Text.Trim());
-                            if (driver != null)
-                            {
-                                driver.PhoneNumber = txtPhoneNumber.Text;
-                                driver.driver_code = num;
-                                driver.FirstName = txtFirstName.Text;
-                                driver.LastName = txtLastNAme.Text;
-                                driver.Tag = txtTag.Text;
-                                driver.TagNumber = txtTagNumber.Text;
-                                driver.GroupID = (byte)radComosiun.EditValue;
-                                driver.editor_FK = PublicVar.UserID;
-                            }
-                            db.SaveChanges();
-                            trans.Commit();
-                            XtraMessageBox.Show(PublicVar.SuccessfulSave, Text, MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
+                            NewValuesDriver();
+                            if (await _customers.EditDriverWithNewPlate(_selectDriver))
+                                SuccessFulSaveMessage();
+                            else
+                                ErrorMessageForNotSave();
                         }
-
+                        else
+                            NotComplateFormMessage();
                     }
                 }
             }
@@ -147,30 +120,45 @@ namespace TruckerApp.UserForm.Customer
                 //پلاک جدید
                 if (dxValidationProvider1.Validate())
                 {
-                    var driver = db.Drivers.Find(_selectDriver.DriverID);
-                    var num = Convert.ToInt32(txtDriverCode.Text.Trim());
-                    if (driver != null)
-                    {
-                        driver.PhoneNumber = txtPhoneNumber.Text;
-                        driver.driver_code = num;
-                        driver.FirstName = txtFirstName.Text;
-                        driver.LastName = txtLastNAme.Text;
-                        driver.Tag = txtTag.Text;
-                        driver.TagNumber = txtTagNumber.Text;
-                        driver.GroupID = (byte)radComosiun.EditValue;
-                        driver.editor_FK = PublicVar.UserID;
-                    }
-                    db.SaveChanges();
-                    XtraMessageBox.Show(PublicVar.SuccessfulSave, Text, MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
+                    NewValuesDriver();
+                    if (await _customers.EditDriver(_selectDriver))
+                        SuccessFulSaveMessage();
+                    else
+                        ErrorMessageForNotSave();
                 }
                 else
-                {
-                    XtraMessageBox.Show(PublicVar.NotComplateForm, this.Text, MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                }
-
+                    NotComplateFormMessage();
             }
+        }
+
+        private void NotComplateFormMessage()
+        {
+            XtraMessageBox.Show(PublicVar.NotComplateForm, this.Text, MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+        }
+
+        private void ErrorMessageForNotSave()
+        {
+            XtraMessageBox.Show(PublicVar.ErrorMessageForNotSave, this.Text, MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+        }
+
+        private void SuccessFulSaveMessage()
+        {
+            XtraMessageBox.Show(PublicVar.SuccessfulSave, Text, MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
+
+        private void NewValuesDriver()
+        {
+            _selectDriver.PhoneNumber = txtPhoneNumber.Text;
+            _selectDriver.driver_code = Convert.ToInt32(txtDriverCode.Text.Trim());
+            _selectDriver.FirstName = txtFirstName.Text;
+            _selectDriver.LastName = txtLastNAme.Text;
+            _selectDriver.editor_FK = PublicVar.UserID;
+            _selectDriver.GroupID = Convert.ToByte(radComosiun.EditValue);
+            _selectDriver.Tag = txtTag.Text.Trim();
+            _selectDriver.TagNumber = txtTagNumber.Text.Trim();
         }
 
         private void Clear()
@@ -240,7 +228,7 @@ namespace TruckerApp.UserForm.Customer
         private void SetParams()
         {
             picPlateLast.Image = null;
-            Res1.Text = Res2.Text = Res3.Text = Res4.Text = lbl_result.Text = "--";
+            Res1.Text = Res2.Text = Res3.Text = Res4.Text =  "--";
 
 
             _prm.plate_buf_size = anpr_settings.plate_buf_size;
@@ -292,7 +280,6 @@ namespace TruckerApp.UserForm.Customer
 
         private void ReadSettings()
         {
-            //edtURL.Text = Settings.Default["LastVideoPath"].ToString();
             var x = 10;
             var y = picture.Size.Height * 2 / 10;
             roi2 = roi1 = new Rectangle(x, y, picture.Size.Width / 2 - 20, 6 * picture.Size.Height / 10);
@@ -509,8 +496,7 @@ namespace TruckerApp.UserForm.Customer
             MEAN += plate.cnf;
             _resultEn = new string(' ', 20);
             anpr_get_en_result(plate.str, _resultEn);
-            txtTag.Text = lbl_result.Text = _resultEn;
-            //var resultFind = _resultEn.FindByPlate(_db);
+            txtTag.Text =  _resultEn;
             if (_resultEn != null && plate.cnf > 0.8)
             {
                 timer_process.Enabled = false;
@@ -567,16 +553,13 @@ namespace TruckerApp.UserForm.Customer
                 //Wait for WM_CONNECTED message
             }
             else //Its currently grabbing, stop it
-            {
                 StopEveryThing();
-            }
         }
 
-        private void FrmNewDriver3_Load(object sender, EventArgs e)
+        private async void FrmNewDriver3_Load(object sender, EventArgs e)
         {
-            driversBindingSource.DataSource = db.Drivers.ToList();
+            driversBindingSource.DataSource =await _customers.GetAllDriver();
             ReadSettings();
-            //cmbDrawMethod.SelectedIndex = 0;
             sel_rect = new UserRect(roi1);
             sel_rect.SetPictureBox(null);
             sel_rect2 = new UserRect(roi2);

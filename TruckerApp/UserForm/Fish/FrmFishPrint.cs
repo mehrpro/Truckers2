@@ -26,7 +26,7 @@ namespace TruckerApp.UserForm.Fish
         private int _commission;
         private short _commissionId;//حق کمیسیون
         private string _name, _number, _smartcart, _tagnumber, _type;
-        public byte TypeId { get; set; }
+        private byte TypeId { get; set; }
         private byte _group;
         //private string _price;
         private string _memeber;
@@ -391,7 +391,6 @@ namespace TruckerApp.UserForm.Fish
             {
                 return;
             }
-
             txtNumber.EditValue = await _queuing.GetLastNumberByTypeId(selectType.TypeID);
             var com = await _queuing.GetCommisinoByTypeIdAndByGroupId(selectType.TypeID, _group);
             txtComossin.EditValue = _commission = com.CommissionPrice;
@@ -553,7 +552,7 @@ namespace TruckerApp.UserForm.Fish
             anpr_set_debug_mode(0, anpr_settings.debug_level);
             //SetROI();
         }
-        private void PrintFish()
+        private  void PrintFish()
         {
             var report = XtraReport.FromFile("ReportFish.repx", true);
             var tool = new ReportPrintTool(report);
@@ -652,16 +651,14 @@ namespace TruckerApp.UserForm.Fish
         {
             cbxCargoType.Properties.DataSource = await _queuing.GetAllCargoType();
             ReadSettings();
-
             sel_rect = new UserRect(roi1);
             sel_rect.SetPictureBox(null);
             sel_rect2 = new UserRect(roi2);
             sel_rect2.SetPictureBox(null);
             setupPage();
-            txtDateRegister.Text = DateTime.Now.PersianConvertor();
-
+            txtDateRegister.Text = DateTime.Now.PersianConvertorFull();
             SelectType();
-            //StartPlayerVLC(true);
+            StartPlayerVLC(true);
         }
 
 
@@ -678,51 +675,50 @@ namespace TruckerApp.UserForm.Fish
                     XtraMessageBox.Show("هیچ راننده ای انتخاب نشده است", Text, MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
+                else if (txtTag.Text.Length < 10)
+                {
+                    XtraMessageBox.Show("پلاک صحیح نیست لطفا پلاک را اصلاح کنید", Text, MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
                 else
                 {
-
                     var driverCheck = await _queuing.FindByQueue(txtTag.Text.Trim()); //عدم ثبت مجدد نوبت
                     if (driverCheck == null)
                     {
                         // مجاز به ثبت نوبت است
-                        try
+                        var newQueue = new ViewModelQueue()
                         {
-                            var queue = new Queue
+                            DriverIdFk = _driver,
+                            ComosiunIdFk = _commissionId,
+                            TypeFk = Convert.ToByte(cbxCargoType.EditValue),
+                            DateTimeRegister = DateTime.Now,
+                            SeriesIdFk = _series,
+                            Number = Convert.ToInt16(txtNumber.EditValue),
+                            GroupCommission = _group,
+                            StatusFk = 20,
+                        };
+                        var frm = new FrmCash {CashTemp = txtComossin.Text.Trim()};
+                        var dialogResult = frm.ShowDialog();
+                        if (dialogResult == DialogResult.OK)
+                        {
+                            var result = _queuing.RegisterNewQueue(newQueue, frm.ModelCash);
+                            if (result)
                             {
-                                DriverID_FK = _driver,
-                                ComosiunID_FK = _commissionId,
-                                Type_FK = Convert.ToByte(cbxCargoType.EditValue),
-                                DateTimeRegister = DateTime.Now,
-                                SeriesID_FK = _series,
-                                Number = Convert.ToInt16(txtNumber.EditValue),
-                                GroupCommission = _group,
-                                Status_FK = 20,
-
-                            };
-                            var frm = new FrmCash(txtComossin.Text);
-                            var result = frm.ShowDialog();
-                            if (result == DialogResult.OK)
-                            {
-                                var adding = new Adding();
-                                var rec = adding.addingFish(queue, frm.Cash);
-                                if (rec)
-                                {
-                                    _number = $"س {PublicVar.SeriesName}  شماره {adding.StrNumber}";
-                                    PrintFish();
-                                    await _queuing.GetLastNumberByTypeId(Convert.ToByte(cbxCargoType.EditValue));
-                                }
+                                _number = $"س {PublicVar.SeriesName}  شماره {Convert.ToInt16(txtNumber.EditValue)}";
+                                PrintFish();
+                                await _queuing.GetLastNumberByTypeId(Convert.ToByte(cbxCargoType.EditValue));
                             }
-                        }
-                        catch
-                        {
-                            XtraMessageBox.Show(PublicVar.ErrorMessageForNotSave, Text, MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                            else
+                            {
+                                XtraMessageBox.Show(PublicVar.ErrorMessageForNotSave, Text, MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                            }
                         }
                     }
                     else
                     {
                         var str =
-                            $"برای شماره هوشمند {driverCheck.Driver.SmartCart} نوبت محموله {driverCheck.LoadType.Type} در تاریخ {driverCheck.DateTimeRegister} ثبت شده است";
+                            $"برای شماره هوشمند {driverCheck.Driver.SmartCart} نوبت محموله {driverCheck.LoadType.Type} در تاریخ {driverCheck.DateTimeRegister.PersianConvertor()} ثبت شده است";
                         XtraMessageBox.Show(str, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }

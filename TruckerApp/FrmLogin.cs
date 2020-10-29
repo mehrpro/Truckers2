@@ -1,61 +1,44 @@
 ﻿using System;
-using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using TruckerApp.Repository;
+using TruckerApp.ViewModels.Administrator;
 
 namespace TruckerApp
 {
-    public partial class FrmLogin : DevExpress.XtraEditors.XtraForm
+    public partial class FrmLogin : XtraForm
     {
-        private readonly TruckersEntities db;
-        public FrmLogin()
+        private readonly IAdministrator _administrator;
+        public FrmLogin(IAdministrator administrator)
         {
-
             InitializeComponent();
-            txtPassword.Text = "708801298";
-            txtUsername.Text = "admin";
+            _administrator = administrator;
+            txtPassword.Text = @"708801298";
+            txtUsername.Text = @"admin";
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            DialogResult = DialogResult.Cancel;
+            Close();
         }
 
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private async void btnLogin_Click(object sender, EventArgs e)
         {
-            PublicVar.Accsept = false;
-            string _User, _Pass;
-            _User = txtUsername.Text.Trim();
-            _Pass = txtPassword.Text.Trim();
-            using (var db = new TruckersEntities())
+            var dialogResult = await _administrator.ApproveLogin(new ViewModelLogin()
             {
-                var qry = db.Users.FirstOrDefault(x => x.username.Trim() == _User);
-                if (qry != null)
-                {
-                    if (qry.password.Trim() == _Pass)
-                    {
-                        PublicVar.userMode = qry.Roul.Trim();
-                        PublicVar.Accsept = true;
-                        PublicVar.UserID = qry.userID;
-                        PublicVar.OpName = $"{qry.FirstName} {qry.FirstName}";
-                        Close();
-                    }
-                    else
-                    {
-                        XtraMessageBox.Show("'رمز عبور اشتباه است مجدد تلاش کنید", "اتوماسیون پایانه");
+                UserName = txtUsername.Text.Trim(),
+                Password = txtPassword.Text.Trim(),
+            });
 
-                    }
-
-                }
-                else
-                {
-                    XtraMessageBox.Show("'نام کاربری اشتباه است مجدد تلاش کنید", "اتوماسیون پایانه");
-
-                }
-
+            if (dialogResult == DialogResult.OK)
+            {
+                DialogResult = dialogResult;
+                Close();
             }
-
+            else
+                XtraMessageBox.Show(PublicVar.FailedLogin, Text,MessageBoxButtons.OK,MessageBoxIcon.Error);
         }
     }
 }

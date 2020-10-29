@@ -8,6 +8,8 @@ using System.Globalization;
 using System.Reflection;
 using System.Threading;
 using System.Linq;
+using TruckerApp.ExtentionMethod;
+using StructureMap;
 
 namespace TruckerApp
 {
@@ -44,21 +46,22 @@ namespace TruckerApp
                 config.Save();
                 return;
             }
-
             Thread.CurrentThread.CurrentCulture = new CultureInfo("fa-IR");
             Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLogin());
-            if (PublicVar.Accsept)
+            var mainContainer = new Container(new TypeRegistery());
+            var frmLogin = mainContainer.GetInstance<FrmLogin>();
+            Application.Run(frmLogin);
+            if (frmLogin.DialogResult == DialogResult.OK)
             {
-                FrmMain frm = new FrmMain();
-                frm.ShowDialog();
+                var frmMain = mainContainer.GetInstance<FrmMain>();
+                frmMain.ShowDialog();
             }
             else
-            {
-                Environment.Exit(1);
-            }
+                Environment.Exit(0);
+
+
         }
     }
 }

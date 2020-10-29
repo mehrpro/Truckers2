@@ -1,4 +1,4 @@
-﻿namespace TruckerApp.UserForm
+﻿namespace TruckerApp.UserForm.Customer
 {
     partial class FrmNewDriverWithCamera
     {
@@ -39,7 +39,6 @@
             this.lblWH = new System.Windows.Forms.Label();
             this.picPlateLast = new System.Windows.Forms.PictureBox();
             this.Res4 = new System.Windows.Forms.Label();
-            this.lbl_result = new System.Windows.Forms.Label();
             this.Res2 = new System.Windows.Forms.Label();
             this.Res3 = new System.Windows.Forms.Label();
             this.Res1 = new System.Windows.Forms.Label();
@@ -89,7 +88,6 @@
             this.groupControl1.Controls.Add(this.lblWH);
             this.groupControl1.Controls.Add(this.picPlateLast);
             this.groupControl1.Controls.Add(this.Res4);
-            this.groupControl1.Controls.Add(this.lbl_result);
             this.groupControl1.Controls.Add(this.Res2);
             this.groupControl1.Controls.Add(this.Res3);
             this.groupControl1.Controls.Add(this.Res1);
@@ -117,7 +115,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(846, 489);
+            this.groupControl1.Size = new System.Drawing.Size(846, 562);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "راننده جدید";
             // 
@@ -132,10 +130,10 @@
             // 
             // picPlateLast
             // 
-            this.picPlateLast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picPlateLast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.picPlateLast.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.picPlateLast.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picPlateLast.Location = new System.Drawing.Point(114, 394);
+            this.picPlateLast.Location = new System.Drawing.Point(114, 505);
             this.picPlateLast.Name = "picPlateLast";
             this.picPlateLast.Size = new System.Drawing.Size(179, 41);
             this.picPlateLast.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -144,36 +142,23 @@
             // 
             // Res4
             // 
-            this.Res4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Res4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Res4.AutoSize = true;
             this.Res4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Res4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Res4.Location = new System.Drawing.Point(444, 402);
+            this.Res4.Location = new System.Drawing.Point(444, 513);
             this.Res4.Name = "Res4";
             this.Res4.Size = new System.Drawing.Size(34, 24);
             this.Res4.TabIndex = 54;
             this.Res4.Text = "P4";
             // 
-            // lbl_result
-            // 
-            this.lbl_result.AutoSize = true;
-            this.lbl_result.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lbl_result.ForeColor = System.Drawing.Color.OliveDrab;
-            this.lbl_result.Location = new System.Drawing.Point(565, 43);
-            this.lbl_result.Name = "lbl_result";
-            this.lbl_result.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbl_result.Size = new System.Drawing.Size(93, 16);
-            this.lbl_result.TabIndex = 83;
-            this.lbl_result.Text = "EN RESULT";
-            this.lbl_result.Visible = false;
-            // 
             // Res2
             // 
-            this.Res2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Res2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Res2.AutoSize = true;
             this.Res2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Res2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Res2.Location = new System.Drawing.Point(348, 402);
+            this.Res2.Location = new System.Drawing.Point(348, 513);
             this.Res2.Name = "Res2";
             this.Res2.Size = new System.Drawing.Size(34, 24);
             this.Res2.TabIndex = 53;
@@ -181,11 +166,11 @@
             // 
             // Res3
             // 
-            this.Res3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Res3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Res3.AutoSize = true;
             this.Res3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Res3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Res3.Location = new System.Drawing.Point(394, 402);
+            this.Res3.Location = new System.Drawing.Point(394, 513);
             this.Res3.Name = "Res3";
             this.Res3.Size = new System.Drawing.Size(34, 24);
             this.Res3.TabIndex = 52;
@@ -193,11 +178,11 @@
             // 
             // Res1
             // 
-            this.Res1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Res1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Res1.AutoSize = true;
             this.Res1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Res1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Res1.Location = new System.Drawing.Point(299, 402);
+            this.Res1.Location = new System.Drawing.Point(299, 513);
             this.Res1.Name = "Res1";
             this.Res1.Size = new System.Drawing.Size(34, 24);
             this.Res1.TabIndex = 51;
@@ -205,18 +190,18 @@
             // 
             // btnStop
             // 
-            this.btnStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnStop.ImageOptions.Image = global::TruckerApp.Properties.Resources.stop_32x321;
-            this.btnStop.Location = new System.Drawing.Point(66, 394);
+            this.btnStop.Location = new System.Drawing.Point(66, 505);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(42, 41);
             this.btnStop.TabIndex = 49;
             // 
             // btnPlay
             // 
-            this.btnPlay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPlay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnPlay.ImageOptions.Image = global::TruckerApp.Properties.Resources.play_32x321;
-            this.btnPlay.Location = new System.Drawing.Point(18, 394);
+            this.btnPlay.Location = new System.Drawing.Point(18, 505);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(42, 41);
             this.btnPlay.TabIndex = 50;
@@ -224,12 +209,14 @@
             // 
             // picture
             // 
-            this.picture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.picture.BackColor = System.Drawing.SystemColors.Control;
             this.picture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picture.Location = new System.Drawing.Point(18, 71);
             this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(470, 317);
+            this.picture.Size = new System.Drawing.Size(470, 428);
             this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picture.TabIndex = 48;
             this.picture.TabStop = false;
@@ -485,7 +472,6 @@
             this.txtSmartCart.Properties.MaxLength = 9;
             this.txtSmartCart.Size = new System.Drawing.Size(221, 30);
             this.txtSmartCart.TabIndex = 3;
-            this.txtSmartCart.EditValueChanged += new System.EventHandler(this.txtSmartCart_EditValueChanged);
             // 
             // timer_process
             // 
@@ -495,15 +481,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(846, 489);
+            this.ClientSize = new System.Drawing.Size(846, 562);
             this.Controls.Add(this.groupControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "FrmNewDriverWithCamera";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ویرایش راننده";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmNewDriverWithCamera_FormClosing);
             this.Load += new System.EventHandler(this.FrmNewDriverWithCamera_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -553,7 +538,6 @@
         private DevExpress.XtraEditors.SimpleButton btnPlay;
         private System.Windows.Forms.PictureBox picture;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private System.Windows.Forms.Label lbl_result;
         private System.Windows.Forms.Timer timer_process;
         private System.Windows.Forms.Label lblWH;
         private DevExpress.XtraEditors.TextEdit txtSmartCart;

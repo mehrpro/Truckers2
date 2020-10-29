@@ -34,13 +34,20 @@ namespace TruckerApp.Repository
         /// <param name="resultEn">پلاک با فرمت انگلیسی</param>
         /// <returns></returns>
         Driver FindByPlate(string resultEn);
-
         /// <summary>
         /// جستجو حواله ی فعال براساس پلاک خودرو
         /// </summary>
         /// <param name="tag">پلاک با فرمت انگلیسی</param>
         /// <returns></returns>
         Task<Queue> FindByQueue(string tag);
+
+        /// <summary>
+        /// صدور نوبت جدید و مبلغ دریافتی صندوق
+        /// </summary>
+        /// <param name="viewModelQueue">موجودیت و اطلاعات نوبت</param>
+        /// <param name="viewModelCash">موجودیت و اطلاهات صندوق دریافتی</param>
+        /// <returns></returns>
+        bool RegisterNewQueue(ViewModelQueue viewModelQueue, ViewModelCash viewModelCash);
 
     }
 
@@ -108,14 +115,53 @@ namespace TruckerApp.Repository
             return null;
         }
 
-        public  Driver FindByPlate(string resultEn)
+        public Driver FindByPlate(string resultEn)
         {
-            return  db.Drivers.FirstOrDefault(x => x.Tag == resultEn);
+            return db.Drivers.FirstOrDefault(x => x.Tag == resultEn);
         }
 
         public async Task<Queue> FindByQueue(string tag)
         {
-           return await db.Queues.SingleOrDefaultAsync(x => x.Status_FK == 20 && x.Driver.Tag == tag);
+            return await db.Queues.SingleOrDefaultAsync(x => x.Status_FK == 20 && x.Driver.Tag == tag);
+        }
+
+        public bool RegisterNewQueue(ViewModelQueue viewModelQueue, ViewModelCash viewModelCash)
+        {
+            try
+            {
+                using (var tran = db.Database.BeginTransaction())
+                {
+                    var newQueue = new Queue
+                    {
+                        Number = viewModelQueue.Number,
+                        GroupCommission = viewModelQueue.GroupCommission,
+                        Type_FK = viewModelQueue.TypeFk,
+                        DateTimeRegister = viewModelQueue.DateTimeRegister,
+                        DriverID_FK = viewModelQueue.DriverIdFk,
+                        Status_FK = viewModelQueue.StatusFk,
+                        ComosiunID_FK = viewModelQueue.ComosiunIdFk,
+                        SeriesID_FK = viewModelQueue.SeriesIdFk,
+                    };
+                    db.Queues.Add(newQueue);
+                    db.SaveChanges();
+                    var newCash = new Cash
+                    {
+                        QueueID_FK = newQueue.ID,
+                        Pos = Convert.ToInt32(viewModelCash.Pos),
+                        CashDesk = Convert.ToInt32(viewModelCash.CashDesk),
+                        userID = PublicVar.UserID,
+                        seriesID_FK = newQueue.SeriesID_FK,
+                    };
+                    db.Cashes.Add(newCash);
+                    db.SaveChanges();
+                    tran.Commit();
+                    return true;
+                };
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

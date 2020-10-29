@@ -30,18 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditDriverWithCamera));
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lblWH = new System.Windows.Forms.Label();
             this.picPlateLast = new System.Windows.Forms.PictureBox();
-            this.cmbDrawMethod = new System.Windows.Forms.ComboBox();
             this.Res4 = new System.Windows.Forms.Label();
-            this.lbl_result = new System.Windows.Forms.Label();
             this.Res2 = new System.Windows.Forms.Label();
             this.Res3 = new System.Windows.Forms.Label();
             this.Res1 = new System.Windows.Forms.Label();
@@ -68,11 +66,11 @@
             this.txtSmartCart = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.timer_process = new System.Windows.Forms.Timer(this.components);
             this.colSmartCart = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFirstName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLastName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.timer_process = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPlateLast)).BeginInit();
@@ -97,9 +95,7 @@
             this.groupControl1.CaptionImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_driver_48;
             this.groupControl1.Controls.Add(this.lblWH);
             this.groupControl1.Controls.Add(this.picPlateLast);
-            this.groupControl1.Controls.Add(this.cmbDrawMethod);
             this.groupControl1.Controls.Add(this.Res4);
-            this.groupControl1.Controls.Add(this.lbl_result);
             this.groupControl1.Controls.Add(this.Res2);
             this.groupControl1.Controls.Add(this.Res3);
             this.groupControl1.Controls.Add(this.Res1);
@@ -127,7 +123,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(846, 489);
+            this.groupControl1.Size = new System.Drawing.Size(846, 562);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "ویرایش راننده";
             // 
@@ -142,66 +138,35 @@
             // 
             // picPlateLast
             // 
-            this.picPlateLast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picPlateLast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.picPlateLast.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.picPlateLast.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picPlateLast.Location = new System.Drawing.Point(114, 394);
+            this.picPlateLast.Location = new System.Drawing.Point(114, 509);
             this.picPlateLast.Name = "picPlateLast";
             this.picPlateLast.Size = new System.Drawing.Size(179, 41);
             this.picPlateLast.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picPlateLast.TabIndex = 55;
             this.picPlateLast.TabStop = false;
             // 
-            // cmbDrawMethod
-            // 
-            this.cmbDrawMethod.BackColor = System.Drawing.Color.Honeydew;
-            this.cmbDrawMethod.FormattingEnabled = true;
-            this.cmbDrawMethod.Items.AddRange(new object[] {
-            "Draw by WIN API",
-            "Draw by OpenGL",
-            "Draw by SDL",
-            "Draw in Host (C#)"});
-            this.cmbDrawMethod.Location = new System.Drawing.Point(383, 12);
-            this.cmbDrawMethod.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbDrawMethod.Name = "cmbDrawMethod";
-            this.cmbDrawMethod.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cmbDrawMethod.Size = new System.Drawing.Size(187, 21);
-            this.cmbDrawMethod.TabIndex = 84;
-            this.cmbDrawMethod.Text = "Draw by WIN API";
-            this.cmbDrawMethod.Visible = false;
-            // 
             // Res4
             // 
-            this.Res4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Res4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Res4.AutoSize = true;
             this.Res4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Res4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Res4.Location = new System.Drawing.Point(444, 405);
+            this.Res4.Location = new System.Drawing.Point(443, 520);
             this.Res4.Name = "Res4";
             this.Res4.Size = new System.Drawing.Size(34, 24);
             this.Res4.TabIndex = 54;
             this.Res4.Text = "P4";
             // 
-            // lbl_result
-            // 
-            this.lbl_result.AutoSize = true;
-            this.lbl_result.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lbl_result.ForeColor = System.Drawing.Color.OliveDrab;
-            this.lbl_result.Location = new System.Drawing.Point(565, 43);
-            this.lbl_result.Name = "lbl_result";
-            this.lbl_result.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbl_result.Size = new System.Drawing.Size(93, 16);
-            this.lbl_result.TabIndex = 83;
-            this.lbl_result.Text = "EN RESULT";
-            this.lbl_result.Visible = false;
-            // 
             // Res2
             // 
-            this.Res2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Res2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Res2.AutoSize = true;
             this.Res2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Res2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Res2.Location = new System.Drawing.Point(348, 405);
+            this.Res2.Location = new System.Drawing.Point(348, 520);
             this.Res2.Name = "Res2";
             this.Res2.Size = new System.Drawing.Size(34, 24);
             this.Res2.TabIndex = 53;
@@ -209,11 +174,11 @@
             // 
             // Res3
             // 
-            this.Res3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Res3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Res3.AutoSize = true;
             this.Res3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Res3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Res3.Location = new System.Drawing.Point(394, 405);
+            this.Res3.Location = new System.Drawing.Point(394, 520);
             this.Res3.Name = "Res3";
             this.Res3.Size = new System.Drawing.Size(34, 24);
             this.Res3.TabIndex = 52;
@@ -221,11 +186,11 @@
             // 
             // Res1
             // 
-            this.Res1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Res1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Res1.AutoSize = true;
             this.Res1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Res1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Res1.Location = new System.Drawing.Point(299, 405);
+            this.Res1.Location = new System.Drawing.Point(299, 520);
             this.Res1.Name = "Res1";
             this.Res1.Size = new System.Drawing.Size(34, 24);
             this.Res1.TabIndex = 51;
@@ -233,18 +198,18 @@
             // 
             // btnStop
             // 
-            this.btnStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnStop.ImageOptions.Image = global::TruckerApp.Properties.Resources.stop_32x321;
-            this.btnStop.Location = new System.Drawing.Point(66, 394);
+            this.btnStop.Location = new System.Drawing.Point(66, 509);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(42, 41);
             this.btnStop.TabIndex = 49;
             // 
             // btnPlay
             // 
-            this.btnPlay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPlay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnPlay.ImageOptions.Image = global::TruckerApp.Properties.Resources.play_32x321;
-            this.btnPlay.Location = new System.Drawing.Point(18, 394);
+            this.btnPlay.Location = new System.Drawing.Point(18, 509);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(42, 41);
             this.btnPlay.TabIndex = 50;
@@ -252,12 +217,14 @@
             // 
             // picture
             // 
-            this.picture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.picture.BackColor = System.Drawing.SystemColors.Control;
             this.picture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picture.Location = new System.Drawing.Point(18, 71);
             this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(470, 317);
+            this.picture.Size = new System.Drawing.Size(470, 432);
             this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picture.TabIndex = 48;
             this.picture.TabStop = false;
@@ -402,9 +369,9 @@
             this.txtPhoneNumber.Properties.MaxLength = 10;
             this.txtPhoneNumber.Size = new System.Drawing.Size(221, 30);
             this.txtPhoneNumber.TabIndex = 2;
-            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule7.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.txtPhoneNumber, conditionValidationRule7);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtPhoneNumber, conditionValidationRule1);
             // 
             // txtLastNAme
             // 
@@ -417,9 +384,9 @@
             this.txtLastNAme.Properties.MaxLength = 49;
             this.txtLastNAme.Size = new System.Drawing.Size(221, 30);
             this.txtLastNAme.TabIndex = 1;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.txtLastNAme, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtLastNAme, conditionValidationRule2);
             // 
             // txtTag
             // 
@@ -435,9 +402,9 @@
             this.txtTag.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtTag.Size = new System.Drawing.Size(221, 30);
             this.txtTag.TabIndex = 5;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.txtTag, conditionValidationRule2);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtTag, conditionValidationRule3);
             // 
             // txtFirstName
             // 
@@ -450,9 +417,9 @@
             this.txtFirstName.Properties.MaxLength = 49;
             this.txtFirstName.Size = new System.Drawing.Size(221, 30);
             this.txtFirstName.TabIndex = 0;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.txtFirstName, conditionValidationRule3);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtFirstName, conditionValidationRule4);
             // 
             // txtTagNumber
             // 
@@ -469,9 +436,9 @@
             this.txtTagNumber.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtTagNumber.Size = new System.Drawing.Size(221, 30);
             this.txtTagNumber.TabIndex = 4;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.txtTagNumber, conditionValidationRule4);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtTagNumber, conditionValidationRule5);
             // 
             // radComosiun
             // 
@@ -517,10 +484,10 @@
             this.txtSmartCart.Properties.ValueMember = "DriverID";
             this.txtSmartCart.Size = new System.Drawing.Size(221, 30);
             this.txtSmartCart.TabIndex = 3;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule5.ErrorText = "This value is not valid";
-            conditionValidationRule5.Value1 = "0";
-            this.dxValidationProvider1.SetValidationRule(this.txtSmartCart, conditionValidationRule5);
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule6.ErrorText = "This value is not valid";
+            conditionValidationRule6.Value1 = "0";
+            this.dxValidationProvider1.SetValidationRule(this.txtSmartCart, conditionValidationRule6);
             this.txtSmartCart.EditValueChanged += new System.EventHandler(this.txtSmartCart_EditValueChanged);
             // 
             // searchLookUpEdit1View
@@ -642,6 +609,10 @@
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // timer_process
+            // 
+            this.timer_process.Tick += new System.EventHandler(this.timer_process_Tick);
+            // 
             // colSmartCart
             // 
             this.colSmartCart.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -672,23 +643,18 @@
             this.colLastName.VisibleIndex = 2;
             this.colLastName.Width = 506;
             // 
-            // timer_process
-            // 
-            this.timer_process.Tick += new System.EventHandler(this.timer_process_Tick);
-            // 
             // FrmEditDriverWithCamera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(846, 489);
+            this.ClientSize = new System.Drawing.Size(846, 562);
             this.Controls.Add(this.groupControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "FrmEditDriverWithCamera";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ویرایش راننده";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmNewDriver3_FormClosing);
             this.Load += new System.EventHandler(this.FrmNewDriver3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -746,8 +712,6 @@
         private DevExpress.XtraEditors.SimpleButton btnPlay;
         private System.Windows.Forms.PictureBox picture;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private System.Windows.Forms.ComboBox cmbDrawMethod;
-        private System.Windows.Forms.Label lbl_result;
         private System.Windows.Forms.Timer timer_process;
         private System.Windows.Forms.Label lblWH;
     }

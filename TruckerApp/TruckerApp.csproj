@@ -128,9 +128,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ANPR-API.cs" />
-    <Compile Include="AnprApi.cs" />
-    <Compile Include="BindingList.cs" />
+    <Compile Include="Repository\IAdministrator.cs" />
+    <Compile Include="Repository\ICustomers.cs" />
+    <Compile Include="Services\ANPR-API.cs" />
+    <Compile Include="Services\AnprApi.cs" />
+    <Compile Include="Services\BindingList.cs" />
     <Compile Include="Cash.cs">
       <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
@@ -156,7 +158,7 @@
     </Compile>
     <Compile Include="Repository\ICustomReport.cs" />
     <Compile Include="Repository\IQueuing.cs" />
-    <Compile Include="SLPRPropertyGrid.cs" />
+    <Compile Include="Services\SLPRPropertyGrid.cs" />
     <Compile Include="UserForm\Administrator\FrmEmailSetting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,7 +202,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PublicVar.cs" />
+    <Compile Include="ExtentionMethod\PublicVar.cs" />
     <Compile Include="Queue.cs">
       <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
@@ -241,7 +243,7 @@
     <Compile Include="UserForm\cash\FrmCasheList.Designer.cs">
       <DependentUpon>FrmCasheList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Counter.cs" />
+    <Compile Include="Services\Counter.cs" />
     <Compile Include="UserForm\Customer\FrmEditDriverWithCamera.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,8 +256,7 @@
     <Compile Include="UserForm\Customer\FrmNewDriverWithCamera.Designer.cs">
       <DependentUpon>FrmNewDriverWithCamera.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserForm\Fish\adding.cs" />
-    <Compile Include="FindDriver.cs" />
+    <Compile Include="ExtentionMethod\FindDriver.cs" />
     <Compile Include="UserForm\Fish\FrmFishPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,16 +311,20 @@
     <Compile Include="UserForm\Fish\FrmSerial.Designer.cs">
       <DependentUpon>FrmSerial.cs</DependentUpon>
     </Compile>
-    <Compile Include="PlateEditor.cs" />
+    <Compile Include="Services\PlateEditor.cs" />
     <Compile Include="UserForm\Reporting\FrmPrintList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserForm\Reporting\FrmPrintList.Designer.cs">
       <DependentUpon>FrmPrintList.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\Administrator\ViewModelLogin.cs" />
+    <Compile Include="ViewModels\Customers\ViewModelCustomer.cs" />
     <Compile Include="ViewModels\ViewModelCargoType.cs" />
+    <Compile Include="ViewModels\ViewModelCash.cs" />
+    <Compile Include="ViewModels\ViewModelQueue.cs" />
     <Compile Include="ViewModels\ViewModelReportList.cs" />
-    <Compile Include="UserRect.cs" />
+    <Compile Include="Services\UserRect.cs" />
     <Compile Include="XRDesignRibbonControllerResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
