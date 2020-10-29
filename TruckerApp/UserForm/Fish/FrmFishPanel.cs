@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using StructureMap;
 using TruckerApp.ExtentionMethod;
+using TruckerApp.UserForm.Customer;
 
 namespace TruckerApp.UserForm.Fish
 {
@@ -124,19 +125,18 @@ namespace TruckerApp.UserForm.Fish
         private void simpleButton6_Click_1(object sender, EventArgs e)
         {
 
-            var newForm = new FrmNewDriver { StartPosition = FormStartPosition.CenterScreen };
+            var newForm = mainContainer.GetInstance<FrmNewDriverWithCamera>();
             newForm.ShowDialog();
         }
 
         private void simpleButton7_Click_1(object sender, EventArgs e)
         {
-            var newForm = new FrmMembershipList(0)
-            {
-                FormBorderStyle = FormBorderStyle.FixedSingle,
-                WindowState = FormWindowState.Maximized,
-                StartPosition = FormStartPosition.CenterScreen,
-               // Dock = DockStyle.Fill
-            };
+
+            var newForm = mainContainer.GetInstance<FrmMembershipList>();
+            newForm.StartPosition = FormStartPosition.CenterScreen;
+            newForm.FormBorderStyle = FormBorderStyle.Sizable;
+            newForm.WindowState = FormWindowState.Maximized;
+            newForm.GroupId = 0;
             newForm.ShowDialog();
         }
 

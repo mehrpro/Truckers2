@@ -31,19 +31,14 @@ namespace TruckerApp
 
         private void btnMemberShipList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (var c in this.MdiChildren)
-            {
-                c.Close();
-            }
-
-            var newForm = new FrmMembershipList(30)
-            {
-                FormBorderStyle = FormBorderStyle.None,
-                MdiParent = this,
-                StartPosition = FormStartPosition.CenterParent,
-                Dock = DockStyle.Fill
-            };
-            newForm.Show();
+         
+   
+            var newForm = _mainContainer.GetInstance<FrmMembershipList>();
+            newForm.StartPosition = FormStartPosition.CenterScreen;
+            newForm.FormBorderStyle = FormBorderStyle.Sizable;
+            newForm.WindowState = FormWindowState.Maximized;
+            newForm.GroupId = 30;
+            newForm.ShowDialog();
         }
 
         private void btnCommission_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -265,36 +260,25 @@ namespace TruckerApp
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (var c in this.MdiChildren)
-            {
-                c.Close();
-            }
 
-            var newForm = new FrmMembershipList(31)
-            {
-                FormBorderStyle = FormBorderStyle.None,
-                MdiParent = this,
-                StartPosition = FormStartPosition.CenterParent,
-                Dock = DockStyle.Fill
-            };
-            newForm.Show();
+
+            var newForm = _mainContainer.GetInstance<FrmMembershipList>();
+            newForm.StartPosition = FormStartPosition.CenterScreen;
+            newForm.FormBorderStyle = FormBorderStyle.Sizable;
+            newForm.WindowState = FormWindowState.Maximized;
+            newForm.GroupId = 31;
+            newForm.ShowDialog();
         }
 
         private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (var c in this.MdiChildren)
-            {
-                c.Close();
-            }
 
-            var newForm = new FrmMembershipList(32)
-            {
-                FormBorderStyle = FormBorderStyle.None,
-                MdiParent = this,
-                StartPosition = FormStartPosition.CenterParent,
-                Dock = DockStyle.Fill
-            };
-            newForm.Show();
+            var newForm = _mainContainer.GetInstance<FrmMembershipList>();
+            newForm.StartPosition = FormStartPosition.CenterScreen;
+            newForm.FormBorderStyle = FormBorderStyle.Sizable;
+            newForm.WindowState = FormWindowState.Maximized;
+            newForm.GroupId = 32;
+            newForm.ShowDialog();
         }
 
         private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

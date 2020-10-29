@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 using System.Threading.Tasks;
+using DevExpress.Data.ODataLinq.Helpers;
 using TruckerApp.ViewModels.Customers;
 
 namespace TruckerApp.Repository
@@ -55,6 +57,13 @@ namespace TruckerApp.Repository
         /// </summary>
         /// <returns></returns>
         Task<List<Driver>> GetAllDriver();
+        /// <summary>
+        /// لیست رانندگان براساس عضویت
+        /// </summary>
+        /// <param name="groupId">کد گروه</param>
+        /// <returns></returns>
+        Task<List<Driver>> GetAllDriverByGroupID(byte groupId);
+
     }
 
     public class Customers : ICustomers
@@ -156,7 +165,7 @@ namespace TruckerApp.Repository
                         return result;
                     }
                 }
-                catch (Exception e)
+                catch 
                 {
                     return false;
                 }
@@ -167,6 +176,11 @@ namespace TruckerApp.Repository
         public async Task<List<Driver>> GetAllDriver()
         {
             return await db.Drivers.ToListAsync();
+        }
+
+        public async Task<List<Driver>> GetAllDriverByGroupID(byte groupId)
+        {
+            return await db.Drivers.Where(x => x.GroupID == groupId).ToListAsync();
         }
     }
 }

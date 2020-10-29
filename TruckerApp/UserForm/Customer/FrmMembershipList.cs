@@ -1,17 +1,26 @@
-﻿using System;
-using DevExpress.XtraEditors;
-using System.Linq;
-using System.Windows.Forms;
+﻿using DevExpress.XtraEditors;
+using TruckerApp.Repository;
 
-namespace TruckerApp.UserForm
+namespace TruckerApp.UserForm.Customer
 {
     public partial class FrmMembershipList : XtraForm
     {
-        TruckersEntities db = new TruckersEntities();
-        public FrmMembershipList(int groupid)
+        private readonly ICustomers _customers;
+        public byte GroupId { get; set; }
+        public FrmMembershipList(ICustomers customers)
         {
+            _customers = customers;
             InitializeComponent();
-            driversBindingSource.DataSource =groupid==0 ? db.Drivers.ToList(): db.Drivers.Where(x=> x.GroupID==groupid).ToList();
+        }
+
+        private async void FrmMembershipList_Load(object sender, System.EventArgs e)
+        {
+            if (GroupId == 0)
+            {
+                driversBindingSource.DataSource = await _customers.GetAllDriver();
+            }
+            else
+                driversBindingSource.DataSource = await _customers.GetAllDriverByGroupID(GroupId);
         }
     }
 }

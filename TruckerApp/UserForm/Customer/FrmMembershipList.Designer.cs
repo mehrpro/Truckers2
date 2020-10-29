@@ -1,4 +1,4 @@
-﻿namespace TruckerApp.UserForm
+﻿namespace TruckerApp.UserForm.Customer
 {
     partial class FrmMembershipList
     {
@@ -54,7 +54,7 @@
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("B Yekan", 16F);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
-            this.groupControl1.CaptionImage = global::TruckerApp.Properties.Resources.icons8_list_48;
+            this.groupControl1.CaptionImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_list_48;
             this.groupControl1.Controls.Add(this.panelControl2);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
@@ -67,9 +67,9 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(2, 55);
+            this.panelControl2.Location = new System.Drawing.Point(2, 59);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1168, 579);
+            this.panelControl2.Size = new System.Drawing.Size(1168, 575);
             this.panelControl2.TabIndex = 2;
             // 
             // gridControl1
@@ -79,7 +79,7 @@
             this.gridControl1.Location = new System.Drawing.Point(2, 2);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1164, 575);
+            this.gridControl1.Size = new System.Drawing.Size(1164, 571);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -286,6 +286,8 @@
             this.Name = "FrmMembershipList";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "لیست اعضاء اتحادیه";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmMembershipList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
