@@ -5,7 +5,7 @@ namespace TruckerApp.ViewModels
     /// <summary>
     /// لیست خام برای گزارش براساس حواله های صادر شده فعال
     /// </summary>
-    public class ReportList
+    public class ViewModelReportList
     {
         [Display(Name = "ردیف")]
         public int Counter { get; set; }

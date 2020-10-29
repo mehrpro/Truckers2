@@ -8,8 +8,11 @@ using System.Threading;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraReports.UI;
+using TruckerApp.ExtentionMethod;
 using TruckerApp.Properties;
+using TruckerApp.Repository;
 using TruckerApp.UserForm.cash;
+using TruckerApp.ViewModels;
 using static TruckerApp.AnprApi;
 
 namespace TruckerApp.UserForm.Fish
@@ -18,7 +21,7 @@ namespace TruckerApp.UserForm.Fish
     {
 
 
-        private readonly TruckersEntities _db = new TruckersEntities();
+        //private readonly TruckersEntities _db = new TruckersEntities();
         private int _driver, _series;
         private int _commission;
         private short _commissionId;//حق کمیسیون
@@ -58,26 +61,20 @@ namespace TruckerApp.UserForm.Fish
         int count_empty_frame = 0;
         float MEAN = 0;
 
-       private ANPR_EVENT_CALLBACK _handleAnprEventsDelegate = null;
+        private ANPR_EVENT_CALLBACK _handleAnprEventsDelegate = null;
 
         [System.Runtime.InteropServices.DllImport("kernel32.dll", EntryPoint = "CopyMemory", SetLastError = false)]
         public static extern void CopyMemory(IntPtr dest, IntPtr src, uint count);
 
-       // string[] dir_strings = new string[3] { "", "IN", "OUT" };
+        // string[] dir_strings = new string[3] { "", "IN", "OUT" };
         private string _resultEn;
 
-
-        public FrmFishPrint()
+        private readonly IQueuing _queuing;
+        public FrmFishPrint(IQueuing queuing)
         {
             InitializeComponent();
-            //driversBindingSource.DataSource = new BindingList().DriversList();
-            //  db = new TruckersEntities();
-            //string security_code = "www.shahaab-co.ir 02332300204";
-            //anpr_create(0, security_code, 1);
-            ////it is not required to call anpr_set_params with default params, but if you want to change them, you must call it
-            //SetDefParams();
-            //HandleANPREventsDelegate = new ANPR_EVENT_CALLBACK(HandleAnprEvents);
-            //anpr_set_event_callback(HandleANPREventsDelegate);
+            _queuing = queuing;
+
             CamSetup();
         }
         private void CamSetup()
@@ -169,7 +166,7 @@ namespace TruckerApp.UserForm.Fish
                 Grabbing = 0;
                 MessageBox.Show(@"ارتباط با فایل یا دوربین برقرار نشد. آدرس را بررسی کرده و اگر نام کاربری و رمز می خواهد آنها را بازبینی کنید.",
                     "خطا", MessageBoxButtons.OK, MessageBoxIcon.Warning,
-                    MessageBoxDefaultButton.Button1, 
+                    MessageBoxDefaultButton.Button1,
                     MessageBoxOptions.RtlReading | MessageBoxOptions.RightAlign);
             }
             else if (eventType == WM_NEW_FRAME)//New Frame Captured
@@ -191,7 +188,7 @@ namespace TruckerApp.UserForm.Fish
                     DrawRect(plate.rc);
                 }
             }
-       
+
             else if (eventType == WM_END_OF_VIDEO)
             {
                 //int grab = Grabbing;
@@ -282,7 +279,7 @@ namespace TruckerApp.UserForm.Fish
             picPlateLast.Image = img_plate[roi];
         }
 
-       
+
         private void UpdateResults(byte plt_idx)
         {
             var plate = new SPlateResult();
@@ -311,8 +308,8 @@ namespace TruckerApp.UserForm.Fish
             MEAN += plate.cnf;
             _resultEn = new string(' ', 20);
             anpr_get_en_result(plate.str, _resultEn);
-            txtTag.Text = lbl_result.Text = _resultEn;
-            var resultFind = _resultEn.FindByPlate(_db);
+            txtTag.Text = _resultEn;
+            var resultFind = _queuing.FindByPlate(_resultEn);// _resultEn.FindByPlate();
             if (resultFind != null)
             {
                 GetPropertyByDriver(resultFind);
@@ -387,6 +384,29 @@ namespace TruckerApp.UserForm.Fish
         }
 
 
+        private async void cbxCargoType_EditValueChanged(object sender, EventArgs e)
+        {
+            var selectType = (ViewModelCargoType)cbxCargoType.GetSelectedDataRow();
+            if (selectType == null || txtTag.Text.Trim() == "")
+            {
+                return;
+            }
+
+            txtNumber.EditValue = await _queuing.GetLastNumberByTypeId(selectType.TypeID);
+            var com = await _queuing.GetCommisinoByTypeIdAndByGroupId(selectType.TypeID, _group);
+            txtComossin.EditValue = _commission = com.CommissionPrice;
+            _commissionId = com.CommissionID;
+
+        }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            var str = "49-Ain-25451";
+            var re = _queuing.FindByPlate(str);
+
+            GetPropertyByDriver(re);
+        }
+
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             timer_process.Enabled = false;
@@ -394,7 +414,7 @@ namespace TruckerApp.UserForm.Fish
 
             btnStop.Enabled = false;
         }
-        
+
         private void StartPlayerVLC(bool start)
         {
             picg?.Dispose();
@@ -404,7 +424,7 @@ namespace TruckerApp.UserForm.Fish
             //Application.DoEvents();            
             if (start)
             {
-                
+
                 SetParams();
                 var interval = (byte)(1000 / anpr_settings.frame_rate);
                 //rtsp://admin:admin@192.168.55.160:554/h264
@@ -436,7 +456,6 @@ namespace TruckerApp.UserForm.Fish
             StopEveryThing();
             Close();
         }
-
         private void btnRefreshPlayer_Click(object sender, EventArgs e)
         {
             timer_process.Interval = PublicVar.ProcessInterval;// Convert.ToInt32(edtProcessInterval.Text);
@@ -451,7 +470,7 @@ namespace TruckerApp.UserForm.Fish
                 return;
 
             string result = new string(' ', 20);
-           // string result_en = new string(' ', 20);
+            // string result_en = new string(' ', 20);
 
             float cnf = 0;
             RECT rc = new RECT();
@@ -471,7 +490,7 @@ namespace TruckerApp.UserForm.Fish
             {
                 frame_vehicle = new Bitmap(FrameW, FrameH, FrameStep, PixelFormat.Format24bppRgb, pFrame);
             }
-    
+
         }
         private void StopEveryThing()
         {
@@ -493,7 +512,7 @@ namespace TruckerApp.UserForm.Fish
         private void SetParams()
         {
             picPlateLast.Image = null;
-            Res1.Text = Res2.Text = Res3.Text = Res4.Text = lbl_result.Text = "--";
+            Res1.Text = Res2.Text = Res3.Text = Res4.Text = @"--";
 
 
             prm.plate_buf_size = anpr_settings.plate_buf_size;
@@ -534,12 +553,11 @@ namespace TruckerApp.UserForm.Fish
             anpr_set_debug_mode(0, anpr_settings.debug_level);
             //SetROI();
         }
-
-        private void printFish()
+        private void PrintFish()
         {
             var report = XtraReport.FromFile("ReportFish.repx", true);
             var tool = new ReportPrintTool(report);
-            report.Parameters["date"].Value = DateTime.Now.ToLongDateString();
+            report.Parameters["date"].Value = DateTime.Now.PersianConvertorFull();
             report.Parameters["name"].Value = _name;
             report.Parameters["number"].Value = _number;
             report.Parameters["smartcart"].Value = _smartcart;
@@ -556,200 +574,162 @@ namespace TruckerApp.UserForm.Fish
             if (driver == null) return;
             _code = Convert.ToInt32(driver.driver_code) > 0 ? driver.driver_code.ToString() : " ";
             txtName.Text = _name = $"{driver.FirstName}  {driver.LastName}";
-            txtTag.Text =  driver.Tag;
+            txtTag.Text = driver.Tag;
             txtTagNumber.Text = _tagnumber = _resultFarsi;
             txtPhoneNumber.Text = driver.PhoneNumber;
             _driver = driver.DriverID;
             _smartcart = txtHosmand.Text = driver.SmartCart.ToString();
             _group = driver.GroupID;
             _memeber = driver.LoadType.Type;
-            if (_group == 30)
-            {
-                if (TypeId == 4)
-                {
-                    var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 13);
-                    _commissionId = qry.CommissionID;
-                    _commission = qry.CommissionPrice;
-
-                }
-                else
-                {
-                    var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 14);
-                    _commissionId = qry.CommissionID;
-                    _commission = qry.CommissionPrice;
-                }
-            }
-            else if (_group == 31)
-            {
-                if (TypeId == 4)
-                {
-                    var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 17);
-                    _commissionId = qry.CommissionID;
-                    _commission = qry.CommissionPrice;
-                }
-                else
-                {
-                    var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 15);
-                    _commissionId = qry.CommissionID;
-                    _commission = qry.CommissionPrice;
-                }
-            }
-            else if (_group == 32)
-            {
-                if (TypeId == 4)
-                {
-                    var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 18);
-                    _commissionId = qry.CommissionID;
-                    _commission = qry.CommissionPrice;
-                }
-
-                else
-                {
-                    var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 16);
-                    _commissionId = qry.CommissionID;
-                    _commission = qry.CommissionPrice;
-                }
-            }
-            txtComossin.Text = _commission.ToString();
-
             timer_process.Enabled = false;
             btnPlay.Enabled = true;
             btnStop.Enabled = false;
         }
         private void cbxSmart_EditValueChanged(object sender, EventArgs e)
         {
-            var driver = (Driver)cbxSmart.GetSelectedDataRow();
-            if (driver == null) return;
-            _code = Convert.ToInt32(driver.driver_code) > 0 ? driver.driver_code.ToString() : " ";
-            txtName.Text = _name = $"{driver.FirstName}  {driver.LastName}";
-            //txtTag.Text =  driver.Tag;
-            txtTagNumber.Text = _tagnumber = driver.TagNumber;
-            txtPhoneNumber.Text = driver.PhoneNumber;
-            _driver = driver.DriverID;
-            _smartcart = driver.SmartCart.ToString();
-            _group = driver.GroupID;
-            _memeber = driver.LoadType.Type;
-            if (_group == 30)
-            {
-                if (TypeId == 4)
-                {
-                    var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 13);
-                    _commissionId = qry.CommissionID;
-                    _commission = qry.CommissionPrice;
+            //var driver = (Driver)cbxSmart.GetSelectedDataRow();
+            //if (driver == null) return;
+            //_code = Convert.ToInt32(driver.driver_code) > 0 ? driver.driver_code.ToString() : " ";
+            //txtName.Text = _name = $"{driver.FirstName}  {driver.LastName}";
+            ////txtTag.Text =  driver.Tag;
+            //txtTagNumber.Text = _tagnumber = driver.TagNumber;
+            //txtPhoneNumber.Text = driver.PhoneNumber;
+            //_driver = driver.DriverID;
+            //_smartcart = driver.SmartCart.ToString();
+            //_group = driver.GroupID;
+            //_memeber = driver.LoadType.Type;
+            //if (_group == 30)
+            //{
+            //    if (TypeId == 4)
+            //    {
+            //        var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 13);
+            //        _commissionId = qry.CommissionID;
+            //        _commission = qry.CommissionPrice;
 
-                }
-                else
-                {
-                    var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 14);
-                    _commissionId = qry.CommissionID;
-                    _commission = qry.CommissionPrice;
-                }
-            }
-            else if (_group == 31)
-            {
-                if (TypeId == 4)
-                {
-                    var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 17);
-                    _commissionId = qry.CommissionID;
-                    _commission = qry.CommissionPrice;
-                }
-                else
-                {
-                    var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 15);
-                    _commissionId = qry.CommissionID;
-                    _commission = qry.CommissionPrice;
-                }
-            }
-            else if (_group == 32)
-            {
-                if (TypeId == 4)
-                {
-                    var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 18);
-                    _commissionId = qry.CommissionID;
-                    _commission = qry.CommissionPrice;
-                }
+            //    }
+            //    else
+            //    {
+            //        var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 14);
+            //        _commissionId = qry.CommissionID;
+            //        _commission = qry.CommissionPrice;
+            //    }
+            //}
+            //else if (_group == 31)
+            //{
+            //    if (TypeId == 4)
+            //    {
+            //        var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 17);
+            //        _commissionId = qry.CommissionID;
+            //        _commission = qry.CommissionPrice;
+            //    }
+            //    else
+            //    {
+            //        var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 15);
+            //        _commissionId = qry.CommissionID;
+            //        _commission = qry.CommissionPrice;
+            //    }
+            //}
+            //else if (_group == 32)
+            //{
+            //    if (TypeId == 4)
+            //    {
+            //        var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 18);
+            //        _commissionId = qry.CommissionID;
+            //        _commission = qry.CommissionPrice;
+            //    }
 
-                else
-                {
-                    var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 16);
-                    _commissionId = qry.CommissionID;
-                    _commission = qry.CommissionPrice;
-                }
-            }
-            txtComossin.Text = _commission.ToString();
+            //    else
+            //    {
+            //        var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 16);
+            //        _commissionId = qry.CommissionID;
+            //        _commission = qry.CommissionPrice;
+            //    }
+            //}
+            //txtComossin.Text = _commission.ToString();
         }
 
-        private void FrmFishPrint_Load(object sender, EventArgs e)
+        private async void FrmFishPrint_Load(object sender, EventArgs e)
         {
-            //SaveSettings();
+            cbxCargoType.Properties.DataSource = await _queuing.GetAllCargoType();
             ReadSettings();
-            //cmbDrawMethod.SelectedIndex = 0;
+
             sel_rect = new UserRect(roi1);
             sel_rect.SetPictureBox(null);
             sel_rect2 = new UserRect(roi2);
             sel_rect2.SetPictureBox(null);
             setupPage();
-            txtDateRegister.EditValue = DateTime.Today.ToLongDateString();
-            lastNumber();
+            txtDateRegister.Text = DateTime.Now.PersianConvertor();
+
             SelectType();
-            StartPlayerVLC(true);
+            //StartPlayerVLC(true);
         }
 
-        
-        private void btnPrint_Click(object sender, EventArgs e)
+
+        private async void btnPrint_Click(object sender, EventArgs e)
         {
-            var driverCheck = _db.Queues.Where(x => x.Status_FK == 20 && x.Driver.Tag == txtTag.Text.Trim()).ToList();
-            if (driverCheck.Count == 0)
+            if (!dxValidationProvider1.Validate())
             {
-                try
-                {
-                    var queue = new Queue
-                    {
-                        DriverID_FK = _driver,
-                        ComosiunID_FK = _commissionId,
-                        Type_FK = TypeId,
-                        DateTimeRegister = DateTime.Now,
-                        SeriesID_FK = _series,
-                        Number = Convert.ToInt16(txtNumber.EditValue),
-                        GroupCommission = _group,
-                        Status_FK = 20,
-                        
-                    };
-                    var frm = new FrmCash(txtComossin.Text);
-                    var result = frm.ShowDialog();
-                    if (result == DialogResult.OK)
-                    {
-                        var adding = new Adding();
-                        var rec = adding.addingFish(queue, frm.Cash);
-                        if (rec)
-                        {
-                            _number = $"س {PublicVar.SeriesName}  شماره {adding.StrNumber}";
-                            printFish();
-                            lastNumber();
-                        }
-                    }
-                }
-                catch
-                {
-                    XtraMessageBox.Show(PublicVar.ErrorMessageForNotSave, Text, MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                }
+                XtraMessageBox.Show(PublicVar.NotComplateForm, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                var str =
-                    $"برای شماره هوشمند {driverCheck[0].Driver.SmartCart} نوبت محموله {driverCheck[0].LoadType.Type} در تاریخ {driverCheck[0].DateTimeRegister} ثبت شده است";
-                XtraMessageBox.Show(str, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (_driver < 1)
+                {
+                    XtraMessageBox.Show("هیچ راننده ای انتخاب نشده است", Text, MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+                else
+                {
+
+                    var driverCheck = await _queuing.FindByQueue(txtTag.Text.Trim()); //عدم ثبت مجدد نوبت
+                    if (driverCheck == null)
+                    {
+                        // مجاز به ثبت نوبت است
+                        try
+                        {
+                            var queue = new Queue
+                            {
+                                DriverID_FK = _driver,
+                                ComosiunID_FK = _commissionId,
+                                Type_FK = Convert.ToByte(cbxCargoType.EditValue),
+                                DateTimeRegister = DateTime.Now,
+                                SeriesID_FK = _series,
+                                Number = Convert.ToInt16(txtNumber.EditValue),
+                                GroupCommission = _group,
+                                Status_FK = 20,
+
+                            };
+                            var frm = new FrmCash(txtComossin.Text);
+                            var result = frm.ShowDialog();
+                            if (result == DialogResult.OK)
+                            {
+                                var adding = new Adding();
+                                var rec = adding.addingFish(queue, frm.Cash);
+                                if (rec)
+                                {
+                                    _number = $"س {PublicVar.SeriesName}  شماره {adding.StrNumber}";
+                                    PrintFish();
+                                    await _queuing.GetLastNumberByTypeId(Convert.ToByte(cbxCargoType.EditValue));
+                                }
+                            }
+                        }
+                        catch
+                        {
+                            XtraMessageBox.Show(PublicVar.ErrorMessageForNotSave, Text, MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        var str =
+                            $"برای شماره هوشمند {driverCheck.Driver.SmartCart} نوبت محموله {driverCheck.LoadType.Type} در تاریخ {driverCheck.DateTimeRegister} ثبت شده است";
+                        XtraMessageBox.Show(str, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
             }
         }
 
 
-        private void lastNumber()
-        {
-            var qryNumber = new Counter().lastNumber(PublicVar.SeriesID, (byte)TypeId);
-            txtNumber.Text = (qryNumber + 1).ToString("000");
-
-        }
 
 
     }

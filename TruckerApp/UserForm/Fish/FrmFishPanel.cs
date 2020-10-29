@@ -2,14 +2,18 @@
 using System.Drawing;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using StructureMap;
+using TruckerApp.ExtentionMethod;
 
 namespace TruckerApp.UserForm.Fish
 {
     public partial class FrmFishPanel : XtraForm
     {
+        private Container mainContainer;
         public FrmFishPanel()
         {
             InitializeComponent();
+            mainContainer = new StructureMap.Container(new TypeRegistery());
         }
 
         private readonly Counter _counter = new Counter();
@@ -22,45 +26,34 @@ namespace TruckerApp.UserForm.Fish
 
         private void btnSimanFaleh_Click(object sender, EventArgs e)
         {
-            var newForm = new FrmFishPrint()
-            {
-                TypeId = 1,
-                FormBorderStyle = FormBorderStyle.None,
-                StartPosition = FormStartPosition.CenterScreen,
-            };
+
+            var newForm = mainContainer.GetInstance<FrmFishPrint>();
+            newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
+            newForm.StartPosition = FormStartPosition.CenterScreen;
             newForm.ShowDialog();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            var newForm = new FrmFishPrint()
-            {
-                TypeId = 2,
-                FormBorderStyle = FormBorderStyle.None,
-                StartPosition = FormStartPosition.CenterScreen,
-            };
+            var newForm = mainContainer.GetInstance<FrmFishPrint>();
+            newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
+            newForm.StartPosition = FormStartPosition.CenterScreen;
             newForm.ShowDialog();
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            var newForm = new FrmFishPrint()
-            {
-                TypeId = 4,
-                FormBorderStyle = FormBorderStyle.None,
-                StartPosition = FormStartPosition.CenterScreen,
-            };
+            var newForm = mainContainer.GetInstance<FrmFishPrint>();
+            newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
+            newForm.StartPosition = FormStartPosition.CenterScreen;
             newForm.ShowDialog();
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            var newForm = new FrmFishPrint()
-            {
-                TypeId = 3,
-                FormBorderStyle = FormBorderStyle.None,
-                StartPosition = FormStartPosition.CenterScreen,
-            };
+            var newForm = mainContainer.GetInstance<FrmFishPrint>();
+            newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
+            newForm.StartPosition = FormStartPosition.CenterScreen;
             newForm.ShowDialog();
         }
 
@@ -161,34 +154,25 @@ namespace TruckerApp.UserForm.Fish
 
         private void simpleButton9_Click(object sender, EventArgs e)
         {
-            var newForm = new FrmFishPrint()
-            {
-                TypeId = 5,
-                FormBorderStyle = FormBorderStyle.None,
-                StartPosition = FormStartPosition.CenterScreen,
-            };
+            var newForm = mainContainer.GetInstance<FrmFishPrint>();
+            newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
+            newForm.StartPosition = FormStartPosition.CenterScreen;
             newForm.ShowDialog();
         }
 
         private void simpleButton10_Click(object sender, EventArgs e)
         {
-            var newForm = new FrmFishPrint()
-            {
-                TypeId =6,
-                FormBorderStyle = FormBorderStyle.None,
-                StartPosition = FormStartPosition.CenterScreen,
-            };
+            var newForm = mainContainer.GetInstance<FrmFishPrint>();
+            newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
+            newForm.StartPosition = FormStartPosition.CenterScreen;
             newForm.ShowDialog();
         }
 
         private void simpleButton11_Click(object sender, EventArgs e)
         {
-            var newForm = new FrmFishPrint()
-            {
-                TypeId = 7,
-                FormBorderStyle = FormBorderStyle.None,
-                StartPosition = FormStartPosition.CenterScreen,
-            };
+            var newForm = mainContainer.GetInstance<FrmFishPrint>();
+            newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
+            newForm.StartPosition = FormStartPosition.CenterScreen;
             newForm.ShowDialog();
         }
 

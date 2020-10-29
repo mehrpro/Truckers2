@@ -19,13 +19,13 @@ namespace TruckerApp.Repository
         /// </summary>
         /// <param name="typrId">شناسه بار</param>
         /// <returns></returns>
-        Task<List<ReportList>> GetAllReportListByType(byte typeId);
+        Task<List<ViewModelReportList>> GetAllReportListByType(byte typeId);
         /// <summary>
         /// لیست بارنامه های صادره شده امروز براساس نوع بار
         /// </summary>
         /// <param name="typeId">شناسه نوع بار</param>
         /// <returns></returns>
-        Task<List<ReportList>> GetLastSeriesReportListByType(byte typeId);
+        Task<List<ViewModelReportList>> GetLastSeriesReportListByType(byte typeId);
         /// <summary>
         /// تعداد حواله های مانده روز براساس نوع حواله
         /// </summary>
@@ -50,20 +50,20 @@ namespace TruckerApp.Repository
     /// </summary>
     public class CustomReport : ICustomReport
     {
-        private readonly TruckersEntities _db;
+        private readonly TruckersEntities db;
 
         public CustomReport(TruckersEntities db)
         {
-            this._db = db;
+            this.db = db;
         }
-        public async Task<List<ReportList>> GetAllReportListByType(byte typeId)
+        public async Task<List<ViewModelReportList>> GetAllReportListByType(byte typeId)
         {
-            var queryAll = await _db.Queues.Where(x => x.Status_FK == 20 && x.Type_FK == typeId).OrderBy(x => x.ID).ToListAsync();
-            var listResult = new List<ReportList>();
+            var queryAll = await db.Queues.Where(x => x.Status_FK == 20 && x.Type_FK == typeId).OrderBy(x => x.ID).ToListAsync();
+            var listResult = new List<ViewModelReportList>();
             int con = 1;
             foreach (var item in queryAll)
             {
-                listResult.Add(new ReportList
+                listResult.Add(new ViewModelReportList
                 {
                     Counter = con++,
                     Number = $"({item.SeriesPrice.SeriesName})-{item.Number}",
@@ -77,14 +77,14 @@ namespace TruckerApp.Repository
             return listResult.OrderBy(x => x.Typeid).ToList();
         }
 
-        public async Task<List<ReportList>> GetLastSeriesReportListByType(byte typeId)
+        public async Task<List<ViewModelReportList>> GetLastSeriesReportListByType(byte typeId)
         {
-            var queryAll = await _db.Queues.Where(x => x.Status_FK == 20 && x.Type_FK == typeId && x.SeriesID_FK == PublicVar.SeriesID).OrderBy(x => x.ID).ToListAsync();
-            var listResult = new List<ReportList>();
+            var queryAll = await db.Queues.Where(x => x.Status_FK == 20 && x.Type_FK == typeId && x.SeriesID_FK == PublicVar.SeriesID).OrderBy(x => x.ID).ToListAsync();
+            var listResult = new List<ViewModelReportList>();
             int con = 1;
             foreach (var item in queryAll)
             {
-                listResult.Add(new ReportList
+                listResult.Add(new ViewModelReportList
                 {
                     Counter = con++,
                     Number = $"({item.SeriesPrice.SeriesName})-{item.Number}",
@@ -100,17 +100,17 @@ namespace TruckerApp.Repository
 
         public async Task<int> CountOfStatus20_LastSeries(byte typeId)
         {
-            return await _db.Queues.CountAsync(x => x.Status_FK == 20 && x.Type_FK == typeId && x.SeriesID_FK == PublicVar.SeriesID);
+            return await db.Queues.CountAsync(x => x.Status_FK == 20 && x.Type_FK == typeId && x.SeriesID_FK == PublicVar.SeriesID);
         }
 
         public async Task<int> CountOfStatus20_All(byte typeId)
         {
-            return await _db.Queues.CountAsync(x => x.Status_FK == 20 && x.Type_FK == typeId);
+            return await db.Queues.CountAsync(x => x.Status_FK == 20 && x.Type_FK == typeId);
         }
 
         public async Task<int> CountOfStatus20_Old(byte typeId)
         {
-            return await _db.Queues.CountAsync(x => x.Status_FK == 20 && x.Type_FK == typeId && x.SeriesID_FK != PublicVar.SeriesID);
+            return await db.Queues.CountAsync(x => x.Status_FK == 20 && x.Type_FK == typeId && x.SeriesID_FK != PublicVar.SeriesID);
         }
     }
 }

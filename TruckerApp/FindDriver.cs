@@ -8,9 +8,9 @@ namespace TruckerApp
 {
   public  static class FindDriver
     {
-        public static Driver FindByPlate(this string resultEn,TruckersEntities db)
+        public static Driver FindByPlate(this string resultEn, TruckersEntities db)
         {
-                return  db.Drivers.FirstOrDefault(x => x.Tag == resultEn);
+            return db.Drivers.FirstOrDefault(x => x.Tag == resultEn);
         }
         public static bool CheckPlateAny(this string plateEn, TruckersEntities db)
         {

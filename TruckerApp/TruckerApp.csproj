@@ -100,6 +100,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="PresentationCore" />
+    <Reference Include="StructureMap, Version=4.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StructureMap.4.7.1\lib\net45\StructureMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -137,6 +141,7 @@
       <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
     <Compile Include="ExtentionMethod\ExtendMethods.cs" />
+    <Compile Include="ExtentionMethod\TypeRegistery.cs" />
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +155,7 @@
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Repository\ICustomReport.cs" />
+    <Compile Include="Repository\IQueuing.cs" />
     <Compile Include="SLPRPropertyGrid.cs" />
     <Compile Include="UserForm\Administrator\FrmEmailSetting.cs">
       <SubType>Form</SubType>
@@ -311,7 +317,8 @@
     <Compile Include="UserForm\Reporting\FrmPrintList.Designer.cs">
       <DependentUpon>FrmPrintList.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\ReportList.cs" />
+    <Compile Include="ViewModels\ViewModelCargoType.cs" />
+    <Compile Include="ViewModels\ViewModelReportList.cs" />
     <Compile Include="UserRect.cs" />
     <Compile Include="XRDesignRibbonControllerResources.Designer.cs">
       <AutoGen>True</AutoGen>

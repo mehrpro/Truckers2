@@ -13,24 +13,22 @@ namespace TruckerApp
     public partial class FrmPrintList : XtraForm
     {
         private readonly ICustomReport _customReport;
-        private TruckersEntities db;
         public byte TypeId { get; set; }
-        public FrmPrintList()
+        public FrmPrintList(ICustomReport customReport)
         {
             InitializeComponent();
-            db = new TruckersEntities();
-            _customReport = new CustomReport(db);
-          
+            _customReport = customReport;
+
         }
-        
-        private async  void Grid()
+
+        private async void Grid()
         {
             txtTotal.EditValue = await _customReport.CountOfStatus20_All(TypeId);
             txtNew.EditValue = await _customReport.CountOfStatus20_LastSeries(TypeId);
             txtLast.EditValue = await _customReport.CountOfStatus20_Old(TypeId);
-            
+
             if (chkLastFish.IsOn)
-                gridControl1.DataSource = await  _customReport.GetAllReportListByType(TypeId);
+                gridControl1.DataSource = await _customReport.GetAllReportListByType(TypeId);
             else
                 gridControl1.DataSource = await _customReport.GetLastSeriesReportListByType(TypeId);
 
