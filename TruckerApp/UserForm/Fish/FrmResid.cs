@@ -1,42 +1,41 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using TruckerApp.Repository;
+using TruckerApp.ViewModels.Queueing;
 
 namespace TruckerApp.UserForm.Fish
 {
     public partial class FrmResid : XtraForm
     {
-        public FrmResid()
+        private readonly ICustomReport _report;
+        private List<ViewModelNumberList> _dsAccept;
+        private List<ViewModelNumberList> _dsList;
+
+        public FrmResid(ICustomReport report)
         {
+            _report = report;
             InitializeComponent();
-      
+            Clear();
+            
         }
 
-        private TruckersEntities db = new TruckersEntities();
-        private BindingList<NumberList> dsAccept;
-        private BindingList<NumberList> dsList;
-
-        private void ListResied(int typr)
+        private void Clear()
         {
-            dsAccept = new BindingList<NumberList>();
-            dsList = new BindingList<NumberList>();
-            var qry = db.Queues.Where(x => x.Status_FK == 20 && x.Type_FK==typr).ToList();
-            if (qry.Count > 0)
-            {
-                foreach (var itemQueue in qry)
-                {
-                    var id = itemQueue.ID;
-                    var name = $"{itemQueue.Driver.FirstName} {itemQueue.Driver.LastName}";
-                    var tag = $"{itemQueue.Driver.TagNumber}";
-                    var date = itemQueue.DateTimeRegister;
-                    dsList.Add(new NumberList(id,itemQueue.SeriesPrice.SeriesName, itemQueue.Number, name, tag, date));
-                }
-   
-            }
-            gridControlTop.DataSource = dsList.ToList();
-            gridControlBotten.DataSource = dsAccept.ToList();
+            _dsAccept = new List<ViewModelNumberList>();
+            _dsList = new List<ViewModelNumberList>();
+            gridControlTop.DataSource = _dsList;
+            gridControlBotten.DataSource = _dsAccept;
+
+        }
+        private async void ListResied(byte typeId)
+        {
+            Clear();
+            gridControlTop.DataSource = _dsList = await _report.GetQueueStatus20ByTypeID(typeId);
+            gridControlBotten.DataSource = _dsAccept.ToList();
         }
 
         private void btnDeleteRow_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -44,11 +43,11 @@ namespace TruckerApp.UserForm.Fish
             if (gridView1.GetFocusedRowCellValue("Serial") != null)
             {
                 var sel = gridView1.GetFocusedRow();
-                var id = (NumberList) sel;
-                dsList.Remove(id);
-                dsAccept.Add(id);
-                gridControlTop.DataSource = dsList.ToList();
-                gridControlBotten.DataSource = dsAccept.ToList();
+                var id = (ViewModelNumberList) sel;
+                _dsList.Remove(id);
+                _dsAccept.Add(id);
+                gridControlTop.DataSource = _dsList.ToList();
+                gridControlBotten.DataSource = _dsAccept.ToList();
             }
         }
 
@@ -64,38 +63,27 @@ namespace TruckerApp.UserForm.Fish
 
         private void repositoryItemButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            if (gridView2.GetFocusedRowCellValue("Serial") == null)
-            {
-
-            }
-            else
-            {
-                var sel = gridView2.GetFocusedRow();
-                var id = (NumberList)sel;
-                dsAccept.Remove(id);
-                dsList.Add(id);
-                gridControlTop.DataSource = dsList.ToList();
-                gridControlBotten.DataSource = dsAccept.ToList();
-            }
+            if (gridView2.GetFocusedRowCellValue("Serial") == null)return;
+            var sel = gridView2.GetFocusedRow();
+            var id = (ViewModelNumberList)sel;
+            _dsAccept.Remove(id);
+            _dsList.Add(id);
+            gridControlTop.DataSource = _dsList.ToList();
+            gridControlBotten.DataSource = _dsAccept.ToList();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            try
+            if (_dsAccept.Count<1)return;
+            
+            var result = _report.SaveAcceptListQueue23(_dsAccept);
+            if (result)
             {
-                foreach (var item in dsAccept)
-                {
-                    db.Queues.Find(item.ID).Status_FK = 23;
-                }
-                db.SaveChanges();
-                XtraMessageBox.Show("ثبت شد",Text,MessageBoxButtons.OK,MessageBoxIcon.Information);
-                Close();
+                XtraMessageBox.Show("ثبت شد", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+              Clear();
             }
-            catch
-            {
-                XtraMessageBox.Show("ذخیره نشد مجدد تلاش کنید",Text,MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
-
+            else
+                XtraMessageBox.Show("ذخیره نشد مجدد تلاش کنید", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -129,26 +117,6 @@ namespace TruckerApp.UserForm.Fish
         {
             ListResied(7);
 
-        }
-    }
-
-    public class NumberList
-    {
-        public int Serial { get; }
-        public short Number { get; }
-        public string Tag { get; }
-        public DateTime Date { get; }
-        public int ID { get; }
-        public string Name { get; }
-        
-        public NumberList(int id, int serial,short number,string name,string tag,DateTime date)
-        {
-            ID = id;
-            Serial = serial;
-            Number = number;
-            Tag = tag;
-            Date = date;
-            Name = name;
         }
     }
 }

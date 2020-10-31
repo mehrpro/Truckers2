@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TruckerApp.UserForm.cash
+namespace TruckerApp.ViewModels
 {
     public class TotalCashList
     {

@@ -26,7 +26,7 @@ namespace TruckerApp.UserForm.Fish
         private int _commission;
         private short _commissionId;//حق کمیسیون
         private string _name, _number, _smartcart, _tagnumber, _type;
-        private byte TypeId { get; set; }
+        //private byte TypeId;
         private byte _group;
         //private string _price;
         private string _memeber;
@@ -342,46 +342,7 @@ namespace TruckerApp.UserForm.Fish
             StopEveryThing();
         }
 
-        private void SelectType()
-        {
-            switch (TypeId)
-            {
-                case 1:
-                    _type = "فله";
-                    groupControl1.Text = "صدور حواله فله";
-                    break;
-                case 2:
-                    _type = "پاکت";
-                    groupControl1.Text = "صدور حواله پاکت";
 
-                    break;
-                case 3:
-                    _type = "گندم";
-                    groupControl1.Text = "صدور حواله غلات";
-
-                    break;
-                case 4:
-                    _type = "کلینکر";
-                    groupControl1.Text = "صدور حواله کلینکر";
-
-                    break;
-                case 5:
-                    _type = "آهک فله";
-                    groupControl1.Text = "صدور حواله آهک فله";
-
-                    break;
-                case 6:
-                    _type = "آهک پاکت";
-                    groupControl1.Text = "صدور حواله آهک پاکت";
-
-                    break;
-                case 7:
-                    _type = "متفرقه";
-                    groupControl1.Text = "صدور حواله متفرقه";
-
-                    break;
-            }
-        }
 
 
         private async void cbxCargoType_EditValueChanged(object sender, EventArgs e)
@@ -453,7 +414,8 @@ namespace TruckerApp.UserForm.Fish
         private void btnClose_Click(object sender, EventArgs e)
         {
             StopEveryThing();
-            Close();
+            Environment.Exit(0);
+            //Close();
         }
         private void btnRefreshPlayer_Click(object sender, EventArgs e)
         {
@@ -567,6 +529,34 @@ namespace TruckerApp.UserForm.Fish
             report.Parameters["code"].Value = _code;
             tool.PrintDialog();
         }
+        private void ClearForm()
+        {
+            txtDateRegister.Text = DateTime.Now.PersianConvertor();
+            cbxCargoType.EditValue = 0;
+            txtHosmand.ResetText();
+            txtName.ResetText();
+            txtTag.ResetText();
+            txtTagNumber.ResetText();
+            txtPhoneNumber.ResetText();
+            txtComossin.ResetText();
+            _driver=_commission = 0;
+            _code = _name = _number = _smartcart = _tagnumber = _memeber = _type = null;
+
+            //var driver = (Driver)cbxSmart.GetSelectedDataRow();
+            //if (driver == null) return;
+            //_code = Convert.ToInt32(driver.driver_code) > 0 ? driver.driver_code.ToString() : " ";
+            //txtName.Text = _name = $"{driver.FirstName}  {driver.LastName}";
+            ////txtTag.Text =  driver.Tag;
+            //txtTagNumber.Text = _tagnumber = driver.TagNumber;
+            //txtPhoneNumber.Text = driver.PhoneNumber;
+            //_driver = driver.DriverID;
+            //_smartcart = driver.SmartCart.ToString();
+            //_group = driver.GroupID;
+            //_memeber = driver.LoadType.Type;
+
+        }
+
+
         private void GetPropertyByDriver(Driver driver)
         {
             //var driver = (Driver)cbxSmart.GetSelectedDataRow();
@@ -584,68 +574,6 @@ namespace TruckerApp.UserForm.Fish
             btnPlay.Enabled = true;
             btnStop.Enabled = false;
         }
-        private void cbxSmart_EditValueChanged(object sender, EventArgs e)
-        {
-            //var driver = (Driver)cbxSmart.GetSelectedDataRow();
-            //if (driver == null) return;
-            //_code = Convert.ToInt32(driver.driver_code) > 0 ? driver.driver_code.ToString() : " ";
-            //txtName.Text = _name = $"{driver.FirstName}  {driver.LastName}";
-            ////txtTag.Text =  driver.Tag;
-            //txtTagNumber.Text = _tagnumber = driver.TagNumber;
-            //txtPhoneNumber.Text = driver.PhoneNumber;
-            //_driver = driver.DriverID;
-            //_smartcart = driver.SmartCart.ToString();
-            //_group = driver.GroupID;
-            //_memeber = driver.LoadType.Type;
-            //if (_group == 30)
-            //{
-            //    if (TypeId == 4)
-            //    {
-            //        var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 13);
-            //        _commissionId = qry.CommissionID;
-            //        _commission = qry.CommissionPrice;
-
-            //    }
-            //    else
-            //    {
-            //        var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 14);
-            //        _commissionId = qry.CommissionID;
-            //        _commission = qry.CommissionPrice;
-            //    }
-            //}
-            //else if (_group == 31)
-            //{
-            //    if (TypeId == 4)
-            //    {
-            //        var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 17);
-            //        _commissionId = qry.CommissionID;
-            //        _commission = qry.CommissionPrice;
-            //    }
-            //    else
-            //    {
-            //        var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 15);
-            //        _commissionId = qry.CommissionID;
-            //        _commission = qry.CommissionPrice;
-            //    }
-            //}
-            //else if (_group == 32)
-            //{
-            //    if (TypeId == 4)
-            //    {
-            //        var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 18);
-            //        _commissionId = qry.CommissionID;
-            //        _commission = qry.CommissionPrice;
-            //    }
-
-            //    else
-            //    {
-            //        var qry = Queryable.SingleOrDefault<TruckerApp.Commission>(_db.Commissions, x => x.enabled && x.Groups_FK == 16);
-            //        _commissionId = qry.CommissionID;
-            //        _commission = qry.CommissionPrice;
-            //    }
-            //}
-            //txtComossin.Text = _commission.ToString();
-        }
 
         private async void FrmFishPrint_Load(object sender, EventArgs e)
         {
@@ -656,8 +584,8 @@ namespace TruckerApp.UserForm.Fish
             sel_rect2 = new UserRect(roi2);
             sel_rect2.SetPictureBox(null);
             setupPage();
-            txtDateRegister.Text = DateTime.Now.PersianConvertorFull();
-            SelectType();
+            txtDateRegister.Text = DateTime.Now.PersianConvertor();
+           // SelectType();
             StartPlayerVLC(true);
         }
 
@@ -723,6 +651,7 @@ namespace TruckerApp.UserForm.Fish
                     }
                 }
             }
+            
         }
 
 

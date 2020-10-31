@@ -82,26 +82,23 @@ namespace TruckerApp
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
-            var newForm = new FrmRevFish()
-            {
-                FormBorderStyle = FormBorderStyle.FixedSingle,
-                StartPosition = FormStartPosition.CenterScreen,
-            };
+            var newForm = _mainContainer.GetInstance<FrmRevFish>();
+            //newForm.FormBorderStyle = FormBorderStyle.Sizable;
+            //newForm.WindowState = FormWindowState.Maximized;
+           // newForm.MaximizeBox = newForm.MinimizeBox = true;
+            newForm.StartPosition = FormStartPosition.CenterParent;
             newForm.ShowDialog();
         }
 
         private void btnHavaleh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (var c in MdiChildren) c.Close();
-            var newForm = new FrmQueueList()
-            {
-                FormBorderStyle = FormBorderStyle.None,
-                MdiParent = this,
-                StartPosition = FormStartPosition.CenterParent,
-                Dock = DockStyle.Fill
-            };
-            newForm.Show();
+
+            var newForm = _mainContainer.GetInstance<FrmQueueList>();
+            newForm.FormBorderStyle = FormBorderStyle.Sizable;
+            newForm.WindowState = FormWindowState.Maximized;
+            newForm.MaximizeBox = newForm.MinimizeBox = true;
+            newForm.StartPosition = FormStartPosition.CenterParent;
+            newForm.ShowDialog();
         }
 
         private void btnCasheStatus_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -145,18 +142,26 @@ namespace TruckerApp
             {
                 ribSetting.Visible = false;
             }
-            foreach (var c in this.MdiChildren)
-            {
-                c.Close();
-            }
-            var newForm = new FrmFishPanel()
-            {
-                FormBorderStyle = FormBorderStyle.None,
-                MdiParent = this,
-                StartPosition = FormStartPosition.CenterParent,
-                Dock = DockStyle.Fill
-            };
-            newForm.Show();
+            //foreach (var c in this.MdiChildren)
+            //{
+            //    c.Close();
+            //}
+            //var newForm = new FrmFishPanel()
+            //{
+            //    FormBorderStyle = FormBorderStyle.None,
+            //    MdiParent = this,
+            //    StartPosition = FormStartPosition.CenterParent,
+            //    Dock = DockStyle.Fill
+            //};
+            //newForm.Show();
+
+            var frm = _mainContainer.GetInstance<FrmFishPrint>();
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.MdiParent = this;
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -244,24 +249,18 @@ namespace TruckerApp
 
         private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //foreach (var c in this.MdiChildren)
-            //{
-            //    c.Close();
-            //}
-            var newForm = new FrmResid().ShowDialog();
-            //{
-            //    FormBorderStyle = FormBorderStyle.None,
-            //    MdiParent = this,
-            //    StartPosition = FormStartPosition.CenterParent,
-            //    Dock = DockStyle.Fill
-            //};
-            //newForm.Show();
+            var newForm = _mainContainer.GetInstance<FrmResid>();
+            newForm.FormBorderStyle = FormBorderStyle.Sizable;
+            newForm.WindowState = FormWindowState.Maximized;
+            newForm.MaximizeBox = newForm.MinimizeBox = true;
+            newForm.StartPosition = FormStartPosition.CenterParent;
+            newForm.ShowDialog();
         }
+
+
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
-
             var newForm = _mainContainer.GetInstance<FrmMembershipList>();
             newForm.StartPosition = FormStartPosition.CenterScreen;
             newForm.FormBorderStyle = FormBorderStyle.Sizable;
@@ -283,11 +282,8 @@ namespace TruckerApp
 
         private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var newForm = new FrmRevFish3()
-            {
-                FormBorderStyle = FormBorderStyle.None,
-                StartPosition = FormStartPosition.CenterScreen,
-            };
+            var newForm = _mainContainer.GetInstance<FrmRevFish3>();
+            newForm.StartPosition = FormStartPosition.CenterParent;
             newForm.ShowDialog();
         }
 

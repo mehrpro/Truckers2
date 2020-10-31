@@ -36,6 +36,7 @@
             this.cntTotal = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
             this.digitalBackgroundLayerComponent5 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.btnDaftarRozaneh = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
@@ -84,7 +85,6 @@
             this.cntPacket = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
             this.digitalBackgroundLayerComponent1 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDaftarRozaneh = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cntTotal)).BeginInit();
@@ -148,14 +148,14 @@
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.AppearanceCaption.Options.UseTextOptions = true;
             this.groupControl1.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.groupControl1.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImage")));
+            this.groupControl1.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImageOptions.Image")));
             this.groupControl1.Controls.Add(this.gaugeControl5);
             this.groupControl1.Controls.Add(this.panelControl3);
             this.groupControl1.Controls.Add(this.panelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1114, 737);
+            this.groupControl1.Size = new System.Drawing.Size(1114, 532);
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "میزکار";
             // 
@@ -164,7 +164,7 @@
             this.gaugeControl5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gaugeControl5.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
             this.cntTotal});
-            this.gaugeControl5.Location = new System.Drawing.Point(2, 628);
+            this.gaugeControl5.Location = new System.Drawing.Point(2, 423);
             this.gaugeControl5.Name = "gaugeControl5";
             this.gaugeControl5.Size = new System.Drawing.Size(1110, 107);
             this.gaugeControl5.TabIndex = 6;
@@ -199,18 +199,32 @@
             this.panelControl3.Controls.Add(this.simpleButton8);
             this.panelControl3.Controls.Add(this.simpleButton6);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl3.Location = new System.Drawing.Point(2, 277);
+            this.panelControl3.Location = new System.Drawing.Point(2, 195);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1110, 163);
             this.panelControl3.TabIndex = 5;
+            // 
+            // btnDaftarRozaneh
+            // 
+            this.btnDaftarRozaneh.Appearance.Font = new System.Drawing.Font("B Yekan", 18F);
+            this.btnDaftarRozaneh.Appearance.Options.UseFont = true;
+            this.btnDaftarRozaneh.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnDaftarRozaneh.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_list_48;
+            this.btnDaftarRozaneh.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btnDaftarRozaneh.Location = new System.Drawing.Point(208, 2);
+            this.btnDaftarRozaneh.Name = "btnDaftarRozaneh";
+            this.btnDaftarRozaneh.Size = new System.Drawing.Size(150, 159);
+            this.btnDaftarRozaneh.TabIndex = 7;
+            this.btnDaftarRozaneh.Text = "دفتر روزانه\r\n فروش";
+            this.btnDaftarRozaneh.Click += new System.EventHandler(this.btnDaftarRozaneh_Click);
             // 
             // simpleButton4
             // 
             this.simpleButton4.Appearance.Font = new System.Drawing.Font("B Yekan", 18F);
             this.simpleButton4.Appearance.Options.UseFont = true;
             this.simpleButton4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.simpleButton4.Image = global::TruckerApp.Properties.Resources.icons8_file_delete_64;
-            this.simpleButton4.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton4.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_file_delete_64;
+            this.simpleButton4.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.simpleButton4.Location = new System.Drawing.Point(358, 2);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(150, 159);
@@ -223,8 +237,8 @@
             this.simpleButton7.Appearance.Font = new System.Drawing.Font("B Yekan", 18F);
             this.simpleButton7.Appearance.Options.UseFont = true;
             this.simpleButton7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.simpleButton7.Image = global::TruckerApp.Properties.Resources.icons8_driver_64;
-            this.simpleButton7.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton7.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_driver_64;
+            this.simpleButton7.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.simpleButton7.Location = new System.Drawing.Point(508, 2);
             this.simpleButton7.Name = "simpleButton7";
             this.simpleButton7.Size = new System.Drawing.Size(150, 159);
@@ -237,8 +251,8 @@
             this.simpleButton5.Appearance.Font = new System.Drawing.Font("B Yekan", 18F);
             this.simpleButton5.Appearance.Options.UseFont = true;
             this.simpleButton5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.simpleButton5.Image = global::TruckerApp.Properties.Resources.icons8_undo_64;
-            this.simpleButton5.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton5.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_undo_64;
+            this.simpleButton5.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.simpleButton5.Location = new System.Drawing.Point(658, 2);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(150, 159);
@@ -251,8 +265,8 @@
             this.simpleButton8.Appearance.Font = new System.Drawing.Font("B Yekan", 18F);
             this.simpleButton8.Appearance.Options.UseFont = true;
             this.simpleButton8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.simpleButton8.Image = global::TruckerApp.Properties.Resources.icons8_cash_receipt_64;
-            this.simpleButton8.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton8.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_cash_receipt_64;
+            this.simpleButton8.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.simpleButton8.Location = new System.Drawing.Point(808, 2);
             this.simpleButton8.Name = "simpleButton8";
             this.simpleButton8.Size = new System.Drawing.Size(150, 159);
@@ -265,8 +279,8 @@
             this.simpleButton6.Appearance.Font = new System.Drawing.Font("B Yekan", 18F);
             this.simpleButton6.Appearance.Options.UseFont = true;
             this.simpleButton6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.simpleButton6.Image = global::TruckerApp.Properties.Resources.icons8_driver_64;
-            this.simpleButton6.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton6.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_driver_64;
+            this.simpleButton6.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.simpleButton6.Location = new System.Drawing.Point(958, 2);
             this.simpleButton6.Name = "simpleButton6";
             this.simpleButton6.Size = new System.Drawing.Size(150, 159);
@@ -284,9 +298,9 @@
             this.panelControl1.Controls.Add(this.panelControl6);
             this.panelControl1.Controls.Add(this.panelControl4);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(2, 39);
+            this.panelControl1.Location = new System.Drawing.Point(2, 43);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1110, 238);
+            this.panelControl1.Size = new System.Drawing.Size(1110, 152);
             this.panelControl1.TabIndex = 2;
             // 
             // panelControl16
@@ -296,7 +310,7 @@
             this.panelControl16.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl16.Location = new System.Drawing.Point(58, 2);
             this.panelControl16.Name = "panelControl16";
-            this.panelControl16.Size = new System.Drawing.Size(150, 234);
+            this.panelControl16.Size = new System.Drawing.Size(150, 148);
             this.panelControl16.TabIndex = 6;
             // 
             // panelControl17
@@ -305,7 +319,7 @@
             this.panelControl17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl17.Location = new System.Drawing.Point(2, 2);
             this.panelControl17.Name = "panelControl17";
-            this.panelControl17.Size = new System.Drawing.Size(146, 85);
+            this.panelControl17.Size = new System.Drawing.Size(146, 86);
             this.panelControl17.TabIndex = 8;
             // 
             // gaugeControl8
@@ -315,7 +329,7 @@
             this.cntothertype});
             this.gaugeControl8.Location = new System.Drawing.Point(2, 2);
             this.gaugeControl8.Name = "gaugeControl8";
-            this.gaugeControl8.Size = new System.Drawing.Size(142, 81);
+            this.gaugeControl8.Size = new System.Drawing.Size(142, 82);
             this.gaugeControl8.TabIndex = 0;
             // 
             // cntothertype
@@ -324,7 +338,7 @@
             this.cntothertype.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#FF5000");
             this.cntothertype.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
             this.cntOther});
-            this.cntothertype.Bounds = new System.Drawing.Rectangle(6, 6, 130, 69);
+            this.cntothertype.Bounds = new System.Drawing.Rectangle(6, 6, 130, 70);
             this.cntothertype.DigitCount = 3;
             this.cntothertype.Name = "cntothertype";
             this.cntothertype.RightToLeft = true;
@@ -343,11 +357,10 @@
             this.simpleButton11.Appearance.Font = new System.Drawing.Font("B Yekan", 18F);
             this.simpleButton11.Appearance.Options.UseFont = true;
             this.simpleButton11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.simpleButton11.Image = global::TruckerApp.Properties.Resources.icons8_bill_96;
-            this.simpleButton11.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton11.Location = new System.Drawing.Point(2, 87);
+            this.simpleButton11.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton11.Location = new System.Drawing.Point(2, 88);
             this.simpleButton11.Name = "simpleButton11";
-            this.simpleButton11.Size = new System.Drawing.Size(146, 145);
+            this.simpleButton11.Size = new System.Drawing.Size(146, 58);
             this.simpleButton11.TabIndex = 7;
             this.simpleButton11.Text = "سایر";
             this.simpleButton11.Click += new System.EventHandler(this.simpleButton11_Click);
@@ -359,7 +372,7 @@
             this.panelControl14.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl14.Location = new System.Drawing.Point(208, 2);
             this.panelControl14.Name = "panelControl14";
-            this.panelControl14.Size = new System.Drawing.Size(150, 234);
+            this.panelControl14.Size = new System.Drawing.Size(150, 148);
             this.panelControl14.TabIndex = 5;
             // 
             // panelControl15
@@ -368,7 +381,7 @@
             this.panelControl15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl15.Location = new System.Drawing.Point(2, 2);
             this.panelControl15.Name = "panelControl15";
-            this.panelControl15.Size = new System.Drawing.Size(146, 85);
+            this.panelControl15.Size = new System.Drawing.Size(146, 86);
             this.panelControl15.TabIndex = 8;
             // 
             // gaugeControl7
@@ -378,7 +391,7 @@
             this.cntahakPakat});
             this.gaugeControl7.Location = new System.Drawing.Point(2, 2);
             this.gaugeControl7.Name = "gaugeControl7";
-            this.gaugeControl7.Size = new System.Drawing.Size(142, 81);
+            this.gaugeControl7.Size = new System.Drawing.Size(142, 82);
             this.gaugeControl7.TabIndex = 0;
             // 
             // cntahakPakat
@@ -387,7 +400,7 @@
             this.cntahakPakat.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#C0C000");
             this.cntahakPakat.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
             this.cntAhakPackat});
-            this.cntahakPakat.Bounds = new System.Drawing.Rectangle(6, 6, 130, 69);
+            this.cntahakPakat.Bounds = new System.Drawing.Rectangle(6, 6, 130, 70);
             this.cntahakPakat.DigitCount = 3;
             this.cntahakPakat.Name = "cntahakPakat";
             this.cntahakPakat.RightToLeft = true;
@@ -406,11 +419,10 @@
             this.simpleButton10.Appearance.Font = new System.Drawing.Font("B Yekan", 18F);
             this.simpleButton10.Appearance.Options.UseFont = true;
             this.simpleButton10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.simpleButton10.Image = global::TruckerApp.Properties.Resources.icons8_bill_96;
-            this.simpleButton10.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton10.Location = new System.Drawing.Point(2, 87);
+            this.simpleButton10.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton10.Location = new System.Drawing.Point(2, 88);
             this.simpleButton10.Name = "simpleButton10";
-            this.simpleButton10.Size = new System.Drawing.Size(146, 145);
+            this.simpleButton10.Size = new System.Drawing.Size(146, 58);
             this.simpleButton10.TabIndex = 7;
             this.simpleButton10.Text = "آهک پاکت";
             this.simpleButton10.Click += new System.EventHandler(this.simpleButton10_Click);
@@ -422,7 +434,7 @@
             this.panelControl12.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl12.Location = new System.Drawing.Point(358, 2);
             this.panelControl12.Name = "panelControl12";
-            this.panelControl12.Size = new System.Drawing.Size(150, 234);
+            this.panelControl12.Size = new System.Drawing.Size(150, 148);
             this.panelControl12.TabIndex = 4;
             // 
             // panelControl13
@@ -431,7 +443,7 @@
             this.panelControl13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl13.Location = new System.Drawing.Point(2, 2);
             this.panelControl13.Name = "panelControl13";
-            this.panelControl13.Size = new System.Drawing.Size(146, 85);
+            this.panelControl13.Size = new System.Drawing.Size(146, 86);
             this.panelControl13.TabIndex = 8;
             // 
             // gaugeControl6
@@ -441,7 +453,7 @@
             this.cntahakfalae});
             this.gaugeControl6.Location = new System.Drawing.Point(2, 2);
             this.gaugeControl6.Name = "gaugeControl6";
-            this.gaugeControl6.Size = new System.Drawing.Size(142, 81);
+            this.gaugeControl6.Size = new System.Drawing.Size(142, 82);
             this.gaugeControl6.TabIndex = 0;
             // 
             // cntahakfalae
@@ -450,7 +462,7 @@
             this.cntahakfalae.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#FF5000");
             this.cntahakfalae.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
             this.cntAhakFaleh});
-            this.cntahakfalae.Bounds = new System.Drawing.Rectangle(6, 6, 130, 69);
+            this.cntahakfalae.Bounds = new System.Drawing.Rectangle(6, 6, 130, 70);
             this.cntahakfalae.DigitCount = 3;
             this.cntahakfalae.Name = "cntahakfalae";
             this.cntahakfalae.RightToLeft = true;
@@ -468,11 +480,10 @@
             this.simpleButton9.Appearance.Font = new System.Drawing.Font("B Yekan", 18F);
             this.simpleButton9.Appearance.Options.UseFont = true;
             this.simpleButton9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.simpleButton9.Image = global::TruckerApp.Properties.Resources.icons8_bill_96;
-            this.simpleButton9.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton9.Location = new System.Drawing.Point(2, 87);
+            this.simpleButton9.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton9.Location = new System.Drawing.Point(2, 88);
             this.simpleButton9.Name = "simpleButton9";
-            this.simpleButton9.Size = new System.Drawing.Size(146, 145);
+            this.simpleButton9.Size = new System.Drawing.Size(146, 58);
             this.simpleButton9.TabIndex = 7;
             this.simpleButton9.Text = "آهک فله";
             this.simpleButton9.Click += new System.EventHandler(this.simpleButton9_Click);
@@ -484,7 +495,7 @@
             this.panelControl10.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl10.Location = new System.Drawing.Point(508, 2);
             this.panelControl10.Name = "panelControl10";
-            this.panelControl10.Size = new System.Drawing.Size(150, 234);
+            this.panelControl10.Size = new System.Drawing.Size(150, 148);
             this.panelControl10.TabIndex = 3;
             // 
             // panelControl11
@@ -493,7 +504,7 @@
             this.panelControl11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl11.Location = new System.Drawing.Point(2, 2);
             this.panelControl11.Name = "panelControl11";
-            this.panelControl11.Size = new System.Drawing.Size(146, 85);
+            this.panelControl11.Size = new System.Drawing.Size(146, 86);
             this.panelControl11.TabIndex = 1;
             // 
             // gaugeControl3
@@ -504,7 +515,7 @@
             this.cntGandom});
             this.gaugeControl3.Location = new System.Drawing.Point(2, 2);
             this.gaugeControl3.Name = "gaugeControl3";
-            this.gaugeControl3.Size = new System.Drawing.Size(142, 81);
+            this.gaugeControl3.Size = new System.Drawing.Size(142, 82);
             this.gaugeControl3.TabIndex = 1;
             // 
             // cntGandom
@@ -532,11 +543,10 @@
             this.simpleButton3.Appearance.Font = new System.Drawing.Font("B Yekan", 18F);
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.simpleButton3.Image = global::TruckerApp.Properties.Resources.icons8_bill_96;
-            this.simpleButton3.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton3.Location = new System.Drawing.Point(2, 87);
+            this.simpleButton3.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton3.Location = new System.Drawing.Point(2, 88);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(146, 145);
+            this.simpleButton3.Size = new System.Drawing.Size(146, 58);
             this.simpleButton3.TabIndex = 0;
             this.simpleButton3.Text = "غلات";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
@@ -548,7 +558,7 @@
             this.panelControl8.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl8.Location = new System.Drawing.Point(658, 2);
             this.panelControl8.Name = "panelControl8";
-            this.panelControl8.Size = new System.Drawing.Size(150, 234);
+            this.panelControl8.Size = new System.Drawing.Size(150, 148);
             this.panelControl8.TabIndex = 2;
             // 
             // panelControl9
@@ -557,7 +567,7 @@
             this.panelControl9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl9.Location = new System.Drawing.Point(2, 2);
             this.panelControl9.Name = "panelControl9";
-            this.panelControl9.Size = new System.Drawing.Size(146, 85);
+            this.panelControl9.Size = new System.Drawing.Size(146, 86);
             this.panelControl9.TabIndex = 1;
             // 
             // gaugeControl2
@@ -567,7 +577,7 @@
             this.cntFalah});
             this.gaugeControl2.Location = new System.Drawing.Point(2, 2);
             this.gaugeControl2.Name = "gaugeControl2";
-            this.gaugeControl2.Size = new System.Drawing.Size(142, 81);
+            this.gaugeControl2.Size = new System.Drawing.Size(142, 82);
             this.gaugeControl2.TabIndex = 1;
             // 
             // cntFalah
@@ -576,7 +586,7 @@
             this.cntFalah.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#FF5000");
             this.cntFalah.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
             this.digitalBackgroundLayerComponent2});
-            this.cntFalah.Bounds = new System.Drawing.Rectangle(6, 6, 130, 69);
+            this.cntFalah.Bounds = new System.Drawing.Rectangle(6, 6, 130, 70);
             this.cntFalah.DigitCount = 3;
             this.cntFalah.Name = "cntFalah";
             this.cntFalah.RightToLeft = true;
@@ -595,11 +605,10 @@
             this.btnSimanFaleh.Appearance.Font = new System.Drawing.Font("B Yekan", 18F);
             this.btnSimanFaleh.Appearance.Options.UseFont = true;
             this.btnSimanFaleh.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnSimanFaleh.Image = global::TruckerApp.Properties.Resources.icons8_bill_96;
-            this.btnSimanFaleh.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.btnSimanFaleh.Location = new System.Drawing.Point(2, 87);
+            this.btnSimanFaleh.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btnSimanFaleh.Location = new System.Drawing.Point(2, 88);
             this.btnSimanFaleh.Name = "btnSimanFaleh";
-            this.btnSimanFaleh.Size = new System.Drawing.Size(146, 145);
+            this.btnSimanFaleh.Size = new System.Drawing.Size(146, 58);
             this.btnSimanFaleh.TabIndex = 0;
             this.btnSimanFaleh.Text = "سیمان فله";
             this.btnSimanFaleh.Click += new System.EventHandler(this.btnSimanFaleh_Click);
@@ -611,7 +620,7 @@
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl6.Location = new System.Drawing.Point(808, 2);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(150, 234);
+            this.panelControl6.Size = new System.Drawing.Size(150, 148);
             this.panelControl6.TabIndex = 1;
             // 
             // panelControl7
@@ -620,7 +629,7 @@
             this.panelControl7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl7.Location = new System.Drawing.Point(2, 2);
             this.panelControl7.Name = "panelControl7";
-            this.panelControl7.Size = new System.Drawing.Size(146, 85);
+            this.panelControl7.Size = new System.Drawing.Size(146, 86);
             this.panelControl7.TabIndex = 1;
             // 
             // gaugeControl4
@@ -630,7 +639,7 @@
             this.cntClinker});
             this.gaugeControl4.Location = new System.Drawing.Point(2, 2);
             this.gaugeControl4.Name = "gaugeControl4";
-            this.gaugeControl4.Size = new System.Drawing.Size(142, 81);
+            this.gaugeControl4.Size = new System.Drawing.Size(142, 82);
             this.gaugeControl4.TabIndex = 1;
             // 
             // cntClinker
@@ -639,7 +648,7 @@
             this.cntClinker.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#C0C000");
             this.cntClinker.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
             this.digitalBackgroundLayerComponent4});
-            this.cntClinker.Bounds = new System.Drawing.Rectangle(6, 6, 130, 69);
+            this.cntClinker.Bounds = new System.Drawing.Rectangle(6, 6, 130, 70);
             this.cntClinker.DigitCount = 3;
             this.cntClinker.Name = "cntClinker";
             this.cntClinker.RightToLeft = true;
@@ -658,11 +667,10 @@
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("B Yekan", 18F);
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.simpleButton2.Image = global::TruckerApp.Properties.Resources.icons8_bill_96;
-            this.simpleButton2.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton2.Location = new System.Drawing.Point(2, 87);
+            this.simpleButton2.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton2.Location = new System.Drawing.Point(2, 88);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(146, 145);
+            this.simpleButton2.Size = new System.Drawing.Size(146, 58);
             this.simpleButton2.TabIndex = 0;
             this.simpleButton2.Text = "کلینکر";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
@@ -674,7 +682,7 @@
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl4.Location = new System.Drawing.Point(958, 2);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(150, 234);
+            this.panelControl4.Size = new System.Drawing.Size(150, 148);
             this.panelControl4.TabIndex = 0;
             // 
             // panelControl5
@@ -683,7 +691,7 @@
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl5.Location = new System.Drawing.Point(2, 2);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(146, 85);
+            this.panelControl5.Size = new System.Drawing.Size(146, 86);
             this.panelControl5.TabIndex = 5;
             // 
             // gaugeControl1
@@ -694,7 +702,7 @@
             this.cntPacket});
             this.gaugeControl1.Location = new System.Drawing.Point(2, 2);
             this.gaugeControl1.Name = "gaugeControl1";
-            this.gaugeControl1.Size = new System.Drawing.Size(142, 81);
+            this.gaugeControl1.Size = new System.Drawing.Size(142, 82);
             this.gaugeControl1.TabIndex = 1;
             // 
             // cntPacket
@@ -703,7 +711,7 @@
             this.cntPacket.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#FF5000");
             this.cntPacket.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
             this.digitalBackgroundLayerComponent1});
-            this.cntPacket.Bounds = new System.Drawing.Rectangle(6, 6, 130, 69);
+            this.cntPacket.Bounds = new System.Drawing.Rectangle(6, 6, 130, 70);
             this.cntPacket.DigitCount = 3;
             this.cntPacket.Name = "cntPacket";
             this.cntPacket.RightToLeft = true;
@@ -722,34 +730,19 @@
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("B Yekan", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.simpleButton1.Image = global::TruckerApp.Properties.Resources.icons8_bill_96;
-            this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(2, 87);
+            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton1.Location = new System.Drawing.Point(2, 88);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(146, 145);
+            this.simpleButton1.Size = new System.Drawing.Size(146, 58);
             this.simpleButton1.TabIndex = 4;
             this.simpleButton1.Text = "پاکت";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // btnDaftarRozaneh
-            // 
-            this.btnDaftarRozaneh.Appearance.Font = new System.Drawing.Font("B Yekan", 18F);
-            this.btnDaftarRozaneh.Appearance.Options.UseFont = true;
-            this.btnDaftarRozaneh.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnDaftarRozaneh.Image = global::TruckerApp.Properties.Resources.icons8_list_48;
-            this.btnDaftarRozaneh.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.btnDaftarRozaneh.Location = new System.Drawing.Point(208, 2);
-            this.btnDaftarRozaneh.Name = "btnDaftarRozaneh";
-            this.btnDaftarRozaneh.Size = new System.Drawing.Size(150, 159);
-            this.btnDaftarRozaneh.TabIndex = 7;
-            this.btnDaftarRozaneh.Text = "دفتر روزانه\r\n فروش";
-            this.btnDaftarRozaneh.Click += new System.EventHandler(this.btnDaftarRozaneh_Click);
             // 
             // FrmFishPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1114, 737);
+            this.ClientSize = new System.Drawing.Size(1114, 532);
             this.Controls.Add(this.groupControl1);
             this.Name = "FrmFishPanel";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;

@@ -4,71 +4,47 @@ using System.Linq;
 using DevExpress.XtraEditors;
 using System.Data.Entity;
 using System.Windows.Forms;
+using TruckerApp.ExtentionMethod;
+using TruckerApp.Repository;
+using TruckerApp.ViewModels.Queueing;
 
 namespace TruckerApp.UserForm
 {
     public partial class FrmQueueList : Form
     {
-        public FrmQueueList()
+        private readonly IQueuing _queuing;
+        public FrmQueueList(IQueuing queuing)
         {
+            _queuing = queuing;
             InitializeComponent();
-        }
-
-        private TruckersEntities db;
-
-        //private void calcuterList()
-        //{
-        //    List<Queue> qryOLD;
-        //    queuesBindingSource.DataSource = qryOLD = db.Queues.Where(x => x.SeriesID_FK == PublicVar.SeriesID).ToList();
-        //    txtDate.Text = $"{PublicVar.DateSerial:yyyy/MM/dd}";
-        //    cbxSerial.Text = PublicVar.SeriesName.ToString();
-        //    var qry = qryOLD.Where(x => x.SeriesID_FK == PublicVar.SeriesID).ToList();
-
-        //    txtFalaeh.Text = qry.Count(x => x.Type_FK == 1).ToString();
-        //    txtPacket.Text = qry.Count(x => x.Type_FK == 2).ToString();
-        //    txtGandom.Text = qry.Count(x => x.Type_FK == 3).ToString();
-        //    txtClinker.Text = qry.Count(x => x.Type_FK == 4).ToString();
-
-        //    txtMember.Text = qry.Count(x => x.GroupCommission == 1).ToString();
-        //    txtNoMember.Text = qry.Count(x => x.GroupCommission == 2).ToString();
-        //    txtOther.Text = qry.Count(x => x.GroupCommission == 3).ToString();
-        //}
-
-        private void SerialList()
-        {
-            List<SeriesPrice> list = new List<SeriesPrice>();
-            foreach (var price in db.SeriesPrices.OrderByDescending(x => x.SereisID)) list.Add(price);
-          cbxSerial.Properties.DataSource = list;
-         cbxSerial.Properties.DisplayMember = "SeriesName";
-        cbxSerial.Properties.ValueMember = "SereisID";
-        }
-        private void txtSerial_EditValueChanged(object sender, EventArgs e)
-        {
-      
-            var select = (SeriesPrice) cbxSerial.GetSelectedDataRow();
-            if (select!= null)
-            {
-                txtDate.Text = select.SeriesDateStart.Date.ToString("yyyy/MM/dd");
-                txtFalaeh.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.Type_FK== 1).ToString();
-                txtPacket.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.Type_FK == 2).ToString();
-                txtGandom.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.Type_FK == 3).ToString();
-                txtClinker.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.Type_FK == 4).ToString();
-                txtAhakfaleh.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.Type_FK == 5).ToString();
-                txtAhakPackat.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.Type_FK == 6).ToString();
-                txtOtherType.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.Type_FK == 7).ToString();
-                txtMember.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.GroupCommission == 30).ToString();
-                txtNoMember.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.GroupCommission == 31).ToString();
-                txtOther.Text = db.Queues.Count(x => x.SeriesID_FK == select.SereisID && x.GroupCommission == 32).ToString();
-                gridControl1.DataSource = db.Queues.Where(x => x.SeriesID_FK == select.SereisID).ToList();
-                //gridView1.RefreshData();
-
-            }
-        }
-
-        private void FrmQueueList_Load(object sender, EventArgs e)
-        {
-            db = new TruckersEntities();
             SerialList();
+            cbxSerial.Properties.DisplayMember = "SeriesName";
+            cbxSerial.Properties.ValueMember = "SereisID";
+        }
+        private async void SerialList()
+        {
+            cbxSerial.Properties.DataSource = await _queuing.GetSeriesList();
+        }
+        private async void txtSerial_EditValueChanged(object sender, EventArgs e)
+        {
+            var select = (ViewModelSeriesList)cbxSerial.GetSelectedDataRow();
+            if (select != null)
+            {
+                txtDate.EditValue = select.SeriesDateStart;
+                txtFalaeh.EditValue = await _queuing.TotalTypeByTypeId(1,select.SereisID);
+                txtPacket.EditValue = await _queuing.TotalTypeByTypeId(2, select.SereisID);
+                txtGandom.EditValue = await _queuing.TotalTypeByTypeId(3, select.SereisID);
+                txtClinker.EditValue = await _queuing.TotalTypeByTypeId(4, select.SereisID);
+                txtAhakfaleh.EditValue = await _queuing.TotalTypeByTypeId(5, select.SereisID);
+                txtAhakPackat.EditValue = await _queuing.TotalTypeByTypeId(6, select.SereisID);
+                txtOtherType.EditValue = await _queuing.TotalTypeByTypeId(7, select.SereisID);
+
+                txtMember.EditValue = await _queuing.TotalGroupByGroupId(30, select.SereisID);
+                txtNoMember.EditValue = await _queuing.TotalGroupByGroupId(31, select.SereisID);
+                txtOther.EditValue = await _queuing.TotalGroupByGroupId(32, select.SereisID);
+
+                gridControl1.DataSource = await _queuing.GetQueueListBySeriesId(select.SereisID);
+            }
         }
     }
 }

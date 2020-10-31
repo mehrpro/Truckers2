@@ -4,7 +4,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TruckerApp.ExtentionMethod;
 using TruckerApp.ViewModels;
+using TruckerApp.ViewModels.Queueing;
 
 namespace TruckerApp.Repository
 {
@@ -40,7 +42,12 @@ namespace TruckerApp.Repository
         /// <param name="tag">پلاک با فرمت انگلیسی</param>
         /// <returns></returns>
         Task<Queue> FindByQueue(string tag);
-
+        /// <summary>
+        /// جستجوی حواله ی فعال براساس شناسه راننده
+        /// </summary>
+        /// <param name="driverId">شناسه راننده</param>
+        /// <returns></returns>
+        Task<Queue> FindByQueue(int driverId);
         /// <summary>
         /// صدور نوبت جدید و مبلغ دریافتی صندوق
         /// </summary>
@@ -48,13 +55,51 @@ namespace TruckerApp.Repository
         /// <param name="viewModelCash">موجودیت و اطلاهات صندوق دریافتی</param>
         /// <returns></returns>
         bool RegisterNewQueue(ViewModelQueue viewModelQueue, ViewModelCash viewModelCash);
+        /// <summary>
+        /// مجموع سفارشات بر اساس سریال فروش
+        /// </summary>
+        /// <param name="typeId">شناسه محموله</param>
+        /// <param name="serieseId">شناسه سریال فروش</param>
+        /// <returns></returns>
+        Task<int> TotalTypeByTypeId(byte typeId,int serieseId);
+        /// <summary>
+        /// مجموع گروه های رانندگان براساس سریال فروش
+        /// </summary>
+        /// <param name="groupId">شناسه گروه  رانندگان</param>
+        /// <param name="serieseId">شناسه سریال فروش</param>
+        /// <returns></returns>
+        Task<int> TotalGroupByGroupId(byte groupId, int serieseId);
+        /// <summary>
+        /// لیست نوبت های صادر شده بر اساس سریال فروش
+        /// </summary>
+        /// <param name="serieseId">شناسه سریال فروش</param>
+        /// <returns></returns>
+        Task<List<Queue>> GetQueueListBySeriesId(int serieseId);
+        /// <summary>
+        /// لیست سریال فروش های صادر شده
+        /// </summary>
+        /// <returns></returns>
+        Task<List<ViewModelSeriesList>> GetSeriesList();
+
+        /// <summary>
+        /// ابطال یا بازگشت وجه و ابطال نوبت براساس شناسه نوبت
+        /// </summary>
+        /// <param name="queueId">شناسه نوبت</param>
+        /// <param name="typeId">شناسه علت ابطال</param>
+        /// <returns></returns>
+        Task<bool> RetrunCashByQueueID(int queueId, byte typeId);
+        /// <summary>
+        /// رسید تکی حواله
+        /// </summary>
+        /// <param name="queueId">شناسه حواله صادره شده</param>
+        /// <returns></returns>
+        Task<bool> ResieadByQueueID(int queueId);
 
     }
 
     public class Queuing : IQueuing
     {
         private readonly TruckersEntities db;
-
         public Queuing(TruckersEntities db)
         {
             this.db = db;
@@ -74,14 +119,12 @@ namespace TruckerApp.Repository
 
             return listResult;
         }
-
         public async Task<int> GetLastNumberByTypeId(byte typeId)
         {
             var max = await db.Queues.Where(x => x.SeriesID_FK == PublicVar.SeriesID && x.Type_FK == typeId).ToListAsync();
             if (max.Count == 0) return 1;
             return max.Max(x => x.Number) + 1;
         }
-
         private async Task<Commission> GetCommissionByGroupId(byte groupId)
         {
             return await db.Commissions.SingleOrDefaultAsync(x => x.enabled && x.Groups_FK == groupId);
@@ -114,15 +157,18 @@ namespace TruckerApp.Repository
 
             return null;
         }
-
         public Driver FindByPlate(string resultEn)
         {
             return db.Drivers.FirstOrDefault(x => x.Tag == resultEn);
         }
-
         public async Task<Queue> FindByQueue(string tag)
         {
             return await db.Queues.SingleOrDefaultAsync(x => x.Status_FK == 20 && x.Driver.Tag == tag);
+        }
+
+        public async Task<Queue> FindByQueue(int driverId)
+        {
+            return await db.Queues.SingleOrDefaultAsync(x => x.DriverID_FK == driverId && x.Status_FK == 20);
         }
 
         public bool RegisterNewQueue(ViewModelQueue viewModelQueue, ViewModelCash viewModelCash)
@@ -162,6 +208,79 @@ namespace TruckerApp.Repository
             {
                 return false;
             }
+        }
+        public async Task<int> TotalTypeByTypeId(byte typeId, int serieseId)
+        {
+            return await db.Queues.CountAsync(x => x.SeriesID_FK == serieseId && x.Type_FK == typeId);
+        }
+
+        public async Task<int> TotalGroupByGroupId(byte groupId, int serieseId)
+        {
+            return await db.Queues.CountAsync(x => x.SeriesID_FK == serieseId && x.GroupCommission == groupId);
+        }
+
+        public async Task<List<Queue>> GetQueueListBySeriesId(int serieseId)
+        {
+            return await db.Queues.Where(x => x.SeriesID_FK == serieseId).ToListAsync();
+        }
+
+        public async Task<List<ViewModelSeriesList>> GetSeriesList()
+        {
+            var qry= await db.SeriesPrices.ToListAsync();
+            var list = new List<ViewModelSeriesList>();
+            foreach (var seriesPrice in qry.OrderByDescending(x=>x.SereisID))
+            {
+                list.Add(new ViewModelSeriesList()
+                {
+                    SereisID = seriesPrice.SereisID,
+                    SeriesName = seriesPrice.SeriesName,
+                    SeriesDateStart = seriesPrice.SeriesDateStart.PersianConvertor()
+                });
+            }
+            return list;
+        }
+
+        public async Task<bool> RetrunCashByQueueID(int queueId,byte typeId)
+        {
+            using (var trans = db.Database.BeginTransaction())
+            {
+                try
+                {
+                    var qry = db.Cashes.Single(x => x.QueueID_FK == queueId);
+                    var qryQueue = db.Queues.Single(x => x.ID == queueId);
+                    qryQueue.Status_FK = typeId;
+                    qry.Pos = qry.CashDesk = 0;
+                    await db.SaveChangesAsync();
+                    trans.Commit();
+                    return true;
+                }
+                catch 
+                {
+                    return false;
+                }
+            }
+
+    
+
+        }
+
+        public async Task<bool> ResieadByQueueID(int queueId)
+        {
+            try
+            {
+                var qryQueue = await db.Queues.SingleOrDefaultAsync(x => x.ID == queueId);
+                if (qryQueue==null)
+                    return false;
+                qryQueue.Status_FK = 23;
+                await db.SaveChangesAsync();
+                return true;
+
+            }
+            catch 
+            {
+                return false;
+            }
+            
         }
     }
 }

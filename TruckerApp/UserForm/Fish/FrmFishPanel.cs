@@ -78,48 +78,41 @@ namespace TruckerApp.UserForm.Fish
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-            var newForm = new FrmRevFish3()
-            {
-                FormBorderStyle = FormBorderStyle.FixedDialog,
-                StartPosition = FormStartPosition.CenterScreen,
-            };
+            var newForm = mainContainer.GetInstance<FrmRevFish3>();
+            newForm.StartPosition = FormStartPosition.CenterParent;
             newForm.ShowDialog();
         }
 
         private void simpleButton5_Click(object sender, EventArgs e)
         {
-            var newForm = new FrmRevFish()
-            {
-                FormBorderStyle = FormBorderStyle.FixedSingle,
-                StartPosition = FormStartPosition.CenterScreen,
-            };
+            var newForm = mainContainer.GetInstance<FrmRevFish>();
+            newForm.FormBorderStyle = FormBorderStyle.Sizable;
+            newForm.WindowState = FormWindowState.Maximized;
+            newForm.MaximizeBox = newForm.MinimizeBox = true;
+            newForm.StartPosition = FormStartPosition.CenterParent;
             newForm.ShowDialog();
         }
 
         private void simpleButton6_Click(object sender, EventArgs e)
         {
 
-            var newForm = new FrmResid()
-            {
-                FormBorderStyle = FormBorderStyle.None,
-                // MdiParent = this,
-                StartPosition = FormStartPosition.CenterParent,
-                Dock = DockStyle.Fill
-            };
-            newForm.Show();
+            var newForm = mainContainer.GetInstance<FrmResid>();
+            newForm.FormBorderStyle = FormBorderStyle.Sizable;
+            newForm.WindowState = FormWindowState.Maximized;
+            newForm.MaximizeBox = newForm.MinimizeBox = true;
+            newForm.StartPosition = FormStartPosition.CenterParent;
+            newForm.ShowDialog();
         }
 
         private void simpleButton7_Click(object sender, EventArgs e)
         {
 
-            var newForm = new FrmQueueList()
-            {
-                FormBorderStyle = FormBorderStyle.None,
-                MdiParent = this,
-                StartPosition = FormStartPosition.CenterParent,
-                Dock = DockStyle.Fill
-            };
-            newForm.Show();
+            var newForm = mainContainer.GetInstance<FrmQueueList>();
+            newForm.FormBorderStyle = FormBorderStyle.Sizable;
+            newForm.WindowState = FormWindowState.Maximized;
+            newForm.MaximizeBox = newForm.MinimizeBox = true;
+            newForm.StartPosition = FormStartPosition.CenterParent;
+            newForm.ShowDialog();
         }
 
         private void simpleButton6_Click_1(object sender, EventArgs e)
@@ -178,7 +171,7 @@ namespace TruckerApp.UserForm.Fish
 
         private void btnDaftarRozaneh_Click(object sender, EventArgs e)
         {
-            var frm = new FrmRevFish().ShowDialog();
+            
         }
     }
 }

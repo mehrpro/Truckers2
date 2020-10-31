@@ -224,7 +224,9 @@
     <Compile Include="UserForm\cash\FrmCashPiriodList.Designer.cs">
       <DependentUpon>FrmCashPiriodList.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserForm\cash\TotalCashList.cs" />
+    <Compile Include="ViewModels\Queueing\ViewModelNumberList.cs" />
+    <Compile Include="ViewModels\Queueing\ViewModelSeriesList.cs" />
+    <Compile Include="ViewModels\TotalCashList.cs" />
     <Compile Include="UserForm\Commission\FrmCommissionNative.cs">
       <SubType>Form</SubType>
     </Compile>

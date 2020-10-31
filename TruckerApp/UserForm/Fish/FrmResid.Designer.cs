@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmResid));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.gridControlBotten = new DevExpress.XtraGrid.GridControl();
@@ -69,7 +70,6 @@
             this.btnReport = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.queuesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
@@ -84,21 +84,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.queuesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("B Yekan", 16F);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
-            this.groupControl1.CaptionImage = global::TruckerApp.Properties.Resources.icons8_bulleted_list_48;
+            this.groupControl1.CaptionImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_bulleted_list_48;
             this.groupControl1.Controls.Add(this.groupControl3);
             this.groupControl1.Controls.Add(this.groupControl2);
             this.groupControl1.Controls.Add(this.panelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1040, 631);
+            this.groupControl1.Size = new System.Drawing.Size(1040, 540);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "رسید حواله فروش";
             // 
@@ -108,21 +107,21 @@
             this.groupControl3.AppearanceCaption.Options.UseFont = true;
             this.groupControl3.Controls.Add(this.gridControlBotten);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(2, 55);
+            this.groupControl3.Location = new System.Drawing.Point(2, 59);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(387, 489);
+            this.groupControl3.Size = new System.Drawing.Size(387, 394);
             this.groupControl3.TabIndex = 5;
             this.groupControl3.Text = "حواله های باطل شده";
             // 
             // gridControlBotten
             // 
             this.gridControlBotten.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlBotten.Location = new System.Drawing.Point(2, 31);
+            this.gridControlBotten.Location = new System.Drawing.Point(2, 35);
             this.gridControlBotten.MainView = this.gridView2;
             this.gridControlBotten.Name = "gridControlBotten";
             this.gridControlBotten.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1});
-            this.gridControlBotten.Size = new System.Drawing.Size(383, 456);
+            this.gridControlBotten.Size = new System.Drawing.Size(383, 357);
             this.gridControlBotten.TabIndex = 2;
             this.gridControlBotten.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -310,12 +309,13 @@
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            serializableAppearanceObject1.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject2.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject3.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject4.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            serializableAppearanceObject9.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject10.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject11.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject12.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("repositoryItemButtonEdit1.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEdit1_ButtonClick);
@@ -326,21 +326,21 @@
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
             this.groupControl2.Controls.Add(this.gridControlTop);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupControl2.Location = new System.Drawing.Point(389, 55);
+            this.groupControl2.Location = new System.Drawing.Point(389, 59);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(649, 489);
+            this.groupControl2.Size = new System.Drawing.Size(649, 394);
             this.groupControl2.TabIndex = 4;
             this.groupControl2.Text = "حواله ی صادرشده";
             // 
             // gridControlTop
             // 
             this.gridControlTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlTop.Location = new System.Drawing.Point(2, 31);
+            this.gridControlTop.Location = new System.Drawing.Point(2, 35);
             this.gridControlTop.MainView = this.gridView1;
             this.gridControlTop.Name = "gridControlTop";
             this.gridControlTop.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnDeleteRow});
-            this.gridControlTop.Size = new System.Drawing.Size(645, 456);
+            this.gridControlTop.Size = new System.Drawing.Size(645, 357);
             this.gridControlTop.TabIndex = 1;
             this.gridControlTop.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -528,12 +528,13 @@
             // btnDeleteRow
             // 
             this.btnDeleteRow.AutoHeight = false;
-            serializableAppearanceObject5.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject6.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject7.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject8.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            serializableAppearanceObject13.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject14.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject15.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject16.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.btnDeleteRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnDeleteRow.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnDeleteRow.Name = "btnDeleteRow";
             this.btnDeleteRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnDeleteRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnDeleteRow_ButtonClick);
@@ -550,7 +551,7 @@
             this.panelControl1.Controls.Add(this.btnClose);
             this.panelControl1.Controls.Add(this.btnSave);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(2, 544);
+            this.panelControl1.Location = new System.Drawing.Point(2, 453);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1036, 85);
             this.panelControl1.TabIndex = 3;
@@ -560,8 +561,8 @@
             this.simpleButton6.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.simpleButton6.Appearance.Options.UseFont = true;
             this.simpleButton6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.simpleButton6.Image = global::TruckerApp.Properties.Resources.icons8_calendar_7_32;
-            this.simpleButton6.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton6.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_calendar_7_32;
+            this.simpleButton6.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.simpleButton6.Location = new System.Drawing.Point(224, 2);
             this.simpleButton6.Name = "simpleButton6";
             this.simpleButton6.Size = new System.Drawing.Size(90, 81);
@@ -574,8 +575,8 @@
             this.simpleButton5.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.simpleButton5.Appearance.Options.UseFont = true;
             this.simpleButton5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.simpleButton5.Image = global::TruckerApp.Properties.Resources.icons8_calendar_6_32;
-            this.simpleButton5.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton5.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_calendar_6_32;
+            this.simpleButton5.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.simpleButton5.Location = new System.Drawing.Point(314, 2);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(90, 81);
@@ -588,8 +589,8 @@
             this.simpleButton4.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.simpleButton4.Appearance.Options.UseFont = true;
             this.simpleButton4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.simpleButton4.Image = global::TruckerApp.Properties.Resources.icons8_calendar_5_32;
-            this.simpleButton4.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton4.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_calendar_5_32;
+            this.simpleButton4.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.simpleButton4.Location = new System.Drawing.Point(404, 2);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(90, 81);
@@ -602,8 +603,8 @@
             this.simpleButton3.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.simpleButton3.Image = global::TruckerApp.Properties.Resources.icons8_calendar_4_32;
-            this.simpleButton3.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton3.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_calendar_4_32;
+            this.simpleButton3.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.simpleButton3.Location = new System.Drawing.Point(494, 2);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(90, 81);
@@ -616,8 +617,8 @@
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.simpleButton2.Image = global::TruckerApp.Properties.Resources.icons8_calendar_3_32;
-            this.simpleButton2.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton2.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_calendar_3_32;
+            this.simpleButton2.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.simpleButton2.Location = new System.Drawing.Point(584, 2);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(90, 81);
@@ -630,8 +631,8 @@
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.simpleButton1.Image = global::TruckerApp.Properties.Resources.icons8_calendar_2_32;
-            this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton1.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_calendar_2_32;
+            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.simpleButton1.Location = new System.Drawing.Point(674, 2);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(90, 81);
@@ -644,8 +645,8 @@
             this.btnReport.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnReport.Appearance.Options.UseFont = true;
             this.btnReport.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnReport.Image = global::TruckerApp.Properties.Resources.icons8_calendar_1_32;
-            this.btnReport.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btnReport.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_calendar_1_32;
+            this.btnReport.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btnReport.Location = new System.Drawing.Point(764, 2);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(90, 81);
@@ -658,8 +659,8 @@
             this.btnClose.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnClose.Appearance.Options.UseFont = true;
             this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
+            this.btnClose.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btnClose.Location = new System.Drawing.Point(854, 2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(90, 81);
@@ -672,8 +673,8 @@
             this.btnSave.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
+            this.btnSave.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btnSave.Location = new System.Drawing.Point(944, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 81);
@@ -681,15 +682,11 @@
             this.btnSave.Text = "ذخیره ";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // queuesBindingSource
-            // 
-            this.queuesBindingSource.DataSource = typeof(TruckerApp.Queue);
-            // 
             // FrmResid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1040, 631);
+            this.ClientSize = new System.Drawing.Size(1040, 540);
             this.Controls.Add(this.groupControl1);
             this.Name = "FrmResid";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -709,7 +706,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteRow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.queuesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -718,7 +714,6 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraGrid.GridControl gridControlTop;
-        private System.Windows.Forms.BindingSource queuesBindingSource;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;

@@ -889,7 +889,6 @@
             this.Name = "FrmQueueList";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "حواله های صادرشده";
-            this.Load += new System.EventHandler(this.FrmQueueList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();

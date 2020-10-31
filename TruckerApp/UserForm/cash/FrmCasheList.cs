@@ -3,6 +3,7 @@ using System.Linq;
 using System.Data.Entity;
 using DevExpress.XtraEditors;
 using DevExpress.XtraReports.UI;
+using TruckerApp.ExtentionMethod;
 
 namespace TruckerApp.UserForm
 {
@@ -41,15 +42,13 @@ namespace TruckerApp.UserForm
             setup();
         }
 
-        private void panelControl1_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
+ 
+        private void PrintFish()
         {
-
-        }
-        private void printFish()
-        {
-            var report = XtraReport.FromFile("Cash.repx", true);
+            var report = XtraReport.FromFile("Cash_Report.repx", true);
             var tool = new ReportPrintTool(report);
-            report.Parameters["datetime"].Value = $"{DateTime.Now:yyyy/MM/dd}  {DateTime.Now.ToShortTimeString()}";
+            report.Parameters["datetime"].Value = $"{DateTime.Now.PersianConvertorFull()}";
+            report.Parameters["operator"].Value = $"{PublicVar.OpreatorName}";
             report.Parameters["faleh"].Value = $"{ txtFalaeh.Text}";
             report.Parameters["packat"].Value = $"{txtPacket.Text}";
             report.Parameters["clinker"].Value = $"{ txtClinker.Text}";
@@ -60,13 +59,14 @@ namespace TruckerApp.UserForm
             report.Parameters["ahakfaleh"].Value = $"{ txtAhakFaleh.Text}";
             report.Parameters["ahakpackat"].Value = $"{ txtAhakPackat.Text}";
             report.Parameters["other"].Value = $"{ txtOtherType.Text}";
-            report.Parameters["serial"].Value = $"س {PublicVar.SeriesName} - {PublicVar.DateSerial:yyyy/MM/dd}";
+            report.Parameters["serial"].Value = $"{PublicVar.SeriesName}";
+
             tool.PrintDialog();
         }
 
         private void simpleButton9_Click(object sender, EventArgs e)
         {
-            printFish();
+            PrintFish();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

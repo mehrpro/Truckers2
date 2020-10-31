@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFishPrint));
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.timer_process = new System.Windows.Forms.Timer(this.components);
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lblWH = new System.Windows.Forms.Label();
@@ -144,10 +144,9 @@
             // 
             // picPlateLast
             // 
-            this.picPlateLast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.picPlateLast.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.picPlateLast.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picPlateLast.Location = new System.Drawing.Point(112, 503);
+            this.picPlateLast.Location = new System.Drawing.Point(112, 67);
             this.picPlateLast.Name = "picPlateLast";
             this.picPlateLast.Size = new System.Drawing.Size(179, 41);
             this.picPlateLast.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -156,11 +155,10 @@
             // 
             // Res4
             // 
-            this.Res4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Res4.AutoSize = true;
             this.Res4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Res4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Res4.Location = new System.Drawing.Point(442, 514);
+            this.Res4.Location = new System.Drawing.Point(442, 78);
             this.Res4.Name = "Res4";
             this.Res4.Size = new System.Drawing.Size(34, 24);
             this.Res4.TabIndex = 46;
@@ -168,11 +166,10 @@
             // 
             // Res2
             // 
-            this.Res2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Res2.AutoSize = true;
             this.Res2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Res2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Res2.Location = new System.Drawing.Point(346, 514);
+            this.Res2.Location = new System.Drawing.Point(346, 78);
             this.Res2.Name = "Res2";
             this.Res2.Size = new System.Drawing.Size(34, 24);
             this.Res2.TabIndex = 45;
@@ -180,11 +177,10 @@
             // 
             // Res3
             // 
-            this.Res3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Res3.AutoSize = true;
             this.Res3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Res3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Res3.Location = new System.Drawing.Point(392, 514);
+            this.Res3.Location = new System.Drawing.Point(392, 78);
             this.Res3.Name = "Res3";
             this.Res3.Size = new System.Drawing.Size(34, 24);
             this.Res3.TabIndex = 44;
@@ -192,11 +188,10 @@
             // 
             // Res1
             // 
-            this.Res1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Res1.AutoSize = true;
             this.Res1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Res1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Res1.Location = new System.Drawing.Point(297, 514);
+            this.Res1.Location = new System.Drawing.Point(297, 78);
             this.Res1.Name = "Res1";
             this.Res1.Size = new System.Drawing.Size(34, 24);
             this.Res1.TabIndex = 43;
@@ -206,7 +201,7 @@
             // 
             this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton1.ImageOptions.Image = global::TruckerApp.Properties.Resources.stop_32x321;
-            this.simpleButton1.Location = new System.Drawing.Point(269, 11);
+            this.simpleButton1.Location = new System.Drawing.Point(865, 509);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(42, 41);
             this.simpleButton1.TabIndex = 4;
@@ -214,9 +209,8 @@
             // 
             // btnStop
             // 
-            this.btnStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnStop.ImageOptions.Image = global::TruckerApp.Properties.Resources.stop_32x321;
-            this.btnStop.Location = new System.Drawing.Point(64, 503);
+            this.btnStop.Location = new System.Drawing.Point(64, 67);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(42, 41);
             this.btnStop.TabIndex = 4;
@@ -224,9 +218,8 @@
             // 
             // btnPlay
             // 
-            this.btnPlay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnPlay.ImageOptions.Image = global::TruckerApp.Properties.Resources.play_32x321;
-            this.btnPlay.Location = new System.Drawing.Point(16, 503);
+            this.btnPlay.Location = new System.Drawing.Point(16, 67);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(42, 41);
             this.btnPlay.TabIndex = 4;
@@ -239,9 +232,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.picture.BackColor = System.Drawing.SystemColors.Control;
             this.picture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picture.Location = new System.Drawing.Point(16, 78);
+            this.picture.Location = new System.Drawing.Point(16, 117);
             this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(470, 402);
+            this.picture.Size = new System.Drawing.Size(470, 433);
             this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picture.TabIndex = 3;
             this.picture.TabStop = false;
@@ -254,9 +247,9 @@
             this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
             this.btnClose.Location = new System.Drawing.Point(504, 413);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(135, 48);
+            this.btnClose.Size = new System.Drawing.Size(93, 48);
             this.btnClose.TabIndex = 2;
-            this.btnClose.Text = "بستن";
+            this.btnClose.Text = "خروج";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnPrint
@@ -265,9 +258,9 @@
             this.btnPrint.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnPrint.Appearance.Options.UseFont = true;
             this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(654, 413);
+            this.btnPrint.Location = new System.Drawing.Point(603, 413);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(135, 48);
+            this.btnPrint.Size = new System.Drawing.Size(186, 48);
             this.btnPrint.TabIndex = 2;
             this.btnPrint.Text = "ثبت و چاپ";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
@@ -518,10 +511,10 @@
             this.txtTag.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtTag.Size = new System.Drawing.Size(286, 30);
             this.txtTag.TabIndex = 1;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
-            conditionValidationRule1.ErrorText = "پلاک معتبر نیست";
-            conditionValidationRule1.Value1 = "!";
-            this.dxValidationProvider1.SetValidationRule(this.txtTag, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule2.ErrorText = "پلاک معتبر نیست";
+            conditionValidationRule2.Value1 = "!";
+            this.dxValidationProvider1.SetValidationRule(this.txtTag, conditionValidationRule2);
             // 
             // txtName
             // 
@@ -568,10 +561,10 @@
             this.cbxCargoType.Properties.ValueMember = "TypeID";
             this.cbxCargoType.Size = new System.Drawing.Size(286, 30);
             this.cbxCargoType.TabIndex = 0;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule2.ErrorText = "نوع محموله را انتخاب کنید";
-            conditionValidationRule2.Value1 = ((byte)(0));
-            this.dxValidationProvider1.SetValidationRule(this.cbxCargoType, conditionValidationRule2);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule3.ErrorText = "نوع محموله را انتخاب کنید";
+            conditionValidationRule3.Value1 = ((byte)(0));
+            this.dxValidationProvider1.SetValidationRule(this.cbxCargoType, conditionValidationRule3);
             this.cbxCargoType.EditValueChanged += new System.EventHandler(this.cbxCargoType_EditValueChanged);
             // 
             // gridView1
@@ -715,10 +708,10 @@
             this.txtComossin.Properties.ReadOnly = true;
             this.txtComossin.Size = new System.Drawing.Size(284, 30);
             this.txtComossin.TabIndex = 1;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule3.ErrorText = "حق کمیسیون نمی تواند صفر باشد";
-            conditionValidationRule3.Value1 = 0;
-            this.dxValidationProvider1.SetValidationRule(this.txtComossin, conditionValidationRule3);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule4.ErrorText = "حق کمیسیون نمی تواند صفر باشد";
+            conditionValidationRule4.Value1 = 0;
+            this.dxValidationProvider1.SetValidationRule(this.txtComossin, conditionValidationRule4);
             // 
             // FrmFishPrint
             // 
@@ -726,7 +719,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 562);
             this.Controls.Add(this.groupControl1);
-            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "FrmFishPrint";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "صدور حواله";
