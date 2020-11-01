@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using StructureMap;
 using TruckerApp.ExtentionMethod;
+using TruckerApp.Repository;
+using TruckerApp.UserForm.cash;
 using TruckerApp.UserForm.Customer;
 
 namespace TruckerApp.UserForm.Fish
@@ -11,13 +13,15 @@ namespace TruckerApp.UserForm.Fish
     public partial class FrmFishPanel : XtraForm
     {
         private Container mainContainer;
-        public FrmFishPanel()
+        private readonly ICounter _counter;
+        public FrmFishPanel(ICounter counter)
         {
+            _counter = counter;
             InitializeComponent();
             mainContainer = new StructureMap.Container(new TypeRegistery());
         }
 
-        private readonly Counter _counter = new Counter();
+        
         private void FrmFishPanel_Load(object sender, EventArgs e)
         {
             //layoutControl1.Location = new Point(this.Width / 2 - (layoutControl1.Width / 2), layoutControl1.Location.Y);
@@ -58,17 +62,17 @@ namespace TruckerApp.UserForm.Fish
             newForm.ShowDialog();
         }
 
-        private void timerCounter_Tick(object sender, EventArgs e)
+        private async void timerCounter_Tick(object sender, EventArgs e)
         {
-            cntPacket.Text = _counter.packet_cnt(PublicVar.SeriesID).ToString("000");
-            cntClinker.Text = _counter.clinker_cnt(PublicVar.SeriesID).ToString("000");
-            cntFalah.Text = _counter.faleh_cnt(PublicVar.SeriesID).ToString("000");
-            cntGandom.Text = _counter.gandom_cnt(PublicVar.SeriesID).ToString("000");
-            cntahakfalae.Text = _counter.ahakfaleh(PublicVar.SeriesID).ToString("000");
-            cntahakPakat.Text = _counter.ahakpackat(PublicVar.SeriesID).ToString("000");
-            cntothertype.Text = _counter.othertype(PublicVar.SeriesID).ToString("000");
+            cntPacket.Text = (await _counter.packet_cnt(PublicVar.SeriesID)).ToString("000");
+            cntClinker.Text = (await _counter.clinker_cnt(PublicVar.SeriesID)).ToString("000");
+            cntFalah.Text = (await _counter.faleh_cnt(PublicVar.SeriesID)).ToString("000");
+            cntGandom.Text = (await _counter.gandom_cnt(PublicVar.SeriesID)).ToString("000");
+            cntahakfalae.Text = (await _counter.ahakfaleh(PublicVar.SeriesID)).ToString("000");
+            cntahakPakat.Text = (await _counter.ahakpackat(PublicVar.SeriesID)).ToString("000");
+            cntothertype.Text = (await _counter.othertype(PublicVar.SeriesID)).ToString("000");
 
-            cntTotal.Text = _counter.total_cnt(PublicVar.SeriesID).ToString("0000");
+            cntTotal.Text = (await _counter.total_cnt(PublicVar.SeriesID)).ToString("0000");
         }
 
         private void FrmFishPanel_FormClosing(object sender, FormClosingEventArgs e)
@@ -135,14 +139,12 @@ namespace TruckerApp.UserForm.Fish
 
         private void simpleButton8_Click(object sender, EventArgs e)
         {
-            var newForm = new FrmCasheList()
-            {
-                FormBorderStyle = FormBorderStyle.FixedSingle,
-                WindowState = FormWindowState.Maximized,
-                StartPosition = FormStartPosition.CenterScreen,
-                //Dock = DockStyle.Fill
-            };
-            newForm.Show();
+            var newForm = mainContainer.GetInstance<FrmCasheList>();
+            newForm.FormBorderStyle = FormBorderStyle.Sizable;
+            newForm.WindowState = FormWindowState.Maximized;
+            newForm.MaximizeBox = newForm.MinimizeBox = true;
+            newForm.StartPosition = FormStartPosition.CenterParent;
+            newForm.ShowDialog();
         }
 
         private void simpleButton9_Click(object sender, EventArgs e)

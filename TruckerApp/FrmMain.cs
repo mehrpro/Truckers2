@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using StructureMap;
 using TruckerApp.ExtentionMethod;
+using TruckerApp.Repository;
 using TruckerApp.UserForm;
 using TruckerApp.UserForm.cash;
 using TruckerApp.UserForm.Customer;
@@ -14,12 +15,14 @@ namespace TruckerApp
     public partial class FrmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         private readonly Container _mainContainer;
+        private readonly ICounter _counter;
 
-        public FrmMain()
+        public FrmMain(ICounter counter)
         {
+            _counter = counter;
             InitializeComponent();
             _mainContainer = new Container(new TypeRegistery());
-            new Counter().serialBuy();
+            _counter.serialBuy();
         }
 
         private void btnAddDriver_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -63,15 +66,12 @@ namespace TruckerApp
 
         private void btnSeries_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (Form c in this.MdiChildren) c.Close();
-            var newForm = new FrmSerial
-            {
-                FormBorderStyle = FormBorderStyle.None,
-                MdiParent = this,
-                StartPosition = FormStartPosition.CenterParent,
-                Dock = DockStyle.Fill
-            };
-            newForm.Show();
+            var newForm = _mainContainer.GetInstance<FrmSerial>();
+            newForm.FormBorderStyle = FormBorderStyle.Sizable;
+            newForm.WindowState = FormWindowState.Maximized;
+            newForm.MaximizeBox = newForm.MinimizeBox = true;
+            newForm.StartPosition = FormStartPosition.CenterParent;
+            newForm.ShowDialog();
         }
 
         private void btnReportDis_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -103,15 +103,12 @@ namespace TruckerApp
 
         private void btnCasheStatus_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //foreach (var c in MdiChildren) c.Close();
-            var newForm = new FrmCasheList().ShowDialog();
-            //{
-            //    FormBorderStyle = FormBorderStyle.None,
-            //    MdiParent = this,
-            //    StartPosition = FormStartPosition.CenterParent,
-            //    Dock = DockStyle.Fill
-            //};
-            //newForm.Show();
+            var newForm = _mainContainer.GetInstance<FrmCasheList>();
+            newForm.FormBorderStyle = FormBorderStyle.Sizable;
+            newForm.WindowState = FormWindowState.Maximized;
+            newForm.MaximizeBox = newForm.MinimizeBox = true;
+            newForm.StartPosition = FormStartPosition.CenterParent;
+            newForm.ShowDialog();
         }
 
         private void btnCommissionNative_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -193,18 +190,12 @@ namespace TruckerApp
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (var c in this.MdiChildren)
-            {
-                c.Close();
-            }
-            var newForm = new FrmFishPanel()
-            {
-                FormBorderStyle = FormBorderStyle.None,
-                MdiParent = this,
-                StartPosition = FormStartPosition.CenterParent,
-                Dock = DockStyle.Fill
-            };
-            newForm.Show();
+            var newForm = _mainContainer.GetInstance<FrmFishPanel>();
+            newForm.FormBorderStyle = FormBorderStyle.Sizable;
+            newForm.WindowState = FormWindowState.Maximized;
+            newForm.MaximizeBox = newForm.MinimizeBox = true;
+            newForm.StartPosition = FormStartPosition.CenterParent;
+            newForm.ShowDialog();
         }
 
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

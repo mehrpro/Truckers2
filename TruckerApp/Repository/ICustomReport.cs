@@ -51,13 +51,20 @@ namespace TruckerApp.Repository
         /// <param name="typrId">شناسه نوع بار</param>
         /// <returns></returns>
         Task<List<ViewModelNumberList>> GetQueueStatus20ByTypeID(byte typrId);
-
         /// <summary>
         /// ثبت و ذخیره نوبت های رسید شده
         /// </summary>
         /// <param name="viewModelNumberLists">لیست نوبت</param>
         /// <returns></returns>
         bool SaveAcceptListQueue23(List<ViewModelNumberList> viewModelNumberLists);
+
+        /// <summary>
+        /// لیست دریافتی های صندوق براساس شناسه سریال فروش
+        /// </summary>
+        /// <param name="seriesId">شناسه سریال فروش</param>
+        /// <returns></returns>
+        Task<List<Cash>> GetCashListBySeriesId(int seriesId);
+
     }
     /// <summary>
     /// لیست های سفارشی
@@ -167,6 +174,11 @@ namespace TruckerApp.Repository
             {
                 return false;
             }
+        }
+
+        public async Task<List<Cash>> GetCashListBySeriesId(int seriesId)
+        {
+            return await db.Cashes.Where(x => x.seriesID_FK == seriesId).ToListAsync();
         }
     }
 }

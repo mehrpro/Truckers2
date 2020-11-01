@@ -16,6 +16,8 @@ namespace TruckerApp.ExtentionMethod
             For<IQueuing>().Use<Queuing>().Ctor<TruckersEntities>("db").Is(entities);
             For<IAdministrator>().Use<Administrator>().Ctor<TruckersEntities>("db").Is(entities);
             For<ICustomers>().Use<Customers>().Ctor<TruckersEntities>("db").Is(entities);
+            For<ICounter>().Use<Counter>().Ctor<TruckersEntities>("db").Is(entities);
+            For<IReportSender>().Use<ReportSender>().Ctor<TruckersEntities>("db").Is(entities);
         }
     }
 }

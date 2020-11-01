@@ -130,6 +130,7 @@
   <ItemGroup>
     <Compile Include="Repository\IAdministrator.cs" />
     <Compile Include="Repository\ICustomers.cs" />
+    <Compile Include="Repository\IReportSender.cs" />
     <Compile Include="Services\ANPR-API.cs" />
     <Compile Include="Services\AnprApi.cs" />
     <Compile Include="Services\BindingList.cs" />
@@ -245,7 +246,7 @@
     <Compile Include="UserForm\cash\FrmCasheList.Designer.cs">
       <DependentUpon>FrmCasheList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Services\Counter.cs" />
+    <Compile Include="Repository\ICounter.cs" />
     <Compile Include="UserForm\Customer\FrmEditDriverWithCamera.cs">
       <SubType>Form</SubType>
     </Compile>

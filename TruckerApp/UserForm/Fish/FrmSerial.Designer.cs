@@ -1,4 +1,4 @@
-﻿namespace TruckerApp.UserForm
+﻿namespace TruckerApp.UserForm.Fish
 {
     partial class FrmSerial
     {
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSerial));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -42,14 +41,7 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.seriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colSereisID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSeries1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSeriesCount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSeriesDateStart = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSeriesDateEnd = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coluserCreator = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemToggleSwitch1 = new DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -60,7 +52,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLastSerial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsers.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +60,7 @@
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("B Yekan", 16F);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
-            this.groupControl1.CaptionImage = global::TruckerApp.Properties.Resources.icons8_bookmark_48;
+            this.groupControl1.CaptionImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_bookmark_48;
             this.groupControl1.Controls.Add(this.panelControl1);
             this.groupControl1.Controls.Add(this.gridControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -91,7 +82,7 @@
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(2, 55);
+            this.panelControl1.Location = new System.Drawing.Point(2, 59);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(870, 148);
             this.panelControl1.TabIndex = 4;
@@ -133,7 +124,7 @@
             this.btnNewSerial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNewSerial.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnNewSerial.Appearance.Options.UseFont = true;
-            this.btnNewSerial.Image = ((System.Drawing.Image)(resources.GetObject("btnNewSerial.Image")));
+            this.btnNewSerial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewSerial.ImageOptions.Image")));
             this.btnNewSerial.Location = new System.Drawing.Point(76, 64);
             this.btnNewSerial.Name = "btnNewSerial";
             this.btnNewSerial.Size = new System.Drawing.Size(134, 51);
@@ -161,6 +152,7 @@
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl4.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Location = new System.Drawing.Point(449, 88);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(67, 24);
@@ -187,6 +179,7 @@
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl3.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Location = new System.Drawing.Point(449, 36);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(113, 24);
@@ -197,6 +190,7 @@
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(786, 36);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(30, 24);
@@ -207,6 +201,7 @@
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(786, 88);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(35, 24);
@@ -218,7 +213,6 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.DataSource = this.seriesBindingSource;
             this.gridControl1.Location = new System.Drawing.Point(12, 209);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -228,10 +222,6 @@
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            // 
-            // seriesBindingSource
-            // 
-            this.seriesBindingSource.DataSource = typeof(TruckerApp.SeriesPrice);
             // 
             // gridView1
             // 
@@ -343,79 +333,8 @@
             this.gridView1.Appearance.ViewCaption.Options.UseFont = true;
             this.gridView1.Appearance.ViewCaption.Options.UseTextOptions = true;
             this.gridView1.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colSereisID,
-            this.colSeries1,
-            this.colSeriesCount,
-            this.colSeriesDateStart,
-            this.colSeriesDateEnd,
-            this.coluserCreator});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colSeries1, DevExpress.Data.ColumnSortOrder.Descending)});
-            // 
-            // colSereisID
-            // 
-            this.colSereisID.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colSereisID.Caption = "کد سیستم";
-            this.colSereisID.FieldName = "SereisID";
-            this.colSereisID.Name = "colSereisID";
-            this.colSereisID.Visible = true;
-            this.colSereisID.VisibleIndex = 0;
-            this.colSereisID.Width = 74;
-            // 
-            // colSeries1
-            // 
-            this.colSeries1.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colSeries1.Caption = "سریال فروش";
-            this.colSeries1.FieldName = "SeriesName";
-            this.colSeries1.Name = "colSeries1";
-            this.colSeries1.Visible = true;
-            this.colSeries1.VisibleIndex = 1;
-            this.colSeries1.Width = 121;
-            // 
-            // colSeriesCount
-            // 
-            this.colSeriesCount.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colSeriesCount.Caption = "تعداد فروش";
-            this.colSeriesCount.FieldName = "SeriesCount";
-            this.colSeriesCount.Name = "colSeriesCount";
-            this.colSeriesCount.Visible = true;
-            this.colSeriesCount.VisibleIndex = 2;
-            this.colSeriesCount.Width = 138;
-            // 
-            // colSeriesDateStart
-            // 
-            this.colSeriesDateStart.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colSeriesDateStart.Caption = "زمان آغاز";
-            this.colSeriesDateStart.DisplayFormat.FormatString = "d";
-            this.colSeriesDateStart.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colSeriesDateStart.FieldName = "SeriesDateStart";
-            this.colSeriesDateStart.Name = "colSeriesDateStart";
-            this.colSeriesDateStart.Visible = true;
-            this.colSeriesDateStart.VisibleIndex = 3;
-            this.colSeriesDateStart.Width = 173;
-            // 
-            // colSeriesDateEnd
-            // 
-            this.colSeriesDateEnd.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colSeriesDateEnd.Caption = "زمان پایان";
-            this.colSeriesDateEnd.FieldName = "SeriesDateEnd";
-            this.colSeriesDateEnd.Name = "colSeriesDateEnd";
-            this.colSeriesDateEnd.Visible = true;
-            this.colSeriesDateEnd.VisibleIndex = 4;
-            this.colSeriesDateEnd.Width = 148;
-            // 
-            // coluserCreator
-            // 
-            this.coluserCreator.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.coluserCreator.Caption = "ایجاد کننده";
-            this.coluserCreator.FieldName = "User.username";
-            this.coluserCreator.Name = "coluserCreator";
-            this.coluserCreator.Visible = true;
-            this.coluserCreator.VisibleIndex = 5;
-            this.coluserCreator.Width = 71;
             // 
             // repositoryItemToggleSwitch1
             // 
@@ -444,7 +363,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLastSerial.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsers.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).EndInit();
             this.ResumeLayout(false);
@@ -464,14 +382,7 @@
         private DevExpress.XtraEditors.TextEdit txtTime;
         private DevExpress.XtraEditors.TextEdit txtDate;
         private DevExpress.XtraGrid.GridControl gridControl1;
-        private System.Windows.Forms.BindingSource seriesBindingSource;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colSereisID;
-        private DevExpress.XtraGrid.Columns.GridColumn colSeries1;
-        private DevExpress.XtraGrid.Columns.GridColumn colSeriesCount;
-        private DevExpress.XtraGrid.Columns.GridColumn colSeriesDateStart;
-        private DevExpress.XtraGrid.Columns.GridColumn colSeriesDateEnd;
-        private DevExpress.XtraGrid.Columns.GridColumn coluserCreator;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch repositoryItemToggleSwitch1;
     }

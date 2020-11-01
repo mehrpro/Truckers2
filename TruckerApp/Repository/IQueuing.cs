@@ -80,7 +80,6 @@ namespace TruckerApp.Repository
         /// </summary>
         /// <returns></returns>
         Task<List<ViewModelSeriesList>> GetSeriesList();
-
         /// <summary>
         /// ابطال یا بازگشت وجه و ابطال نوبت براساس شناسه نوبت
         /// </summary>
@@ -94,6 +93,16 @@ namespace TruckerApp.Repository
         /// <param name="queueId">شناسه حواله صادره شده</param>
         /// <returns></returns>
         Task<bool> ResieadByQueueID(int queueId);
+        /// <summary>
+        /// ایجاد سریال فروش جدید و ثبت تعدادی دفاتر
+        /// </summary>
+        /// <returns></returns>
+        Task<bool> NewSerial();
+        /// <summary>
+        /// آخرین سریال فروش صادر شده
+        /// </summary>
+        /// <returns></returns>
+        Task<SeriesPrice> LastSerial();
 
     }
 
@@ -228,13 +237,18 @@ namespace TruckerApp.Repository
         {
             var qry= await db.SeriesPrices.ToListAsync();
             var list = new List<ViewModelSeriesList>();
+            
             foreach (var seriesPrice in qry.OrderByDescending(x=>x.SereisID))
             {
                 list.Add(new ViewModelSeriesList()
                 {
+                    
                     SereisID = seriesPrice.SereisID,
                     SeriesName = seriesPrice.SeriesName,
-                    SeriesDateStart = seriesPrice.SeriesDateStart.PersianConvertor()
+                    SeriesDateStart = seriesPrice.SeriesDateStart.PersianConvertor(),
+                    SeriesCount = seriesPrice.SeriesCount,
+                    SeriesDateEnd = seriesPrice.SeriesDateEnd == null ?"": seriesPrice.SeriesDateEnd.Value.PersianConvertor(),
+                    userCreator = $@"{seriesPrice.User.FirstName} {seriesPrice.User.LastName}"
                 });
             }
             return list;
@@ -281,6 +295,55 @@ namespace TruckerApp.Repository
                 return false;
             }
             
+        }
+
+        public async Task<bool> NewSerial()
+        {
+            try
+            {
+                using (var ts = db.Database.BeginTransaction())
+                {
+                    var last = db.SeriesPrices.Single(x => x.enabeled == true && x.closing == false);
+                    if (db.Cashes.FirstOrDefault(x => x.seriesID_FK == last.SereisID) == null)
+                    {
+                        return false;
+                    }
+                    last.SeriesDateEnd = DateTime.Now;
+                    last.Faleh = db.Queues.Count(x => x.Type_FK == 1 && x.SeriesID_FK == last.SereisID);
+                    last.Packet = db.Queues.Count(x => x.Type_FK == 2 && x.SeriesID_FK == last.SereisID);
+                    last.Gandom = db.Queues.Count(x => x.Type_FK == 3 && x.SeriesID_FK == last.SereisID);
+                    last.Clinker = db.Queues.Count(x => x.Type_FK == 4 && x.SeriesID_FK == last.SereisID);
+                    last.Member = (short) db.Queues.Count(x => x.GroupCommission == 30 && x.SeriesID_FK == last.SereisID);
+                    last.Native = (short) db.Queues.Count(x => x.GroupCommission == 31 && x.SeriesID_FK == last.SereisID);
+                    last.Other = (short) db.Queues.Count(x => x.GroupCommission == 32 && x.SeriesID_FK == last.SereisID);
+                    last.SeriesCount =  db.Queues.Count(x => x.SeriesID_FK == last.SereisID);
+                    last.enabeled = false;
+                    last.closing = true;
+                    db.SaveChanges();
+
+                    var series = new SeriesPrice
+                    {
+                        SeriesName = last.SeriesName + 1,
+                        SeriesDateStart = DateTime.Now,
+                        userCreator = PublicVar.UserID,
+                        enabeled = true,
+                        closing = false
+                    };
+                    db.SeriesPrices.Add(series);
+                    db.SaveChanges();
+                    ts.Commit();
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public async Task<SeriesPrice> LastSerial()
+        {
+            return await db.SeriesPrices.SingleOrDefaultAsync(x => x.enabeled ==true && x.closing == false);
         }
     }
 }

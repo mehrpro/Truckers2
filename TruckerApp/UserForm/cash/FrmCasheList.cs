@@ -4,38 +4,39 @@ using System.Data.Entity;
 using DevExpress.XtraEditors;
 using DevExpress.XtraReports.UI;
 using TruckerApp.ExtentionMethod;
+using TruckerApp.Repository;
 
-namespace TruckerApp.UserForm
+namespace TruckerApp.UserForm.cash
 {
     public partial class FrmCasheList : XtraForm
     {
-        public FrmCasheList()
+        private readonly ICustomReport _report;
+        private readonly ICounter _counter;
+        public FrmCasheList(ICustomReport report, ICounter counter)
         {
+            _report = report;
+            _counter = counter;
             InitializeComponent();
-
         }
 
-        private TruckersEntities db = new TruckersEntities();
-        Counter counter =  new Counter();
+    
+     
 
-        private void setup()
+        private async void setup()
         {
-            int id = PublicVar.SeriesID;
-            db = new TruckersEntities();
-            db.Cashes.Load();
-            cashesBindingSource.DataSource =  db.Cashes.Where(x => x.seriesID_FK == id).ToList();
-            txtFalaeh.Text = counter.faleh(id).ToString();
-            txtPacket.Text = counter.packet(id).ToString();
-            txtGandom.Text = counter.gandom(id).ToString();
-            txtClinker.Text = counter.clinker(id).ToString();
-            txtCash.Text = counter.TotalCash(id).ToString();
-            txtPOS.Text = counter.TotalPOS(id).ToString();
-            txtAhakFaleh.Text = counter.AhakFaleh(id).ToString();
-            txtAhakPackat.Text = counter.AhakPackat(id).ToString();
-            txtOtherType.Text = counter.OtherType(id).ToString();
-            txtTotalCash.Text = $"{counter.TotalCash(id)+ counter.TotalPOS(id)}";
+            cashesBindingSource.DataSource = await _report.GetCashListBySeriesId(PublicVar.SeriesID);
+            txtFalaeh.EditValue = await _counter.faleh(PublicVar.SeriesID);
+            txtPacket.EditValue = await _counter.packet(PublicVar.SeriesID);
+            txtGandom.EditValue = await _counter.gandom(PublicVar.SeriesID);
+            txtClinker.EditValue = await _counter.clinker(PublicVar.SeriesID);
+            txtCash.EditValue = await _counter.TotalCash(PublicVar.SeriesID);
+            txtPOS.EditValue = await _counter.TotalPOS(PublicVar.SeriesID);
+            txtAhakFaleh.EditValue = await _counter.AhakFaleh(PublicVar.SeriesID);
+            txtAhakPackat.EditValue = await _counter.AhakPackat(PublicVar.SeriesID);
+            txtOtherType.EditValue = await _counter.OtherType(PublicVar.SeriesID);
+            txtTotalCash.EditValue =  $@"{await _counter.TotalCash(PublicVar.SeriesID) + await _counter.TotalPOS(PublicVar.SeriesID)}";
             txtSerial.Text = PublicVar.SeriesName.ToString();
-            txtDate.Text = $"{PublicVar.DateSerial:yyyy/MM/dd}";
+            txtDate.Text = $@"{PublicVar.DateSerial:yyyy/MM/dd}";
         }
         private void FrmCasheList_Load(object sender, EventArgs e)
         {
@@ -60,7 +61,6 @@ namespace TruckerApp.UserForm
             report.Parameters["ahakpackat"].Value = $"{ txtAhakPackat.Text}";
             report.Parameters["other"].Value = $"{ txtOtherType.Text}";
             report.Parameters["serial"].Value = $"{PublicVar.SeriesName}";
-
             tool.PrintDialog();
         }
 
