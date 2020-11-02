@@ -87,7 +87,8 @@ namespace TruckerApp.UserForm.cash
                 txtAhakPackat.EditValue = sumList.Sum(x => x.AhakPackat);
                 txtOtherType.EditValue = sumList.Sum(x => x.Othertype);
                 txtTotalCash.EditValue = sumList.Sum(x => x.TotalCash); 
-                txtTotalPos.EditValue = sumList.Sum(x => x.TotalPos); 
+                txtTotalPos.EditValue = sumList.Sum(x => x.TotalPos);
+                txtTotalSerial.EditValue = sumList.Count;
             }
 
         }

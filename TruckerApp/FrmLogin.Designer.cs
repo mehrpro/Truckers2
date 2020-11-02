@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.btnLogin = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -46,12 +45,10 @@
             // btnLogin
             // 
             this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogin.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnLogin.Appearance.Options.UseFont = true;
-            this.btnLogin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.ImageOptions.Image")));
-            this.btnLogin.Location = new System.Drawing.Point(194, 170);
+            this.btnLogin.Location = new System.Drawing.Point(113, 138);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(108, 47);
+            this.btnLogin.Size = new System.Drawing.Size(80, 35);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "ورود";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -59,20 +56,18 @@
             // simpleButton2
             // 
             this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(63, 170);
+            this.simpleButton2.Location = new System.Drawing.Point(27, 138);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(108, 47);
+            this.simpleButton2.Size = new System.Drawing.Size(80, 35);
             this.simpleButton2.TabIndex = 3;
-            this.simpleButton2.Text = "خروج";
+            this.simpleButton2.Text = "بستن";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // groupControl1
             // 
-            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("B Yekan", 16F);
+            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.AppearanceCaption.Options.UseTextOptions = true;
             this.groupControl1.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -89,43 +84,44 @@
             this.groupControl1.Controls.Add(this.txtUsername);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(488, 232);
+            this.groupControl1.ShowCaption = false;
+            this.groupControl1.Size = new System.Drawing.Size(340, 195);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "اتوماسیون پایانه";
             // 
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(308, 125);
+            this.labelControl2.Location = new System.Drawing.Point(259, 110);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(51, 24);
+            this.labelControl2.Size = new System.Drawing.Size(45, 17);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "رمز عبور";
             // 
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("B Yekan", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.Blue;
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Location = new System.Drawing.Point(21, 16);
+            this.labelControl3.Location = new System.Drawing.Point(27, 21);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(354, 39);
+            this.labelControl3.Size = new System.Drawing.Size(286, 25);
             this.labelControl3.TabIndex = 1;
             this.labelControl3.Text = "انجمن صنفی رانندگان شهرستان بیجار";
             // 
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(308, 80);
+            this.labelControl1.Location = new System.Drawing.Point(259, 78);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(62, 24);
+            this.labelControl1.Size = new System.Drawing.Size(52, 17);
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "نام کاربری";
             // 
@@ -133,46 +129,48 @@
             // 
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.EditValue = "";
-            this.txtPassword.Location = new System.Drawing.Point(63, 122);
+            this.txtPassword.Location = new System.Drawing.Point(27, 106);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Parmida_ActivePlusMultiKeys = false;
-            this.txtPassword.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txtPassword.Properties.Appearance.Options.UseFont = true;
             this.txtPassword.Properties.Appearance.Options.UseTextOptions = true;
             this.txtPassword.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtPassword.Properties.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(239, 30);
+            this.txtPassword.Size = new System.Drawing.Size(225, 24);
             this.txtPassword.TabIndex = 1;
             // 
             // txtUsername
             // 
             this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUsername.EditValue = "";
-            this.txtUsername.Location = new System.Drawing.Point(63, 77);
+            this.txtUsername.Location = new System.Drawing.Point(27, 74);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Parmida_ActivePlusMultiKeys = false;
-            this.txtUsername.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txtUsername.Properties.Appearance.Options.UseFont = true;
             this.txtUsername.Properties.Appearance.Options.UseTextOptions = true;
             this.txtUsername.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.txtUsername.Size = new System.Drawing.Size(239, 30);
+            this.txtUsername.Size = new System.Drawing.Size(225, 24);
             this.txtUsername.TabIndex = 0;
             // 
             // FrmLogin
             // 
             this.AcceptButton = this.btnLogin;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Appearance.Options.UseFont = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.simpleButton2;
-            this.ClientSize = new System.Drawing.Size(488, 232);
+            this.ClientSize = new System.Drawing.Size(340, 195);
+            this.ControlBox = false;
             this.Controls.Add(this.groupControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmLogin";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "اتوماسیون پایانه - سیستم نوبت دهی";
+            this.Text = "فرم ورود";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);

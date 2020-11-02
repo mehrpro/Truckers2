@@ -91,7 +91,6 @@
             // 
             this.ribbonControl1.ApplicationButtonDropDownControl = this.applicationMenu1;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
-            this.ribbonControl1.Font = new System.Drawing.Font("B Yekan", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.btnAddDriver,
@@ -131,7 +130,8 @@
             this.barButtonItem23,
             this.btnConvertPlate});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 34;
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.ribbonControl1.MaxItemId = 1;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -139,8 +139,8 @@
             this.ribbonPage4,
             this.ribbonPage5,
             this.ribSetting});
-            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
-            this.ribbonControl1.Size = new System.Drawing.Size(1113, 145);
+            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
+            this.ribbonControl1.Size = new System.Drawing.Size(794, 162);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // applicationMenu1
@@ -186,7 +186,7 @@
             // 
             // btnNewFaleh
             // 
-            this.btnNewFaleh.Caption = "حواله فله";
+            this.btnNewFaleh.Caption = "صدور نوبت";
             this.btnNewFaleh.Id = 5;
             this.btnNewFaleh.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.icons8_calendar_1_40;
             this.btnNewFaleh.Name = "btnNewFaleh";
@@ -266,6 +266,7 @@
             this.barButtonItem1.Id = 11;
             this.barButtonItem1.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.icons8_calendar_2_40;
             this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barButtonItem4
@@ -274,6 +275,7 @@
             this.barButtonItem4.Id = 12;
             this.barButtonItem4.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.icons8_calendar_4_40;
             this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
             // barButtonItem5
@@ -282,6 +284,7 @@
             this.barButtonItem5.Id = 13;
             this.barButtonItem5.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.icons8_calendar_3_40;
             this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
             // barButtonItem7
@@ -417,6 +420,7 @@
             this.barButtonItem19.Id = 28;
             this.barButtonItem19.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.icons8_calendar_5_40;
             this.barButtonItem19.Name = "barButtonItem19";
+            this.barButtonItem19.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem19.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem19_ItemClick);
             // 
             // barButtonItem20
@@ -425,6 +429,7 @@
             this.barButtonItem20.Id = 29;
             this.barButtonItem20.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.icons8_calendar_6_40;
             this.barButtonItem20.Name = "barButtonItem20";
+            this.barButtonItem20.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem20.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem20_ItemClick);
             // 
             // barButtonItem21
@@ -433,6 +438,7 @@
             this.barButtonItem21.Id = 30;
             this.barButtonItem21.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.icons8_calendar_7_40;
             this.barButtonItem21.Name = "barButtonItem21";
+            this.barButtonItem21.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem21.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem21_ItemClick);
             // 
             // barButtonItem22
@@ -589,21 +595,25 @@
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.barButtonItem7);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 359);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 690);
+            this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1113, 35);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(794, 37);
             // 
             // FrmMain
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Appearance.Options.UseFont = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1113, 394);
+            this.ClientSize = new System.Drawing.Size(794, 727);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
+            this.Font = new System.Drawing.Font("B Yekan", 12F);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "FrmMain";
             this.Ribbon = this.ribbonControl1;
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions1 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCashPiriodList));
             DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule compareAgainstControlValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule();
             this.dateStart = new DevExpress.XtraEditors.DateEdit();
@@ -126,7 +127,7 @@
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("B Yekan", 16F);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
-            this.groupControl1.CaptionImage = global::TruckerApp.Properties.Resources.icons8_cash_receipt_48;
+            this.groupControl1.CaptionImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_cash_receipt_48;
             this.groupControl1.Controls.Add(this.groupControl2);
             this.groupControl1.Controls.Add(this.panelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -141,12 +142,13 @@
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("B Yekan", 12F);
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
             this.groupControl2.Controls.Add(this.gridControl1);
+            buttonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("buttonImageOptions1.Image")));
             this.groupControl2.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", ((System.Drawing.Image)(resources.GetObject("groupControl2.CustomHeaderButtons"))), -1, DevExpress.XtraEditors.ButtonPanel.ImageLocation.Default, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", true, -1, true, null, true, false, true, null, "printList", -1)});
+            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "printList", -1)});
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(2, 55);
+            this.groupControl2.Location = new System.Drawing.Point(2, 59);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(851, 574);
+            this.groupControl2.Size = new System.Drawing.Size(851, 570);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "گزارشات";
             this.groupControl2.CustomButtonClick += new DevExpress.XtraBars.Docking2010.BaseButtonEventHandler(this.groupControl2_CustomButtonClick);
@@ -154,10 +156,10 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 45);
+            this.gridControl1.Location = new System.Drawing.Point(2, 49);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(847, 527);
+            this.gridControl1.Size = new System.Drawing.Size(847, 519);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -346,9 +348,9 @@
             this.panelControl1.Controls.Add(this.labelControl11);
             this.panelControl1.Controls.Add(this.txtClinker);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl1.Location = new System.Drawing.Point(853, 55);
+            this.panelControl1.Location = new System.Drawing.Point(853, 59);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(372, 574);
+            this.panelControl1.Size = new System.Drawing.Size(372, 570);
             this.panelControl1.TabIndex = 0;
             // 
             // txtFaleh
@@ -406,7 +408,7 @@
             this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.Location = new System.Drawing.Point(76, 499);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(113, 53);
@@ -418,6 +420,7 @@
             // 
             this.labelControl13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl13.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl13.Appearance.Options.UseFont = true;
             this.labelControl13.Location = new System.Drawing.Point(223, 217);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(62, 24);
@@ -428,6 +431,7 @@
             // 
             this.labelControl12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl12.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl12.Appearance.Options.UseFont = true;
             this.labelControl12.Location = new System.Drawing.Point(227, 37);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(45, 24);
@@ -438,6 +442,7 @@
             // 
             this.labelControl19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl19.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl19.Appearance.Options.UseFont = true;
             this.labelControl19.Location = new System.Drawing.Point(223, 433);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(42, 24);
@@ -473,6 +478,7 @@
             // 
             this.labelControl14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl14.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl14.Appearance.Options.UseFont = true;
             this.labelControl14.Location = new System.Drawing.Point(223, 325);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(28, 24);
@@ -534,7 +540,7 @@
             this.btnReporter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnReporter.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
             this.btnReporter.Appearance.Options.UseFont = true;
-            this.btnReporter.Image = ((System.Drawing.Image)(resources.GetObject("btnReporter.Image")));
+            this.btnReporter.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReporter.ImageOptions.Image")));
             this.btnReporter.Location = new System.Drawing.Point(195, 499);
             this.btnReporter.Name = "btnReporter";
             this.btnReporter.Size = new System.Drawing.Size(113, 53);
@@ -596,6 +602,7 @@
             // 
             this.labelControl18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl18.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl18.Appearance.Options.UseFont = true;
             this.labelControl18.Location = new System.Drawing.Point(223, 397);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(61, 24);
@@ -606,6 +613,7 @@
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(223, 109);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(117, 24);
@@ -616,6 +624,7 @@
             // 
             this.labelControl15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl15.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl15.Appearance.Options.UseFont = true;
             this.labelControl15.Location = new System.Drawing.Point(223, 253);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(71, 24);
@@ -714,6 +723,7 @@
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(223, 145);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(85, 24);
@@ -724,6 +734,7 @@
             // 
             this.labelControl17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl17.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl17.Appearance.Options.UseFont = true;
             this.labelControl17.Location = new System.Drawing.Point(223, 289);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(38, 24);
@@ -734,6 +745,7 @@
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl3.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Location = new System.Drawing.Point(223, 184);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(106, 24);
@@ -744,6 +756,7 @@
             // 
             this.labelControl16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl16.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl16.Appearance.Options.UseFont = true;
             this.labelControl16.Location = new System.Drawing.Point(223, 361);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(52, 24);
@@ -754,6 +767,7 @@
             // 
             this.labelControl11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl11.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
+            this.labelControl11.Appearance.Options.UseFont = true;
             this.labelControl11.Location = new System.Drawing.Point(227, 73);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(43, 24);

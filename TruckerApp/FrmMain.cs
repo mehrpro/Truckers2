@@ -6,6 +6,7 @@ using TruckerApp.ExtentionMethod;
 using TruckerApp.Repository;
 using TruckerApp.UserForm;
 using TruckerApp.UserForm.cash;
+using TruckerApp.UserForm.Commission;
 using TruckerApp.UserForm.Customer;
 using TruckerApp.UserForm.Fish;
 
@@ -28,8 +29,18 @@ namespace TruckerApp
         private void btnAddDriver_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            var newForm = _mainContainer.GetInstance<FrmNewDriverWithCamera>();
-            newForm.ShowDialog();
+            //var newForm = _mainContainer.GetInstance<FrmNewDriverWithCamera>();
+            //newForm.ShowDialog();
+            foreach (var c in this.MdiChildren)
+            {
+                c.Close();
+            }
+            var frm = _mainContainer.GetInstance<FrmNewDriverWithCamera>();
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.MdiParent = this;
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
         }
 
         private void btnMemberShipList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -46,22 +57,34 @@ namespace TruckerApp
 
         private void btnCommission_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var newForm = new UserForm.Commission.FrmCommissionNative
-            {
-                Group1 = 14,
-                Group2 = 13,
-                StartPosition = FormStartPosition.CenterScreen
-            };
-            newForm.ShowDialog();
+            var frm = _mainContainer.GetInstance<FrmCommissionNative>();
+            frm.Group1 = 14;
+            frm.GroupType4 = 13;
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
+
+            
         }
 
         private void btnNewQue_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            var newForm = _mainContainer.GetInstance<FrmFishPrint>();
-            newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
-            newForm.StartPosition = FormStartPosition.CenterScreen;
-            newForm.ShowDialog();
+            //var newForm = _mainContainer.GetInstance<FrmFishPrint>();
+            //newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
+            //newForm.StartPosition = FormStartPosition.CenterScreen;
+            //newForm.ShowDialog();
+
+            foreach (var c in this.MdiChildren)
+            {
+                c.Close();
+            }
+            var frm = _mainContainer.GetInstance<FrmFishPrint>();
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.MdiParent = this;
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+
         }
 
         private void btnSeries_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -113,24 +136,20 @@ namespace TruckerApp
 
         private void btnCommissionNative_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var newForm = new UserForm.Commission.FrmCommissionNative()
-            {
-                Group1 = 15,
-                Group2 = 17,
-                StartPosition = FormStartPosition.CenterScreen,
-            };
-            newForm.ShowDialog();
+            var frm = _mainContainer.GetInstance<FrmCommissionNative>();
+            frm.Group1 = 15;
+            frm.GroupType4 = 17;
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
         }
 
         private void btnCommissionOther_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var newForm = new UserForm.Commission.FrmCommissionNative()
-            {
-                Group1 = 16,
-                Group2 = 18,
-                StartPosition = FormStartPosition.CenterScreen,
-            };
-            newForm.ShowDialog();
+            var frm = _mainContainer.GetInstance<FrmCommissionNative>();
+            frm.Group1 = 16;
+            frm.GroupType4 = 18;
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
@@ -291,8 +310,18 @@ namespace TruckerApp
 
         private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            //var frm = _mainContainer.GetInstance<FrmEditDriverWithCamera>();
+            //frm.ShowDialog();
+            foreach (var c in this.MdiChildren)
+            {
+                c.Close();
+            }
             var frm = _mainContainer.GetInstance<FrmEditDriverWithCamera>();
-            frm.ShowDialog();
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.MdiParent = this;
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
         }
 
         private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -365,7 +394,7 @@ namespace TruckerApp
 
         private void barButtonItem23_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frm = new FrmCasheList3().ShowDialog();
+            //var frm = new FrmCasheList3().ShowDialog();
         }
 
         private void btnConvertPlate_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

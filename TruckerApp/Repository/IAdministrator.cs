@@ -6,6 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TruckerApp.ViewModels.Administrator;
+using System.Security.Cryptography;
+using TruckerApp.ExtentionMethod;
+
+
 
 namespace TruckerApp.Repository
 {
@@ -22,6 +26,12 @@ namespace TruckerApp.Repository
         /// </summary>
         /// <returns></returns>
         Task<bool> CreateScheduleList();
+        /// <summary>
+        /// افزودن کاربر جدید
+        /// </summary>
+        /// <param name="modelUsers">مدل کاربر</param>
+        /// <returns></returns>
+        Task<bool> ManageUsers(User modelUsers);
 
     }
 
@@ -76,6 +86,30 @@ namespace TruckerApp.Repository
             }
 
         }
+
+        public async Task<bool> ManageUsers(User modelUsers)
+        {
+            try
+            {
+                if (modelUsers.userID == 0)
+                {
+                    db.Entry(modelUsers).State = EntityState.Added;
+                    await db.SaveChangesAsync();
+                    return true;
+                }
+                else
+                {
+                    db.Entry(modelUsers).State = EntityState.Modified;
+                    await db.SaveChangesAsync();
+                    return true;
+                }
+            }
+            catch 
+            {
+                return false;
+            }
+        }
+
 
         public void Dispose()
         {

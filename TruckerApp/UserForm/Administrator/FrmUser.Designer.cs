@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUser));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.btnNew = new DevExpress.XtraEditors.SimpleButton();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.userIDTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.FirstNameTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.LastNameTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.PhoneTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -42,18 +46,20 @@
             this.CashesTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.DriversTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.SeriesPricesTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.RoulTextEdit = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.ItemForCashes = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForDrivers = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForSeriesPrices = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ItemForuserID = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForFirstName = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForusername = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForLastName = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForPhone = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForRoul = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForusername = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForpassword = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForCashes = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForDrivers = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForSeriesPrices = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colFirstName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,11 +68,6 @@
             this.colRoul = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colusername = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpassword = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.RoulTextEdit = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.btnNew = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -83,22 +84,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.CashesTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DriversTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SeriesPricesTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RoulTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCashes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForDrivers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForSeriesPrices)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForuserID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForFirstName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForusername)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForLastName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForPhone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForRoul)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForusername)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForpassword)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCashes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForDrivers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForSeriesPrices)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RoulTextEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -124,6 +125,42 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(896, 53);
             this.panelControl1.TabIndex = 1;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Appearance.Font = new System.Drawing.Font("B Yekan", 9.75F);
+            this.btnClose.Appearance.Options.UseFont = true;
+            this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
+            this.btnClose.Location = new System.Drawing.Point(556, 7);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(101, 39);
+            this.btnClose.TabIndex = 0;
+            this.btnClose.Text = "بستن";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Appearance.Font = new System.Drawing.Font("B Yekan", 9.75F);
+            this.btnSave.Appearance.Options.UseFont = true;
+            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
+            this.btnSave.Location = new System.Drawing.Point(663, 7);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(101, 39);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.Text = "ذخیره";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnNew
+            // 
+            this.btnNew.Appearance.Font = new System.Drawing.Font("B Yekan", 9.75F);
+            this.btnNew.Appearance.Options.UseFont = true;
+            this.btnNew.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.ImageOptions.Image")));
+            this.btnNew.Location = new System.Drawing.Point(770, 7);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(101, 39);
+            this.btnNew.TabIndex = 0;
+            this.btnNew.Text = "افزودن";
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // dataLayoutControl1
             // 
@@ -158,7 +195,7 @@
             this.ItemForCashes,
             this.ItemForDrivers,
             this.ItemForSeriesPrices});
-            this.dataLayoutControl1.Location = new System.Drawing.Point(2, 39);
+            this.dataLayoutControl1.Location = new System.Drawing.Point(2, 43);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
             this.dataLayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(702, 87, 250, 350);
             this.dataLayoutControl1.OptionsFocus.MoveFocusRightToLeft = true;
@@ -271,6 +308,52 @@
             this.SeriesPricesTextEdit.StyleController = this.dataLayoutControl1;
             this.SeriesPricesTextEdit.TabIndex = 13;
             // 
+            // RoulTextEdit
+            // 
+            this.RoulTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource, "Roul", true));
+            this.RoulTextEdit.Location = new System.Drawing.Point(300, 12);
+            this.RoulTextEdit.Name = "RoulTextEdit";
+            this.RoulTextEdit.Parmida_ActivePlusMultiKeys = false;
+            this.RoulTextEdit.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.RoulTextEdit.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.RoulTextEdit.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.RoulTextEdit.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.RoulTextEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.RoulTextEdit.Properties.Items.AddRange(new object[] {
+            "admin",
+            "user"});
+            this.RoulTextEdit.Size = new System.Drawing.Size(240, 26);
+            this.RoulTextEdit.StyleController = this.dataLayoutControl1;
+            this.RoulTextEdit.TabIndex = 8;
+            // 
+            // ItemForCashes
+            // 
+            this.ItemForCashes.Control = this.CashesTextEdit;
+            this.ItemForCashes.Location = new System.Drawing.Point(0, 72);
+            this.ItemForCashes.Name = "ItemForCashes";
+            this.ItemForCashes.Size = new System.Drawing.Size(876, 24);
+            this.ItemForCashes.Text = "Cashes";
+            this.ItemForCashes.TextSize = new System.Drawing.Size(60, 13);
+            // 
+            // ItemForDrivers
+            // 
+            this.ItemForDrivers.Control = this.DriversTextEdit;
+            this.ItemForDrivers.Location = new System.Drawing.Point(0, 72);
+            this.ItemForDrivers.Name = "ItemForDrivers";
+            this.ItemForDrivers.Size = new System.Drawing.Size(876, 48);
+            this.ItemForDrivers.Text = "Drivers";
+            this.ItemForDrivers.TextSize = new System.Drawing.Size(60, 13);
+            // 
+            // ItemForSeriesPrices
+            // 
+            this.ItemForSeriesPrices.Control = this.SeriesPricesTextEdit;
+            this.ItemForSeriesPrices.Location = new System.Drawing.Point(0, 72);
+            this.ItemForSeriesPrices.Name = "ItemForSeriesPrices";
+            this.ItemForSeriesPrices.Size = new System.Drawing.Size(876, 130);
+            this.ItemForSeriesPrices.Text = "Series Prices";
+            this.ItemForSeriesPrices.TextSize = new System.Drawing.Size(60, 13);
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.AppearanceGroup.Font = new System.Drawing.Font("B Yekan", 9.75F);
@@ -281,7 +364,6 @@
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup2});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(896, 113);
             this.layoutControlGroup1.TextVisible = false;
@@ -321,6 +403,15 @@
             this.ItemForFirstName.Text = "نام";
             this.ItemForFirstName.TextSize = new System.Drawing.Size(60, 20);
             // 
+            // ItemForusername
+            // 
+            this.ItemForusername.Control = this.usernameTextEdit;
+            this.ItemForusername.Location = new System.Drawing.Point(595, 60);
+            this.ItemForusername.Name = "ItemForusername";
+            this.ItemForusername.Size = new System.Drawing.Size(281, 33);
+            this.ItemForusername.Text = "نام کاربری";
+            this.ItemForusername.TextSize = new System.Drawing.Size(60, 20);
+            // 
             // ItemForLastName
             // 
             this.ItemForLastName.Control = this.LastNameTextEdit;
@@ -348,15 +439,6 @@
             this.ItemForRoul.Text = "نقش";
             this.ItemForRoul.TextSize = new System.Drawing.Size(60, 20);
             // 
-            // ItemForusername
-            // 
-            this.ItemForusername.Control = this.usernameTextEdit;
-            this.ItemForusername.Location = new System.Drawing.Point(595, 60);
-            this.ItemForusername.Name = "ItemForusername";
-            this.ItemForusername.Size = new System.Drawing.Size(281, 33);
-            this.ItemForusername.Text = "نام کاربری";
-            this.ItemForusername.TextSize = new System.Drawing.Size(60, 20);
-            // 
             // ItemForpassword
             // 
             this.ItemForpassword.Control = this.passwordTextEdit;
@@ -366,32 +448,13 @@
             this.ItemForpassword.Text = "گذرواژه";
             this.ItemForpassword.TextSize = new System.Drawing.Size(60, 20);
             // 
-            // ItemForCashes
+            // emptySpaceItem1
             // 
-            this.ItemForCashes.Control = this.CashesTextEdit;
-            this.ItemForCashes.Location = new System.Drawing.Point(0, 72);
-            this.ItemForCashes.Name = "ItemForCashes";
-            this.ItemForCashes.Size = new System.Drawing.Size(876, 24);
-            this.ItemForCashes.Text = "Cashes";
-            this.ItemForCashes.TextSize = new System.Drawing.Size(60, 13);
-            // 
-            // ItemForDrivers
-            // 
-            this.ItemForDrivers.Control = this.DriversTextEdit;
-            this.ItemForDrivers.Location = new System.Drawing.Point(0, 72);
-            this.ItemForDrivers.Name = "ItemForDrivers";
-            this.ItemForDrivers.Size = new System.Drawing.Size(876, 48);
-            this.ItemForDrivers.Text = "Drivers";
-            this.ItemForDrivers.TextSize = new System.Drawing.Size(60, 13);
-            // 
-            // ItemForSeriesPrices
-            // 
-            this.ItemForSeriesPrices.Control = this.SeriesPricesTextEdit;
-            this.ItemForSeriesPrices.Location = new System.Drawing.Point(0, 72);
-            this.ItemForSeriesPrices.Name = "ItemForSeriesPrices";
-            this.ItemForSeriesPrices.Size = new System.Drawing.Size(876, 130);
-            this.ItemForSeriesPrices.Text = "Series Prices";
-            this.ItemForSeriesPrices.TextSize = new System.Drawing.Size(60, 13);
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 0);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(288, 30);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // gridControl1
             // 
@@ -580,69 +643,6 @@
             this.colpassword.Visible = true;
             this.colpassword.VisibleIndex = 5;
             // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 0);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(288, 30);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // RoulTextEdit
-            // 
-            this.RoulTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.usersBindingSource, "Roul", true));
-            this.RoulTextEdit.Location = new System.Drawing.Point(300, 12);
-            this.RoulTextEdit.Name = "RoulTextEdit";
-            this.RoulTextEdit.Parmida_ActivePlusMultiKeys = false;
-            this.RoulTextEdit.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.RoulTextEdit.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.RoulTextEdit.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.RoulTextEdit.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.RoulTextEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.RoulTextEdit.Properties.Items.AddRange(new object[] {
-            "admin",
-            "user"});
-            this.RoulTextEdit.Size = new System.Drawing.Size(240, 26);
-            this.RoulTextEdit.StyleController = this.dataLayoutControl1;
-            this.RoulTextEdit.TabIndex = 8;
-            // 
-            // btnNew
-            // 
-            this.btnNew.Appearance.Font = new System.Drawing.Font("B Yekan", 9.75F);
-            this.btnNew.Appearance.Options.UseFont = true;
-            this.btnNew.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.Image")));
-            this.btnNew.Location = new System.Drawing.Point(770, 7);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(101, 39);
-            this.btnNew.TabIndex = 0;
-            this.btnNew.Text = "افزودن";
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Appearance.Font = new System.Drawing.Font("B Yekan", 9.75F);
-            this.btnSave.Appearance.Options.UseFont = true;
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(663, 7);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(101, 39);
-            this.btnSave.TabIndex = 0;
-            this.btnSave.Text = "ذخیره";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Appearance.Font = new System.Drawing.Font("B Yekan", 9.75F);
-            this.btnClose.Appearance.Options.UseFont = true;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(556, 7);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(101, 39);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.Text = "بستن";
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // FrmUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -670,22 +670,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.CashesTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DriversTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SeriesPricesTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RoulTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCashes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForDrivers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForSeriesPrices)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForuserID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForFirstName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForusername)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForLastName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForPhone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForRoul)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForusername)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForpassword)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCashes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForDrivers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForSeriesPrices)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RoulTextEdit.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

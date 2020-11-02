@@ -166,14 +166,14 @@ namespace TruckerApp.Repository
         {
             if (groupId != 32)//بومی
             {
-                if (groupId == 30)//عضو بومی
+                if (groupId == 30)//عضو 
                 {
                     if (typeId == 4)//کلینکر
                         return await GetCommissionByGroupId(13);
                     return await GetCommissionByGroupId(14);
                 }
 
-                if (groupId == 31)//غیر عضو بومی
+                if (groupId == 31)//غیر عضو 
                 {
                     if (typeId == 4)// کلینکر
                         return await GetCommissionByGroupId(17);

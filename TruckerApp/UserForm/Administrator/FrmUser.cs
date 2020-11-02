@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
 using DevExpress.XtraEditors;
+using TruckerApp.ExtentionMethod;
 
 namespace TruckerApp
 {
@@ -52,6 +47,12 @@ namespace TruckerApp
             dbContext = new TruckersEntities();
             dbContext.Users.Load();
             usersBindingSource.DataSource = dbContext.Users.Local;
+
+            var qry = dbContext.Users.ToList();
+            foreach (var user in qry)
+            {
+                var ser = user.password.EncryptTextUsingUtf8();
+            }
 
         }
     }

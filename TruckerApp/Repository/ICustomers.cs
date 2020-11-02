@@ -4,11 +4,12 @@ using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using DevExpress.Data.ODataLinq.Helpers;
+using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using TruckerApp.ViewModels.Customers;
 
 namespace TruckerApp.Repository
 {
-    public interface ICustomers :IDisposable
+    public interface ICustomers : IDisposable
     {
         /// <summary>
         /// ثبت راننده جدید
@@ -63,7 +64,20 @@ namespace TruckerApp.Repository
         /// <param name="groupId">کد گروه</param>
         /// <returns></returns>
         Task<List<Driver>> GetAllDriverByGroupID(byte groupId);
+        /// <summary>
+        /// ثبت کمیسیون جدید
+        /// </summary>
+        /// <param name="group">گروه</param>
+        /// <param name="commission">مبلغ</param>
+        /// <returns></returns>
+        Task<bool> AddNewCommision(byte groupId, int commission);
 
+        /// <summary>
+        /// لیست کمسیسون بر اساس گروه ها
+        /// </summary>
+        /// <param name="groupId">گروه</param>
+        /// <returns></returns>
+        Task<List<Commission>> GetCommissinByGroupId(byte groupId);
     }
 
     public class Customers : ICustomers
@@ -165,7 +179,7 @@ namespace TruckerApp.Repository
                         return result;
                     }
                 }
-                catch 
+                catch
                 {
                     return false;
                 }
@@ -181,6 +195,39 @@ namespace TruckerApp.Repository
         public async Task<List<Driver>> GetAllDriverByGroupID(byte groupId)
         {
             return await db.Drivers.Where(x => x.GroupID == groupId).ToListAsync();
+        }
+
+        public async Task<bool> AddNewCommision(byte groupId, int commission)
+        {
+            try
+            {
+                var qry = await db.Commissions.Where(x => x.Groups_FK == groupId).ToListAsync();
+                foreach (var item in qry)
+                {
+                    item.enabled = false;
+                }
+                var newCommission = new Commission
+                {
+                    DataRegister = DateTime.Now,
+                    Groups_FK = groupId,
+                    enabled = true,
+                    CommissionPrice = commission,
+                    GroupID = 2,
+                };
+                db.Commissions.Add(newCommission);
+                await db.SaveChangesAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public async Task<List<Commission>> GetCommissinByGroupId(byte groupId)
+        {
+            return await db.Commissions.Where(x => x.Groups_FK == groupId).ToListAsync();
+
         }
 
         public void Dispose()

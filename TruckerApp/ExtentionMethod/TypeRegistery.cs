@@ -18,6 +18,7 @@ namespace TruckerApp.ExtentionMethod
             For<ICustomers>().Use<Customers>().Ctor<TruckersEntities>("db").Is(new TruckersEntities());
             For<ICounter>().Use<Counter>().Ctor<TruckersEntities>("db").Is(new TruckersEntities());
             For<IReportSender>().Use<ReportSender>().Ctor<TruckersEntities>("db").Is(new TruckersEntities());
+            For<IHasherClass>().Use<HasherClass>();
         }
     }
 }

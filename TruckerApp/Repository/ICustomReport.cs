@@ -221,6 +221,7 @@ namespace TruckerApp.Repository
                 newModel.AhakFaleh = masterList.Count(x => x.Type_FK == 5);
                 newModel.AhakPackat = masterList.Count(x => x.Type_FK == 6);
                 newModel.Othertype = masterList.Count(x => x.Type_FK == 7);
+                newModel.SeriesName = db.SeriesPrices.Find(id).SeriesName;
                 cashLists.Add(newModel);
             }
 
