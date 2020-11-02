@@ -135,7 +135,6 @@
             this.groupControl1.Size = new System.Drawing.Size(1227, 631);
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "گزارشات دوره ای";
-            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // groupControl2
             // 
@@ -151,7 +150,6 @@
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "گزارشات";
             this.groupControl2.CustomButtonClick += new DevExpress.XtraBars.Docking2010.BaseButtonEventHandler(this.groupControl2_CustomButtonClick);
-            this.groupControl2.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl2_Paint);
             // 
             // gridControl1
             // 

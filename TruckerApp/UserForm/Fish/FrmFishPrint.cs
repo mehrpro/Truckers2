@@ -25,7 +25,7 @@ namespace TruckerApp.UserForm.Fish
         private int _driver, _series;
         private int _commission;
         private short _commissionId;//حق کمیسیون
-        private string _name, _number, _smartcart, _tagnumber, _type;
+        private string _name, _number, _smartcart, _tagnumber, _type, _seriesNumber;
         //private byte TypeId;
         private byte _group;
         //private string _price;
@@ -342,7 +342,33 @@ namespace TruckerApp.UserForm.Fish
             StopEveryThing();
         }
 
-
+        private void ChangeTypeId(byte TypeId)
+        {
+            switch (TypeId)
+            {
+                case 1:
+                    _type = "فله";
+                    break;
+                case 2:
+                    _type = "پاکت";
+                    break;
+                case 3:
+                    _type = "گندم";
+                    break;
+                case 4:
+                    _type = "کلینکر";
+                    break;
+                case 5:
+                    _type = "آهک فله";
+                    break;
+                case 6:
+                    _type = "آهک پاکت";
+                    break;
+                case 7:
+                    _type = "سایر";
+                    break;
+            }
+        }
 
 
         private async void cbxCargoType_EditValueChanged(object sender, EventArgs e)
@@ -352,6 +378,8 @@ namespace TruckerApp.UserForm.Fish
             {
                 return;
             }
+
+            ChangeTypeId(selectType.TypeID);
             txtNumber.EditValue = await _queuing.GetLastNumberByTypeId(selectType.TypeID);
             var com = await _queuing.GetCommisinoByTypeIdAndByGroupId(selectType.TypeID, _group);
             txtComossin.EditValue = _commission = com.CommissionPrice;
@@ -516,17 +544,18 @@ namespace TruckerApp.UserForm.Fish
         }
         private  void PrintFish()
         {
-            var report = XtraReport.FromFile("ReportFish.repx", true);
+            var report = XtraReport.FromFile("Report_Fish.repx", true);
             var tool = new ReportPrintTool(report);
             report.Parameters["date"].Value = DateTime.Now.PersianConvertorFull();
             report.Parameters["name"].Value = _name;
-            report.Parameters["number"].Value = _number;
+            report.Parameters["seriesNumber"].Value = _seriesNumber;
             report.Parameters["smartcart"].Value = _smartcart;
             report.Parameters["TagNumbers"].Value = _tagnumber;
             report.Parameters["member"].Value = _memeber;
             report.Parameters["price"].Value = _commission;
             report.Parameters["Type"].Value = _type;
             report.Parameters["code"].Value = _code;
+            report.Parameters["number"].Value = _number;
             tool.PrintDialog();
         }
         private void ClearForm()
@@ -540,7 +569,7 @@ namespace TruckerApp.UserForm.Fish
             txtPhoneNumber.ResetText();
             txtComossin.ResetText();
             _driver=_commission = 0;
-            _code = _name = _number = _smartcart = _tagnumber = _memeber = _type = null;
+            _code = _name = _seriesNumber = _smartcart = _tagnumber = _memeber = _type = null;
 
             //var driver = (Driver)cbxSmart.GetSelectedDataRow();
             //if (driver == null) return;
@@ -625,14 +654,16 @@ namespace TruckerApp.UserForm.Fish
                             GroupCommission = _group,
                             StatusFk = 20,
                         };
-                        var frm = new FrmCash {CashTemp = txtComossin.Text.Trim()};
+                        PublicVar.TempCash = Convert.ToInt32(txtComossin.Text);
+                        var frm = new FrmCash();
                         var dialogResult = frm.ShowDialog();
                         if (dialogResult == DialogResult.OK)
                         {
                             var result = _queuing.RegisterNewQueue(newQueue, frm.ModelCash);
                             if (result)
                             {
-                                _number = $"س {PublicVar.SeriesName}  شماره {Convert.ToInt16(txtNumber.EditValue)}";
+                                _seriesNumber = $"س {PublicVar.SeriesName}  شماره {Convert.ToInt16(txtNumber.EditValue)}";
+                                _number = await _queuing.GetScheduleByTypeId(newQueue.TypeFk);
                                 PrintFish();
                                 await _queuing.GetLastNumberByTypeId(Convert.ToByte(cbxCargoType.EditValue));
                             }

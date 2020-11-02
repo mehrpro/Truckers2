@@ -13,7 +13,7 @@ namespace TruckerApp.Repository
     /// <summary>
     /// لیست های سفارشی
     /// </summary>
-    public interface ICustomReport
+    public interface ICustomReport : IDisposable
     {
         /// <summary>
         ///  لیست همه بارنامه های صادر شده بر اساس نوع بار
@@ -64,6 +64,15 @@ namespace TruckerApp.Repository
         /// <param name="seriesId">شناسه سریال فروش</param>
         /// <returns></returns>
         Task<List<Cash>> GetCashListBySeriesId(int seriesId);
+        /// <summary>
+        /// گزارش دفتر کا مابین دو تاریخ
+        /// </summary>
+        /// <param name="startDateTime">تاریخ آغاز</param>
+        /// <param name="finishDateTime">تاریخ پایان</param>
+        /// <returns></returns>
+        Task<List<ViewModelTotalCashList>> GetTotalReportByBetweenDate(DateTime startDateTime, DateTime finishDateTime);
+
+
 
     }
     /// <summary>
@@ -179,6 +188,49 @@ namespace TruckerApp.Repository
         public async Task<List<Cash>> GetCashListBySeriesId(int seriesId)
         {
             return await db.Cashes.Where(x => x.seriesID_FK == seriesId).ToListAsync();
+        }
+
+        public async Task<List<ViewModelTotalCashList>> GetTotalReportByBetweenDate(DateTime startDateTime, DateTime finishDateTime)
+        {
+            var start = startDateTime.Date;
+            var end = finishDateTime.Date.AddDays(1);
+            var qry = await db.SeriesPrices.Where(x => x.SeriesDateStart >= start).ToListAsync();
+            var qry2 = qry.Where(x => x.SeriesDateStart <= end).ToList();
+            //txtTotalSerial.EditValue = qry2.Count.ToString();
+            var seriesIdList = new int[qry2.Count];
+            for (var i = 0; i < qry2.Count; i++) seriesIdList[i] = qry2[i].SereisID;
+
+            var cashLists = new List<ViewModelTotalCashList>();
+            foreach (var id in seriesIdList)
+            {
+                var masterList = new List<Queue>();
+                var qry23 = await db.Queues.Where(x => x.SeriesID_FK == id && x.Status_FK == 23).AsNoTracking().ToListAsync();
+                var qry20 = await db.Queues.Where(x => x.SeriesID_FK == id && x.Status_FK == 20).AsNoTracking().ToListAsync();
+                masterList.AddRange(qry23);
+                masterList.AddRange(qry20);
+
+
+                var newModel = new ViewModelTotalCashList();
+                newModel.DateTime = db.SeriesPrices.Find(id).SeriesDateStart.PersianConvertor();
+                newModel.TotalCash = (long)await db.Cashes.Where(x => x.seriesID_FK == id).SumAsync(x => x.CashDesk);
+                newModel.TotalPos = (long)await db.Cashes.Where(x => x.seriesID_FK == id).SumAsync(x => x.Pos);
+                newModel.faleh =  masterList.Count(x => x.Type_FK == 1);
+                newModel.packat = masterList.Count(x => x.Type_FK == 2);
+                newModel.gandom = masterList.Count(x => x.Type_FK == 3);
+                newModel.clinker = masterList.Count(x => x.Type_FK == 4);
+                newModel.AhakFaleh = masterList.Count(x => x.Type_FK == 5);
+                newModel.AhakPackat = masterList.Count(x => x.Type_FK == 6);
+                newModel.Othertype = masterList.Count(x => x.Type_FK == 7);
+                cashLists.Add(newModel);
+            }
+
+            return cashLists;
+
+        }
+
+        public void Dispose()
+        {
+            db?.Dispose();
         }
     }
 }

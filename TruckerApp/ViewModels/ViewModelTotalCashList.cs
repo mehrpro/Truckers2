@@ -2,7 +2,7 @@
 
 namespace TruckerApp.ViewModels
 {
-    public class TotalCashList
+    public class ViewModelTotalCashList
     {
         [Display(Name = "تاریخ")]
         public string DateTime { get; set; }

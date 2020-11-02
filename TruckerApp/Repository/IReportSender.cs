@@ -12,7 +12,7 @@ using TruckerApp.ExtentionMethod;
 
 namespace TruckerApp.Repository
 {
-    public interface IReportSender
+    public interface IReportSender :IDisposable
     {
         /// <summary>
         /// ساخت گزارش ارسالی برای ایمیل
@@ -92,35 +92,49 @@ namespace TruckerApp.Repository
 
         public async Task<bool> EmailSenderTask(int lastSeriesId)
         {
-            var resultMessage = await CreateMsgForEmail(lastSeriesId);
-            var subject = resultMessage[0];
-            var body = resultMessage[1];
-            var qry = await _db.SeriesPrices.FindAsync(lastSeriesId);
-            const string from = @"automation.sepehr@gmail.com";
-            var fromDisplayName = $"صورت وضعیت سریال فروش{qry.SeriesName}";
-            const string to = @"bijarpayaneh@gmail.com";
-            var toDisplayName = @"گزارش فروش روزانه اتوماسیون پایانه";
-            const string fromPassword = "Ss987654";
-
-            var fromAddress = new MailAddress(from, fromDisplayName);
-            var toAddress = new MailAddress(to, toDisplayName);
-           
-            var smtp = new SmtpClient
+            try
             {
-                Host = "smtp.gmail.com",
-                Port = 587,
-                EnableSsl = true,
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-                UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
-            };
+                var resultMessage = await CreateMsgForEmail(lastSeriesId);
+                var subject = resultMessage[0];
+                var body = resultMessage[1];
+                var qry = await _db.SeriesPrices.FindAsync(lastSeriesId);
+                const string from = @"automation.sepehr@gmail.com";
+                var fromDisplayName = $"صورت وضعیت سریال فروش{qry.SeriesName}";
+                const string to = @"bijarpayaneh@gmail.com";
+                var toDisplayName = @"گزارش فروش روزانه اتوماسیون پایانه";
+                const string fromPassword = "Ss987654";
 
-            
-            using (var message = new MailMessage(fromAddress, toAddress){Subject = subject,Body = body,})
-            {
-                smtp.Send(message);
+                var fromAddress = new MailAddress(from, fromDisplayName);
+                var toAddress = new MailAddress(to, toDisplayName);
+
+                var smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+                };
+
+
+                using (var message = new MailMessage(fromAddress, toAddress) { Subject = subject, Body = body, })
+                {
+                    smtp.Send(message);
+                    
+                }
                 return true;
             }
+            catch (Exception e)
+            {
+                return false;
+            }
+
+        }
+
+        public void Dispose()
+        {
+            _db?.Dispose();
         }
     }
 }

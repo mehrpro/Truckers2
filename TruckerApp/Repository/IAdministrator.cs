@@ -9,7 +9,7 @@ using TruckerApp.ViewModels.Administrator;
 
 namespace TruckerApp.Repository
 {
-    public interface IAdministrator
+    public interface IAdministrator :IDisposable
     {
         /// <summary>
         /// احراز هویت کاربر
@@ -17,6 +17,12 @@ namespace TruckerApp.Repository
         /// <param name="viewModelLogin">اطلاعات کاربری</param>
         /// <returns></returns>
         Task<DialogResult> ApproveLogin(ViewModelLogin viewModelLogin);
+        /// <summary>
+        /// ساخت لیست صف بندی
+        /// </summary>
+        /// <returns></returns>
+        Task<bool> CreateScheduleList();
+
     }
 
     public class Administrator : IAdministrator
@@ -42,6 +48,38 @@ namespace TruckerApp.Repository
                 }
             }
             return DialogResult.Abort;
+        }
+
+        public async Task<bool> CreateScheduleList()
+        {
+            try
+            {
+                for (byte i = 101; i < 108; i++)
+                {
+                    var qry = await db.LoadTypes.FindAsync(i);
+                    if (qry == null)
+                    {
+                        var newSchType = new LoadType()
+                        {
+                            TypeID = i,
+                            Type = "0"
+                        };
+                        db.LoadTypes.Add(newSchType);
+                    }
+                }
+                await db.SaveChangesAsync();
+                return true;
+            }
+            catch 
+            {
+                return false;
+            }
+
+        }
+
+        public void Dispose()
+        {
+            db?.Dispose();
         }
     }
 }

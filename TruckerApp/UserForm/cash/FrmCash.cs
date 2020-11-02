@@ -8,12 +8,12 @@ namespace TruckerApp.UserForm.cash
     public partial class FrmCash : XtraForm
     {
         public ViewModelCash ModelCash;
-        public string CashTemp { get; set; }
+        //public string CashTemp { get; set; }
         public FrmCash()
         {
             InitializeComponent();
             ModelCash = new ViewModelCash();
-            txtPOS.Text = CashTemp;
+            txtPOS.Text = PublicVar.TempCash.ToString();
 
         }
         private void btnPrint_Click(object sender, EventArgs e)

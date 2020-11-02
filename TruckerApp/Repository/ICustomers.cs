@@ -8,7 +8,7 @@ using TruckerApp.ViewModels.Customers;
 
 namespace TruckerApp.Repository
 {
-    public interface ICustomers
+    public interface ICustomers :IDisposable
     {
         /// <summary>
         /// ثبت راننده جدید
@@ -181,6 +181,11 @@ namespace TruckerApp.Repository
         public async Task<List<Driver>> GetAllDriverByGroupID(byte groupId)
         {
             return await db.Drivers.Where(x => x.GroupID == groupId).ToListAsync();
+        }
+
+        public void Dispose()
+        {
+            db?.Dispose();
         }
     }
 }

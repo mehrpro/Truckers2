@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace TruckerApp.Repository
 {
-    public interface ICounter
+    public interface ICounter:IDisposable
     {
         Task<int> packet_cnt(int seriesId);
         Task<int> faleh_cnt(int seriesId);
@@ -29,6 +29,8 @@ namespace TruckerApp.Repository
         Task<int> TotalPOS(int seriesId);
         Task<int> SeriesCount(int seriesId);
         Task<int> lastNumber(int seriesId, byte typ);
+
+       
         void serialBuy();
     }
 
@@ -63,9 +65,9 @@ namespace TruckerApp.Repository
         public async Task<int> SeriesCount(int seriesId) => await _db.Queues.CountAsync(x => x.SeriesID_FK == seriesId);
         public async Task<int> lastNumber(int seriesId, byte typ) =>(int) await _db.Queues.Where(x => x.SeriesID_FK == seriesId && x.Type_FK == typ).MaxAsync(x => x.Number);
 
-        public void serialBuy()
+        public async void serialBuy()
         {
-            var qry = _db.SeriesPrices.SingleOrDefault(x => x.enabeled == true && x.closing == false);
+            var qry = await _db.SeriesPrices.SingleOrDefaultAsync(x => x.enabeled == true && x.closing == false);
             if (qry != null)
             {
                 PublicVar.SeriesID = qry.SereisID;
@@ -88,6 +90,11 @@ namespace TruckerApp.Repository
             }
 
 
+        }
+
+        public void Dispose()
+        {
+            _db?.Dispose();
         }
     }
 }

@@ -9,10 +9,12 @@ namespace TruckerApp
     public partial class FrmLogin : XtraForm
     {
         private readonly IAdministrator _administrator;
-        public FrmLogin(IAdministrator administrator)
+        private readonly IQueuing _queuing;
+        public FrmLogin(IAdministrator administrator, IQueuing queuing)
         {
             InitializeComponent();
             _administrator = administrator;
+            _queuing = queuing;
             txtPassword.Text = @"708801298";
             txtUsername.Text = @"admin";
         }
@@ -38,7 +40,14 @@ namespace TruckerApp
                 Close();
             }
             else
-                XtraMessageBox.Show(PublicVar.FailedLogin, Text,MessageBoxButtons.OK,MessageBoxIcon.Error);
+                XtraMessageBox.Show(PublicVar.FailedLogin, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private async void FrmLogin_Load(object sender, EventArgs e)
+        {
+            await _queuing.LoadLastSerial();
+            await _administrator.CreateScheduleList();
+   
         }
     }
 }

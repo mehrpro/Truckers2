@@ -354,7 +354,13 @@ namespace TruckerApp
 
         private void barButtonItem22_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frm = new FrmCashPiriodList().ShowDialog();
+            //var frm = new FrmCashPiriodList().ShowDialog();
+            var newForm = _mainContainer.GetInstance<FrmCashPiriodList>();
+            newForm.FormBorderStyle = FormBorderStyle.Sizable;
+            newForm.WindowState = FormWindowState.Maximized;
+            newForm.MaximizeBox = newForm.MinimizeBox = true;
+            newForm.StartPosition = FormStartPosition.CenterParent;
+            newForm.ShowDialog();
         }
 
         private void barButtonItem23_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
