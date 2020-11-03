@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TruckerApp.ViewModels.Administrator;
-using System.Security.Cryptography;
+
 using TruckerApp.ExtentionMethod;
 
 
@@ -26,12 +26,13 @@ namespace TruckerApp.Repository
         /// </summary>
         /// <returns></returns>
         Task<bool> CreateScheduleList();
+
         /// <summary>
         /// افزودن کاربر جدید
         /// </summary>
         /// <param name="modelUsers">مدل کاربر</param>
         /// <returns></returns>
-        Task<bool> ManageUsers(User modelUsers);
+        Task<bool> ManageUsers(User user);
         /// <summary>
         /// لیست کاربران سیستم
         /// </summary>
@@ -53,6 +54,7 @@ namespace TruckerApp.Repository
         public Administrator(TruckersEntities db)
         {
             this.db = db;
+
         }
 
         public async Task<DialogResult> ApproveLogin(ViewModelLogin viewModelLogin)
@@ -100,25 +102,28 @@ namespace TruckerApp.Repository
 
         }
 
-        public async Task<bool> ManageUsers(User modelUsers)
+        public async Task<bool> ManageUsers(User user)
         {
             try
             {
-                if (modelUsers.userID == 0)
+                if (user.userID == 0)
                 {
-                    db.Entry(modelUsers).State = EntityState.Added;
+                    db.Entry(user).State = EntityState.Added;
                     await db.SaveChangesAsync();
                     return true;
                 }
-                else
+                var local = db.Set<User>().Local.FirstOrDefault(f => f.userID == user.userID);
+                if (local != null)
                 {
-                    db.Entry(modelUsers).State = EntityState.Modified;
-                    await db.SaveChangesAsync();
-                    return true;
+                    db.Entry(local).State = EntityState.Detached;
                 }
+                db.Entry(user).State = EntityState.Modified;
+                await db.SaveChangesAsync();
+                return true;
             }
-            catch
+            catch (Exception exception)
             {
+                var e = exception.Message;
                 return false;
             }
         }

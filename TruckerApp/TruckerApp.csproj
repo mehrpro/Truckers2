@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TruckerApp</RootNamespace>
     <AssemblyName>TruckerApp</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PublishUrl>publish\</PublishUrl>
@@ -451,6 +451,8 @@
       <DependentUpon>MDB.edmx</DependentUpon>
       <LastGenOutput>MDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\newcontact_32x32.png" />
+    <None Include="Resources\backward_16x16.png" />
     <None Include="Resources\editrangepermission_16x16.png" />
     <None Include="Resources\editrangepermission_32x32.png" />
     <None Include="Resources\cancel_32x322.png" />

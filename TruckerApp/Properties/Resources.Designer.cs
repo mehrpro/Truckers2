@@ -153,6 +153,16 @@ namespace TruckerApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backward_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("backward_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BunkerCement {
             get {
                 object obj = ResourceManager.GetObject("BunkerCement", resourceCulture);
@@ -716,6 +726,16 @@ namespace TruckerApp.Properties {
         internal static System.Drawing.Bitmap images {
             get {
                 object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap newcontact_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("newcontact_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
