@@ -32,7 +32,6 @@ namespace TruckerApp
         public Nullable<byte> editor_FK { get; set; }
         public Nullable<int> driver_code { get; set; }
     
-        public virtual AddressBook AddressBook { get; set; }
         public virtual LoadType LoadType { get; set; }
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

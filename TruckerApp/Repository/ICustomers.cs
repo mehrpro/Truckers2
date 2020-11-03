@@ -276,19 +276,22 @@ namespace TruckerApp.Repository
                 PublicVar.Conter = 1;
                 foreach (var driver in list)
                 {
-                    var result = await db.AddressBooks.AnyAsync(x => x.Phone == driver.Mobile);
+                    var result = await db.AddressBooks.AnyAsync(x => x.Mobile == driver.Mobile);
                     if (!result)
                     {
-                        db.AddressBooks.Add(new AddressBook()
+                        var ne = new AddressBook()
                         {
                             Fname = driver.Fname,
                             LName = driver.LName,
-                            Phone = driver.Mobile,
+                            Mobile = driver.Mobile,
                             Jobs = driver.Jobs,
-                            DriverID_FK = driver.DriverID_FK,
-                        });
+                            DriverID_FK = (int)driver.DriverID_FK,
+                        };
+                        db.AddressBooks.Add(ne);
+                       
                     }
                     PublicVar.Conter++;
+
                 }
                 PublicVar.ConterString = @"در حال ذخیره سازی دفترچه تلفن";
                 await db.SaveChangesAsync();
@@ -309,9 +312,10 @@ namespace TruckerApp.Repository
         {
             try
             {
+                
                 if (addressBook.ID == 0)
                 {
-                    db.Entry(addressBook).State = EntityState.Added;
+                    db.AddressBooks.Add(addressBook);
                     await db.SaveChangesAsync();
                     return true;
                 }
@@ -323,6 +327,7 @@ namespace TruckerApp.Repository
             }
             catch (Exception e)
             {
+                var str = e.Message;
                 return false;
             }
         }
@@ -333,6 +338,6 @@ namespace TruckerApp.Repository
             db?.Dispose();
         }
 
-    
+
     }
 }

@@ -112,18 +112,6 @@
           <Property Name="username" Type="nchar" MaxLength="240" Nullable="false" />
           <Property Name="password" Type="nchar" MaxLength="240" Nullable="false" />
         </EntityType>
-        <Association Name="FK_AddressBook_Drivers">
-          <End Role="Drivers" Type="Self.Drivers" Multiplicity="1" />
-          <End Role="AddressBook" Type="Self.AddressBook" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Drivers">
-              <PropertyRef Name="DriverID" />
-            </Principal>
-            <Dependent Role="AddressBook">
-              <PropertyRef Name="ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Cash_Queue">
           <End Role="Queue" Type="Self.Queue" Multiplicity="0..1" />
           <End Role="Cash" Type="Self.Cash" Multiplicity="*" />
@@ -289,10 +277,6 @@
           <EntitySet Name="Queue" EntityType="Self.Queue" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SeriesPrice" EntityType="Self.SeriesPrice" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_AddressBook_Drivers" Association="Self.FK_AddressBook_Drivers">
-            <End Role="Drivers" EntitySet="Drivers" />
-            <End Role="AddressBook" EntitySet="AddressBook" />
-          </AssociationSet>
           <AssociationSet Name="FK_Cash_Queue" Association="Self.FK_Cash_Queue">
             <End Role="Queue" EntitySet="Queue" />
             <End Role="Cash" EntitySet="Cash" />
@@ -359,10 +343,6 @@
           <EntitySet Name="Queues" EntityType="TruckersModel.Queue" />
           <EntitySet Name="SeriesPrices" EntityType="TruckersModel.SeriesPrice" />
           <EntitySet Name="Users" EntityType="TruckersModel.User" />
-          <AssociationSet Name="FK_AddressBook_Drivers" Association="TruckersModel.FK_AddressBook_Drivers">
-            <End Role="Driver" EntitySet="Drivers" />
-            <End Role="AddressBook" EntitySet="AddressBooks" />
-          </AssociationSet>
           <AssociationSet Name="FK_Cash_Queue" Association="TruckersModel.FK_Cash_Queue">
             <End Role="Queue" EntitySet="Queues" />
             <End Role="Cash" EntitySet="Cashes" />
@@ -431,7 +411,6 @@
           <Property Name="Jobs" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="DriverID_FK" Type="Int32" />
-          <NavigationProperty Name="Driver" Relationship="TruckersModel.FK_AddressBook_Drivers" FromRole="AddressBook" ToRole="Driver" />
         </EntityType>
         <EntityType Name="Cash">
           <Key>
@@ -476,7 +455,6 @@
           <Property Name="userID_FK" Type="Byte" Nullable="false" />
           <Property Name="editor_FK" Type="Byte" />
           <Property Name="driver_code" Type="Int32" />
-          <NavigationProperty Name="AddressBook" Relationship="TruckersModel.FK_AddressBook_Drivers" FromRole="Driver" ToRole="AddressBook" />
           <NavigationProperty Name="LoadType" Relationship="TruckersModel.FK_Drivers_LoadType" FromRole="Driver" ToRole="LoadType" />
           <NavigationProperty Name="User" Relationship="TruckersModel.FK_Drivers_Users" FromRole="Driver" ToRole="User" />
           <NavigationProperty Name="Queues" Relationship="TruckersModel.FK_Queue_Drivers" FromRole="Driver" ToRole="Queue" />
@@ -551,18 +529,6 @@
           <NavigationProperty Name="Drivers" Relationship="TruckersModel.FK_Drivers_Users" FromRole="User" ToRole="Driver" />
           <NavigationProperty Name="SeriesPrices" Relationship="TruckersModel.FK_Series_Users" FromRole="User" ToRole="SeriesPrice" />
         </EntityType>
-        <Association Name="FK_AddressBook_Drivers">
-          <End Type="TruckersModel.Driver" Role="Driver" Multiplicity="1" />
-          <End Type="TruckersModel.AddressBook" Role="AddressBook" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Driver">
-              <PropertyRef Name="DriverID" />
-            </Principal>
-            <Dependent Role="AddressBook">
-              <PropertyRef Name="ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Cash_Queue">
           <End Type="TruckersModel.Queue" Role="Queue" Multiplicity="0..1" />
           <End Type="TruckersModel.Cash" Role="Cash" Multiplicity="*" />

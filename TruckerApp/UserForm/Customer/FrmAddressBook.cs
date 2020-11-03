@@ -27,7 +27,7 @@ namespace TruckerApp.UserForm.Customer
 
         private AddressBook GetModel()
         {
-           return  _addressBook = new AddressBook
+            _addressBook = new AddressBook
             {
                 ID =(int) txtID.EditValue,
                 Fname = txtFname.Text.Trim(),
@@ -40,6 +40,7 @@ namespace TruckerApp.UserForm.Customer
                 Jobs = cbxJobs.Text.Trim(),
                 Description = txtDescription.Text.Trim(),
             };
+            return _addressBook;
         }
 
         private void SetModel(AddressBook addressBook)
@@ -55,15 +56,14 @@ namespace TruckerApp.UserForm.Customer
             cbxJobs.EditValue = addressBook.Jobs;
             txtDescription.EditValue = addressBook.Description;
         }
-        private async void Clear(bool clearList = false)
+        private async void Clear()
         {
             lblStatusProcess.Text = DateTime.Now.PersianConvertor();
             ProgressBarTransformer.Visible = false;
             timerTransporter.Enabled = false;
-            if (clearList)
-            {
-                await _customers.GetAllAddressBook();
-            }
+        
+            gridControl1.DataSource =  await _customers.GetAllAddressBook();
+            
             
         }
         private void timerTransporter_Tick(object sender, EventArgs e)
@@ -71,7 +71,7 @@ namespace TruckerApp.UserForm.Customer
             lblStatusProcess.Text = PublicVar.ConterString;
             ProgressBarTransformer.Visible = true;
             ProgressBarTransformer.Maximum = PublicVar.MasterConter;
-            ProgressBarTransformer.Value = PublicVar.Conter;
+            ProgressBarTransformer.Value = PublicVar.Conter-1;
 
         }
 

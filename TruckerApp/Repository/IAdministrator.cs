@@ -111,16 +111,16 @@ namespace TruckerApp.Repository
         {
             try
             {
+                var local = db.Set<User>().Local.FirstOrDefault(f => f.userID == user.userID);
+                if (local != null)
+                {
+                    db.Entry(local).State = EntityState.Detached;
+                }
                 if (user.userID == 0)
                 {
                     db.Entry(user).State = EntityState.Added;
                     await db.SaveChangesAsync();
                     return true;
-                }
-                var local = db.Set<User>().Local.FirstOrDefault(f => f.userID == user.userID);
-                if (local != null)
-                {
-                    db.Entry(local).State = EntityState.Detached;
                 }
                 db.Entry(user).State = EntityState.Modified;
                 await db.SaveChangesAsync();
