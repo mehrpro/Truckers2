@@ -13,7 +13,7 @@ using TruckerApp.ExtentionMethod;
 
 namespace TruckerApp.Repository
 {
-    public interface IAdministrator :IDisposable
+    public interface IAdministrator : IDisposable
     {
         /// <summary>
         /// احراز هویت کاربر
@@ -32,6 +32,17 @@ namespace TruckerApp.Repository
         /// <param name="modelUsers">مدل کاربر</param>
         /// <returns></returns>
         Task<bool> ManageUsers(User modelUsers);
+        /// <summary>
+        /// لیست کاربران سیستم
+        /// </summary>
+        /// <returns></returns>
+        Task<List<ViewModelUsers>> GetAllUser();
+        /// <summary>
+        /// رمز نگاری نام کاربری و رمز عبور
+        /// </summary>
+        /// <returns></returns>
+        Task<bool> EncryptUserTable();
+
 
     }
 
@@ -46,10 +57,12 @@ namespace TruckerApp.Repository
 
         public async Task<DialogResult> ApproveLogin(ViewModelLogin viewModelLogin)
         {
-            var qryUser = await db.Users.FirstOrDefaultAsync(x => x.username.Trim() == viewModelLogin.UserName);
+            var usr = viewModelLogin.UserName.EncryptTextUsingUtf8();
+            var pass = viewModelLogin.Password.EncryptTextUsingUtf8();
+            var qryUser = await db.Users.FirstOrDefaultAsync(x => x.username.Trim() == usr);
             if (qryUser != null)
             {
-                if (qryUser.password.Trim() == viewModelLogin.Password)
+                if (qryUser.password.Trim() == pass)
                 {
                     PublicVar.userMode = qryUser.Roul.Trim();
                     PublicVar.UserID = qryUser.userID;
@@ -80,7 +93,7 @@ namespace TruckerApp.Repository
                 await db.SaveChangesAsync();
                 return true;
             }
-            catch 
+            catch
             {
                 return false;
             }
@@ -104,10 +117,44 @@ namespace TruckerApp.Repository
                     return true;
                 }
             }
-            catch 
+            catch
             {
                 return false;
             }
+        }
+
+        public async Task<List<ViewModelUsers>> GetAllUser()
+        {
+            var qry = await db.Users.ToListAsync();
+            var list = new List<ViewModelUsers>();
+            foreach (var user in qry)
+            {
+                list.Add(new ViewModelUsers
+                {
+                    userID = user.userID,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    Phone = user.Phone,
+                    Roul = user.Roul,
+                    username = user.username.DecryptTextUsingUtf8(),
+                    password = user.password.DecryptTextUsingUtf8(),
+                });
+            }
+
+            return list;
+        }
+
+        public async Task<bool> EncryptUserTable()
+        {
+            var qryUser = await db.Users.ToListAsync();
+            foreach (var user in qryUser)
+            {
+                user.password = user.password.Trim().EncryptTextUsingUtf8();
+                user.username = user.username.Trim().EncryptTextUsingUtf8();
+            }
+
+            await db.SaveChangesAsync();
+            return true;
         }
 
 

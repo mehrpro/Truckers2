@@ -19,20 +19,16 @@ namespace TruckerApp.UserForm.Commission
         }
 
 
-        private async void GridList1(byte groupid)
+        private async void GridList1()
         {
             
             //var qry = dbContext.Commissions.Where(x => x.Groups_FK == groupid).ToList().OrderByDescending(x=> x.CommissionID);
-            if (groupid == Group1)
-            {
+       
                 var list = await _customers.GetCommissinByGroupId(Group1);
                 gridControl1.DataSource = list.OrderByDescending(x => x.CommissionID);
-            }
-            else if (groupid == GroupType4)
-            {
-                var list = await _customers.GetCommissinByGroupId(GroupType4);
-                gridControl2.DataSource = list.OrderByDescending(x => x.CommissionID);
-            }
+                var list2 = await _customers.GetCommissinByGroupId(GroupType4);
+                gridControl2.DataSource = list2.OrderByDescending(x => x.CommissionID);
+            
 
 
         }
@@ -46,7 +42,7 @@ namespace TruckerApp.UserForm.Commission
                 if (result)
                 {
                     txtComosin1.Text = txtComosin2.Text = "";
-                    GridList1(Group1);
+                    GridList1();
                 }
             }
             else
@@ -61,7 +57,7 @@ namespace TruckerApp.UserForm.Commission
                 if (result)
                 {
                     txtComosin1.Text = txtComosin2.Text = "";
-                    GridList1(GroupType4);
+                    GridList1();
                 }
             }
             else
@@ -82,8 +78,8 @@ namespace TruckerApp.UserForm.Commission
                     groupControl1.Text = "مصوبات حق کمیسیون رانندگان غیربومی";
                     break;
             }
-            GridList1(Group1);
-            GridList1(GroupType4);
+            GridList1();
+           // GridList1(GroupType4);
         }
     }
 }

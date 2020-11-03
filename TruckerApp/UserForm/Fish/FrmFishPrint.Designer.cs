@@ -37,6 +37,7 @@
             this.txtTag = new DevExpress.XtraEditors.TextEdit();
             this.cbxCargoType = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtComossin = new DevExpress.XtraEditors.TextEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lblWH = new System.Windows.Forms.Label();
@@ -65,7 +66,6 @@
             this.txtTagNumber = new DevExpress.XtraEditors.TextEdit();
             this.txtHosmand = new DevExpress.XtraEditors.TextEdit();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTag.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxCargoType.Properties)).BeginInit();
@@ -91,7 +91,7 @@
             // txtTag
             // 
             this.txtTag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTag.Location = new System.Drawing.Point(631, 254);
+            this.txtTag.Location = new System.Drawing.Point(664, 254);
             this.txtTag.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtTag.Name = "txtTag";
             this.txtTag.Parmida_ActivePlusMultiKeys = false;
@@ -101,7 +101,7 @@
             this.txtTag.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtTag.Properties.ReadOnly = true;
             this.txtTag.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtTag.Size = new System.Drawing.Size(258, 24);
+            this.txtTag.Size = new System.Drawing.Size(225, 24);
             this.txtTag.TabIndex = 1;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
             conditionValidationRule1.ErrorText = "پلاک معتبر نیست";
@@ -111,7 +111,7 @@
             // cbxCargoType
             // 
             this.cbxCargoType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxCargoType.Location = new System.Drawing.Point(631, 74);
+            this.cbxCargoType.Location = new System.Drawing.Point(664, 74);
             this.cbxCargoType.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.cbxCargoType.Name = "cbxCargoType";
             this.cbxCargoType.Parmida_ActivePlusMultiKeys = false;
@@ -121,7 +121,7 @@
             this.cbxCargoType.Properties.PopupFormSize = new System.Drawing.Size(250, 0);
             this.cbxCargoType.Properties.PopupView = this.gridView1;
             this.cbxCargoType.Properties.ValueMember = "TypeID";
-            this.cbxCargoType.Size = new System.Drawing.Size(257, 24);
+            this.cbxCargoType.Size = new System.Drawing.Size(224, 24);
             this.cbxCargoType.TabIndex = 0;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
             conditionValidationRule2.ErrorText = "نوع محموله را انتخاب کنید";
@@ -193,11 +193,20 @@
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.gridColumn1.Caption = "نوع محموله";
+            this.gridColumn1.FieldName = "Type";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
             // txtComossin
             // 
             this.txtComossin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtComossin.EditValue = "0";
-            this.txtComossin.Location = new System.Drawing.Point(631, 326);
+            this.txtComossin.Location = new System.Drawing.Point(664, 326);
             this.txtComossin.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtComossin.Name = "txtComossin";
             this.txtComossin.Parmida_ActivePlusMultiKeys = false;
@@ -210,7 +219,7 @@
             this.txtComossin.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtComossin.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtComossin.Properties.ReadOnly = true;
-            this.txtComossin.Size = new System.Drawing.Size(258, 24);
+            this.txtComossin.Size = new System.Drawing.Size(225, 24);
             this.txtComossin.TabIndex = 1;
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
             conditionValidationRule3.ErrorText = "حق کمیسیون نمی تواند صفر باشد";
@@ -277,7 +286,7 @@
             this.picPlateLast.Location = new System.Drawing.Point(123, 55);
             this.picPlateLast.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.picPlateLast.Name = "picPlateLast";
-            this.picPlateLast.Size = new System.Drawing.Size(223, 39);
+            this.picPlateLast.Size = new System.Drawing.Size(220, 40);
             this.picPlateLast.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picPlateLast.TabIndex = 47;
             this.picPlateLast.TabStop = false;
@@ -334,7 +343,7 @@
             // 
             this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton1.ImageOptions.Image = global::TruckerApp.Properties.Resources.stop_32x321;
-            this.simpleButton1.Location = new System.Drawing.Point(770, 362);
+            this.simpleButton1.Location = new System.Drawing.Point(803, 362);
             this.simpleButton1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(42, 38);
@@ -347,7 +356,7 @@
             this.btnStop.Location = new System.Drawing.Point(70, 55);
             this.btnStop.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(43, 39);
+            this.btnStop.Size = new System.Drawing.Size(40, 40);
             this.btnStop.TabIndex = 4;
             this.btnStop.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
@@ -357,7 +366,7 @@
             this.btnPlay.Location = new System.Drawing.Point(20, 55);
             this.btnPlay.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(43, 39);
+            this.btnPlay.Size = new System.Drawing.Size(40, 40);
             this.btnPlay.TabIndex = 4;
             this.btnPlay.Click += new System.EventHandler(this.btnRefreshPlayer_Click);
             // 
@@ -371,7 +380,7 @@
             this.picture.Location = new System.Drawing.Point(20, 106);
             this.picture.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(588, 346);
+            this.picture.Size = new System.Drawing.Size(633, 346);
             this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picture.TabIndex = 3;
             this.picture.TabStop = false;
@@ -380,10 +389,10 @@
             // 
             this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrint.ImageOptions.Image = global::TruckerApp.Properties.Resources.defaultprinter_32x32;
-            this.btnPrint.Location = new System.Drawing.Point(631, 362);
+            this.btnPrint.Location = new System.Drawing.Point(664, 362);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(129, 54);
+            this.btnPrint.Size = new System.Drawing.Size(120, 50);
             this.btnPrint.TabIndex = 2;
             this.btnPrint.Text = "ثبت و چاپ";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
@@ -471,7 +480,7 @@
             // txtserial
             // 
             this.txtserial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtserial.Location = new System.Drawing.Point(783, 110);
+            this.txtserial.Location = new System.Drawing.Point(794, 110);
             this.txtserial.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtserial.Name = "txtserial";
             this.txtserial.Parmida_ActivePlusMultiKeys = false;
@@ -480,13 +489,13 @@
             this.txtserial.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtserial.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtserial.Properties.ReadOnly = true;
-            this.txtserial.Size = new System.Drawing.Size(105, 24);
+            this.txtserial.Size = new System.Drawing.Size(94, 24);
             this.txtserial.TabIndex = 1;
             // 
             // txtNumber
             // 
             this.txtNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNumber.Location = new System.Drawing.Point(631, 110);
+            this.txtNumber.Location = new System.Drawing.Point(664, 110);
             this.txtNumber.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Parmida_ActivePlusMultiKeys = false;
@@ -495,13 +504,13 @@
             this.txtNumber.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtNumber.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtNumber.Properties.ReadOnly = true;
-            this.txtNumber.Size = new System.Drawing.Size(142, 24);
+            this.txtNumber.Size = new System.Drawing.Size(120, 24);
             this.txtNumber.TabIndex = 1;
             // 
             // txtDateRegister
             // 
             this.txtDateRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDateRegister.Location = new System.Drawing.Point(630, 38);
+            this.txtDateRegister.Location = new System.Drawing.Point(664, 38);
             this.txtDateRegister.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtDateRegister.Name = "txtDateRegister";
             this.txtDateRegister.Parmida_ActivePlusMultiKeys = false;
@@ -514,13 +523,13 @@
             this.txtDateRegister.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtDateRegister.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtDateRegister.Properties.ReadOnly = true;
-            this.txtDateRegister.Size = new System.Drawing.Size(255, 24);
+            this.txtDateRegister.Size = new System.Drawing.Size(220, 24);
             this.txtDateRegister.TabIndex = 1;
             // 
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(631, 290);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(664, 290);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Parmida_ActivePlusMultiKeys = false;
@@ -529,13 +538,13 @@
             this.txtPhoneNumber.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtPhoneNumber.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtPhoneNumber.Properties.ReadOnly = true;
-            this.txtPhoneNumber.Size = new System.Drawing.Size(258, 24);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(225, 24);
             this.txtPhoneNumber.TabIndex = 1;
             // 
             // txtTagNumber
             // 
             this.txtTagNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTagNumber.Location = new System.Drawing.Point(631, 218);
+            this.txtTagNumber.Location = new System.Drawing.Point(664, 218);
             this.txtTagNumber.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtTagNumber.Name = "txtTagNumber";
             this.txtTagNumber.Parmida_ActivePlusMultiKeys = false;
@@ -547,13 +556,13 @@
             this.txtTagNumber.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtTagNumber.Properties.ReadOnly = true;
             this.txtTagNumber.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtTagNumber.Size = new System.Drawing.Size(258, 24);
+            this.txtTagNumber.Size = new System.Drawing.Size(225, 24);
             this.txtTagNumber.TabIndex = 1;
             // 
             // txtHosmand
             // 
             this.txtHosmand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHosmand.Location = new System.Drawing.Point(630, 146);
+            this.txtHosmand.Location = new System.Drawing.Point(663, 146);
             this.txtHosmand.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtHosmand.Name = "txtHosmand";
             this.txtHosmand.Parmida_ActivePlusMultiKeys = false;
@@ -563,13 +572,13 @@
             this.txtHosmand.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtHosmand.Properties.ReadOnly = true;
             this.txtHosmand.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtHosmand.Size = new System.Drawing.Size(257, 24);
+            this.txtHosmand.Size = new System.Drawing.Size(224, 24);
             this.txtHosmand.TabIndex = 1;
             // 
             // txtName
             // 
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName.Location = new System.Drawing.Point(631, 182);
+            this.txtName.Location = new System.Drawing.Point(664, 182);
             this.txtName.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtName.Name = "txtName";
             this.txtName.Parmida_ActivePlusMultiKeys = false;
@@ -578,17 +587,8 @@
             this.txtName.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtName.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtName.Properties.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(257, 24);
+            this.txtName.Size = new System.Drawing.Size(224, 24);
             this.txtName.TabIndex = 1;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.gridColumn1.Caption = "نوع محموله";
-            this.gridColumn1.FieldName = "Type";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
             // 
             // FrmFishPrint
             // 

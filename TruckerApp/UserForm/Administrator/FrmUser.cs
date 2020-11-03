@@ -48,11 +48,11 @@ namespace TruckerApp
             dbContext.Users.Load();
             usersBindingSource.DataSource = dbContext.Users.Local;
 
-            var qry = dbContext.Users.ToList();
-            foreach (var user in qry)
-            {
-                var ser = user.password.EncryptTextUsingUtf8();
-            }
+            //var qry = dbContext.Users.ToList();
+            //foreach (var user in qry)
+            //{
+            //    var ser = user.password.EncryptTextUsingUtf8();
+            //}
 
         }
     }

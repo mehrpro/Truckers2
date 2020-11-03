@@ -91,8 +91,8 @@
           <Property Name="userID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
           <Property Name="LastName" Type="nvarchar" MaxLength="50" />
-          <Property Name="Phone" Type="nchar" MaxLength="240" />
-          <Property Name="Roul" Type="nchar" MaxLength="240" />
+          <Property Name="Phone" Type="nchar" MaxLength="10" />
+          <Property Name="Roul" Type="nchar" MaxLength="10" />
           <Property Name="username" Type="nchar" MaxLength="240" Nullable="false" />
           <Property Name="password" Type="nchar" MaxLength="240" Nullable="false" />
         </EntityType>
@@ -487,8 +487,8 @@
           <Property Name="userID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Phone" Type="String" MaxLength="240" FixedLength="true" Unicode="true" />
-          <Property Name="Roul" Type="String" MaxLength="240" FixedLength="true" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Roul" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="username" Type="String" Nullable="false" MaxLength="240" FixedLength="true" Unicode="true" />
           <Property Name="password" Type="String" Nullable="false" MaxLength="240" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Cashes" Relationship="TruckersModel.FK_Cash_Users" FromRole="User" ToRole="Cash" />

@@ -5,6 +5,7 @@ using StructureMap;
 using TruckerApp.ExtentionMethod;
 using TruckerApp.Repository;
 using TruckerApp.UserForm;
+using TruckerApp.UserForm.Administrator;
 using TruckerApp.UserForm.cash;
 using TruckerApp.UserForm.Commission;
 using TruckerApp.UserForm.Customer;
@@ -17,10 +18,12 @@ namespace TruckerApp
     {
         private readonly Container _mainContainer;
         private readonly ICounter _counter;
+        private readonly IAdministrator _administrator;
 
-        public FrmMain(ICounter counter)
+        public FrmMain(ICounter counter, IAdministrator administrator)
         {
             _counter = counter;
+            _administrator = administrator;
             InitializeComponent();
             _mainContainer = new Container(new TypeRegistery());
             _counter.serialBuy();
@@ -299,7 +302,9 @@ namespace TruckerApp
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frm = new FrmUser().ShowDialog();
+            var newForm = _mainContainer.GetInstance<FrmUsres>();
+            newForm.StartPosition = FormStartPosition.CenterParent;
+            newForm.ShowDialog();
         }
 
         private void btnMailSetting_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -408,6 +413,11 @@ namespace TruckerApp
             {
                 XtraMessageBox.Show("انتقال انجام نشد");
             }
+        }
+
+        private async void btnEncryptUsers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            await _administrator.EncryptUserTable();
         }
     }
 }

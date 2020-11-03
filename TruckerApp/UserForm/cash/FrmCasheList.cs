@@ -36,7 +36,7 @@ namespace TruckerApp.UserForm.cash
             txtOtherType.EditValue = await _counter.OtherType(PublicVar.SeriesID);
             txtTotalCash.EditValue =  $@"{await _counter.TotalCash(PublicVar.SeriesID) + await _counter.TotalPOS(PublicVar.SeriesID)}";
             txtSerial.Text = PublicVar.SeriesName.ToString();
-            txtDate.Text = $@"{PublicVar.DateSerial:yyyy/MM/dd}";
+            txtDate.Text = $@"{PublicVar.DateSerial.PersianConvertor()}";
         }
         private void FrmCasheList_Load(object sender, EventArgs e)
         {

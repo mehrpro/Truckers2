@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrintList));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -50,7 +49,6 @@
             this.txtNew = new DevExpress.XtraEditors.TextEdit();
             this.txtLast = new DevExpress.XtraEditors.TextEdit();
             this.chkLastFish = new DevExpress.XtraEditors.ToggleSwitch();
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -61,7 +59,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNew.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLast.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkLastFish.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -447,7 +444,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNew.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLast.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkLastFish.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -474,6 +470,5 @@
         private DevExpress.XtraEditors.TextEdit txtNew;
         private DevExpress.XtraEditors.ToggleSwitch chkLastFish;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
     }
 }

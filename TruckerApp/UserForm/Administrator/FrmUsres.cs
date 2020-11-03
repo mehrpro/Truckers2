@@ -7,15 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TruckerApp.Repository;
 using TruckerApp.ViewModels.Administrator;
 
 namespace TruckerApp.UserForm.Administrator
 {
     public partial class FrmUsres : DevExpress.XtraEditors.XtraForm
     {
-        public FrmUsres()
+        private readonly IAdministrator _administrator;
+        public FrmUsres(IAdministrator administrator)
         {
+            _administrator = administrator;
             InitializeComponent();
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -30,6 +34,11 @@ namespace TruckerApp.UserForm.Administrator
                 password = txtPassword.Text.Trim(),
                 userID = 0
             };
+        }
+
+        private async void FrmUsres_Load(object sender, EventArgs e)
+        {
+            dgvUserList.DataSource = await _administrator.GetAllUser();
         }
     }
 }

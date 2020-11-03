@@ -68,6 +68,7 @@
             this.barButtonItem22 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem23 = new DevExpress.XtraBars.BarButtonItem();
             this.btnConvertPlate = new DevExpress.XtraBars.BarButtonItem();
+            this.btnEncryptUsers = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -128,10 +129,11 @@
             this.barButtonItem21,
             this.barButtonItem22,
             this.barButtonItem23,
-            this.btnConvertPlate});
+            this.btnConvertPlate,
+            this.btnEncryptUsers});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.ribbonControl1.MaxItemId = 1;
+            this.ribbonControl1.MaxItemId = 2;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -468,6 +470,15 @@
             this.btnConvertPlate.Name = "btnConvertPlate";
             this.btnConvertPlate.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnConvertPlate_ItemClick);
             // 
+            // btnEncryptUsers
+            // 
+            this.btnEncryptUsers.Caption = "رمزنگاری اطلاعات کاربران";
+            this.btnEncryptUsers.Id = 1;
+            this.btnEncryptUsers.ImageOptions.Image = global::TruckerApp.Properties.Resources.editrangepermission_16x16;
+            this.btnEncryptUsers.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.editrangepermission_32x32;
+            this.btnEncryptUsers.Name = "btnEncryptUsers";
+            this.btnEncryptUsers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEncryptUsers_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Appearance.Options.UseTextOptions = true;
@@ -582,6 +593,7 @@
             this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnMailSetting);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnConvertPlate);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnEncryptUsers);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.ShowCaptionButton = false;
             this.ribbonPageGroup5.Text = "تنظیمات مدیریتی";
@@ -683,5 +695,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem22;
         private DevExpress.XtraBars.BarButtonItem barButtonItem23;
         private DevExpress.XtraBars.BarButtonItem btnConvertPlate;
+        private DevExpress.XtraBars.BarButtonItem btnEncryptUsers;
     }
 }

@@ -222,12 +222,6 @@
     <Compile Include="UserForm\Administrator\FrmUsres.Designer.cs">
       <DependentUpon>FrmUsres.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserForm\cash\FrmCasheList3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserForm\cash\FrmCasheList3.Designer.cs">
-      <DependentUpon>FrmCasheList3.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserForm\cash\FrmCashPiriodList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -369,9 +363,6 @@
     <EmbeddedResource Include="UserForm\Administrator\FrmUsres.resx">
       <DependentUpon>FrmUsres.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForm\cash\FrmCasheList3.resx">
-      <DependentUpon>FrmCasheList3.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserForm\cash\FrmCashPiriodList.resx">
       <DependentUpon>FrmCashPiriodList.cs</DependentUpon>
     </EmbeddedResource>
@@ -460,6 +451,10 @@
       <DependentUpon>MDB.edmx</DependentUpon>
       <LastGenOutput>MDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\editrangepermission_16x16.png" />
+    <None Include="Resources\editrangepermission_32x32.png" />
+    <None Include="Resources\cancel_32x322.png" />
+    <None Include="Resources\save_32x322.png" />
     <None Include="Resources\cancel_32x321.png" />
     <None Include="Resources\save_32x321.png" />
     <None Include="Resources\defaultprinter_32x32.png" />
