@@ -20,5 +20,9 @@ namespace TruckerApp
 
         public static int TempCash { get; set; }
 
+        public static string ConterString { get; set; }
+        public static int MasterConter { get; set; }
+        public static int Conter { get; set; }
+
     }
 }

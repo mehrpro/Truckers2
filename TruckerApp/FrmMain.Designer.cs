@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
+            this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu();
             this.btnAddDriver = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btnMemberShipList = new DevExpress.XtraBars.BarButtonItem();
@@ -69,6 +68,9 @@
             this.barButtonItem23 = new DevExpress.XtraBars.BarButtonItem();
             this.btnConvertPlate = new DevExpress.XtraBars.BarButtonItem();
             this.btnEncryptUsers = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddressBook = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem24 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem25 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -83,6 +85,8 @@
             this.ribSetting = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
@@ -130,19 +134,23 @@
             this.barButtonItem22,
             this.barButtonItem23,
             this.btnConvertPlate,
-            this.btnEncryptUsers});
+            this.btnEncryptUsers,
+            this.btnAddressBook,
+            this.barButtonItem24,
+            this.barButtonItem25});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.ribbonControl1.MaxItemId = 2;
+            this.ribbonControl1.MaxItemId = 5;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2,
             this.ribbonPage4,
             this.ribbonPage5,
+            this.ribbonPage3,
             this.ribSetting});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
-            this.ribbonControl1.Size = new System.Drawing.Size(794, 162);
+            this.ribbonControl1.Size = new System.Drawing.Size(989, 162);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // applicationMenu1
@@ -459,6 +467,7 @@
             this.barButtonItem23.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem23.ImageOptions.Image")));
             this.barButtonItem23.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem23.ImageOptions.LargeImage")));
             this.barButtonItem23.Name = "barButtonItem23";
+            this.barButtonItem23.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem23.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem23_ItemClick);
             // 
             // btnConvertPlate
@@ -478,6 +487,33 @@
             this.btnEncryptUsers.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.editrangepermission_32x32;
             this.btnEncryptUsers.Name = "btnEncryptUsers";
             this.btnEncryptUsers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEncryptUsers_ItemClick);
+            // 
+            // btnAddressBook
+            // 
+            this.btnAddressBook.Caption = "دفترچه تلفن";
+            this.btnAddressBook.Id = 2;
+            this.btnAddressBook.ImageOptions.Image = global::TruckerApp.Properties.Resources.engineering_16x16;
+            this.btnAddressBook.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.engineering_32x321;
+            this.btnAddressBook.Name = "btnAddressBook";
+            this.btnAddressBook.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddressBook_ItemClick);
+            // 
+            // barButtonItem24
+            // 
+            this.barButtonItem24.Caption = "ارسال پیام به گروه رانندگان";
+            this.barButtonItem24.Enabled = false;
+            this.barButtonItem24.Id = 3;
+            this.barButtonItem24.ImageOptions.Image = global::TruckerApp.Properties.Resources.phone_16x16;
+            this.barButtonItem24.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.phone_32x32;
+            this.barButtonItem24.Name = "barButtonItem24";
+            // 
+            // barButtonItem25
+            // 
+            this.barButtonItem25.Caption = "ارسال پیام به لیست نوبت های فعال";
+            this.barButtonItem25.Enabled = false;
+            this.barButtonItem25.Id = 4;
+            this.barButtonItem25.ImageOptions.Image = global::TruckerApp.Properties.Resources.phone_16x161;
+            this.barButtonItem25.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.phone_32x321;
+            this.barButtonItem25.Name = "barButtonItem25";
             // 
             // ribbonPage1
             // 
@@ -593,7 +629,6 @@
             this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnMailSetting);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnConvertPlate);
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnEncryptUsers);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.ShowCaptionButton = false;
             this.ribbonPageGroup5.Text = "تنظیمات مدیریتی";
@@ -604,6 +639,21 @@
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "تنظیمات کاربر";
             // 
+            // ribbonPage3
+            // 
+            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup10});
+            this.ribbonPage3.Name = "ribbonPage3";
+            this.ribbonPage3.Text = "سامانه پیام کوتاه";
+            // 
+            // ribbonPageGroup10
+            // 
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnAddressBook);
+            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem24);
+            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem25);
+            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            this.ribbonPageGroup10.Text = "دفترچه تلفن";
+            // 
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.barButtonItem7);
@@ -611,7 +661,7 @@
             this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(794, 37);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(989, 37);
             // 
             // FrmMain
             // 
@@ -619,7 +669,7 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 727);
+            this.ClientSize = new System.Drawing.Size(989, 727);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.Font = new System.Drawing.Font("B Yekan", 12F);
@@ -696,5 +746,10 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem23;
         private DevExpress.XtraBars.BarButtonItem btnConvertPlate;
         private DevExpress.XtraBars.BarButtonItem btnEncryptUsers;
+        private DevExpress.XtraBars.BarButtonItem btnAddressBook;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem24;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem25;
     }
 }

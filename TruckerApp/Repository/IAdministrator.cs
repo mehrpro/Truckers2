@@ -43,6 +43,11 @@ namespace TruckerApp.Repository
         /// </summary>
         /// <returns></returns>
         Task<bool> EncryptUserTable();
+        /// <summary>
+        /// تبدیل پلاک های وارد شده کاربران به پلاک استاندارد ساتپا
+        /// </summary>
+        /// <returns></returns>
+        Task<bool> ConvertPlate();
 
 
     }
@@ -160,6 +165,29 @@ namespace TruckerApp.Repository
 
             await db.SaveChangesAsync();
             return true;
+        }
+
+        public async Task<bool> ConvertPlate()
+        {
+            try
+            {
+                var qry = await db.Drivers.ToListAsync();
+                foreach (var plate in qry)
+                {
+                    var temp = plate.TagNumber.ToCharArray();
+                    if (temp[3] == 'ع' && plate.Tag.Length < 5)
+                    {
+                        temp[3] = 'A';
+                        plate.Tag = $"{temp[4]}{temp[5]}-Ain-{temp[0]}{temp[1]}{temp[2]}{plate.Tag}";
+                    }
+                }
+                await db.SaveChangesAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
 

@@ -45,7 +45,7 @@
             // btnLogin
             // 
             this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogin.Location = new System.Drawing.Point(113, 138);
+            this.btnLogin.Location = new System.Drawing.Point(119, 138);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(80, 35);
@@ -57,7 +57,7 @@
             // 
             this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.simpleButton2.Location = new System.Drawing.Point(27, 138);
+            this.simpleButton2.Location = new System.Drawing.Point(33, 138);
             this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(80, 35);
@@ -87,14 +87,14 @@
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.ShowCaption = false;
-            this.groupControl1.Size = new System.Drawing.Size(340, 195);
+            this.groupControl1.Size = new System.Drawing.Size(346, 206);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "اتوماسیون پایانه";
             // 
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(259, 110);
+            this.labelControl2.Location = new System.Drawing.Point(265, 110);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(45, 17);
@@ -108,7 +108,7 @@
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.Blue;
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Location = new System.Drawing.Point(27, 21);
+            this.labelControl3.Location = new System.Drawing.Point(33, 21);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(286, 25);
@@ -118,7 +118,7 @@
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(259, 78);
+            this.labelControl1.Location = new System.Drawing.Point(265, 78);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(52, 17);
@@ -129,7 +129,7 @@
             // 
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.EditValue = "";
-            this.txtPassword.Location = new System.Drawing.Point(27, 106);
+            this.txtPassword.Location = new System.Drawing.Point(33, 106);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Parmida_ActivePlusMultiKeys = false;
@@ -143,7 +143,7 @@
             // 
             this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUsername.EditValue = "";
-            this.txtUsername.Location = new System.Drawing.Point(27, 74);
+            this.txtUsername.Location = new System.Drawing.Point(33, 74);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Parmida_ActivePlusMultiKeys = false;
@@ -159,7 +159,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.simpleButton2;
-            this.ClientSize = new System.Drawing.Size(340, 195);
+            this.ClientSize = new System.Drawing.Size(346, 206);
             this.ControlBox = false;
             this.Controls.Add(this.groupControl1);
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F);

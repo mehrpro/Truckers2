@@ -78,6 +78,13 @@ namespace TruckerApp.Repository
         /// <param name="groupId">گروه</param>
         /// <returns></returns>
         Task<List<Commission>> GetCommissinByGroupId(byte groupId);
+
+
+        /// <summary>
+        /// انتقال تلفن راننده گان
+        /// </summary>
+        /// <returns></returns>
+        Task<bool> TransfomatorPhone();
     }
 
     public class Customers : ICustomers
@@ -227,6 +234,57 @@ namespace TruckerApp.Repository
         public async Task<List<Commission>> GetCommissinByGroupId(byte groupId)
         {
             return await db.Commissions.Where(x => x.Groups_FK == groupId).ToListAsync();
+
+        }
+
+        public async Task<bool> TransfomatorPhone()
+        {
+            try
+            {
+                PublicVar.ConterString = @"در حال آماده سازی جدول رانندگان";
+                var qryDriver = await db.Drivers.ToListAsync();
+                var list = new List<ViewMoelTransformerTel>();
+                PublicVar.MasterConter = qryDriver.Count;
+                PublicVar.Conter = 1;
+                foreach (var item in qryDriver)
+                {
+                    list.Add(new ViewMoelTransformerTel
+                    {
+                        Fname = item.FirstName,
+                        LName = item.LastName,
+                        Mobile = item.PhoneNumber,
+                        Jobs = "راننده",
+                        DriverID_FK = item.DriverID
+                    });
+                    PublicVar.Conter++;
+                }
+                PublicVar.ConterString = @"در حال درج در دفترچه تلفن";
+                PublicVar.MasterConter = list.Count;
+                PublicVar.Conter = 1;
+                foreach (var driver in list)
+                {
+                    var result = await db.AddressBooks.AnyAsync(x => x.Phone == driver.Mobile);
+                    if (!result)
+                    {
+                        db.AddressBooks.Add(new AddressBook()
+                        {
+                            Fname = driver.Fname,
+                            LName = driver.LName,
+                            Phone = driver.Mobile,
+                            Jobs = driver.Jobs,
+                            DriverID_FK = driver.DriverID_FK,
+                        });
+                    }
+                    PublicVar.Conter++;
+                }
+                PublicVar.ConterString = @"در حال ذخیره سازی دفترچه تلفن";
+                await db.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
 
         }
 

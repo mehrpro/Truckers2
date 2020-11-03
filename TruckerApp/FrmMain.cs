@@ -315,8 +315,6 @@ namespace TruckerApp
 
         private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //var frm = _mainContainer.GetInstance<FrmEditDriverWithCamera>();
-            //frm.ShowDialog();
             foreach (var c in this.MdiChildren)
             {
                 c.Close();
@@ -404,20 +402,22 @@ namespace TruckerApp
 
         private void btnConvertPlate_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var result = PlateEditor.SaveChanage(new TruckersEntities());
-            if (result)
-            {
-                XtraMessageBox.Show("انتقال انجام شد");
-            }
-            else
-            {
-                XtraMessageBox.Show("انتقال انجام نشد");
-            }
+            var frm = _mainContainer.GetInstance<FrmUser>();
         }
 
         private async void btnEncryptUsers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             await _administrator.EncryptUserTable();
+        }
+
+        private void btnAddressBook_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var newForm = _mainContainer.GetInstance<UserForm.Customer.FrmAddressBook>();
+            newForm.FormBorderStyle = FormBorderStyle.Sizable;
+            newForm.WindowState = FormWindowState.Maximized;
+            newForm.MaximizeBox = newForm.MinimizeBox = true;
+            newForm.StartPosition = FormStartPosition.CenterParent;
+            newForm.ShowDialog();
         }
     }
 }

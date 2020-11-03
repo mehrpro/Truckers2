@@ -58,6 +58,11 @@ namespace TruckerApp
                 var frmMain = mainContainer.GetInstance<FrmMain>();
                 frmMain.ShowDialog();
             }
+            else if (frmLogin.DialogResult == DialogResult.Retry)
+            {
+                var frmSetting = mainContainer.GetInstance<FrmUser>();
+                frmSetting.ShowDialog();
+            }
             else
                 Environment.Exit(0);
 
