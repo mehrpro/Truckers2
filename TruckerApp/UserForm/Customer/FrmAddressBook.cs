@@ -71,7 +71,7 @@ namespace TruckerApp.UserForm.Customer
             lblStatusProcess.Text = PublicVar.ConterString;
             ProgressBarTransformer.Visible = true;
             ProgressBarTransformer.Maximum = PublicVar.MasterConter;
-            ProgressBarTransformer.Value = PublicVar.Conter-1;
+            ProgressBarTransformer.Value = PublicVar.Conter;
 
         }
 

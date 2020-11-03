@@ -257,7 +257,7 @@ namespace TruckerApp.Repository
                 PublicVar.ConterString = @"در حال آماده سازی جدول رانندگان";
                 var qryDriver = await db.Drivers.ToListAsync();
                 var list = new List<ViewMoelTransformerTel>();
-                PublicVar.MasterConter = qryDriver.Count;
+                PublicVar.MasterConter = qryDriver.Count+10;
                 PublicVar.Conter = 1;
                 foreach (var item in qryDriver)
                 {
@@ -272,29 +272,31 @@ namespace TruckerApp.Repository
                     PublicVar.Conter++;
                 }
                 PublicVar.ConterString = @"در حال درج در دفترچه تلفن";
-                PublicVar.MasterConter = list.Count;
+                PublicVar.MasterConter = list.Count+10;
                 PublicVar.Conter = 1;
+                var insertList = new List<AddressBook>();
                 foreach (var driver in list)
                 {
                     var result = await db.AddressBooks.AnyAsync(x => x.Mobile == driver.Mobile);
                     if (!result)
                     {
-                        var ne = new AddressBook()
+                        insertList.Add(new AddressBook()
                         {
                             Fname = driver.Fname,
                             LName = driver.LName,
                             Mobile = driver.Mobile,
                             Jobs = driver.Jobs,
                             DriverID_FK = (int)driver.DriverID_FK,
-                        };
-                        db.AddressBooks.Add(ne);
+                        });
+                        //db.AddressBooks.Add(ne);
                        
                     }
                     PublicVar.Conter++;
 
                 }
                 PublicVar.ConterString = @"در حال ذخیره سازی دفترچه تلفن";
-                await db.SaveChangesAsync();
+                db.AddressBooks.AddRange(insertList);
+                db.SaveChanges();
                 return true;
             }
             catch (Exception e)
