@@ -85,6 +85,19 @@ namespace TruckerApp.Repository
         /// </summary>
         /// <returns></returns>
         Task<bool> TransfomatorPhone();
+
+        /// <summary>
+        /// لیست کامل دفترچه تلفن
+        /// </summary>
+        /// <returns></returns>
+        Task<List<AddressBook>> GetAllAddressBook();
+
+        /// <summary>
+        /// ذخیره و ثبت مخاطب 
+        /// </summary>
+        /// <param name="addressBook">مخاطب</param>
+        /// <returns></returns>
+        Task<bool> ManageAddressBook(AddressBook addressBook);
     }
 
     public class Customers : ICustomers
@@ -287,10 +300,39 @@ namespace TruckerApp.Repository
             }
 
         }
+        public async Task<List<AddressBook>> GetAllAddressBook()
+        {
+            return await db.AddressBooks.ToListAsync();
+        }
+
+        public async Task<bool> ManageAddressBook(AddressBook addressBook)
+        {
+            try
+            {
+                if (addressBook.ID == 0)
+                {
+                    db.Entry(addressBook).State = EntityState.Added;
+                    await db.SaveChangesAsync();
+                    return true;
+                }
+                var local = db.Set<AddressBook>().Local.FirstOrDefault(x => x.ID == addressBook.ID);
+                if (local != null) db.Entry(local).State = EntityState.Detached;
+                db.Entry(addressBook).State = EntityState.Modified;
+                await db.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
 
         public void Dispose()
         {
             db?.Dispose();
         }
+
+    
     }
 }

@@ -28,9 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatusProcess = new System.Windows.Forms.ToolStripStatusLabel();
@@ -38,6 +43,16 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colSelect = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnSelect = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Fname = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Mobile = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Mobile2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Phone = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Addres = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.postalCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnNewUser = new DevExpress.XtraEditors.SimpleButton();
             this.btnTransformer = new DevExpress.XtraEditors.SimpleButton();
@@ -55,15 +70,19 @@
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.txtID = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.txtFname = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtDescription = new DevExpress.XtraEditors.MemoExEdit();
             this.cbxJobs = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.timerTransporter = new System.Windows.Forms.Timer();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.txtID = new DevExpress.XtraEditors.TextEdit();
             this.txtAddress = new DevExpress.XtraEditors.MemoEdit();
+            this.timerTransporter = new System.Windows.Forms.Timer();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
+            this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
+            this.Jobs = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Description = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DriverID_FK = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -71,6 +90,7 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMobile2.Properties)).BeginInit();
@@ -78,12 +98,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHomeTel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMobile.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxJobs.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -146,6 +167,9 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.btnSelect,
+            this.repositoryItemMemoExEdit1});
             this.gridControl1.Size = new System.Drawing.Size(658, 514);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -207,11 +231,128 @@
             this.gridView1.Appearance.VertLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView1.Appearance.ViewCaption.Options.UseTextOptions = true;
             this.gridView1.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colSelect,
+            this.ID,
+            this.Fname,
+            this.LName,
+            this.Mobile,
+            this.Mobile2,
+            this.Phone,
+            this.Addres,
+            this.postalCode,
+            this.Jobs,
+            this.Description,
+            this.DriverID_FK});
             this.gridView1.DetailHeight = 458;
             this.gridView1.FixedLineWidth = 3;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsFind.AlwaysVisible = true;
+            // 
+            // colSelect
+            // 
+            this.colSelect.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.colSelect.ColumnEdit = this.btnSelect;
+            this.colSelect.Name = "colSelect";
+            this.colSelect.Visible = true;
+            this.colSelect.VisibleIndex = 0;
+            this.colSelect.Width = 45;
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.AutoHeight = false;
+            editorButtonImageOptions3.Image = global::TruckerApp.Properties.Resources.backward_16x161;
+            serializableAppearanceObject9.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject10.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject11.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject12.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.btnSelect.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
+            // ID
+            // 
+            this.ID.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.ID.Caption = "شناسه";
+            this.ID.FieldName = "ID";
+            this.ID.Name = "ID";
+            this.ID.Visible = true;
+            this.ID.VisibleIndex = 1;
+            this.ID.Width = 74;
+            // 
+            // Fname
+            // 
+            this.Fname.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.Fname.Caption = "نام";
+            this.Fname.FieldName = "Fname";
+            this.Fname.Name = "Fname";
+            this.Fname.Visible = true;
+            this.Fname.VisibleIndex = 2;
+            this.Fname.Width = 74;
+            // 
+            // LName
+            // 
+            this.LName.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.LName.Caption = "نام خانوادگی";
+            this.LName.FieldName = "LName";
+            this.LName.Name = "LName";
+            this.LName.Visible = true;
+            this.LName.VisibleIndex = 3;
+            this.LName.Width = 91;
+            // 
+            // Mobile
+            // 
+            this.Mobile.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.Mobile.Caption = "موبایل";
+            this.Mobile.FieldName = "Mobile";
+            this.Mobile.Name = "Mobile";
+            this.Mobile.Visible = true;
+            this.Mobile.VisibleIndex = 4;
+            this.Mobile.Width = 70;
+            // 
+            // Mobile2
+            // 
+            this.Mobile2.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.Mobile2.Caption = "موبایل 2";
+            this.Mobile2.FieldName = "Mobile2";
+            this.Mobile2.Name = "Mobile2";
+            this.Mobile2.Visible = true;
+            this.Mobile2.VisibleIndex = 5;
+            this.Mobile2.Width = 70;
+            // 
+            // Phone
+            // 
+            this.Phone.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.Phone.Caption = "تلفن منزل";
+            this.Phone.FieldName = "Phone";
+            this.Phone.Name = "Phone";
+            this.Phone.Visible = true;
+            this.Phone.VisibleIndex = 6;
+            this.Phone.Width = 70;
+            // 
+            // Addres
+            // 
+            this.Addres.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.Addres.Caption = "آدرس";
+            this.Addres.ColumnEdit = this.repositoryItemMemoExEdit1;
+            this.Addres.FieldName = "Addres";
+            this.Addres.Name = "Addres";
+            this.Addres.Visible = true;
+            this.Addres.VisibleIndex = 7;
+            this.Addres.Width = 70;
+            // 
+            // postalCode
+            // 
+            this.postalCode.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.postalCode.Caption = "کد پستی";
+            this.postalCode.FieldName = "postalCode";
+            this.postalCode.Name = "postalCode";
+            this.postalCode.Visible = true;
+            this.postalCode.VisibleIndex = 8;
+            this.postalCode.Width = 76;
             // 
             // panelControl1
             // 
@@ -250,18 +391,19 @@
             this.btnNewUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNewUser.ImageOptions.Image = global::TruckerApp.Properties.Resources.newcontact_32x32;
             this.btnNewUser.Location = new System.Drawing.Point(139, 386);
-            this.btnNewUser.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnNewUser.Margin = new System.Windows.Forms.Padding(5);
             this.btnNewUser.Name = "btnNewUser";
             this.btnNewUser.Size = new System.Drawing.Size(100, 50);
             this.btnNewUser.TabIndex = 4;
             this.btnNewUser.Text = "جدید";
+            this.btnNewUser.Click += new System.EventHandler(this.btnNewUser_Click);
             // 
             // btnTransformer
             // 
             this.btnTransformer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTransformer.ImageOptions.Image = global::TruckerApp.Properties.Resources.convert_32x323;
             this.btnTransformer.Location = new System.Drawing.Point(19, 446);
-            this.btnTransformer.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnTransformer.Margin = new System.Windows.Forms.Padding(5);
             this.btnTransformer.Name = "btnTransformer";
             this.btnTransformer.Size = new System.Drawing.Size(220, 50);
             this.btnTransformer.TabIndex = 5;
@@ -273,11 +415,12 @@
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.ImageOptions.Image = global::TruckerApp.Properties.Resources.save_32x322;
             this.btnSave.Location = new System.Drawing.Point(19, 386);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(110, 50);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "ذخیره";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtMobile2
             // 
@@ -311,9 +454,9 @@
             this.txtLName.Properties.MaxLength = 50;
             this.txtLName.Size = new System.Drawing.Size(220, 24);
             this.txtLName.TabIndex = 1;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "نام خانوادگی را وارد کنید";
-            this.dxValidationProvider1.SetValidationRule(this.txtLName, conditionValidationRule1);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "نام خانوادگی را وارد کنید";
+            this.dxValidationProvider1.SetValidationRule(this.txtLName, conditionValidationRule3);
             // 
             // labelControl4
             // 
@@ -386,9 +529,9 @@
             this.txtMobile.Properties.MaxLength = 10;
             this.txtMobile.Size = new System.Drawing.Size(220, 24);
             this.txtMobile.TabIndex = 1;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "موبایل را وارد کنید";
-            this.dxValidationProvider1.SetValidationRule(this.txtMobile, conditionValidationRule2);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "موبایل را وارد کنید";
+            this.dxValidationProvider1.SetValidationRule(this.txtMobile, conditionValidationRule4);
             // 
             // labelControl8
             // 
@@ -420,6 +563,27 @@
             this.labelControl7.TabIndex = 0;
             this.labelControl7.Text = "آدرس";
             // 
+            // txtID
+            // 
+            this.txtID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtID.Location = new System.Drawing.Point(129, 29);
+            this.txtID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtID.Name = "txtID";
+            this.txtID.Parmida_ActivePlusMultiKeys = false;
+            this.txtID.Properties.ReadOnly = true;
+            this.txtID.Size = new System.Drawing.Size(110, 24);
+            this.txtID.TabIndex = 1;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl9.Location = new System.Drawing.Point(245, 33);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(36, 17);
+            this.labelControl9.TabIndex = 0;
+            this.labelControl9.Text = "شناسه";
+            // 
             // txtFname
             // 
             this.txtFname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -430,9 +594,9 @@
             this.txtFname.Properties.MaxLength = 50;
             this.txtFname.Size = new System.Drawing.Size(220, 24);
             this.txtFname.TabIndex = 1;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "نام را وارد کنید";
-            this.dxValidationProvider1.SetValidationRule(this.txtFname, conditionValidationRule3);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "نام را وارد کنید";
+            this.dxValidationProvider1.SetValidationRule(this.txtFname, conditionValidationRule1);
             // 
             // labelControl1
             // 
@@ -484,31 +648,6 @@
             this.cbxJobs.Size = new System.Drawing.Size(220, 24);
             this.cbxJobs.TabIndex = 1;
             // 
-            // timerTransporter
-            // 
-            this.timerTransporter.Tick += new System.EventHandler(this.timerTransporter_Tick);
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl9.Location = new System.Drawing.Point(245, 33);
-            this.labelControl9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(36, 17);
-            this.labelControl9.TabIndex = 0;
-            this.labelControl9.Text = "شناسه";
-            // 
-            // txtID
-            // 
-            this.txtID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtID.Location = new System.Drawing.Point(129, 29);
-            this.txtID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtID.Name = "txtID";
-            this.txtID.Parmida_ActivePlusMultiKeys = false;
-            this.txtID.Properties.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(110, 24);
-            this.txtID.TabIndex = 1;
-            // 
             // txtAddress
             // 
             this.txtAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -524,14 +663,53 @@
             this.txtAddress.Size = new System.Drawing.Size(220, 60);
             this.txtAddress.TabIndex = 1;
             // 
-            // AddressBook
+            // timerTransporter
+            // 
+            this.timerTransporter.Tick += new System.EventHandler(this.timerTransporter_Tick);
+            // 
+            // repositoryItemMemoExEdit1
+            // 
+            this.repositoryItemMemoExEdit1.AutoHeight = false;
+            this.repositoryItemMemoExEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemMemoExEdit1.Name = "repositoryItemMemoExEdit1";
+            // 
+            // Jobs
+            // 
+            this.Jobs.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.Jobs.Caption = "شغل";
+            this.Jobs.FieldName = "Jobs";
+            this.Jobs.Name = "Jobs";
+            this.Jobs.Visible = true;
+            this.Jobs.VisibleIndex = 9;
+            // 
+            // Description
+            // 
+            this.Description.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.Description.Caption = "توضیحات";
+            this.Description.ColumnEdit = this.repositoryItemMemoExEdit1;
+            this.Description.FieldName = "Description";
+            this.Description.Name = "Description";
+            this.Description.Visible = true;
+            this.Description.VisibleIndex = 10;
+            // 
+            // DriverID_FK
+            // 
+            this.DriverID_FK.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.DriverID_FK.Caption = "شناسه راننده";
+            this.DriverID_FK.FieldName = "DriverID_FK";
+            this.DriverID_FK.Name = "DriverID_FK";
+            this.DriverID_FK.Visible = true;
+            this.DriverID_FK.VisibleIndex = 11;
+            // 
+            // FrmAddressBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1001, 563);
             this.Controls.Add(this.groupControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "AddressBook";
+            this.Name = "FrmAddressBook";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "دفترچه تلفن";
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -543,6 +721,7 @@
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -551,12 +730,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHomeTel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMobile.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxJobs.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -596,5 +776,19 @@
         private DevExpress.XtraEditors.TextEdit txtID;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.MemoEdit txtAddress;
+        private DevExpress.XtraGrid.Columns.GridColumn colSelect;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSelect;
+        private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraGrid.Columns.GridColumn Fname;
+        private DevExpress.XtraGrid.Columns.GridColumn LName;
+        private DevExpress.XtraGrid.Columns.GridColumn Mobile;
+        private DevExpress.XtraGrid.Columns.GridColumn Mobile2;
+        private DevExpress.XtraGrid.Columns.GridColumn Phone;
+        private DevExpress.XtraGrid.Columns.GridColumn Addres;
+        private DevExpress.XtraGrid.Columns.GridColumn postalCode;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn Jobs;
+        private DevExpress.XtraGrid.Columns.GridColumn Description;
+        private DevExpress.XtraGrid.Columns.GridColumn DriverID_FK;
     }
 }

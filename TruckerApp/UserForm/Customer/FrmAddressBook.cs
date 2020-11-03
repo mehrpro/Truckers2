@@ -55,11 +55,16 @@ namespace TruckerApp.UserForm.Customer
             cbxJobs.EditValue = addressBook.Jobs;
             txtDescription.EditValue = addressBook.Description;
         }
-        private void Clear()
+        private async void Clear(bool clearList = false)
         {
             lblStatusProcess.Text = DateTime.Now.PersianConvertor();
             ProgressBarTransformer.Visible = false;
             timerTransporter.Enabled = false;
+            if (clearList)
+            {
+                await _customers.GetAllAddressBook();
+            }
+            
         }
         private void timerTransporter_Tick(object sender, EventArgs e)
         {
@@ -86,6 +91,36 @@ namespace TruckerApp.UserForm.Customer
                 Clear();
                 XtraMessageBox.Show(PublicVar.ErrorMessageForNotSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            }
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            if (gridView1.GetFocusedRowCellValue("ID") != null)
+            {
+                var FocusedRow = gridView1.GetFocusedRow();
+                _addressBook = new AddressBook();
+                _addressBook = (AddressBook)FocusedRow;
+                SetModel(_addressBook);
+            }
+        }
+
+        private void btnNewUser_Click(object sender, EventArgs e)
+        {
+            SetModel(new AddressBook());
+        }
+
+        private async void btnSave_Click(object sender, EventArgs e)
+        {
+            var result = await _customers.ManageAddressBook(GetModel());
+            if (result)
+            {
+                XtraMessageBox.Show(PublicVar.SuccessfulSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Clear();
+            }
+            else
+            {
+                XtraMessageBox.Show(PublicVar.ErrorMessageForNotSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

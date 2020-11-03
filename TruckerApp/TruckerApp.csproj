@@ -464,6 +464,7 @@
       <DependentUpon>MDB.edmx</DependentUpon>
       <LastGenOutput>MDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\backward_16x161.png" />
     <None Include="Resources\phone_16x161.png" />
     <None Include="Resources\phone_32x321.png" />
     <None Include="Resources\phone_16x16.png" />
