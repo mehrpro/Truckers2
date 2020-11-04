@@ -24,6 +24,8 @@ namespace TruckerApp.ExtentionMethod
 
         public static string PlateConvertToFarsi(this string plate)
         {
+
+            if (plate == "No_Set") return "__";
             // 45-Ain-91151
             var p = plate.ToCharArray();
             return $@"{p[0]}{p[1]}ع{p[7]}{p[8]}{p[9]}-{p[10]}{p[11]}";

@@ -23,14 +23,24 @@ namespace TruckerApp
 
         private async void Grid()
         {
-            txtTotal.EditValue = await _customReport.CountOfStatus20_All(TypeId);
-            txtNew.EditValue = await _customReport.CountOfStatus20_LastSeries(TypeId);
-            txtLast.EditValue = await _customReport.CountOfStatus20_Old(TypeId);
+
+            //txtLast.EditValue = await _customReport.CountOfStatus20_Old(TypeId);
 
             if (chkLastFish.IsOn)
+            {
                 gridControl1.DataSource = await _customReport.GetAllReportListByType(TypeId);
+                txtTotal.EditValue = await _customReport.CountOfStatus20_All(TypeId);
+                txtNew.EditValue = await _customReport.CountOfStatus20_LastSeries(TypeId);
+                txtLast.EditValue = await _customReport.CountOfStatus20_Old(TypeId);
+            }
             else
+            {
                 gridControl1.DataSource = await _customReport.GetLastSeriesReportListByType(TypeId);
+                txtTotal.EditValue = await _customReport.CountOfStatus20_All(TypeId);
+                txtNew.EditValue = await _customReport.CountOfStatus20_LastSeries(TypeId);
+                txtLast.EditValue = await _customReport.CountOfStatus20_Old(TypeId);
+            }
+
 
             gridView1.RefreshData();
 

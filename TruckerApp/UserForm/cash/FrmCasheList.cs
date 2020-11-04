@@ -25,6 +25,10 @@ namespace TruckerApp.UserForm.cash
         private async void setup()
         {
             cashesBindingSource.DataSource = await _report.GetCashListBySeriesId(PublicVar.SeriesID);
+            if (cashesBindingSource.Count == 0)
+            {
+                return;
+            }
             txtFalaeh.EditValue = await _counter.faleh(PublicVar.SeriesID);
             txtPacket.EditValue = await _counter.packet(PublicVar.SeriesID);
             txtGandom.EditValue = await _counter.gandom(PublicVar.SeriesID);

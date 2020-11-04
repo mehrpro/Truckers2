@@ -88,23 +88,22 @@ namespace TruckerApp.Repository
         }
         public async Task<List<ViewModelReportList>> GetAllReportListByType(byte typeId)
         {
-            var queryAll = await db.Queues.Where(x => x.Status_FK == 20 && x.Type_FK == typeId).OrderBy(x => x.ID).ToListAsync();
+            var queryAll = await db.Queues.Where(x => x.Status_FK == 20 && x.Type_FK == typeId).ToListAsync();
             var listResult = new List<ViewModelReportList>();
             int con = 1;
             foreach (var item in queryAll)
             {
-                listResult.Add(new ViewModelReportList
-                {
-                    Counter = con++,
-                    Number = $"({item.SeriesPrice.SeriesName})-{item.Number}",
-                    Name = $"{item.Driver.FirstName} {item.Driver.LastName}",
-                    Tag = item.Driver.Tag.PlateConvertToFarsi(),
-                    Typeid = item.LoadType.Type,
-                    Phone = item.Driver.PhoneNumber
-                });
+                var list = new ViewModelReportList();
+                list.Counter = con++;
+                list.Number = $"({item.SeriesPrice.SeriesName})-{item.Number}";
+                list.Name = $"{item.Driver.FirstName} {item.Driver.LastName}";
+                list.Tag = item.Driver.TagNumber;
+                list.Typeid = item.LoadType.Type;
+                list.Phone = item.Driver.PhoneNumber;
+                listResult.Add(list);
             }
 
-            return listResult.OrderBy(x => x.Typeid).ToList();
+            return listResult;
         }
 
         public async Task<List<ViewModelReportList>> GetLastSeriesReportListByType(byte typeId)
