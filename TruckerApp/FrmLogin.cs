@@ -26,26 +26,28 @@ namespace TruckerApp
         }
 
 
-        private async void btnLogin_Click(object sender, EventArgs e)
+        private  void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtUsername.Text == "708801298633437541" && txtPassword.Text =="708801298633437541")
             {
                 DialogResult = DialogResult.Retry;
                 Close();
             }
-            var dialogResult = await _administrator.ApproveLogin(new ViewModelLogin()
-            {
-                UserName = txtUsername.Text.Trim(),
-                Password = txtPassword.Text.Trim(),
-            });
-
-            if (dialogResult == DialogResult.OK)
-            {
-                DialogResult = dialogResult;
-                Close();
-            }
             else
-                XtraMessageBox.Show(PublicVar.FailedLogin, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                var getModel = new ViewModelLogin();
+                getModel.UserName = txtUsername.Text.Trim();
+                getModel.Password = txtPassword.Text.Trim();
+                var dialogResult =  _administrator.ApproveLogin(getModel);
+                if (dialogResult == DialogResult.OK)
+                {
+                    DialogResult = dialogResult;
+                    Close();
+                }
+                else
+                    XtraMessageBox.Show(PublicVar.FailedLogin, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private async void FrmLogin_Load(object sender, EventArgs e)

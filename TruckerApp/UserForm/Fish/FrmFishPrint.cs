@@ -49,9 +49,9 @@ namespace TruckerApp.UserForm.Fish
         Rectangle roi1, roi2;
         string _resultFarsi;//پلاک فارسی
         Graphics picg;
-        double _ratio = 1.0;
+        //double _ratio = 1.0;
         byte draw_method = 0; //{ DRAW_GDI, DRAW_OPENGL, DRAW_SDL, DRAW_NONE }; //best method is DRAW_SDL but it may differ based on PC config
-        int dir_in = 0, dir_out = 0;
+        //int dir_in = 0, dir_out = 0;
         SLPRParams prm = new SLPRParams();
         // PictureBox[] picPlate = new PictureBox[5];
         Pen pen_rect = new Pen(Color.Red, 3);
@@ -90,6 +90,7 @@ namespace TruckerApp.UserForm.Fish
             }
             catch (Exception e)
             {
+                var str = e.Message;
                 //MessageBox.Show("Error Load Form");
                 this.Close();
             }

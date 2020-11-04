@@ -97,7 +97,7 @@ namespace TruckerApp.Repository
         /// </summary>
         /// <param name="addressBook">مخاطب</param>
         /// <returns></returns>
-        Task<bool> ManageAddressBook(AddressBook addressBook);
+        bool ManageAddressBook(AddressBook addressBook);
     }
 
     public class Customers : ICustomers
@@ -252,12 +252,13 @@ namespace TruckerApp.Repository
 
         public async Task<bool> TransfomatorPhone()
         {
+
             try
             {
                 PublicVar.ConterString = @"در حال آماده سازی جدول رانندگان";
                 var qryDriver = await db.Drivers.ToListAsync();
                 var list = new List<ViewMoelTransformerTel>();
-                PublicVar.MasterConter = qryDriver.Count+10;
+                PublicVar.MasterConter = qryDriver.Count + 10;
                 PublicVar.Conter = 1;
                 foreach (var item in qryDriver)
                 {
@@ -272,36 +273,36 @@ namespace TruckerApp.Repository
                     PublicVar.Conter++;
                 }
                 PublicVar.ConterString = @"در حال درج در دفترچه تلفن";
-                PublicVar.MasterConter = list.Count+10;
+                PublicVar.MasterConter = list.Count + 10;
                 PublicVar.Conter = 1;
-                var insertList = new List<AddressBook>();
+
                 foreach (var driver in list)
                 {
                     var result = await db.AddressBooks.AnyAsync(x => x.Mobile == driver.Mobile);
                     if (!result)
                     {
-                        insertList.Add(new AddressBook()
+                        var ne = new AddressBook()
                         {
                             Fname = driver.Fname,
                             LName = driver.LName,
                             Mobile = driver.Mobile,
                             Jobs = driver.Jobs,
                             DriverID_FK = (int)driver.DriverID_FK,
-                        });
-                        //db.AddressBooks.Add(ne);
-                       
+                        };
+                        var reslt = ManageAddressBook(ne);
+                        if (!reslt) return false;
                     }
                     PublicVar.Conter++;
-
                 }
                 PublicVar.ConterString = @"در حال ذخیره سازی دفترچه تلفن";
-                db.AddressBooks.AddRange(insertList);
-                db.SaveChanges();
+
                 return true;
             }
             catch (Exception e)
             {
+                var str = e.Message; 
                 return false;
+
             }
 
         }
@@ -310,21 +311,22 @@ namespace TruckerApp.Repository
             return await db.AddressBooks.ToListAsync();
         }
 
-        public async Task<bool> ManageAddressBook(AddressBook addressBook)
+        public bool ManageAddressBook(AddressBook addressBook)
         {
             try
             {
-                
+                var local = db.Set<AddressBook>().Local.FirstOrDefault(x => x.ID == addressBook.ID);
+                if (local != null) db.Entry(local).State = EntityState.Detached;
+
                 if (addressBook.ID == 0)
                 {
                     db.AddressBooks.Add(addressBook);
-                    await db.SaveChangesAsync();
+                    db.SaveChanges();
                     return true;
                 }
-                var local = db.Set<AddressBook>().Local.FirstOrDefault(x => x.ID == addressBook.ID);
-                if (local != null) db.Entry(local).State = EntityState.Detached;
+
                 db.Entry(addressBook).State = EntityState.Modified;
-                await db.SaveChangesAsync();
+                db.SaveChanges();
                 return true;
             }
             catch (Exception e)

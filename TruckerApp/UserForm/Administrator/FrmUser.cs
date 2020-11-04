@@ -18,7 +18,7 @@ namespace TruckerApp
         }
 
 
-        private TruckersEntities dbContext;
+
         private void FrmUser_Load(object sender, EventArgs e)
         {
 

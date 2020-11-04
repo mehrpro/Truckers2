@@ -31,7 +31,7 @@ namespace TruckerApp.UserForm.Administrator
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            var convertEncrypt = await _hasherClass.EncryptViewModelUser(GetViewModelUsers());//EncryptUsers
+            var convertEncrypt =  _hasherClass.EncryptViewModelUser(GetViewModelUsers());//EncryptUsers
             var result = await _administrator.ManageUsers(convertEncrypt);//Save to DataBase
             if (result)
             {

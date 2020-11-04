@@ -37,20 +37,20 @@ namespace TruckerApp.Repository
         /// </summary>
         /// <param name="viewModelUserses"></param>
         /// <returns></returns>
-        Task<List<ViewModelUsers>> EncryptViewModelUsers(List<ViewModelUsers> viewModelUserses);
+        List<ViewModelUsers> EncryptViewModelUsers(List<ViewModelUsers> viewModelUserses);
 
         /// <summary>
         /// کدگشایی لیست کاربران
         /// </summary>
         /// <param name="viewModelUserses"></param>
         /// <returns></returns>
-        Task<List<ViewModelUsers>> DecryptViewModelUser(List<ViewModelUsers> viewModelUserses);
+        List<ViewModelUsers> DecryptViewModelUser(List<ViewModelUsers> viewModelUserses);
         /// <summary>
         /// رمز نگاری یک کاربر
         /// </summary>
         /// <param name="viewModelUsers"></param>
         /// <returns></returns>
-        Task<User> EncryptViewModelUser(User viewModelUsers);
+        User EncryptViewModelUser(User viewModelUsers);
 
     }
 
@@ -76,7 +76,7 @@ namespace TruckerApp.Repository
             return HashPassword(password, salt).Equals(hash);
         }
 
-        public async Task<List<ViewModelUsers>> EncryptViewModelUsers(List<ViewModelUsers> viewModelUserses)
+        public  List<ViewModelUsers> EncryptViewModelUsers(List<ViewModelUsers> viewModelUserses)
         {
             foreach (var modelUser in viewModelUserses)
             {
@@ -88,7 +88,7 @@ namespace TruckerApp.Repository
             return viewModelUserses;
         }
 
-        public async Task<List<ViewModelUsers>> DecryptViewModelUser(List<ViewModelUsers> viewModelUserses)
+        public List<ViewModelUsers> DecryptViewModelUser(List<ViewModelUsers> viewModelUserses)
         {
             foreach (var modelUser in viewModelUserses)
             {
@@ -100,7 +100,7 @@ namespace TruckerApp.Repository
             return viewModelUserses;
         }
 
-        public async Task<User> EncryptViewModelUser(User viewModelUsers)
+        public User EncryptViewModelUser(User viewModelUsers)
         {
             viewModelUsers.username = viewModelUsers.username.EncryptTextUsingUtf8();
             viewModelUsers.password = viewModelUsers.password.EncryptTextUsingUtf8();

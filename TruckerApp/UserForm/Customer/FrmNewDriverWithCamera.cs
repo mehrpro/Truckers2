@@ -25,9 +25,9 @@ namespace TruckerApp.UserForm.Customer
         Rectangle roi1, roi2;
         string _resultFarsi;//پلاک فارسی
         Graphics _picg;
-        double _ratio = 1.0;
+        //double _ratio = 1.0;
         byte draw_method = 0; //{ DRAW_GDI, DRAW_OPENGL, DRAW_SDL, DRAW_NONE }; //best method is DRAW_SDL but it may differ based on PC config
-        int dir_in = 0, dir_out = 0;
+        //int dir_in = 0, dir_out = 0;
         SLPRParams prm = new SLPRParams();
         Pen pen_rect = new System.Drawing.Pen(System.Drawing.Color.Red, 3);
         int count_empty_frame = 0;

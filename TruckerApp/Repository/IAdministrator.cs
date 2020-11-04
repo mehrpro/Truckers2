@@ -20,7 +20,7 @@ namespace TruckerApp.Repository
         /// </summary>
         /// <param name="viewModelLogin">اطلاعات کاربری</param>
         /// <returns></returns>
-        Task<DialogResult> ApproveLogin(ViewModelLogin viewModelLogin);
+        DialogResult ApproveLogin(ViewModelLogin viewModelLogin);
         /// <summary>
         /// ساخت لیست صف بندی
         /// </summary>
@@ -62,11 +62,11 @@ namespace TruckerApp.Repository
 
         }
 
-        public async Task<DialogResult> ApproveLogin(ViewModelLogin viewModelLogin)
+        public DialogResult ApproveLogin(ViewModelLogin viewModelLogin)
         {
             var usr = viewModelLogin.UserName.EncryptTextUsingUtf8();
             var pass = viewModelLogin.Password.EncryptTextUsingUtf8();
-            var qryUser = await db.Users.FirstOrDefaultAsync(x => x.username.Trim() == usr);
+            var qryUser = db.Users.FirstOrDefault(x => x.username.Trim() == usr);
             if (qryUser != null)
             {
                 if (qryUser.password.Trim() == pass)

@@ -127,6 +127,7 @@ namespace TruckerApp.Repository
             }
             catch (Exception e)
             {
+                var str = e.Message;
                 return false;
             }
 
