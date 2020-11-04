@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraReports.UI;
 using TruckerApp.ExtentionMethod;
-using TruckerApp.Properties;
 using TruckerApp.Repository;
 using TruckerApp.UserForm.cash;
 using TruckerApp.ViewModels;
@@ -31,15 +27,14 @@ namespace TruckerApp.UserForm.Fish
         //private string _price;
         private string _memeber;
         private string _code;
-
-
         SLPRPropertyGrid anpr_settings = new SLPRPropertyGrid();
         //public string license_plate;
         //public string recieve;
         //public FileStream fileStream;
         //Frame width, height, number of channels and step size of the frame (usually = width x number of channels)
         public int FrameW, FrameH, FrameCh, FrameStep;
-        public int missed_count = 0, repeat_count = 0;
+        private int _missedCount = 0;
+        private int _repeatCount = 0;
         int frame_counter = 0, process_counter = 0, plate_counter = 0;
         int Grabbing; //indicates whether we are grabbing or not: 0 --> not grabbing, 1 regular grabbing, 2 VLC grabbing 
         Bitmap frame; //bitmap of playing frames on picture control (in video mode)
@@ -57,8 +52,8 @@ namespace TruckerApp.UserForm.Fish
         Pen pen_rect = new Pen(Color.Red, 3);
         // Open App.Config of executable
         // Configuration configFile = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-        System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
-        int count_empty_frame = 0;
+       // System.Diagnostics.Stopwatch _sw = new System.Diagnostics.Stopwatch();
+        int _countEmptyFrame = 0;
         float MEAN = 0;
 
         private ANPR_EVENT_CALLBACK _handleAnprEventsDelegate = null;
@@ -121,16 +116,16 @@ namespace TruckerApp.UserForm.Fish
                 var pFrame = vlpr_get_frame(0);
                 if (pFrame == IntPtr.Zero)
                 {
-                    count_empty_frame++;
+                    _countEmptyFrame++;
                     //vlpr_pause_or_resume(0);
-                    if (count_empty_frame > 10)
+                    if (_countEmptyFrame > 10)
                     {
                         StopEveryThing();
                     }
                     return;
                 }
                 frame_counter++;
-                count_empty_frame = 0;
+                _countEmptyFrame = 0;
                 if (frame == null)
                 {
                     frame = new Bitmap(FrameW, FrameH, FrameStep, PixelFormat.Format24bppRgb, pFrame);
@@ -201,7 +196,7 @@ namespace TruckerApp.UserForm.Fish
             }
             else if (eventType == WM_PLATE_NOT_DETECTED)
             {
-                missed_count++;
+                _missedCount++;
                 var pFrame = vlpr_get_frame(stream);
                 if (pFrame == IntPtr.Zero)
                     return;
@@ -342,7 +337,7 @@ namespace TruckerApp.UserForm.Fish
 
         private void FrmFishPrint_FormClosing(object sender, FormClosingEventArgs e)
         {
-            StopEveryThing();
+            //StopEveryThing();
 
             // this.Hide();
             //this.Parent = null;

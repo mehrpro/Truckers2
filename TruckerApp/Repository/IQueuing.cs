@@ -343,12 +343,9 @@ namespace TruckerApp.Repository
                     last.Packet = db.Queues.Count(x => x.Type_FK == 2 && x.SeriesID_FK == last.SereisID);
                     last.Gandom = db.Queues.Count(x => x.Type_FK == 3 && x.SeriesID_FK == last.SereisID);
                     last.Clinker = db.Queues.Count(x => x.Type_FK == 4 && x.SeriesID_FK == last.SereisID);
-                    last.Member =
-                        (short)db.Queues.Count(x => x.GroupCommission == 30 && x.SeriesID_FK == last.SereisID);
-                    last.Native =
-                        (short)db.Queues.Count(x => x.GroupCommission == 31 && x.SeriesID_FK == last.SereisID);
-                    last.Other =
-                        (short)db.Queues.Count(x => x.GroupCommission == 32 && x.SeriesID_FK == last.SereisID);
+                    last.Member = (short)db.Queues.Count(x => x.GroupCommission == 30 && x.SeriesID_FK == last.SereisID);
+                    last.Native = (short)db.Queues.Count(x => x.GroupCommission == 31 && x.SeriesID_FK == last.SereisID);
+                    last.Other = (short)db.Queues.Count(x => x.GroupCommission == 32 && x.SeriesID_FK == last.SereisID);
                     last.SeriesCount = db.Queues.Count(x => x.SeriesID_FK == last.SereisID);
                     last.enabeled = false;
                     last.closing = true;

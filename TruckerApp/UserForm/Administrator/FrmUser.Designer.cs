@@ -30,6 +30,7 @@
         {
             this.btnConvertTag = new DevExpress.XtraEditors.SimpleButton();
             this.btnEncryptUsers = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCounterCreator = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // btnConvertTag
@@ -52,11 +53,22 @@
             this.btnEncryptUsers.Text = "رمزنگار جدول کاربران\r\n";
             this.btnEncryptUsers.Click += new System.EventHandler(this.btnEncryptUsers_Click);
             // 
+            // btnCounterCreator
+            // 
+            this.btnCounterCreator.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCounterCreator.Location = new System.Drawing.Point(24, 139);
+            this.btnCounterCreator.Name = "btnCounterCreator";
+            this.btnCounterCreator.Size = new System.Drawing.Size(276, 46);
+            this.btnCounterCreator.TabIndex = 0;
+            this.btnCounterCreator.Text = "افزودن جدول شمارنده";
+            this.btnCounterCreator.Click += new System.EventHandler(this.btnCounterCreator_Click);
+            // 
             // FrmUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(324, 275);
+            this.Controls.Add(this.btnCounterCreator);
             this.Controls.Add(this.btnEncryptUsers);
             this.Controls.Add(this.btnConvertTag);
             this.Name = "FrmUser";
@@ -71,5 +83,6 @@
 
         private DevExpress.XtraEditors.SimpleButton btnConvertTag;
         private DevExpress.XtraEditors.SimpleButton btnEncryptUsers;
+        private DevExpress.XtraEditors.SimpleButton btnCounterCreator;
     }
 }

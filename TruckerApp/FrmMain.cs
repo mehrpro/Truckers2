@@ -168,9 +168,10 @@ namespace TruckerApp
             var resultLoadSerial = await _queuing.LoadLastSerial();
             if (resultLoadSerial)
             {
-                var resultSchedule = await _administrator.CreateScheduleList();
+                var resultSchedule = await _queuing.CounterScheduleList();
                 if (resultSchedule)
                 {
+                    //await _queuing.CounterScheduleList();
                     XtraMessageBox.Show(PublicVar.Loading, @"اتوماسیون پایانه", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else

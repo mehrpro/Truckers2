@@ -46,13 +46,31 @@ namespace TruckerApp
 
         private async void btnEncryptUsers_Click(object sender, EventArgs e)
         {
-            await _administrator.EncryptUserTable();
+            //await _administrator.EncryptUserTable();
+
+            var result = await _administrator.EncryptUserTable();
+            if (result)
+            {
+                XtraMessageBox.Show(" انجام شد");
+            }
+            else
+            {
+                XtraMessageBox.Show(" انجام نشد");
+            }
 
         }
-
-        private void btnCreateAddressBook_Click(object sender, EventArgs e)
+        
+        private async void btnCounterCreator_Click(object sender, EventArgs e)
         {
-
+            var result = await _administrator.CreateScheduleList();
+            if (result)
+            {
+                XtraMessageBox.Show(" انجام شد");
+            }
+            else
+            {
+                XtraMessageBox.Show(" انجام نشد");
+            }
         }
     }
 }
