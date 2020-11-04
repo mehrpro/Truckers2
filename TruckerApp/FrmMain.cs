@@ -19,9 +19,13 @@ namespace TruckerApp
         private readonly Container _mainContainer;
         private readonly ICounter _counter;
         private readonly IAdministrator _administrator;
+        private readonly IQueuing _queuing;
 
-        public FrmMain(ICounter counter, IAdministrator administrator)
+
+
+        public FrmMain(ICounter counter, IAdministrator administrator, IQueuing queuing)
         {
+            _queuing = queuing;
             _counter = counter;
             _administrator = administrator;
             InitializeComponent();
@@ -155,12 +159,34 @@ namespace TruckerApp
             frm.ShowDialog();
         }
 
-        private void FrmMain_Load(object sender, EventArgs e)
+        private async void FrmMain_Load(object sender, EventArgs e)
         {
             if (PublicVar.userMode == "user")
             {
                 ribSetting.Visible = false;
             }
+            var resultLoadSerial =    await _queuing.LoadLastSerial();
+            if (resultLoadSerial)
+            {
+                var resultSchedule = await _administrator.CreateScheduleList();
+                if (resultSchedule)
+                {
+                    XtraMessageBox.Show(PublicVar.Loading, @"اتوماسیون پایانه", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    XtraMessageBox.Show(PublicVar.unLoading, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+
+            }
+            else
+            {
+                XtraMessageBox.Show(@"خطا در ارتباط با بانک اطلاعاتی", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult = DialogResult.Abort;
+                Close();
+            }
+            //  var resultSchedule =   await _administrator.CreateScheduleList();
             //foreach (var c in this.MdiChildren)
             //{
             //    c.Close();

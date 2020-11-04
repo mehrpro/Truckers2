@@ -72,7 +72,6 @@ namespace TruckerApp.UserForm.Customer
             ProgressBarTransformer.Visible = true;
             ProgressBarTransformer.Maximum = PublicVar.MasterConter;
             ProgressBarTransformer.Value = PublicVar.Conter;
-
         }
 
         private async void btnTransformer_Click(object sender, EventArgs e)

@@ -28,7 +28,7 @@ namespace TruckerApp
 
         private  void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "708801298633437541" && txtPassword.Text =="708801298633437541")
+            if (txtUsername.Text == "" && txtPassword.Text =="708801298633437541")
             {
                 DialogResult = DialogResult.Retry;
                 Close();
@@ -52,9 +52,8 @@ namespace TruckerApp
 
         private async void FrmLogin_Load(object sender, EventArgs e)
         {
-            await _queuing.LoadLastSerial();
-            await _administrator.CreateScheduleList();
-   
+          //  await _queuing.LoadLastSerial();
+           // await _administrator.CreateScheduleList();   
         }
     }
 }

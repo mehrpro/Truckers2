@@ -18,6 +18,8 @@ namespace TruckerApp
         public static int ProcessInterval { get; } = 500;
         public static DateTime DateSerial { get; set; }
 
+        public static string Loading = "کاربر گرامی سیستم بارگذاری شد ";
+        public static string unLoading = "خطا در بارگذاری سیستم لطفا با مدیرسیستم تماس بگیرید";
         public static int TempCash { get; set; }
 
         public static string ConterString { get; set; }
