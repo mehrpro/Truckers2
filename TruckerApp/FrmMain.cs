@@ -419,5 +419,10 @@ namespace TruckerApp
             newForm.StartPosition = FormStartPosition.CenterParent;
             newForm.ShowDialog();
         }
+
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult = DialogResult.Abort;
+        }
     }
 }

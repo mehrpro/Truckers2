@@ -66,7 +66,7 @@ namespace TruckerApp.Repository
         {
             var usr = viewModelLogin.UserName.EncryptTextUsingUtf8();
             var pass = viewModelLogin.Password.EncryptTextUsingUtf8();
-            var qryUser = db.Users.FirstOrDefault(x => x.username.Trim() == usr);
+            var qryUser = db.Users.FirstOrDefault(x => x.username == usr);
             if (qryUser != null)
             {
                 if (qryUser.password.Trim() == pass)

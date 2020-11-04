@@ -315,8 +315,7 @@ namespace TruckerApp.Repository
         {
             try
             {
-                var local = db.Set<AddressBook>().Local.FirstOrDefault(x => x.ID == addressBook.ID);
-                if (local != null) db.Entry(local).State = EntityState.Detached;
+
 
                 if (addressBook.ID == 0)
                 {
@@ -324,7 +323,8 @@ namespace TruckerApp.Repository
                     db.SaveChanges();
                     return true;
                 }
-
+                var local = db.Set<AddressBook>().Local.FirstOrDefault(x => x.ID == addressBook.ID);
+                if (local != null) db.Entry(local).State = EntityState.Detached;
                 db.Entry(addressBook).State = EntityState.Modified;
                 db.SaveChanges();
                 return true;
