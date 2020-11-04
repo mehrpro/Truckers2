@@ -43,7 +43,7 @@ namespace TruckerApp
                 c.Close();
             }
             var frm = _mainContainer.GetInstance<FrmNewDriverWithCamera>();
-            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.FormBorderStyle = FormBorderStyle.Sizable;
             frm.MdiParent = this;
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.Dock = DockStyle.Fill;
@@ -52,8 +52,8 @@ namespace TruckerApp
 
         private void btnMemberShipList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-         
-   
+
+
             var newForm = _mainContainer.GetInstance<FrmMembershipList>();
             newForm.StartPosition = FormStartPosition.CenterScreen;
             newForm.FormBorderStyle = FormBorderStyle.Sizable;
@@ -70,7 +70,7 @@ namespace TruckerApp
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.ShowDialog();
 
-            
+
         }
 
         private void btnNewQue_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -115,7 +115,7 @@ namespace TruckerApp
             var newForm = _mainContainer.GetInstance<FrmRevFish>();
             //newForm.FormBorderStyle = FormBorderStyle.Sizable;
             //newForm.WindowState = FormWindowState.Maximized;
-           // newForm.MaximizeBox = newForm.MinimizeBox = true;
+            // newForm.MaximizeBox = newForm.MinimizeBox = true;
             newForm.StartPosition = FormStartPosition.CenterParent;
             newForm.ShowDialog();
         }
@@ -165,7 +165,7 @@ namespace TruckerApp
             {
                 ribSetting.Visible = false;
             }
-            var resultLoadSerial =    await _queuing.LoadLastSerial();
+            var resultLoadSerial = await _queuing.LoadLastSerial();
             if (resultLoadSerial)
             {
                 var resultSchedule = await _administrator.CreateScheduleList();
@@ -346,7 +346,7 @@ namespace TruckerApp
                 c.Close();
             }
             var frm = _mainContainer.GetInstance<FrmEditDriverWithCamera>();
-            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.FormBorderStyle = FormBorderStyle.Sizable;
             frm.MdiParent = this;
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.Dock = DockStyle.Fill;

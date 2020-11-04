@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFishPrint));
             this.timer_process = new System.Windows.Forms.Timer(this.components);
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.txtTag = new DevExpress.XtraEditors.TextEdit();
@@ -40,15 +41,15 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtComossin = new DevExpress.XtraEditors.TextEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.lblWH = new System.Windows.Forms.Label();
             this.picPlateLast = new System.Windows.Forms.PictureBox();
             this.Res4 = new System.Windows.Forms.Label();
             this.Res2 = new System.Windows.Forms.Label();
             this.Res3 = new System.Windows.Forms.Label();
             this.Res1 = new System.Windows.Forms.Label();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnStop = new DevExpress.XtraEditors.SimpleButton();
-            this.btnPlay = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSelectPlate = new DevExpress.XtraEditors.SimpleButton();
             this.picture = new System.Windows.Forms.PictureBox();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -66,6 +67,8 @@
             this.txtTagNumber = new DevExpress.XtraEditors.TextEdit();
             this.txtHosmand = new DevExpress.XtraEditors.TextEdit();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
+            this.btnPlayVideo = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPuse = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTag.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxCargoType.Properties)).BeginInit();
@@ -103,10 +106,10 @@
             this.txtTag.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtTag.Size = new System.Drawing.Size(225, 24);
             this.txtTag.TabIndex = 1;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
-            conditionValidationRule1.ErrorText = "پلاک معتبر نیست";
-            conditionValidationRule1.Value1 = "!";
-            this.dxValidationProvider1.SetValidationRule(this.txtTag, conditionValidationRule1);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule4.ErrorText = "پلاک معتبر نیست";
+            conditionValidationRule4.Value1 = "!";
+            this.dxValidationProvider1.SetValidationRule(this.txtTag, conditionValidationRule4);
             // 
             // cbxCargoType
             // 
@@ -123,10 +126,10 @@
             this.cbxCargoType.Properties.ValueMember = "TypeID";
             this.cbxCargoType.Size = new System.Drawing.Size(224, 24);
             this.cbxCargoType.TabIndex = 0;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule2.ErrorText = "نوع محموله را انتخاب کنید";
-            conditionValidationRule2.Value1 = ((byte)(0));
-            this.dxValidationProvider1.SetValidationRule(this.cbxCargoType, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule1.ErrorText = "نوع محموله را انتخاب کنید";
+            conditionValidationRule1.Value1 = ((byte)(0));
+            this.dxValidationProvider1.SetValidationRule(this.cbxCargoType, conditionValidationRule1);
             this.cbxCargoType.EditValueChanged += new System.EventHandler(this.cbxCargoType_EditValueChanged);
             // 
             // gridView1
@@ -221,25 +224,27 @@
             this.txtComossin.Properties.ReadOnly = true;
             this.txtComossin.Size = new System.Drawing.Size(225, 24);
             this.txtComossin.TabIndex = 1;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule3.ErrorText = "حق کمیسیون نمی تواند صفر باشد";
-            conditionValidationRule3.Value1 = 0;
-            this.dxValidationProvider1.SetValidationRule(this.txtComossin, conditionValidationRule3);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule2.ErrorText = "حق کمیسیون نمی تواند صفر باشد";
+            conditionValidationRule2.Value1 = 0;
+            this.dxValidationProvider1.SetValidationRule(this.txtComossin, conditionValidationRule2);
             // 
             // groupControl1
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.AutoSize = true;
+            this.groupControl1.Controls.Add(this.btnClose);
             this.groupControl1.Controls.Add(this.lblWH);
             this.groupControl1.Controls.Add(this.picPlateLast);
             this.groupControl1.Controls.Add(this.Res4);
             this.groupControl1.Controls.Add(this.Res2);
             this.groupControl1.Controls.Add(this.Res3);
             this.groupControl1.Controls.Add(this.Res1);
-            this.groupControl1.Controls.Add(this.simpleButton1);
+            this.groupControl1.Controls.Add(this.btnPuse);
+            this.groupControl1.Controls.Add(this.btnPlayVideo);
             this.groupControl1.Controls.Add(this.btnStop);
-            this.groupControl1.Controls.Add(this.btnPlay);
+            this.groupControl1.Controls.Add(this.btnSelectPlate);
             this.groupControl1.Controls.Add(this.picture);
             this.groupControl1.Controls.Add(this.btnPrint);
             this.groupControl1.Controls.Add(this.labelControl4);
@@ -268,6 +273,18 @@
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "صدور نوبت جدید";
             // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
+            this.btnClose.Location = new System.Drawing.Point(664, 362);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(100, 50);
+            this.btnClose.TabIndex = 65;
+            this.btnClose.Text = "بستن";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
+            // 
             // lblWH
             // 
             this.lblWH.AutoSize = true;
@@ -283,7 +300,7 @@
             // 
             this.picPlateLast.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.picPlateLast.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picPlateLast.Location = new System.Drawing.Point(123, 55);
+            this.picPlateLast.Location = new System.Drawing.Point(170, 55);
             this.picPlateLast.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.picPlateLast.Name = "picPlateLast";
             this.picPlateLast.Size = new System.Drawing.Size(220, 40);
@@ -296,7 +313,7 @@
             this.Res4.AutoSize = true;
             this.Res4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Res4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Res4.Location = new System.Drawing.Point(488, 61);
+            this.Res4.Location = new System.Drawing.Point(535, 61);
             this.Res4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Res4.Name = "Res4";
             this.Res4.Size = new System.Drawing.Size(34, 24);
@@ -308,7 +325,7 @@
             this.Res2.AutoSize = true;
             this.Res2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Res2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Res2.Location = new System.Drawing.Point(400, 61);
+            this.Res2.Location = new System.Drawing.Point(447, 61);
             this.Res2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Res2.Name = "Res2";
             this.Res2.Size = new System.Drawing.Size(34, 24);
@@ -320,7 +337,7 @@
             this.Res3.AutoSize = true;
             this.Res3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Res3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Res3.Location = new System.Drawing.Point(444, 61);
+            this.Res3.Location = new System.Drawing.Point(491, 61);
             this.Res3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Res3.Name = "Res3";
             this.Res3.Size = new System.Drawing.Size(34, 24);
@@ -332,26 +349,16 @@
             this.Res1.AutoSize = true;
             this.Res1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Res1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Res1.Location = new System.Drawing.Point(356, 61);
+            this.Res1.Location = new System.Drawing.Point(403, 61);
             this.Res1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Res1.Name = "Res1";
             this.Res1.Size = new System.Drawing.Size(34, 24);
             this.Res1.TabIndex = 43;
             this.Res1.Text = "P1";
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.ImageOptions.Image = global::TruckerApp.Properties.Resources.stop_32x321;
-            this.simpleButton1.Location = new System.Drawing.Point(803, 362);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(42, 38);
-            this.simpleButton1.TabIndex = 4;
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
-            // 
             // btnStop
             // 
+            this.btnStop.Enabled = false;
             this.btnStop.ImageOptions.Image = global::TruckerApp.Properties.Resources.stop_32x321;
             this.btnStop.Location = new System.Drawing.Point(70, 55);
             this.btnStop.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -360,15 +367,15 @@
             this.btnStop.TabIndex = 4;
             this.btnStop.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // btnPlay
+            // btnSelectPlate
             // 
-            this.btnPlay.ImageOptions.Image = global::TruckerApp.Properties.Resources.play_32x321;
-            this.btnPlay.Location = new System.Drawing.Point(20, 55);
-            this.btnPlay.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(40, 40);
-            this.btnPlay.TabIndex = 4;
-            this.btnPlay.Click += new System.EventHandler(this.btnRefreshPlayer_Click);
+            this.btnSelectPlate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPlay.ImageOptions.Image")));
+            this.btnSelectPlate.Location = new System.Drawing.Point(20, 55);
+            this.btnSelectPlate.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnSelectPlate.Name = "btnSelectPlate";
+            this.btnSelectPlate.Size = new System.Drawing.Size(40, 40);
+            this.btnSelectPlate.TabIndex = 4;
+            this.btnSelectPlate.Click += new System.EventHandler(this.btnRefreshPlayer_Click);
             // 
             // picture
             // 
@@ -389,10 +396,10 @@
             // 
             this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrint.ImageOptions.Image = global::TruckerApp.Properties.Resources.defaultprinter_32x32;
-            this.btnPrint.Location = new System.Drawing.Point(664, 362);
+            this.btnPrint.Location = new System.Drawing.Point(783, 362);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(120, 50);
+            this.btnPrint.Size = new System.Drawing.Size(106, 50);
             this.btnPrint.TabIndex = 2;
             this.btnPrint.Text = "ثبت و چاپ";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
@@ -590,6 +597,27 @@
             this.txtName.Size = new System.Drawing.Size(224, 24);
             this.txtName.TabIndex = 1;
             // 
+            // btnPlayVideo
+            // 
+            this.btnPlayVideo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPlayVideo.ImageOptions.Image")));
+            this.btnPlayVideo.Location = new System.Drawing.Point(120, 55);
+            this.btnPlayVideo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnPlayVideo.Name = "btnPlayVideo";
+            this.btnPlayVideo.Size = new System.Drawing.Size(40, 40);
+            this.btnPlayVideo.TabIndex = 4;
+            this.btnPlayVideo.Click += new System.EventHandler(this.btnPlayVideo_Click);
+            // 
+            // btnPuse
+            // 
+            this.btnPuse.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnPuse.Location = new System.Drawing.Point(120, 55);
+            this.btnPuse.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnPuse.Name = "btnPuse";
+            this.btnPuse.Size = new System.Drawing.Size(40, 40);
+            this.btnPuse.TabIndex = 4;
+            this.btnPuse.Visible = false;
+            this.btnPuse.Click += new System.EventHandler(this.btnPlayVideo_Click);
+            // 
             // FrmFishPrint
             // 
             this.Appearance.Options.UseFont = true;
@@ -643,7 +671,7 @@
         private DevExpress.XtraEditors.TextEdit txtserial;
         private DevExpress.XtraEditors.TextEdit txtNumber;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.SimpleButton btnPlay;
+        private DevExpress.XtraEditors.SimpleButton btnSelectPlate;
         private System.Windows.Forms.PictureBox picture;
         private System.Windows.Forms.PictureBox picPlateLast;
         private System.Windows.Forms.Label Res4;
@@ -659,8 +687,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.SearchLookUpEdit cbxCargoType;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.SimpleButton btnClose;
+        private DevExpress.XtraEditors.SimpleButton btnPlayVideo;
+        private DevExpress.XtraEditors.SimpleButton btnPuse;
     }
 }

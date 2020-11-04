@@ -48,6 +48,8 @@ namespace TruckerApp.UserForm.Customer
             _customers = customers;
             InitializeComponent();
             CamSetup();
+            PublicVar.play = false; btnSelectPlate.Enabled = false;
+
 
         }
 
@@ -73,7 +75,7 @@ namespace TruckerApp.UserForm.Customer
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            StopEveryThing();
+            StartPlayerVlc(false);
             Close();
         }
 
@@ -211,6 +213,10 @@ namespace TruckerApp.UserForm.Customer
         }
         private void StopEveryThing()
         {
+            if (!PublicVar.play)
+            {
+                return;
+            }
             vlpr_stop_process(0);
             //یک ثانیه وقفه به منظور اتمام گزارش پلاکهای احتمالی
             for (int i = 0; i < 100; i++)
@@ -275,7 +281,7 @@ namespace TruckerApp.UserForm.Customer
         {
             timer_process.Interval = PublicVar.ProcessInterval;
             timer_process.Enabled = true;
-            btnPlay.Enabled = false;
+            btnSelectPlate.Enabled = false;
             btnStop.Enabled = true;
         }
 
@@ -423,6 +429,42 @@ namespace TruckerApp.UserForm.Customer
             //pen_rect.Dispose();
             //g.Dispose();            
         }
+
+        private void btnSelectPlate_Click(object sender, EventArgs e)
+        {
+            timer_process.Interval = PublicVar.ProcessInterval;// Convert.ToInt32(edtProcessInterval.Text);
+            timer_process.Enabled = true;
+            btnSelectPlate.Enabled = false;
+            btnStop.Enabled = true;
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            timer_process.Enabled = false;
+            btnSelectPlate.Enabled = true;
+            btnStop.Enabled = false;
+        }
+
+        private void btnPuse_Click(object sender, EventArgs e)
+        {
+            if (!PublicVar.play)
+            {
+                StartPlayerVlc(true);
+                PublicVar.play = true;
+                btnPlayVideo.Visible = false;
+                btnPuse.Visible = true;
+                btnSelectPlate.Enabled = true;
+            }
+            else
+            {
+                StartPlayerVlc(false);
+                PublicVar.play = false;
+                btnPlayVideo.Visible = true;
+                btnPuse.Visible = false;
+                btnSelectPlate.Enabled = false;
+            }
+        }
+
         private void DrawPlate(byte roi, RECT rc, IntPtr pBuf = default(IntPtr))
         {
             if (rc.right - rc.left < 10)
@@ -501,7 +543,7 @@ namespace TruckerApp.UserForm.Customer
             if (_resultEn != null && plate.cnf > 0.8)
             {
                 timer_process.Enabled = false;
-                btnPlay.Enabled = true;
+                btnSelectPlate.Enabled = true;
                 btnStop.Enabled = false;
 
             }
@@ -565,7 +607,7 @@ namespace TruckerApp.UserForm.Customer
             sel_rect.SetPictureBox(null);
             sel_rect2 = new UserRect(roi2);
             sel_rect2.SetPictureBox(null);
-            StartPlayerVlc(true);
+            //StartPlayerVlc(true);
         }
     }
 }

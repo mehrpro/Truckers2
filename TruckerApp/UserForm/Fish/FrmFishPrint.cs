@@ -49,9 +49,9 @@ namespace TruckerApp.UserForm.Fish
         Rectangle roi1, roi2;
         string _resultFarsi;//پلاک فارسی
         Graphics picg;
-        //double _ratio = 1.0;
+        double _ratio = 1.0;
         byte draw_method = 0; //{ DRAW_GDI, DRAW_OPENGL, DRAW_SDL, DRAW_NONE }; //best method is DRAW_SDL but it may differ based on PC config
-        //int dir_in = 0, dir_out = 0;
+        int dir_in = 0, dir_out = 0;
         SLPRParams prm = new SLPRParams();
         // PictureBox[] picPlate = new PictureBox[5];
         Pen pen_rect = new Pen(Color.Red, 3);
@@ -76,6 +76,8 @@ namespace TruckerApp.UserForm.Fish
             _queuing = queuing;
 
             CamSetup();
+            PublicVar.play = false;
+            btnSelectPlate.Enabled = false;
         }
         private void CamSetup()
         {
@@ -341,6 +343,10 @@ namespace TruckerApp.UserForm.Fish
         private void FrmFishPrint_FormClosing(object sender, FormClosingEventArgs e)
         {
             StopEveryThing();
+
+            // this.Hide();
+            //this.Parent = null;
+            //e.Cancel = true;
         }
 
         private void ChangeTypeId(byte TypeId)
@@ -371,6 +377,33 @@ namespace TruckerApp.UserForm.Fish
             }
         }
 
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            StartPlayerVLC(false);
+            //StopEveryThing();
+            Close();
+        }
+
+        private void btnPlayVideo_Click(object sender, EventArgs e)
+        {
+
+            if (!PublicVar.play)
+            {
+                StartPlayerVLC(true);
+                PublicVar.play = true;
+                btnPlayVideo.Visible = false;
+                btnPuse.Visible = true;
+                btnSelectPlate.Enabled = true;
+            }
+            else
+            {
+                StartPlayerVLC(false);
+                PublicVar.play = false;
+                btnPlayVideo.Visible = true;
+                btnPuse.Visible = false;
+                btnSelectPlate.Enabled = false;
+            }
+        }
 
         private async void cbxCargoType_EditValueChanged(object sender, EventArgs e)
         {
@@ -390,17 +423,19 @@ namespace TruckerApp.UserForm.Fish
 
         private void simpleButton1_Click_1(object sender, EventArgs e)
         {
-            var str = "49-Ain-25451";
-            var re = _queuing.FindByPlate(str);
+            //    var str = "49-Ain-25451";
+            //    var re = _queuing.FindByPlate(str);
 
-            GetPropertyByDriver(re);
+            //    GetPropertyByDriver(re);
+            timer_process.Enabled = false;
+
+            StopEveryThing();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             timer_process.Enabled = false;
-            btnPlay.Enabled = true;
-
+            btnSelectPlate.Enabled = true;
             btnStop.Enabled = false;
         }
 
@@ -443,16 +478,15 @@ namespace TruckerApp.UserForm.Fish
         private void btnClose_Click(object sender, EventArgs e)
         {
             StopEveryThing();
-            Environment.Exit(0);
+            //Environment.Exit(0);
             //Close();
         }
         private void btnRefreshPlayer_Click(object sender, EventArgs e)
         {
             timer_process.Interval = PublicVar.ProcessInterval;// Convert.ToInt32(edtProcessInterval.Text);
             timer_process.Enabled = true;
-            btnPlay.Enabled = false;
+            btnSelectPlate.Enabled = false;
             btnStop.Enabled = true;
-
         }
         private void timer_process_Tick(object sender, EventArgs e)
         {
@@ -484,12 +518,16 @@ namespace TruckerApp.UserForm.Fish
         }
         private void StopEveryThing()
         {
+            if (!PublicVar.play)
+            {
+                return;
+            }
             vlpr_stop_process(0);
             //یک ثانیه وقفه به منظور اتمام گزارش پلاکهای احتمالی
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 10; i++)
             {
                 Application.DoEvents();
-                System.Threading.Thread.Sleep(10);
+                Thread.Sleep(150);
             }
             vlpr_stop_grabbing(0);
             vlpr_stop_grabbingVLC(0);
@@ -543,7 +581,7 @@ namespace TruckerApp.UserForm.Fish
             anpr_set_debug_mode(0, anpr_settings.debug_level);
             //SetROI();
         }
-        private  void PrintFish()
+        private void PrintFish()
         {
             var report = XtraReport.FromFile("Report_Fish.repx", true);
             var tool = new ReportPrintTool(report);
@@ -569,7 +607,7 @@ namespace TruckerApp.UserForm.Fish
             txtTagNumber.ResetText();
             txtPhoneNumber.ResetText();
             txtComossin.ResetText();
-            _driver=_commission = 0;
+            _driver = _commission = 0;
             _code = _name = _seriesNumber = _smartcart = _tagnumber = _memeber = _type = null;
 
             //var driver = (Driver)cbxSmart.GetSelectedDataRow();
@@ -601,7 +639,7 @@ namespace TruckerApp.UserForm.Fish
             _group = driver.GroupID;
             _memeber = driver.LoadType.Type;
             timer_process.Enabled = false;
-            btnPlay.Enabled = true;
+            btnSelectPlate.Enabled = true;
             btnStop.Enabled = false;
         }
 
@@ -615,8 +653,9 @@ namespace TruckerApp.UserForm.Fish
             sel_rect2.SetPictureBox(null);
             setupPage();
             txtDateRegister.Text = DateTime.Now.PersianConvertor();
-           // SelectType();
-            StartPlayerVLC(true);
+            // SelectType();
+           // StartPlayerVLC(true);
+           // StopEveryThing();
         }
 
 
@@ -683,7 +722,7 @@ namespace TruckerApp.UserForm.Fish
                     }
                 }
             }
-            
+
         }
 
 
