@@ -16,5 +16,6 @@ namespace TruckerApp.ViewModels
         public byte StatusFk { get; set; }
         public short ComosiunIdFk { get; set; }
         public int SeriesIdFk { get; set; }
+        public bool? Mandeh { get; set; }
     }
 }

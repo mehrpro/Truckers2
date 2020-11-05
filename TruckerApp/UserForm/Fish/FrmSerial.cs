@@ -50,7 +50,7 @@ namespace TruckerApp.UserForm.Fish
                 XtraMessageBox.Show(msg, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 var resultEmailSenderTask = await _reportSender.EmailSenderTask(series.SereisID);
                 await _queuing.ResetScheduleList();
-
+                await _queuing.CounterScheduleList();
                 if (!resultEmailSenderTask)
                 {
                     //Send Message For Adminstrator

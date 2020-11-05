@@ -35,19 +35,28 @@ namespace TruckerApp
 
         private void btnAddDriver_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
-            //var newForm = _mainContainer.GetInstance<FrmNewDriverWithCamera>();
-            //newForm.ShowDialog();
-            foreach (var c in this.MdiChildren)
+            if (PublicVar.play)
             {
-                c.Close();
+                XtraMessageBox.Show(PublicVar.ErrorCameraLoad, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            var frm = _mainContainer.GetInstance<FrmNewDriverWithCamera>();
-            frm.FormBorderStyle = FormBorderStyle.Sizable;
-            frm.MdiParent = this;
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
+            else
+            {
+
+
+                //var newForm = _mainContainer.GetInstance<FrmNewDriverWithCamera>();
+                //newForm.ShowDialog();
+                foreach (var c in this.MdiChildren)
+                {
+                    c.Close();
+                }
+
+                var frm = _mainContainer.GetInstance<FrmNewDriverWithCamera>();
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+                frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterParent;
+                frm.Dock = DockStyle.Fill;
+                frm.Show();
+            }
         }
 
         private void btnMemberShipList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -75,22 +84,31 @@ namespace TruckerApp
 
         private void btnNewQue_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
-            //var newForm = _mainContainer.GetInstance<FrmFishPrint>();
-            //newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
-            //newForm.StartPosition = FormStartPosition.CenterScreen;
-            //newForm.ShowDialog();
-
-            foreach (var c in this.MdiChildren)
+            if (PublicVar.play)
             {
-                c.Close();
+                XtraMessageBox.Show(PublicVar.ErrorCameraLoad, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            var frm = _mainContainer.GetInstance<FrmFishPrint>();
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.MdiParent = this;
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
+            else
+            {
+
+
+                //var newForm = _mainContainer.GetInstance<FrmFishPrint>();
+                //newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
+                //newForm.StartPosition = FormStartPosition.CenterScreen;
+                //newForm.ShowDialog();
+
+                foreach (var c in this.MdiChildren)
+                {
+                    c.Close();
+                }
+
+                var frm = _mainContainer.GetInstance<FrmFishPrint>();
+                frm.FormBorderStyle = FormBorderStyle.None;
+                frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterParent;
+                frm.Dock = DockStyle.Fill;
+                frm.Show();
+            }
 
         }
 
@@ -342,16 +360,26 @@ namespace TruckerApp
 
         private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (var c in this.MdiChildren)
+            if (PublicVar.play)
             {
-                c.Close();
+                XtraMessageBox.Show(PublicVar.ErrorCameraLoad, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            var frm = _mainContainer.GetInstance<FrmEditDriverWithCamera>();
-            frm.FormBorderStyle = FormBorderStyle.Sizable;
-            frm.MdiParent = this;
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
+            else
+            {
+
+
+                foreach (var c in this.MdiChildren)
+                {
+                    c.Close();
+                }
+
+                var frm = _mainContainer.GetInstance<FrmEditDriverWithCamera>();
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+                frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterParent;
+                frm.Dock = DockStyle.Fill;
+                frm.Show();
+            }
         }
 
         private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

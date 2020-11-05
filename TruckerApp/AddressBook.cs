@@ -25,5 +25,7 @@ namespace TruckerApp
         public string Jobs { get; set; }
         public string Description { get; set; }
         public Nullable<int> DriverID_FK { get; set; }
+    
+        public virtual Driver Driver { get; set; }
     }
 }

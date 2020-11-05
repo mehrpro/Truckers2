@@ -290,7 +290,7 @@ namespace TruckerApp.Repository
                             DriverID_FK = (int)driver.DriverID_FK,
                         };
                         var reslt = ManageAddressBook(ne);
-                        if (!reslt) return false;
+                        if (!reslt) continue;
                     }
                     PublicVar.Conter++;
                 }

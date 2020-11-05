@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Data.Entity;
+using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraReports.UI;
 using TruckerApp.ExtentionMethod;
@@ -24,23 +25,35 @@ namespace TruckerApp.UserForm.cash
 
         private async void setup()
         {
-            cashesBindingSource.DataSource = await _report.GetCashListBySeriesId(PublicVar.SeriesID);
-            if (cashesBindingSource.Count == 0)
+            try
             {
-                return;
+                cashesBindingSource.DataSource = await _report.GetCashListBySeriesId(PublicVar.SeriesID);
+                if (cashesBindingSource.Count == 0)
+                {
+                    return;
+                }
+                else
+                {
+                    txtFalaeh.EditValue = await _counter.faleh(PublicVar.SeriesID);
+                    txtPacket.EditValue = await _counter.packet(PublicVar.SeriesID);
+                    txtGandom.EditValue = await _counter.gandom(PublicVar.SeriesID);
+                    txtClinker.EditValue = await _counter.clinker(PublicVar.SeriesID);
+                    txtCash.EditValue = await _counter.TotalCash(PublicVar.SeriesID);
+                    txtPOS.EditValue = await _counter.TotalPOS(PublicVar.SeriesID);
+                    txtAhakFaleh.EditValue = await _counter.AhakFaleh(PublicVar.SeriesID);
+                    txtAhakPackat.EditValue = await _counter.AhakPackat(PublicVar.SeriesID);
+                    txtOtherType.EditValue = await _counter.OtherType(PublicVar.SeriesID);
+                    txtTotalCash.EditValue =
+                        $@"{await _counter.TotalCash(PublicVar.SeriesID) + await _counter.TotalPOS(PublicVar.SeriesID)}";
+                    txtSerial.Text = PublicVar.SeriesName.ToString();
+                    txtDate.Text = $@"{PublicVar.DateSerial.PersianConvertor()}";
+                }
             }
-            txtFalaeh.EditValue = await _counter.faleh(PublicVar.SeriesID);
-            txtPacket.EditValue = await _counter.packet(PublicVar.SeriesID);
-            txtGandom.EditValue = await _counter.gandom(PublicVar.SeriesID);
-            txtClinker.EditValue = await _counter.clinker(PublicVar.SeriesID);
-            txtCash.EditValue = await _counter.TotalCash(PublicVar.SeriesID);
-            txtPOS.EditValue = await _counter.TotalPOS(PublicVar.SeriesID);
-            txtAhakFaleh.EditValue = await _counter.AhakFaleh(PublicVar.SeriesID);
-            txtAhakPackat.EditValue = await _counter.AhakPackat(PublicVar.SeriesID);
-            txtOtherType.EditValue = await _counter.OtherType(PublicVar.SeriesID);
-            txtTotalCash.EditValue =  $@"{await _counter.TotalCash(PublicVar.SeriesID) + await _counter.TotalPOS(PublicVar.SeriesID)}";
-            txtSerial.Text = PublicVar.SeriesName.ToString();
-            txtDate.Text = $@"{PublicVar.DateSerial.PersianConvertor()}";
+            catch (Exception e)
+            {
+                XtraMessageBox.Show(e.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
         private void FrmCasheList_Load(object sender, EventArgs e)
         {

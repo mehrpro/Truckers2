@@ -4,7 +4,8 @@ namespace TruckerApp
 {
     public static class PublicVar
     {
-        public static bool play { get; set; } 
+        public static bool play { get; set; }
+        public static string ErrorCameraLoad { get; }  = "دوربین در حال استفاده است";
         public static string ErrorMessageForNotSave { get;  } = "خطا در ثبت اطلاعات لطفا با مدیر سیستم تماس بگیرید";
         public static string SuccessfulSave { get;  } = "اطلاعات جدید با موفقیت ذخیره شد";
         public static string NotComplateForm { get; } = "مقادیر فرم درست وارد نشده است";

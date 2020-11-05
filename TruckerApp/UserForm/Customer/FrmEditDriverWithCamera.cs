@@ -75,7 +75,7 @@ namespace TruckerApp.UserForm.Customer
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            StartPlayerVlc(false);
+            //StartPlayerVlc(false);
             Close();
         }
 
@@ -454,6 +454,8 @@ namespace TruckerApp.UserForm.Customer
                 btnPlayVideo.Visible = false;
                 btnPuse.Visible = true;
                 btnSelectPlate.Enabled = true;
+                btnClose.Enabled = false;
+
             }
             else
             {
@@ -462,6 +464,8 @@ namespace TruckerApp.UserForm.Customer
                 btnPlayVideo.Visible = true;
                 btnPuse.Visible = false;
                 btnSelectPlate.Enabled = false;
+                btnClose.Enabled = true;
+
             }
         }
 

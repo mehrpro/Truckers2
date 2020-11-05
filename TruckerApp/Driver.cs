@@ -34,6 +34,7 @@ namespace TruckerApp
     
         public virtual LoadType LoadType { get; set; }
         public virtual User User { get; set; }
+        public virtual AddressBook AddressBook { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Queue> Queues { get; set; }
     }

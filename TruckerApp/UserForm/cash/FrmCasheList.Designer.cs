@@ -245,7 +245,7 @@
             // 
             this.colCasher.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.colCasher.Caption = "صندوقدار";
-            this.colCasher.FieldName = "User.username";
+            this.colCasher.FieldName = "User.LastName";
             this.colCasher.MinWidth = 23;
             this.colCasher.Name = "colCasher";
             this.colCasher.Visible = true;

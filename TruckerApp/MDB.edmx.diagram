@@ -10,22 +10,23 @@
         <EntityTypeShape EntityType="TruckersModel.Commission" Width="1.5" PointX="3" PointY="11.125" />
         <EntityTypeShape EntityType="TruckersModel.Driver" Width="1.5" PointX="3" PointY="6.125" />
         <EntityTypeShape EntityType="TruckersModel.LoadType" Width="1.5" PointX="0.75" PointY="6.875" />
-        <EntityTypeShape EntityType="TruckersModel.Queue" Width="1.5" PointX="5.25" PointY="8" />
         <EntityTypeShape EntityType="TruckersModel.SeriesPrice" Width="1.5" PointX="3" PointY="0.75" />
         <EntityTypeShape EntityType="TruckersModel.User" Width="1.5" PointX="0.75" PointY="2.5" />
-        <AssociationConnector Association="TruckersModel.FK_Cash_Queue" />
         <AssociationConnector Association="TruckersModel.FK_Cash_SeriesPrice" />
         <AssociationConnector Association="TruckersModel.FK_Cash_Users" />
         <AssociationConnector Association="TruckersModel.FK_Commission_LoadType" />
         <AssociationConnector Association="TruckersModel.FK_Commission_LoadType1" />
-        <AssociationConnector Association="TruckersModel.FK_Queue_Commission" />
         <AssociationConnector Association="TruckersModel.FK_Drivers_LoadType" />
         <AssociationConnector Association="TruckersModel.FK_Drivers_Users" />
+        <AssociationConnector Association="TruckersModel.FK_Series_Users" />
+        <EntityTypeShape EntityType="TruckersModel.Queue" Width="1.5" PointX="5.25" PointY="8.25" />
+        <AssociationConnector Association="TruckersModel.FK_AddressBook_Drivers" />
+        <AssociationConnector Association="TruckersModel.FK_Cash_Queue" />
+        <AssociationConnector Association="TruckersModel.FK_Queue_Commission" />
         <AssociationConnector Association="TruckersModel.FK_Queue_Drivers" />
         <AssociationConnector Association="TruckersModel.FK_Queue_LoadType" />
         <AssociationConnector Association="TruckersModel.FK_Queue_LoadType1" />
         <AssociationConnector Association="TruckersModel.FK_Queue_Series" />
-        <AssociationConnector Association="TruckersModel.FK_Series_Users" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

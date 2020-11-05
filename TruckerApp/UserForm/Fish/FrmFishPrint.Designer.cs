@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFishPrint));
             this.timer_process = new System.Windows.Forms.Timer(this.components);
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
@@ -48,6 +48,8 @@
             this.Res2 = new System.Windows.Forms.Label();
             this.Res3 = new System.Windows.Forms.Label();
             this.Res1 = new System.Windows.Forms.Label();
+            this.btnPuse = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPlayVideo = new DevExpress.XtraEditors.SimpleButton();
             this.btnStop = new DevExpress.XtraEditors.SimpleButton();
             this.btnSelectPlate = new DevExpress.XtraEditors.SimpleButton();
             this.picture = new System.Windows.Forms.PictureBox();
@@ -67,8 +69,7 @@
             this.txtTagNumber = new DevExpress.XtraEditors.TextEdit();
             this.txtHosmand = new DevExpress.XtraEditors.TextEdit();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
-            this.btnPlayVideo = new DevExpress.XtraEditors.SimpleButton();
-            this.btnPuse = new DevExpress.XtraEditors.SimpleButton();
+            this.chkMandeh = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTag.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxCargoType.Properties)).BeginInit();
@@ -85,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTagNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHosmand.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkMandeh.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // timer_process
@@ -106,10 +108,10 @@
             this.txtTag.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtTag.Size = new System.Drawing.Size(225, 24);
             this.txtTag.TabIndex = 1;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
-            conditionValidationRule4.ErrorText = "پلاک معتبر نیست";
-            conditionValidationRule4.Value1 = "!";
-            this.dxValidationProvider1.SetValidationRule(this.txtTag, conditionValidationRule4);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule1.ErrorText = "پلاک معتبر نیست";
+            conditionValidationRule1.Value1 = "!";
+            this.dxValidationProvider1.SetValidationRule(this.txtTag, conditionValidationRule1);
             // 
             // cbxCargoType
             // 
@@ -126,10 +128,10 @@
             this.cbxCargoType.Properties.ValueMember = "TypeID";
             this.cbxCargoType.Size = new System.Drawing.Size(224, 24);
             this.cbxCargoType.TabIndex = 0;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule1.ErrorText = "نوع محموله را انتخاب کنید";
-            conditionValidationRule1.Value1 = ((byte)(0));
-            this.dxValidationProvider1.SetValidationRule(this.cbxCargoType, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule2.ErrorText = "نوع محموله را انتخاب کنید";
+            conditionValidationRule2.Value1 = ((byte)(0));
+            this.dxValidationProvider1.SetValidationRule(this.cbxCargoType, conditionValidationRule2);
             this.cbxCargoType.EditValueChanged += new System.EventHandler(this.cbxCargoType_EditValueChanged);
             // 
             // gridView1
@@ -224,10 +226,10 @@
             this.txtComossin.Properties.ReadOnly = true;
             this.txtComossin.Size = new System.Drawing.Size(225, 24);
             this.txtComossin.TabIndex = 1;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule2.ErrorText = "حق کمیسیون نمی تواند صفر باشد";
-            conditionValidationRule2.Value1 = 0;
-            this.dxValidationProvider1.SetValidationRule(this.txtComossin, conditionValidationRule2);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule3.ErrorText = "حق کمیسیون نمی تواند صفر باشد";
+            conditionValidationRule3.Value1 = 0;
+            this.dxValidationProvider1.SetValidationRule(this.txtComossin, conditionValidationRule3);
             // 
             // groupControl1
             // 
@@ -265,6 +267,7 @@
             this.groupControl1.Controls.Add(this.txtName);
             this.groupControl1.Controls.Add(this.cbxCargoType);
             this.groupControl1.Controls.Add(this.txtComossin);
+            this.groupControl1.Controls.Add(this.chkMandeh);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -277,7 +280,7 @@
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
-            this.btnClose.Location = new System.Drawing.Point(664, 362);
+            this.btnClose.Location = new System.Drawing.Point(664, 402);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 50);
@@ -356,6 +359,27 @@
             this.Res1.TabIndex = 43;
             this.Res1.Text = "P1";
             // 
+            // btnPuse
+            // 
+            this.btnPuse.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPuse.ImageOptions.Image")));
+            this.btnPuse.Location = new System.Drawing.Point(120, 55);
+            this.btnPuse.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnPuse.Name = "btnPuse";
+            this.btnPuse.Size = new System.Drawing.Size(40, 40);
+            this.btnPuse.TabIndex = 4;
+            this.btnPuse.Visible = false;
+            this.btnPuse.Click += new System.EventHandler(this.btnPlayVideo_Click);
+            // 
+            // btnPlayVideo
+            // 
+            this.btnPlayVideo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPlayVideo.ImageOptions.Image")));
+            this.btnPlayVideo.Location = new System.Drawing.Point(120, 55);
+            this.btnPlayVideo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnPlayVideo.Name = "btnPlayVideo";
+            this.btnPlayVideo.Size = new System.Drawing.Size(40, 40);
+            this.btnPlayVideo.TabIndex = 4;
+            this.btnPlayVideo.Click += new System.EventHandler(this.btnPlayVideo_Click);
+            // 
             // btnStop
             // 
             this.btnStop.Enabled = false;
@@ -369,7 +393,7 @@
             // 
             // btnSelectPlate
             // 
-            this.btnSelectPlate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPlay.ImageOptions.Image")));
+            this.btnSelectPlate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSelectPlate.ImageOptions.Image")));
             this.btnSelectPlate.Location = new System.Drawing.Point(20, 55);
             this.btnSelectPlate.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnSelectPlate.Name = "btnSelectPlate";
@@ -396,7 +420,7 @@
             // 
             this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrint.ImageOptions.Image = global::TruckerApp.Properties.Resources.defaultprinter_32x32;
-            this.btnPrint.Location = new System.Drawing.Point(783, 362);
+            this.btnPrint.Location = new System.Drawing.Point(783, 402);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(106, 50);
@@ -597,26 +621,27 @@
             this.txtName.Size = new System.Drawing.Size(224, 24);
             this.txtName.TabIndex = 1;
             // 
-            // btnPlayVideo
+            // chkMandeh
             // 
-            this.btnPlayVideo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPlayVideo.ImageOptions.Image")));
-            this.btnPlayVideo.Location = new System.Drawing.Point(120, 55);
-            this.btnPlayVideo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnPlayVideo.Name = "btnPlayVideo";
-            this.btnPlayVideo.Size = new System.Drawing.Size(40, 40);
-            this.btnPlayVideo.TabIndex = 4;
-            this.btnPlayVideo.Click += new System.EventHandler(this.btnPlayVideo_Click);
-            // 
-            // btnPuse
-            // 
-            this.btnPuse.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnPuse.Location = new System.Drawing.Point(120, 55);
-            this.btnPuse.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnPuse.Name = "btnPuse";
-            this.btnPuse.Size = new System.Drawing.Size(40, 40);
-            this.btnPuse.TabIndex = 4;
-            this.btnPuse.Visible = false;
-            this.btnPuse.Click += new System.EventHandler(this.btnPlayVideo_Click);
+            this.chkMandeh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkMandeh.EditValue = "0";
+            this.chkMandeh.Location = new System.Drawing.Point(664, 362);
+            this.chkMandeh.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.chkMandeh.Name = "chkMandeh";
+            this.chkMandeh.Parmida_ActivePlusMultiKeys = false;
+            this.chkMandeh.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.chkMandeh.Properties.Appearance.Options.UseForeColor = true;
+            this.chkMandeh.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.chkMandeh.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.chkMandeh.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.chkMandeh.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.chkMandeh.Properties.AppearanceReadOnly.Options.UseForeColor = true;
+            this.chkMandeh.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.chkMandeh.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
+            this.chkMandeh.Properties.Caption = "قابل تمدید";
+            this.chkMandeh.Properties.ReadOnly = true;
+            this.chkMandeh.Size = new System.Drawing.Size(225, 21);
+            this.chkMandeh.TabIndex = 66;
             // 
             // FrmFishPrint
             // 
@@ -650,6 +675,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTagNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHosmand.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkMandeh.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -692,5 +718,6 @@
         private DevExpress.XtraEditors.SimpleButton btnClose;
         private DevExpress.XtraEditors.SimpleButton btnPlayVideo;
         private DevExpress.XtraEditors.SimpleButton btnPuse;
+        private DevExpress.XtraEditors.CheckEdit chkMandeh;
     }
 }

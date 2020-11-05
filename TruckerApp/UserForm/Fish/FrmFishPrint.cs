@@ -34,7 +34,7 @@ namespace TruckerApp.UserForm.Fish
         //Frame width, height, number of channels and step size of the frame (usually = width x number of channels)
         public int FrameW, FrameH, FrameCh, FrameStep;
         private int _missedCount = 0;
-        private int _repeatCount = 0;
+        //private int _repeatCount = 0;
         int frame_counter = 0, process_counter = 0, plate_counter = 0;
         int Grabbing; //indicates whether we are grabbing or not: 0 --> not grabbing, 1 regular grabbing, 2 VLC grabbing 
         Bitmap frame; //bitmap of playing frames on picture control (in video mode)
@@ -44,9 +44,9 @@ namespace TruckerApp.UserForm.Fish
         Rectangle roi1, roi2;
         string _resultFarsi;//پلاک فارسی
         Graphics picg;
-        double _ratio = 1.0;
+       // double _ratio = 1.0;
         byte draw_method = 0; //{ DRAW_GDI, DRAW_OPENGL, DRAW_SDL, DRAW_NONE }; //best method is DRAW_SDL but it may differ based on PC config
-        int dir_in = 0, dir_out = 0;
+       // int dir_in = 0, dir_out = 0;
         SLPRParams prm = new SLPRParams();
         // PictureBox[] picPlate = new PictureBox[5];
         Pen pen_rect = new Pen(Color.Red, 3);
@@ -374,8 +374,10 @@ namespace TruckerApp.UserForm.Fish
 
         private void btnClose_Click_1(object sender, EventArgs e)
         {
-            StartPlayerVLC(false);
-            //StopEveryThing();
+
+            //StartPlayerVLC(false);
+            ////StopEveryThing();
+            //Thread.Sleep(1500);
             Close();
         }
 
@@ -389,6 +391,7 @@ namespace TruckerApp.UserForm.Fish
                 btnPlayVideo.Visible = false;
                 btnPuse.Visible = true;
                 btnSelectPlate.Enabled = true;
+                btnClose.Enabled = false;
             }
             else
             {
@@ -397,6 +400,7 @@ namespace TruckerApp.UserForm.Fish
                 btnPlayVideo.Visible = true;
                 btnPuse.Visible = false;
                 btnSelectPlate.Enabled = false;
+                btnClose.Enabled = true;
             }
         }
 
@@ -522,7 +526,7 @@ namespace TruckerApp.UserForm.Fish
             for (int i = 0; i < 10; i++)
             {
                 Application.DoEvents();
-                Thread.Sleep(150);
+                Thread.Sleep(100);
             }
             vlpr_stop_grabbing(0);
             vlpr_stop_grabbingVLC(0);
@@ -688,6 +692,8 @@ namespace TruckerApp.UserForm.Fish
                             Number = Convert.ToInt16(txtNumber.EditValue),
                             GroupCommission = _group,
                             StatusFk = 20,
+                            Mandeh = chkMandeh.Checked,
+                            
                         };
                         PublicVar.TempCash = Convert.ToInt32(txtComossin.Text);
                         var frm = new FrmCash();

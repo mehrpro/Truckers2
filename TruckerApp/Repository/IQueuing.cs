@@ -127,6 +127,13 @@ namespace TruckerApp.Repository
         /// <returns></returns>
         Task<string> GetScheduleByTypeId(byte typeId);
 
+        /// <summary>
+        /// شناسه راننده 
+        /// </summary>
+        /// <param name="tag">پلاک انگلیسی</param>
+        /// <returns></returns>
+        int RetrunDirverID(string tag);
+
 
     }
 
@@ -196,7 +203,12 @@ namespace TruckerApp.Repository
         }
         public async Task<Queue> FindByQueue(string tag)
         {
-            return await db.Queues.SingleOrDefaultAsync(x => x.Status_FK == 20 && x.Driver.Tag == tag);
+            var result = RetrunDirverID(tag);
+            if (result > 0)
+            {
+                return await db.Queues.SingleOrDefaultAsync(x => x.Status_FK == 20 && x.DriverID_FK == result);
+            }
+            return null;
         }
 
         public async Task<Queue> FindByQueue(int driverId)
@@ -220,6 +232,7 @@ namespace TruckerApp.Repository
                         Status_FK = viewModelQueue.StatusFk,
                         ComosiunID_FK = viewModelQueue.ComosiunIdFk,
                         SeriesID_FK = viewModelQueue.SeriesIdFk,
+                        mandeh =(bool) viewModelQueue.Mandeh
                     };
                     db.Queues.Add(newQueue);
                     db.SaveChanges();
@@ -450,6 +463,11 @@ namespace TruckerApp.Repository
                 await db.SaveChangesAsync();
             }
             return scheduleByTypeId?.Type;
+        }
+
+        public int RetrunDirverID(string tag)
+        {
+            return db.Drivers.SingleOrDefault(x => x.Tag == tag).DriverID;
         }
 
 
