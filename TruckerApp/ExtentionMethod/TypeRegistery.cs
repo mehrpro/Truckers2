@@ -11,13 +11,13 @@ namespace TruckerApp.ExtentionMethod
     {
         public TypeRegistery()
         {
-            var entities = new TruckersEntities();
-            For<ICustomReport>().Use<CustomReport>().Ctor<TruckersEntities>("db").Is(entities);
-            For<IQueuing>().Use<Queuing>().Ctor<TruckersEntities>("db").Is(entities);
-            For<IAdministrator>().Use<Administrator>().Ctor<TruckersEntities>("db").Is(entities);
-            For<ICustomers>().Use<Customers>().Ctor<TruckersEntities>("db").Is(entities);
-            For<ICounter>().Use<Counter>().Ctor<TruckersEntities>("db").Is(entities);
-            For<IReportSender>().Use<ReportSender>().Ctor<TruckersEntities>("db").Is(entities);
+            //var entities = new TruckersEntities();
+            For<ICustomReport>().Use<CustomReport>().Ctor<TruckersEntities>("db").Is(new TruckersEntities());
+            For<IQueuing>().Use<Queuing>().Ctor<TruckersEntities>("db").Is(new TruckersEntities());
+            For<IAdministrator>().Use<Administrator>().Ctor<TruckersEntities>("db").Is(new TruckersEntities());
+            For<ICustomers>().Use<Customers>().Ctor<TruckersEntities>("db").Is(new TruckersEntities());
+            For<ICounter>().Use<Counter>().Ctor<TruckersEntities>("db").Is(new TruckersEntities());
+            For<IReportSender>().Use<ReportSender>().Ctor<TruckersEntities>("db").Is(new TruckersEntities());
             For<IHasherClass>().Use<HasherClass>();
         }
     }

@@ -44,15 +44,15 @@ namespace TruckerApp.UserForm.Fish
         Rectangle roi1, roi2;
         string _resultFarsi;//پلاک فارسی
         Graphics picg;
-       // double _ratio = 1.0;
+        // double _ratio = 1.0;
         byte draw_method = 0; //{ DRAW_GDI, DRAW_OPENGL, DRAW_SDL, DRAW_NONE }; //best method is DRAW_SDL but it may differ based on PC config
-       // int dir_in = 0, dir_out = 0;
+                              // int dir_in = 0, dir_out = 0;
         SLPRParams prm = new SLPRParams();
         // PictureBox[] picPlate = new PictureBox[5];
         Pen pen_rect = new Pen(Color.Red, 3);
         // Open App.Config of executable
         // Configuration configFile = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-       // System.Diagnostics.Stopwatch _sw = new System.Diagnostics.Stopwatch();
+        // System.Diagnostics.Stopwatch _sw = new System.Diagnostics.Stopwatch();
         int _countEmptyFrame = 0;
         float MEAN = 0;
 
@@ -73,6 +73,8 @@ namespace TruckerApp.UserForm.Fish
             CamSetup();
             PublicVar.play = false;
             btnSelectPlate.Enabled = false;
+            chkMandeh.EditValue = false;
+            chkMandeh.EditValue = false;
         }
         private void CamSetup()
         {
@@ -409,6 +411,15 @@ namespace TruckerApp.UserForm.Fish
             var selectType = (ViewModelCargoType)cbxCargoType.GetSelectedDataRow();
             if (selectType == null || txtTag.Text.Trim() == "")
             {
+                txtComossin.EditValue = 0;
+                txtDateRegister.EditValue = DateTime.Now.PersianConvertor();
+                txtHosmand.EditValue = null;
+                txtName.EditValue = null;
+                txtNumber.EditValue = null;
+                txtPhoneNumber.EditValue = null;
+                txtTag.EditValue = txtTagNumber.EditValue = null;
+                chkMandeh.EditValue = false;
+
                 return;
             }
 
@@ -642,6 +653,13 @@ namespace TruckerApp.UserForm.Fish
             btnStop.Enabled = false;
         }
 
+        private void Clear()
+        {
+            cbxCargoType.EditValue = 0;
+            txtComossin.EditValue = 0;
+            txtDateRegister.EditValue = DateTime.Now.PersianConvertor();
+
+        }
         private async void FrmFishPrint_Load(object sender, EventArgs e)
         {
             cbxCargoType.Properties.DataSource = await _queuing.GetAllCargoType();
@@ -653,8 +671,8 @@ namespace TruckerApp.UserForm.Fish
             setupPage();
             txtDateRegister.Text = DateTime.Now.PersianConvertor();
             // SelectType();
-           // StartPlayerVLC(true);
-           // StopEveryThing();
+            // StartPlayerVLC(true);
+            // StopEveryThing();
         }
 
 
@@ -693,7 +711,7 @@ namespace TruckerApp.UserForm.Fish
                             GroupCommission = _group,
                             StatusFk = 20,
                             Mandeh = chkMandeh.Checked,
-                            
+
                         };
                         PublicVar.TempCash = Convert.ToInt32(txtComossin.Text);
                         var frm = new FrmCash();
@@ -707,11 +725,14 @@ namespace TruckerApp.UserForm.Fish
                                 _number = await _queuing.GetScheduleByTypeId(newQueue.TypeFk);
                                 PrintFish();
                                 await _queuing.GetLastNumberByTypeId(Convert.ToByte(cbxCargoType.EditValue));
+                                cbxCargoType.EditValue = null;
                             }
                             else
                             {
                                 XtraMessageBox.Show(PublicVar.ErrorMessageForNotSave, Text, MessageBoxButtons.OK,
                                     MessageBoxIcon.Error);
+                                cbxCargoType.EditValue = null;
+
                             }
                         }
                     }

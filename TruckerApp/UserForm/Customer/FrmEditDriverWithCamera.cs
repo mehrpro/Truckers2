@@ -81,7 +81,8 @@ namespace TruckerApp.UserForm.Customer
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            if (await _customers.FindPlate(txtTag.Text))
+           // txtTag.Text = @"74-Ain-27951";
+            if (await _customers.FindPlate(txtTag.Text.Trim()))
             {
                 _driver = await _customers.FindDriverByTag(txtTag.Text.Trim());
 

@@ -278,7 +278,7 @@ namespace TruckerApp.Repository
 
                 foreach (var driver in list)
                 {
-                    var result = await db.AddressBooks.AnyAsync(x => x.Mobile == driver.Mobile);
+                    var result = await db.AddressBooks.AnyAsync(x => x.DriverID_FK == driver.DriverID_FK);
                     if (!result)
                     {
                         var ne = new AddressBook()
@@ -289,18 +289,20 @@ namespace TruckerApp.Repository
                             Jobs = driver.Jobs,
                             DriverID_FK = (int)driver.DriverID_FK,
                         };
-                        var reslt = ManageAddressBook(ne);
-                        if (!reslt) continue;
+                        db.AddressBooks.Add(ne);
+                       var re =  await db.SaveChangesAsync();
+                        //var reslt = ManageAddressBook(ne);
+                        //if (!reslt) continue;
                     }
                     PublicVar.Conter++;
                 }
                 PublicVar.ConterString = @"در حال ذخیره سازی دفترچه تلفن";
-
+                //await db.SaveChangesAsync();
                 return true;
             }
             catch (Exception e)
             {
-                var str = e.Message; 
+                var str = e.Message;
                 return false;
 
             }
