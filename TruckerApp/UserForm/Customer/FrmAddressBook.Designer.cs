@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatusProcess = new System.Windows.Forms.ToolStripStatusLabel();
@@ -52,7 +53,11 @@
             this.Mobile2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Phone = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Addres = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.postalCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Jobs = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Description = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DriverID_FK = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnNewUser = new DevExpress.XtraEditors.SimpleButton();
             this.btnTransformer = new DevExpress.XtraEditors.SimpleButton();
@@ -77,12 +82,8 @@
             this.txtDescription = new DevExpress.XtraEditors.MemoExEdit();
             this.cbxJobs = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtAddress = new DevExpress.XtraEditors.MemoEdit();
-            this.timerTransporter = new System.Windows.Forms.Timer();
-            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
-            this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
-            this.Jobs = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Description = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.DriverID_FK = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.timerTransporter = new System.Windows.Forms.Timer(this.components);
+            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -91,6 +92,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMobile2.Properties)).BeginInit();
@@ -104,7 +106,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbxJobs.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -248,6 +249,7 @@
             this.gridView1.FixedLineWidth = 3;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.OptionsFind.AlwaysVisible = true;
             // 
             // colSelect
@@ -262,13 +264,13 @@
             // btnSelect
             // 
             this.btnSelect.AutoHeight = false;
-            editorButtonImageOptions3.Image = global::TruckerApp.Properties.Resources.backward_16x161;
-            serializableAppearanceObject9.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject10.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject11.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject12.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            editorButtonImageOptions2.Image = global::TruckerApp.Properties.Resources.backward_16x161;
+            serializableAppearanceObject5.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject6.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject7.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject8.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.btnSelect.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
@@ -344,6 +346,13 @@
             this.Addres.VisibleIndex = 7;
             this.Addres.Width = 70;
             // 
+            // repositoryItemMemoExEdit1
+            // 
+            this.repositoryItemMemoExEdit1.AutoHeight = false;
+            this.repositoryItemMemoExEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemMemoExEdit1.Name = "repositoryItemMemoExEdit1";
+            // 
             // postalCode
             // 
             this.postalCode.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -353,6 +362,34 @@
             this.postalCode.Visible = true;
             this.postalCode.VisibleIndex = 8;
             this.postalCode.Width = 76;
+            // 
+            // Jobs
+            // 
+            this.Jobs.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.Jobs.Caption = "شغل";
+            this.Jobs.FieldName = "Jobs";
+            this.Jobs.Name = "Jobs";
+            this.Jobs.Visible = true;
+            this.Jobs.VisibleIndex = 9;
+            // 
+            // Description
+            // 
+            this.Description.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.Description.Caption = "توضیحات";
+            this.Description.ColumnEdit = this.repositoryItemMemoExEdit1;
+            this.Description.FieldName = "Description";
+            this.Description.Name = "Description";
+            this.Description.Visible = true;
+            this.Description.VisibleIndex = 10;
+            // 
+            // DriverID_FK
+            // 
+            this.DriverID_FK.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.DriverID_FK.Caption = "شناسه راننده";
+            this.DriverID_FK.FieldName = "DriverID_FK";
+            this.DriverID_FK.Name = "DriverID_FK";
+            this.DriverID_FK.Visible = true;
+            this.DriverID_FK.VisibleIndex = 11;
             // 
             // panelControl1
             // 
@@ -454,9 +491,9 @@
             this.txtLName.Properties.MaxLength = 50;
             this.txtLName.Size = new System.Drawing.Size(220, 24);
             this.txtLName.TabIndex = 1;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "نام خانوادگی را وارد کنید";
-            this.dxValidationProvider1.SetValidationRule(this.txtLName, conditionValidationRule3);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "نام خانوادگی را وارد کنید";
+            this.dxValidationProvider1.SetValidationRule(this.txtLName, conditionValidationRule4);
             // 
             // labelControl4
             // 
@@ -529,9 +566,9 @@
             this.txtMobile.Properties.MaxLength = 10;
             this.txtMobile.Size = new System.Drawing.Size(220, 24);
             this.txtMobile.TabIndex = 1;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "موبایل را وارد کنید";
-            this.dxValidationProvider1.SetValidationRule(this.txtMobile, conditionValidationRule4);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "موبایل را وارد کنید";
+            this.dxValidationProvider1.SetValidationRule(this.txtMobile, conditionValidationRule1);
             // 
             // labelControl8
             // 
@@ -594,9 +631,9 @@
             this.txtFname.Properties.MaxLength = 50;
             this.txtFname.Size = new System.Drawing.Size(220, 24);
             this.txtFname.TabIndex = 1;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "نام را وارد کنید";
-            this.dxValidationProvider1.SetValidationRule(this.txtFname, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "نام را وارد کنید";
+            this.dxValidationProvider1.SetValidationRule(this.txtFname, conditionValidationRule2);
             // 
             // labelControl1
             // 
@@ -667,41 +704,6 @@
             // 
             this.timerTransporter.Tick += new System.EventHandler(this.timerTransporter_Tick);
             // 
-            // repositoryItemMemoExEdit1
-            // 
-            this.repositoryItemMemoExEdit1.AutoHeight = false;
-            this.repositoryItemMemoExEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemMemoExEdit1.Name = "repositoryItemMemoExEdit1";
-            // 
-            // Jobs
-            // 
-            this.Jobs.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.Jobs.Caption = "شغل";
-            this.Jobs.FieldName = "Jobs";
-            this.Jobs.Name = "Jobs";
-            this.Jobs.Visible = true;
-            this.Jobs.VisibleIndex = 9;
-            // 
-            // Description
-            // 
-            this.Description.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.Description.Caption = "توضیحات";
-            this.Description.ColumnEdit = this.repositoryItemMemoExEdit1;
-            this.Description.FieldName = "Description";
-            this.Description.Name = "Description";
-            this.Description.Visible = true;
-            this.Description.VisibleIndex = 10;
-            // 
-            // DriverID_FK
-            // 
-            this.DriverID_FK.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.DriverID_FK.Caption = "شناسه راننده";
-            this.DriverID_FK.FieldName = "DriverID_FK";
-            this.DriverID_FK.Name = "DriverID_FK";
-            this.DriverID_FK.Visible = true;
-            this.DriverID_FK.VisibleIndex = 11;
-            // 
             // FrmAddressBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -722,6 +724,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -736,7 +739,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbxJobs.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }

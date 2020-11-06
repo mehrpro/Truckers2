@@ -16,7 +16,7 @@ namespace TruckerApp.UserForm.Fish
     public partial class FrmFishPrint : XtraForm
     {
 
-
+        private bool jobCancel = false;
         //private readonly TruckersEntities _db = new TruckersEntities();
         private int _driver, _series;
         private int _commission;
@@ -65,10 +65,14 @@ namespace TruckerApp.UserForm.Fish
         private string _resultEn;
 
         private readonly IQueuing _queuing;
-        public FrmFishPrint(IQueuing queuing)
+        private readonly IAdministrator _administrator;
+        private Driver _resultFindingDriver;
+
+        public FrmFishPrint(IQueuing queuing, IAdministrator administrator)
         {
             InitializeComponent();
             _queuing = queuing;
+            _administrator = administrator;
 
             CamSetup();
             PublicVar.play = false;
@@ -144,6 +148,8 @@ namespace TruckerApp.UserForm.Fish
             //باید قطعه کد زیر را استفاده کنیم
             if (InvokeRequired)
             {
+                if (jobCancel)
+                   // System.Threading.Thread.CurrentThread.Abort();
                 Invoke(_handleAnprEventsDelegate, eventType, stream, pltIdx);
                 return;
             }
@@ -309,10 +315,10 @@ namespace TruckerApp.UserForm.Fish
             _resultEn = new string(' ', 20);
             anpr_get_en_result(plate.str, _resultEn);
             txtTag.Text = _resultEn;
-            var resultFind = _queuing.FindByPlate(_resultEn);// _resultEn.FindByPlate();
-            if (resultFind != null)
+            _resultFindingDriver = _queuing.FindByPlate(_resultEn);// _resultEn.FindByPlate();
+            if (_resultFindingDriver != null)
             {
-                GetPropertyByDriver(resultFind);
+                GetPropertyByDriver(_resultFindingDriver);
             }
             UpdateFarsiResult(_resultFarsi);
             for (var i = 19; i > 0; i--)
@@ -448,6 +454,15 @@ namespace TruckerApp.UserForm.Fish
             btnSelectPlate.Enabled = true;
             btnStop.Enabled = false;
         }
+
+        private async void groupControl1_DoubleClick(object sender, EventArgs e)
+        {
+            _resultFindingDriver = await _administrator.RandomDriver();
+           GetPropertyByDriver(_resultFindingDriver);
+            
+        }
+
+
 
         private void StartPlayerVLC(bool start)
         {
@@ -619,19 +634,6 @@ namespace TruckerApp.UserForm.Fish
             txtComossin.ResetText();
             _driver = _commission = 0;
             _code = _name = _seriesNumber = _smartcart = _tagnumber = _memeber = _type = null;
-
-            //var driver = (Driver)cbxSmart.GetSelectedDataRow();
-            //if (driver == null) return;
-            //_code = Convert.ToInt32(driver.driver_code) > 0 ? driver.driver_code.ToString() : " ";
-            //txtName.Text = _name = $"{driver.FirstName}  {driver.LastName}";
-            ////txtTag.Text =  driver.Tag;
-            //txtTagNumber.Text = _tagnumber = driver.TagNumber;
-            //txtPhoneNumber.Text = driver.PhoneNumber;
-            //_driver = driver.DriverID;
-            //_smartcart = driver.SmartCart.ToString();
-            //_group = driver.GroupID;
-            //_memeber = driver.LoadType.Type;
-
         }
 
 
@@ -686,17 +688,12 @@ namespace TruckerApp.UserForm.Fish
             {
                 if (_driver < 1)
                 {
-                    XtraMessageBox.Show("هیچ راننده ای انتخاب نشده است", Text, MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                }
-                else if (txtTag.Text.Length < 10)
-                {
-                    XtraMessageBox.Show("پلاک صحیح نیست لطفا پلاک را اصلاح کنید", Text, MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                    XtraMessageBox.Show("هیچ راننده ای انتخاب نشده است", Text, MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
                 else
                 {
-                    var driverCheck = await _queuing.FindByQueue(txtTag.Text.Trim()); //عدم ثبت مجدد نوبت
+
+                    var driverCheck = await _queuing.FindByQueue(_resultFindingDriver.DriverID); //عدم ثبت مجدد نوبت
                     if (driverCheck == null)
                     {
                         // مجاز به ثبت نوبت است
@@ -706,7 +703,7 @@ namespace TruckerApp.UserForm.Fish
                             ComosiunIdFk = _commissionId,
                             TypeFk = Convert.ToByte(cbxCargoType.EditValue),
                             DateTimeRegister = DateTime.Now,
-                            SeriesIdFk = _series,
+                            SeriesIdFk = PublicVar.SeriesID,
                             Number = Convert.ToInt16(txtNumber.EditValue),
                             GroupCommission = _group,
                             StatusFk = 20,

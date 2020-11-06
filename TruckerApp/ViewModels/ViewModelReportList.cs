@@ -19,6 +19,8 @@ namespace TruckerApp.ViewModels
         public string Typeid { get; set; }
         [Display(Name = "تلفن")]
         public string Phone { get; set; }
+        [Display(Name = "قابل تمدید")]
+        public string mandeh { get; set; }
 
     }
 }

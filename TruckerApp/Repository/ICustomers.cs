@@ -90,14 +90,14 @@ namespace TruckerApp.Repository
         /// لیست کامل دفترچه تلفن
         /// </summary>
         /// <returns></returns>
-        Task<List<AddressBook>> GetAllAddressBook();
+        Task<List<PhoneBook>> GetAllAddressBook();
 
         /// <summary>
         /// ذخیره و ثبت مخاطب 
         /// </summary>
         /// <param name="addressBook">مخاطب</param>
         /// <returns></returns>
-        bool ManageAddressBook(AddressBook addressBook);
+        bool ManageAddressBook(PhoneBook addressBook);
     }
 
     public class Customers : ICustomers
@@ -278,18 +278,16 @@ namespace TruckerApp.Repository
 
                 foreach (var driver in list)
                 {
-                    var result = await db.AddressBooks.AnyAsync(x => x.DriverID_FK == driver.DriverID_FK);
+                    var result = await db.PhoneBooks.AnyAsync(x => x.DriverID_FK == driver.DriverID_FK);
                     if (!result)
                     {
-                        var ne = new AddressBook()
-                        {
-                            Fname = driver.Fname,
-                            LName = driver.LName,
-                            Mobile = driver.Mobile,
-                            Jobs = driver.Jobs,
-                            DriverID_FK = (int)driver.DriverID_FK,
-                        };
-                        db.AddressBooks.Add(ne);
+                        var ne = new PhoneBook();
+                        ne.Fname = driver.Fname;
+                        ne.LName = driver.LName;
+                        ne.Mobile = driver.Mobile;
+                        ne.Jobs = driver.Jobs;
+                        ne.DriverID_FK = (int)driver.DriverID_FK;
+                        db.PhoneBooks.Add(ne);
                        var re =  await db.SaveChangesAsync();
                         //var reslt = ManageAddressBook(ne);
                         //if (!reslt) continue;
@@ -308,12 +306,12 @@ namespace TruckerApp.Repository
             }
 
         }
-        public async Task<List<AddressBook>> GetAllAddressBook()
+        public async Task<List<PhoneBook>> GetAllAddressBook()
         {
-            return await db.AddressBooks.ToListAsync();
+            return await db.PhoneBooks.ToListAsync();
         }
 
-        public bool ManageAddressBook(AddressBook addressBook)
+        public bool ManageAddressBook(PhoneBook addressBook)
         {
             try
             {
@@ -321,11 +319,11 @@ namespace TruckerApp.Repository
 
                 if (addressBook.ID == 0)
                 {
-                    db.AddressBooks.Add(addressBook);
+                    db.PhoneBooks.Add(addressBook);
                     db.SaveChanges();
                     return true;
                 }
-                var local = db.Set<AddressBook>().Local.FirstOrDefault(x => x.ID == addressBook.ID);
+                var local = db.Set<PhoneBook>().Local.FirstOrDefault(x => x.ID == addressBook.ID);
                 if (local != null) db.Entry(local).State = EntityState.Detached;
                 db.Entry(addressBook).State = EntityState.Modified;
                 db.SaveChanges();

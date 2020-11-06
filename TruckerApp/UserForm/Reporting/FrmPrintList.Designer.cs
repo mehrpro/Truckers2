@@ -282,10 +282,12 @@
             // gridColumn5
             // 
             this.gridColumn5.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.gridColumn5.Caption = "تاریخ";
-            this.gridColumn5.FieldName = "DateTime";
+            this.gridColumn5.Caption = "قابل تمدید";
+            this.gridColumn5.FieldName = "mandeh";
             this.gridColumn5.MinWidth = 23;
             this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 6;
             this.gridColumn5.Width = 145;
             // 
             // panelControl1

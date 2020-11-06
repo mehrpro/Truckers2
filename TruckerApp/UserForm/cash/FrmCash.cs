@@ -20,8 +20,17 @@ namespace TruckerApp.UserForm.cash
         {
             ModelCash.Pos = Convert.ToInt32(txtPOS.EditValue);
             ModelCash.CashDesk = Convert.ToInt32(txtCash.EditValue);
-            DialogResult = DialogResult.OK;
-            Close();
+            if (ModelCash.Pos + ModelCash.CashDesk == PublicVar.TempCash)
+            {
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            else
+            {
+                XtraMessageBox.Show("مقادیر درست وارد نشده است لطفا مجدداً بررسی نمائید", Text, MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+   
         }
         private void simpleButton1_Click(object sender, EventArgs e)
         {

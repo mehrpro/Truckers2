@@ -204,11 +204,7 @@ namespace TruckerApp.Repository
         public async Task<Queue> FindByQueue(string tag)
         {
             var result = RetrunDirverID(tag);
-            if (result > 0)
-            {
-                return await db.Queues.SingleOrDefaultAsync(x => x.Status_FK == 20 && x.DriverID_FK == result);
-            }
-            return null;
+            return result > 0? await db.Queues.SingleOrDefaultAsync(x => x.Status_FK == 20 && x.DriverID_FK == result): null;
         }
 
         public async Task<Queue> FindByQueue(int driverId)
@@ -275,20 +271,18 @@ namespace TruckerApp.Repository
             var qry = await db.SeriesPrices.ToListAsync();
             var list = new List<ViewModelSeriesList>();
 
-            foreach (var seriesPrice in qry.OrderByDescending(x => x.SereisID))
+            foreach (var seriesPrice in qry)
             {
-                list.Add(new ViewModelSeriesList()
-                {
-
-                    SereisID = seriesPrice.SereisID,
-                    SeriesName = seriesPrice.SeriesName,
-                    SeriesDateStart = seriesPrice.SeriesDateStart.PersianConvertor(),
-                    SeriesCount = seriesPrice.SeriesCount,
-                    SeriesDateEnd = seriesPrice.SeriesDateEnd == null ? "" : seriesPrice.SeriesDateEnd.Value.PersianConvertor(),
-                    userCreator = $@"{seriesPrice.User.FirstName} {seriesPrice.User.LastName}"
-                });
+                var item = new ViewModelSeriesList();
+                item.SereisID = seriesPrice.SereisID;
+                item.SeriesName = seriesPrice.SeriesName;
+                item.SeriesDateStart = seriesPrice.SeriesDateStart.PersianConvertor();
+                item.SeriesCount = seriesPrice.SeriesCount;
+                item.SeriesDateEnd = seriesPrice.SeriesDateEnd == null ? "" : seriesPrice.SeriesDateEnd.Value.PersianConvertor();
+                item.userCreator = $"{seriesPrice.User.FirstName} {seriesPrice.User.LastName}";
+                list.Add(item);
             }
-            return list;
+            return list.OrderByDescending(x=>x.SeriesName).ToList();
         }
 
         public async Task<bool> RetrunCashByQueueID(int queueId, byte typeId)
@@ -398,21 +392,18 @@ namespace TruckerApp.Repository
                 PublicVar.DateSerial = qry.SeriesDateStart;
                 return true;
             }
-            else
-            {
-                var series = new SeriesPrice();
-                series.SeriesName = 1;
-                series.SeriesDateStart = DateTime.Now;
-                series.userCreator = PublicVar.UserID;
-                series.enabeled = true;
-                series.closing = false;
-                db.SeriesPrices.Add(series);
-                db.SaveChanges();
-                PublicVar.SeriesID = series.SereisID;
-                PublicVar.SeriesName = series.SeriesName;
-                PublicVar.DateSerial = series.SeriesDateStart;
-                return true;
-            }
+            var series = new SeriesPrice();
+            series.SeriesName = 1;
+            series.SeriesDateStart = DateTime.Now;
+            series.userCreator = PublicVar.UserID;
+            series.enabeled = true;
+            series.closing = false;
+            db.SeriesPrices.Add(series);
+            db.SaveChanges();
+            PublicVar.SeriesID = series.SereisID;
+            PublicVar.SeriesName = series.SeriesName;
+            PublicVar.DateSerial = series.SeriesDateStart;
+            return true;
         }
 
         public async Task<bool> ResetScheduleList()
@@ -467,7 +458,8 @@ namespace TruckerApp.Repository
 
         public int RetrunDirverID(string tag)
         {
-            return db.Drivers.SingleOrDefault(x => x.Tag == tag).DriverID;
+            var result = db.Drivers.SingleOrDefault(x => x.Tag == tag);
+            return result?.DriverID ?? 0;
         }
 
 

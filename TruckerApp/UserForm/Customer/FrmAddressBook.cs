@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using TruckerApp.ExtentionMethod;
@@ -16,7 +9,7 @@ namespace TruckerApp.UserForm.Customer
     public partial class FrmAddressBook : XtraForm
     {
         private readonly ICustomers _customers;
-        private AddressBook _addressBook;
+        private PhoneBook _addressBook;
         public FrmAddressBook(ICustomers customers)
         {
             _customers = customers;
@@ -25,9 +18,9 @@ namespace TruckerApp.UserForm.Customer
 
         }
 
-        private AddressBook GetModel()
+        private PhoneBook GetModel()
         {
-            _addressBook = new AddressBook
+            _addressBook = new PhoneBook
             {
                 ID = Convert.ToInt32(txtID.EditValue),
                 Fname = txtFname.Text.Trim(),
@@ -43,7 +36,7 @@ namespace TruckerApp.UserForm.Customer
             return _addressBook;
         }
 
-        private void SetModel(AddressBook addressBook)
+        private void SetModel(PhoneBook addressBook)
         {
             txtID.EditValue = addressBook.ID;
             txtFname.EditValue = addressBook.Fname;
@@ -61,10 +54,10 @@ namespace TruckerApp.UserForm.Customer
             lblStatusProcess.Text = DateTime.Now.PersianConvertor();
             ProgressBarTransformer.Visible = false;
             timerTransporter.Enabled = false;
-        
-            gridControl1.DataSource =  await _customers.GetAllAddressBook();
-            
-            
+
+            gridControl1.DataSource = await _customers.GetAllAddressBook();
+
+
         }
         private void timerTransporter_Tick(object sender, EventArgs e)
         {
@@ -83,13 +76,11 @@ namespace TruckerApp.UserForm.Customer
             {
                 Clear();
                 XtraMessageBox.Show(PublicVar.SuccessfulSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
             }
             else
             {
                 Clear();
                 XtraMessageBox.Show(PublicVar.ErrorMessageForNotSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
         }
 
@@ -98,20 +89,20 @@ namespace TruckerApp.UserForm.Customer
             if (gridView1.GetFocusedRowCellValue("ID") != null)
             {
                 var FocusedRow = gridView1.GetFocusedRow();
-                _addressBook = new AddressBook();
-                _addressBook = (AddressBook)FocusedRow;
+                _addressBook = new PhoneBook();
+                _addressBook = (PhoneBook)FocusedRow;
                 SetModel(_addressBook);
             }
         }
 
         private void btnNewUser_Click(object sender, EventArgs e)
         {
-            SetModel(new AddressBook());
+            SetModel(new PhoneBook());
         }
 
-        private  void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            var result =  _customers.ManageAddressBook(GetModel());
+            var result = _customers.ManageAddressBook(GetModel());
             if (result)
             {
                 XtraMessageBox.Show(PublicVar.SuccessfulSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);

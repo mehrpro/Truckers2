@@ -48,6 +48,11 @@ namespace TruckerApp.Repository
         /// </summary>
         /// <returns></returns>
         Task<bool> ConvertPlate();
+        /// <summary>
+        /// راننده اتفاقی برای تست
+        /// </summary>
+        /// <returns></returns>
+        Task<Driver> RandomDriver();
 
 
     }
@@ -188,6 +193,19 @@ namespace TruckerApp.Repository
             {
                 return false;
             }
+        }
+
+        public async Task<Driver> RandomDriver()
+        {
+            var max = db.Drivers.Max(x => x.DriverID);
+            Random rnd = new Random();
+            var result = new Driver();
+            do
+            {
+                int randomNext = rnd.Next(1, max); 
+                result = await db.Drivers.SingleOrDefaultAsync(x => x.DriverID == randomNext);
+            } while (result == null);
+            return result;
         }
 
 

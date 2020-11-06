@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFishPrint));
-            this.timer_process = new System.Windows.Forms.Timer();
-            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
+            this.timer_process = new System.Windows.Forms.Timer(this.components);
+            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.txtTag = new DevExpress.XtraEditors.TextEdit();
             this.cbxCargoType = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtComossin = new DevExpress.XtraEditors.TextEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
@@ -69,6 +69,7 @@
             this.txtHosmand = new DevExpress.XtraEditors.TextEdit();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.chkMandeh = new DevExpress.XtraEditors.CheckEdit();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTag.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxCargoType.Properties)).BeginInit();
@@ -197,15 +198,6 @@
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.gridColumn1.Caption = "نوع محموله";
-            this.gridColumn1.FieldName = "Type";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
             // txtComossin
             // 
             this.txtComossin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -274,6 +266,7 @@
             this.groupControl1.Size = new System.Drawing.Size(980, 467);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "صدور نوبت جدید";
+            this.groupControl1.DoubleClick += new System.EventHandler(this.groupControl1_DoubleClick);
             // 
             // btnClose
             // 
@@ -640,6 +633,15 @@
             this.chkMandeh.Properties.Caption = "قابل تمدید";
             this.chkMandeh.Size = new System.Drawing.Size(225, 21);
             this.chkMandeh.TabIndex = 66;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.gridColumn1.Caption = "نوع محموله";
+            this.gridColumn1.FieldName = "Type";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
             // 
             // FrmFishPrint
             // 

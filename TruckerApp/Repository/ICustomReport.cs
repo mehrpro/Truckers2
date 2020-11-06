@@ -100,6 +100,7 @@ namespace TruckerApp.Repository
                 list.Tag = item.Driver.TagNumber;
                 list.Typeid = item.LoadType.Type;
                 list.Phone = item.Driver.PhoneNumber;
+                list.mandeh = item.mandeh == true ? @"قابل تمدید" : " ";
                 listResult.Add(list);
             }
 

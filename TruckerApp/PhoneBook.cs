@@ -12,7 +12,7 @@ namespace TruckerApp
     using System;
     using System.Collections.Generic;
     
-    public partial class AddressBook
+    public partial class PhoneBook
     {
         public int ID { get; set; }
         public string Fname { get; set; }
@@ -25,7 +25,5 @@ namespace TruckerApp
         public string Jobs { get; set; }
         public string Description { get; set; }
         public Nullable<int> DriverID_FK { get; set; }
-    
-        public virtual Driver Driver { get; set; }
     }
 }
