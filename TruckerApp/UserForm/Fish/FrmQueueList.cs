@@ -43,7 +43,9 @@ namespace TruckerApp.UserForm
                 txtNoMember.EditValue = await _queuing.TotalGroupByGroupId(31, select.SereisID);
                 txtOther.EditValue = await _queuing.TotalGroupByGroupId(32, select.SereisID);
 
-                gridControl1.DataSource = await _queuing.GetQueueListBySeriesId(select.SereisID);
+                gridControl1.DataSource = await _queuing.GetQueueListBySeriesId(@select.SereisID);
+                gridView1.RefreshData();
+                //_queuing.Dispose();
             }
         }
     }

@@ -240,6 +240,7 @@
     <Compile Include="ViewModels\Administrator\ViewModelUsers.cs" />
     <Compile Include="ViewModels\Customers\ViewMoelTransformerTel.cs" />
     <Compile Include="ViewModels\Queueing\ViewModelNumberList.cs" />
+    <Compile Include="ViewModels\Queueing\ViewModelQueueBySeriesId.cs" />
     <Compile Include="ViewModels\Queueing\ViewModelSeriesList.cs" />
     <Compile Include="ViewModels\ViewModelTotalCashList.cs" />
     <Compile Include="UserForm\Commission\FrmCommissionNative.cs">

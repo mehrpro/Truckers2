@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Linq;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,12 +70,13 @@ namespace TruckerApp.Repository
         /// <param name="serieseId">شناسه سریال فروش</param>
         /// <returns></returns>
         Task<int> TotalGroupByGroupId(byte groupId, int serieseId);
+
         /// <summary>
         /// لیست نوبت های صادر شده بر اساس سریال فروش
         /// </summary>
         /// <param name="serieseId">شناسه سریال فروش</param>
         /// <returns></returns>
-        Task<List<Queue>> GetQueueListBySeriesId(int serieseId);
+        Task<List<ViewModelQueueBySeriesId>> GetQueueListBySeriesId(int serieseId);
         /// <summary>
         /// لیست سریال فروش های صادر شده
         /// </summary>
@@ -139,14 +141,14 @@ namespace TruckerApp.Repository
 
     public class Queuing : IQueuing
     {
-        private readonly TruckersEntities db;
+        private TruckersEntities _db;
         public Queuing(TruckersEntities db)
         {
-            this.db = db;
+            this._db = db;
         }
         public async Task<List<ViewModelCargoType>> GetAllCargoType()
         {
-            var qryCargoType = await db.LoadTypes.Where(x => x.TypeID < 10).ToListAsync();
+            var qryCargoType = await _db.LoadTypes.Where(x => x.TypeID < 10).ToListAsync();
             var listResult = new List<ViewModelCargoType>();
             foreach (var type in qryCargoType)
             {
@@ -161,13 +163,13 @@ namespace TruckerApp.Repository
         }
         public async Task<int> GetLastNumberByTypeId(byte typeId)
         {
-            var max = await db.Queues.Where(x => x.SeriesID_FK == PublicVar.SeriesID && x.Type_FK == typeId).ToListAsync();
+            var max = await _db.Queues.Where(x => x.SeriesID_FK == PublicVar.SeriesID && x.Type_FK == typeId).ToListAsync();
             if (max.Count == 0) return 1;
             return max.Max(x => x.Number) + 1;
         }
         private async Task<Commission> GetCommissionByGroupId(byte groupId)
         {
-            return await db.Commissions.SingleOrDefaultAsync(x => x.enabled && x.Groups_FK == groupId);
+            return await _db.Commissions.SingleOrDefaultAsync(x => x.enabled && x.Groups_FK == groupId);
         }
         public async Task<Commission> GetCommisinoByTypeIdAndByGroupId(byte typeId, byte groupId)
         {
@@ -199,24 +201,24 @@ namespace TruckerApp.Repository
         }
         public Driver FindByPlate(string resultEn)
         {
-            return db.Drivers.FirstOrDefault(x => x.Tag == resultEn);
+            return _db.Drivers.FirstOrDefault(x => x.Tag == resultEn);
         }
         public async Task<Queue> FindByQueue(string tag)
         {
             var result = RetrunDirverID(tag);
-            return result > 0? await db.Queues.SingleOrDefaultAsync(x => x.Status_FK == 20 && x.DriverID_FK == result): null;
+            return result > 0? await _db.Queues.SingleOrDefaultAsync(x => x.Status_FK == 20 && x.DriverID_FK == result): null;
         }
 
         public async Task<Queue> FindByQueue(int driverId)
         {
-            return await db.Queues.SingleOrDefaultAsync(x => x.DriverID_FK == driverId && x.Status_FK == 20);
+            return await _db.Queues.SingleOrDefaultAsync(x => x.DriverID_FK == driverId && x.Status_FK == 20);
         }
 
         public bool RegisterNewQueue(ViewModelQueue viewModelQueue, ViewModelCash viewModelCash)
         {
             try
             {
-                using (var tran = db.Database.BeginTransaction())
+                using (var tran = _db.Database.BeginTransaction())
                 {
                     var newQueue = new Queue
                     {
@@ -230,8 +232,8 @@ namespace TruckerApp.Repository
                         SeriesID_FK = viewModelQueue.SeriesIdFk,
                         mandeh =(bool) viewModelQueue.Mandeh
                     };
-                    db.Queues.Add(newQueue);
-                    db.SaveChanges();
+                    _db.Queues.Add(newQueue);
+                    _db.SaveChanges();
                     var newCash = new Cash
                     {
                         QueueID_FK = newQueue.ID,
@@ -240,8 +242,8 @@ namespace TruckerApp.Repository
                         userID = PublicVar.UserID,
                         seriesID_FK = newQueue.SeriesID_FK,
                     };
-                    db.Cashes.Add(newCash);
-                    db.SaveChanges();
+                    _db.Cashes.Add(newCash);
+                    _db.SaveChanges();
                     tran.Commit();
                     return true;
                 };
@@ -253,22 +255,49 @@ namespace TruckerApp.Repository
         }
         public async Task<int> TotalTypeByTypeId(byte typeId, int serieseId)
         {
-            return await db.Queues.CountAsync(x => x.SeriesID_FK == serieseId && x.Type_FK == typeId);
+            return await _db.Queues.CountAsync(x => x.SeriesID_FK == serieseId && x.Type_FK == typeId);
         }
 
         public async Task<int> TotalGroupByGroupId(byte groupId, int serieseId)
         {
-            return await db.Queues.CountAsync(x => x.SeriesID_FK == serieseId && x.GroupCommission == groupId);
+            return await _db.Queues.CountAsync(x => x.SeriesID_FK == serieseId && x.GroupCommission == groupId);
         }
 
-        public async Task<List<Queue>> GetQueueListBySeriesId(int serieseId)
+        //private void RefreshAll()
+        //{
+        //    foreach (var entity in db.ChangeTracker.Entries())
+        //    {
+        //        entity.Reload();
+        //    }
+        //}
+        public async Task<List<ViewModelQueueBySeriesId>> GetQueueListBySeriesId(int serieseId)
         {
-            return await db.Queues.Where(x => x.SeriesID_FK == serieseId).ToListAsync();
+            _db = new TruckersEntities();
+            //db.Entry(typeof(Queue)).Reload();
+            //db.Refresh(RefreshMode.StoreWins, yourEntity);
+
+            //RefreshAll();
+
+            var qry = await _db.Queues.Where(x => x.SeriesID_FK == serieseId).ToListAsync();
+            var list = new List<ViewModelQueueBySeriesId>();
+            foreach (var queue in qry)
+            {
+                var id = new ViewModelQueueBySeriesId();
+                id.Number = queue.Number;
+                id.SmartCart = queue.Driver.SmartCart.ToString();
+                id.FullName = $"{queue.Driver.FirstName} {queue.Driver.LastName}";
+                id.Cargo = queue.LoadType.Type;
+                id.Commission = queue.Commission.CommissionPrice.ToString();
+                id.Tag = queue.Driver.Tag;
+                list.Add(id);
+            }
+
+            return list.OrderBy(x => x.Cargo).ToList();
         }
 
         public async Task<List<ViewModelSeriesList>> GetSeriesList()
         {
-            var qry = await db.SeriesPrices.ToListAsync();
+            var qry = await _db.SeriesPrices.ToListAsync();
             var list = new List<ViewModelSeriesList>();
 
             foreach (var seriesPrice in qry)
@@ -287,15 +316,15 @@ namespace TruckerApp.Repository
 
         public async Task<bool> RetrunCashByQueueID(int queueId, byte typeId)
         {
-            using (var trans = db.Database.BeginTransaction())
+            using (var trans = _db.Database.BeginTransaction())
             {
                 try
                 {
-                    var qry = db.Cashes.Single(x => x.QueueID_FK == queueId);
-                    var qryQueue = db.Queues.Single(x => x.ID == queueId);
+                    var qry = _db.Cashes.Single(x => x.QueueID_FK == queueId);
+                    var qryQueue = _db.Queues.Single(x => x.ID == queueId);
                     qryQueue.Status_FK = typeId;
                     qry.Pos = qry.CashDesk = 0;
-                    await db.SaveChangesAsync();
+                    await _db.SaveChangesAsync();
                     trans.Commit();
                     return true;
                 }
@@ -313,11 +342,11 @@ namespace TruckerApp.Repository
         {
             try
             {
-                var qryQueue = await db.Queues.SingleOrDefaultAsync(x => x.ID == queueId);
+                var qryQueue = await _db.Queues.SingleOrDefaultAsync(x => x.ID == queueId);
                 if (qryQueue == null)
                     return false;
                 qryQueue.Status_FK = 23;
-                await db.SaveChangesAsync();
+                await _db.SaveChangesAsync();
                 return true;
 
             }
@@ -330,33 +359,33 @@ namespace TruckerApp.Repository
 
         public bool NewSerial()
         {
-            using (var ts = db.Database.BeginTransaction())
+            using (var ts = _db.Database.BeginTransaction())
             {
                 try
                 {
-                    var last = db.SeriesPrices.SingleOrDefault(x => x.enabeled == true && x.closing == false);
+                    var last = _db.SeriesPrices.SingleOrDefault(x => x.enabeled == true && x.closing == false);
                     if (last == null)
                     {
                         //NewSerial
                         return false;
                     }
 
-                    if (db.Cashes.FirstOrDefault(x => x.seriesID_FK == last.SereisID) == null)
+                    if (_db.Cashes.FirstOrDefault(x => x.seriesID_FK == last.SereisID) == null)
                     {
                         return false;
                     }
                     last.SeriesDateEnd = DateTime.Now;
-                    last.Faleh = db.Queues.Count(x => x.Type_FK == 1 && x.SeriesID_FK == last.SereisID);
-                    last.Packet = db.Queues.Count(x => x.Type_FK == 2 && x.SeriesID_FK == last.SereisID);
-                    last.Gandom = db.Queues.Count(x => x.Type_FK == 3 && x.SeriesID_FK == last.SereisID);
-                    last.Clinker = db.Queues.Count(x => x.Type_FK == 4 && x.SeriesID_FK == last.SereisID);
-                    last.Member = (short)db.Queues.Count(x => x.GroupCommission == 30 && x.SeriesID_FK == last.SereisID);
-                    last.Native = (short)db.Queues.Count(x => x.GroupCommission == 31 && x.SeriesID_FK == last.SereisID);
-                    last.Other = (short)db.Queues.Count(x => x.GroupCommission == 32 && x.SeriesID_FK == last.SereisID);
-                    last.SeriesCount = db.Queues.Count(x => x.SeriesID_FK == last.SereisID);
+                    last.Faleh = _db.Queues.Count(x => x.Type_FK == 1 && x.SeriesID_FK == last.SereisID);
+                    last.Packet = _db.Queues.Count(x => x.Type_FK == 2 && x.SeriesID_FK == last.SereisID);
+                    last.Gandom = _db.Queues.Count(x => x.Type_FK == 3 && x.SeriesID_FK == last.SereisID);
+                    last.Clinker = _db.Queues.Count(x => x.Type_FK == 4 && x.SeriesID_FK == last.SereisID);
+                    last.Member = (short)_db.Queues.Count(x => x.GroupCommission == 30 && x.SeriesID_FK == last.SereisID);
+                    last.Native = (short)_db.Queues.Count(x => x.GroupCommission == 31 && x.SeriesID_FK == last.SereisID);
+                    last.Other = (short)_db.Queues.Count(x => x.GroupCommission == 32 && x.SeriesID_FK == last.SereisID);
+                    last.SeriesCount = _db.Queues.Count(x => x.SeriesID_FK == last.SereisID);
                     last.enabeled = false;
                     last.closing = true;
-                    db.SaveChanges();
+                    _db.SaveChanges();
 
                     var series = new SeriesPrice();
                     series.SeriesName = (int)last.SeriesName + 1;
@@ -364,8 +393,8 @@ namespace TruckerApp.Repository
                     series.userCreator = PublicVar.UserID;
                     series.enabeled = true;
                     series.closing = false;
-                    db.SeriesPrices.Add(series);
-                    db.SaveChanges();
+                    _db.SeriesPrices.Add(series);
+                    _db.SaveChanges();
                     ts.Commit();
                     return true;
                 }
@@ -379,7 +408,7 @@ namespace TruckerApp.Repository
 
         public async Task<SeriesPrice> LastSerial()
         {
-            return await db.SeriesPrices.SingleOrDefaultAsync(x => x.enabeled == true && x.closing == false);
+            return await _db.SeriesPrices.SingleOrDefaultAsync(x => x.enabeled == true && x.closing == false);
         }
 
         public async Task<bool> LoadLastSerial()
@@ -398,8 +427,8 @@ namespace TruckerApp.Repository
             series.userCreator = PublicVar.UserID;
             series.enabeled = true;
             series.closing = false;
-            db.SeriesPrices.Add(series);
-            db.SaveChanges();
+            _db.SeriesPrices.Add(series);
+            _db.SaveChanges();
             PublicVar.SeriesID = series.SereisID;
             PublicVar.SeriesName = series.SeriesName;
             PublicVar.DateSerial = series.SeriesDateStart;
@@ -412,10 +441,10 @@ namespace TruckerApp.Repository
             {
                 for (byte i = 101; i < 108; i++)
                 {
-                    var qry = await db.LoadTypes.FindAsync(i);
+                    var qry = await _db.LoadTypes.FindAsync(i);
                     if (qry != null) qry.Type = "0";
                 }
-                await db.SaveChangesAsync();
+                await _db.SaveChangesAsync();
                 return true;
             }
             catch
@@ -431,11 +460,11 @@ namespace TruckerApp.Repository
             {
                 for (byte i = 101; i < 108; i++)
                 {
-                    var qry = await db.LoadTypes.FindAsync(i);
+                    var qry = await _db.LoadTypes.FindAsync(i);
                     if (qry != null) qry.Type =
-                          (await db.Queues.CountAsync(x => x.Type_FK == i - 100 && x.Status_FK == 20)).ToString();
+                          (await _db.Queues.CountAsync(x => x.Type_FK == i - 100 && x.Status_FK == 20)).ToString();
                 }
-                await db.SaveChangesAsync();
+                await _db.SaveChangesAsync();
                 return true;
             }
             catch
@@ -447,25 +476,25 @@ namespace TruckerApp.Repository
 
         public async Task<string> GetScheduleByTypeId(byte typeId)
         {
-            var scheduleByTypeId = await db.LoadTypes.FindAsync(typeId + 100);
+            var scheduleByTypeId = await _db.LoadTypes.FindAsync(typeId + 100);
             if (scheduleByTypeId != null)
             {
                 scheduleByTypeId.Type = (Convert.ToInt32(scheduleByTypeId.Type) + 1).ToString();
-                await db.SaveChangesAsync();
+                await _db.SaveChangesAsync();
             }
             return scheduleByTypeId?.Type;
         }
 
         public int RetrunDirverID(string tag)
         {
-            var result = db.Drivers.SingleOrDefault(x => x.Tag == tag);
+            var result = _db.Drivers.SingleOrDefault(x => x.Tag == tag);
             return result?.DriverID ?? 0;
         }
 
 
         public void Dispose()
         {
-            db?.Dispose();
+            _db?.Dispose();
         }
     }
 }

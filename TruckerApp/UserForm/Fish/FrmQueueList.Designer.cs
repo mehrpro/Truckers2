@@ -32,16 +32,6 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colNumber = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDateTimeRegister = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDriver = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLoadType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLoadType1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSeries = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colComosiunID_FK = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDriver1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDriver2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDriver3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -183,123 +173,10 @@
             this.gridView1.Appearance.VertLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView1.Appearance.ViewCaption.Options.UseTextOptions = true;
             this.gridView1.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colNumber,
-            this.colDateTimeRegister,
-            this.colDriver,
-            this.colLoadType,
-            this.colLoadType1,
-            this.colSeries,
-            this.colComosiunID_FK,
-            this.colDriver1,
-            this.colDriver2,
-            this.colDriver3});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colDateTimeRegister, DevExpress.Data.ColumnSortOrder.Ascending)});
-            // 
-            // colNumber
-            // 
-            this.colNumber.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colNumber.Caption = "نوبت روز";
-            this.colNumber.FieldName = "Number";
-            this.colNumber.Name = "colNumber";
-            this.colNumber.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Number", "{0}")});
-            this.colNumber.Visible = true;
-            this.colNumber.VisibleIndex = 0;
-            this.colNumber.Width = 65;
-            // 
-            // colDateTimeRegister
-            // 
-            this.colDateTimeRegister.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colDateTimeRegister.Caption = "تاریخ";
-            this.colDateTimeRegister.FieldName = "DateTimeRegister";
-            this.colDateTimeRegister.Name = "colDateTimeRegister";
-            this.colDateTimeRegister.Visible = true;
-            this.colDateTimeRegister.VisibleIndex = 4;
-            this.colDateTimeRegister.Width = 76;
-            // 
-            // colDriver
-            // 
-            this.colDriver.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colDriver.Caption = "نام";
-            this.colDriver.FieldName = "Driver.FirstName";
-            this.colDriver.Name = "colDriver";
-            this.colDriver.Visible = true;
-            this.colDriver.VisibleIndex = 2;
-            this.colDriver.Width = 76;
-            // 
-            // colLoadType
-            // 
-            this.colLoadType.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colLoadType.Caption = "فامیلی";
-            this.colLoadType.FieldName = "Driver.LastName";
-            this.colLoadType.Name = "colLoadType";
-            this.colLoadType.Visible = true;
-            this.colLoadType.VisibleIndex = 3;
-            this.colLoadType.Width = 76;
-            // 
-            // colLoadType1
-            // 
-            this.colLoadType1.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colLoadType1.Caption = "کارت هوشمند";
-            this.colLoadType1.FieldName = "Driver.SmartCart";
-            this.colLoadType1.Name = "colLoadType1";
-            this.colLoadType1.Visible = true;
-            this.colLoadType1.VisibleIndex = 1;
-            this.colLoadType1.Width = 96;
-            // 
-            // colSeries
-            // 
-            this.colSeries.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colSeries.Caption = "نوع محموله";
-            this.colSeries.FieldName = "LoadType.Type";
-            this.colSeries.Name = "colSeries";
-            this.colSeries.Visible = true;
-            this.colSeries.VisibleIndex = 5;
-            this.colSeries.Width = 76;
-            // 
-            // colComosiunID_FK
-            // 
-            this.colComosiunID_FK.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colComosiunID_FK.Caption = "کمیسیون";
-            this.colComosiunID_FK.FieldName = "Commission.CommissionPrice";
-            this.colComosiunID_FK.Name = "colComosiunID_FK";
-            this.colComosiunID_FK.Visible = true;
-            this.colComosiunID_FK.VisibleIndex = 6;
-            // 
-            // colDriver1
-            // 
-            this.colDriver1.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colDriver1.Caption = "عضویت";
-            this.colDriver1.FieldName = "Driver.LoadType.Type";
-            this.colDriver1.Name = "colDriver1";
-            this.colDriver1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Driver.Membership", "تعداد اعضاء={0:0.##}")});
-            this.colDriver1.Visible = true;
-            this.colDriver1.VisibleIndex = 7;
-            // 
-            // colDriver2
-            // 
-            this.colDriver2.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colDriver2.Caption = "پلاک";
-            this.colDriver2.FieldName = "Driver.TagNumber";
-            this.colDriver2.Name = "colDriver2";
-            this.colDriver2.Visible = true;
-            this.colDriver2.VisibleIndex = 8;
-            // 
-            // colDriver3
-            // 
-            this.colDriver3.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colDriver3.Caption = "همراه";
-            this.colDriver3.FieldName = "Driver.PhoneNumber";
-            this.colDriver3.Name = "colDriver3";
-            this.colDriver3.Visible = true;
-            this.colDriver3.VisibleIndex = 9;
             // 
             // panelControl1
             // 
@@ -752,16 +629,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colNumber;
-        private DevExpress.XtraGrid.Columns.GridColumn colDateTimeRegister;
-        private DevExpress.XtraGrid.Columns.GridColumn colDriver;
-        private DevExpress.XtraGrid.Columns.GridColumn colLoadType;
-        private DevExpress.XtraGrid.Columns.GridColumn colLoadType1;
-        private DevExpress.XtraGrid.Columns.GridColumn colSeries;
-        private DevExpress.XtraGrid.Columns.GridColumn colComosiunID_FK;
-        private DevExpress.XtraGrid.Columns.GridColumn colDriver1;
-        private DevExpress.XtraGrid.Columns.GridColumn colDriver2;
-        private DevExpress.XtraGrid.Columns.GridColumn colDriver3;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
