@@ -237,6 +237,12 @@
     <Compile Include="UserForm\Customer\FrmAddressBook.Designer.cs">
       <DependentUpon>FrmAddressBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserForm\Fish\FrmRevFish33.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\Fish\FrmRevFish33.Designer.cs">
+      <DependentUpon>FrmRevFish33.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\Administrator\ViewModelUsers.cs" />
     <Compile Include="ViewModels\Customers\ViewMoelTransformerTel.cs" />
     <Compile Include="ViewModels\Queueing\ViewModelNumberList.cs" />
@@ -415,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\Fish\FrmRevFish3.resx">
       <DependentUpon>FrmRevFish3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Fish\FrmRevFish33.resx">
+      <DependentUpon>FrmRevFish33.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\Fish\FrmSerial.resx">
       <DependentUpon>FrmSerial.cs</DependentUpon>

@@ -273,11 +273,11 @@
             // 
             // barButtonItem1
             // 
-            this.barButtonItem1.Caption = "حواله پاکت";
+            this.barButtonItem1.Caption = "تمدید حواله";
             this.barButtonItem1.Id = 11;
-            this.barButtonItem1.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.icons8_calendar_2_40;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
             this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barButtonItem4

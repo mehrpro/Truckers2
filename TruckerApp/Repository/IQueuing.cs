@@ -70,7 +70,6 @@ namespace TruckerApp.Repository
         /// <param name="serieseId">شناسه سریال فروش</param>
         /// <returns></returns>
         Task<int> TotalGroupByGroupId(byte groupId, int serieseId);
-
         /// <summary>
         /// لیست نوبت های صادر شده بر اساس سریال فروش
         /// </summary>
@@ -95,7 +94,6 @@ namespace TruckerApp.Repository
         /// <param name="queueId">شناسه حواله صادره شده</param>
         /// <returns></returns>
         Task<bool> ResieadByQueueID(int queueId);
-
         /// <summary>
         /// ایجاد سریال فروش جدید و ثبت تعدادی دفاتر
         /// </summary>
@@ -121,20 +119,29 @@ namespace TruckerApp.Repository
         /// </summary>
         /// <returns></returns>
         Task<bool> CounterScheduleList();
-
         /// <summary>
         /// شماره نوبت براساس نوع محموله
         /// </summary>
         /// <param name="typeId"></param>
         /// <returns></returns>
         Task<string> GetScheduleByTypeId(byte typeId);
-
         /// <summary>
         /// شناسه راننده 
         /// </summary>
         /// <param name="tag">پلاک انگلیسی</param>
         /// <returns></returns>
         int RetrunDirverID(string tag);
+        /// <summary>
+        /// نوبت های تمدید نشده
+        /// </summary>
+        /// <returns></returns>
+        Task<List<Queue>> GetTamdid();
+        /// <summary>
+        /// تمدید نوبت
+        /// </summary>
+        /// <param name="queueId"></param>
+        /// <returns></returns>
+        Task<bool> Tamdid(int queueId);
 
 
     }
@@ -220,18 +227,16 @@ namespace TruckerApp.Repository
             {
                 using (var tran = _db.Database.BeginTransaction())
                 {
-                    var newQueue = new Queue
-                    {
-                        Number = viewModelQueue.Number,
-                        GroupCommission = viewModelQueue.GroupCommission,
-                        Type_FK = viewModelQueue.TypeFk,
-                        DateTimeRegister = viewModelQueue.DateTimeRegister,
-                        DriverID_FK = viewModelQueue.DriverIdFk,
-                        Status_FK = viewModelQueue.StatusFk,
-                        ComosiunID_FK = viewModelQueue.ComosiunIdFk,
-                        SeriesID_FK = viewModelQueue.SeriesIdFk,
-                        mandeh =(bool) viewModelQueue.Mandeh
-                    };
+                    var newQueue = new Queue();
+                    newQueue.Number = viewModelQueue.Number;
+                    newQueue.GroupCommission = viewModelQueue.GroupCommission;
+                    newQueue.Type_FK = viewModelQueue.TypeFk;
+                    newQueue.DateTimeRegister = viewModelQueue.DateTimeRegister;
+                    newQueue.DriverID_FK = viewModelQueue.DriverIdFk;
+                    newQueue.Status_FK = viewModelQueue.StatusFk;
+                    newQueue.ComosiunID_FK = viewModelQueue.ComosiunIdFk;
+                    newQueue.SeriesID_FK = viewModelQueue.SeriesIdFk;
+                    newQueue.mandeh = (bool) viewModelQueue.Mandeh;
                     _db.Queues.Add(newQueue);
                     _db.SaveChanges();
                     var newCash = new Cash
@@ -489,6 +494,27 @@ namespace TruckerApp.Repository
         {
             var result = _db.Drivers.SingleOrDefault(x => x.Tag == tag);
             return result?.DriverID ?? 0;
+        }
+
+        public async Task<List<Queue>> GetTamdid()
+        {
+            _db = new TruckersEntities();
+            return await _db.Queues.Where(x => x.mandeh == false).ToListAsync();
+        }
+
+        public async Task<bool> Tamdid(int queueId)
+        {
+            try
+            {
+                var result =await _db.Queues.FindAsync(queueId);
+                result.mandeh = true;
+                await _db.SaveChangesAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
 

@@ -80,15 +80,16 @@ namespace TruckerApp.Repository
     /// </summary>
     public class CustomReport : ICustomReport
     {
-        private readonly TruckersEntities db;
+        private  TruckersEntities _db;
 
         public CustomReport(TruckersEntities db)
         {
-            this.db = db;
+            _db = db;
         }
         public async Task<List<ViewModelReportList>> GetAllReportListByType(byte typeId)
         {
-            var queryAll = await db.Queues.Where(x => x.Status_FK == 20 && x.Type_FK == typeId).ToListAsync();
+            _db = new TruckersEntities();
+            var queryAll = await _db.Queues.Where(x => x.Status_FK == 20 && x.Type_FK == typeId).ToListAsync();
             var listResult = new List<ViewModelReportList>();
             int con = 1;
             foreach (var item in queryAll)
@@ -109,7 +110,7 @@ namespace TruckerApp.Repository
 
         public async Task<List<ViewModelReportList>> GetLastSeriesReportListByType(byte typeId)
         {
-            var queryAll = await db.Queues.Where(x => x.Status_FK == 20 && x.Type_FK == typeId && x.SeriesID_FK == PublicVar.SeriesID).OrderBy(x => x.ID).ToListAsync();
+            var queryAll = await _db.Queues.Where(x => x.Status_FK == 20 && x.Type_FK == typeId && x.SeriesID_FK == PublicVar.SeriesID).OrderBy(x => x.ID).ToListAsync();
             var listResult = new List<ViewModelReportList>();
             int con = 1;
             foreach (var item in queryAll)
@@ -130,22 +131,22 @@ namespace TruckerApp.Repository
 
         public async Task<int> CountOfStatus20_LastSeries(byte typeId)
         {
-            return await db.Queues.CountAsync(x => x.Status_FK == 20 && x.Type_FK == typeId && x.SeriesID_FK == PublicVar.SeriesID);
+            return await _db.Queues.CountAsync(x => x.Status_FK == 20 && x.Type_FK == typeId && x.SeriesID_FK == PublicVar.SeriesID);
         }
 
         public async Task<int> CountOfStatus20_All(byte typeId)
         {
-            return await db.Queues.CountAsync(x => x.Status_FK == 20 && x.Type_FK == typeId);
+            return await _db.Queues.CountAsync(x => x.Status_FK == 20 && x.Type_FK == typeId);
         }
 
         public async Task<int> CountOfStatus20_Old(byte typeId)
         {
-            return await db.Queues.CountAsync(x => x.Status_FK == 20 && x.Type_FK == typeId && x.SeriesID_FK != PublicVar.SeriesID);
+            return await _db.Queues.CountAsync(x => x.Status_FK == 20 && x.Type_FK == typeId && x.SeriesID_FK != PublicVar.SeriesID);
         }
 
         public async Task<List<ViewModelNumberList>> GetQueueStatus20ByTypeID(byte typrId)
         {
-            var qry = await db.Queues.Where(x => x.Status_FK == 20 && x.Type_FK == typrId).ToListAsync();
+            var qry = await _db.Queues.Where(x => x.Status_FK == 20 && x.Type_FK == typrId).ToListAsync();
             var list = new List<ViewModelNumberList>();
             if (qry.Count > 0)
             {
@@ -175,8 +176,8 @@ namespace TruckerApp.Repository
         {
             try
             {
-                foreach (var item in viewModelNumberLists) db.Queues.Find(item.ID).Status_FK = 23;
-                db.SaveChanges();
+                foreach (var item in viewModelNumberLists) _db.Queues.Find(item.ID).Status_FK = 23;
+                _db.SaveChanges();
                 return true;
             }
             catch
@@ -187,14 +188,14 @@ namespace TruckerApp.Repository
 
         public async Task<List<Cash>> GetCashListBySeriesId(int seriesId)
         {
-            return await db.Cashes.Where(x => x.seriesID_FK == seriesId).ToListAsync();
+            return await _db.Cashes.Where(x => x.seriesID_FK == seriesId).ToListAsync();
         }
 
         public async Task<List<ViewModelTotalCashList>> GetTotalReportByBetweenDate(DateTime startDateTime, DateTime finishDateTime)
         {
             var start = startDateTime.Date;
             var end = finishDateTime.Date.AddDays(1);
-            var qry = await db.SeriesPrices.Where(x => x.SeriesDateStart >= start).ToListAsync();
+            var qry = await _db.SeriesPrices.Where(x => x.SeriesDateStart >= start).ToListAsync();
             var qry2 = qry.Where(x => x.SeriesDateStart <= end).ToList();
             //txtTotalSerial.EditValue = qry2.Count.ToString();
             var seriesIdList = new int[qry2.Count];
@@ -204,16 +205,16 @@ namespace TruckerApp.Repository
             foreach (var id in seriesIdList)
             {
                 var masterList = new List<Queue>();
-                var qry23 = await db.Queues.Where(x => x.SeriesID_FK == id && x.Status_FK == 23).AsNoTracking().ToListAsync();
-                var qry20 = await db.Queues.Where(x => x.SeriesID_FK == id && x.Status_FK == 20).AsNoTracking().ToListAsync();
+                var qry23 = await _db.Queues.Where(x => x.SeriesID_FK == id && x.Status_FK == 23).AsNoTracking().ToListAsync();
+                var qry20 = await _db.Queues.Where(x => x.SeriesID_FK == id && x.Status_FK == 20).AsNoTracking().ToListAsync();
                 masterList.AddRange(qry23);
                 masterList.AddRange(qry20);
 
 
                 var newModel = new ViewModelTotalCashList();
-                newModel.DateTime = db.SeriesPrices.Find(id).SeriesDateStart.PersianConvertor();
-                newModel.TotalCash = (long)await db.Cashes.Where(x => x.seriesID_FK == id).SumAsync(x => x.CashDesk);
-                newModel.TotalPos = (long)await db.Cashes.Where(x => x.seriesID_FK == id).SumAsync(x => x.Pos);
+                newModel.DateTime = _db.SeriesPrices.Find(id).SeriesDateStart.PersianConvertor();
+                newModel.TotalCash = (long)await _db.Cashes.Where(x => x.seriesID_FK == id).SumAsync(x => x.CashDesk);
+                newModel.TotalPos = (long)await _db.Cashes.Where(x => x.seriesID_FK == id).SumAsync(x => x.Pos);
                 newModel.faleh =  masterList.Count(x => x.Type_FK == 1);
                 newModel.packat = masterList.Count(x => x.Type_FK == 2);
                 newModel.gandom = masterList.Count(x => x.Type_FK == 3);
@@ -221,7 +222,7 @@ namespace TruckerApp.Repository
                 newModel.AhakFaleh = masterList.Count(x => x.Type_FK == 5);
                 newModel.AhakPackat = masterList.Count(x => x.Type_FK == 6);
                 newModel.Othertype = masterList.Count(x => x.Type_FK == 7);
-                newModel.SeriesName = db.SeriesPrices.Find(id).SeriesName;
+                newModel.SeriesName = _db.SeriesPrices.Find(id).SeriesName;
                 cashLists.Add(newModel);
             }
 
@@ -231,7 +232,7 @@ namespace TruckerApp.Repository
 
         public void Dispose()
         {
-            db?.Dispose();
+            _db?.Dispose();
         }
     }
 }

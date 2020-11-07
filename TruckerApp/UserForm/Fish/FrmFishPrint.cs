@@ -148,7 +148,7 @@ namespace TruckerApp.UserForm.Fish
             //باید قطعه کد زیر را استفاده کنیم
             if (InvokeRequired)
             {
-                if (jobCancel)
+                //if (jobCancel)
                    // System.Threading.Thread.CurrentThread.Abort();
                 Invoke(_handleAnprEventsDelegate, eventType, stream, pltIdx);
                 return;
