@@ -237,6 +237,12 @@
     <Compile Include="UserForm\Customer\FrmAddressBook.Designer.cs">
       <DependentUpon>FrmAddressBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserForm\Fish\FrmFishPrintClassic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\Fish\FrmFishPrintClassic.Designer.cs">
+      <DependentUpon>FrmFishPrintClassic.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForm\Fish\FrmRevFish33.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -409,6 +415,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\Customer\FrmMembershipList.resx">
       <DependentUpon>FrmMembershipList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Fish\FrmFishPrintClassic.resx">
+      <DependentUpon>FrmFishPrintClassic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\Fish\FrmQueueList.resx">
       <DependentUpon>FrmQueueList.cs</DependentUpon>

@@ -334,7 +334,7 @@ namespace TruckerApp.UserForm.Fish
             var rc2 = new Rectangle(plate.rc.left, plate.rc.top, plate.rc.right - plate.rc.left, plate.rc.bottom - plate.rc.top);
             g.DrawRectangle(pen_rect, rc2);
         }
-
+        //9368435699
         private void UpdateFarsiResult(string LPResult)
         {
             Res1.Text = LPResult.Length > 1 ? LPResult.Substring(0, 2) : "";
