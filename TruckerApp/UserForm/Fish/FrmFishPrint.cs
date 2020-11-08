@@ -16,7 +16,7 @@ namespace TruckerApp.UserForm.Fish
     public partial class FrmFishPrint : XtraForm
     {
 
-        private bool jobCancel = false;
+       // private bool jobCancel = false;
         //private readonly TruckersEntities _db = new TruckersEntities();
         private int _driver, _series;
         private int _commission;

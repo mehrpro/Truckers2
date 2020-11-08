@@ -11,19 +11,24 @@ namespace TruckerApp
     public partial class FrmUser : Form
     {
         private readonly IAdministrator _administrator;
+        private bool CameraMode;
+
         public FrmUser(IAdministrator administrator)
         {
             _administrator = administrator;
             InitializeComponent();
         }
 
+        private void CameraModeChange()
+        {
+            CameraMode = Properties.Settings.Default.em;
+            txtCameraMode.EditValue = CameraMode ? @"وضعیت صدور حواله با کارت هوشمند فعال است" : @"وضعیت صدور حواله با پلاک خوان هوشمند فعال است";
 
+        }
 
         private void FrmUser_Load(object sender, EventArgs e)
         {
-
-
-
+            CameraModeChange();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -59,7 +64,7 @@ namespace TruckerApp
             }
 
         }
-        
+
         private async void btnCounterCreator_Click(object sender, EventArgs e)
         {
             var result = await _administrator.CreateScheduleList();
@@ -71,6 +76,13 @@ namespace TruckerApp
             {
                 XtraMessageBox.Show(" انجام نشد");
             }
+        }
+
+        private void btnCameraMode_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.em = !CameraMode;
+            Properties.Settings.Default.Save();
+            CameraModeChange();
         }
     }
 }

@@ -84,32 +84,42 @@ namespace TruckerApp
 
         private void btnNewQue_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (PublicVar.play)
+            if (true)//Properties.Settings.Default.em
             {
-                XtraMessageBox.Show(PublicVar.ErrorCameraLoad, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-
-
-                //var newForm = _mainContainer.GetInstance<FrmFishPrint>();
-                //newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
-                //newForm.StartPosition = FormStartPosition.CenterScreen;
-                //newForm.ShowDialog();
-
                 foreach (var c in this.MdiChildren)
                 {
                     c.Close();
                 }
 
-                var frm = _mainContainer.GetInstance<FrmFishPrint>();
+                var frm = _mainContainer.GetInstance<FrmFishPrintClassic>();
                 frm.FormBorderStyle = FormBorderStyle.None;
                 frm.MdiParent = this;
                 frm.StartPosition = FormStartPosition.CenterParent;
                 frm.Dock = DockStyle.Fill;
                 frm.Show();
             }
+            else
+            {
+                if (PublicVar.play)
+                {
+                    XtraMessageBox.Show(PublicVar.ErrorCameraLoad, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    foreach (var c in this.MdiChildren)
+                    {
+                        c.Close();
+                    }
 
+                    var frm = _mainContainer.GetInstance<FrmFishPrint>();
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.MdiParent = this;
+                    frm.StartPosition = FormStartPosition.CenterParent;
+                    frm.Dock = DockStyle.Fill;
+                    frm.Show();
+                }
+
+            }
         }
 
         private void btnSeries_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
