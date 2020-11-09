@@ -51,8 +51,9 @@ namespace TruckerApp.Repository
         /// ویرایش راننده و تغییر پلاک
         /// </summary>
         /// <param name="driver">اطلاعات راننده</param>
+        /// <param name="oldDriver">شناسه راننده قبلی</param>
         /// <returns></returns>
-        Task<bool> EditDriverWithNewPlate(Driver driver);
+        Task<bool> EditDriverWithNewPlate(Driver driver , int oldDriver);
         /// <summary>
         /// لیست رانندگان
         /// </summary>
@@ -174,14 +175,14 @@ namespace TruckerApp.Repository
             }
         }
 
-        public async Task<bool> EditDriverWithNewPlate(Driver driver)
+        public async Task<bool> EditDriverWithNewPlate(Driver driver , int oldDriver)
         {
             using (var trans = db.Database.BeginTransaction())
             {
                 try
                 {
-                    var oldDriver = await FindDriverByTag(driver.Tag);
-                    if (oldDriver == null)
+                    //var oldDriver = await FindDriverByTag(driver.Tag);
+                    if (oldDriver == 0)
                     {
                         var result = await EditDriver(driver);
                         trans.Commit();
@@ -189,7 +190,8 @@ namespace TruckerApp.Repository
                     }
                     else
                     {
-                        oldDriver.Tag = oldDriver.TagNumber = @"No_Set";
+                        var old = await  db.Drivers.FindAsync(oldDriver);
+                        old.Tag = old.TagNumber = @"No_Set";
                         await db.SaveChangesAsync();
                         var result = await EditDriver(driver);
                         if (result)

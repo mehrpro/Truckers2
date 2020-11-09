@@ -58,7 +58,7 @@
             this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.btnMailSetting = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnChangePlate = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
@@ -72,6 +72,7 @@
             this.btnAddressBook = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem24 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem25 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnEditDriver = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -125,7 +126,7 @@
             this.barButtonItem14,
             this.barButtonItem3,
             this.btnMailSetting,
-            this.barButtonItem15,
+            this.btnChangePlate,
             this.barButtonItem16,
             this.barButtonItem17,
             this.barButtonItem18,
@@ -138,10 +139,11 @@
             this.btnEncryptUsers,
             this.btnAddressBook,
             this.barButtonItem24,
-            this.barButtonItem25});
+            this.barButtonItem25,
+            this.btnEditDriver});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.ribbonControl1.MaxItemId = 5;
+            this.ribbonControl1.MaxItemId = 6;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -392,14 +394,14 @@
             this.btnMailSetting.Name = "btnMailSetting";
             this.btnMailSetting.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMailSetting_ItemClick);
             // 
-            // barButtonItem15
+            // btnChangePlate
             // 
-            this.barButtonItem15.Caption = "ویرایش راننده";
-            this.barButtonItem15.Id = 24;
-            this.barButtonItem15.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.Image")));
-            this.barButtonItem15.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.LargeImage")));
-            this.barButtonItem15.Name = "barButtonItem15";
-            this.barButtonItem15.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem15_ItemClick);
+            this.btnChangePlate.Caption = "ویرایش پلاک";
+            this.btnChangePlate.Id = 24;
+            this.btnChangePlate.ImageOptions.Image = global::TruckerApp.Properties.Resources.group2_16x16;
+            this.btnChangePlate.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.group2_32x32;
+            this.btnChangePlate.Name = "btnChangePlate";
+            this.btnChangePlate.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem15_ItemClick);
             // 
             // barButtonItem16
             // 
@@ -516,6 +518,15 @@
             this.barButtonItem25.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.phone_32x321;
             this.barButtonItem25.Name = "barButtonItem25";
             // 
+            // btnEditDriver
+            // 
+            this.btnEditDriver.Caption = "ویرایش راننده";
+            this.btnEditDriver.Id = 5;
+            this.btnEditDriver.ImageOptions.Image = global::TruckerApp.Properties.Resources.editcontact_16x16;
+            this.btnEditDriver.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.editcontact_32x32;
+            this.btnEditDriver.Name = "btnEditDriver";
+            this.btnEditDriver.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditDriver_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Appearance.Options.UseTextOptions = true;
@@ -529,10 +540,11 @@
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.btnAddDriver);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnEditDriver);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnChangePlate);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnMemberShipList);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem14);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem15);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "مشتریان";
@@ -737,7 +749,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem btnMailSetting;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem15;
+        private DevExpress.XtraBars.BarButtonItem btnChangePlate;
         private DevExpress.XtraBars.BarButtonItem barButtonItem16;
         private DevExpress.XtraBars.BarButtonItem barButtonItem17;
         private DevExpress.XtraBars.BarButtonItem barButtonItem18;
@@ -753,5 +765,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
         private DevExpress.XtraBars.BarButtonItem barButtonItem24;
         private DevExpress.XtraBars.BarButtonItem barButtonItem25;
+        private DevExpress.XtraBars.BarButtonItem btnEditDriver;
     }
 }

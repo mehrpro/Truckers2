@@ -238,6 +238,12 @@
     <Compile Include="UserForm\Customer\FrmAddressBook.Designer.cs">
       <DependentUpon>FrmAddressBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserForm\Customer\FrmEditDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\Customer\FrmEditDriver.Designer.cs">
+      <DependentUpon>FrmEditDriver.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForm\Customer\FrmNewDriver.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -411,6 +417,9 @@
     <EmbeddedResource Include="UserForm\Customer\FrmEditDriverWithCamera.resx">
       <DependentUpon>FrmEditDriverWithCamera.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Customer\FrmEditDriver.resx">
+      <DependentUpon>FrmEditDriver.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserForm\Customer\FrmNewDriver.resx">
       <DependentUpon>FrmNewDriver.cs</DependentUpon>
     </EmbeddedResource>
@@ -493,6 +502,10 @@
       <DependentUpon>MDB.edmx</DependentUpon>
       <LastGenOutput>MDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\editcontact_16x16.png" />
+    <None Include="Resources\editcontact_32x32.png" />
+    <None Include="Resources\group2_16x16.png" />
+    <None Include="Resources\group2_32x32.png" />
     <None Include="Resources\backward_16x161.png" />
     <None Include="Resources\phone_16x161.png" />
     <None Include="Resources\phone_32x321.png" />

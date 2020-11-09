@@ -35,39 +35,14 @@ namespace TruckerApp
 
         private void btnAddDriver_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (PublicVar.play)
+            foreach (var c in this.MdiChildren)
             {
-                XtraMessageBox.Show(PublicVar.ErrorCameraLoad, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                c.Close();
             }
-            else
-            {
-                foreach (var c in this.MdiChildren)
-                {
-                    c.Close();
-                }
-                if (Properties.Settings.Default.em)
-                {
-
-                    var frm = _mainContainer.GetInstance<FrmNewDriver>();
-                    frm.FormBorderStyle = FormBorderStyle.None;
-                    frm.MdiParent = this;
-                    frm.StartPosition = FormStartPosition.CenterParent;
-                    frm.Dock = DockStyle.Fill;
-                    frm.Show();
-                }
-                else
-                {
-                    var frm = _mainContainer.GetInstance<FrmNewDriverWithCamera>();
-                    frm.FormBorderStyle = FormBorderStyle.Sizable;
-                    frm.MdiParent = this;
-                    frm.StartPosition = FormStartPosition.CenterParent;
-                    frm.Dock = DockStyle.Fill;
-                    frm.Show();
-                }
-
-
-
-            }
+            var frm = _mainContainer.GetInstance<FrmNewDriver>();
+            frm.FormBorderStyle = FormBorderStyle.FixedDialog;
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
         }
 
         private void btnMemberShipList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -384,27 +359,12 @@ namespace TruckerApp
                 {
                     c.Close();
                 }
-                if (Properties.Settings.Default.em)
-                {
-
-                    //var frm = _mainContainer.GetInstance<FrmFishPrintClassic>();
-                    //frm.FormBorderStyle = FormBorderStyle.None;
-                    //frm.MdiParent = this;
-                    //frm.StartPosition = FormStartPosition.CenterParent;
-                    //frm.Dock = DockStyle.Fill;
-                    //frm.Show();
-                }
-                else
-                {
-                    var frm = _mainContainer.GetInstance<FrmEditDriverWithCamera>();
-                    frm.FormBorderStyle = FormBorderStyle.Sizable;
-                    frm.MdiParent = this;
-                    frm.StartPosition = FormStartPosition.CenterParent;
-                    frm.Dock = DockStyle.Fill;
-                    frm.Show();
-                }
-
-
+                var frm = _mainContainer.GetInstance<FrmEditDriverWithCamera>();
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+                frm.MdiParent = this;
+                frm.StartPosition = FormStartPosition.CenterParent;
+                frm.Dock = DockStyle.Fill;
+                frm.Show();
             }
         }
 
@@ -483,6 +443,7 @@ namespace TruckerApp
 
         private void btnConvertPlate_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+
             var frm = _mainContainer.GetInstance<FrmUser>();
         }
 
@@ -504,6 +465,18 @@ namespace TruckerApp
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult = DialogResult.Abort;
+        }
+
+        private void btnEditDriver_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (var c in this.MdiChildren)
+            {
+                c.Close();
+            }
+            var frm = _mainContainer.GetInstance<FrmEditDriver>();
+            frm.FormBorderStyle = FormBorderStyle.FixedDialog;
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
         }
     }
 }

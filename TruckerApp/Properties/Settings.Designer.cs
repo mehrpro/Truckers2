@@ -34,5 +34,17 @@ namespace TruckerApp.Properties {
                 this["em"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool dev {
+            get {
+                return ((bool)(this["dev"]));
+            }
+            set {
+                this["dev"] = value;
+            }
+        }
     }
 }

@@ -457,9 +457,11 @@ namespace TruckerApp.UserForm.Fish
 
         private async void groupControl1_DoubleClick(object sender, EventArgs e)
         {
-            _resultFindingDriver = await _administrator.RandomDriver();
-           GetPropertyByDriver(_resultFindingDriver);
-            
+            if (Properties.Settings.Default.dev)
+            {
+                _resultFindingDriver = await _administrator.RandomDriver();
+                GetPropertyByDriver(_resultFindingDriver);
+            }
         }
 
 

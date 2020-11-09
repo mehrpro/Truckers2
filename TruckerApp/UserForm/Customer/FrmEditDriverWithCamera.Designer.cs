@@ -29,14 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditDriverWithCamera));
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditDriverWithCamera));
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnPuse = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPlayVideo = new DevExpress.XtraEditors.SimpleButton();
+            this.btnStop = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSelectPlate = new DevExpress.XtraEditors.SimpleButton();
             this.lblWH = new System.Windows.Forms.Label();
             this.picPlateLast = new System.Windows.Forms.PictureBox();
             this.Res4 = new System.Windows.Forms.Label();
@@ -46,21 +50,16 @@
             this.picture = new System.Windows.Forms.PictureBox();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.txtDriverCode = new DevExpress.XtraEditors.TextEdit();
             this.txtPhoneNumber = new DevExpress.XtraEditors.TextEdit();
             this.txtLastNAme = new DevExpress.XtraEditors.TextEdit();
             this.txtTag = new DevExpress.XtraEditors.TextEdit();
             this.txtFirstName = new DevExpress.XtraEditors.TextEdit();
             this.txtTagNumber = new DevExpress.XtraEditors.TextEdit();
-            this.radComosiun = new DevExpress.XtraEditors.RadioGroup();
             this.txtSmartCart = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -69,25 +68,25 @@
             this.colLastName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.timer_process = new System.Windows.Forms.Timer(this.components);
-            this.btnPuse = new DevExpress.XtraEditors.SimpleButton();
-            this.btnPlayVideo = new DevExpress.XtraEditors.SimpleButton();
-            this.btnStop = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSelectPlate = new DevExpress.XtraEditors.SimpleButton();
+            this.txtOldDriverName = new DevExpress.XtraEditors.TextEdit();
+            this.txtOldDriverPhoneNumber = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPlateLast)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDriverCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhoneNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLastNAme.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTag.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFirstName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTagNumber.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radComosiun.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSmartCart.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOldDriverName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOldDriverPhoneNumber.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -107,29 +106,70 @@
             this.groupControl1.Controls.Add(this.picture);
             this.groupControl1.Controls.Add(this.btnSave);
             this.groupControl1.Controls.Add(this.btnClose);
-            this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.labelControl9);
             this.groupControl1.Controls.Add(this.labelControl8);
-            this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.labelControl3);
+            this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.labelControl7);
+            this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.labelControl6);
-            this.groupControl1.Controls.Add(this.txtDriverCode);
+            this.groupControl1.Controls.Add(this.txtOldDriverPhoneNumber);
             this.groupControl1.Controls.Add(this.txtPhoneNumber);
             this.groupControl1.Controls.Add(this.txtLastNAme);
             this.groupControl1.Controls.Add(this.txtTag);
+            this.groupControl1.Controls.Add(this.txtOldDriverName);
             this.groupControl1.Controls.Add(this.txtFirstName);
             this.groupControl1.Controls.Add(this.txtTagNumber);
-            this.groupControl1.Controls.Add(this.radComosiun);
             this.groupControl1.Controls.Add(this.txtSmartCart);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1089, 437);
+            this.groupControl1.Size = new System.Drawing.Size(932, 526);
             this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "ویرایش راننده";
+            this.groupControl1.Text = "ویرایش پلاک";
+            // 
+            // btnPuse
+            // 
+            this.btnPuse.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPuse.ImageOptions.Image")));
+            this.btnPuse.Location = new System.Drawing.Point(114, 42);
+            this.btnPuse.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnPuse.Name = "btnPuse";
+            this.btnPuse.Size = new System.Drawing.Size(40, 40);
+            this.btnPuse.TabIndex = 56;
+            this.btnPuse.Visible = false;
+            this.btnPuse.Click += new System.EventHandler(this.btnPuse_Click);
+            // 
+            // btnPlayVideo
+            // 
+            this.btnPlayVideo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPlayVideo.ImageOptions.Image")));
+            this.btnPlayVideo.Location = new System.Drawing.Point(114, 42);
+            this.btnPlayVideo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnPlayVideo.Name = "btnPlayVideo";
+            this.btnPlayVideo.Size = new System.Drawing.Size(40, 40);
+            this.btnPlayVideo.TabIndex = 57;
+            this.btnPlayVideo.Click += new System.EventHandler(this.btnPuse_Click);
+            // 
+            // btnStop
+            // 
+            this.btnStop.Enabled = false;
+            this.btnStop.ImageOptions.Image = global::TruckerApp.Properties.Resources.stop_32x321;
+            this.btnStop.Location = new System.Drawing.Point(64, 42);
+            this.btnStop.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(40, 40);
+            this.btnStop.TabIndex = 58;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // btnSelectPlate
+            // 
+            this.btnSelectPlate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSelectPlate.ImageOptions.Image")));
+            this.btnSelectPlate.Location = new System.Drawing.Point(14, 42);
+            this.btnSelectPlate.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnSelectPlate.Name = "btnSelectPlate";
+            this.btnSelectPlate.Size = new System.Drawing.Size(40, 40);
+            this.btnSelectPlate.TabIndex = 59;
+            this.btnSelectPlate.Click += new System.EventHandler(this.btnSelectPlate_Click);
             // 
             // lblWH
             // 
@@ -206,7 +246,7 @@
             this.picture.Location = new System.Drawing.Point(14, 91);
             this.picture.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(688, 329);
+            this.picture.Size = new System.Drawing.Size(588, 418);
             this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picture.TabIndex = 48;
             this.picture.TabStop = false;
@@ -215,7 +255,7 @@
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(888, 364);
+            this.btnSave.Location = new System.Drawing.Point(731, 424);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 50);
@@ -227,7 +267,7 @@
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
-            this.btnClose.Location = new System.Drawing.Point(782, 364);
+            this.btnClose.Location = new System.Drawing.Point(625, 424);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 50);
@@ -235,30 +275,10 @@
             this.btnClose.Text = "بستن";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // labelControl1
-            // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(995, 281);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(72, 17);
-            this.labelControl1.TabIndex = 14;
-            this.labelControl1.Text = "نرخ کمیسیون";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(995, 181);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(47, 17);
-            this.labelControl2.TabIndex = 8;
-            this.labelControl2.Text = "کد راننده";
-            // 
             // labelControl9
             // 
             this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl9.Location = new System.Drawing.Point(995, 53);
+            this.labelControl9.Location = new System.Drawing.Point(838, 101);
             this.labelControl9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(76, 17);
@@ -268,27 +288,17 @@
             // labelControl8
             // 
             this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl8.Location = new System.Drawing.Point(995, 117);
+            this.labelControl8.Location = new System.Drawing.Point(838, 165);
             this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(69, 17);
             this.labelControl8.TabIndex = 4;
             this.labelControl8.Text = "نام خانوادگی";
             // 
-            // labelControl4
-            // 
-            this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Location = new System.Drawing.Point(995, 245);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(23, 17);
-            this.labelControl4.TabIndex = 12;
-            this.labelControl4.Text = "پلاک";
-            // 
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Location = new System.Drawing.Point(995, 212);
+            this.labelControl3.Location = new System.Drawing.Point(838, 322);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(23, 17);
@@ -298,7 +308,7 @@
             // labelControl7
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Location = new System.Drawing.Point(995, 149);
+            this.labelControl7.Location = new System.Drawing.Point(838, 197);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(59, 17);
@@ -308,59 +318,49 @@
             // labelControl6
             // 
             this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl6.Location = new System.Drawing.Point(995, 85);
+            this.labelControl6.Location = new System.Drawing.Point(838, 133);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(15, 17);
             this.labelControl6.TabIndex = 2;
             this.labelControl6.Text = "نام";
             // 
-            // txtDriverCode
-            // 
-            this.txtDriverCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDriverCode.Location = new System.Drawing.Point(730, 177);
-            this.txtDriverCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtDriverCode.Name = "txtDriverCode";
-            this.txtDriverCode.Parmida_ActivePlusMultiKeys = false;
-            this.txtDriverCode.Properties.Mask.EditMask = "d";
-            this.txtDriverCode.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtDriverCode.Size = new System.Drawing.Size(258, 24);
-            this.txtDriverCode.TabIndex = 9;
-            // 
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(730, 145);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(625, 193);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Parmida_ActivePlusMultiKeys = false;
             this.txtPhoneNumber.Properties.Mask.EditMask = "d";
             this.txtPhoneNumber.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtPhoneNumber.Properties.MaxLength = 10;
-            this.txtPhoneNumber.Size = new System.Drawing.Size(258, 24);
+            this.txtPhoneNumber.Properties.ReadOnly = true;
+            this.txtPhoneNumber.Size = new System.Drawing.Size(206, 24);
             this.txtPhoneNumber.TabIndex = 7;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.txtPhoneNumber, conditionValidationRule5);
+            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule7.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtPhoneNumber, conditionValidationRule7);
             // 
             // txtLastNAme
             // 
             this.txtLastNAme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLastNAme.Location = new System.Drawing.Point(730, 113);
+            this.txtLastNAme.Location = new System.Drawing.Point(625, 161);
             this.txtLastNAme.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLastNAme.Name = "txtLastNAme";
             this.txtLastNAme.Parmida_ActivePlusMultiKeys = false;
             this.txtLastNAme.Properties.MaxLength = 49;
-            this.txtLastNAme.Size = new System.Drawing.Size(258, 24);
+            this.txtLastNAme.Properties.ReadOnly = true;
+            this.txtLastNAme.Size = new System.Drawing.Size(206, 24);
             this.txtLastNAme.TabIndex = 5;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.txtLastNAme, conditionValidationRule6);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtLastNAme, conditionValidationRule1);
             // 
             // txtTag
             // 
             this.txtTag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTag.Location = new System.Drawing.Point(730, 209);
+            this.txtTag.Location = new System.Drawing.Point(625, 319);
             this.txtTag.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTag.Name = "txtTag";
             this.txtTag.Parmida_ActivePlusMultiKeys = false;
@@ -368,31 +368,32 @@
             this.txtTag.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtTag.Properties.ReadOnly = true;
             this.txtTag.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtTag.Size = new System.Drawing.Size(258, 24);
+            this.txtTag.Size = new System.Drawing.Size(206, 24);
             this.txtTag.TabIndex = 11;
-            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule7.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.txtTag, conditionValidationRule7);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtTag, conditionValidationRule2);
             // 
             // txtFirstName
             // 
             this.txtFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFirstName.Location = new System.Drawing.Point(730, 81);
+            this.txtFirstName.Location = new System.Drawing.Point(625, 129);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Parmida_ActivePlusMultiKeys = false;
             this.txtFirstName.Properties.MaxLength = 49;
-            this.txtFirstName.Size = new System.Drawing.Size(258, 24);
+            this.txtFirstName.Properties.ReadOnly = true;
+            this.txtFirstName.Size = new System.Drawing.Size(206, 24);
             this.txtFirstName.TabIndex = 3;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.txtFirstName, conditionValidationRule1);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtFirstName, conditionValidationRule3);
             // 
             // txtTagNumber
             // 
             this.txtTagNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTagNumber.EditValue = "";
-            this.txtTagNumber.Location = new System.Drawing.Point(730, 241);
+            this.txtTagNumber.Location = new System.Drawing.Point(625, 351);
             this.txtTagNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTagNumber.Name = "txtTagNumber";
             this.txtTagNumber.Parmida_ActivePlusMultiKeys = false;
@@ -400,38 +401,16 @@
             this.txtTagNumber.Properties.MaxLength = 6;
             this.txtTagNumber.Properties.ReadOnly = true;
             this.txtTagNumber.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtTagNumber.Size = new System.Drawing.Size(258, 24);
+            this.txtTagNumber.Size = new System.Drawing.Size(206, 24);
             this.txtTagNumber.TabIndex = 13;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.txtTagNumber, conditionValidationRule2);
-            // 
-            // radComosiun
-            // 
-            this.radComosiun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radComosiun.EditValue = ((byte)(30));
-            this.radComosiun.Location = new System.Drawing.Point(845, 273);
-            this.radComosiun.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.radComosiun.Name = "radComosiun";
-            this.radComosiun.Parmida_ActivePlusMultiKeys = false;
-            this.radComosiun.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.radComosiun.Properties.Appearance.Options.UseBackColor = true;
-            this.radComosiun.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.radComosiun.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.radComosiun.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.radComosiun.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.radComosiun.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.radComosiun.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(30)), "عضو"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(31)), "غیرعضو"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(32)), "غیربومی")});
-            this.radComosiun.Size = new System.Drawing.Size(143, 83);
-            this.radComosiun.TabIndex = 15;
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtTagNumber, conditionValidationRule4);
             // 
             // txtSmartCart
             // 
             this.txtSmartCart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSmartCart.Location = new System.Drawing.Point(730, 49);
+            this.txtSmartCart.Location = new System.Drawing.Point(625, 97);
             this.txtSmartCart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSmartCart.Name = "txtSmartCart";
             this.txtSmartCart.Parmida_ActivePlusMultiKeys = false;
@@ -446,12 +425,12 @@
             this.txtSmartCart.Properties.NullText = "";
             this.txtSmartCart.Properties.PopupView = this.searchLookUpEdit1View;
             this.txtSmartCart.Properties.ValueMember = "DriverID";
-            this.txtSmartCart.Size = new System.Drawing.Size(258, 24);
+            this.txtSmartCart.Size = new System.Drawing.Size(206, 24);
             this.txtSmartCart.TabIndex = 1;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            conditionValidationRule3.Value1 = "0";
-            this.dxValidationProvider1.SetValidationRule(this.txtSmartCart, conditionValidationRule3);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule5.ErrorText = "This value is not valid";
+            conditionValidationRule5.Value1 = "0";
+            this.dxValidationProvider1.SetValidationRule(this.txtSmartCart, conditionValidationRule5);
             this.txtSmartCart.EditValueChanged += new System.EventHandler(this.txtSmartCart_EditValueChanged);
             // 
             // searchLookUpEdit1View
@@ -607,59 +586,63 @@
             // 
             this.timer_process.Tick += new System.EventHandler(this.timer_process_Tick);
             // 
-            // btnPuse
+            // txtOldDriverName
             // 
-            this.btnPuse.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPuse.ImageOptions.Image")));
-            this.btnPuse.Location = new System.Drawing.Point(114, 42);
-            this.btnPuse.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnPuse.Name = "btnPuse";
-            this.btnPuse.Size = new System.Drawing.Size(40, 40);
-            this.btnPuse.TabIndex = 56;
-            this.btnPuse.Visible = false;
-            this.btnPuse.Click += new System.EventHandler(this.btnPuse_Click);
+            this.txtOldDriverName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtOldDriverName.Location = new System.Drawing.Point(625, 241);
+            this.txtOldDriverName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtOldDriverName.Name = "txtOldDriverName";
+            this.txtOldDriverName.Parmida_ActivePlusMultiKeys = false;
+            this.txtOldDriverName.Properties.MaxLength = 49;
+            this.txtOldDriverName.Properties.ReadOnly = true;
+            this.txtOldDriverName.Size = new System.Drawing.Size(206, 24);
+            this.txtOldDriverName.TabIndex = 3;
             // 
-            // btnPlayVideo
+            // txtOldDriverPhoneNumber
             // 
-            this.btnPlayVideo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPlayVideo.ImageOptions.Image")));
-            this.btnPlayVideo.Location = new System.Drawing.Point(114, 42);
-            this.btnPlayVideo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnPlayVideo.Name = "btnPlayVideo";
-            this.btnPlayVideo.Size = new System.Drawing.Size(40, 40);
-            this.btnPlayVideo.TabIndex = 57;
-            this.btnPlayVideo.Click += new System.EventHandler(this.btnPuse_Click);
+            this.txtOldDriverPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtOldDriverPhoneNumber.Location = new System.Drawing.Point(625, 273);
+            this.txtOldDriverPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtOldDriverPhoneNumber.Name = "txtOldDriverPhoneNumber";
+            this.txtOldDriverPhoneNumber.Parmida_ActivePlusMultiKeys = false;
+            this.txtOldDriverPhoneNumber.Properties.Mask.EditMask = "d";
+            this.txtOldDriverPhoneNumber.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtOldDriverPhoneNumber.Properties.MaxLength = 10;
+            this.txtOldDriverPhoneNumber.Properties.ReadOnly = true;
+            this.txtOldDriverPhoneNumber.Size = new System.Drawing.Size(206, 24);
+            this.txtOldDriverPhoneNumber.TabIndex = 7;
             // 
-            // btnStop
+            // labelControl1
             // 
-            this.btnStop.Enabled = false;
-            this.btnStop.ImageOptions.Image = global::TruckerApp.Properties.Resources.stop_32x321;
-            this.btnStop.Location = new System.Drawing.Point(64, 42);
-            this.btnStop.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(40, 40);
-            this.btnStop.TabIndex = 58;
-            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Location = new System.Drawing.Point(838, 245);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(59, 17);
+            this.labelControl1.TabIndex = 2;
+            this.labelControl1.Text = "راننده قبلی";
             // 
-            // btnSelectPlate
+            // labelControl2
             // 
-            this.btnSelectPlate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSelectPlate.ImageOptions.Image")));
-            this.btnSelectPlate.Location = new System.Drawing.Point(14, 42);
-            this.btnSelectPlate.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnSelectPlate.Name = "btnSelectPlate";
-            this.btnSelectPlate.Size = new System.Drawing.Size(40, 40);
-            this.btnSelectPlate.TabIndex = 59;
-            this.btnSelectPlate.Click += new System.EventHandler(this.btnSelectPlate_Click);
+            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl2.Location = new System.Drawing.Point(838, 277);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(59, 17);
+            this.labelControl2.TabIndex = 6;
+            this.labelControl2.Text = "تلفن همراه";
             // 
             // FrmEditDriverWithCamera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1089, 437);
+            this.ClientSize = new System.Drawing.Size(932, 526);
             this.Controls.Add(this.groupControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmEditDriverWithCamera";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ویرایش راننده";
+            this.Text = "ویرایش پلاک";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmNewDriver3_FormClosing);
             this.Load += new System.EventHandler(this.FrmNewDriver3_Load);
@@ -668,17 +651,17 @@
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPlateLast)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDriverCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhoneNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLastNAme.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTag.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFirstName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTagNumber.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radComosiun.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSmartCart.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOldDriverName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOldDriverPhoneNumber.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -686,7 +669,6 @@
         #endregion
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl3;
@@ -697,12 +679,9 @@
         private DevExpress.XtraEditors.TextEdit txtTag;
         private DevExpress.XtraEditors.TextEdit txtFirstName;
         private DevExpress.XtraEditors.TextEdit txtTagNumber;
-        private DevExpress.XtraEditors.RadioGroup radComosiun;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.SimpleButton btnClose;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit txtDriverCode;
         private DevExpress.XtraEditors.SearchLookUpEdit txtSmartCart;
         private System.Windows.Forms.BindingSource driversBindingSource;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
@@ -715,12 +694,15 @@
         private System.Windows.Forms.Label Res3;
         private System.Windows.Forms.Label Res1;
         private System.Windows.Forms.PictureBox picture;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
         private System.Windows.Forms.Timer timer_process;
         private System.Windows.Forms.Label lblWH;
         private DevExpress.XtraEditors.SimpleButton btnPuse;
         private DevExpress.XtraEditors.SimpleButton btnPlayVideo;
         private DevExpress.XtraEditors.SimpleButton btnStop;
         private DevExpress.XtraEditors.SimpleButton btnSelectPlate;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.TextEdit txtOldDriverPhoneNumber;
+        private DevExpress.XtraEditors.TextEdit txtOldDriverName;
     }
 }
