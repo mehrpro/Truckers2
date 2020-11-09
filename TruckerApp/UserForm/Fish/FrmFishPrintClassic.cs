@@ -14,7 +14,7 @@ namespace TruckerApp.UserForm.Fish
 {
     public partial class FrmFishPrintClassic : XtraForm
     {
-       
+
         private int _driver, _series;
         private int _commission;
         private short _commissionId;//حق کمیسیون
@@ -35,7 +35,7 @@ namespace TruckerApp.UserForm.Fish
             _customers = customers;
             InitializeComponent();
         }
-        
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
@@ -88,15 +88,10 @@ namespace TruckerApp.UserForm.Fish
         private async void cbxCargo_EditValueChanged(object sender, EventArgs e)
         {
             var selectType = (ViewModelCargoType)cbxCargoType.GetSelectedDataRow();
-            if (selectType == null || txtTag.Text.Trim() == "")
+            if (selectType == null)
             {
                 txtComossin.EditValue = 0;
-                txtDateRegister.EditValue = DateTime.Now.PersianConvertor();
-                txtName.EditValue = null;
                 txtNumber.EditValue = null;
-                txtPhoneNumber.EditValue = null;
-                txtTag.EditValue = txtTagNumber.EditValue = null;
-                chkMandeh.EditValue = false;
                 return;
             }
 
@@ -116,7 +111,7 @@ namespace TruckerApp.UserForm.Fish
             txtPhoneNumber.Text = driver.PhoneNumber;
 
             _driver = driver.DriverID;
-            _smartcart =  driver.SmartCart.ToString();
+            _smartcart = driver.SmartCart.ToString();
             _group = driver.GroupID;
             _memeber = driver.LoadType.Type;
         }
@@ -124,7 +119,16 @@ namespace TruckerApp.UserForm.Fish
         private void cbxSmart_EditValueChanged(object sender, EventArgs e)
         {
             var driver = (Driver)cbxSmart.GetSelectedDataRow();
-            if (driver == null) return;
+            if (driver == null)
+            {
+                cbxCargoType.EditValue = null;
+                txtDateRegister.EditValue = DateTime.Now.PersianConvertor();
+                txtName.EditValue = null;
+                txtPhoneNumber.EditValue = null;
+                txtTag.EditValue = txtTagNumber.EditValue = null;
+                chkMandeh.EditValue = false;
+                return;
+            }
             GetPropertyByDriver(driver);
 
         }
@@ -135,9 +139,8 @@ namespace TruckerApp.UserForm.Fish
             driversBindingSource.DataSource = await _customers.GetAllDriver();
             txtserial.EditValue = PublicVar.SeriesName;
             _series = PublicVar.SeriesID;
-       
             txtDateRegister.EditValue = DateTime.Now.PersianConvertor();
-            
+
         }
 
         private async void btnPrint_Click(object sender, EventArgs e)
@@ -148,113 +151,56 @@ namespace TruckerApp.UserForm.Fish
             }
             else
             {
-                if (_driver < 1)
+                var driverCheck = await _queuing.FindByQueue(_driver); //عدم ثبت مجدد نوبت
+                if (driverCheck == null)
                 {
-                    XtraMessageBox.Show("هیچ راننده ای انتخاب نشده است", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // مجاز به ثبت نوبت است
+                    var newQueue = new ViewModelQueue()
+                    {
+                        DriverIdFk = _driver,
+                        ComosiunIdFk = _commissionId,
+                        TypeFk = Convert.ToByte(cbxCargoType.EditValue),
+                        DateTimeRegister = DateTime.Now,
+                        SeriesIdFk = PublicVar.SeriesID,
+                        Number = Convert.ToInt16(txtNumber.EditValue),
+                        GroupCommission = _group,
+                        StatusFk = 20,
+                        Mandeh = chkMandeh.Checked,
+
+                    };
+                    PublicVar.TempCash = Convert.ToInt32(txtComossin.Text);
+                    var frm = new FrmCash();
+                    var dialogResult = frm.ShowDialog();
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        var result = _queuing.RegisterNewQueue(newQueue, frm.ModelCash);
+                        if (result)
+                        {
+                            _seriesNumber = $"س {PublicVar.SeriesName}  شماره {Convert.ToInt16(txtNumber.EditValue)}";
+                            _number = await _queuing.GetScheduleByTypeId(newQueue.TypeFk);
+                            PrintFish();
+                            await _queuing.GetLastNumberByTypeId(Convert.ToByte(cbxCargoType.EditValue));
+                            cbxSmart.EditValue = cbxCargoType.EditValue = null;
+
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show(PublicVar.ErrorMessageForNotSave, Text, MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                            cbxSmart.EditValue = cbxCargoType.EditValue = null;
+                        }
+                    }
                 }
                 else
                 {
-
-                    var driverCheck = await _queuing.FindByQueue(_driver); //عدم ثبت مجدد نوبت
-                    if (driverCheck == null)
-                    {
-                        // مجاز به ثبت نوبت است
-                        var newQueue = new ViewModelQueue()
-                        {
-                            DriverIdFk = _driver,
-                            ComosiunIdFk = _commissionId,
-                            TypeFk = Convert.ToByte(cbxCargoType.EditValue),
-                            DateTimeRegister = DateTime.Now,
-                            SeriesIdFk = PublicVar.SeriesID,
-                            Number = Convert.ToInt16(txtNumber.EditValue),
-                            GroupCommission = _group,
-                            StatusFk = 20,
-                            Mandeh = chkMandeh.Checked,
-
-                        };
-                        PublicVar.TempCash = Convert.ToInt32(txtComossin.Text);
-                        var frm = new FrmCash();
-                        var dialogResult = frm.ShowDialog();
-                        if (dialogResult == DialogResult.OK)
-                        {
-                            var result = _queuing.RegisterNewQueue(newQueue, frm.ModelCash);
-                            if (result)
-                            {
-                                _seriesNumber = $"س {PublicVar.SeriesName}  شماره {Convert.ToInt16(txtNumber.EditValue)}";
-                                _number = await _queuing.GetScheduleByTypeId(newQueue.TypeFk);
-                                PrintFish();
-                                await _queuing.GetLastNumberByTypeId(Convert.ToByte(cbxCargoType.EditValue));
-                                cbxCargoType.EditValue = null;
-                            }
-                            else
-                            {
-                                XtraMessageBox.Show(PublicVar.ErrorMessageForNotSave, Text, MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
-                                cbxCargoType.EditValue = null;
-
-                            }
-                        }
-                    }
-                    else
-                    {
-                        var str =
-                            $"برای شماره هوشمند {driverCheck.Driver.SmartCart} نوبت محموله {driverCheck.LoadType.Type} در تاریخ {driverCheck.DateTimeRegister.PersianConvertor()} ثبت شده است";
-                        XtraMessageBox.Show(str, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    var str =
+                        $"برای شماره هوشمند {driverCheck.Driver.SmartCart} نوبت محموله {driverCheck.LoadType.Type} در تاریخ {driverCheck.DateTimeRegister.PersianConvertor()} ثبت شده است";
+                    XtraMessageBox.Show(str, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+
             }
-            //var driverCheck = _db.Queues.Where(x => x.Status_FK == 20 && x.DriverID_FK == _driver).ToList();
-            //if (driverCheck.Count == 0)
-            //{
-            //    try
-            //    {
-            //        var queue = new Queue
-            //        {
-            //            DriverID_FK = _driver,
-            //            ComosiunID_FK = _commissionId,
-            //            Type_FK = TypeId,
-            //            DateTimeRegister = DateTime.Now,
-            //            SeriesID_FK = _series,
-            //            Number = Convert.ToInt16(txtNumber.EditValue),
-            //            GroupCommission = _group,
-            //            Status_FK = 20,
-            //            userid = PublicVar.UserID,
-            //        };
-            //        var frm = new FrmCash(txtComossin.Text);
-            //        var result = frm.ShowDialog();
-            //        if (result == DialogResult.OK)
-            //        {
-            //            var adding = new Adding();
-            //            var rec = adding.addingFish(queue, frm.Cash);
-            //            if (rec)
-            //            {
-            //                _number = $"س {PublicVar.SeriesName}  شماره {adding.StrNumber}";
-            //                printFish();
-            //                lastNumber();
-            //            }
-            //        }
-            //    }
-            //    catch
-            //    {
-            //        XtraMessageBox.Show(PublicVar.ErrorMessageForNotSave, Text, MessageBoxButtons.OK,
-            //            MessageBoxIcon.Error);
-            //    }
-            //}
-            //else
-            //{
-            //    var str =
-            //        $"برای شماره هوشمند {driverCheck[0].Driver.SmartCart} نوبت محموله {driverCheck[0].LoadType.Type} در تاریخ {driverCheck[0].DateTimeRegister} ثبت شده است";
-            //    XtraMessageBox.Show(str, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
+
         }
-
-
-        //private void lastNumber()
-        //{
-        //    var qryNumber = new Counter().lastNumber(PublicVar.SeriesID, (byte)TypeId);
-        //    txtNumber.Text = (qryNumber + 1).ToString("000");
-
-        //}
     }
 }
 
