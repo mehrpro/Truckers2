@@ -5,7 +5,6 @@ using DevExpress.XtraEditors;
 using static TruckerApp.AnprApi;
 using System.Drawing;
 using System.Drawing.Imaging;
-using TruckerApp.Properties;
 using TruckerApp.Repository;
 
 namespace TruckerApp.UserForm.Customer
@@ -46,10 +45,14 @@ namespace TruckerApp.UserForm.Customer
         private Driver _selectDriver; // راننده جدید
         private int _OldDriver; //شناسه راننده قبلی
 
-        public FrmEditDriverWithCamera(ICustomers customers, IQueuing queuing)
+        private IAdministrator _administrator;
+
+
+        public FrmEditDriverWithCamera(ICustomers customers, IQueuing queuing, IAdministrator administrator)
         {
             _customers = customers;
             _queuing = queuing;
+            _administrator = administrator;
             InitializeComponent();
             CamSetup();
             PublicVar.play = false; btnSelectPlate.Enabled = false;
@@ -70,24 +73,18 @@ namespace TruckerApp.UserForm.Customer
             }
             catch (Exception e)
             {
-                var str = e.Message;
-                //MessageBox.Show("Error Load Form");
-                this.Close();
+                Close();
             }
 
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            //StartPlayerVlc(false);
             Close();
         }
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            ////txtTag.Text = @"74-Ain-27951";
-
-            //تغییر پلاک برای راننده
             if (_OldDriver > 0)
             {
                 if (dxValidationProvider1.Validate())
@@ -101,9 +98,10 @@ namespace TruckerApp.UserForm.Customer
                         else
                             ErrorMessageForNotSave();
                     }
-                    else
-                        NotComplateFormMessage();
+                   
                 }
+                else
+                    NotComplateFormMessage();
             }
             else
             {
@@ -119,39 +117,6 @@ namespace TruckerApp.UserForm.Customer
                     NotComplateFormMessage();
 
             }
-
-
-            //        //تغییر پلاک برای راننده
-            //        var result = XtraMessageBox.Show("آیا قصد تغییر راننده را دارید", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //        if (result == DialogResult.Yes)
-            //        {
-            //            if (dxValidationProvider1.Validate())
-            //            {
-            //                NewValuesDriver();
-            //                if (await _customers.EditDriverWithNewPlate(_selectDriver))
-            //                    SuccessFulSaveMessage();
-            //                else
-            //                    ErrorMessageForNotSave();
-            //            }
-            //            else
-            //                NotComplateFormMessage();
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    //پلاک جدید
-            //    if (dxValidationProvider1.Validate())
-            //    {
-            //        NewValuesDriver();
-            //        if (await _customers.EditDriver(_selectDriver))
-            //            SuccessFulSaveMessage();
-            //        else
-            //            ErrorMessageForNotSave();
-            //    }
-            //    else
-            //        NotComplateFormMessage();
-            //}
         }
 
         private void NotComplateFormMessage()
@@ -170,6 +135,7 @@ namespace TruckerApp.UserForm.Customer
         {
             XtraMessageBox.Show(PublicVar.SuccessfulSave, Text, MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
+            Clear();
         }
 
         private void NewValuesDriver()
@@ -180,6 +146,7 @@ namespace TruckerApp.UserForm.Customer
 
         private void Clear()
         {
+            txtSmartCart.EditValue = 0;
             txtSmartCart.Text = txtFirstName.Text =
                 txtLastNAme.Text = txtPhoneNumber.Text = txtTag.Text = txtTagNumber.Text = "";
 
@@ -195,7 +162,6 @@ namespace TruckerApp.UserForm.Customer
                         txtPhoneNumber.EditValue = null;
                 return;
             }
-
             txtFirstName.EditValue = _selectDriver.FirstName;
             txtLastNAme.EditValue = _selectDriver.LastName;
             txtPhoneNumber.EditValue = _selectDriver.PhoneNumber;
@@ -530,6 +496,15 @@ namespace TruckerApp.UserForm.Customer
                 full_frame.UnlockBits(dataSrc);
             img_plate[roi].UnlockBits(dataDst);
             picPlateLast.Image = img_plate[roi];
+        }
+
+        private async void groupControl1_DoubleClick(object sender, EventArgs e)
+        {
+            if (true)
+            {
+                _resultFindingDriver = await _administrator.RandomDriver();
+                GetPropertyByDriver(_resultFindingDriver);
+            }
         }
 
         private void GetPropertyByDriver(Driver driver)
