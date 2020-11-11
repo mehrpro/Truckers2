@@ -268,7 +268,15 @@
     <Compile Include="UserForm\Fish\FrmRevFish333.Designer.cs">
       <DependentUpon>FrmRevFish333.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserForm\Reporting\FrmQueueListByDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\Reporting\FrmQueueListByDriver.Designer.cs">
+      <DependentUpon>FrmQueueListByDriver.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\Administrator\ViewModelUsers.cs" />
+    <Compile Include="ViewModels\Customers\ViewModelCustomerBillByDriverId.cs" />
+    <Compile Include="ViewModels\Customers\ViewModelCustomerForComboBox.cs" />
     <Compile Include="ViewModels\Customers\ViewMoelTransformerTel.cs" />
     <Compile Include="ViewModels\Queueing\ViewModelNumberList.cs" />
     <Compile Include="ViewModels\Queueing\ViewModelQueueBySeriesId.cs" />
@@ -468,6 +476,9 @@
     <EmbeddedResource Include="UserForm\Reporting\FrmPrintList.resx">
       <DependentUpon>FrmPrintList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Reporting\FrmQueueListByDriver.resx">
+      <DependentUpon>FrmQueueListByDriver.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XRDesignRibbonControllerResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>XRDesignRibbonControllerResources.Designer.cs</LastGenOutput>
@@ -511,6 +522,11 @@
       <DependentUpon>MDB.edmx</DependentUpon>
       <LastGenOutput>MDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\reviewallowuserstoeditranges_16x16.png" />
+    <None Include="Resources\reviewallowuserstoeditranges_32x32.png" />
+    <None Include="Resources\close_32x32.png" />
+    <None Include="Resources\converttorange_16x16.png" />
+    <None Include="Resources\converttorange_32x322.png" />
     <None Include="Resources\converttorange_32x321.png" />
     <None Include="Resources\converttorange_32x32.png" />
     <None Include="Resources\reviewingpane_16x16.png" />

@@ -1,6 +1,6 @@
 ﻿namespace TruckerApp
 {
-    partial class FrmPrintList
+    partial class FrmQueueListByDriver
     {
         /// <summary>
         /// Required designer variable.
@@ -28,38 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrintList));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmQueueListByDriver));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.dgvList = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNumber = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDriverID_FK = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDriver = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btnAllPrint = new DevExpress.XtraEditors.SimpleButton();
             this.txtTotal = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtNew = new DevExpress.XtraEditors.TextEdit();
-            this.txtLast = new DevExpress.XtraEditors.TextEdit();
-            this.chkLastFish = new DevExpress.XtraEditors.ToggleSwitch();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.cbxSmart = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNew.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLast.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkLastFish.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxSmart.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -67,27 +57,27 @@
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.CaptionImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_transaction_list_48;
-            this.groupControl1.Controls.Add(this.gridControl1);
+            this.groupControl1.Controls.Add(this.dgvList);
             this.groupControl1.Controls.Add(this.panelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1104, 553);
+            this.groupControl1.Size = new System.Drawing.Size(801, 553);
             this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "لیست قبض های صادر شده";
+            this.groupControl1.Text = "لیست قبض های صادر شده هر راننده";
             // 
-            // gridControl1
+            // dgvList
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gridControl1.Location = new System.Drawing.Point(2, 198);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1100, 353);
-            this.gridControl1.TabIndex = 1;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvList.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvList.Location = new System.Drawing.Point(2, 163);
+            this.dgvList.MainView = this.gridView1;
+            this.dgvList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvList.Name = "dgvList";
+            this.dgvList.Size = new System.Drawing.Size(797, 388);
+            this.dgvList.TabIndex = 1;
+            this.dgvList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
@@ -196,17 +186,9 @@
             this.gridView1.AppearancePrint.Row.Options.UseTextOptions = true;
             this.gridView1.AppearancePrint.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView1.AppearancePrint.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn6,
-            this.gridColumn7,
-            this.colNumber,
-            this.colDriverID_FK,
-            this.colDriver,
-            this.gridColumn4,
-            this.gridColumn5});
             this.gridView1.DetailHeight = 458;
             this.gridView1.FixedLineWidth = 3;
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.dgvList;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsPrint.EnableAppearanceEvenRow = true;
             this.gridView1.OptionsPrint.PrintDetails = true;
@@ -214,106 +196,26 @@
             this.gridView1.OptionsPrint.PrintGroupFooter = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn6
-            // 
-            this.gridColumn6.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.gridColumn6.Caption = "ردیف";
-            this.gridColumn6.FieldName = "Counter";
-            this.gridColumn6.MinWidth = 23;
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 0;
-            this.gridColumn6.Width = 84;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.gridColumn7.Caption = "تلفن";
-            this.gridColumn7.FieldName = "Phone";
-            this.gridColumn7.MinWidth = 23;
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 5;
-            this.gridColumn7.Width = 197;
-            // 
-            // colNumber
-            // 
-            this.colNumber.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colNumber.Caption = "شماره";
-            this.colNumber.FieldName = "Number";
-            this.colNumber.MinWidth = 23;
-            this.colNumber.Name = "colNumber";
-            this.colNumber.Visible = true;
-            this.colNumber.VisibleIndex = 1;
-            this.colNumber.Width = 180;
-            // 
-            // colDriverID_FK
-            // 
-            this.colDriverID_FK.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colDriverID_FK.Caption = "نام";
-            this.colDriverID_FK.FieldName = "Name";
-            this.colDriverID_FK.MinWidth = 23;
-            this.colDriverID_FK.Name = "colDriverID_FK";
-            this.colDriverID_FK.Visible = true;
-            this.colDriverID_FK.VisibleIndex = 2;
-            this.colDriverID_FK.Width = 264;
-            // 
-            // colDriver
-            // 
-            this.colDriver.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colDriver.Caption = "پلاک";
-            this.colDriver.FieldName = "Tag";
-            this.colDriver.MinWidth = 23;
-            this.colDriver.Name = "colDriver";
-            this.colDriver.Visible = true;
-            this.colDriver.VisibleIndex = 3;
-            this.colDriver.Width = 209;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.gridColumn4.Caption = "نوع محموله";
-            this.gridColumn4.FieldName = "Typeid";
-            this.gridColumn4.MinWidth = 23;
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 4;
-            this.gridColumn4.Width = 147;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.gridColumn5.Caption = "قابل تمدید";
-            this.gridColumn5.FieldName = "mandeh";
-            this.gridColumn5.MinWidth = 23;
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 6;
-            this.gridColumn5.Width = 145;
-            // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.labelControl5);
+            this.panelControl1.Controls.Add(this.cbxSmart);
             this.panelControl1.Controls.Add(this.btnClose);
             this.panelControl1.Controls.Add(this.btnAllPrint);
             this.panelControl1.Controls.Add(this.txtTotal);
             this.panelControl1.Controls.Add(this.labelControl7);
             this.panelControl1.Controls.Add(this.simpleButton9);
-            this.panelControl1.Controls.Add(this.labelControl2);
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Controls.Add(this.txtNew);
-            this.panelControl1.Controls.Add(this.txtLast);
-            this.panelControl1.Controls.Add(this.chkLastFish);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(2, 59);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1100, 139);
+            this.panelControl1.Size = new System.Drawing.Size(797, 104);
             this.panelControl1.TabIndex = 0;
             // 
             // btnClose
             // 
             this.btnClose.ImageOptions.Image = global::TruckerApp.Properties.Resources.close_32x32;
-            this.btnClose.Location = new System.Drawing.Point(10, 72);
+            this.btnClose.Location = new System.Drawing.Point(10, 38);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(120, 50);
@@ -324,7 +226,7 @@
             // btnAllPrint
             // 
             this.btnAllPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAllPrint.ImageOptions.Image")));
-            this.btnAllPrint.Location = new System.Drawing.Point(136, 72);
+            this.btnAllPrint.Location = new System.Drawing.Point(136, 38);
             this.btnAllPrint.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAllPrint.Name = "btnAllPrint";
             this.btnAllPrint.Size = new System.Drawing.Size(120, 50);
@@ -335,7 +237,7 @@
             // txtTotal
             // 
             this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTotal.Location = new System.Drawing.Point(824, 86);
+            this.txtTotal.Location = new System.Drawing.Point(595, 52);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Parmida_ActivePlusMultiKeys = false;
@@ -344,13 +246,13 @@
             this.txtTotal.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtTotal.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.txtTotal.Properties.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(180, 24);
+            this.txtTotal.Size = new System.Drawing.Size(102, 24);
             this.txtTotal.TabIndex = 4;
             // 
             // labelControl7
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Location = new System.Drawing.Point(1010, 87);
+            this.labelControl7.Location = new System.Drawing.Point(703, 53);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(39, 17);
@@ -360,7 +262,7 @@
             // simpleButton9
             // 
             this.simpleButton9.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton9.ImageOptions.Image")));
-            this.simpleButton9.Location = new System.Drawing.Point(262, 72);
+            this.simpleButton9.Location = new System.Drawing.Point(262, 38);
             this.simpleButton9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.simpleButton9.Name = "simpleButton9";
             this.simpleButton9.Size = new System.Drawing.Size(120, 50);
@@ -368,97 +270,168 @@
             this.simpleButton9.Text = "چاپ سریع";
             this.simpleButton9.Click += new System.EventHandler(this.simpleButton9_Click);
             // 
-            // labelControl2
+            // labelControl5
             // 
-            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(1010, 55);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(65, 17);
-            this.labelControl2.TabIndex = 6;
-            this.labelControl2.Text = "صادره امروز";
+            this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl5.Location = new System.Drawing.Point(711, 23);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(29, 17);
+            this.labelControl5.TabIndex = 9;
+            this.labelControl5.Text = "راننده";
             // 
-            // labelControl1
+            // cbxSmart
             // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(1010, 24);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(64, 17);
-            this.labelControl1.TabIndex = 6;
-            this.labelControl1.Text = "صادره قبلی";
+            this.cbxSmart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxSmart.Location = new System.Drawing.Point(456, 20);
+            this.cbxSmart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbxSmart.Name = "cbxSmart";
+            this.cbxSmart.Parmida_ActivePlusMultiKeys = false;
+            this.cbxSmart.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbxSmart.Properties.DisplayMember = "SmartCart";
+            this.cbxSmart.Properties.PopupView = this.searchLookUpEdit1View;
+            this.cbxSmart.Properties.ValueMember = "DriverID";
+            this.cbxSmart.Size = new System.Drawing.Size(241, 24);
+            this.cbxSmart.TabIndex = 8;
+            this.cbxSmart.EditValueChanged += new System.EventHandler(this.cbxSmart_EditValueChanged);
             // 
-            // txtNew
+            // searchLookUpEdit1View
             // 
-            this.txtNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNew.Location = new System.Drawing.Point(824, 54);
-            this.txtNew.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtNew.Name = "txtNew";
-            this.txtNew.Parmida_ActivePlusMultiKeys = false;
-            this.txtNew.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtNew.Properties.Appearance.Options.UseForeColor = true;
-            this.txtNew.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtNew.Properties.AppearanceReadOnly.Options.UseForeColor = true;
-            this.txtNew.Properties.ReadOnly = true;
-            this.txtNew.Size = new System.Drawing.Size(180, 24);
-            this.txtNew.TabIndex = 4;
+            this.searchLookUpEdit1View.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.ColumnFilterButton.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.ColumnFilterButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.ColumnFilterButtonActive.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.ColumnFilterButtonActive.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.ColumnFilterButtonActive.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.ColumnFilterButtonActive.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.CustomizationFormHint.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.CustomizationFormHint.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.CustomizationFormHint.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.CustomizationFormHint.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.DetailTip.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.DetailTip.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.DetailTip.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.DetailTip.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.Empty.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.Empty.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.Empty.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.Empty.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.EvenRow.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.EvenRow.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.EvenRow.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.EvenRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.FilterCloseButton.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.FilterCloseButton.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.FilterCloseButton.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.FilterCloseButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.FilterPanel.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.FilterPanel.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.FilterPanel.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.FilterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.FixedLine.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.FixedLine.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.FixedLine.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.FixedLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.FocusedCell.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.FocusedCell.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.FocusedCell.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.FocusedCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.FocusedRow.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.FocusedRow.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.FocusedRow.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.FocusedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.FooterPanel.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.FooterPanel.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.GroupButton.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.GroupButton.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.GroupButton.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.GroupButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.GroupFooter.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.GroupFooter.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.GroupFooter.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.GroupFooter.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.GroupPanel.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.GroupPanel.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.GroupPanel.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.GroupPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.GroupRow.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.GroupRow.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.GroupRow.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.GroupRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.HeaderPanel.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.HeaderPanel.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.HideSelectionRow.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.HideSelectionRow.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.HideSelectionRow.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.HideSelectionRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.HorzLine.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.HorzLine.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.HorzLine.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.HorzLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.OddRow.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.OddRow.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.OddRow.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.OddRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.Preview.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.Preview.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.Preview.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.Preview.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.Row.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.Row.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.Row.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.RowSeparator.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.RowSeparator.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.RowSeparator.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.RowSeparator.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.SelectedRow.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.SelectedRow.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.SelectedRow.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.SelectedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.TopNewRow.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.TopNewRow.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.TopNewRow.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.TopNewRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.VertLine.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.VertLine.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.VertLine.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.VertLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.ViewCaption.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.searchLookUpEdit1View.Appearance.ViewCaption.Options.UseFont = true;
+            this.searchLookUpEdit1View.Appearance.ViewCaption.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // txtLast
-            // 
-            this.txtLast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLast.Location = new System.Drawing.Point(824, 22);
-            this.txtLast.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtLast.Name = "txtLast";
-            this.txtLast.Parmida_ActivePlusMultiKeys = false;
-            this.txtLast.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtLast.Properties.Appearance.Options.UseForeColor = true;
-            this.txtLast.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtLast.Properties.AppearanceReadOnly.Options.UseForeColor = true;
-            this.txtLast.Properties.ReadOnly = true;
-            this.txtLast.Size = new System.Drawing.Size(180, 24);
-            this.txtLast.TabIndex = 4;
-            // 
-            // chkLastFish
-            // 
-            this.chkLastFish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkLastFish.EditValue = true;
-            this.chkLastFish.Location = new System.Drawing.Point(626, 19);
-            this.chkLastFish.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.chkLastFish.Name = "chkLastFish";
-            this.chkLastFish.Parmida_ActivePlusMultiKeys = false;
-            this.chkLastFish.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.chkLastFish.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.chkLastFish.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.chkLastFish.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.chkLastFish.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            this.chkLastFish.Properties.OffText = "غیر فعال";
-            this.chkLastFish.Properties.OnText = "فعال";
-            this.chkLastFish.Size = new System.Drawing.Size(191, 28);
-            this.chkLastFish.TabIndex = 8;
-            this.chkLastFish.Toggled += new System.EventHandler(this.chkLastFish_Toggled);
-            // 
-            // FrmPrintList
+            // FrmQueueListByDriver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1104, 553);
+            this.ClientSize = new System.Drawing.Size(801, 553);
             this.Controls.Add(this.groupControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "FrmPrintList";
+            this.Name = "FrmQueueListByDriver";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Text = "لیست قبض های صادر شده";
+            this.Text = "لیست قبض های صادر شده هر راننده";
             this.Load += new System.EventHandler(this.FrmPrintList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNew.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLast.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkLastFish.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxSmart.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -467,24 +440,15 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit txtLast;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl dgvList;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SimpleButton btnAllPrint;
         private DevExpress.XtraEditors.TextEdit txtTotal;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraGrid.Columns.GridColumn colNumber;
-        private DevExpress.XtraGrid.Columns.GridColumn colDriverID_FK;
-        private DevExpress.XtraGrid.Columns.GridColumn colDriver;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraEditors.SimpleButton simpleButton9;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit txtNew;
-        private DevExpress.XtraEditors.ToggleSwitch chkLastFish;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraEditors.SimpleButton btnClose;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.SearchLookUpEdit cbxSmart;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
     }
 }

@@ -533,9 +533,13 @@ namespace TruckerApp.Repository
         {
             if (!await _db.Queues.AnyAsync(x => x.Status_FK == 20 && x.DriverID_FK == driver))
             {
-                var qrylast = await _db.Queues.Where(x => x.Status_FK == 23 && x.DriverID_FK == driver).MaxAsync(x => x.ID);
-                if (qrylast > 0)
-                    return await _db.Queues.FindAsync(qrylast);
+                var qrylast = await _db.Queues.Where(x => x.Status_FK == 23 && x.DriverID_FK == driver).ToListAsync();
+                if (qrylast.Count > 0)
+                {
+                    var maxId = (int)qrylast.Max(x => x.ID);
+                    return await _db.Queues.FindAsync(maxId);
+                }
+
             }
             return null;
         }
@@ -545,7 +549,7 @@ namespace TruckerApp.Repository
             try
             {
                 var queue = await _db.Queues.FindAsync(queueId);
-                queue.Status_FK = 20;
+                if (queue != null) queue.Status_FK = 20;
                 await _db.SaveChangesAsync();
                 return true;
             }

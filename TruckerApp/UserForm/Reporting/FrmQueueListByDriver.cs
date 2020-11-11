@@ -7,50 +7,34 @@ using DevExpress.LookAndFeel;
 using DevExpress.XtraEditors;
 using DevExpress.XtraPrinting;
 using TruckerApp.Repository;
+using TruckerApp.ViewModels.Customers;
 
 namespace TruckerApp
 {
-    public partial class FrmPrintList : XtraForm
+    public partial class FrmQueueListByDriver : XtraForm
     {
         private readonly ICustomReport _customReport;
+        private ICustomers _customers;
         public byte TypeId { get; set; }
-        public FrmPrintList(ICustomReport customReport)
+        public FrmQueueListByDriver(ICustomReport customReport, ICustomers customers)
         {
             InitializeComponent();
             _customReport = customReport;
-
+            _customers = customers;
         }
 
         private async void Grid()
         {
-
-            //txtLast.EditValue = await _customReport.CountOfStatus20_Old(TypeId);
-
-            if (chkLastFish.IsOn)
-            {
-                gridControl1.DataSource = await _customReport.GetAllReportListByType(TypeId);
-                txtTotal.EditValue = await _customReport.CountOfStatus20_All(TypeId);
-                txtNew.EditValue = await _customReport.CountOfStatus20_LastSeries(TypeId);
-                txtLast.EditValue = await _customReport.CountOfStatus20_Old(TypeId);
-            }
-            else
-            {
-                gridControl1.DataSource = await _customReport.GetLastSeriesReportListByType(TypeId);
-                txtTotal.EditValue = await _customReport.CountOfStatus20_All(TypeId);
-                txtNew.EditValue = await _customReport.CountOfStatus20_LastSeries(TypeId);
-                txtLast.EditValue = await _customReport.CountOfStatus20_Old(TypeId);
-            }
-
-
-            gridView1.RefreshData();
-
+            cbxSmart.Properties.DataSource = await _customers.GetAllDriverForComboBox();
+            cbxSmart.Properties.DisplayMember = "FullName";
+            cbxSmart.Properties.ValueMember = "ID";
         }
 
         private void btnAllPrint_Click(object sender, EventArgs e)
         {
             var ps = new PrintingSystem();
             var link = new PrintableComponentLink(ps);
-            link.Component = gridControl1;
+            link.Component = dgvList;
             link.Margins.Right = 10;
             link.Margins.Left = 10;
             link.Margins.Top = 10;
@@ -60,16 +44,13 @@ namespace TruckerApp
             link.CreateDocument();
             link.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
         }
-        private void chkLastFish_Toggled(object sender, EventArgs e)
-        {
-            Grid();
-        }
+
 
         private void simpleButton9_Click(object sender, EventArgs e)
         {
             var ps = new PrintingSystem();
             var link = new PrintableComponentLink(ps);
-            link.Component = gridControl1;
+            link.Component = dgvList;
             link.Margins.Right = 10;
             link.Margins.Left = 10;
             link.Margins.Top = 10;
@@ -89,6 +70,20 @@ namespace TruckerApp
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private async void cbxSmart_EditValueChanged(object sender, EventArgs e)
+        {
+            var select = (ViewModelCustomerForComboBox) cbxSmart.GetSelectedDataRow();
+            if (select == null)
+            {
+                txtTotal.EditValue = null;
+                dgvList.DataSource = null;
+                return;
+            }
+            var list = await _customReport.GetQueueReportByDriverId(select.DriverID);
+            dgvList.DataSource = list;
+            txtTotal.EditValue = list.Count;
         }
     }
 }

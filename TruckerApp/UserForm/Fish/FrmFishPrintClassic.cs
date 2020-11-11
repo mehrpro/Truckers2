@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraReports.UI;
@@ -125,7 +122,8 @@ namespace TruckerApp.UserForm.Fish
                 txtDateRegister.EditValue = DateTime.Now.PersianConvertor();
                 txtName.EditValue = null;
                 txtPhoneNumber.EditValue = null;
-                txtTag.EditValue = txtTagNumber.EditValue = null;
+                txtTag.EditValue = 
+                    txtTagNumber.EditValue = null;
                 chkMandeh.EditValue = false;
                 return;
             }

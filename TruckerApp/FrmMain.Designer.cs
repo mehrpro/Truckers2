@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
+            this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu();
             this.btnAddDriver = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btnMemberShipList = new DevExpress.XtraBars.BarButtonItem();
@@ -73,6 +72,7 @@
             this.barButtonItem24 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem25 = new DevExpress.XtraBars.BarButtonItem();
             this.btnEditDriver = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDriverReport = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -140,10 +140,11 @@
             this.btnAddressBook,
             this.barButtonItem24,
             this.barButtonItem25,
-            this.btnEditDriver});
+            this.btnEditDriver,
+            this.btnDriverReport});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.ribbonControl1.MaxItemId = 6;
+            this.ribbonControl1.MaxItemId = 7;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -152,7 +153,7 @@
             this.ribbonPage5,
             this.ribbonPage3,
             this.ribSetting});
-            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
+            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
             this.ribbonControl1.Size = new System.Drawing.Size(989, 162);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
@@ -396,7 +397,7 @@
             // 
             // btnChangePlate
             // 
-            this.btnChangePlate.Caption = "ویرایش پلاک";
+            this.btnChangePlate.Caption = "ثبت پلاک";
             this.btnChangePlate.Id = 24;
             this.btnChangePlate.ImageOptions.Image = global::TruckerApp.Properties.Resources.group2_16x16;
             this.btnChangePlate.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.group2_32x32;
@@ -449,8 +450,8 @@
             // 
             this.btnReversResid.Caption = "برگشت از رسید";
             this.btnReversResid.Id = 30;
-            this.btnReversResid.ImageOptions.Image = global::TruckerApp.Properties.Resources.reviewingpane_16x16;
-            this.btnReversResid.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.reviewingpane_32x32;
+            this.btnReversResid.ImageOptions.Image = global::TruckerApp.Properties.Resources.converttorange_16x16;
+            this.btnReversResid.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.converttorange_32x322;
             this.btnReversResid.Name = "btnReversResid";
             this.btnReversResid.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem21_ItemClick);
             // 
@@ -527,6 +528,15 @@
             this.btnEditDriver.Name = "btnEditDriver";
             this.btnEditDriver.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditDriver_ItemClick);
             // 
+            // btnDriverReport
+            // 
+            this.btnDriverReport.Caption = "سوابق رانندگان";
+            this.btnDriverReport.Id = 6;
+            this.btnDriverReport.ImageOptions.Image = global::TruckerApp.Properties.Resources.reviewallowuserstoeditranges_16x16;
+            this.btnDriverReport.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.reviewallowuserstoeditranges_32x32;
+            this.btnDriverReport.Name = "btnDriverReport";
+            this.btnDriverReport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDriverReport_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Appearance.Options.UseTextOptions = true;
@@ -577,6 +587,7 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem20);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.ShowCaptionButton = false;
             this.ribbonPageGroup3.Text = "صدور";
             // 
             // ribbonPageGroup8
@@ -585,6 +596,7 @@
             this.ribbonPageGroup8.ItemLinks.Add(this.btnReversResid);
             this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem13);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            this.ribbonPageGroup8.ShowCaptionButton = false;
             this.ribbonPageGroup8.Text = "رسید حواله";
             // 
             // ribbonPage4
@@ -599,6 +611,7 @@
             this.ribbonPageGroup6.ItemLinks.Add(this.btnCasheStatus);
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem23);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.ShowCaptionButton = false;
             this.ribbonPageGroup6.Text = "صندوق";
             // 
             // ribbonPage5
@@ -619,13 +632,16 @@
             this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem17);
             this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem18);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            this.ribbonPageGroup7.ShowCaptionButton = false;
             this.ribbonPageGroup7.Text = "چاپ و گزارش";
             // 
             // ribbonPageGroup9
             // 
             this.ribbonPageGroup9.ItemLinks.Add(this.btnHavaleh);
             this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem22);
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnDriverReport);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.ShowCaptionButton = false;
             this.ribbonPageGroup9.Text = "دفتر روزانه";
             // 
             // ribbonPage3
@@ -641,6 +657,7 @@
             this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem24);
             this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem25);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            this.ribbonPageGroup10.ShowCaptionButton = false;
             this.ribbonPageGroup10.Text = "دفترچه تلفن";
             // 
             // ribSetting
@@ -766,5 +783,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem24;
         private DevExpress.XtraBars.BarButtonItem barButtonItem25;
         private DevExpress.XtraBars.BarButtonItem btnEditDriver;
+        private DevExpress.XtraBars.BarButtonItem btnDriverReport;
     }
 }

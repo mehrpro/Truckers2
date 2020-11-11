@@ -74,7 +74,7 @@ namespace TruckerApp.UserForm.Fish
             _queuing = queuing;
             _administrator = administrator;
             
-        //    CamSetup();
+           CamSetup();
             PublicVar.play = false;
             btnSelectPlate.Enabled = false;
             chkMandeh.EditValue = false;
@@ -91,11 +91,10 @@ namespace TruckerApp.UserForm.Fish
                 _handleAnprEventsDelegate = new ANPR_EVENT_CALLBACK(HandleAnprEvents);
                 anpr_set_event_callback(_handleAnprEventsDelegate);
             }
-            catch (Exception e)
+            catch 
             {
-                var str = e.Message;
-                //MessageBox.Show("Error Load Form");
-                this.Close();
+                
+                Close();
             }
 
         }

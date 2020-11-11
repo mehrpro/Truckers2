@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TruckerApp.ExtentionMethod;
 using TruckerApp.ViewModels;
+using TruckerApp.ViewModels.Customers;
 using TruckerApp.ViewModels.Queueing;
 
 namespace TruckerApp.Repository
@@ -71,6 +72,14 @@ namespace TruckerApp.Repository
         /// <param name="finishDateTime">تاریخ پایان</param>
         /// <returns></returns>
         Task<List<ViewModelTotalCashList>> GetTotalReportByBetweenDate(DateTime startDateTime, DateTime finishDateTime);
+
+
+        /// <summary>
+        /// لیست قبض های صادر شده براساس راننده
+        /// </summary>
+        /// <param name="driverId">شناسه راننده</param>
+        /// <returns></returns>
+        Task<List<ViewModelCustomerBillByDriverId>> GetQueueReportByDriverId(int driverId);
 
 
 
@@ -227,6 +236,28 @@ namespace TruckerApp.Repository
             }
 
             return cashLists;
+
+        }
+
+        public async Task<List<ViewModelCustomerBillByDriverId>> GetQueueReportByDriverId(int driverId)
+        {
+            var qry = await _db.Queues.Where(x => x.DriverID_FK == driverId).ToListAsync();
+            var list = new List<ViewModelCustomerBillByDriverId>();
+            foreach (var item in qry)
+            {
+                list.Add(new ViewModelCustomerBillByDriverId
+                {
+                    ID = item.ID,
+                    SerialName = item.SeriesPrice.SeriesName,
+                    Number = item.Number,
+                    DateRegister = item.DateTimeRegister.PersianConvertor(),
+                    Bill = item.LoadType1.Type,
+                    TypeId = item.LoadType.Type
+                });
+            }
+
+            var @descending = list.OrderByDescending(x => x.ID);
+            return @descending.ToList();
 
         }
 

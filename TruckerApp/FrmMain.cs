@@ -35,10 +35,7 @@ namespace TruckerApp
 
         private void btnAddDriver_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (var c in this.MdiChildren)
-            {
-                c.Close();
-            }
+
             var frm = _mainContainer.GetInstance<FrmNewDriver>();
             frm.FormBorderStyle = FormBorderStyle.FixedDialog;
             frm.StartPosition = FormStartPosition.CenterScreen;
@@ -348,6 +345,10 @@ namespace TruckerApp
 
         private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (Properties.Settings.Default.em)
+            {
+                return;
+            }
             if (PublicVar.play)
             {
                 XtraMessageBox.Show(PublicVar.ErrorCameraLoad, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -469,14 +470,23 @@ namespace TruckerApp
 
         private void btnEditDriver_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (var c in this.MdiChildren)
-            {
-                c.Close();
-            }
+
             var frm = _mainContainer.GetInstance<FrmEditDriver>();
             frm.FormBorderStyle = FormBorderStyle.FixedDialog;
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.ShowDialog();
+        }
+
+
+
+        private void btnDriverReport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var newForm = _mainContainer.GetInstance<FrmQueueListByDriver>();
+            newForm.FormBorderStyle = FormBorderStyle.Sizable;
+            newForm.WindowState = FormWindowState.Maximized;
+            newForm.MaximizeBox = newForm.MinimizeBox = true;
+            newForm.StartPosition = FormStartPosition.CenterParent;
+            newForm.ShowDialog();
         }
     }
 }

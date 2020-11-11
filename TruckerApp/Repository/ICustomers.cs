@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
+using DevExpress.CodeParser;
 using DevExpress.Data.ODataLinq.Helpers;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using TruckerApp.ViewModels.Customers;
@@ -59,6 +60,13 @@ namespace TruckerApp.Repository
         /// </summary>
         /// <returns></returns>
         Task<List<Driver>> GetAllDriver();
+
+        /// <summary>
+        /// لیست رانندگان برای کومبوباکس
+        /// </summary>
+        /// <returns></returns>
+        Task<List<ViewModelCustomerForComboBox>> GetAllDriverForComboBox();
+
         /// <summary>
         /// لیست رانندگان براساس عضویت
         /// </summary>
@@ -212,6 +220,24 @@ namespace TruckerApp.Repository
         public async Task<List<Driver>> GetAllDriver()
         {
             return await db.Drivers.ToListAsync();
+        }
+
+        public async Task<List<ViewModelCustomerForComboBox>> GetAllDriverForComboBox()
+        {
+            var qry = await db.Drivers.ToListAsync();
+            var list = new List<ViewModelCustomerForComboBox>();
+            foreach (var item in qry)
+            {
+                list.Add(new ViewModelCustomerForComboBox
+                {
+                    DriverID = item.DriverID,
+                    FullName = $"{item.FirstName} {item.LastName}",
+                    PhoneNumber = item.PhoneNumber,
+                    SmartCart = item.SmartCart
+                });
+            }
+
+            return list;
         }
 
         public async Task<List<Driver>> GetAllDriverByGroupID(byte groupId)
