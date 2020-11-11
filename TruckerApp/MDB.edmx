@@ -5,6 +5,18 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="TruckersModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BankAccNum">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="BankName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="AccNumber" Type="char" MaxLength="15" />
+          <Property Name="AccCart" Type="char" MaxLength="19" />
+          <Property Name="AccISBN" Type="char" MaxLength="26" />
+          <Property Name="Editor" Type="nvarchar" MaxLength="150" />
+        </EntityType>
         <EntityType Name="Cash">
           <Key>
             <PropertyRef Name="CashID" />
@@ -270,6 +282,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="TruckersModelStoreContainer">
+          <EntitySet Name="BankAccNum" EntityType="Self.BankAccNum" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cash" EntityType="Self.Cash" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Commission" EntityType="Self.Commission" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Drivers" EntityType="Self.Drivers" Schema="dbo" store:Type="Tables" />
@@ -396,6 +409,7 @@
             <End Role="User" EntitySet="Users" />
             <End Role="SeriesPrice" EntitySet="SeriesPrices" />
           </AssociationSet>
+          <EntitySet Name="BankAccNums" EntityType="TruckersModel.BankAccNum" />
         </EntityContainer>
         <EntityType Name="Cash">
           <Key>
@@ -687,6 +701,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="BankAccNum">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="BankName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AccNumber" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="AccCart" Type="String" MaxLength="19" FixedLength="true" Unicode="false" />
+          <Property Name="AccISBN" Type="String" MaxLength="26" FixedLength="true" Unicode="false" />
+          <Property Name="Editor" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -806,6 +832,19 @@
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="userID" ColumnName="userID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BankAccNums">
+            <EntityTypeMapping TypeName="TruckersModel.BankAccNum">
+              <MappingFragment StoreEntitySet="BankAccNum">
+                <ScalarProperty Name="Editor" ColumnName="Editor" />
+                <ScalarProperty Name="AccISBN" ColumnName="AccISBN" />
+                <ScalarProperty Name="AccCart" ColumnName="AccCart" />
+                <ScalarProperty Name="AccNumber" ColumnName="AccNumber" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

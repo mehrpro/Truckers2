@@ -65,7 +65,7 @@
             this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
             this.btnReversResid = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem22 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem23 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAccBank = new DevExpress.XtraBars.BarButtonItem();
             this.btnConvertPlate = new DevExpress.XtraBars.BarButtonItem();
             this.btnEncryptUsers = new DevExpress.XtraBars.BarButtonItem();
             this.btnAddressBook = new DevExpress.XtraBars.BarButtonItem();
@@ -73,6 +73,10 @@
             this.barButtonItem25 = new DevExpress.XtraBars.BarButtonItem();
             this.btnEditDriver = new DevExpress.XtraBars.BarButtonItem();
             this.btnDriverReport = new DevExpress.XtraBars.BarButtonItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.lblOperator = new DevExpress.XtraBars.BarStaticItem();
+            this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
+            this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -134,17 +138,21 @@
             this.barButtonItem20,
             this.btnReversResid,
             this.barButtonItem22,
-            this.barButtonItem23,
+            this.btnAccBank,
             this.btnConvertPlate,
             this.btnEncryptUsers,
             this.btnAddressBook,
             this.barButtonItem24,
             this.barButtonItem25,
             this.btnEditDriver,
-            this.btnDriverReport});
+            this.btnDriverReport,
+            this.barStaticItem1,
+            this.lblOperator,
+            this.skinDropDownButtonItem1,
+            this.barHeaderItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.ribbonControl1.MaxItemId = 7;
+            this.ribbonControl1.MaxItemId = 11;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -464,15 +472,14 @@
             this.barButtonItem22.Name = "barButtonItem22";
             this.barButtonItem22.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem22_ItemClick);
             // 
-            // barButtonItem23
+            // btnAccBank
             // 
-            this.barButtonItem23.Caption = "وضعیت صندوق شیفت";
-            this.barButtonItem23.Id = 32;
-            this.barButtonItem23.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem23.ImageOptions.Image")));
-            this.barButtonItem23.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem23.ImageOptions.LargeImage")));
-            this.barButtonItem23.Name = "barButtonItem23";
-            this.barButtonItem23.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.barButtonItem23.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem23_ItemClick);
+            this.btnAccBank.Caption = "حساب های بانکی";
+            this.btnAccBank.Id = 32;
+            this.btnAccBank.ImageOptions.Image = global::TruckerApp.Properties.Resources.financial_16x16;
+            this.btnAccBank.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.financial_32x32;
+            this.btnAccBank.Name = "btnAccBank";
+            this.btnAccBank.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAccBank_ItemClick);
             // 
             // btnConvertPlate
             // 
@@ -536,6 +543,30 @@
             this.btnDriverReport.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.reviewallowuserstoeditranges_32x32;
             this.btnDriverReport.Name = "btnDriverReport";
             this.btnDriverReport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDriverReport_ItemClick);
+            // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Caption = "اپراتور:";
+            this.barStaticItem1.Id = 7;
+            this.barStaticItem1.Name = "barStaticItem1";
+            // 
+            // lblOperator
+            // 
+            this.lblOperator.Caption = "نام اپراتور";
+            this.lblOperator.Id = 8;
+            this.lblOperator.Name = "lblOperator";
+            // 
+            // skinDropDownButtonItem1
+            // 
+            this.skinDropDownButtonItem1.Id = 9;
+            this.skinDropDownButtonItem1.Name = "skinDropDownButtonItem1";
+            this.skinDropDownButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionInMenu;
+            // 
+            // barHeaderItem1
+            // 
+            this.barHeaderItem1.Caption = "رنگ بندی :";
+            this.barHeaderItem1.Id = 10;
+            this.barHeaderItem1.Name = "barHeaderItem1";
             // 
             // ribbonPage1
             // 
@@ -609,7 +640,7 @@
             // ribbonPageGroup6
             // 
             this.ribbonPageGroup6.ItemLinks.Add(this.btnCasheStatus);
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem23);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnAccBank);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.ShowCaptionButton = false;
             this.ribbonPageGroup6.Text = "صندوق";
@@ -686,7 +717,10 @@
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem1);
+            this.ribbonStatusBar1.ItemLinks.Add(this.lblOperator);
+            this.ribbonStatusBar1.ItemLinks.Add(this.barHeaderItem1);
+            this.ribbonStatusBar1.ItemLinks.Add(this.skinDropDownButtonItem1);
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 690);
             this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
@@ -774,7 +808,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem20;
         private DevExpress.XtraBars.BarButtonItem btnReversResid;
         private DevExpress.XtraBars.BarButtonItem barButtonItem22;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem23;
+        private DevExpress.XtraBars.BarButtonItem btnAccBank;
         private DevExpress.XtraBars.BarButtonItem btnConvertPlate;
         private DevExpress.XtraBars.BarButtonItem btnEncryptUsers;
         private DevExpress.XtraBars.BarButtonItem btnAddressBook;
@@ -784,5 +818,9 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem25;
         private DevExpress.XtraBars.BarButtonItem btnEditDriver;
         private DevExpress.XtraBars.BarButtonItem btnDriverReport;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
+        private DevExpress.XtraBars.BarStaticItem lblOperator;
+        private DevExpress.XtraBars.SkinDropDownButtonItem skinDropDownButtonItem1;
+        private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
     }
 }

@@ -10,6 +10,7 @@ namespace TruckerApp
         public static string SuccessfulSave { get;  } = "اطلاعات جدید با موفقیت ذخیره شد";
         public static string NotComplateForm { get; } = "مقادیر فرم درست وارد نشده است";
         public static byte UserID { get; set; }
+    
         public static string FailedLogin { get; set; } = @"نام کاربری یا رمز عبور اشتباه است مجدد تلاش کنید";  
         public static string OpreatorName { get; set; }
         public static int SeriesID { get; set; }

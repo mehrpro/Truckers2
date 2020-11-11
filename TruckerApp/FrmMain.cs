@@ -31,6 +31,7 @@ namespace TruckerApp
             InitializeComponent();
             _mainContainer = new Container(new TypeRegistery());
             _counter.serialBuy();
+            lblOperator.Caption = PublicVar.OpreatorName;
         }
 
         private void btnAddDriver_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -482,6 +483,16 @@ namespace TruckerApp
         private void btnDriverReport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var newForm = _mainContainer.GetInstance<FrmQueueListByDriver>();
+            newForm.FormBorderStyle = FormBorderStyle.Sizable;
+            newForm.WindowState = FormWindowState.Maximized;
+            newForm.MaximizeBox = newForm.MinimizeBox = true;
+            newForm.StartPosition = FormStartPosition.CenterParent;
+            newForm.ShowDialog();
+        }
+
+        private void btnAccBank_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var newForm = _mainContainer.GetInstance<FrmAccBank>();
             newForm.FormBorderStyle = FormBorderStyle.Sizable;
             newForm.WindowState = FormWindowState.Maximized;
             newForm.MaximizeBox = newForm.MinimizeBox = true;

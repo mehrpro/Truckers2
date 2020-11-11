@@ -26,6 +26,7 @@
         <AssociationConnector Association="TruckersModel.FK_Queue_LoadType1" />
         <AssociationConnector Association="TruckersModel.FK_Queue_Series" />
         <AssociationConnector Association="TruckersModel.FK_Series_Users" />
+        <EntityTypeShape EntityType="TruckersModel.BankAccNum" Width="1.5" PointX="8.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

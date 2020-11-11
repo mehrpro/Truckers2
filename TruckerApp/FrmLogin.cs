@@ -9,7 +9,7 @@ namespace TruckerApp
     public partial class FrmLogin : XtraForm
     {
         private readonly IAdministrator _administrator;
-        public FrmLogin(IAdministrator administrator, IQueuing queuing)
+        public FrmLogin(IAdministrator administrator)
         {
             InitializeComponent();
             _administrator = administrator;
@@ -26,7 +26,7 @@ namespace TruckerApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "" && txtPassword.Text == "708801298633437541")
+            if (cbxUsername.Text == @"admin" && txtPassword.Text == "708801298633437541")
             {
                 DialogResult = DialogResult.Retry;
                 Close();
@@ -34,7 +34,7 @@ namespace TruckerApp
             else
             {
                 var getModel = new ViewModelLogin();
-                getModel.UserName = txtUsername.Text.Trim();
+                getModel.UserName = cbxUsername.Text;
                 getModel.Password = txtPassword.Text.Trim();
                 var dialogResult = _administrator.ApproveLogin(getModel);
                 if (dialogResult == DialogResult.OK)
@@ -46,6 +46,11 @@ namespace TruckerApp
                     XtraMessageBox.Show(PublicVar.FailedLogin, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private async void FrmLogin_Load(object sender, EventArgs e)
+        {
+            cbxUsername.Properties.DataSource = await _administrator.GetAllUserForLogin();
         }
     }
 }

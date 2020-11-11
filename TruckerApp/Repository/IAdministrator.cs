@@ -39,6 +39,11 @@ namespace TruckerApp.Repository
         /// <returns></returns>
         Task<List<ViewModelUsers>> GetAllUser();
         /// <summary>
+        /// لیست کاربران برای صفحه ورود
+        /// </summary>
+        /// <returns></returns>
+        Task<List<string>> GetAllUserForLogin();
+        /// <summary>
         /// رمز نگاری نام کاربری و رمز عبور
         /// </summary>
         /// <returns></returns>
@@ -54,12 +59,33 @@ namespace TruckerApp.Repository
         /// <returns></returns>
         Task<Driver> RandomDriver();
 
+        /// <summary>
+        ///  ثبت شماره حساب بانکی
+        /// </summary>
+        /// <param name="bankAccNum"></param>
+        /// <returns></returns>
+        Task<bool> AddNewBankAccNumber(BankAccNum bankAccNum);
+        /// <summary>
+        /// ویرایش شماره حساب بانکی
+        /// </summary>
+        /// <param name="bankAccNum"></param>
+        /// <returns></returns>
+        Task<bool> EditBankAccNumber(BankAccNum bankAccNum);
+
+        /// <summary>
+        /// لیست شماره حساب های بانکی
+        /// </summary>
+        /// <returns></returns>
+        Task<List<BankAccNum>> GatAllBankNumber();
+
+
+
 
     }
 
     public class Administrator : IAdministrator
     {
-        private readonly TruckersEntities db;
+        private  TruckersEntities db;
 
         public Administrator(TruckersEntities db)
         {
@@ -159,6 +185,17 @@ namespace TruckerApp.Repository
             return list;
         }
 
+        public async Task<List<string>> GetAllUserForLogin()
+        {
+            var qry = await db.Users.ToListAsync();
+            var list = new List<string>();
+            foreach (var item in qry)
+            {
+                list.Add(item.username.DecryptTextUsingUtf8());
+            }
+            return list;
+        }
+
         public async Task<bool> EncryptUserTable()
         {
             var qryUser = await db.Users.ToListAsync();
@@ -206,6 +243,39 @@ namespace TruckerApp.Repository
                 result = await db.Drivers.SingleOrDefaultAsync(x => x.DriverID == randomNext);
             } while (result == null);
             return result;
+        }
+
+        public async Task<bool> AddNewBankAccNumber(BankAccNum bankAccNum)
+        {
+            try
+            {
+                db.Entry(bankAccNum).State = EntityState.Added;
+                await db.SaveChangesAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public async Task<bool> EditBankAccNumber(BankAccNum bankAccNum)
+        {
+            try
+            {
+                db.Entry(bankAccNum).State = EntityState.Modified;
+                await db.SaveChangesAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public async Task<List<BankAccNum>> GatAllBankNumber()
+        {
+          return await db.BankAccNums.ToListAsync();
         }
 
 

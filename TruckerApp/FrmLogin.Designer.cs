@@ -35,11 +35,11 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtPassword = new DevExpress.XtraEditors.TextEdit();
-            this.txtUsername = new DevExpress.XtraEditors.TextEdit();
+            this.cbxUsername = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxUsername.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -49,7 +49,7 @@
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(80, 35);
-            this.btnLogin.TabIndex = 2;
+            this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "ورود";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -61,7 +61,7 @@
             this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(80, 35);
-            this.simpleButton2.TabIndex = 3;
+            this.simpleButton2.TabIndex = 5;
             this.simpleButton2.Text = "بستن";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
@@ -81,7 +81,7 @@
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.txtPassword);
-            this.groupControl1.Controls.Add(this.txtUsername);
+            this.groupControl1.Controls.Add(this.cbxUsername);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -98,7 +98,7 @@
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(45, 17);
-            this.labelControl2.TabIndex = 1;
+            this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "رمز عبور";
             // 
             // labelControl3
@@ -112,7 +112,7 @@
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(286, 25);
-            this.labelControl3.TabIndex = 1;
+            this.labelControl3.TabIndex = 6;
             this.labelControl3.Text = "انجمن صنفی رانندگان شهرستان بیجار";
             // 
             // labelControl1
@@ -122,7 +122,7 @@
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(52, 17);
-            this.labelControl1.TabIndex = 1;
+            this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "نام کاربری";
             // 
             // txtPassword
@@ -137,20 +137,29 @@
             this.txtPassword.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtPassword.Properties.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(225, 24);
-            this.txtPassword.TabIndex = 1;
+            this.txtPassword.TabIndex = 3;
             // 
-            // txtUsername
+            // cbxUsername
             // 
-            this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUsername.EditValue = "";
-            this.txtUsername.Location = new System.Drawing.Point(33, 74);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Parmida_ActivePlusMultiKeys = false;
-            this.txtUsername.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtUsername.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.txtUsername.Size = new System.Drawing.Size(225, 24);
-            this.txtUsername.TabIndex = 0;
+            this.cbxUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxUsername.EditValue = "";
+            this.cbxUsername.Location = new System.Drawing.Point(33, 74);
+            this.cbxUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbxUsername.Name = "cbxUsername";
+            this.cbxUsername.Parmida_ActivePlusMultiKeys = false;
+            this.cbxUsername.Properties.Appearance.Options.UseTextOptions = true;
+            this.cbxUsername.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cbxUsername.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxUsername.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxUsername.Properties.AppearanceDropDown.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxUsername.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxUsername.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxUsername.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbxUsername.Properties.NullText = "";
+            this.cbxUsername.Properties.PopupSizeable = false;
+            this.cbxUsername.Size = new System.Drawing.Size(225, 24);
+            this.cbxUsername.TabIndex = 1;
             // 
             // FrmLogin
             // 
@@ -171,11 +180,12 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "فرم ورود";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxUsername.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,12 +194,12 @@
         #endregion
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.TextEdit txtUsername;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton btnLogin;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtPassword;
         private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LookUpEdit cbxUsername;
     }
 }

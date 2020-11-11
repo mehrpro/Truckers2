@@ -128,6 +128,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BankAccNum.cs">
+      <DependentUpon>MDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="ExtentionMethod\CryptoClass.cs" />
     <Compile Include="ExtentionMethod\Logger.cs" />
     <Compile Include="PhoneBook.cs">
@@ -226,6 +229,12 @@
     <Compile Include="UserForm\Administrator\FrmUsres.Designer.cs">
       <DependentUpon>FrmUsres.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserForm\cash\FrmAccBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\cash\FrmAccBank.Designer.cs">
+      <DependentUpon>FrmAccBank.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForm\cash\FrmCashPiriodList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +283,7 @@
     <Compile Include="UserForm\Reporting\FrmQueueListByDriver.Designer.cs">
       <DependentUpon>FrmQueueListByDriver.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\Administrator\ViewModelBankAccNumber.cs" />
     <Compile Include="ViewModels\Administrator\ViewModelUsers.cs" />
     <Compile Include="ViewModels\Customers\ViewModelCustomerBillByDriverId.cs" />
     <Compile Include="ViewModels\Customers\ViewModelCustomerForComboBox.cs" />
@@ -413,6 +423,9 @@
     <EmbeddedResource Include="UserForm\Administrator\FrmUsres.resx">
       <DependentUpon>FrmUsres.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\cash\FrmAccBank.resx">
+      <DependentUpon>FrmAccBank.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserForm\cash\FrmCashPiriodList.resx">
       <DependentUpon>FrmCashPiriodList.cs</DependentUpon>
     </EmbeddedResource>
@@ -522,6 +535,11 @@
       <DependentUpon>MDB.edmx</DependentUpon>
       <LastGenOutput>MDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\financial_32x321.png" />
+    <None Include="Resources\financial_16x16.png" />
+    <None Include="Resources\financial_32x32.png" />
+    <None Include="Resources\customer_32x32.png" />
+    <None Include="Resources\customer_16x16.png" />
     <None Include="Resources\reviewallowuserstoeditranges_16x16.png" />
     <None Include="Resources\reviewallowuserstoeditranges_32x32.png" />
     <None Include="Resources\close_32x32.png" />
