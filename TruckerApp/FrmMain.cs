@@ -419,7 +419,7 @@ namespace TruckerApp
         private void barButtonItem21_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            var newForm = _mainContainer.GetInstance<FrmFishPrint>();
+            var newForm = _mainContainer.GetInstance<FrmRevFish333>();
             newForm.FormBorderStyle = FormBorderStyle.FixedDialog;
             newForm.StartPosition = FormStartPosition.CenterScreen;
             newForm.ShowDialog();

@@ -262,6 +262,12 @@
     <Compile Include="UserForm\Fish\FrmRevFish33.Designer.cs">
       <DependentUpon>FrmRevFish33.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserForm\Fish\FrmRevFish333.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\Fish\FrmRevFish333.Designer.cs">
+      <DependentUpon>FrmRevFish333.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\Administrator\ViewModelUsers.cs" />
     <Compile Include="ViewModels\Customers\ViewMoelTransformerTel.cs" />
     <Compile Include="ViewModels\Queueing\ViewModelNumberList.cs" />
@@ -453,6 +459,9 @@
     <EmbeddedResource Include="UserForm\Fish\FrmRevFish33.resx">
       <DependentUpon>FrmRevFish33.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Fish\FrmRevFish333.resx">
+      <DependentUpon>FrmRevFish333.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserForm\Fish\FrmSerial.resx">
       <DependentUpon>FrmSerial.cs</DependentUpon>
     </EmbeddedResource>
@@ -502,6 +511,10 @@
       <DependentUpon>MDB.edmx</DependentUpon>
       <LastGenOutput>MDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\converttorange_32x321.png" />
+    <None Include="Resources\converttorange_32x32.png" />
+    <None Include="Resources\reviewingpane_16x16.png" />
+    <None Include="Resources\reviewingpane_32x32.png" />
     <None Include="Resources\editcontact_16x16.png" />
     <None Include="Resources\editcontact_32x32.png" />
     <None Include="Resources\group2_16x16.png" />

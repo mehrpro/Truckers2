@@ -293,6 +293,26 @@ namespace TruckerApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap converttorange_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("converttorange_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap converttorange_32x321 {
+            get {
+                object obj = ResourceManager.GetObject("converttorange_32x321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap defaultprinter_32x32 {
             get {
                 object obj = ResourceManager.GetObject("defaultprinter_32x32", resourceCulture);
@@ -956,6 +976,26 @@ namespace TruckerApp.Properties {
         internal static System.Drawing.Bitmap refreshallpivottable_32x32 {
             get {
                 object obj = ResourceManager.GetObject("refreshallpivottable_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap reviewingpane_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("reviewingpane_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap reviewingpane_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("reviewingpane_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,6 +1,6 @@
 ﻿namespace TruckerApp.UserForm
 {
-    partial class FrmRevFish33
+    partial class FrmRevFish333
     {
         /// <summary>
         /// Required designer variable.
@@ -45,11 +45,11 @@
             this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.cbxSmart = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colDriverID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colFirstName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLastName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSmartCart = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTagNumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtserial.Properties)).BeginInit();
@@ -86,15 +86,15 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(377, 337);
+            this.groupControl1.Size = new System.Drawing.Size(378, 337);
             this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "برگشت رسید";
+            this.groupControl1.Text = "بازگشت رسید";
             // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.ImageOptions.Image = global::TruckerApp.Properties.Resources.cancel_32x321;
-            this.btnClose.Location = new System.Drawing.Point(28, 268);
+            this.btnClose.Location = new System.Drawing.Point(29, 268);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 50);
@@ -105,8 +105,8 @@
             // btnRevSave
             // 
             this.btnRevSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRevSave.ImageOptions.Image = global::TruckerApp.Properties.Resources.converttorange_32x32;
-            this.btnRevSave.Location = new System.Drawing.Point(134, 268);
+            this.btnRevSave.ImageOptions.Image = global::TruckerApp.Properties.Resources.converttorange_32x321;
+            this.btnRevSave.Location = new System.Drawing.Point(135, 268);
             this.btnRevSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRevSave.Name = "btnRevSave";
             this.btnRevSave.Size = new System.Drawing.Size(100, 50);
@@ -117,7 +117,7 @@
             // labelControl7
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Location = new System.Drawing.Point(272, 240);
+            this.labelControl7.Location = new System.Drawing.Point(273, 240);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(42, 17);
@@ -127,17 +127,17 @@
             // labelControl4
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Location = new System.Drawing.Point(272, 208);
+            this.labelControl4.Location = new System.Drawing.Point(273, 208);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(25, 17);
+            this.labelControl4.Size = new System.Drawing.Size(92, 17);
             this.labelControl4.TabIndex = 15;
-            this.labelControl4.Text = "تاریخ";
+            this.labelControl4.Text = "تاریخ آخرین حواله";
             // 
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(277, 176);
+            this.labelControl2.Location = new System.Drawing.Point(278, 176);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(23, 17);
@@ -147,7 +147,7 @@
             // labelControl6
             // 
             this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl6.Location = new System.Drawing.Point(277, 112);
+            this.labelControl6.Location = new System.Drawing.Point(278, 112);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(69, 17);
@@ -157,7 +157,7 @@
             // labelControl5
             // 
             this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Location = new System.Drawing.Point(272, 80);
+            this.labelControl5.Location = new System.Drawing.Point(273, 80);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(76, 17);
@@ -167,7 +167,7 @@
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(272, 143);
+            this.labelControl1.Location = new System.Drawing.Point(273, 143);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(48, 17);
@@ -177,7 +177,7 @@
             // txtserial
             // 
             this.txtserial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtserial.Location = new System.Drawing.Point(192, 108);
+            this.txtserial.Location = new System.Drawing.Point(193, 108);
             this.txtserial.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtserial.Name = "txtserial";
             this.txtserial.Parmida_ActivePlusMultiKeys = false;
@@ -192,7 +192,7 @@
             // txtNumber
             // 
             this.txtNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNumber.Location = new System.Drawing.Point(28, 108);
+            this.txtNumber.Location = new System.Drawing.Point(29, 108);
             this.txtNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Parmida_ActivePlusMultiKeys = false;
@@ -207,7 +207,7 @@
             // txtType
             // 
             this.txtType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtType.Location = new System.Drawing.Point(28, 236);
+            this.txtType.Location = new System.Drawing.Point(29, 236);
             this.txtType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtType.Name = "txtType";
             this.txtType.Parmida_ActivePlusMultiKeys = false;
@@ -222,7 +222,7 @@
             // txtDateReg
             // 
             this.txtDateReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDateReg.Location = new System.Drawing.Point(28, 204);
+            this.txtDateReg.Location = new System.Drawing.Point(29, 204);
             this.txtDateReg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDateReg.Name = "txtDateReg";
             this.txtDateReg.Parmida_ActivePlusMultiKeys = false;
@@ -237,7 +237,7 @@
             // txtTag
             // 
             this.txtTag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTag.Location = new System.Drawing.Point(28, 172);
+            this.txtTag.Location = new System.Drawing.Point(29, 172);
             this.txtTag.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTag.Name = "txtTag";
             this.txtTag.Parmida_ActivePlusMultiKeys = false;
@@ -252,7 +252,7 @@
             // txtName
             // 
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName.Location = new System.Drawing.Point(28, 140);
+            this.txtName.Location = new System.Drawing.Point(29, 140);
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtName.Name = "txtName";
             this.txtName.Parmida_ActivePlusMultiKeys = false;
@@ -267,7 +267,7 @@
             // cbxSmart
             // 
             this.cbxSmart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxSmart.Location = new System.Drawing.Point(28, 76);
+            this.cbxSmart.Location = new System.Drawing.Point(29, 76);
             this.cbxSmart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbxSmart.Name = "cbxSmart";
             this.cbxSmart.Parmida_ActivePlusMultiKeys = false;
@@ -336,82 +336,80 @@
             this.searchLookUpEdit1View.Appearance.ViewCaption.Options.UseTextOptions = true;
             this.searchLookUpEdit1View.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colDriverID,
-            this.colFirstName,
-            this.colLastName,
-            this.colSmartCart,
-            this.colTagNumber});
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsEditForm.PopupEditFormWidth = 1200;
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            this.searchLookUpEdit1View.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colDriverID, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
-            // colDriverID
+            // gridColumn1
             // 
-            this.colDriverID.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colDriverID.Caption = "کد";
-            this.colDriverID.FieldName = "Driver.DriverID";
-            this.colDriverID.Name = "colDriverID";
-            this.colDriverID.Visible = true;
-            this.colDriverID.VisibleIndex = 0;
-            this.colDriverID.Width = 86;
+            this.gridColumn1.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.gridColumn1.Caption = "نام";
+            this.gridColumn1.FieldName = "FirstName";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 1;
+            this.gridColumn1.Width = 193;
             // 
-            // colFirstName
+            // gridColumn2
             // 
-            this.colFirstName.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colFirstName.Caption = "نام";
-            this.colFirstName.FieldName = "Driver.FirstName";
-            this.colFirstName.Name = "colFirstName";
-            this.colFirstName.Visible = true;
-            this.colFirstName.VisibleIndex = 1;
-            this.colFirstName.Width = 158;
+            this.gridColumn2.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.gridColumn2.Caption = "نام خانوادگی";
+            this.gridColumn2.FieldName = "LastName";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 2;
+            this.gridColumn2.Width = 274;
             // 
-            // colLastName
+            // gridColumn3
             // 
-            this.colLastName.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colLastName.Caption = "فامیلی";
-            this.colLastName.FieldName = "Driver.LastName";
-            this.colLastName.Name = "colLastName";
-            this.colLastName.Visible = true;
-            this.colLastName.VisibleIndex = 2;
-            this.colLastName.Width = 153;
+            this.gridColumn3.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.gridColumn3.Caption = "کارت هوشمند";
+            this.gridColumn3.FieldName = "SmartCart";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 0;
+            this.gridColumn3.Width = 274;
             // 
-            // colSmartCart
+            // gridColumn4
             // 
-            this.colSmartCart.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colSmartCart.Caption = "شماره هوشمند";
-            this.colSmartCart.FieldName = "Driver.SmartCart";
-            this.colSmartCart.Name = "colSmartCart";
-            this.colSmartCart.Visible = true;
-            this.colSmartCart.VisibleIndex = 3;
-            this.colSmartCart.Width = 170;
+            this.gridColumn4.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.gridColumn4.Caption = "موبایل";
+            this.gridColumn4.FieldName = "PhoneNumber";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.Width = 274;
             // 
-            // colTagNumber
+            // gridColumn5
             // 
-            this.colTagNumber.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colTagNumber.Caption = "شماره پلاک";
-            this.colTagNumber.FieldName = "Driver.TagNumber";
-            this.colTagNumber.Name = "colTagNumber";
-            this.colTagNumber.Visible = true;
-            this.colTagNumber.VisibleIndex = 4;
-            this.colTagNumber.Width = 188;
+            this.gridColumn5.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.gridColumn5.Caption = "پلاک";
+            this.gridColumn5.FieldName = "TagNumber";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.Width = 279;
             // 
-            // FrmRevFish33
+            // FrmRevFish333
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 337);
+            this.ClientSize = new System.Drawing.Size(378, 337);
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmRevFish33";
+            this.Name = "FrmRevFish333";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Text = "برگشت رسید";
+            this.Text = "بازگشت  رسید";
             this.Load += new System.EventHandler(this.FrmRevFish_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
@@ -447,10 +445,10 @@
         private DevExpress.XtraEditors.SimpleButton btnClose;
         private DevExpress.XtraEditors.SearchLookUpEdit cbxSmart;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
-        private DevExpress.XtraGrid.Columns.GridColumn colDriverID;
-        private DevExpress.XtraGrid.Columns.GridColumn colFirstName;
-        private DevExpress.XtraGrid.Columns.GridColumn colLastName;
-        private DevExpress.XtraGrid.Columns.GridColumn colSmartCart;
-        private DevExpress.XtraGrid.Columns.GridColumn colTagNumber;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
     }
 }

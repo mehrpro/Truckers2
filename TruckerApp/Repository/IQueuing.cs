@@ -142,13 +142,20 @@ namespace TruckerApp.Repository
         /// <param name="queueId"></param>
         /// <returns></returns>
         Task<bool> Tamdid(int queueId);
+
         /// <summary>
-        /// تغییر وضعیت کاربری
+        /// آخرین حواله رسید شده
         /// </summary>
         /// <param name="driver"></param>
         /// <returns></returns>
-        Task<bool> Change23to20(int driver);
+        Task<Queue> LastQueue23(int driver);
 
+        /// <summary>
+        /// برگشت رسید
+        /// </summary>
+        /// <param name="queueId">شناسه حواله ی رسید شده</param>
+        /// <returns></returns>
+        Task<bool> Change23To20(int queueId);
     }
 
     public class Queuing : IQueuing
@@ -218,7 +225,7 @@ namespace TruckerApp.Repository
         public async Task<Queue> FindByQueue(string tag)
         {
             var result = RetrunDirverID(tag);
-            return result > 0? await _db.Queues.SingleOrDefaultAsync(x => x.Status_FK == 20 && x.DriverID_FK == result): null;
+            return result > 0 ? await _db.Queues.SingleOrDefaultAsync(x => x.Status_FK == 20 && x.DriverID_FK == result) : null;
         }
 
         public async Task<Queue> FindByQueue(int driverId)
@@ -241,7 +248,7 @@ namespace TruckerApp.Repository
                     newQueue.Status_FK = viewModelQueue.StatusFk;
                     newQueue.ComosiunID_FK = viewModelQueue.ComosiunIdFk;
                     newQueue.SeriesID_FK = viewModelQueue.SeriesIdFk;
-                    newQueue.mandeh = (bool) viewModelQueue.Mandeh;
+                    newQueue.mandeh = (bool)viewModelQueue.Mandeh;
                     _db.Queues.Add(newQueue);
                     _db.SaveChanges();
                     var newCash = new Cash
@@ -321,7 +328,7 @@ namespace TruckerApp.Repository
                 item.userCreator = $"{seriesPrice.User.FirstName} {seriesPrice.User.LastName}";
                 list.Add(item);
             }
-            return list.OrderByDescending(x=>x.SeriesName).ToList();
+            return list.OrderByDescending(x => x.SeriesName).ToList();
         }
 
         public async Task<bool> RetrunCashByQueueID(int queueId, byte typeId)
@@ -511,7 +518,7 @@ namespace TruckerApp.Repository
         {
             try
             {
-                var result =await _db.Queues.FindAsync(queueId);
+                var result = await _db.Queues.FindAsync(queueId);
                 result.mandeh = true;
                 await _db.SaveChangesAsync();
                 return true;
@@ -522,14 +529,30 @@ namespace TruckerApp.Repository
             }
         }
 
-        public async Task<bool> Change23to20(int driver)
+        public async Task<Queue> LastQueue23(int driver)
         {
-
-            if (!await _db.Queues.AnyAsync(x => x.Status_FK == 20))
+            if (!await _db.Queues.AnyAsync(x => x.Status_FK == 20 && x.DriverID_FK == driver))
             {
-                var qryMax = await _db.Queues.MaxAsync(x => x.Status_FK == 23 && x.DriverID_FK == driver);
+                var qrylast = await _db.Queues.Where(x => x.Status_FK == 23 && x.DriverID_FK == driver).MaxAsync(x => x.ID);
+                if (qrylast > 0)
+                    return await _db.Queues.FindAsync(qrylast);
             }
+            return null;
+        }
 
+        public async Task<bool> Change23To20(int queueId)
+        {
+            try
+            {
+                var queue = await _db.Queues.FindAsync(queueId);
+                queue.Status_FK = 20;
+                await _db.SaveChangesAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
 

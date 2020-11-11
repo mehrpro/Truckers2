@@ -64,7 +64,7 @@
             this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem21 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnReversResid = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem22 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem23 = new DevExpress.XtraBars.BarButtonItem();
             this.btnConvertPlate = new DevExpress.XtraBars.BarButtonItem();
@@ -132,7 +132,7 @@
             this.barButtonItem18,
             this.barButtonItem19,
             this.barButtonItem20,
-            this.barButtonItem21,
+            this.btnReversResid,
             this.barButtonItem22,
             this.barButtonItem23,
             this.btnConvertPlate,
@@ -445,14 +445,14 @@
             this.barButtonItem20.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem20.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem20_ItemClick);
             // 
-            // barButtonItem21
+            // btnReversResid
             // 
-            this.barButtonItem21.Caption = "متفرقه";
-            this.barButtonItem21.Id = 30;
-            this.barButtonItem21.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.icons8_calendar_7_40;
-            this.barButtonItem21.Name = "barButtonItem21";
-            this.barButtonItem21.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.barButtonItem21.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem21_ItemClick);
+            this.btnReversResid.Caption = "برگشت از رسید";
+            this.btnReversResid.Id = 30;
+            this.btnReversResid.ImageOptions.Image = global::TruckerApp.Properties.Resources.reviewingpane_16x16;
+            this.btnReversResid.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.reviewingpane_32x32;
+            this.btnReversResid.Name = "btnReversResid";
+            this.btnReversResid.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem21_ItemClick);
             // 
             // barButtonItem22
             // 
@@ -575,7 +575,6 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem4);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem19);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem20);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem21);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "صدور";
@@ -583,6 +582,7 @@
             // ribbonPageGroup8
             // 
             this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem12);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnReversResid);
             this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem13);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             this.ribbonPageGroup8.Text = "رسید حواله";
@@ -755,7 +755,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem18;
         private DevExpress.XtraBars.BarButtonItem barButtonItem19;
         private DevExpress.XtraBars.BarButtonItem barButtonItem20;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem21;
+        private DevExpress.XtraBars.BarButtonItem btnReversResid;
         private DevExpress.XtraBars.BarButtonItem barButtonItem22;
         private DevExpress.XtraBars.BarButtonItem barButtonItem23;
         private DevExpress.XtraBars.BarButtonItem btnConvertPlate;

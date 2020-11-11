@@ -66,6 +66,8 @@ namespace TruckerApp.UserForm
         {
            // txtDateRegister.Text = DateTime.Today.PersianConvertor();
             cbxSmart.Properties.DataSource =  await _queuing.GetTamdid();
+            cbxSmart.Properties.DisplayMember = "Driver.SmartCart";
+            cbxSmart.Properties.ValueMember = "ID";
 
         }
 

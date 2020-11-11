@@ -74,7 +74,7 @@ namespace TruckerApp.UserForm.Fish
             _queuing = queuing;
             _administrator = administrator;
             
-            CamSetup();
+        //    CamSetup();
             PublicVar.play = false;
             btnSelectPlate.Enabled = false;
             chkMandeh.EditValue = false;
