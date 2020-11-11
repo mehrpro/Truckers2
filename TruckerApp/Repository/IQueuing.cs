@@ -142,7 +142,12 @@ namespace TruckerApp.Repository
         /// <param name="queueId"></param>
         /// <returns></returns>
         Task<bool> Tamdid(int queueId);
-
+        /// <summary>
+        /// تغییر وضعیت کاربری
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <returns></returns>
+        Task<bool> Change23to20(int driver);
 
     }
 
@@ -499,7 +504,7 @@ namespace TruckerApp.Repository
         public async Task<List<Queue>> GetTamdid()
         {
             _db = new TruckersEntities();
-            return await _db.Queues.Where(x => x.mandeh == false).ToListAsync();
+            return await _db.Queues.Where(x => x.mandeh != true && x.Status_FK == 20).ToListAsync();
         }
 
         public async Task<bool> Tamdid(int queueId)
@@ -515,6 +520,16 @@ namespace TruckerApp.Repository
             {
                 return false;
             }
+        }
+
+        public async Task<bool> Change23to20(int driver)
+        {
+
+            if (!await _db.Queues.AnyAsync(x => x.Status_FK == 20))
+            {
+                var qryMax = await _db.Queues.MaxAsync(x => x.Status_FK == 23 && x.DriverID_FK == driver);
+            }
+
         }
 
 

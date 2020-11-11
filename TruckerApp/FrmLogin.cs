@@ -13,8 +13,8 @@ namespace TruckerApp
         {
             InitializeComponent();
             _administrator = administrator;
-            txtPassword.Text = @"708801298";
-            txtUsername.Text = @"admin";
+            //txtPassword.Text = @"708801298";
+            //txtUsername.Text = @"admin";
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)

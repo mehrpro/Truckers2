@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatusProcess = new System.Windows.Forms.ToolStripStatusLabel();
@@ -133,7 +133,7 @@
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(16, 0, 1, 0);
             this.statusStrip1.Size = new System.Drawing.Size(662, 27);
-            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // lblStatusProcess
@@ -264,13 +264,13 @@
             // btnSelect
             // 
             this.btnSelect.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::TruckerApp.Properties.Resources.backward_16x161;
-            serializableAppearanceObject5.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject6.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject7.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject8.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            editorButtonImageOptions1.Image = global::TruckerApp.Properties.Resources.backward_16x161;
+            serializableAppearanceObject1.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject2.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject3.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject4.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.btnSelect.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
@@ -431,7 +431,7 @@
             this.btnNewUser.Margin = new System.Windows.Forms.Padding(5);
             this.btnNewUser.Name = "btnNewUser";
             this.btnNewUser.Size = new System.Drawing.Size(100, 50);
-            this.btnNewUser.TabIndex = 4;
+            this.btnNewUser.TabIndex = 20;
             this.btnNewUser.Text = "جدید";
             this.btnNewUser.Click += new System.EventHandler(this.btnNewUser_Click);
             // 
@@ -443,7 +443,7 @@
             this.btnTransformer.Margin = new System.Windows.Forms.Padding(5);
             this.btnTransformer.Name = "btnTransformer";
             this.btnTransformer.Size = new System.Drawing.Size(220, 50);
-            this.btnTransformer.TabIndex = 5;
+            this.btnTransformer.TabIndex = 22;
             this.btnTransformer.Text = "انتقال از لیست رانندگان";
             this.btnTransformer.Click += new System.EventHandler(this.btnTransformer_Click);
             // 
@@ -455,7 +455,7 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(110, 50);
-            this.btnSave.TabIndex = 5;
+            this.btnSave.TabIndex = 21;
             this.btnSave.Text = "ذخیره";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -468,7 +468,7 @@
             this.txtMobile2.Parmida_ActivePlusMultiKeys = false;
             this.txtMobile2.Properties.MaxLength = 10;
             this.txtMobile2.Size = new System.Drawing.Size(220, 24);
-            this.txtMobile2.TabIndex = 1;
+            this.txtMobile2.TabIndex = 9;
             // 
             // txtPostalCode
             // 
@@ -479,7 +479,7 @@
             this.txtPostalCode.Parmida_ActivePlusMultiKeys = false;
             this.txtPostalCode.Properties.MaxLength = 10;
             this.txtPostalCode.Size = new System.Drawing.Size(220, 24);
-            this.txtPostalCode.TabIndex = 1;
+            this.txtPostalCode.TabIndex = 15;
             // 
             // txtLName
             // 
@@ -490,10 +490,10 @@
             this.txtLName.Parmida_ActivePlusMultiKeys = false;
             this.txtLName.Properties.MaxLength = 50;
             this.txtLName.Size = new System.Drawing.Size(220, 24);
-            this.txtLName.TabIndex = 1;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "نام خانوادگی را وارد کنید";
-            this.dxValidationProvider1.SetValidationRule(this.txtLName, conditionValidationRule4);
+            this.txtLName.TabIndex = 5;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "نام خانوادگی را وارد کنید";
+            this.dxValidationProvider1.SetValidationRule(this.txtLName, conditionValidationRule1);
             // 
             // labelControl4
             // 
@@ -502,7 +502,7 @@
             this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(70, 17);
-            this.labelControl4.TabIndex = 0;
+            this.labelControl4.TabIndex = 8;
             this.labelControl4.Text = "تلفن همراه 2";
             // 
             // labelControl10
@@ -512,7 +512,7 @@
             this.labelControl10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(48, 17);
-            this.labelControl10.TabIndex = 0;
+            this.labelControl10.TabIndex = 14;
             this.labelControl10.Text = "کد پستی";
             // 
             // labelControl2
@@ -522,7 +522,7 @@
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(69, 17);
-            this.labelControl2.TabIndex = 0;
+            this.labelControl2.TabIndex = 4;
             this.labelControl2.Text = "نام خانوادگی";
             // 
             // txtHomeTel
@@ -534,7 +534,7 @@
             this.txtHomeTel.Parmida_ActivePlusMultiKeys = false;
             this.txtHomeTel.Properties.MaxLength = 10;
             this.txtHomeTel.Size = new System.Drawing.Size(220, 24);
-            this.txtHomeTel.TabIndex = 1;
+            this.txtHomeTel.TabIndex = 11;
             // 
             // labelControl5
             // 
@@ -543,7 +543,7 @@
             this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(54, 17);
-            this.labelControl5.TabIndex = 0;
+            this.labelControl5.TabIndex = 10;
             this.labelControl5.Text = "تلفن منزل";
             // 
             // labelControl6
@@ -553,7 +553,7 @@
             this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(51, 17);
-            this.labelControl6.TabIndex = 0;
+            this.labelControl6.TabIndex = 18;
             this.labelControl6.Text = "توضیحات";
             // 
             // txtMobile
@@ -565,10 +565,10 @@
             this.txtMobile.Parmida_ActivePlusMultiKeys = false;
             this.txtMobile.Properties.MaxLength = 10;
             this.txtMobile.Size = new System.Drawing.Size(220, 24);
-            this.txtMobile.TabIndex = 1;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "موبایل را وارد کنید";
-            this.dxValidationProvider1.SetValidationRule(this.txtMobile, conditionValidationRule1);
+            this.txtMobile.TabIndex = 7;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "موبایل را وارد کنید";
+            this.dxValidationProvider1.SetValidationRule(this.txtMobile, conditionValidationRule2);
             // 
             // labelControl8
             // 
@@ -577,7 +577,7 @@
             this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(28, 17);
-            this.labelControl8.TabIndex = 0;
+            this.labelControl8.TabIndex = 16;
             this.labelControl8.Text = "شغل";
             // 
             // labelControl3
@@ -587,7 +587,7 @@
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(59, 17);
-            this.labelControl3.TabIndex = 0;
+            this.labelControl3.TabIndex = 6;
             this.labelControl3.Text = "تلفن همراه";
             // 
             // labelControl7
@@ -597,7 +597,7 @@
             this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(29, 17);
-            this.labelControl7.TabIndex = 0;
+            this.labelControl7.TabIndex = 12;
             this.labelControl7.Text = "آدرس";
             // 
             // txtID
@@ -630,10 +630,10 @@
             this.txtFname.Parmida_ActivePlusMultiKeys = false;
             this.txtFname.Properties.MaxLength = 50;
             this.txtFname.Size = new System.Drawing.Size(220, 24);
-            this.txtFname.TabIndex = 1;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "نام را وارد کنید";
-            this.dxValidationProvider1.SetValidationRule(this.txtFname, conditionValidationRule2);
+            this.txtFname.TabIndex = 3;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "نام را وارد کنید";
+            this.dxValidationProvider1.SetValidationRule(this.txtFname, conditionValidationRule3);
             // 
             // labelControl1
             // 
@@ -642,7 +642,7 @@
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(15, 17);
-            this.labelControl1.TabIndex = 0;
+            this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "نام";
             // 
             // txtDescription
@@ -660,7 +660,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtDescription.Properties.MaxLength = 150;
             this.txtDescription.Size = new System.Drawing.Size(220, 24);
-            this.txtDescription.TabIndex = 1;
+            this.txtDescription.TabIndex = 19;
             // 
             // cbxJobs
             // 
@@ -683,7 +683,7 @@
             "سایر"});
             this.cbxJobs.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbxJobs.Size = new System.Drawing.Size(220, 24);
-            this.cbxJobs.TabIndex = 1;
+            this.cbxJobs.TabIndex = 17;
             // 
             // txtAddress
             // 
@@ -698,7 +698,7 @@
             this.txtAddress.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtAddress.Properties.MaxLength = 150;
             this.txtAddress.Size = new System.Drawing.Size(220, 60);
-            this.txtAddress.TabIndex = 1;
+            this.txtAddress.TabIndex = 13;
             // 
             // timerTransporter
             // 

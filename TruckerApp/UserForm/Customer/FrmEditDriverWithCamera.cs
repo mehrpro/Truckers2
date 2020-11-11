@@ -71,7 +71,7 @@ namespace TruckerApp.UserForm.Customer
                 _handleAnprEventsDelegate = new ANPR_EVENT_CALLBACK(HandleAnprEvents);
                 anpr_set_event_callback(_handleAnprEventsDelegate);
             }
-            catch (Exception e)
+            catch 
             {
                 Close();
             }
@@ -500,7 +500,7 @@ namespace TruckerApp.UserForm.Customer
 
         private async void groupControl1_DoubleClick(object sender, EventArgs e)
         {
-            if (true)
+            if (Properties.Settings.Default.dev)
             {
                 _resultFindingDriver = await _administrator.RandomDriver();
                 GetPropertyByDriver(_resultFindingDriver);

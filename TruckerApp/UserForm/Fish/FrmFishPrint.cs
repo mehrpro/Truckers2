@@ -73,7 +73,7 @@ namespace TruckerApp.UserForm.Fish
             InitializeComponent();
             _queuing = queuing;
             _administrator = administrator;
-
+            
             CamSetup();
             PublicVar.play = false;
             btnSelectPlate.Enabled = false;
@@ -308,6 +308,7 @@ namespace TruckerApp.UserForm.Fish
                 else if (plate.n_char != anpr_settings.num_valid_chars[0])
                     return;
             }
+            //۴۸ع۵۷۳۵۱
             plate_counter++;
             _resultFarsi = "";
             txtTagNumber.Text = _resultFarsi = plate.str;
@@ -457,7 +458,7 @@ namespace TruckerApp.UserForm.Fish
 
         private async void groupControl1_DoubleClick(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.dev)
+            if (Properties.Settings.Default.dev)//Properties.Settings.Default.dev
             {
                 _resultFindingDriver = await _administrator.RandomDriver();
                 GetPropertyByDriver(_resultFindingDriver);
@@ -646,7 +647,7 @@ namespace TruckerApp.UserForm.Fish
             _code = Convert.ToInt32(driver.driver_code) > 0 ? driver.driver_code.ToString() : " ";
             txtName.Text = _name = $"{driver.FirstName}  {driver.LastName}";
             txtTag.Text = driver.Tag;
-            txtTagNumber.Text = _tagnumber = _resultFarsi;
+            txtTagNumber.Text = _tagnumber = driver.TagNumber;
             txtPhoneNumber.Text = driver.PhoneNumber;
             _driver = driver.DriverID;
             _smartcart = txtHosmand.Text = driver.SmartCart.ToString();
@@ -722,6 +723,7 @@ namespace TruckerApp.UserForm.Fish
                             {
                                 _seriesNumber = $"س {PublicVar.SeriesName}  شماره {Convert.ToInt16(txtNumber.EditValue)}";
                                 _number = await _queuing.GetScheduleByTypeId(newQueue.TypeFk);
+                                
                                 PrintFish();
                                 await _queuing.GetLastNumberByTypeId(Convert.ToByte(cbxCargoType.EditValue));
                                 cbxCargoType.EditValue = null;

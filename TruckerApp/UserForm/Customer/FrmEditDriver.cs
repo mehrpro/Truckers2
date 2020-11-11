@@ -9,7 +9,7 @@ namespace TruckerApp.UserForm.Customer
     public partial class FrmEditDriver : XtraForm
     {
         private Driver _selectDriver;
-        private Driver _driver;
+        //private Driver _driver;
         private readonly ICustomers _customers;
         public FrmEditDriver(ICustomers customers)
         {
