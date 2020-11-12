@@ -25,6 +25,7 @@ namespace TruckerApp
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<BankAccNum> BankAccNums { get; set; }
         public virtual DbSet<Cash> Cashes { get; set; }
         public virtual DbSet<Commission> Commissions { get; set; }
         public virtual DbSet<Driver> Drivers { get; set; }
@@ -33,6 +34,5 @@ namespace TruckerApp
         public virtual DbSet<Queue> Queues { get; set; }
         public virtual DbSet<SeriesPrice> SeriesPrices { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<BankAccNum> BankAccNums { get; set; }
     }
 }

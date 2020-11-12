@@ -349,6 +349,7 @@
     <edmx:ConceptualModels>
       <Schema Namespace="TruckersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="TruckersEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BankAccNums" EntityType="TruckersModel.BankAccNum" />
           <EntitySet Name="Cashes" EntityType="TruckersModel.Cash" />
           <EntitySet Name="Commissions" EntityType="TruckersModel.Commission" />
           <EntitySet Name="Drivers" EntityType="TruckersModel.Driver" />
@@ -409,8 +410,19 @@
             <End Role="User" EntitySet="Users" />
             <End Role="SeriesPrice" EntitySet="SeriesPrices" />
           </AssociationSet>
-          <EntitySet Name="BankAccNums" EntityType="TruckersModel.BankAccNum" />
         </EntityContainer>
+        <EntityType Name="BankAccNum">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="BankName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AccNumber" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="AccCart" Type="String" MaxLength="19" FixedLength="true" Unicode="false" />
+          <Property Name="AccISBN" Type="String" MaxLength="26" FixedLength="true" Unicode="false" />
+          <Property Name="Editor" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="Cash">
           <Key>
             <PropertyRef Name="CashID" />
@@ -701,24 +713,25 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="BankAccNum">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FullName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="BankName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AccNumber" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
-          <Property Name="AccCart" Type="String" MaxLength="19" FixedLength="true" Unicode="false" />
-          <Property Name="AccISBN" Type="String" MaxLength="26" FixedLength="true" Unicode="false" />
-          <Property Name="Editor" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="TruckersModelStoreContainer" CdmEntityContainer="TruckersEntities">
+          <EntitySetMapping Name="BankAccNums">
+            <EntityTypeMapping TypeName="TruckersModel.BankAccNum">
+              <MappingFragment StoreEntitySet="BankAccNum">
+                <ScalarProperty Name="Editor" ColumnName="Editor" />
+                <ScalarProperty Name="AccISBN" ColumnName="AccISBN" />
+                <ScalarProperty Name="AccCart" ColumnName="AccCart" />
+                <ScalarProperty Name="AccNumber" ColumnName="AccNumber" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Cashes">
             <EntityTypeMapping TypeName="TruckersModel.Cash">
               <MappingFragment StoreEntitySet="Cash">
@@ -832,19 +845,6 @@
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="userID" ColumnName="userID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BankAccNums">
-            <EntityTypeMapping TypeName="TruckersModel.BankAccNum">
-              <MappingFragment StoreEntitySet="BankAccNum">
-                <ScalarProperty Name="Editor" ColumnName="Editor" />
-                <ScalarProperty Name="AccISBN" ColumnName="AccISBN" />
-                <ScalarProperty Name="AccCart" ColumnName="AccCart" />
-                <ScalarProperty Name="AccNumber" ColumnName="AccNumber" />
-                <ScalarProperty Name="BankName" ColumnName="BankName" />
-                <ScalarProperty Name="FullName" ColumnName="FullName" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

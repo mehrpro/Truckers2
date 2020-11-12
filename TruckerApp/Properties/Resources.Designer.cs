@@ -473,6 +473,16 @@ namespace TruckerApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_administrator_male_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-administrator-male-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_bill_96 {
             get {
                 object obj = ResourceManager.GetObject("icons8-bill-96", resourceCulture);
@@ -673,6 +683,16 @@ namespace TruckerApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_checked_user_male_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-checked-user-male-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_circled_2_c_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-circled-2-c-48", resourceCulture);
@@ -843,6 +863,16 @@ namespace TruckerApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_key_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-key-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_label_printer_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-label-printer-48", resourceCulture);
@@ -986,6 +1016,16 @@ namespace TruckerApp.Properties {
         internal static System.Drawing.Bitmap icons8_undo_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-undo-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-user-40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
