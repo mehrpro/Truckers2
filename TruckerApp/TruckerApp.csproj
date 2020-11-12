@@ -535,6 +535,16 @@
       <DependentUpon>MDB.edmx</DependentUpon>
       <LastGenOutput>MDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-triangular-ruler-48.png" />
+    <None Include="Resources\icons8-database-administrator-40.png" />
+    <None Include="Resources\icons8-add-database-401.png" />
+    <None Include="Resources\icons8-add-database-40.png" />
+    <None Include="Resources\icons8-data-backup-40.png" />
+    <None Include="Resources\icons8-database-restore-40.png" />
+    <None Include="Resources\icons8-data-backup-48.png" />
+    <None Include="Resources\icons8-add-database-48.png" />
+    <None Include="Resources\icons8-email-open-48.png" />
+    <None Include="Resources\icons8-sms-48.png" />
     <None Include="Resources\icons8-landlord-48.png" />
     <None Include="Resources\documentmap_32x32.png" />
     <None Include="Resources\icons8-add-database-32.png" />

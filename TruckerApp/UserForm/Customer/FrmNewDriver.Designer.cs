@@ -270,7 +270,6 @@
             // 
             this.txtTagNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTagNumber.EditValue = "";
-            this.txtTagNumber.Enabled = false;
             this.txtTagNumber.Location = new System.Drawing.Point(41, 237);
             this.txtTagNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTagNumber.Name = "txtTagNumber";

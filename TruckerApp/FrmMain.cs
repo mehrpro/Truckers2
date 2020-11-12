@@ -499,5 +499,10 @@ namespace TruckerApp
             newForm.StartPosition = FormStartPosition.CenterParent;
             newForm.ShowDialog();
         }
+
+        private void backstageViewClientControl2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
