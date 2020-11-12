@@ -8,7 +8,7 @@ using TruckerApp.Repository;
 
 namespace TruckerApp
 {
-    public partial class FrmUser : Form
+    public partial class FrmUser : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         private readonly IAdministrator _administrator;
         private bool CameraMode;

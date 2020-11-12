@@ -160,6 +160,7 @@
             this.cbxUsername.Properties.PopupSizeable = false;
             this.cbxUsername.Size = new System.Drawing.Size(225, 24);
             this.cbxUsername.TabIndex = 1;
+            this.cbxUsername.EditValueChanged += new System.EventHandler(this.cbxUsername_EditValueChanged);
             // 
             // FrmLogin
             // 

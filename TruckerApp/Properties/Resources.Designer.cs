@@ -63,9 +63,9 @@ namespace TruckerApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _10 {
+        internal static System.Drawing.Bitmap addnewdatasource_16x16 {
             get {
-                object obj = ResourceManager.GetObject("10", resourceCulture);
+                object obj = ResourceManager.GetObject("addnewdatasource_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,59 +73,9 @@ namespace TruckerApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _۱۱ {
+        internal static System.Drawing.Bitmap addnewdatasource_32x32 {
             get {
-                object obj = ResourceManager.GetObject("۱۱", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _12 {
-            get {
-                object obj = ResourceManager.GetObject("12", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _۱۲ {
-            get {
-                object obj = ResourceManager.GetObject("۱۲", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _۱۳ {
-            get {
-                object obj = ResourceManager.GetObject("۱۳", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _۱۴ {
-            get {
-                object obj = ResourceManager.GetObject("۱۴", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _3666 {
-            get {
-                object obj = ResourceManager.GetObject("3666", resourceCulture);
+                object obj = ResourceManager.GetObject("addnewdatasource_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,26 +116,6 @@ namespace TruckerApp.Properties {
         internal static System.Drawing.Bitmap backward_16x161 {
             get {
                 object obj = ResourceManager.GetObject("backward_16x161", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap BunkerCement {
-            get {
-                object obj = ResourceManager.GetObject("BunkerCement", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap BunkerCement1 {
-            get {
-                object obj = ResourceManager.GetObject("BunkerCement1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -373,6 +303,16 @@ namespace TruckerApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap documentmap_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("documentmap_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap editcontact_16x16 {
             get {
                 object obj = ResourceManager.GetObject("editcontact_16x16", resourceCulture);
@@ -486,6 +426,16 @@ namespace TruckerApp.Properties {
         internal static System.Drawing.Bitmap group2_32x32 {
             get {
                 object obj = ResourceManager.GetObject("group2_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_database_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-add-database-32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -753,6 +703,26 @@ namespace TruckerApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_data_backup_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-data-backup-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_database_restore_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-database-restore-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_driver_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-driver-48", resourceCulture);
@@ -796,6 +766,16 @@ namespace TruckerApp.Properties {
         internal static System.Drawing.Bitmap icons8_label_printer_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-label-printer-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_landlord_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-landlord-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -913,49 +893,9 @@ namespace TruckerApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap images {
-            get {
-                object obj = ResourceManager.GetObject("images", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap newcontact_32x32 {
             get {
                 object obj = ResourceManager.GetObject("newcontact_32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap oil_well_cement_500x500 {
-            get {
-                object obj = ResourceManager.GetObject("oil-well-cement-500x500", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap oil_well_cement_500x5001 {
-            get {
-                object obj = ResourceManager.GetObject("oil-well-cement-500x5001", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pact {
-            get {
-                object obj = ResourceManager.GetObject("pact", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1166,46 +1106,6 @@ namespace TruckerApp.Properties {
         internal static System.Drawing.Bitmap stop_32x321 {
             get {
                 object obj = ResourceManager.GetObject("stop_32x321", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap truck {
-            get {
-                object obj = ResourceManager.GetObject("truck", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap truck2 {
-            get {
-                object obj = ResourceManager.GetObject("truck2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap unnamed {
-            get {
-                object obj = ResourceManager.GetObject("unnamed", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap لشدیخپ {
-            get {
-                object obj = ResourceManager.GetObject("لشدیخپ", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

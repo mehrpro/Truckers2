@@ -535,6 +535,13 @@
       <DependentUpon>MDB.edmx</DependentUpon>
       <LastGenOutput>MDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-landlord-48.png" />
+    <None Include="Resources\documentmap_32x32.png" />
+    <None Include="Resources\icons8-add-database-32.png" />
+    <None Include="Resources\icons8-database-restore-32.png" />
+    <None Include="Resources\icons8-data-backup-32.png" />
+    <None Include="Resources\addnewdatasource_16x16.png" />
+    <None Include="Resources\addnewdatasource_32x32.png" />
     <None Include="Resources\financial_32x321.png" />
     <None Include="Resources\financial_16x16.png" />
     <None Include="Resources\financial_32x32.png" />
@@ -621,8 +628,6 @@
     <None Include="Resources\icons8-undo-128.png" />
     <None Include="Resources\icons8-bill-96.png" />
     <None Include="Resources\icons8-file-delete-64.png" />
-    <None Include="Resources\3666.png" />
-    <None Include="Resources\images.jpg" />
     <None Include="Resources\icons8-transaction-list-48.png" />
     <None Include="Resources\icons8-bulleted-list-48.png" />
     <None Include="Resources\icons8-mail-statistics-48.png" />
@@ -632,21 +637,6 @@
     <None Include="Resources\automation.png" />
     <None Include="Resources\icons8-expensive-price-48.png" />
     <None Include="Resources\icons8-label-printer-48.png" />
-    <None Include="Resources\truck2.jpg" />
-    <None Include="Resources\truck.jpg" />
-    <None Include="Resources\۱۴.jpg" />
-    <None Include="Resources\۱۳.jpg" />
-    <None Include="Resources\۱۲.png" />
-    <None Include="Resources\12.png" />
-    <None Include="Resources\۱۱.png" />
-    <None Include="Resources\10.png" />
-    <None Include="Resources\unnamed.jpg" />
-    <None Include="Resources\pact.jfif" />
-    <None Include="Resources\لشدیخپ.png" />
-    <None Include="Resources\oil-well-cement-500x5001.jpg" />
-    <None Include="Resources\oil-well-cement-500x500.jpg" />
-    <None Include="Resources\BunkerCement.png" />
-    <None Include="Resources\BunkerCement.jfif" />
     <None Include="Resources\icons8-list-48.png" />
     <None Include="Resources\icons8-driver-48.png" />
   </ItemGroup>

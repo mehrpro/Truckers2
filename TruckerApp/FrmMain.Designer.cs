@@ -30,7 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu();
+            this.backstageViewControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
+            this.backstageViewClientControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
+            this.btnSoftwareLicense = new DevExpress.XtraEditors.SimpleButton();
+            this.backstageViewClientControl2 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
+            this.backstageViewTabItem1 = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
+            this.backstageViewTabItem2 = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.btnAddDriver = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btnMemberShipList = new DevExpress.XtraBars.BarButtonItem();
@@ -94,13 +99,16 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
+            this.backstageViewControl1.SuspendLayout();
+            this.backstageViewClientControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
             // 
-            this.ribbonControl1.ApplicationButtonDropDownControl = this.applicationMenu1;
+            this.ribbonControl1.ApplicationButtonDropDownControl = this.backstageViewControl1;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -161,14 +169,68 @@
             this.ribbonPage5,
             this.ribbonPage3,
             this.ribSetting});
-            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
+            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl1.Size = new System.Drawing.Size(989, 162);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
-            // applicationMenu1
+            // backstageViewControl1
             // 
-            this.applicationMenu1.Name = "applicationMenu1";
-            this.applicationMenu1.Ribbon = this.ribbonControl1;
+            this.backstageViewControl1.Controls.Add(this.backstageViewClientControl1);
+            this.backstageViewControl1.Controls.Add(this.backstageViewClientControl2);
+            this.backstageViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.backstageViewControl1.Items.Add(this.backstageViewTabItem1);
+            this.backstageViewControl1.Items.Add(this.backstageViewTabItem2);
+            this.backstageViewControl1.Location = new System.Drawing.Point(0, 162);
+            this.backstageViewControl1.Name = "backstageViewControl1";
+            this.backstageViewControl1.OwnerControl = this.ribbonControl1;
+            this.backstageViewControl1.SelectedTab = this.backstageViewTabItem1;
+            this.backstageViewControl1.SelectedTabIndex = 0;
+            this.backstageViewControl1.Size = new System.Drawing.Size(989, 398);
+            this.backstageViewControl1.TabIndex = 3;
+            // 
+            // backstageViewClientControl1
+            // 
+            this.backstageViewClientControl1.Controls.Add(this.labelControl1);
+            this.backstageViewClientControl1.Controls.Add(this.btnSoftwareLicense);
+            this.backstageViewClientControl1.Location = new System.Drawing.Point(1, 65);
+            this.backstageViewClientControl1.Name = "backstageViewClientControl1";
+            this.backstageViewClientControl1.Size = new System.Drawing.Size(809, 332);
+            this.backstageViewClientControl1.TabIndex = 1;
+            // 
+            // btnSoftwareLicense
+            // 
+            this.btnSoftwareLicense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSoftwareLicense.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_landlord_48;
+            this.btnSoftwareLicense.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btnSoftwareLicense.Location = new System.Drawing.Point(636, 42);
+            this.btnSoftwareLicense.Name = "btnSoftwareLicense";
+            this.btnSoftwareLicense.Size = new System.Drawing.Size(105, 95);
+            this.btnSoftwareLicense.TabIndex = 0;
+            this.btnSoftwareLicense.Text = "مجوز نرم افزار";
+            // 
+            // backstageViewClientControl2
+            // 
+            this.backstageViewClientControl2.Location = new System.Drawing.Point(179, 64);
+            this.backstageViewClientControl2.Name = "backstageViewClientControl2";
+            this.backstageViewClientControl2.Size = new System.Drawing.Size(810, 334);
+            this.backstageViewClientControl2.TabIndex = 2;
+            // 
+            // backstageViewTabItem1
+            // 
+            this.backstageViewTabItem1.Caption = "اطلاعات پایه";
+            this.backstageViewTabItem1.CaptionHorizontalAlignment = DevExpress.Utils.Drawing.ItemHorizontalAlignment.Center;
+            this.backstageViewTabItem1.CaptionVerticalAlignment = DevExpress.Utils.Drawing.ItemVerticalAlignment.Center;
+            this.backstageViewTabItem1.ContentControl = this.backstageViewClientControl1;
+            this.backstageViewTabItem1.ImageOptions.ItemNormal.Image = global::TruckerApp.Properties.Resources.documentmap_32x32;
+            this.backstageViewTabItem1.Name = "backstageViewTabItem1";
+            this.backstageViewTabItem1.Selected = true;
+            // 
+            // backstageViewTabItem2
+            // 
+            this.backstageViewTabItem2.Caption = "بانک اطلاعاتی";
+            this.backstageViewTabItem2.ContentControl = this.backstageViewClientControl2;
+            this.backstageViewTabItem2.ImageOptions.ItemNormal.Image = global::TruckerApp.Properties.Resources.icons8_add_database_32;
+            this.backstageViewTabItem2.Name = "backstageViewTabItem2";
             // 
             // btnAddDriver
             // 
@@ -721,11 +783,24 @@
             this.ribbonStatusBar1.ItemLinks.Add(this.lblOperator);
             this.ribbonStatusBar1.ItemLinks.Add(this.barHeaderItem1);
             this.ribbonStatusBar1.ItemLinks.Add(this.skinDropDownButtonItem1);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 690);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 523);
             this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(989, 37);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Appearance.Options.UseTextOptions = true;
+            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl1.Location = new System.Drawing.Point(63, 42);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(567, 120);
+            this.labelControl1.TabIndex = 1;
+            this.labelControl1.Text = resources.GetString("labelControl1.Text");
             // 
             // FrmMain
             // 
@@ -733,8 +808,9 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(989, 727);
+            this.ClientSize = new System.Drawing.Size(989, 560);
             this.Controls.Add(this.ribbonStatusBar1);
+            this.Controls.Add(this.backstageViewControl1);
             this.Controls.Add(this.ribbonControl1);
             this.Font = new System.Drawing.Font("B Yekan", 12F);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
@@ -750,7 +826,9 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).EndInit();
+            this.backstageViewControl1.ResumeLayout(false);
+            this.backstageViewClientControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -774,7 +852,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribSetting;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
-        private DevExpress.XtraBars.Ribbon.ApplicationMenu applicationMenu1;
         private DevExpress.XtraBars.BarButtonItem btnSeries;
         private DevExpress.XtraBars.BarButtonItem btnReportDis;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
@@ -822,5 +899,12 @@
         private DevExpress.XtraBars.BarStaticItem lblOperator;
         private DevExpress.XtraBars.SkinDropDownButtonItem skinDropDownButtonItem1;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
+        private DevExpress.XtraBars.Ribbon.BackstageViewControl backstageViewControl1;
+        private DevExpress.XtraBars.Ribbon.BackstageViewClientControl backstageViewClientControl1;
+        private DevExpress.XtraBars.Ribbon.BackstageViewClientControl backstageViewClientControl2;
+        private DevExpress.XtraBars.Ribbon.BackstageViewTabItem backstageViewTabItem1;
+        private DevExpress.XtraBars.Ribbon.BackstageViewTabItem backstageViewTabItem2;
+        private DevExpress.XtraEditors.SimpleButton btnSoftwareLicense;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

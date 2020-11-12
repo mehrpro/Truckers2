@@ -52,5 +52,11 @@ namespace TruckerApp
         {
             cbxUsername.Properties.DataSource = await _administrator.GetAllUserForLogin();
         }
+
+        private void cbxUsername_EditValueChanged(object sender, EventArgs e)
+        {
+            txtPassword.Focus();
+            txtPassword.SelectAll();
+        }
     }
 }
