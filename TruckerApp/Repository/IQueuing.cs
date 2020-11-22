@@ -156,6 +156,7 @@ namespace TruckerApp.Repository
         /// <param name="queueId">شناسه حواله ی رسید شده</param>
         /// <returns></returns>
         Task<bool> Change23To20(int queueId);
+
     }
 
     public class Queuing : IQueuing
@@ -564,5 +565,7 @@ namespace TruckerApp.Repository
         {
             _db?.Dispose();
         }
+
+    
     }
 }

@@ -38,6 +38,7 @@
             this.txtTag = new DevExpress.XtraEditors.TextEdit();
             this.cbxCargoType = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtComossin = new DevExpress.XtraEditors.TextEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
@@ -69,7 +70,6 @@
             this.txtHosmand = new DevExpress.XtraEditors.TextEdit();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.chkMandeh = new DevExpress.XtraEditors.CheckEdit();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTag.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxCargoType.Properties)).BeginInit();
@@ -197,6 +197,15 @@
             this.gridView1.OptionsFind.AllowFindPanel = false;
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.gridColumn1.Caption = "نوع محموله";
+            this.gridColumn1.FieldName = "Type";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
             // 
             // txtComossin
             // 
@@ -634,17 +643,9 @@
             this.chkMandeh.Size = new System.Drawing.Size(225, 21);
             this.chkMandeh.TabIndex = 66;
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.gridColumn1.Caption = "نوع محموله";
-            this.gridColumn1.FieldName = "Type";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
             // FrmFishPrint
             // 
+            this.AcceptButton = this.btnPrint;
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

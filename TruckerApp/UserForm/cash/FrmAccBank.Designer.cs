@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -62,7 +63,7 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txtAccNumber = new DevExpress.XtraEditors.TextEdit();
-            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
+            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -259,7 +260,7 @@
             // Mobile2
             // 
             this.Mobile2.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.Mobile2.Caption = "شماره شبا";
+            this.Mobile2.Caption = "توضیحات";
             this.Mobile2.FieldName = "AccISBN";
             this.Mobile2.Name = "Mobile2";
             this.Mobile2.Visible = true;
@@ -384,9 +385,9 @@
             this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl5.Location = new System.Drawing.Point(572, 90);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(55, 17);
+            this.labelControl5.Size = new System.Drawing.Size(51, 17);
             this.labelControl5.TabIndex = 8;
-            this.labelControl5.Text = "شماره شبا";
+            this.labelControl5.Text = "توضیحات";
             // 
             // txtBankName
             // 

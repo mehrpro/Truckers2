@@ -277,6 +277,12 @@
     <Compile Include="UserForm\Fish\FrmRevFish333.Designer.cs">
       <DependentUpon>FrmRevFish333.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserForm\Fish\FrmRevFish3333.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\Fish\FrmRevFish3333.Designer.cs">
+      <DependentUpon>FrmRevFish3333.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForm\Reporting\FrmQueueListByDriver.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -482,6 +488,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\Fish\FrmRevFish333.resx">
       <DependentUpon>FrmRevFish333.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Fish\FrmRevFish3333.resx">
+      <DependentUpon>FrmRevFish3333.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\Fish\FrmSerial.resx">
       <DependentUpon>FrmSerial.cs</DependentUpon>
