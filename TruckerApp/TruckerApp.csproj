@@ -133,6 +133,7 @@
     </Compile>
     <Compile Include="ExtentionMethod\CryptoClass.cs" />
     <Compile Include="ExtentionMethod\Logger.cs" />
+    <Compile Include="PublicMessage.cs" />
     <Compile Include="PhoneBook.cs">
       <DependentUpon>MDB.tt</DependentUpon>
     </Compile>

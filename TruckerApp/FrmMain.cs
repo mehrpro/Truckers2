@@ -10,6 +10,7 @@ using TruckerApp.UserForm.cash;
 using TruckerApp.UserForm.Commission;
 using TruckerApp.UserForm.Customer;
 using TruckerApp.UserForm.Fish;
+using TruckerApp.UserForm.Reporting;
 
 
 namespace TruckerApp

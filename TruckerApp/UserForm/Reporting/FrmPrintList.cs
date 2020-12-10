@@ -1,23 +1,25 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Drawing.Printing;
-using System.Linq;
-using System.Threading.Tasks;
+using System.IO;
+using System.Text;
 using DevExpress.LookAndFeel;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraPrinting;
 using TruckerApp.Repository;
 
-namespace TruckerApp
+namespace TruckerApp.UserForm.Reporting
 {
     public partial class FrmPrintList : XtraForm
     {
         private readonly ICustomReport _customReport;
+        private readonly IReportSender _reportSender;
         public byte TypeId { get; set; }
-        public FrmPrintList(ICustomReport customReport)
+        public FrmPrintList(ICustomReport customReport, IReportSender reportSender)
         {
             InitializeComponent();
             _customReport = customReport;
+            _reportSender = reportSender;
 
         }
 
@@ -83,12 +85,47 @@ namespace TruckerApp
         private void FrmPrintList_Load(object sender, EventArgs e)
         {
             Grid();
+            if (TypeId == 3)
+            {
+                btnEmailFaster.Visible = true;
+            }
+            else
+            {
+                btnEmailFaster.Visible = false;
+            }
 
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private async void btnEmailFaster_Click(object sender, EventArgs e)
+        {
+
+            var str = new string[2];
+                var view = (GridView) gridControl1.MainView;
+                if (view != null)
+                {
+                    view.OptionsPrint.ExpandAllDetails = true; 
+                    view.ExportToPdf("temppdf.pdf");
+                }
+
+                str[0] = "temppdf.pdf";
+                str[1] = TypeId.ToString();
+                var result = await _reportSender.SendReportToEmail(str);
+                if (result)
+                {
+                   PublicMessage.SuccessSendEmail();
+                   
+                }
+                else
+                {
+                    PublicMessage.UnSuccessSendEmail();
+                }
+            
+
         }
     }
 }

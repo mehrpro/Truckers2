@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 using DevExpress.Utils.Extensions;
@@ -12,7 +14,7 @@ using TruckerApp.ExtentionMethod;
 
 namespace TruckerApp.Repository
 {
-    public interface IReportSender :IDisposable
+    public interface IReportSender : IDisposable
     {
         /// <summary>
         /// ساخت گزارش ارسالی برای ایمیل
@@ -27,11 +29,18 @@ namespace TruckerApp.Repository
         /// <param name="lastSeriesId">شناسه آخرین سریال فروش بسته شده</param>
         /// <returns></returns>
         Task<bool> EmailSenderTask(int lastSeriesId);
+
+        /// <summary>
+        /// ارسال گزارش به ایمیل سریع
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <returns></returns>
+        Task<bool> SendReportToEmail(string[] stream);
     }
 
     public class ReportSender : IReportSender
     {
-        private  TruckersEntities _db;
+        private TruckersEntities _db;
 
         public ReportSender(TruckersEntities db)
         {
@@ -92,6 +101,7 @@ namespace TruckerApp.Repository
 
         public async Task<bool> EmailSenderTask(int lastSeriesId)
         {
+
             try
             {
                 var resultMessage = await CreateMsgForEmail(lastSeriesId);
@@ -121,7 +131,7 @@ namespace TruckerApp.Repository
                 using (var message = new MailMessage(fromAddress, toAddress) { Subject = subject, Body = body, })
                 {
                     smtp.Send(message);
-                    
+
                 }
                 return true;
             }
@@ -131,6 +141,64 @@ namespace TruckerApp.Repository
                 return false;
             }
 
+        }
+
+        public async Task<bool> SendReportToEmail(string[] stream)
+        {
+
+            ContentType contentType = new ContentType
+            {
+                MediaType = MediaTypeNames.Application.Pdf,
+                Name = $"{DateTime.Now.PersianConvertorFull()}-Bijar.pdf",
+
+            };
+            try
+            {
+                var typeid = Convert.ToByte(stream[1]);
+               // var typeString = _db.LoadTypes.Single(x => x.TypeID == typeid).Type.ToString();
+               var typeString = @"غلات";
+                var subject = $"گزارش لیست نوبت {typeString} ";
+                var body = @"این گزارش توسط اتوماسیون پایانه انجمن رانندگان شهرستان بیجار برای شما ارسال شده است";
+                
+                const string from = @"automation.sepehr@gmail.com";
+                var fromDisplayName = @"اتوماسیون پایانه";
+                const string to = @"ramin.kh60@gmail.com";
+                var toDisplayName = $"ارسال گزارش {typeString} ";
+                const string fromPassword = "Ss987654@";
+
+                var fromAddress = new MailAddress(from, fromDisplayName);
+                var toAddress = new MailAddress(to, toDisplayName);
+
+                var smtp = new SmtpClient
+                {
+                    
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword),
+
+                };
+
+
+                using (var message = new MailMessage(fromAddress, toAddress)
+                {
+                    Subject = subject,
+                    Body = body, 
+                    Attachments = { new Attachment(stream[0],contentType)}
+                })
+                {
+                    smtp.Send(message);
+
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                var str = e.Message;
+                return false;
+            }
         }
 
         public void Dispose()

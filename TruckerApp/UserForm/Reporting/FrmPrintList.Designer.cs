@@ -1,4 +1,4 @@
-﻿namespace TruckerApp
+﻿namespace TruckerApp.UserForm.Reporting
 {
     partial class FrmPrintList
     {
@@ -44,6 +44,7 @@
             this.btnAllPrint = new DevExpress.XtraEditors.SimpleButton();
             this.txtTotal = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.btnEmailFaster = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -297,6 +298,7 @@
             this.panelControl1.Controls.Add(this.btnAllPrint);
             this.panelControl1.Controls.Add(this.txtTotal);
             this.panelControl1.Controls.Add(this.labelControl7);
+            this.panelControl1.Controls.Add(this.btnEmailFaster);
             this.panelControl1.Controls.Add(this.simpleButton9);
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.labelControl1);
@@ -356,6 +358,17 @@
             this.labelControl7.Size = new System.Drawing.Size(39, 17);
             this.labelControl7.TabIndex = 6;
             this.labelControl7.Text = "مجموع";
+            // 
+            // btnEmailFaster
+            // 
+            this.btnEmailFaster.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEmailFaster.ImageOptions.Image")));
+            this.btnEmailFaster.Location = new System.Drawing.Point(388, 72);
+            this.btnEmailFaster.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEmailFaster.Name = "btnEmailFaster";
+            this.btnEmailFaster.Size = new System.Drawing.Size(120, 50);
+            this.btnEmailFaster.TabIndex = 7;
+            this.btnEmailFaster.Text = "ایمیل سریع";
+            this.btnEmailFaster.Click += new System.EventHandler(this.btnEmailFaster_Click);
             // 
             // simpleButton9
             // 
@@ -486,5 +499,6 @@
         private DevExpress.XtraEditors.ToggleSwitch chkLastFish;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraEditors.SimpleButton btnClose;
+        private DevExpress.XtraEditors.SimpleButton btnEmailFaster;
     }
 }
