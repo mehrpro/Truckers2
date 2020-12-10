@@ -600,8 +600,8 @@
             // 
             this.btnDubPrinter.Caption = "چاپ مجدد رسید";
             this.btnDubPrinter.Id = 13;
-            this.btnDubPrinter.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.btnDubPrinter.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
+            this.btnDubPrinter.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDubPrinter.ImageOptions.Image")));
+            this.btnDubPrinter.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDubPrinter.ImageOptions.LargeImage")));
             this.btnDubPrinter.Name = "btnDubPrinter";
             this.btnDubPrinter.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
@@ -706,6 +706,7 @@
             this.btnChangePlate.ImageOptions.Image = global::TruckerApp.Properties.Resources.group2_16x16;
             this.btnChangePlate.ImageOptions.LargeImage = global::TruckerApp.Properties.Resources.group2_32x32;
             this.btnChangePlate.Name = "btnChangePlate";
+            this.btnChangePlate.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnChangePlate.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem15_ItemClick);
             // 
             // barButtonItem16
