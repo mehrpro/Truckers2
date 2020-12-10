@@ -28,9 +28,9 @@ namespace TruckerApp.UserForm.Customer
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtPlateEnglish.Text.Length < 12)
+            if (txtPlateEnglish.Text.Length < 12 && chkChangePlate.Checked)
             {
-                XtraMessageBox.Show(PublicVar.NotComplateForm, this.Text, MessageBoxButtons.OK,
+                XtraMessageBox.Show(@"پلاک صحیح وارد نشده است", this.Text, MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 return;
             }
@@ -127,12 +127,18 @@ namespace TruckerApp.UserForm.Customer
                 {
                     _oldDriver = await _customers.FindDriverByTag(txtPlateEnglish.Text);
 
-                    var dialogResult = XtraMessageBox.Show($"این پلاک متعلق است به {_oldDriver.FirstName + " " + _oldDriver.LastName} آیا قصد تغیر راننده را دارید", this.Text, MessageBoxButtons.YesNo,
-                         MessageBoxIcon.Question);
+                    var dialogResult = XtraMessageBox.Show(
+                        $"این پلاک متعلق است به {_oldDriver.FirstName + " " + _oldDriver.LastName} آیا قصد تغیر راننده را دارید",
+                        this.Text, MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
                     if (dialogResult == DialogResult.Yes)
                         _changeablePlate = true;
                     else
+                    {
                         _changeablePlate = false;
+
+                        chkChangePlate.Checked = false;
+                    }
 
                 }
             }

@@ -142,7 +142,6 @@
     <Compile Include="Repository\IReportSender.cs" />
     <Compile Include="Services\ANPR-API.cs" />
     <Compile Include="Services\AnprApi.cs" />
-    <Compile Include="Services\BindingList.cs" />
     <Compile Include="Cash.cs">
       <DependentUpon>MDB.tt</DependentUpon>
     </Compile>

@@ -36,7 +36,7 @@ namespace TruckerApp.Repository
 
     public class Counter : ICounter
     {
-        private readonly TruckersEntities _db;
+        private  TruckersEntities _db;
 
         public Counter(TruckersEntities db)
         {

@@ -31,7 +31,7 @@ namespace TruckerApp.Repository
 
     public class ReportSender : IReportSender
     {
-        private readonly TruckersEntities _db;
+        private  TruckersEntities _db;
 
         public ReportSender(TruckersEntities db)
         {

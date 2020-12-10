@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditDriver));
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule8 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
@@ -55,9 +51,6 @@
             this.txtSmartCart = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colSmartCart = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colFirstName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLastName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.txt1 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
@@ -67,6 +60,9 @@
             this.txtPlateEnglish = new DevExpress.XtraEditors.TextEdit();
             this.txt3 = new DevExpress.XtraEditors.TextEdit();
             this.chkChangePlate = new DevExpress.XtraEditors.CheckEdit();
+            this.colSmartCart = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFirstName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLastName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDriverCode.Properties)).BeginInit();
@@ -229,9 +225,9 @@
             this.txtPhoneNumber.Properties.MaxLength = 10;
             this.txtPhoneNumber.Size = new System.Drawing.Size(258, 24);
             this.txtPhoneNumber.TabIndex = 7;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.txtPhoneNumber, conditionValidationRule5);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtPhoneNumber, conditionValidationRule1);
             // 
             // txtLastNAme
             // 
@@ -243,9 +239,9 @@
             this.txtLastNAme.Properties.MaxLength = 49;
             this.txtLastNAme.Size = new System.Drawing.Size(258, 24);
             this.txtLastNAme.TabIndex = 5;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.txtLastNAme, conditionValidationRule6);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtLastNAme, conditionValidationRule2);
             // 
             // txtFirstName
             // 
@@ -257,9 +253,9 @@
             this.txtFirstName.Properties.MaxLength = 49;
             this.txtFirstName.Size = new System.Drawing.Size(258, 24);
             this.txtFirstName.TabIndex = 3;
-            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule7.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.txtFirstName, conditionValidationRule7);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtFirstName, conditionValidationRule3);
             // 
             // radComosiun
             // 
@@ -303,10 +299,10 @@
             this.txtSmartCart.Properties.ValueMember = "DriverID";
             this.txtSmartCart.Size = new System.Drawing.Size(258, 24);
             this.txtSmartCart.TabIndex = 1;
-            conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule8.ErrorText = "This value is not valid";
-            conditionValidationRule8.Value1 = "0";
-            this.dxValidationProvider1.SetValidationRule(this.txtSmartCart, conditionValidationRule8);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            conditionValidationRule4.Value1 = "0";
+            this.dxValidationProvider1.SetValidationRule(this.txtSmartCart, conditionValidationRule4);
             this.txtSmartCart.EditValueChanged += new System.EventHandler(this.txtSmartCart_EditValueChanged);
             // 
             // searchLookUpEdit1View
@@ -319,36 +315,6 @@
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // colSmartCart
-            // 
-            this.colSmartCart.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colSmartCart.Caption = "کارت هوشمند";
-            this.colSmartCart.FieldName = "SmartCart";
-            this.colSmartCart.Name = "colSmartCart";
-            this.colSmartCart.Visible = true;
-            this.colSmartCart.VisibleIndex = 0;
-            this.colSmartCart.Width = 302;
-            // 
-            // colFirstName
-            // 
-            this.colFirstName.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colFirstName.Caption = "نام ";
-            this.colFirstName.FieldName = "FirstName";
-            this.colFirstName.Name = "colFirstName";
-            this.colFirstName.Visible = true;
-            this.colFirstName.VisibleIndex = 1;
-            this.colFirstName.Width = 504;
-            // 
-            // colLastName
-            // 
-            this.colLastName.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.colLastName.Caption = "نلم خانوادگی";
-            this.colLastName.FieldName = "LastName";
-            this.colLastName.Name = "colLastName";
-            this.colLastName.Visible = true;
-            this.colLastName.VisibleIndex = 2;
-            this.colLastName.Width = 506;
             // 
             // txt1
             // 
@@ -367,11 +333,6 @@
             this.txt1.Properties.MaxLength = 2;
             this.txt1.Size = new System.Drawing.Size(43, 32);
             this.txt1.TabIndex = 17;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Between;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            conditionValidationRule1.Value1 = ((byte)(11));
-            conditionValidationRule1.Value2 = "99";
-            this.dxValidationProvider1.SetValidationRule(this.txt1, conditionValidationRule1);
             this.txt1.EditValueChanged += new System.EventHandler(this.txt1_EditValueChanged);
             this.txt1.Click += new System.EventHandler(this.txt1_Click);
             this.txt1.Enter += new System.EventHandler(this.txt1_Enter);
@@ -393,9 +354,6 @@
             this.textEdit2.Properties.ReadOnly = true;
             this.textEdit2.Size = new System.Drawing.Size(29, 32);
             this.textEdit2.TabIndex = 16;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.textEdit2, conditionValidationRule2);
             // 
             // txt2
             // 
@@ -414,11 +372,6 @@
             this.txt2.Properties.MaxLength = 3;
             this.txt2.Size = new System.Drawing.Size(65, 32);
             this.txt2.TabIndex = 15;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Between;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            conditionValidationRule3.Value1 = "001";
-            conditionValidationRule3.Value2 = "999";
-            this.dxValidationProvider1.SetValidationRule(this.txt2, conditionValidationRule3);
             this.txt2.EditValueChanged += new System.EventHandler(this.txt2_EditValueChanged);
             this.txt2.Click += new System.EventHandler(this.txt2_Click);
             this.txt2.Enter += new System.EventHandler(this.txt2_Enter);
@@ -486,11 +439,6 @@
             this.txt3.Properties.MaxLength = 2;
             this.txt3.Size = new System.Drawing.Size(43, 32);
             this.txt3.TabIndex = 14;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Between;
-            conditionValidationRule4.ErrorText = "This value is not valid";
-            conditionValidationRule4.Value1 = "01";
-            conditionValidationRule4.Value2 = "99";
-            this.dxValidationProvider1.SetValidationRule(this.txt3, conditionValidationRule4);
             this.txt3.EditValueChanged += new System.EventHandler(this.txt3_EditValueChanged);
             this.txt3.Click += new System.EventHandler(this.txt3_Click);
             this.txt3.Enter += new System.EventHandler(this.txt3_Enter);
@@ -506,6 +454,36 @@
             this.chkChangePlate.Size = new System.Drawing.Size(89, 21);
             this.chkChangePlate.TabIndex = 22;
             this.chkChangePlate.CheckedChanged += new System.EventHandler(this.chkChangePlate_CheckedChanged);
+            // 
+            // colSmartCart
+            // 
+            this.colSmartCart.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.colSmartCart.Caption = "کارت هوشمند";
+            this.colSmartCart.FieldName = "SmartCart";
+            this.colSmartCart.Name = "colSmartCart";
+            this.colSmartCart.Visible = true;
+            this.colSmartCart.VisibleIndex = 0;
+            this.colSmartCart.Width = 302;
+            // 
+            // colFirstName
+            // 
+            this.colFirstName.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.colFirstName.Caption = "نام ";
+            this.colFirstName.FieldName = "FirstName";
+            this.colFirstName.Name = "colFirstName";
+            this.colFirstName.Visible = true;
+            this.colFirstName.VisibleIndex = 1;
+            this.colFirstName.Width = 504;
+            // 
+            // colLastName
+            // 
+            this.colLastName.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.colLastName.Caption = "نلم خانوادگی";
+            this.colLastName.FieldName = "LastName";
+            this.colLastName.Name = "colLastName";
+            this.colLastName.Visible = true;
+            this.colLastName.VisibleIndex = 2;
+            this.colLastName.Width = 506;
             // 
             // FrmEditDriver
             // 

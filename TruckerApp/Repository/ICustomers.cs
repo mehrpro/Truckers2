@@ -111,7 +111,7 @@ namespace TruckerApp.Repository
 
     public class Customers : ICustomers
     {
-        private readonly TruckersEntities db;
+        private  TruckersEntities db;
 
         public Customers(TruckersEntities db)
         {
