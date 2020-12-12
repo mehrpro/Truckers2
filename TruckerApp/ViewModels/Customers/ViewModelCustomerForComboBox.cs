@@ -12,5 +12,8 @@ namespace TruckerApp.ViewModels.Customers
         public string PhoneNumber { get; set; }
         [Display(Name = "شماره هوشمند")]
         public int SmartCart { get; set; }
+        [Display(Name = "پلاک")]
+        public string PlateFarsi { get; set; }
+
     }
 }

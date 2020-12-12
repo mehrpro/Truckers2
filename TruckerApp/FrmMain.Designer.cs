@@ -116,6 +116,7 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.btnAllDriver = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
             this.backstageViewControl1.SuspendLayout();
@@ -175,10 +176,11 @@
             this.barStaticItem1,
             this.lblOperator,
             this.skinDropDownButtonItem1,
-            this.barHeaderItem1});
+            this.barHeaderItem1,
+            this.btnAllDriver});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.ribbonControl1.MaxItemId = 11;
+            this.ribbonControl1.MaxItemId = 12;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -883,6 +885,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnMemberShipList);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem14);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnAllDriver);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "مشتریان";
@@ -1024,6 +1027,15 @@
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(989, 37);
             // 
+            // btnAllDriver
+            // 
+            this.btnAllDriver.Caption = "لیست کل";
+            this.btnAllDriver.Id = 11;
+            this.btnAllDriver.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
+            this.btnAllDriver.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
+            this.btnAllDriver.Name = "btnAllDriver";
+            this.btnAllDriver.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAllDriver_ItemClick);
+            // 
             // FrmMain
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -1146,5 +1158,6 @@
         private DevExpress.XtraBars.Ribbon.BackstageViewTabItem btnUtility;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.SimpleButton simpleButton7;
+        private DevExpress.XtraBars.BarButtonItem btnAllDriver;
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DevExpress.CodeParser;
 using DevExpress.Data.ODataLinq.Helpers;
+using DevExpress.Utils.Extensions;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using TruckerApp.ViewModels.Customers;
 
@@ -54,7 +55,7 @@ namespace TruckerApp.Repository
         /// <param name="driver">اطلاعات راننده</param>
         /// <param name="oldDriver">شناسه راننده قبلی</param>
         /// <returns></returns>
-        Task<bool> EditDriverWithNewPlate(Driver driver , int oldDriver);
+        Task<bool> EditDriverWithNewPlate(Driver driver, int oldDriver);
         /// <summary>
         /// لیست رانندگان
         /// </summary>
@@ -111,7 +112,7 @@ namespace TruckerApp.Repository
 
     public class Customers : ICustomers
     {
-        private  TruckersEntities db;
+        private TruckersEntities db;
 
         public Customers(TruckersEntities db)
         {
@@ -183,7 +184,7 @@ namespace TruckerApp.Repository
             }
         }
 
-        public async Task<bool> EditDriverWithNewPlate(Driver driver , int oldDriver)
+        public async Task<bool> EditDriverWithNewPlate(Driver driver, int oldDriver)
         {
             using (var trans = db.Database.BeginTransaction())
             {
@@ -198,7 +199,7 @@ namespace TruckerApp.Repository
                     }
                     else
                     {
-                        var old = await  db.Drivers.FindAsync(oldDriver);
+                        var old = await db.Drivers.FindAsync(oldDriver);
                         old.Tag = old.TagNumber = @"No_Set";
                         await db.SaveChangesAsync();
                         var result = await EditDriver(driver);
@@ -222,22 +223,24 @@ namespace TruckerApp.Repository
             return await db.Drivers.ToListAsync();
         }
 
+
         public async Task<List<ViewModelCustomerForComboBox>> GetAllDriverForComboBox()
         {
             var qry = await db.Drivers.ToListAsync();
-            var list = new List<ViewModelCustomerForComboBox>();
+            var _list = new List<ViewModelCustomerForComboBox>();
             foreach (var item in qry)
             {
-                list.Add(new ViewModelCustomerForComboBox
+                _list.Add(new ViewModelCustomerForComboBox
                 {
                     DriverID = item.DriverID,
                     FullName = $"{item.FirstName} {item.LastName}",
                     PhoneNumber = item.PhoneNumber,
-                    SmartCart = item.SmartCart
+                    SmartCart = item.SmartCart,
+                    PlateFarsi = item.TagNumber,
+
                 });
             }
-
-            return list;
+            return _list;
         }
 
         public async Task<List<Driver>> GetAllDriverByGroupID(byte groupId)
@@ -316,7 +319,7 @@ namespace TruckerApp.Repository
                         ne.Jobs = driver.Jobs;
                         ne.DriverID_FK = (int)driver.DriverID_FK;
                         db.PhoneBooks.Add(ne);
-                        var re =  await db.SaveChangesAsync();
+                        var re = await db.SaveChangesAsync();
                         //var reslt = ManageAddressBook(ne);
                         //if (!reslt) continue;
                     }

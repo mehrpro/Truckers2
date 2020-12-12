@@ -84,5 +84,18 @@ namespace TruckerApp
             Properties.Settings.Default.Save();
             CameraModeChange();
         }
+
+        private async void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            var result = await _administrator.ConvertPlateFarsi();
+            if (result)
+            {
+                XtraMessageBox.Show(" انجام شد");
+            }
+            else
+            {
+                XtraMessageBox.Show(" انجام نشد");
+            }
+        }
     }
 }

@@ -505,5 +505,15 @@ namespace TruckerApp
         {
 
         }
+
+        private void btnAllDriver_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var newForm = _mainContainer.GetInstance<FrmMembershipList3>();
+            newForm.FormBorderStyle = FormBorderStyle.Sizable;
+            newForm.WindowState = FormWindowState.Maximized;
+            newForm.MaximizeBox = newForm.MinimizeBox = true;
+            newForm.StartPosition = FormStartPosition.CenterParent;
+            newForm.ShowDialog();
+        }
     }
 }

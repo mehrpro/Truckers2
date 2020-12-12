@@ -78,6 +78,12 @@ namespace TruckerApp.Repository
         /// <returns></returns>
         Task<List<BankAccNum>> GatAllBankNumber();
 
+        /// <summary>
+        /// اصلاح پلاک فارسی
+        /// </summary>
+        /// <returns></returns>
+        Task<bool> ConvertPlateFarsi();
+
 
 
 
@@ -276,6 +282,37 @@ namespace TruckerApp.Repository
         public async Task<List<BankAccNum>> GatAllBankNumber()
         {
           return await db.BankAccNums.ToListAsync();
+        }
+
+        public async Task<bool> ConvertPlateFarsi()
+        {
+            try
+            {
+                await db.Drivers.ForEachAsync(item => Action(item));
+                await db.SaveChangesAsync();
+                return true;
+            }
+            catch 
+            {
+                return false;
+            }
+
+        }
+
+        private void Action(Driver obj)
+        {
+            //1 2 3 4 5 6 7 8 9 10 11 12
+            //1 2 - A i n - 8 9 10 11 12
+            var tag = obj.Tag.ToCharArray();
+            if (tag.Length == 12)
+            {
+                obj.TagNumber = $"ایران {tag[10]}{tag[11]} {tag[7]}{tag[8]}{tag[9]}ع{tag[0]}{tag[1]}";
+            }
+            else
+            {
+                obj.TagNumber = "No_Set";
+            }
+
         }
 
 

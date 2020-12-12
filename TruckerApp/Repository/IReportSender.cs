@@ -48,6 +48,7 @@ namespace TruckerApp.Repository
         }
 
 
+
         public async Task<string[]> CreateMsgForEmail(int lastSeriesId)
         {
 

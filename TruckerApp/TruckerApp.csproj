@@ -253,6 +253,12 @@
     <Compile Include="UserForm\Customer\FrmEditDriver.Designer.cs">
       <DependentUpon>FrmEditDriver.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserForm\Customer\FrmMembershipList3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\Customer\FrmMembershipList3.Designer.cs">
+      <DependentUpon>FrmMembershipList3.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForm\Customer\FrmNewDriver.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -452,6 +458,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\Customer\FrmEditDriver.resx">
       <DependentUpon>FrmEditDriver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Customer\FrmMembershipList3.resx">
+      <DependentUpon>FrmMembershipList3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\Customer\FrmNewDriver.resx">
       <DependentUpon>FrmNewDriver.cs</DependentUpon>
