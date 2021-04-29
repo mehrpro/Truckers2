@@ -61,6 +61,7 @@ namespace TruckerApp
             var frm = _mainContainer.GetInstance<FrmCommissionNative>();
             frm.Group1 = 14;
             frm.GroupType4 = 13;
+            frm.GroupType2 = 19;
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.ShowDialog();
 
@@ -152,6 +153,7 @@ namespace TruckerApp
             var frm = _mainContainer.GetInstance<FrmCommissionNative>();
             frm.Group1 = 15;
             frm.GroupType4 = 17;
+            frm.GroupType2 = 21;
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.ShowDialog();
         }
@@ -161,6 +163,8 @@ namespace TruckerApp
             var frm = _mainContainer.GetInstance<FrmCommissionNative>();
             frm.Group1 = 16;
             frm.GroupType4 = 18;
+            frm.GroupType2 = 22;
+
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.ShowDialog();
         }

@@ -11,6 +11,7 @@ namespace TruckerApp.UserForm.Commission
         private readonly ICustomers _customers;
         public byte Group1 { get; set; }
         public byte GroupType4 { get; set; }
+        public byte GroupType2 { get; set; }
 
         public FrmCommissionNative(ICustomers customers)
         {
@@ -21,14 +22,16 @@ namespace TruckerApp.UserForm.Commission
 
         private async void GridList1()
         {
-            
+
             //var qry = dbContext.Commissions.Where(x => x.Groups_FK == groupid).ToList().OrderByDescending(x=> x.CommissionID);
-       
-                var list = await _customers.GetCommissinByGroupId(Group1);
-                gridControl1.DataSource = list.OrderByDescending(x => x.CommissionID);
-                var list2 = await _customers.GetCommissinByGroupId(GroupType4);
-                gridControl2.DataSource = list2.OrderByDescending(x => x.CommissionID);
-            
+
+            var list = await _customers.GetCommissinByGroupId(Group1);
+            gridControl1.DataSource = list.OrderByDescending(x => x.CommissionID);
+            var list2 = await _customers.GetCommissinByGroupId(GroupType4);
+            gridControl2.DataSource = list2.OrderByDescending(x => x.CommissionID);
+            var list3 = await _customers.GetCommissinByGroupId(GroupType2);
+            gridControl3.DataSource = list3.OrderByDescending(x => x.CommissionID);
+
 
 
         }
@@ -53,7 +56,7 @@ namespace TruckerApp.UserForm.Commission
         {
             if (dxValidationProvider2.Validate())
             {
-                var result = await _customers.AddNewCommision(GroupType4, Convert.ToInt32(txtComosin1.EditValue));
+                var result = await _customers.AddNewCommision(GroupType4, Convert.ToInt32(txtComosin2.EditValue));
                 if (result)
                 {
                     txtComosin1.Text = txtComosin2.Text = "";
@@ -79,7 +82,22 @@ namespace TruckerApp.UserForm.Commission
                     break;
             }
             GridList1();
-           // GridList1(GroupType4);
+            // GridList1(GroupType4);
+        }
+
+        private async void btnAdd3_Click(object sender, EventArgs e)
+        {
+            if (dxValidationProvider3.Validate())
+            {
+                var result = await _customers.AddNewCommision(GroupType2, Convert.ToInt32(txtComosin3.EditValue));
+                if (result)
+                {
+                    txtComosin1.Text = txtComosin2.Text = txtComosin3.Text = "";
+                    GridList1();
+                }
+            }
+            else
+                XtraMessageBox.Show("مقادیر را درست وارد کنید", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

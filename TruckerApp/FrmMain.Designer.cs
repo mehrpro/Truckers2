@@ -31,9 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.backstageViewControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
-            this.backstageViewClientControl3 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
             this.backstageViewClientControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -50,6 +47,9 @@
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.backstageViewClientControl3 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
             this.backstageViewTabItem1 = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.backstageViewTabItem2 = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.btnUtility = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
@@ -99,6 +99,8 @@
             this.lblOperator = new DevExpress.XtraBars.BarStaticItem();
             this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
+            this.btnAllDriver = new DevExpress.XtraBars.BarButtonItem();
+            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -116,13 +118,12 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.btnAllDriver = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
             this.backstageViewControl1.SuspendLayout();
-            this.backstageViewClientControl3.SuspendLayout();
             this.backstageViewClientControl1.SuspendLayout();
             this.backstageViewClientControl2.SuspendLayout();
+            this.backstageViewClientControl3.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -177,10 +178,11 @@
             this.lblOperator,
             this.skinDropDownButtonItem1,
             this.barHeaderItem1,
-            this.btnAllDriver});
+            this.btnAllDriver,
+            this.barStaticItem2});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.ribbonControl1.MaxItemId = 12;
+            this.ribbonControl1.MaxItemId = 13;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -195,9 +197,9 @@
             // 
             // backstageViewControl1
             // 
-            this.backstageViewControl1.Controls.Add(this.backstageViewClientControl3);
             this.backstageViewControl1.Controls.Add(this.backstageViewClientControl1);
             this.backstageViewControl1.Controls.Add(this.backstageViewClientControl2);
+            this.backstageViewControl1.Controls.Add(this.backstageViewClientControl3);
             this.backstageViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.backstageViewControl1.Items.Add(this.backstageViewTabItem1);
             this.backstageViewControl1.Items.Add(this.backstageViewTabItem2);
@@ -205,18 +207,219 @@
             this.backstageViewControl1.Location = new System.Drawing.Point(0, 162);
             this.backstageViewControl1.Name = "backstageViewControl1";
             this.backstageViewControl1.OwnerControl = this.ribbonControl1;
-            this.backstageViewControl1.SelectedTab = this.btnUtility;
-            this.backstageViewControl1.SelectedTabIndex = 2;
-            this.backstageViewControl1.Size = new System.Drawing.Size(989, 591);
+            this.backstageViewControl1.SelectedTab = this.backstageViewTabItem1;
+            this.backstageViewControl1.SelectedTabIndex = 0;
+            this.backstageViewControl1.Size = new System.Drawing.Size(989, 597);
             this.backstageViewControl1.TabIndex = 3;
+            // 
+            // backstageViewClientControl1
+            // 
+            this.backstageViewClientControl1.Controls.Add(this.labelControl3);
+            this.backstageViewClientControl1.Controls.Add(this.labelControl2);
+            this.backstageViewClientControl1.Controls.Add(this.labelControl1);
+            this.backstageViewClientControl1.Controls.Add(this.simpleButton2);
+            this.backstageViewClientControl1.Controls.Add(this.simpleButton1);
+            this.backstageViewClientControl1.Controls.Add(this.btnSoftwareLicense);
+            this.backstageViewClientControl1.Location = new System.Drawing.Point(1, 65);
+            this.backstageViewClientControl1.Name = "backstageViewClientControl1";
+            this.backstageViewClientControl1.Size = new System.Drawing.Size(809, 531);
+            this.backstageViewClientControl1.TabIndex = 1;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl3.Appearance.Options.UseTextOptions = true;
+            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelControl3.Location = new System.Drawing.Point(63, 321);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(538, 34);
+            this.labelControl3.TabIndex = 1;
+            this.labelControl3.Text = "سیستم ارسال سریع پست الکترونیکی\r\nبرای ارسال  گزارشات روزانه به صاحب امتیاز نرم اف" +
+    "زار از این بخش استفاده کنید";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl2.Appearance.Options.UseTextOptions = true;
+            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelControl2.Location = new System.Drawing.Point(63, 150);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(538, 85);
+            this.labelControl2.TabIndex = 1;
+            this.labelControl2.Text = resources.GetString("labelControl2.Text");
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Appearance.Options.UseTextOptions = true;
+            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelControl1.Location = new System.Drawing.Point(63, 30);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(538, 102);
+            this.labelControl1.TabIndex = 1;
+            this.labelControl1.Text = resources.GetString("labelControl1.Text");
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton2.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_email_open_48;
+            this.simpleButton2.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton2.Location = new System.Drawing.Point(632, 270);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(105, 85);
+            this.simpleButton2.TabIndex = 0;
+            this.simpleButton2.Text = "پست الکترونیکی";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton1.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_sms_48;
+            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton1.Location = new System.Drawing.Point(632, 150);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(105, 85);
+            this.simpleButton1.TabIndex = 0;
+            this.simpleButton1.Text = "پیام کوتاه";
+            // 
+            // btnSoftwareLicense
+            // 
+            this.btnSoftwareLicense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSoftwareLicense.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_landlord_48;
+            this.btnSoftwareLicense.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btnSoftwareLicense.Location = new System.Drawing.Point(632, 30);
+            this.btnSoftwareLicense.Name = "btnSoftwareLicense";
+            this.btnSoftwareLicense.Size = new System.Drawing.Size(105, 85);
+            this.btnSoftwareLicense.TabIndex = 0;
+            this.btnSoftwareLicense.Text = "مجوز نرم افزار";
+            // 
+            // backstageViewClientControl2
+            // 
+            this.backstageViewClientControl2.Controls.Add(this.labelControl6);
+            this.backstageViewClientControl2.Controls.Add(this.labelControl5);
+            this.backstageViewClientControl2.Controls.Add(this.labelControl7);
+            this.backstageViewClientControl2.Controls.Add(this.labelControl4);
+            this.backstageViewClientControl2.Controls.Add(this.simpleButton5);
+            this.backstageViewClientControl2.Controls.Add(this.simpleButton4);
+            this.backstageViewClientControl2.Controls.Add(this.simpleButton6);
+            this.backstageViewClientControl2.Controls.Add(this.simpleButton3);
+            this.backstageViewClientControl2.Location = new System.Drawing.Point(179, 64);
+            this.backstageViewClientControl2.Name = "backstageViewClientControl2";
+            this.backstageViewClientControl2.Size = new System.Drawing.Size(810, 533);
+            this.backstageViewClientControl2.TabIndex = 2;
+            this.backstageViewClientControl2.Load += new System.EventHandler(this.backstageViewClientControl2_Load);
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl6.Appearance.Options.UseTextOptions = true;
+            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelControl6.Location = new System.Drawing.Point(63, 287);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(505, 68);
+            this.labelControl6.TabIndex = 3;
+            this.labelControl6.Text = "بازیابی داده های پشتیبان گیری شده توسط خود نرم افزار\r\nاین بخش توسط مدیر سیستم قاب" +
+    "ل دسترسی است\r\nفایل های پشتیبان گیری شده بصورت رمز شده ذخیره می شوند\r\nاین فرآیند " +
+    "به دلایل امنیتی قرار داده شده است";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl5.Appearance.Options.UseTextOptions = true;
+            this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelControl5.Location = new System.Drawing.Point(63, 184);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(505, 51);
+            this.labelControl5.TabIndex = 3;
+            this.labelControl5.Text = "پشتیبان گیری از بانک اطلاعاتی\r\nاین بخش توسط کاربر قابل دسترسی است\r\nفایل در مسیر م" +
+    "شخص شده توسط مدیر سیستم ذخیره می شود";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl7.Appearance.Options.UseTextOptions = true;
+            this.labelControl7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelControl7.Location = new System.Drawing.Point(63, 81);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(505, 34);
+            this.labelControl7.TabIndex = 3;
+            this.labelControl7.Text = "تنظیمات ارتباط با بانک اطلاعاتی\r\nاین بخش توسط مدیر سیستم قابل دسترس است\r\n";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl4.Appearance.Options.UseTextOptions = true;
+            this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelControl4.Location = new System.Drawing.Point(63, 441);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(505, 34);
+            this.labelControl4.TabIndex = 3;
+            this.labelControl4.Text = "ساخت بانک اطلاعاتی \r\nاین بخش توسط مدیر سیستم قابل دسترسی است";
+            // 
+            // simpleButton5
+            // 
+            this.simpleButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton5.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_database_restore_40;
+            this.simpleButton5.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton5.Location = new System.Drawing.Point(633, 270);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(105, 85);
+            this.simpleButton5.TabIndex = 2;
+            this.simpleButton5.Text = "بازیابی داده";
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton4.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_data_backup_40;
+            this.simpleButton4.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton4.Location = new System.Drawing.Point(633, 150);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(105, 85);
+            this.simpleButton4.TabIndex = 2;
+            this.simpleButton4.Text = "پشتیبان گیری";
+            // 
+            // simpleButton6
+            // 
+            this.simpleButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton6.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_database_administrator_40;
+            this.simpleButton6.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton6.Location = new System.Drawing.Point(633, 30);
+            this.simpleButton6.Name = "simpleButton6";
+            this.simpleButton6.Size = new System.Drawing.Size(105, 85);
+            this.simpleButton6.TabIndex = 2;
+            this.simpleButton6.Text = "تنظیمات";
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton3.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_add_database_40;
+            this.simpleButton3.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.simpleButton3.Location = new System.Drawing.Point(633, 390);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(105, 85);
+            this.simpleButton3.TabIndex = 2;
+            this.simpleButton3.Text = "ایجاد بانک";
             // 
             // backstageViewClientControl3
             // 
             this.backstageViewClientControl3.Controls.Add(this.labelControl8);
             this.backstageViewClientControl3.Controls.Add(this.simpleButton7);
-            this.backstageViewClientControl3.Location = new System.Drawing.Point(1, 65);
+            this.backstageViewClientControl3.Location = new System.Drawing.Point(179, 64);
             this.backstageViewClientControl3.Name = "backstageViewClientControl3";
-            this.backstageViewClientControl3.Size = new System.Drawing.Size(809, 525);
+            this.backstageViewClientControl3.Size = new System.Drawing.Size(810, 533);
             this.backstageViewClientControl3.TabIndex = 3;
             // 
             // labelControl8
@@ -243,207 +446,6 @@
             this.simpleButton7.TabIndex = 4;
             this.simpleButton7.Text = "گزارش ساز";
             // 
-            // backstageViewClientControl1
-            // 
-            this.backstageViewClientControl1.Controls.Add(this.labelControl3);
-            this.backstageViewClientControl1.Controls.Add(this.labelControl2);
-            this.backstageViewClientControl1.Controls.Add(this.labelControl1);
-            this.backstageViewClientControl1.Controls.Add(this.simpleButton2);
-            this.backstageViewClientControl1.Controls.Add(this.simpleButton1);
-            this.backstageViewClientControl1.Controls.Add(this.btnSoftwareLicense);
-            this.backstageViewClientControl1.Location = new System.Drawing.Point(179, 64);
-            this.backstageViewClientControl1.Name = "backstageViewClientControl1";
-            this.backstageViewClientControl1.Size = new System.Drawing.Size(810, 527);
-            this.backstageViewClientControl1.TabIndex = 1;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Appearance.Options.UseTextOptions = true;
-            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl3.Location = new System.Drawing.Point(63, 321);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(539, 34);
-            this.labelControl3.TabIndex = 1;
-            this.labelControl3.Text = "سیستم ارسال سریع پست الکترونیکی\r\nبرای ارسال  گزارشات روزانه به صاحب امتیاز نرم اف" +
-    "زار از این بخش استفاده کنید";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Appearance.Options.UseTextOptions = true;
-            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl2.Location = new System.Drawing.Point(63, 150);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(539, 85);
-            this.labelControl2.TabIndex = 1;
-            this.labelControl2.Text = resources.GetString("labelControl2.Text");
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Appearance.Options.UseTextOptions = true;
-            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl1.Location = new System.Drawing.Point(63, 30);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(539, 85);
-            this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = resources.GetString("labelControl1.Text");
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton2.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_email_open_48;
-            this.simpleButton2.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton2.Location = new System.Drawing.Point(633, 270);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(105, 85);
-            this.simpleButton2.TabIndex = 0;
-            this.simpleButton2.Text = "پست الکترونیکی";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_sms_48;
-            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(633, 150);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(105, 85);
-            this.simpleButton1.TabIndex = 0;
-            this.simpleButton1.Text = "پیام کوتاه";
-            // 
-            // btnSoftwareLicense
-            // 
-            this.btnSoftwareLicense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSoftwareLicense.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_landlord_48;
-            this.btnSoftwareLicense.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.btnSoftwareLicense.Location = new System.Drawing.Point(633, 30);
-            this.btnSoftwareLicense.Name = "btnSoftwareLicense";
-            this.btnSoftwareLicense.Size = new System.Drawing.Size(105, 85);
-            this.btnSoftwareLicense.TabIndex = 0;
-            this.btnSoftwareLicense.Text = "مجوز نرم افزار";
-            // 
-            // backstageViewClientControl2
-            // 
-            this.backstageViewClientControl2.Controls.Add(this.labelControl6);
-            this.backstageViewClientControl2.Controls.Add(this.labelControl5);
-            this.backstageViewClientControl2.Controls.Add(this.labelControl7);
-            this.backstageViewClientControl2.Controls.Add(this.labelControl4);
-            this.backstageViewClientControl2.Controls.Add(this.simpleButton5);
-            this.backstageViewClientControl2.Controls.Add(this.simpleButton4);
-            this.backstageViewClientControl2.Controls.Add(this.simpleButton6);
-            this.backstageViewClientControl2.Controls.Add(this.simpleButton3);
-            this.backstageViewClientControl2.Location = new System.Drawing.Point(179, 64);
-            this.backstageViewClientControl2.Name = "backstageViewClientControl2";
-            this.backstageViewClientControl2.Size = new System.Drawing.Size(810, 527);
-            this.backstageViewClientControl2.TabIndex = 2;
-            this.backstageViewClientControl2.Load += new System.EventHandler(this.backstageViewClientControl2_Load);
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl6.Appearance.Options.UseTextOptions = true;
-            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl6.Location = new System.Drawing.Point(63, 287);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(506, 68);
-            this.labelControl6.TabIndex = 3;
-            this.labelControl6.Text = "بازیابی داده های پشتیبان گیری شده توسط خود نرم افزار\r\nاین بخش توسط مدیر سیستم قاب" +
-    "ل دسترسی است\r\nفایل های پشتیبان گیری شده بصورت رمز شده ذخیره می شوند\r\nاین فرآیند " +
-    "به دلایل امنیتی قرار داده شده است";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Appearance.Options.UseTextOptions = true;
-            this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl5.Location = new System.Drawing.Point(63, 184);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(506, 51);
-            this.labelControl5.TabIndex = 3;
-            this.labelControl5.Text = "پشتیبان گیری از بانک اطلاعاتی\r\nاین بخش توسط کاربر قابل دسترسی است\r\nفایل در مسیر م" +
-    "شخص شده توسط مدیر سیستم ذخیره می شود";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Appearance.Options.UseTextOptions = true;
-            this.labelControl7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl7.Location = new System.Drawing.Point(63, 81);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(506, 34);
-            this.labelControl7.TabIndex = 3;
-            this.labelControl7.Text = "تنظیمات ارتباط با بانک اطلاعاتی\r\nاین بخش توسط مدیر سیستم قابل دسترس است\r\n";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Appearance.Options.UseTextOptions = true;
-            this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl4.Location = new System.Drawing.Point(63, 441);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(506, 34);
-            this.labelControl4.TabIndex = 3;
-            this.labelControl4.Text = "ساخت بانک اطلاعاتی \r\nاین بخش توسط مدیر سیستم قابل دسترسی است";
-            // 
-            // simpleButton5
-            // 
-            this.simpleButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton5.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_database_restore_40;
-            this.simpleButton5.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton5.Location = new System.Drawing.Point(634, 270);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(105, 85);
-            this.simpleButton5.TabIndex = 2;
-            this.simpleButton5.Text = "بازیابی داده";
-            // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton4.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_data_backup_40;
-            this.simpleButton4.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton4.Location = new System.Drawing.Point(634, 150);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(105, 85);
-            this.simpleButton4.TabIndex = 2;
-            this.simpleButton4.Text = "پشتیبان گیری";
-            // 
-            // simpleButton6
-            // 
-            this.simpleButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton6.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_database_administrator_40;
-            this.simpleButton6.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton6.Location = new System.Drawing.Point(634, 30);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(105, 85);
-            this.simpleButton6.TabIndex = 2;
-            this.simpleButton6.Text = "تنظیمات";
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton3.ImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_add_database_40;
-            this.simpleButton3.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton3.Location = new System.Drawing.Point(634, 390);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(105, 85);
-            this.simpleButton3.TabIndex = 2;
-            this.simpleButton3.Text = "ایجاد بانک";
-            // 
             // backstageViewTabItem1
             // 
             this.backstageViewTabItem1.Caption = "اطلاعات پایه";
@@ -452,6 +454,7 @@
             this.backstageViewTabItem1.ContentControl = this.backstageViewClientControl1;
             this.backstageViewTabItem1.ImageOptions.ItemNormal.Image = global::TruckerApp.Properties.Resources.documentmap_32x32;
             this.backstageViewTabItem1.Name = "backstageViewTabItem1";
+            this.backstageViewTabItem1.Selected = true;
             // 
             // backstageViewTabItem2
             // 
@@ -466,7 +469,6 @@
             this.btnUtility.ContentControl = this.backstageViewClientControl3;
             this.btnUtility.ImageOptions.ItemNormal.Image = ((System.Drawing.Image)(resources.GetObject("btnUtility.ImageOptions.ItemNormal.Image")));
             this.btnUtility.Name = "btnUtility";
-            this.btnUtility.Selected = true;
             // 
             // btnAddDriver
             // 
@@ -867,6 +869,22 @@
             this.barHeaderItem1.Id = 10;
             this.barHeaderItem1.Name = "barHeaderItem1";
             // 
+            // btnAllDriver
+            // 
+            this.btnAllDriver.Caption = "لیست کل";
+            this.btnAllDriver.Id = 11;
+            this.btnAllDriver.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAllDriver.ImageOptions.Image")));
+            this.btnAllDriver.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAllDriver.ImageOptions.LargeImage")));
+            this.btnAllDriver.Name = "btnAllDriver";
+            this.btnAllDriver.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAllDriver_ItemClick);
+            // 
+            // barStaticItem2
+            // 
+            this.barStaticItem2.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barStaticItem2.Caption = "نسخه 990923";
+            this.barStaticItem2.Id = 12;
+            this.barStaticItem2.Name = "barStaticItem2";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Appearance.Options.UseTextOptions = true;
@@ -1021,20 +1039,12 @@
             this.ribbonStatusBar1.ItemLinks.Add(this.lblOperator);
             this.ribbonStatusBar1.ItemLinks.Add(this.barHeaderItem1);
             this.ribbonStatusBar1.ItemLinks.Add(this.skinDropDownButtonItem1);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 716);
+            this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem2);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 722);
             this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(989, 37);
-            // 
-            // btnAllDriver
-            // 
-            this.btnAllDriver.Caption = "لیست کل";
-            this.btnAllDriver.Id = 11;
-            this.btnAllDriver.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.btnAllDriver.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
-            this.btnAllDriver.Name = "btnAllDriver";
-            this.btnAllDriver.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAllDriver_ItemClick);
             // 
             // FrmMain
             // 
@@ -1042,7 +1052,7 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(989, 753);
+            this.ClientSize = new System.Drawing.Size(989, 759);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.backstageViewControl1);
             this.Controls.Add(this.ribbonControl1);
@@ -1062,9 +1072,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).EndInit();
             this.backstageViewControl1.ResumeLayout(false);
-            this.backstageViewClientControl3.ResumeLayout(false);
             this.backstageViewClientControl1.ResumeLayout(false);
             this.backstageViewClientControl2.ResumeLayout(false);
+            this.backstageViewClientControl3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1159,5 +1169,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.SimpleButton simpleButton7;
         private DevExpress.XtraBars.BarButtonItem btnAllDriver;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
     }
 }

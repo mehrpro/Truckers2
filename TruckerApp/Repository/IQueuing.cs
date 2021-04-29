@@ -199,6 +199,8 @@ namespace TruckerApp.Repository
                 {
                     if (typeId == 4)//کلینکر
                         return await GetCommissionByGroupId(13);
+                    if (typeId == 3)
+                        return await GetCommissionByGroupId(19);
                     return await GetCommissionByGroupId(14);
                 }
 
@@ -206,6 +208,8 @@ namespace TruckerApp.Repository
                 {
                     if (typeId == 4)// کلینکر
                         return await GetCommissionByGroupId(17);
+                    if (typeId == 3)
+                        return await GetCommissionByGroupId(21);
                     return await GetCommissionByGroupId(15);
 
                 }
@@ -214,6 +218,8 @@ namespace TruckerApp.Repository
             {
                 if (typeId == 4)//کلینکر
                     return await GetCommissionByGroupId(18);
+                if (typeId == 3)
+                    return await GetCommissionByGroupId(22);
                 return await GetCommissionByGroupId(16);
             }
 

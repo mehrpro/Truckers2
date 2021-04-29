@@ -16,7 +16,7 @@ namespace TruckerApp.UserForm.Fish
     public partial class FrmFishPrint : XtraForm
     {
 
-       // private bool jobCancel = false;
+        // private bool jobCancel = false;
         //private readonly TruckersEntities _db = new TruckersEntities();
         private int _driver, _series;
         private int _commission;
@@ -73,8 +73,8 @@ namespace TruckerApp.UserForm.Fish
             InitializeComponent();
             _queuing = queuing;
             _administrator = administrator;
-            
-           CamSetup();
+
+            CamSetup();
             PublicVar.play = false;
             btnSelectPlate.Enabled = false;
             chkMandeh.EditValue = false;
@@ -91,9 +91,9 @@ namespace TruckerApp.UserForm.Fish
                 _handleAnprEventsDelegate = new ANPR_EVENT_CALLBACK(HandleAnprEvents);
                 anpr_set_event_callback(_handleAnprEventsDelegate);
             }
-            catch 
+            catch
             {
-                
+
                 Close();
             }
 
@@ -148,7 +148,7 @@ namespace TruckerApp.UserForm.Fish
             if (InvokeRequired)
             {
                 //if (jobCancel)
-                   // System.Threading.Thread.CurrentThread.Abort();
+                // System.Threading.Thread.CurrentThread.Abort();
                 Invoke(_handleAnprEventsDelegate, eventType, stream, pltIdx);
                 return;
             }
@@ -425,16 +425,13 @@ namespace TruckerApp.UserForm.Fish
                 txtPhoneNumber.EditValue = null;
                 txtTag.EditValue = txtTagNumber.EditValue = null;
                 chkMandeh.EditValue = false;
-
                 return;
             }
-
             ChangeTypeId(selectType.TypeID);
             txtNumber.EditValue = await _queuing.GetLastNumberByTypeId(selectType.TypeID);
             var com = await _queuing.GetCommisinoByTypeIdAndByGroupId(selectType.TypeID, _group);
             txtComossin.EditValue = _commission = com.CommissionPrice;
             _commissionId = com.CommissionID;
-
         }
 
         private void simpleButton1_Click_1(object sender, EventArgs e)
@@ -690,7 +687,7 @@ namespace TruckerApp.UserForm.Fish
             {
                 if (_driver < 1)
                 {
-                    XtraMessageBox.Show("هیچ راننده ای انتخاب نشده است", Text, MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    XtraMessageBox.Show("هیچ راننده ای انتخاب نشده است", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -722,7 +719,7 @@ namespace TruckerApp.UserForm.Fish
                             {
                                 _seriesNumber = $"س {PublicVar.SeriesName}  شماره {Convert.ToInt16(txtNumber.EditValue)}";
                                 _number = await _queuing.GetScheduleByTypeId(newQueue.TypeFk);
-                                
+
                                 PrintFish();
                                 await _queuing.GetLastNumberByTypeId(Convert.ToByte(cbxCargoType.EditValue));
                                 cbxCargoType.EditValue = null;

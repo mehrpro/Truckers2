@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCommissionNative));
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
@@ -57,6 +58,18 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.dxValidationProvider2 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.gridControl3 = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnAdd3 = new DevExpress.XtraEditors.SimpleButton();
+            this.txtComosin3 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.dxValidationProvider3 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
@@ -71,6 +84,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtComosin1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtComosin3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -78,13 +97,14 @@
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.CaptionImageOptions.Image = global::TruckerApp.Properties.Resources.icons8_expensive_price_48;
+            this.groupControl1.Controls.Add(this.groupControl3);
             this.groupControl1.Controls.Add(this.groupControl5);
             this.groupControl1.Controls.Add(this.groupControl2);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(696, 471);
+            this.groupControl1.Size = new System.Drawing.Size(1040, 471);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "مصوبات حق کمیسیون رانندگان";
             // 
@@ -96,7 +116,7 @@
             this.groupControl5.Controls.Add(this.txtComosin2);
             this.groupControl5.Controls.Add(this.labelControl4);
             this.groupControl5.Controls.Add(this.labelControl3);
-            this.groupControl5.Location = new System.Drawing.Point(12, 63);
+            this.groupControl5.Location = new System.Drawing.Point(356, 63);
             this.groupControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl5.Name = "groupControl5";
             this.groupControl5.Size = new System.Drawing.Size(329, 397);
@@ -200,6 +220,7 @@
             this.gridView4.FixedLineWidth = 3;
             this.gridView4.GridControl = this.gridControl2;
             this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsBehavior.ReadOnly = true;
             this.gridView4.OptionsPrint.EnableAppearanceEvenRow = true;
             this.gridView4.OptionsPrint.EnableAppearanceOddRow = true;
             this.gridView4.OptionsView.ShowGroupPanel = false;
@@ -261,16 +282,15 @@
             this.txtComosin2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtComosin2.Name = "txtComosin2";
             this.txtComosin2.Parmida_ActivePlusMultiKeys = false;
-            this.txtComosin2.Properties.Appearance.Font = new System.Drawing.Font("B Yekan", 12F);
-            this.txtComosin2.Properties.Appearance.Options.UseFont = true;
             this.txtComosin2.Properties.Mask.EditMask = "d";
             this.txtComosin2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtComosin2.Properties.MaxLength = 6;
-            this.txtComosin2.Size = new System.Drawing.Size(211, 30);
+            this.txtComosin2.Size = new System.Drawing.Size(211, 24);
             this.txtComosin2.TabIndex = 0;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            this.dxValidationProvider2.SetValidationRule(this.txtComosin2, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            conditionValidationRule2.Value1 = 0;
+            this.dxValidationProvider2.SetValidationRule(this.txtComosin2, conditionValidationRule2);
             // 
             // labelControl4
             // 
@@ -304,7 +324,7 @@
             this.groupControl2.Controls.Add(this.txtComosin1);
             this.groupControl2.Controls.Add(this.labelControl2);
             this.groupControl2.Controls.Add(this.labelControl1);
-            this.groupControl2.Location = new System.Drawing.Point(355, 63);
+            this.groupControl2.Location = new System.Drawing.Point(699, 63);
             this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(329, 397);
@@ -408,6 +428,7 @@
             this.gridView1.FixedLineWidth = 3;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.OptionsPrint.EnableAppearanceEvenRow = true;
             this.gridView1.OptionsPrint.EnableAppearanceOddRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -474,9 +495,10 @@
             this.txtComosin1.Properties.MaxLength = 6;
             this.txtComosin1.Size = new System.Drawing.Size(209, 24);
             this.txtComosin1.TabIndex = 0;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.txtComosin1, conditionValidationRule2);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            conditionValidationRule3.Value1 = 0;
+            this.dxValidationProvider1.SetValidationRule(this.txtComosin1, conditionValidationRule3);
             // 
             // labelControl2
             // 
@@ -502,11 +524,219 @@
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "نرخ";
             // 
+            // groupControl3
+            // 
+            this.groupControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl3.Controls.Add(this.gridControl3);
+            this.groupControl3.Controls.Add(this.btnAdd3);
+            this.groupControl3.Controls.Add(this.txtComosin3);
+            this.groupControl3.Controls.Add(this.labelControl5);
+            this.groupControl3.Controls.Add(this.labelControl6);
+            this.groupControl3.Location = new System.Drawing.Point(11, 63);
+            this.groupControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(329, 397);
+            this.groupControl3.TabIndex = 2;
+            this.groupControl3.Text = "کمیسیون گندم";
+            // 
+            // gridControl3
+            // 
+            this.gridControl3.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gridControl3.Location = new System.Drawing.Point(21, 95);
+            this.gridControl3.MainView = this.gridView2;
+            this.gridControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gridControl3.Name = "gridControl3";
+            this.gridControl3.Size = new System.Drawing.Size(289, 294);
+            this.gridControl3.TabIndex = 3;
+            this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.Appearance.ColumnFilterButton.Options.UseTextOptions = true;
+            this.gridView2.Appearance.ColumnFilterButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.ColumnFilterButtonActive.Options.UseTextOptions = true;
+            this.gridView2.Appearance.ColumnFilterButtonActive.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.CustomizationFormHint.Options.UseTextOptions = true;
+            this.gridView2.Appearance.CustomizationFormHint.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.DetailTip.Options.UseTextOptions = true;
+            this.gridView2.Appearance.DetailTip.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.Empty.Options.UseTextOptions = true;
+            this.gridView2.Appearance.Empty.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.EvenRow.Options.UseTextOptions = true;
+            this.gridView2.Appearance.EvenRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.FilterCloseButton.Options.UseTextOptions = true;
+            this.gridView2.Appearance.FilterCloseButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.FilterPanel.Options.UseTextOptions = true;
+            this.gridView2.Appearance.FilterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.FixedLine.Options.UseTextOptions = true;
+            this.gridView2.Appearance.FixedLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.FocusedCell.Options.UseTextOptions = true;
+            this.gridView2.Appearance.FocusedCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.FocusedRow.Options.UseTextOptions = true;
+            this.gridView2.Appearance.FocusedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.gridView2.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.GroupButton.Options.UseTextOptions = true;
+            this.gridView2.Appearance.GroupButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.GroupFooter.Options.UseTextOptions = true;
+            this.gridView2.Appearance.GroupFooter.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.GroupPanel.Options.UseTextOptions = true;
+            this.gridView2.Appearance.GroupPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.GroupRow.Options.UseTextOptions = true;
+            this.gridView2.Appearance.GroupRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView2.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.HideSelectionRow.Options.UseTextOptions = true;
+            this.gridView2.Appearance.HideSelectionRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.HorzLine.Options.UseTextOptions = true;
+            this.gridView2.Appearance.HorzLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.OddRow.Options.UseTextOptions = true;
+            this.gridView2.Appearance.OddRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.Preview.Options.UseTextOptions = true;
+            this.gridView2.Appearance.Preview.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.Row.Options.UseTextOptions = true;
+            this.gridView2.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.RowSeparator.Options.UseTextOptions = true;
+            this.gridView2.Appearance.RowSeparator.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.SelectedRow.Options.UseTextOptions = true;
+            this.gridView2.Appearance.SelectedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.TopNewRow.Options.UseTextOptions = true;
+            this.gridView2.Appearance.TopNewRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.VertLine.Options.UseTextOptions = true;
+            this.gridView2.Appearance.VertLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.ViewCaption.Options.UseTextOptions = true;
+            this.gridView2.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.AppearancePrint.EvenRow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.gridView2.AppearancePrint.EvenRow.Options.UseFont = true;
+            this.gridView2.AppearancePrint.FilterPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.gridView2.AppearancePrint.FilterPanel.Options.UseFont = true;
+            this.gridView2.AppearancePrint.FooterPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.gridView2.AppearancePrint.FooterPanel.Options.UseFont = true;
+            this.gridView2.AppearancePrint.GroupFooter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.gridView2.AppearancePrint.GroupFooter.Options.UseFont = true;
+            this.gridView2.AppearancePrint.GroupRow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.gridView2.AppearancePrint.GroupRow.Options.UseFont = true;
+            this.gridView2.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.gridView2.AppearancePrint.HeaderPanel.Options.UseFont = true;
+            this.gridView2.AppearancePrint.Lines.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.gridView2.AppearancePrint.Lines.Options.UseFont = true;
+            this.gridView2.AppearancePrint.OddRow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.gridView2.AppearancePrint.OddRow.Options.UseFont = true;
+            this.gridView2.AppearancePrint.Preview.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.gridView2.AppearancePrint.Preview.Options.UseFont = true;
+            this.gridView2.AppearancePrint.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.gridView2.AppearancePrint.Row.Options.UseFont = true;
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn8,
+            this.gridColumn9});
+            this.gridView2.DetailHeight = 458;
+            this.gridView2.FixedLineWidth = 3;
+            this.gridView2.GridControl = this.gridControl3;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.ReadOnly = true;
+            this.gridView2.OptionsPrint.EnableAppearanceEvenRow = true;
+            this.gridView2.OptionsPrint.EnableAppearanceOddRow = true;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.gridColumn3.Caption = "نرخ";
+            this.gridColumn3.FieldName = "CommissionPrice";
+            this.gridColumn3.MinWidth = 23;
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 0;
+            this.gridColumn3.Width = 181;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.gridColumn4.Caption = "وضعیت";
+            this.gridColumn4.FieldName = "enabled";
+            this.gridColumn4.MinWidth = 23;
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 1;
+            this.gridColumn4.Width = 83;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.gridColumn8.FieldName = "Groups";
+            this.gridColumn8.MinWidth = 23;
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Width = 87;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.AppearanceCell.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.gridColumn9.Caption = "ID";
+            this.gridColumn9.FieldName = "ID";
+            this.gridColumn9.MinWidth = 23;
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Width = 87;
+            // 
+            // btnAdd3
+            // 
+            this.btnAdd3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnAdd3.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnAdd3.Location = new System.Drawing.Point(21, 32);
+            this.btnAdd3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAdd3.Name = "btnAdd3";
+            this.btnAdd3.Size = new System.Drawing.Size(40, 40);
+            this.btnAdd3.TabIndex = 1;
+            this.btnAdd3.Click += new System.EventHandler(this.btnAdd3_Click);
+            // 
+            // txtComosin3
+            // 
+            this.txtComosin3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtComosin3.Location = new System.Drawing.Point(68, 32);
+            this.txtComosin3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtComosin3.Name = "txtComosin3";
+            this.txtComosin3.Parmida_ActivePlusMultiKeys = false;
+            this.txtComosin3.Properties.Mask.EditMask = "d";
+            this.txtComosin3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtComosin3.Properties.MaxLength = 6;
+            this.txtComosin3.Size = new System.Drawing.Size(211, 24);
+            this.txtComosin3.TabIndex = 0;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            conditionValidationRule1.Value1 = 0;
+            this.dxValidationProvider3.SetValidationRule(this.txtComosin3, conditionValidationRule1);
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl5.Appearance.Options.UseBackColor = true;
+            this.labelControl5.Appearance.Options.UseForeColor = true;
+            this.labelControl5.Location = new System.Drawing.Point(122, 70);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(157, 17);
+            this.labelControl5.TabIndex = 1;
+            this.labelControl5.Text = "واحد پولی به تومان می باشد";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl6.Location = new System.Drawing.Point(286, 36);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(18, 17);
+            this.labelControl6.TabIndex = 1;
+            this.labelControl6.Text = "نرخ";
+            // 
             // FrmCommissionNative
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 471);
+            this.ClientSize = new System.Drawing.Size(1040, 471);
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -532,6 +762,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtComosin1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
+            this.groupControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtComosin3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -563,5 +800,17 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private DevExpress.XtraGrid.GridControl gridControl3;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraEditors.SimpleButton btnAdd3;
+        private DevExpress.XtraEditors.TextEdit txtComosin3;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider3;
     }
 }
